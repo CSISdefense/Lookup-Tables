@@ -5,8 +5,9 @@ These tables are used by the [Defense-Industrial Initiative Group (DIIG)](http:/
 ##Ways to access the files
 * The files are stored as comma separated values (CSV). Text is delineated with double quotes (").
 * If you want an local copy of this entire repository, you can "fork" it to your machine.
-* You can open an individual file directly and copy out the contents.
+* You can open an individual file directly and copy out the contents. If you are copying into Excel you will need to use the text to columns feature.
 * You can download an individual file. On Windows, this is done by right clicking on the link to the file and selecting "Save Link as"/"Save target as" or the equivalent for the browser in question.
+* Please feel free to contact gsanders at csis.org if you encounter any problems with these files.
 
 ##General resources
 * The Federal Procurement Data System (FPDS) provides a list of links relating to [Product Or Service Codes (PSC), North American Industrial Classifical Codes (NAICS), and more](https://www.fpds.gov/wiki/index.php/PSC,_NAICS_and_more)
