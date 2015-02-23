@@ -1,0 +1,28 @@
+Enter file contents here@@ -0,0 +1,27 @@
+﻿BOA Basic Ordering Agreement,BOA,Basic Ordering Agreement,0,0,NULL,NULL,0
+BPA Call Blanket Purchase Agreement,BPA Call,Blanket Purchase Agreement,0,0,NULL,NULL,0
+DO Delivery Order,DO,Delivery Order,0,0,NULL,NULL,1
+DCA Definitive Contract,DCA,Definitive Contract,0,1,1,NULL,0
+OT IDV Other Transaction IDV,OT IDV,Other Transaction IDV,0,0,NULL,NULL,0
+FSS Federal Supply Schedule,FSS,Federal Supply Schedule,0,0,NULL,1,0
+BPA Blanket Purchase Agreement,BPA,Blanket Purchase Agreement,0,0,NULL,NULL,0
+GWAC Government Wide Acquisition Contract,GWAC,Government Wide Acquisition Contract,0,0,NULL,1,0
+IDC Indefinite Delivery Contract,IDC,Indefinite Delivery Contract,1,0,1,1,0
+PO Purchase Order,PO,Purchase Order,0,0,1,NULL,0
+NULL,,NULL,NULL,NULL,NULL,NULL,NULL
+1,1,Letter Contract,0,0,NULL,NULL,0
+2,2,Definitive Contract,0,1,1,NULL,0
+3,3,Definitive Contract,0,1,1,NULL,0
+4,4,Basic Ordering Agreement,0,0,NULL,NULL,0
+5,5,Indefinite Delivery Contract,1,0,1,1,0
+6,6,Federal Supply Schedule,0,0,NULL,1,0
+7,7,Blanket Purchase Agreement,0,0,NULL,NULL,0
+8,8,Purchase Order,0,0,1,NULL,0
+9,9,Purchase Order,0,0,1,NULL,0
+A,A,Definitive Contract,0,1,1,NULL,0
+B,B,Definitive Contract,0,1,1,NULL,0
+C,C,Definitive Contract,0,1,1,NULL,0
+D,D,Definitive Contract,0,1,1,NULL,0
+E,E,Definitive Contract,0,1,1,NULL,0
+F,F,Definitive Contract,0,1,1,NULL,0
+G,G,Definitive Contract,0,1,1,NULL,0
