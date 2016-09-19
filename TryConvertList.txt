@@ -1,0 +1,707 @@
+SELECT DISTINCT [prime_awardee_executive1],
+len([prime_awardee_executive1]) as Length,
+'[varchar](65)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](65), [prime_awardee_executive1]) IS NULL AND
+NULLIF([prime_awardee_executive1],'') IS NOT NULL
+
+SELECT DISTINCT [prime_awardee_executive1_compensation],
+len([prime_awardee_executive1_compensation]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([decimal](19, 4), Try_Convert(real,[prime_awardee_executive1_compensation])) IS NULL AND
+NULLIF([prime_awardee_executive1_compensation],'') IS NOT NULL
+
+SELECT DISTINCT [prime_awardee_executive2],
+len([prime_awardee_executive2]) as Length,
+'[varchar](65)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](65), [prime_awardee_executive2]) IS NULL AND
+NULLIF([prime_awardee_executive2],'') IS NOT NULL
+
+SELECT DISTINCT [prime_awardee_executive2_compensation],
+len([prime_awardee_executive2_compensation]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([decimal](19, 4), Try_Convert(real,[prime_awardee_executive2_compensation])) IS NULL AND
+NULLIF([prime_awardee_executive2_compensation],'') IS NOT NULL
+
+SELECT DISTINCT [prime_awardee_executive3],
+len([prime_awardee_executive3]) as Length,
+'[varchar](65)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](65), [prime_awardee_executive3]) IS NULL AND
+NULLIF([prime_awardee_executive3],'') IS NOT NULL
+
+SELECT DISTINCT [prime_awardee_executive3_compensation],
+len([prime_awardee_executive3_compensation]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([decimal](19, 4), Try_Convert(real,[prime_awardee_executive3_compensation])) IS NULL AND
+NULLIF([prime_awardee_executive3_compensation],'') IS NOT NULL
+
+SELECT DISTINCT [prime_awardee_executive4],
+len([prime_awardee_executive4]) as Length,
+'[varchar](55)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](55), [prime_awardee_executive4]) IS NULL AND
+NULLIF([prime_awardee_executive4],'') IS NOT NULL
+
+SELECT DISTINCT [prime_awardee_executive4_compensation],
+len([prime_awardee_executive4_compensation]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([decimal](19, 4), Try_Convert(real,[prime_awardee_executive4_compensation])) IS NULL AND
+NULLIF([prime_awardee_executive4_compensation],'') IS NOT NULL
+
+SELECT DISTINCT [prime_awardee_executive5],
+len([prime_awardee_executive5]) as Length,
+'[varchar](65)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](65), [prime_awardee_executive5]) IS NULL AND
+NULLIF([prime_awardee_executive5],'') IS NOT NULL
+
+SELECT DISTINCT [prime_awardee_executive5_compensation],
+len([prime_awardee_executive5_compensation]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([decimal](19, 4), Try_Convert(real,[prime_awardee_executive5_compensation])) IS NULL AND
+NULLIF([prime_awardee_executive5_compensation],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_report_id],
+len([prime_award_report_id]) as Length,
+'[varchar](38)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](38), [prime_award_report_id]) IS NULL AND
+NULLIF([prime_award_report_id],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_piid],
+len([prime_award_piid]) as Length,
+'[varchar](42)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](42), [prime_award_piid]) IS NULL AND
+NULLIF([prime_award_piid],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_idvpiid],
+len([prime_award_idvpiid]) as Length,
+'[varchar](29)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](29), [prime_award_idvpiid]) IS NULL AND
+NULLIF([prime_award_idvpiid],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_federal_award_id],
+len([prime_award_federal_award_id]) as Length,
+'[varchar](max)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](max), [prime_award_federal_award_id]) IS NULL AND
+NULLIF([prime_award_federal_award_id],'') IS NOT NULL
+
+SELECT DISTINCT [type_of_spending],
+len([type_of_spending]) as Length,
+'[varchar](7)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](7), [type_of_spending]) IS NULL AND
+NULLIF([type_of_spending],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_date_submitted],
+len([prime_award_date_submitted]) as Length,
+'[date]' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([date], [prime_award_date_submitted],101) IS NULL AND
+NULLIF([prime_award_date_submitted],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_report_month],
+len([prime_award_report_month]) as Length,
+'[smallint]' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([smallint], [prime_award_report_month]) IS NULL AND
+NULLIF([prime_award_report_month],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_report_year],
+len([prime_award_report_year]) as Length,
+'[smallint]' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([smallint], [prime_award_report_year]) IS NULL AND
+NULLIF([prime_award_report_year],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_report_type],
+len([prime_award_report_type]) as Length,
+'[varchar](12)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](12), [prime_award_report_type]) IS NULL AND
+NULLIF([prime_award_report_type],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_principal_place_street],
+len([prime_award_principal_place_street]) as Length,
+'[varchar](45)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](45), [prime_award_principal_place_street]) IS NULL AND
+NULLIF([prime_award_principal_place_street],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_principal_place_city],
+len([prime_award_principal_place_city]) as Length,
+'[varchar](255)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](255), [prime_award_principal_place_city]) IS NULL AND
+NULLIF([prime_award_principal_place_city],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_principal_place_state],
+len([prime_award_principal_place_state]) as Length,
+'[varchar](7)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](7), [prime_award_principal_place_state]) IS NULL AND
+NULLIF([prime_award_principal_place_state],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_principal_place_zip],
+len([prime_award_principal_place_zip]) as Length,
+'[varchar](50)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](50), [prime_award_principal_place_zip]) IS NULL AND
+NULLIF([prime_award_principal_place_zip],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_principal_place_district],
+len([prime_award_principal_place_district]) as Length,
+'[varchar](9)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](9), [prime_award_principal_place_district]) IS NULL AND
+NULLIF([prime_award_principal_place_district],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_principal_place_country],
+len([prime_award_principal_place_country]) as Length,
+'[varchar](7)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](7), [prime_award_principal_place_country]) IS NULL AND
+NULLIF([prime_award_principal_place_country],'') IS NOT NULL
+
+SELECT DISTINCT [prime_awardee_parent_duns],
+len([prime_awardee_parent_duns]) as Length,
+'[varchar](13)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](13), [prime_awardee_parent_duns]) IS NULL AND
+NULLIF([prime_awardee_parent_duns],'') IS NOT NULL
+
+SELECT DISTINCT [prime_awardee_parent_contractor_name],
+len([prime_awardee_parent_contractor_name]) as Length,
+'[varchar](91)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](91), [prime_awardee_parent_contractor_name]) IS NULL AND
+NULLIF([prime_awardee_parent_contractor_name],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_contracting_agency_id],
+len([prime_award_contracting_agency_id]) as Length,
+'[varchar](9)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](9), [prime_award_contracting_agency_id]) IS NULL AND
+NULLIF([prime_award_contracting_agency_id],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_contracting_agency_name],
+len([prime_award_contracting_agency_name]) as Length,
+'[varchar](67)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](67), [prime_award_contracting_agency_name]) IS NULL AND
+NULLIF([prime_award_contracting_agency_name],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_contracting_office_id],
+len([prime_award_contracting_office_id]) as Length,
+'[varchar](11)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](11), [prime_award_contracting_office_id]) IS NULL AND
+NULLIF([prime_award_contracting_office_id],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_contracting_office_name],
+len([prime_award_contracting_office_name]) as Length,
+'[varchar](73)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](73), [prime_award_contracting_office_name]) IS NULL AND
+NULLIF([prime_award_contracting_office_name],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_funding_agency_id],
+len([prime_award_funding_agency_id]) as Length,
+'[varchar](9)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](9), [prime_award_funding_agency_id]) IS NULL AND
+NULLIF([prime_award_funding_agency_id],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_funding_agency_name],
+len([prime_award_funding_agency_name]) as Length,
+'[varchar](68)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](68), [prime_award_funding_agency_name]) IS NULL AND
+NULLIF([prime_award_funding_agency_name],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_funding_office_id],
+len([prime_award_funding_office_id]) as Length,
+'[varchar](11)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](11), [prime_award_funding_office_id]) IS NULL AND
+NULLIF([prime_award_funding_office_id],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_funding_office_name],
+len([prime_award_funding_office_name]) as Length,
+'[varchar](79)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](79), [prime_award_funding_office_name]) IS NULL AND
+NULLIF([prime_award_funding_office_name],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_program_source_agency],
+len([prime_award_program_source_agency]) as Length,
+'[varchar](2)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](2), [prime_award_program_source_agency]) IS NULL AND
+NULLIF([prime_award_program_source_agency],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_program_source_account],
+len([prime_award_program_source_account]) as Length,
+'[varchar](4)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](4), [prime_award_program_source_account]) IS NULL AND
+NULLIF([prime_award_program_source_account],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_program_source_subaccount],
+len([prime_award_program_source_subaccount]) as Length,
+'[varchar](3)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](3), [prime_award_program_source_subaccount]) IS NULL AND
+NULLIF([prime_award_program_source_subaccount],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_principal_naics_code],
+len([prime_award_principal_naics_code]) as Length,
+'[int]' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([int], [prime_award_principal_naics_code]) IS NULL AND
+NULLIF([prime_award_principal_naics_code],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_principal_naics_desc],
+len([prime_award_principal_naics_desc]) as Length,
+'[varchar](123)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](123), [prime_award_principal_naics_desc]) IS NULL AND
+NULLIF([prime_award_principal_naics_desc],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_cfda_program_number_title_codes],
+len([prime_award_cfda_program_number_title_codes]) as Length,
+'[varchar](max)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](max), [prime_award_cfda_program_number_title_codes]) IS NULL AND
+NULLIF([prime_award_cfda_program_number_title_codes],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_amount],
+len([prime_award_amount]) as Length,
+'[varchar](max)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](max), [prime_award_amount]) IS NULL AND
+NULLIF([prime_award_amount],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_date_signed],
+len([prime_award_date_signed]) as Length,
+'[date]' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([date], [prime_award_date_signed],101) IS NULL AND
+NULLIF([prime_award_date_signed],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_project_description],
+len([prime_award_project_description]) as Length,
+'[varchar](max)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](max), [prime_award_project_description]) IS NULL AND
+NULLIF([prime_award_project_description],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_transaction_type],
+len([prime_award_transaction_type]) as Length,
+'[varchar](31)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](31), [prime_award_transaction_type]) IS NULL AND
+NULLIF([prime_award_transaction_type],'') IS NOT NULL
+
+SELECT DISTINCT [prime_awardee_recovery_model_q1],
+len([prime_awardee_recovery_model_q1]) as Length,
+'[smallint]' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([smallint], [prime_awardee_recovery_model_q1]) IS NULL AND
+NULLIF([prime_awardee_recovery_model_q1],'') IS NOT NULL
+
+SELECT DISTINCT [prime_awardee_recovery_model_q2],
+len([prime_awardee_recovery_model_q2]) as Length,
+'[smallint]' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([smallint], [prime_awardee_recovery_model_q2]) IS NULL AND
+NULLIF([prime_awardee_recovery_model_q2],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_fiscal_year],
+len([prime_award_fiscal_year]) as Length,
+'[smallint]' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([smallint], [prime_award_fiscal_year]) IS NULL AND
+NULLIF([prime_award_fiscal_year],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_contracting_major_agency_id],
+len([prime_award_contracting_major_agency_id]) as Length,
+'[varchar](50)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](50), [prime_award_contracting_major_agency_id]) IS NULL AND
+NULLIF([prime_award_contracting_major_agency_id],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_contracting_major_agency_name],
+len([prime_award_contracting_major_agency_name]) as Length,
+'[varchar](45)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](45), [prime_award_contracting_major_agency_name]) IS NULL AND
+NULLIF([prime_award_contracting_major_agency_name],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_funding_major_agency_id],
+len([prime_award_funding_major_agency_id]) as Length,
+'[varchar](50)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](50), [prime_award_funding_major_agency_id]) IS NULL AND
+NULLIF([prime_award_funding_major_agency_id],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_funding_major_agency_name],
+len([prime_award_funding_major_agency_name]) as Length,
+'[varchar](61)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](61), [prime_award_funding_major_agency_name]) IS NULL AND
+NULLIF([prime_award_funding_major_agency_name],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_agencyid],
+len([prime_award_agencyid]) as Length,
+'[varchar](max)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](max), [prime_award_agencyid]) IS NULL AND
+NULLIF([prime_award_agencyid],'') IS NOT NULL
+
+SELECT DISTINCT [prime_award_idvagencyid],
+len([prime_award_idvagencyid]) as Length,
+'[varchar](max)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](max), [prime_award_idvagencyid]) IS NULL AND
+NULLIF([prime_award_idvagencyid],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_dunsnumber],
+len([subawardee_dunsnumber]) as Length,
+'[varchar](13)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](13), [subawardee_dunsnumber]) IS NULL AND
+NULLIF([subawardee_dunsnumber],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_name],
+len([subawardee_name]) as Length,
+'[varchar](125)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](125), [subawardee_name]) IS NULL AND
+NULLIF([subawardee_name],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_dba_name],
+len([subawardee_dba_name]) as Length,
+'[varchar](125)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](125), [subawardee_dba_name]) IS NULL AND
+NULLIF([subawardee_dba_name],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_street],
+len([subawardee_street]) as Length,
+'[varchar](255)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](255), [subawardee_street]) IS NULL AND
+NULLIF([subawardee_street],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_city],
+len([subawardee_city]) as Length,
+'[varchar](34)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](34), [subawardee_city]) IS NULL AND
+NULLIF([subawardee_city],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_state],
+len([subawardee_state]) as Length,
+'[varchar](7)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](7), [subawardee_state]) IS NULL AND
+NULLIF([subawardee_state],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_zipcode],
+len([subawardee_zipcode]) as Length,
+'[varchar](25)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](25), [subawardee_zipcode]) IS NULL AND
+NULLIF([subawardee_zipcode],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_congressionaldistrict],
+len([subawardee_congressionaldistrict]) as Length,
+'[varchar](9)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](9), [subawardee_congressionaldistrict]) IS NULL AND
+NULLIF([subawardee_congressionaldistrict],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_countrycode],
+len([subawardee_countrycode]) as Length,
+'[varchar](3)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](3), [subawardee_countrycode]) IS NULL AND
+NULLIF([subawardee_countrycode],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_principal_place_street],
+len([subaward_principal_place_street]) as Length,
+'[varchar](50)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](50), [subaward_principal_place_street]) IS NULL AND
+NULLIF([subaward_principal_place_street],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_principal_place_city],
+len([subaward_principal_place_city]) as Length,
+'[varchar](133)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](133), [subaward_principal_place_city]) IS NULL AND
+NULLIF([subaward_principal_place_city],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_principal_place_state],
+len([subaward_principal_place_state]) as Length,
+'[varchar](7)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](7), [subaward_principal_place_state]) IS NULL AND
+NULLIF([subaward_principal_place_state],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_principal_place_zip],
+len([subaward_principal_place_zip]) as Length,
+'[varchar](50)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](50), [subaward_principal_place_zip]) IS NULL AND
+NULLIF([subaward_principal_place_zip],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_principal_place_district],
+len([subaward_principal_place_district]) as Length,
+'[varchar](9)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](9), [subaward_principal_place_district]) IS NULL AND
+NULLIF([subaward_principal_place_district],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_principal_place_country],
+len([subaward_principal_place_country]) as Length,
+'[varchar](3)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](3), [subaward_principal_place_country]) IS NULL AND
+NULLIF([subaward_principal_place_country],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_parent_duns],
+len([subawardee_parent_duns]) as Length,
+'[varchar](13)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](13), [subawardee_parent_duns]) IS NULL AND
+NULLIF([subawardee_parent_duns],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_parent_contractor_name],
+len([subawardee_parent_contractor_name]) as Length,
+'[varchar](255)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](255), [subawardee_parent_contractor_name]) IS NULL AND
+NULLIF([subawardee_parent_contractor_name],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_amount],
+len([subaward_amount]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([decimal](19, 4), Try_Convert(real,[subaward_amount])) IS NULL AND
+NULLIF([subaward_amount],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_date],
+len([subaward_date]) as Length,
+'[date]' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([date], [subaward_date],101) IS NULL AND
+NULLIF([subaward_date],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_principal_naics_code],
+len([subaward_principal_naics_code]) as Length,
+'[int]' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([int], [subaward_principal_naics_code]) IS NULL AND
+NULLIF([subaward_principal_naics_code],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_principal_naics_desc],
+len([subaward_principal_naics_desc]) as Length,
+'[varchar](123)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](123), [subaward_principal_naics_desc]) IS NULL AND
+NULLIF([subaward_principal_naics_desc],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_funding_office_id],
+len([subaward_funding_office_id]) as Length,
+'[varchar](11)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](11), [subaward_funding_office_id]) IS NULL AND
+NULLIF([subaward_funding_office_id],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_funding_office_name],
+len([subaward_funding_office_name]) as Length,
+'[varchar](79)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](79), [subaward_funding_office_name]) IS NULL AND
+NULLIF([subaward_funding_office_name],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_federal_agency_id],
+len([subaward_federal_agency_id]) as Length,
+'[varchar](9)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](9), [subaward_federal_agency_id]) IS NULL AND
+NULLIF([subaward_federal_agency_id],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_federal_agency_name],
+len([subaward_federal_agency_name]) as Length,
+'[varchar](68)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](68), [subaward_federal_agency_name]) IS NULL AND
+NULLIF([subaward_federal_agency_name],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_major_agency_id],
+len([subaward_major_agency_id]) as Length,
+'[varchar](50)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](50), [subaward_major_agency_id]) IS NULL AND
+NULLIF([subaward_major_agency_id],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_major_agency_name],
+len([subaward_major_agency_name]) as Length,
+'[varchar](61)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](61), [subaward_major_agency_name]) IS NULL AND
+NULLIF([subaward_major_agency_name],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_number],
+len([subaward_number]) as Length,
+'[varchar](39)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](39), [subaward_number]) IS NULL AND
+NULLIF([subaward_number],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_recovery_model_q1],
+len([subawardee_recovery_model_q1]) as Length,
+'[smallint]' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([smallint], [subawardee_recovery_model_q1]) IS NULL AND
+NULLIF([subawardee_recovery_model_q1],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_recovery_model_q2],
+len([subawardee_recovery_model_q2]) as Length,
+'[smallint]' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([smallint], [subawardee_recovery_model_q2]) IS NULL AND
+NULLIF([subawardee_recovery_model_q2],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_report_month],
+len([subaward_report_month]) as Length,
+'[smallint]' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([smallint], [subaward_report_month]) IS NULL AND
+NULLIF([subaward_report_month],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_report_year],
+len([subaward_report_year]) as Length,
+'[smallint]' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([smallint], [subaward_report_year]) IS NULL AND
+NULLIF([subaward_report_year],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_fiscal_year],
+len([subaward_fiscal_year]) as Length,
+'[smallint]' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([smallint], [subaward_fiscal_year]) IS NULL AND
+NULLIF([subaward_fiscal_year],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_executive1],
+len([subawardee_executive1]) as Length,
+'[varchar](96)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](96), [subawardee_executive1]) IS NULL AND
+NULLIF([subawardee_executive1],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_executive1_compensation],
+len([subawardee_executive1_compensation]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([decimal](19, 4), Try_Convert(real,[subawardee_executive1_compensation])) IS NULL AND
+NULLIF([subawardee_executive1_compensation],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_executive2],
+len([subawardee_executive2]) as Length,
+'[varchar](100)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](100), [subawardee_executive2]) IS NULL AND
+NULLIF([subawardee_executive2],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_executive2_compensation],
+len([subawardee_executive2_compensation]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([decimal](19, 4), Try_Convert(real,[subawardee_executive2_compensation])) IS NULL AND
+NULLIF([subawardee_executive2_compensation],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_executive3],
+len([subawardee_executive3]) as Length,
+'[varchar](98)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](98), [subawardee_executive3]) IS NULL AND
+NULLIF([subawardee_executive3],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_executive3_compensation],
+len([subawardee_executive3_compensation]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([decimal](19, 4), Try_Convert(real,[subawardee_executive3_compensation])) IS NULL AND
+NULLIF([subawardee_executive3_compensation],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_executive4],
+len([subawardee_executive4]) as Length,
+'[varchar](78)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](78), [subawardee_executive4]) IS NULL AND
+NULLIF([subawardee_executive4],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_executive4_compensation],
+len([subawardee_executive4_compensation]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([decimal](19, 4), Try_Convert(real,[subawardee_executive4_compensation])) IS NULL AND
+NULLIF([subawardee_executive4_compensation],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_executive5],
+len([subawardee_executive5]) as Length,
+'[varchar](100)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](100), [subawardee_executive5]) IS NULL AND
+NULLIF([subawardee_executive5],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_executive5_compensation],
+len([subawardee_executive5_compensation]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([decimal](19, 4), Try_Convert(real,[subawardee_executive5_compensation])) IS NULL AND
+NULLIF([subawardee_executive5_compensation],'') IS NOT NULL
+
+SELECT DISTINCT [subawardee_business_types],
+len([subawardee_business_types]) as Length,
+'[varchar](452)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](452), [subawardee_business_types]) IS NULL AND
+NULLIF([subawardee_business_types],'') IS NOT NULL
+
+SELECT DISTINCT [subaward_cfda_program_number_title_codes],
+len([subaward_cfda_program_number_title_codes]) as Length,
+'[varchar](max)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([varchar](max), [subaward_cfda_program_number_title_codes]) IS NULL AND
+NULLIF([subaward_cfda_program_number_title_codes],'') IS NOT NULL
+
+SELECT DISTINCT [CSIScreatedDate],
+len([CSIScreatedDate]) as Length,
+'[datetime2](7)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([datetime2](7), [CSIScreatedDate]) IS NULL AND
+NULLIF([CSIScreatedDate],'') IS NOT NULL
+
+SELECT DISTINCT [CSISmodifiedDate],
+len([CSISmodifiedDate]) as Length,
+'[datetime2](7)' as DestinationType
+FROM Errorlogging.FSRSviolatesType
+WHERE Try_Convert([datetime2](7), [CSISmodifiedDate]) IS NULL AND
+NULLIF([CSISmodifiedDate],'') IS NOT NULL
+
