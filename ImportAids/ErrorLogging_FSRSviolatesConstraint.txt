@@ -1,7 +1,7 @@
 USE [DIIG]
 GO
 
-/****** Object:  Table [Contract].[FSRS]    Script Date: 9/18/2016 9:15:21 PM ******/
+/****** Object:  Table [ErrorLogging].[FSRSviolatesConstraint]    Script Date: 9/19/2016 11:06:12 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -11,7 +11,7 @@ GO
 SET ANSI_PADDING ON
 GO
 
-CREATE TABLE [Contract].[FSRS](
+CREATE TABLE [ErrorLogging].[FSRSviolatesConstraint](
 	[PrimeAwardReportID] [varchar](38) NULL,
 	[PrimeAwardPIID] [varchar](42) NULL,
 	[PrimeAwardIDVPIID] [varchar](29) NULL,
@@ -53,7 +53,7 @@ CREATE TABLE [Contract].[FSRS](
 	[PrimeAwardPrincipalNaicsCode] [int] NULL,
 	[PrimeAwardPrincipalNaicsDesc] [varchar](123) NULL,
 	[PrimeAwardCFDAprogramNumberTitleCodes] [varchar](max) NULL,
-	[PrimeAwardAmount] [varchar](max) NULL,
+	[PrimeAwardAmount] [decimal](19, 4) NULL,
 	[PrimeAwardDateSigned] [date] NULL,
 	[PrimeAwardProjectDescription] [varchar](max) NULL,
 	[PrimeAwardTransactionType] [varchar](31) NULL,
@@ -95,7 +95,7 @@ CREATE TABLE [Contract].[FSRS](
 	[SubawardMajorAgencyID] [varchar](50) NULL,
 	[SubawardMajorAgencyName] [varchar](61) NULL,
 	[SubawardNumber] [varchar](39) NULL,
-	[SubawardProjectDescription] [varchar](4124) NULL,
+	[SubawardProjectDescription] [varchar](4500) NULL,
 	[SubawardeeRecoveryModelQ1] [smallint] NULL,
 	[SubawardeeRecoveryModelQ2] [smallint] NULL,
 	[SubawardReportMonth] [smallint] NULL,
@@ -113,8 +113,8 @@ CREATE TABLE [Contract].[FSRS](
 	[SubawardeeExecutive5Compensation] [decimal](19, 4) NULL,
 	[SubawardeeBusinessTypes] [varchar](452) NULL,
 	[SubawardCFDAprogramNumberTitleCodes] [varchar](max) NULL,
-	[CSISmodifiedDate] [datetime2](7) NOT NULL,
-	[CSIScreatedDate] [datetime2](7) NOT NULL
+	[CSIScreatedDate] [datetime2](7) NULL,
+	[CSISmodifiedDate] [datetime2](7) NULL
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
 GO
@@ -122,45 +122,10 @@ GO
 SET ANSI_PADDING OFF
 GO
 
-ALTER TABLE [Contract].[FSRS] ADD  DEFAULT (getdate()) FOR [CSISmodifiedDate]
+ALTER TABLE [ErrorLogging].[FSRSviolatesConstraint] ADD  DEFAULT (getdate()) FOR [CSIScreatedDate]
 GO
 
-ALTER TABLE [Contract].[FSRS] ADD  DEFAULT (getdate()) FOR [CSIScreatedDate]
-GO
-
-ALTER TABLE [Contract].[FSRS]  WITH CHECK ADD  CONSTRAINT [fk_FSRS_PrimeAwardeeParentDuns] FOREIGN KEY([PrimeAwardeeParentDuns])
-REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])
-GO
-
-ALTER TABLE [Contract].[FSRS] CHECK CONSTRAINT [fk_FSRS_PrimeAwardeeParentDuns]
-GO
-
-ALTER TABLE [Contract].[FSRS]  WITH CHECK ADD  CONSTRAINT [fk_FSRS_SubawardeeCountrycode] FOREIGN KEY([SubawardeeCountrycode])
-REFERENCES [FPDSTypeTable].[Country3LetterCode] ([Country3LetterCode])
-GO
-
-ALTER TABLE [Contract].[FSRS] CHECK CONSTRAINT [fk_FSRS_SubawardeeCountrycode]
-GO
-
-ALTER TABLE [Contract].[FSRS]  WITH CHECK ADD  CONSTRAINT [fk_FSRS_SubawardeeDunsnumber] FOREIGN KEY([SubawardeeDunsnumber])
-REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])
-GO
-
-ALTER TABLE [Contract].[FSRS] CHECK CONSTRAINT [fk_FSRS_SubawardeeDunsnumber]
-GO
-
-ALTER TABLE [Contract].[FSRS]  WITH CHECK ADD  CONSTRAINT [fk_FSRS_SubawardeeParentDuns] FOREIGN KEY([SubawardeeParentDuns])
-REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])
-GO
-
-ALTER TABLE [Contract].[FSRS] CHECK CONSTRAINT [fk_FSRS_SubawardeeParentDuns]
-GO
-
-ALTER TABLE [Contract].[FSRS]  WITH CHECK ADD  CONSTRAINT [fk_FSRS_SubawardPrincipalPlaceCountry] FOREIGN KEY([SubawardPrincipalPlaceCountry])
-REFERENCES [FPDSTypeTable].[Country3LetterCode] ([Country3LetterCode])
-GO
-
-ALTER TABLE [Contract].[FSRS] CHECK CONSTRAINT [fk_FSRS_SubawardPrincipalPlaceCountry]
+ALTER TABLE [ErrorLogging].[FSRSviolatesConstraint] ADD  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
 
 

@@ -1,5 +1,6 @@
 #Setup
-setwd("D:\\Users\\Greg Sanders\\Documents\\Development\\Lookup-Tables")
+# setwd("D:\\Users\\Greg Sanders\\Documents\\Development\\Lookup-Tables")
+setwd("K:\\Development\\Lookup-Tables")
 source("SQLimportTools.r")
 
 #******Importing into Errorlogging.FSRSviolatesConstraint

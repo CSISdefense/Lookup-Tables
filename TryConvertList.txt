@@ -287,9 +287,9 @@ NULLIF([prime_award_cfda_program_number_title_codes],'') IS NOT NULL
 
 SELECT DISTINCT [prime_award_amount],
 len([prime_award_amount]) as Length,
-'[varchar](max)' as DestinationType
+'[decimal](19, 4)' as DestinationType
 FROM Errorlogging.FSRSviolatesType
-WHERE Try_Convert([varchar](max), [prime_award_amount]) IS NULL AND
+WHERE Try_Convert([decimal](19, 4), Try_Convert(real,[prime_award_amount])) IS NULL AND
 NULLIF([prime_award_amount],'') IS NOT NULL
 
 SELECT DISTINCT [prime_award_date_signed],

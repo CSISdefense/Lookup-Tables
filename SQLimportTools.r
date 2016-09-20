@@ -141,7 +141,7 @@ ConvertSwitch<-function(MergeTable.df,DateType=101,IsTryConvert=FALSE){
     SwitchList<-MergeTable.df$SourceVariableType==MergeTable.df$CSISvariableType
     MergeTable.df$ConvertList[SwitchList]<-MergeTable.df$SourceVariableName[SwitchList]
     
-    SwitchList<-MergeTable.df$VariableShortType=="[decimal]"&
+    SwitchList<-MergeTable.df$VariableShortType %in% c("[decimal]","[smallint]","[bigint]")&
       is.na(MergeTable.df$ConvertList)
     MergeTable.df$ConvertList[SwitchList]<-
       paste(ConvertText,"(",
@@ -150,6 +150,18 @@ ConvertSwitch<-function(MergeTable.df,DateType=101,IsTryConvert=FALSE){
                                       MergeTable.df$SourceVariableName[SwitchList] ,"))",
                                       sep=""
                     )
+    
+    SwitchList<-MergeTable.df$VariableShortType=="[bit]"&
+        is.na(MergeTable.df$ConvertList)
+        MergeTable.df$ConvertList[SwitchList]<-
+        paste(ConvertText,"(",
+              MergeTable.df$CSISvariableType[SwitchList] ,", ",
+              "(SELECT ReturnBit from Errorlogging.ConvertYNtoBit(",
+              MergeTable.df$SourceVariableName[SwitchList] ,
+              ")))",
+              sep=""
+        )
+    
     SwitchList<-MergeTable.df$VariableShortType=="[date]"&
       is.na(MergeTable.df$ConvertList)
     MergeTable.df$ConvertList[SwitchList]<-
