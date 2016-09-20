@@ -179,7 +179,29 @@ ConvertSwitch<-function(MergeTable.df,DateType=101,IsTryConvert=FALSE){
                           sep=""
                     )
     MergeTable.df
-  
+}
+
+
+LengthCheck<-function(MergeTable.df){
+
+    MergeTable.df$LengthCheck<-""
+
+    MergeTable.df$VariableTypeNumber<-as.numeric(
+        (substr(MergeTable.df$CSISvariableType,
+                regexpr('[(]',MergeTable.df$CSISvariableType)+1,
+                regexpr('[)]',MergeTable.df$CSISvariableType)-1)
+        ))
+        
+
+    SwitchList<-MergeTable.df$VariableShortType=="[varchar]"&
+        MergeTable.df$LengthCheck==""&
+        !is.na(MergeTable.df$VariableTypeNumber)
+    MergeTable.df$LengthCheck[SwitchList]<-
+        paste("OR len(",MergeTable.df$SourceVariableName[SwitchList] ,")",
+              ">",MergeTable.df$VariableTypeNumber[SwitchList],"\n"
+        )
+
+    MergeTable.df
 }
 
 
@@ -192,16 +214,19 @@ Create_Try_Converts<-function(MergeTable.df,
   if(nrow(MergeTable.df)==0)
     stop("No try_converts necessary")
   MergeTable.df<-ConvertSwitch(MergeTable.df,101,TRUE)
+  MergeTable.df<-LengthCheck(MergeTable.df)
+  
   ConvertList<-paste(
     "SELECT DISTINCT ",
     MergeTable.df$SourceVariableName,",\n",
     "len(",MergeTable.df$SourceVariableName,") as Length,\n",
     "'",MergeTable.df$CSISvariableType,"' as DestinationType","\n",
     "FROM ",Schema,".",TableName,"\n",
-    "WHERE ",
+    "WHERE (",
     MergeTable.df$ConvertList,
     " IS NULL AND\n",
-    "NULLIF(",MergeTable.df$SourceVariableName,",'') IS NOT NULL\n",
+    "NULLIF(",MergeTable.df$SourceVariableName,",'') IS NOT NULL)\n",
+    MergeTable.df$LengthCheck,
     sep="")
   ConvertList
 }

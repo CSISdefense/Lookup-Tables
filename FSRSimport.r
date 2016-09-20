@@ -5,14 +5,14 @@ source("SQLimportTools.r")
 
 #******Importing into Errorlogging.FSRSviolatesConstraint
 #Match up Errorlogging.FSRSviolatesType to Errorlogging.FSRSviolatesConstraint
-OriginTableType.df<-ReadCreateTable("ErrorLogging_FSRSviolatesType.csv")
-DestTableType.df<-ReadCreateTable("ErrorLogging_FSRSviolatesConstraint.csv")
+OriginTableType.df<-ReadCreateTable("ErrorLogging_FSRSviolatesType.txt")
+DestTableType.df<-ReadCreateTable("ErrorLogging_FSRSviolatesConstraint.txt")
 OriginTableType.df<-TranslateName(OriginTableType.df)
 MergeType.df<-MergeSourceAndCSISnameTables(OriginTableType.df,DestTableType.df)
 
 #Create Try Convert
 TryConvertList<-Create_Try_Converts(MergeType.df,"Errorlogging","FSRSviolatesType")
-write(TryConvertList,"TryConvertList.txt")
+write(TryConvertList,"FSRStryConvertList.txt")
 
 #Transfer from Errorlogging.FSRSviolatesType to Errorlogging.FSRSviolatesConstraint
 InsertList<-CreateInsert(MergeType.df,
@@ -21,13 +21,13 @@ InsertList<-CreateInsert(MergeType.df,
              "ErrorLogging",
              "FSRSviolatesConstraint",
              DateType=101)
-write(InsertList,"Insert.txt")
+write(InsertList,"FSRSinsert.txt")
 write(CreateCSISdates("Contract","FSRS"),"CSISdates.txt")
 
 #******Importing into Contract.FSRS 
 #Match up Errorlogging.FSRSviolatesConstraint to Contract.FSRS 
-DestTableConstraint.df<-ReadCreateTable("Contract_FSRS.csv")
-OriginTableConstraint.df<-ReadCreateTable("ErrorLogging_FSRSviolatesConstraint.csv")
+DestTableConstraint.df<-ReadCreateTable("Contract_FSRS.txt")
+OriginTableConstraint.df<-ReadCreateTable("ErrorLogging_FSRSviolatesConstraint.txt")
 OriginTableConstraint.df<-TranslateName(OriginTableConstraint.df)
 MergeConstraint.df<-MergeSourceAndCSISnameTables(OriginTableConstraint.df,DestTableConstraint.df)
 
