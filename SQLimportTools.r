@@ -294,7 +294,7 @@ ConvertFieldToForeignKey<-function(FKschema,
   TargetTable.df$CSISvariableType<-paste('[',pkTable.df$CSISvariableType,']',sep='')
   if(TargetTable.df$CSISvariableType[1]=="[varchar]"){
     TargetTable.df$CSISvariableType<-paste(TargetTable.df$CSISvariableType,
-                                           "(",pkTable.df$CHARACTER_MAXIMUM_LENGTH,")",
+                                           "(",pkTable.df$CHARACTER_MAXIMUM_LENGTH,")\n",
                                            sep="")
   }
 
@@ -306,7 +306,7 @@ ConvertFieldToForeignKey<-function(FKschema,
   if(TargetTable.df$CSISvariableType!=TargetTable.df$SourceVariableType){
     Output<-Create_Try_Converts(TargetTable.df,
                                 FKschema,
-                                FKcolumn)
+                                FKtable)
     
     
     Output<-rbind(Output,
