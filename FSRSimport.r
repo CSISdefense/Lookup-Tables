@@ -43,3 +43,20 @@ InsertList<-CreateInsert(MergeConst,
                          DateType=101)
 write(InsertList,"Insert2.txt")
 
+
+
+fkTable.df<-ReadCreateTable("Contract_FSRS.txt")
+
+  debug(ConvertFieldToForeignKey)
+  ConvertFieldToForeignKey("Contract","FSRS","[PrimeAwardeeParentDuns]",
+                           fkTable.df,
+                           "Contractor","Dunsnumber")
+
+  ConvertFieldToForeignKey("Contract","FSRS","[SubAwardeeDunsnumber]",
+                           fkTable.df,
+                           "Contractor","Dunsnumber")
+  
+  ConvertFieldToForeignKey("Contract","FSRS","[SubAwardeeParentDuns]",
+                           fkTable.df,
+                           "Contractor","Dunsnumber")
+  

@@ -268,7 +268,51 @@ ConvertFieldToForeignKey<-function(FKschema,
                                    PKtable,
                                    PKname=PKtable){
 
-  TargetTable.df<-read.csv(file.path("ImportAids",FileName),header=FALSE,sep=" ")
+  pkTable.df<-read.csv(file.path("ImportAids","ErrorLogging_PrimaryKeyList.csv")
+                       ,header=TRUE,sep=",")
+  pkTable.df<-subset(pkTable.df,
+                     toupper(SchemaName)==toupper(PKschema) &
+                       toupper(TableName)==toupper(PKtable) &
+                     toupper(column_name)==toupper(PKname))
   #Test if the field can be converted to the primary keys typed.
+  colnames(pkTable.df)<-c("pk_index_name",
+                          "SchemaName",
+                          "TableName",
+                          "CSISvariableName",
+                          "CSISvariableType",
+                          "CHARACTER_MAXIMUM_LENGTH",
+                          "is_identity"
+                          )
+  if(!"SourceVariableName" %in% colnames(TargetTable.df)){
+    colnames(TargetTable.df)<-c("SourceVariableName" ,
+                                "SourceVariableType",
+                                "SourceVariableNullable")
+  }
+  TargetTable.df<-subset(TargetTable.df,
+                         toupper(SourceVariableName)==toupper(FKcolumn))
+  TargetTable.df$CSISvariableName<-pkTable.df$CSISvariableName
+  TargetTable.df$CSISvariableType<-paste('[',pkTable.df$CSISvariableType,']',sep='')
+  if(TargetTable.df$CSISvariableType[1]=="[varchar]"){
+    TargetTable.df$CSISvariableType<-paste(TargetTable.df$CSISvariableType,
+                                           "(",pkTable.df$CHARACTER_MAXIMUM_LENGTH,")",
+                                           sep="")
+  }
 
+  # TargetTable.df<-ConvertSwitch(TargetTable.df,IsTryConvert=TRUE)
+  # TargetTable.df<-LengthCheck(TargetTable.df)
+  
+  Output<-''
+  
+  if(TargetTable.df$CSISvariableType!=TargetTable.df$SourceVariableType){
+    Output<-Create_Try_Converts(TargetTable.df,
+                                FKschema,
+                                FKcolumn)
+    
+    
+    Output<-rbind(Output,
+                  paste("ALTER TABLE ",FKschema,".",FKtable,"\n",
+                        "ALTER COLUMN ",FKcolumn," ",TargetTable.df$CSISvariableType,sep="")
+    )
+  }
+  Output
 }
