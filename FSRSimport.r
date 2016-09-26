@@ -48,10 +48,11 @@ write(InsertList,"Insert2.txt")
 fkTable.df<-ReadCreateTable("Contract_FSRS.txt")
 
   debug(ConvertFieldToForeignKey)
-  ConvertFieldToForeignKey("Contract","FSRS","[PrimeAwardeeParentDuns]",
+  Output<-ConvertFieldToForeignKey("Contract","FSRS","[PrimeAwardReportID]",
                            fkTable.df,
-                           "Contractor","Dunsnumber")
-
+                           "Contract","PrimeAwardReportID")
+  write(Output,"ConvertfieldToForeignKey.txt")
+  
   ConvertFieldToForeignKey("Contract","FSRS","[SubAwardeeDunsnumber]",
                            fkTable.df,
                            "Contractor","Dunsnumber")
@@ -59,4 +60,6 @@ fkTable.df<-ReadCreateTable("Contract_FSRS.txt")
   ConvertFieldToForeignKey("Contract","FSRS","[SubAwardeeParentDuns]",
                            fkTable.df,
                            "Contractor","Dunsnumber")
+  
+  
   

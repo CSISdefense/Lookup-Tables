@@ -266,14 +266,14 @@ ConvertFieldToForeignKey<-function(FKschema,
                                    TargetTable.df,
                                    PKschema,
                                    PKtable,
-                                   PKname=PKtable){
+                                   PKcolumn=PKtable){
 
   pkTable.df<-read.csv(file.path("ImportAids","ErrorLogging_PrimaryKeyList.csv")
                        ,header=TRUE,sep=",")
   pkTable.df<-subset(pkTable.df,
                      toupper(SchemaName)==toupper(PKschema) &
                        toupper(TableName)==toupper(PKtable) &
-                     toupper(column_name)==toupper(PKname))
+                     toupper(column_name)==toupper(PKcolumn))
   #Test if the field can be converted to the primary keys typed.
   colnames(pkTable.df)<-c("pk_index_name",
                           "SchemaName",
@@ -314,5 +314,32 @@ ConvertFieldToForeignKey<-function(FKschema,
                         "ALTER COLUMN ",FKcolumn," ",TargetTable.df$CSISvariableType,sep="")
     )
   }
+  
+  Output<-rbind(Output,
+                paste("SELECT DISTINCT fk.",FKcolumn,"\n",
+                      "FROM ",FKschema,".",FKtable," as fk\n",
+                      "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
+                      "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
+                      "WHERE pk.",PKcolumn," is NULL\n",sep="")
+  )
+  
+  Output<-rbind(Output,
+                paste("INSERT INTO ",PKschema,".",PKtable,"\n",
+                      "(",PKcolumn,")\n",
+                    "SELECT DISTINCT fk.",FKcolumn,"\n",
+                      "FROM ",FKschema,".",FKtable," as fk\n",
+                      "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
+                      "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
+                      "WHERE pk.",PKcolumn," is NULL\n",sep="")
+  )
+  
+  Output<-rbind(Output,
+                paste("ALTER TABLE ",FKschema,".",FKtable,"\n",
+                      "ADD CONSTRAINT fk_",gsub("\\[","",gsub("\\]","",FKschema))
+                      ,"_",gsub("\\[","",gsub("\\]","",FKtable)),"_",
+                      gsub("\\[","",gsub("\\]","",FKcolumn)),
+                      " foreign key(",FKcolumn,")\n"
+                      ,"references ",PKschema,".",PKtable,"(",PKcolumn,")",sep="")
+  )
   Output
 }

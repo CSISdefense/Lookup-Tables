@@ -1,0 +1,18 @@
+
+SELECT DISTINCT fk.[PrimeAwardReportID]
+FROM Contract.FSRS as fk
+LEFT OUTER JOIN Contract.PrimeAwardReportID as pk
+On pk.PrimeAwardReportID=fk.[PrimeAwardReportID]
+WHERE pk.PrimeAwardReportID is NULL
+
+INSERT INTO Contract.PrimeAwardReportID
+(PrimeAwardReportID)
+SELECT DISTINCT fk.[PrimeAwardReportID]
+FROM Contract.FSRS as fk
+LEFT OUTER JOIN Contract.PrimeAwardReportID as pk
+On pk.PrimeAwardReportID=fk.[PrimeAwardReportID]
+WHERE pk.PrimeAwardReportID is NULL
+
+ALTER TABLE Contract.FSRS
+ADD CONSTRAINT fk_Contract_FSRS_PrimeAwardReportID foreign key([PrimeAwardReportID])
+references Contract.PrimeAwardReportID(PrimeAwardReportID)
