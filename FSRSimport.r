@@ -48,18 +48,62 @@ write(InsertList,"Insert2.txt")
 fkTable.df<-ReadCreateTable("Contract_FSRS.txt")
 
   debug(ConvertFieldToForeignKey)
-  Output<-ConvertFieldToForeignKey("Contract","FSRS","[PrimeAwardReportID]",
+  Output<-ConvertFieldToForeignKey("Contract","FSRS","[PrimeAwardPrincipalPlaceCountry]",
                            fkTable.df,
-                           "Contract","PrimeAwardReportID")
+                           "FPDStypeTable","Country3lettercode")
   write(Output,"ConvertfieldToForeignKey.txt")
   
-  ConvertFieldToForeignKey("Contract","FSRS","[SubAwardeeDunsnumber]",
-                           fkTable.df,
-                           "Contractor","Dunsnumber")
+  # ConvertFieldToForeignKey("Contract","FSRS","[SubAwardeeDunsnumber]",
+  #                          fkTable.df,
+  #                          "Contractor","Dunsnumber")
+  # 
+  # ConvertFieldToForeignKey("Contract","FSRS","[SubAwardeeParentDuns]",
+  #                          fkTable.df,
+  #                          "Contractor","Dunsnumber")
   
-  ConvertFieldToForeignKey("Contract","FSRS","[SubAwardeeParentDuns]",
-                           fkTable.df,
-                           "Contractor","Dunsnumber")
   
   
   
+  
+  # --Decimal nullif('')
+  # --prime-award_source_sub_acocunt varchar(2)?
+  # --prime-award_source_account varchar(4)?
+  # --prime-award_source_subaccount varchar(3)
+  # --scientific notation to decimal
+  
+  # 
+  # OriginalTable.df<-ReadCreateTable("ErrorLogging_FSRSviolatesType.csv")
+  # TargetTable.df<-ReadCreateTable("Contract_FSRS.csv")
+  # OriginalTable.df<-TranslateName(OriginalTable.df)
+  # MergeTable.df<-MergeSourceAndCSISnameTables(OriginalTable.df,TargetTable.df)
+  # 
+  # # ChangeList<-ConvertAllOfType(TargetTable.df,
+  # #                  "[real]",
+  # #                  "[decimal](19, 4)",
+  # #                  "Contract",
+  # #                  "FSRS")
+  # # write(ChangeList,"ChangeList.txt")
+  # # 
+  # # ChangeList<-ConvertAllOfType(TargetTable.df,
+  # #                              "[real]",
+  # #                              "[decimal](19, 4)",
+  # #                              "Errorlogging",
+  # #                              "FSRSviolatesConstraint")
+  # # write(ChangeList,"ChangeList.txt")
+  # 
+  # ListProblemType(TargetTable.df)
+  # debug(ConvertSwitch)
+  # 
+  # debug(OneSwitch)
+  # TryConvertList<-Create_Try_Converts(MergeTable.df,"ErrorLogging","FSRSviolatesType")
+  # write(TryConvertList,"TryConvertList.txt")
+  # 
+  # InsertList<-CreateInsert(MergeTable.df,
+  #                          "ErrorLogging",
+  #                          "FSRSviolatesType",
+  #                          "ErrorLogging",
+  #                          "FSRSviolatesConstraint")
+  # write(InsertList,"InsertList.txt")
+  # 
+  # 
+  # 
