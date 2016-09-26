@@ -260,8 +260,13 @@ CreateInsert<-function(MergeTable.df,
 
 
 
-ConvertFieldToForeignKey<-function(PKschema,
-                                   PKname){
+ConvertFieldToForeignKey<-function(FKschema,
+                                   FKtable,
+                                   FKcolumn,
+                                   TargetTable.df,
+                                   PKschema,
+                                   PKtable,
+                                   PKname=PKtable){
 
   TargetTable.df<-read.csv(file.path("ImportAids",FileName),header=FALSE,sep=" ")
   #Test if the field can be converted to the primary keys typed.
