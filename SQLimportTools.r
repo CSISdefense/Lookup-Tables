@@ -257,3 +257,13 @@ CreateInsert<-function(MergeTable.df,
   )
   InsertList
 }
+
+
+
+ConvertFieldToForeignKey<-function(PKschema,
+                                   PKname){
+
+  TargetTable.df<-read.csv(file.path("ImportAids",FileName),header=FALSE,sep=" ")
+  #Test if the field can be converted to the primary keys typed.
+
+}
