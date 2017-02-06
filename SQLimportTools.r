@@ -59,13 +59,21 @@ TranslateName<-function(TargetTable.df){
   if(!"SourceVariableName" %in% colnames(TargetTable.df)){
     colnames(TargetTable.df)[1]<-"SourceVariableName" 
   }
+  TargetTable.df$OriginalSourceVariableName<-TargetTable.df$SourceVariableName
+  TargetTable.df$SourceVariableName<-tolower(TargetTable.df$SourceVariableName)
+  lookup.NameConversion$SourceVariableName<-tolower(lookup.NameConversion$SourceVariableName)
   TargetTable.df<-plyr::join(TargetTable.df,lookup.NameConversion)
   # TargetTable.df$VariableName<-gsub("_","",TargetTable.df$VariableName)
+  
+  TargetTable.df$SourceVariableName<-TargetTable.df$OriginalSourceVariableName
+  TargetTable.df<-subset(TargetTable.df,select=-c(OriginalSourceVariableName))
+  
   
   TargetTable.df$CSISvariableName[TargetTable.df$SourceVariableName %in% 
                    lookup.NameConversion$CSISvariableName]<-
     TargetTable.df$SourceVariableName[TargetTable.df$SourceVariableName %in% 
                      lookup.NameConversion$CSISvariableName]
+  
   
   TargetTable.df
 }
@@ -76,12 +84,14 @@ MergeSourceAndCSISnameTables<-function(SourceTable.df,CSIStable.df){
   colnames(SourceTable.df)[1:3]<-c("SourceVariableName",
                                    "SourceVariableType",
                                    "SourceNullable")
-  SourceTable.df$SourceVariableName<-as.character(SourceTable.df$SourceVariableName)
+  SourceTable.df$CSISvariableNameLower<-tolower(as.character(SourceTable.df$CSISvariableName))
+  SourceTable.df<-subset(SourceTable.df,select=-c(CSISvariableName))
   colnames(CSIStable.df)[1:3]<-c("CSISvariableName",
                                  "CSISvariableType",
                                  "CSISnullable")
-  CSIStable.df$CSISvariableName<-as.character(CSIStable.df$CSISvariableName)
-  SourceTable.df<-plyr::join(SourceTable.df,CSIStable.df)
+  CSIStable.df$CSISvariableNameLower<-tolower(as.character(CSIStable.df$CSISvariableName))
+  SourceTable.df<-plyr::join(SourceTable.df,CSIStable.df, by="CSISvariableNameLower",match="first")
+  SourceTable.df<-subset(SourceTable.df,select=-c(CSISvariableNameLower))
 }
 
 
@@ -208,7 +218,8 @@ LengthCheck<-function(MergeTable.df){
 Create_Try_Converts<-function(MergeTable.df,
                               Schema,
                               TableName,
-                              DateType=101){
+                              DateType=101,
+                              IncludeAlters=TRUE){
   #Limit it to just cases where the variable type is changing
   MergeTable.df<-subset(MergeTable.df,SourceVariableType!=MergeTable.df$CSISvariableType)
   if(nrow(MergeTable.df)==0)
@@ -228,6 +239,19 @@ Create_Try_Converts<-function(MergeTable.df,
     "NULLIF(",MergeTable.df$SourceVariableName,",'') IS NOT NULL)\n",
     MergeTable.df$LengthCheck,
     sep="")
+  
+  
+  
+  #Create an alter to fix that, if not supressed by user
+  if(IncludeAlters){
+    ConvertList<-rbind(ConvertList,
+                       paste("ALTER TABLE ",Schema,".",TableName,"\n",
+                             "ALTER COLUMN ",MergeTable.df$SourceVariableName," ",
+                             MergeTable.df$CSISvariableType,"\n",sep="")
+    )
+  }
+  
+  
   ConvertList
 }
 
@@ -253,7 +277,7 @@ CreateInsert<-function(MergeTable.df,
                                        nchar(InsertList[length(InsertList)])-1)
   
   InsertList<-c(InsertList,
-                    paste("FROM ",SourceSchema,".",SourceTableName,sep="")
+                    paste("FROM ",SourceSchema,".",SourceTableName,"\n",sep="")
   )
   InsertList
 }
@@ -271,50 +295,36 @@ ConvertFieldToForeignKey<-function(FKschema,
   pkTable.df<-read.csv(file.path("ImportAids","ErrorLogging_PrimaryKeyList.csv")
                        ,header=TRUE,sep=",")
   pkTable.df<-subset(pkTable.df,
-                     toupper(SchemaName)==toupper(PKschema) &
-                       toupper(TableName)==toupper(PKtable) &
-                     toupper(column_name)==toupper(PKcolumn))
+                     toupper(PKSchemaName)==toupper(PKschema) &
+                       toupper(PKTableName)==toupper(PKtable) &
+                     toupper(PKColumnName)==toupper(PKcolumn))
   #Test if the field can be converted to the primary keys typed.
-  colnames(pkTable.df)<-c("pk_index_name",
-                          "SchemaName",
-                          "TableName",
-                          "CSISvariableName",
-                          "CSISvariableType",
-                          "CHARACTER_MAXIMUM_LENGTH",
-                          "is_identity"
-                          )
-  if(!"SourceVariableName" %in% colnames(TargetTable.df)){
-    colnames(TargetTable.df)<-c("SourceVariableName" ,
+  if(!"SourceVariableType" %in% colnames(TargetTable.df)){
+    colnames(TargetTable.df)[1:3]<-c("SourceVariableName" ,
                                 "SourceVariableType",
                                 "SourceVariableNullable")
   }
   TargetTable.df<-subset(TargetTable.df,
                          toupper(SourceVariableName)==toupper(FKcolumn))
-  TargetTable.df$CSISvariableName<-pkTable.df$CSISvariableName
-  TargetTable.df$CSISvariableType<-paste('[',pkTable.df$CSISvariableType,']',sep='')
+  TargetTable.df$CSISvariableName<-pkTable.df$PKColumnName
+  TargetTable.df$CSISvariableType<-paste('[',pkTable.df$ColumnDataType,']',sep='')
   if(TargetTable.df$CSISvariableType[1]=="[varchar]"){
     TargetTable.df$CSISvariableType<-paste(TargetTable.df$CSISvariableType,
-                                           "(",pkTable.df$CHARACTER_MAXIMUM_LENGTH,")\n",
+                                           "(",pkTable.df$ColumnLength,")",
                                            sep="")
   }
 
-  # TargetTable.df<-ConvertSwitch(TargetTable.df,IsTryConvert=TRUE)
-  # TargetTable.df<-LengthCheck(TargetTable.df)
-  
   Output<-''
   
+  #If the VariableTypes don't match, create a select and alter to fix that'
   if(TargetTable.df$CSISvariableType!=TargetTable.df$SourceVariableType){
     Output<-Create_Try_Converts(TargetTable.df,
                                 FKschema,
                                 FKtable)
-    
-    
-    Output<-rbind(Output,
-                  paste("ALTER TABLE ",FKschema,".",FKtable,"\n",
-                        "ALTER COLUMN ",FKcolumn," ",TargetTable.df$CSISvariableType,sep="")
-    )
+
   }
   
+  #Select all of the unmached values in the foreign key table
   Output<-rbind(Output,
                 paste("SELECT DISTINCT fk.",FKcolumn,"\n",
                       "FROM ",FKschema,".",FKtable," as fk\n",
@@ -323,6 +333,7 @@ ConvertFieldToForeignKey<-function(FKschema,
                       "WHERE pk.",PKcolumn," is NULL\n",sep="")
   )
   
+  #Insert unmatched values into the primary key table
   Output<-rbind(Output,
                 paste("INSERT INTO ",PKschema,".",PKtable,"\n",
                       "(",PKcolumn,")\n",
@@ -339,7 +350,7 @@ ConvertFieldToForeignKey<-function(FKschema,
                       ,"_",gsub("\\[","",gsub("\\]","",FKtable)),"_",
                       gsub("\\[","",gsub("\\]","",FKcolumn)),
                       " foreign key(",FKcolumn,")\n"
-                      ,"references ",PKschema,".",PKtable,"(",PKcolumn,")",sep="")
+                      ,"references ",PKschema,".",PKtable,"(",PKcolumn,")\n",sep="")
   )
   Output
 }
