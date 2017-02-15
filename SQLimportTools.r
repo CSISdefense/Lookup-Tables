@@ -222,8 +222,10 @@ Create_Try_Converts<-function(MergeTable.df,
                               IncludeAlters=TRUE){
   #Limit it to just cases where the variable type is changing
   MergeTable.df<-subset(MergeTable.df,SourceVariableType!=MergeTable.df$CSISvariableType)
-  if(nrow(MergeTable.df)==0)
-    stop("No try_converts necessary")
+  if(nrow(MergeTable.df)==0){
+    warning("No try_converts necessary")
+    return
+  }
   MergeTable.df<-ConvertSwitch(MergeTable.df,101,TRUE)
   MergeTable.df<-LengthCheck(MergeTable.df)
   
