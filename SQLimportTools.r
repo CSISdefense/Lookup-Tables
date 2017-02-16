@@ -224,7 +224,7 @@ Create_Try_Converts<-function(MergeTable.df,
   MergeTable.df<-subset(MergeTable.df,SourceVariableType!=MergeTable.df$CSISvariableType)
   if(nrow(MergeTable.df)==0){
     warning("No try_converts necessary")
-    return
+    return(0)
   }
   MergeTable.df<-ConvertSwitch(MergeTable.df,101,TRUE)
   MergeTable.df<-LengthCheck(MergeTable.df)
@@ -355,4 +355,31 @@ ConvertFieldToForeignKey<-function(FKschema,
                       ,"references ",PKschema,".",PKtable,"(",PKcolumn,")\n",sep="")
   )
   Output
+}
+
+
+MatchTwoTables<-function(NewSchema,NewTable,TargetSchema,TargetTable){
+  #******Importing into Voter_VoterList_2016_07_14.txt
+  NewTableType.df<-ReadCreateTable(paste(NewSchema,"_",NewTable,".txt",sep=""))
+  NewTableType.df<-TranslateName(NewTableType.df)
+  
+  #Sync up with the VID Table
+  TargetTableType.df<-ReadCreateTable(paste(TargetSchema,"_",TargetTable,".txt",sep=""))
+  MergeType.df<-MergeSourceAndCSISnameTables(NewTableType.df,TargetTableType.df)
+  TryConvertList<-Create_Try_Converts(MergeType.df,NewSchema,NewTable)
+  write(TryConvertList,
+        paste(NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","try_convert.txt",sep=""), 
+        append=TRUE)
+  
+  #Transfer from Voter.VoterList_2016_07_14 to Voter.VID
+  MergeType.df<-subset(MergeType.df,!is.na(CSISvariableType))
+  
+  InsertList<-CreateInsert(MergeType.df,
+                           NewSchema,
+                           NewTable,
+                           TargetSchema,
+                           TargetTable,
+                           DateType=101)
+  write(InsertList,
+        paste(NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","Insert.txt",sep=""))
 }
