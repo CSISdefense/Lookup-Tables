@@ -215,7 +215,7 @@ LengthCheck<-function(MergeTable.df){
 }
 
 
-Create_Try_Converts<-function(MergeTable.df,
+CreateTryConverts<-function(MergeTable.df,
                               Schema,
                               TableName,
                               DateType=101,
@@ -301,6 +301,8 @@ ConvertFieldToForeignKey<-function(FKschema,
                        toupper(PKTableName)==toupper(PKtable) &
                      toupper(PKColumnName)==toupper(PKcolumn))
   #Test if the field can be converted to the primary keys typed.
+
+  
   if(!"SourceVariableType" %in% colnames(TargetTable.df)){
     colnames(TargetTable.df)[1:3]<-c("SourceVariableName" ,
                                 "SourceVariableType",
@@ -308,22 +310,26 @@ ConvertFieldToForeignKey<-function(FKschema,
   }
   TargetTable.df<-subset(TargetTable.df,
                          toupper(SourceVariableName)==toupper(FKcolumn))
-  TargetTable.df$CSISvariableName<-pkTable.df$PKColumnName
-  TargetTable.df$CSISvariableType<-paste('[',pkTable.df$ColumnDataType,']',sep='')
-  if(TargetTable.df$CSISvariableType[1]=="[varchar]"){
-    TargetTable.df$CSISvariableType<-paste(TargetTable.df$CSISvariableType,
-                                           "(",pkTable.df$ColumnLength,")",
-                                           sep="")
-  }
-
-  Output<-''
   
+  
+  Output<-''
+  TargetTable.df<-join(TargetTable.df,pkTable.df)
   #If the VariableTypes don't match, create a select and alter to fix that'
-  if(TargetTable.df$CSISvariableType!=TargetTable.df$SourceVariableType){
-    Output<-Create_Try_Converts(TargetTable.df,
+  
+    TryConvertTable.df<-TargetTable.df
+    TryConvertTable.df$CSISvariableName<-pkTable.df$PKColumnName
+    TryConvertTable.df$CSISvariableType<-paste('[',pkTable.df$ColumnDataType,']',sep='')
+    if(TryConvertTable.df$CSISvariableType[1]=="[varchar]"){
+      TryConvertTable.df$CSISvariableType<-paste(TryConvertTable.df$CSISvariableType,
+                                             "(",pkTable.df$ColumnLength,")",
+                                             sep="")
+    }
+  if(TryConvertTable.df$CSISvariableType!=TryConvertTable.df$SourceVariableType){  
+    Output<-CreateTryConverts(TryConvertTable.df,
                                 FKschema,
                                 FKtable)
-
+    
+    rm(TryConvertTable.df)
   }
   
   #Select all of the unmached values in the foreign key table
@@ -358,6 +364,39 @@ ConvertFieldToForeignKey<-function(FKschema,
 }
 
 
+CreateForeignKeyAssigments<-function(Schema,
+                            TableName){
+  
+  MergeTable.df<-ReadCreateTable(paste(Schema,"_",TableName,".txt",sep=""))
+  MergeTable.df<-TranslateName(MergeTable.df)
+  
+  #Limit it to just cases where the variable type is changing
+  lookup.CSISvariableNameToPrimaryKey<-read.csv(file.path("ImportAids","Lookup_CSISvariableNameToPrimaryKey.csv"),
+                                  stringsAsFactors = FALSE,
+                                  na.strings=c(""))
+  MergeTable.df<-join(MergeTable.df,lookup.CSISvariableNameToPrimaryKey)
+  MergeTable.df<-subset(MergeTable.df,!is.na(PKSchemaName))
+  if(nrow(MergeTable.df)==0){
+    warning("No foreign keys to assign")
+    return(0)
+  }
+  ForeignKeyList<-''
+  for(i in 1:nrow(MergeTable.df))
+    ForeignKeyList<-rbind(ForeignKeyList,
+                          ConvertFieldToForeignKey(Schema,TableName,MergeTable.df$SourceVariableName[i],
+                                                   MergeTable.df,
+                                                   MergeTable.df$PKSchemaName[i],MergeTable.df$PKTableName[i])
+    )
+  
+
+  write(ForeignKeyList,
+        paste(Schema,"_",TableName,"_foreign_key.txt",sep=""), 
+        append=FALSE)  
+  
+    ForeignKeyList
+}
+
+
 MatchTwoTables<-function(NewSchema,NewTable,TargetSchema,TargetTable){
   #******Importing into Voter_VoterList_2016_07_14.txt
   NewTableType.df<-ReadCreateTable(paste(NewSchema,"_",NewTable,".txt",sep=""))
@@ -365,16 +404,16 @@ MatchTwoTables<-function(NewSchema,NewTable,TargetSchema,TargetTable){
   
   #Sync up with the VID Table
   TargetTableType.df<-ReadCreateTable(paste(TargetSchema,"_",TargetTable,".txt",sep=""))
-  MergeType.df<-MergeSourceAndCSISnameTables(NewTableType.df,TargetTableType.df)
-  TryConvertList<-Create_Try_Converts(MergeType.df,NewSchema,NewTable)
+  MergeTable.df<-MergeSourceAndCSISnameTables(NewTableType.df,TargetTableType.df)
+  TryConvertList<-CreateTryConverts(MergeTable.df,NewSchema,NewTable)
   write(TryConvertList,
         paste(NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","try_convert.txt",sep=""), 
         append=TRUE)
   
   #Transfer from Voter.VoterList_2016_07_14 to Voter.VID
-  MergeType.df<-subset(MergeType.df,!is.na(CSISvariableType))
+  MergeTable.df<-subset(MergeTable.df,!is.na(CSISvariableType))
   
-  InsertList<-CreateInsert(MergeType.df,
+  InsertList<-CreateInsert(MergeTable.df,
                            NewSchema,
                            NewTable,
                            TargetSchema,
