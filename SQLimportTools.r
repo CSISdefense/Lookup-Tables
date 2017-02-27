@@ -422,3 +422,37 @@ MatchTwoTables<-function(NewSchema,NewTable,TargetSchema,TargetTable){
   write(InsertList,
         paste(NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","Insert.txt",sep=""))
 }
+
+
+ShiftTable<-function(Schema,
+                     Table,
+                     NColShift,
+                     FirstColumnName=NA,
+                     WhereValue=NA){
+  TableType.df<-ReadCreateTable(paste(Schema,"_",Table,".txt",sep=""))  
+  ListLength<-length(TableType.df$VariableName)
+  FirstColumn<-1
+  if(!is.na(FirstColumnName)){
+    FirstColumn<-which(toupper(TableType.df$VariableName) %in% toupper(c(FirstColumnName,paste("[",FirstColumnName,"]",sep=""))))
+    if(length(FirstColumn)==0) return(paste("Invalid FirstColumnName:",FirstColumnName))
+  }
+  TargetNameList<-TableType.df$VariableName[FirstColumn:(ListLength-NColShift)]
+  SourceNameList<-TableType.df$VariableName[(FirstColumn+NColShift):ListLength]
+  
+  if(is.na(WhereValue)) WhereValue<-"--Add Where criteria here"
+  
+  Output<- "SELECT "
+  Output<-rbind(Output,paste(TargetNameList,"=", SourceNameList,",",collapse="\n"))
+  Output[length(Output)]<-substring(Output[length(Output)],1,nchar(Output[length(Output)])-1)
+  Output<- rbind(Output,paste("FROM ",Schema,".",Table,sep=""))
+  Output<- rbind(Output,paste("WHERE",WhereValue,"\n\n"))
+  Output<- rbind(Output,paste("UPDATE ",Schema,".",Table,"\n",
+                              "SET ",sep=""
+  ))
+  Output<-rbind(Output,paste(TargetNameList,"=", SourceNameList,",",collapse="\n"))
+  Output[length(Output)]<-substring(Output[length(Output)],1,nchar(Output[length(Output)])-1)
+  Output<- rbind(Output,paste("WHERE",WhereValue,"\n\n"))
+  write(Output,
+        paste("Shift_",Schema,"_",Table,"_by_",NColShift,".txt",sep=""),
+        append=FALSE)
+}
