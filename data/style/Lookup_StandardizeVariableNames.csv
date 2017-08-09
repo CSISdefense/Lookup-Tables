@@ -1,0 +1,189 @@
+Original,Replacement
+SumOfobligatedAmount,Action.Obligation
+ObligatedAmount,Action.Obligation
+SingleYearObligatedAmount,Contract.Size
+SizeOfSumOfObligatedAmount,Contract.Size
+Base.and.All.Options.Value,ContractBaseAndAllOptionsValue
+Sumofbaseandalloptionsvalue,ContractBaseAndAllOptionsValue
+SumOfbaseandexercisedoptionsvalue,ContractBaseAndExercisedOptionsValue
+ContractingAgencyID,Contracting.Agency.ID
+SumOfContractObligatedAmount,ContractObligatedAmount
+ParentOrPartnerName,ContractorDisplayName
+customer,Customer
+DEPLOYMENT,Deployment
+fiscal.year,Fiscal.Year
+Fiscal_Year,Fiscal.Year
+SumofGBKdisbursements,GBKdisbursements
+SumofGBKObligations,GBKObligations
+Majorcommandid,MajorCommandID
+SumofOutlayNoOffsetAccount,OutlayNoOffsetAccount
+SumofOutlay,OutlayOffsetAccount
+SumofOutlayOffsetAccount,OutlayOffsetAccount
+PoPStateCode,PoPstateCode
+StateCode,PoPstateCode
+FundingMechanismClassification,Pricing.Mechanism
+TypeofContractPricingtext,Pricing.Mechanism
+TypeOfContractPricing,Pricing.Mechanism.Code
+Simple,SimpleArea
+ProductorServiceArea,ProductOrServiceArea
+ProductsCategory,ProductOrServiceArea
+ServiceCategory,ProductOrServiceArea
+Services.Category,ProductOrServiceArea
+ServicesCategory,ProductOrServiceArea
+simplearea,SimpleArea
+Sub_Customer,SubCustomer
+SubCustomerSum,SubCustomer
+SumOfUnmodifiedbaseandalloptionsvalue,UnmodifiedContractBaseAndAllOptionsValue
+SumOfUnmodifiedbaseandexercisedoptionsvalue,UnmodifiedContractBaseAndExercisedOptionsValue
+SumOfUnmodifiedobligatedAmount,UnmodifiedContractObligatedAmount
+VehicleClassification,Vehicle
+Size,Vendor.Size
+VendorSize,Vendor.Size
+AnnualSimpleBucketVendorRank,VendorRank
+AnnualSubCustomerVendorRank,VendorRank
+ContractAnnualCustomerVendorRank,VendorRank
+subcustomer,SubCustomer
+ï..fiscal_year,Fiscal.Year
+pCEffNot Effective Comp.,pNoEffComp
+pCEffEffective Comp.,pEffComp
+pPlatElectronics and Communications ,pPlatEnC
+pPlatFacilities and Construction,pPlatFnC
+pPlatLand Vehicles,pPlatLand
+pPlatWeapons and Ammunition,pPlatWnA
+pPlatOther,pPlatOther
+pPlatMissile and Space Systems,pPlatMnS
+pPlatAircraft and Drones,pPlatAir
+pPlatShips & Submarines,pPlatVessel
+pPSRProducts (All),pPSRProducts
+pPSRServices (Non-R&D),pPSRServices
+pPSRR&D,pRnD
+pPSCElectronics & Communications,pPscEnC
+pPSCOther                     ,pPscOther                     
+pPSCFuels,pPscFuels
+pPSCICT,pPscICT
+pPSCFRS&C,pPscFRSnC
+pPSCPAMS,pPscPAMS
+pPSCERS,pPscERS
+pPSCEngines & Power Plants,pPscEngines
+pPSCLaunchers & Munitions,pPscLnM
+pPSCMED,pPscMED
+pPSCMissiles & Space,pPscMnS
+pPSCAircraft,pPscAir
+pPSCGround Vehicles,pPscLand
+pPSCR&D,pPscRnD
+pPSCShips,pPscShips
+pPscClothing & Subsistence,pPscCloth
+pPriceFixed,pPriceFixed
+pPriceTime/Mat.,pPriceTime
+pPriceCost+,pPriceCost
+pPriceOther,pPriceOther
+pPriceCombination,pPriceComb
+pFeeNone,pFeeNone
+pFeeRedetermination,pFeeRedermination
+pFeeEPA,pFeeEPA
+pFeeFixed,pFeeFixed
+pFeeAward,pFeeAward
+pFeeIncentive,pFeeIncentive
+pFeeLevel Of Effort,pFeeEffort
+pCompNo Comp.,pCompNoComp
+pComp1 Offer,pComp1Offer
+pComp2 Offers,pComp2Offers
+pComp3+ Offers,pComp3pOffers
+pComp3-4 Offers,pComp3or4Offers
+pComp5+ Offers,pComp5pOffers
+pCompNo Comp. (Other),pNoCompOther
+pCompNo Comp. (Only 1 Source),pNoComp1Source
+pCompFollow on to Competed Action,pNoCompFollowOn
+pIDVIDV,pIDV
+pIDVAward,pAward
+pVehFSS,pVehFSS
+pVehSingle-Awd.,pVehSAC
+pVehPur. Order,pVehPur
+pVehDefinitive,pVehDef
+pVehMulti-Awd.,pVehMAC
+pVehUnlbd. IDV,pVehIDVUnl
+pVehOther IDV,pVehOIDV
+pVehBPA,pVehBPA
+year,Year
+region,Region
+iYear,Year
+Classification,Classified  
+Account,Account
+Account.Title,AccountTitle
+Budget.Activity,BudgetActivity
+Budget.Activity.Title,BudgetActivityTitle
+Budget.Activity.Short.Title,BudgetActivityTitle
+Budget.Sub.Activity,BudgetSubActivity
+Budget.Sub.Activity.Title,BudgetSubActivityTitle
+Budget.Sub.Activity..BSA..Title,BudgetSubActivityTitle
+BSA,BSA
+BSA.Title,BSAtitle
+AG.Title,AGtitle
+SAG…,SAGtitle
+Facility.Category.Title,FacilityCategoryTitle
+State.Country,StateCountry
+State.Country.Title,StateCountryTitle
+Location.Title,LocationTitle
+Line.Item,LineItem
+Line.Item.Title,LineItemTitle
+Construction.Project,ConstructionProject
+Construction.Project.Title,ConstructionProjectTitle
+Cost.Type,CostType
+Cost.Type.Title,CostTypeTitle
+Classified,Classified
+FiscalYear,FiscalYear
+Actual,Actual
+App,App
+Base.App,Base_App
+Base.PB,Base_PB
+OCO.App,OCO_App
+OCO.PB,OCO_PB
+PB,PB
+Quant.Actual,Quant_Actual
+Quant.App,Quant_App
+Quant.Base.App,Quant_Base_App
+Quant.Base.PB,Quant_Base_PB
+Quant.OCO.App,Quant_OCO_App
+Quant.OCO.PB,Quant_OCO_PB
+Quant.PB,Quant_PB
+Organization,Organization
+Line.Number,LineNumber
+PE,ProgramElement
+PE.Title,ProgramElementTitle
+PE...BLI,ProgramElement
+Program.Element.Title,ProgramElementTitle
+Program.Element...Budget.Line.Item..BLI..Title,ProgramElementTitle
+Include.in.TOA,IncludeInTOA
+Add..Non.Add,AddOrNonAdd
+Mil.Dept.DW,MilDeptDW
+X.....Auth.........Amount...,AuthAmount
+X...Auth.for....Appn.Amount.,AuthForAppnAmount
+X.....Appn.........Amount...,AppnAmount
+X.....TOA..........Amount...,TOAamount
+AG...Budget.SubActivity..BSA..Title,BudgetSubActivityTitle
+SAG...Budget.Line.Item..BLI..Title,BudgetLineItem
+SAG...BLI,SAG
+Add/.Non-Add,AddOrNonAdd
+TOAamount,TOAamount
+X..Emergency......Disaster...Relief.Act.of......2013....,EmergencyDisasterReliefActof2013
+X....TOA..Total...Base.Request.with.CR.Adj..,TOAtotalBaseRequestWithCRadj
+X.....TOA......Annualized....CR.Base...,TOAannualizedCRbase
+,
+X.....TOA......Annualized....CR.OCO....,TOAannualizedCROCO
+X....Auth.......Amount..,AuthAmount
+X.Auth.for...Appn.Amount,AuthForAppnAmount
+X....Appn.......Amount..,AppnAmount
+X.....TOA.......Amount..,TOAamount
+X......Auth.......Amount..,AuthAmount
+X...Auth.for...Appn.Amount,AuthForAppnAmount
+X..Appn.Base..Request.with....CR.Adj...,AppnBaseRequestWithCRadj
+X..TOA.Base...Request.with....CR.Adj...,TOAbaseRequestWithCRadj
+X....Appn......Annualized....CR.Base...,AppnAnnualizedCRbase
+Annualized.CR.Base..,AnnualizedCRbase
+X..Appn.OCO...Request.with....CR.Adj...,AppnOCOrequestWithCRadj
+X...TOA.OCO...Request.with....CR.Adj...,TOAOCOrequestWithCRadj
+X....Appn......Annualized....CR.OCO....,AppnAnnualizedCROCO
+X.........Appn.........Amount...,AppnAmount
+X.........Auth.........Amount...,AuthAmount
+X.......Auth.for....Appn.Amount.,AuthForAppnAmount
+X.....TOA.Base....Request.with....CR.Adj....,TOAbaseRequestWithCRadj
