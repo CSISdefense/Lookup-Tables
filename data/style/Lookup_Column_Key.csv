@@ -1,4 +1,4 @@
-column,coloration.key,axis.title
+column,coloration.key,title
 Customer,Agencies,Customer
 Customer.detail,Agencies,Customer
 Customer.manual.subtitles,Agencies,Customer
@@ -78,3 +78,7 @@ UnmodifiedUltimateDurationCategory,Duration,
 isUndefinitizedAction,UCA,
 isUCA,UCA,
 Reachback,Reachback,
+Action.Obligation,,Action Obligation (Current?)
+Action.Obligation.Current,,Action Obligation (Current $s)
+Action.Obligation.2016,,Action Obligation (2016 $s)
+Fiscal.Year,,Fiscal Year
