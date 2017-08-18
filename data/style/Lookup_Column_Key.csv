@@ -38,6 +38,7 @@ SubCustomer,Agencies
 SubCustomer.detail,Agencies
 SubCustomer.sum,Agencies
 SubCustomer.component,Agencies
+SubCustomer.platform,Agencies
 Contract.Size.detail,Contract Size
 Contract.Size.sum,Contract Size
 PlatformPortfolio,PlatformPortfolio
