@@ -1,7 +1,8 @@
 Original,Replacement
 SumOfobligatedAmount,Action.Obligation
 ObligatedAmount,Action.Obligation
-Action.Obligation.Current,Action.Obligation.Current
+Action.Obligation.Current,Action.Obligation.Then.Year
+Action.Obligation.Then.Year,Action.Obligation.Then.Year
 Action.Obligation.Deflator.2016,Action.Obligation.2016
 SingleYearObligatedAmount,Contract.Size
 SizeOfSumOfObligatedAmount,Contract.Size
