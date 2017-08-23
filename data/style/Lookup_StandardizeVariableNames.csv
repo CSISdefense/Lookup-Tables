@@ -4,6 +4,7 @@ ObligatedAmount,Action.Obligation
 Action.Obligation.Current,Action.Obligation.Then.Year
 Action.Obligation.Then.Year,Action.Obligation.Then.Year
 Action.Obligation.Deflator.2016,Action.Obligation.2016
+SumOfnumberOfActions,Number.Of.Actions
 SingleYearObligatedAmount,Contract.Size
 SizeOfSumOfObligatedAmount,Contract.Size
 Base.and.All.Options.Value,ContractBaseAndAllOptionsValue
