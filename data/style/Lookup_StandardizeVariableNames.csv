@@ -3,6 +3,7 @@ SumOfobligatedAmount,Action.Obligation
 ObligatedAmount,Action.Obligation
 Action.Obligation.Current,Action.Obligation.Then.Year
 Action.Obligation.Then.Year,Action.Obligation.Then.Year
+PrimeOrSubObligatedAmount.Deflator.2016,PrimeOrSubObligatedAmount.2016
 Action.Obligation.Deflator.2016,Action.Obligation.2016
 SumOfnumberOfActions,Number.Of.Actions
 SingleYearObligatedAmount,Contract.Size
