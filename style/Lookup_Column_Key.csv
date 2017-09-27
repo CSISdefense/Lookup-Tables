@@ -4,6 +4,7 @@ Customer.detail,Agencies,Customer
 Customer.manual.subtitles,Agencies,Customer
 Customer.sum,Agencies,Customer
 Agency,Agencies,Agency
+Is.Defense,Agencies,Defense or Civilian
 SubFunder.Detail,Agencies,Funding Component
 SubCustomer,Agencies,Component
 SubCustomer.detail,Agencies,Component
