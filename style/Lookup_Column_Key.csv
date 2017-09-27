@@ -4,6 +4,7 @@ Customer.detail,Agencies,Customer
 Customer.manual.subtitles,Agencies,Customer
 Customer.sum,Agencies,Customer
 Agency,Agencies,Agency
+Is.Defense,Agencies,Defense or Civilian
 SubFunder.Detail,Agencies,Funding Component
 SubCustomer,Agencies,Component
 SubCustomer.detail,Agencies,Component
@@ -68,13 +69,14 @@ FxCb,Pricing,
 Significance,Significance,
 DefOrEqu,Aggregate,
 MetricName,Aggregate,
-NIAcrisisFunding,Crisis,
 OCOlabelDetail,Crisis,
 International,International,
 IsCSISOCO,Crisis,
 OCOcrisisScore,Crisis,
+CrisisFunding,Crisis,
 IsOCOcrisisFunding,Crisis,
 OCOscoreBuckets,Crisis,
+NIAcrisisFunding,Crisis,
 ContractCrisisFunding,Crisis,
 UnmodifiedUltimateDurationCategory,Duration,
 isUndefinitizedAction,UCA,
