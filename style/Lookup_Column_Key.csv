@@ -78,6 +78,7 @@ IsOCOcrisisFunding,Crisis,
 OCOscoreBuckets,Crisis,
 NIAcrisisFunding,Crisis,
 ContractCrisisFunding,Crisis,
+contingencyhumanitarianpeacekeepingoperationText,Crisis,
 UnmodifiedUltimateDurationCategory,Duration,
 isUndefinitizedAction,UCA,
 isUCA,UCA,
@@ -86,3 +87,4 @@ Action.Obligation,,Action Obligation (Current?)
 Action.Obligation.Current,,Action Obligation (Current $s)
 Action.Obligation.2016,,Action Obligation (2016 $s)
 Fiscal.Year,,Fiscal Year
+ContingencyHumanitarianPeacekeepingOperation,ContingencyHumanitarianPeacekeepingOperation,Contingency or Humanitarian Peacekeeping Operation
