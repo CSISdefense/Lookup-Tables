@@ -70,6 +70,7 @@ Significance,Significance,
 DefOrEqu,Aggregate,
 MetricName,Aggregate,
 OCOlabelDetail,Crisis,
+NIAcontradictions,Crisis,
 International,International,
 IsCSISOCO,Crisis,
 OCOcrisisScore,Crisis,
@@ -81,12 +82,15 @@ ContractCrisisFunding,Crisis,
 contingencyhumanitarianpeacekeepingoperationText,Crisis,
 nationalinterestactioncodeText,Crisis,
 NAICcrisisFunding,Crisis,
+NIAlist,Crisis,
+SAMexception.sum,Crisis,
+SAMcrisisFunding,Crisis,
 UnmodifiedUltimateDurationCategory,Duration,
 isUndefinitizedAction,UCA,
 isUCA,UCA,
 Reachback,Reachback,
 Action.Obligation,,Action Obligation (Current?)
 Action.Obligation.Current,,Action Obligation (Current $s)
-Action.Obligation.2016,,Action Obligation (2016 $s)
+Action.Obligation.2016,,Constant 2016 $
 Fiscal.Year,,Fiscal Year
 ContingencyHumanitarianPeacekeepingOperation,ContingencyHumanitarianPeacekeepingOperation,Contingency or Humanitarian Peacekeeping Operation
