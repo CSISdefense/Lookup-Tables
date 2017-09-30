@@ -60,6 +60,7 @@ ATLpolicy,Regime,
 USDATL,Regime,
 MajorCommandName,MajorCommand,
 Theater,International,
+CrisisFundingTheater,International,
 ContractingOfficeName,ContractingOffice,Contracting Office
 CSISofficeName,ContractingOffice,Contracting Office
 CSISofficeName.PBL,ContractingOffice,Contracting Office
