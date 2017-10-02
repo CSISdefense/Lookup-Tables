@@ -59,7 +59,9 @@ JointScore,PBL,
 ATLpolicy,Regime,
 USDATL,Regime,
 MajorCommandName,MajorCommand,
+OMBtheater,International,
 Theater,International,
+CrisisFundingTheater,International,
 ContractingOfficeName,ContractingOffice,Contracting Office
 CSISofficeName,ContractingOffice,Contracting Office
 CSISofficeName.PBL,ContractingOffice,Contracting Office
@@ -75,6 +77,8 @@ International,International,
 IsCSISOCO,Crisis,
 OCOcrisisScore,Crisis,
 CrisisFunding,Crisis,
+CrisisPoints,Crisis,
+CrisisDisplay,Crisis,
 IsOCOcrisisFunding,Crisis,
 OCOscoreBuckets,Crisis,
 NIAcrisisFunding,Crisis,
@@ -94,3 +98,6 @@ Action.Obligation.Current,,Action Obligation (Current $s)
 Action.Obligation.2016,,Constant 2016 $
 Fiscal.Year,,Fiscal Year
 ContingencyHumanitarianPeacekeepingOperation,ContingencyHumanitarianPeacekeepingOperation,Contingency or Humanitarian Peacekeeping Operation
+IsMultipleYearProcRnD,Exclude,
+IsExcludedPSC,Exclude,
+IsExcludedCO,Exclude,
