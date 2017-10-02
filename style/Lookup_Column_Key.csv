@@ -42,6 +42,9 @@ comparison.dollar.type.detail,Dollar Type,
 comparison.dollar.type.sum,Dollar Type,
 Contract.Size.detail,Contract Size,Contract Size
 Contract.Size.sum,Contract Size,Contract Size
+Ceil,Contract Size,Contract Ceiling
+LowCeil,Contract Size,Contract Ceiling
+Ceil.Simple,Contract Size,Contract Ceiling
 PlatformPortfolio,PlatformPortfolio,Platform Portfolio
 PlatformPortfolio.sum,PlatformPortfolio,Platform Portfolio
 PlatformPortfolio.AnD,PlatformPortfolio,Platform Portfolio
@@ -90,8 +93,11 @@ NIAlist,Crisis,
 SAMexception.sum,Crisis,
 SAMcrisisFunding,Crisis,
 UnmodifiedUltimateDurationCategory,Duration,
+Dur,Duration,
+Dur.Simple,Duration,
 isUndefinitizedAction,UCA,
 isUCA,UCA,
+UCA,UCA,
 Reachback,Reachback,
 Action.Obligation,,Action Obligation (Current?)
 Action.Obligation.Current,,Action Obligation (Current $s)
