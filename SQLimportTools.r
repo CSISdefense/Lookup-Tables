@@ -1,6 +1,6 @@
 require(plyr)
 
-ReadCreateTable<-function(FileName){
+read_create_table<-function(FileName){
   TargetTable.df<-read.csv(file.path("ImportAids\\",FileName),header=FALSE,sep=" ")
   
   #For now we're ignoring everything except the lines describing variable types
@@ -32,7 +32,7 @@ ReadCreateTable<-function(FileName){
   TargetTable.df
 }
 
-ConvertAllOfType<-function(TargetTable.df,
+convert_all_of_type<-function(TargetTable.df,
                            OldType,
                            NewType,
                            Schema,
@@ -48,12 +48,12 @@ ConvertAllOfType<-function(TargetTable.df,
   ChangeList
 }
 
-ListProblemType<-function(TargetTable.df){
+list_problem_type<-function(TargetTable.df){
   TargetTable.df[TargetTable.df$VariableType=="[varchar](max)",]
 }
 
 
-TranslateName<-function(TargetTable.df){
+translate_name<-function(TargetTable.df){
   lookup.NameConversion<-read.csv("ImportAids\\NameConversion.csv",
                                   stringsAsFactors = FALSE)
   if(!"SourceVariableName" %in% colnames(TargetTable.df)){
@@ -80,7 +80,7 @@ TranslateName<-function(TargetTable.df){
 
 
 
-MergeSourceAndCSISnameTables<-function(SourceTable.df,CSIStable.df){
+merge_source_and_csis_name_tables<-function(SourceTable.df,CSIStable.df){
   colnames(SourceTable.df)[1:3]<-c("SourceVariableName",
                                    "SourceVariableType",
                                    "SourceNullable")
@@ -96,14 +96,14 @@ MergeSourceAndCSISnameTables<-function(SourceTable.df,CSIStable.df){
 
 
 
-CreateCSISdates<-function(Schema,TableName){
+create_csis_dates<-function(Schema,TableName){
   paste("ALTER TABLE ",Schema,".",TableName,"\n",
         "CREATE CSISmodifiedDate datetime2 NOT NULL default gettime(),\n",
         "CSIScreatedDate datetime2 NOT NULL default gettime()\n",
         sep="")
 }
 
-ConvertSwitch<-function(MergeTable.df,DateType=101,IsTryConvert=FALSE){
+convert_switch<-function(MergeTable.df,DateType=101,IsTryConvert=FALSE){
   #I swear I had this working, but then it broke hard and every time I tried to 
   #debug it, the crash took minutes to resolve.
   # OneSwitch<-function(VariableName,
@@ -192,9 +192,9 @@ ConvertSwitch<-function(MergeTable.df,DateType=101,IsTryConvert=FALSE){
 }
 
 
-LengthCheck<-function(MergeTable.df){
+length_check<-function(MergeTable.df){
 
-    MergeTable.df$LengthCheck<-""
+    MergeTable.df$length_check<-""
 
     MergeTable.df$VariableTypeNumber<-as.numeric(
         (substr(MergeTable.df$CSISvariableType,
@@ -204,9 +204,9 @@ LengthCheck<-function(MergeTable.df){
         
 
     SwitchList<-MergeTable.df$VariableShortType=="[varchar]"&
-        MergeTable.df$LengthCheck==""&
+        MergeTable.df$length_check==""&
         !is.na(MergeTable.df$VariableTypeNumber)
-    MergeTable.df$LengthCheck[SwitchList]<-
+    MergeTable.df$length_check[SwitchList]<-
         paste("OR len(",MergeTable.df$SourceVariableName[SwitchList] ,")",
               ">",MergeTable.df$VariableTypeNumber[SwitchList],"\n"
         )
@@ -215,7 +215,7 @@ LengthCheck<-function(MergeTable.df){
 }
 
 
-CreateTryConverts<-function(MergeTable.df,
+create_try_converts<-function(MergeTable.df,
                               Schema,
                               TableName,
                               DateType=101,
@@ -226,8 +226,8 @@ CreateTryConverts<-function(MergeTable.df,
     warning("No try_converts necessary")
     return(0)
   }
-  MergeTable.df<-ConvertSwitch(MergeTable.df,101,TRUE)
-  MergeTable.df<-LengthCheck(MergeTable.df)
+  MergeTable.df<-convert_switch(MergeTable.df,101,TRUE)
+  MergeTable.df<-length_check(MergeTable.df)
   
   ConvertList<-paste(
     "SELECT DISTINCT ",
@@ -239,7 +239,7 @@ CreateTryConverts<-function(MergeTable.df,
     MergeTable.df$ConvertList,
     " IS NULL AND\n",
     "NULLIF(",MergeTable.df$SourceVariableName,",'') IS NOT NULL)\n",
-    MergeTable.df$LengthCheck,
+    MergeTable.df$length_check,
     sep="")
   
   
@@ -258,13 +258,13 @@ CreateTryConverts<-function(MergeTable.df,
 }
 
 
-CreateInsert<-function(MergeTable.df,
+create_insert<-function(MergeTable.df,
                        SourceSchema,
                        SourceTableName,
                        TargetSchema,
                        TargetTableName,
                        DateType=101){
-  MergeTable.df<-ConvertSwitch(MergeTable.df,101,FALSE)
+  MergeTable.df<-convert_switch(MergeTable.df,101,FALSE)
   
   InsertList<-paste("INSERT INTO ",TargetSchema,".",TargetTableName,"\n",
                     "(",sep="")
@@ -286,7 +286,7 @@ CreateInsert<-function(MergeTable.df,
 
 
 
-ConvertFieldToForeignKey<-function(FKschema,
+convert_field_to_foreign_key<-function(FKschema,
                                    FKtable,
                                    FKcolumn,
                                    TargetTable.df,
@@ -325,7 +325,7 @@ ConvertFieldToForeignKey<-function(FKschema,
                                              sep="")
     }
   if(TryConvertTable.df$CSISvariableType!=TryConvertTable.df$SourceVariableType){  
-    Output<-CreateTryConverts(TryConvertTable.df,
+    Output<-create_try_converts(TryConvertTable.df,
                                 FKschema,
                                 FKtable)
     
@@ -364,11 +364,11 @@ ConvertFieldToForeignKey<-function(FKschema,
 }
 
 
-CreateForeignKeyAssigments<-function(Schema,
+create_foreign_key_assigments<-function(Schema,
                             TableName){
   
-  MergeTable.df<-ReadCreateTable(paste(Schema,"_",TableName,".txt",sep=""))
-  MergeTable.df<-TranslateName(MergeTable.df)
+  MergeTable.df<-read_create_table(paste(Schema,"_",TableName,".txt",sep=""))
+  MergeTable.df<-translate_name(MergeTable.df)
   
   #Limit it to just cases where the variable type is changing
   lookup.CSISvariableNameToPrimaryKey<-read.csv(file.path("ImportAids","Lookup_CSISvariableNameToPrimaryKey.csv"),
@@ -383,7 +383,7 @@ CreateForeignKeyAssigments<-function(Schema,
   ForeignKeyList<-''
   for(i in 1:nrow(MergeTable.df))
     ForeignKeyList<-rbind(ForeignKeyList,
-                          ConvertFieldToForeignKey(Schema,TableName,MergeTable.df$SourceVariableName[i],
+                          convert_field_to_foreign_key(Schema,TableName,MergeTable.df$SourceVariableName[i],
                                                    MergeTable.df,
                                                    MergeTable.df$PKSchemaName[i],MergeTable.df$PKTableName[i])
     )
@@ -397,15 +397,15 @@ CreateForeignKeyAssigments<-function(Schema,
 }
 
 
-MatchTwoTables<-function(NewSchema,NewTable,TargetSchema,TargetTable){
+match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable){
   #******Importing into Voter_VoterList_2016_07_14.txt
-  NewTableType.df<-ReadCreateTable(paste(NewSchema,"_",NewTable,".txt",sep=""))
-  NewTableType.df<-TranslateName(NewTableType.df)
+  NewTableType.df<-read_create_table(paste(NewSchema,"_",NewTable,".txt",sep=""))
+  NewTableType.df<-translate_name(NewTableType.df)
   
   #Sync up with the VID Table
-  TargetTableType.df<-ReadCreateTable(paste(TargetSchema,"_",TargetTable,".txt",sep=""))
-  MergeTable.df<-MergeSourceAndCSISnameTables(NewTableType.df,TargetTableType.df)
-  TryConvertList<-CreateTryConverts(MergeTable.df,NewSchema,NewTable)
+  TargetTableType.df<-read_create_table(paste(TargetSchema,"_",TargetTable,".txt",sep=""))
+  MergeTable.df<-merge_source_and_csis_name_tables(NewTableType.df,TargetTableType.df)
+  TryConvertList<-create_try_converts(MergeTable.df,NewSchema,NewTable)
   write(TryConvertList,
         paste(NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","try_convert.txt",sep=""), 
         append=TRUE)
@@ -413,7 +413,7 @@ MatchTwoTables<-function(NewSchema,NewTable,TargetSchema,TargetTable){
   #Transfer from Voter.VoterList_2016_07_14 to Voter.VID
   MergeTable.df<-subset(MergeTable.df,!is.na(CSISvariableType))
   
-  InsertList<-CreateInsert(MergeTable.df,
+  InsertList<-create_insert(MergeTable.df,
                            NewSchema,
                            NewTable,
                            TargetSchema,
@@ -424,12 +424,12 @@ MatchTwoTables<-function(NewSchema,NewTable,TargetSchema,TargetTable){
 }
 
 
-ShiftTable<-function(Schema,
+shift_table<-function(Schema,
                      Table,
                      NColShift,
                      FirstColumnName=NA,
                      WhereValue=NA){
-  TableType.df<-ReadCreateTable(paste(Schema,"_",Table,".txt",sep=""))  
+  TableType.df<-read_create_table(paste(Schema,"_",Table,".txt",sep=""))  
   ListLength<-length(TableType.df$VariableName)
   FirstColumn<-1
   if(!is.na(FirstColumnName)){

@@ -1,7 +1,7 @@
 USE [DIIG]
 GO
 
-/****** Object:  Table [ErrorLogging].[FPDSViolatesType]    Script Date: 9/20/2016 10:26:13 AM ******/
+/****** Object:  Table [ErrorLogging].[FPDSViolatesType]    Script Date: 10/27/2017 2:08:37 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -241,7 +241,8 @@ CREATE TABLE [ErrorLogging].[FPDSViolatesType](
 	[prime_awardee_executive4] [varchar](255) NULL,
 	[prime_awardee_executive4_compensation] [varchar](255) NULL,
 	[prime_awardee_executive5] [varchar](255) NULL,
-	[prime_awardee_executive5_compensation] [varchar](255) NULL
+	[prime_awardee_executive5_compensation] [varchar](255) NULL,
+	[IsDuplicateUTI] [bit] NULL
 ) ON [PRIMARY]
 
 GO
@@ -253,6 +254,9 @@ ALTER TABLE [ErrorLogging].[FPDSViolatesType] ADD  CONSTRAINT [DF_FPDS_CSISCreat
 GO
 
 ALTER TABLE [ErrorLogging].[FPDSViolatesType] ADD  CONSTRAINT [DF_FPDS_CSISModifiedDate]  DEFAULT (getdate()) FOR [CSISModifiedDate]
+GO
+
+ALTER TABLE [ErrorLogging].[FPDSViolatesType] ADD  DEFAULT ((0)) FOR [IsDuplicateUTI]
 GO
 
 

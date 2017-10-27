@@ -1,41 +1,39 @@
 #Setup
-# setwd("D:\\Users\\Greg Sanders\\Documents\\Development\\Lookup-Tables")
-setwd("K:\\Development\\Lookup-Tables")
 source("SQLimportTools.r")
 
 #******Importing into Errorlogging.FSRSviolatesConstraint
 #Match up Errorlogging.FSRSviolatesType to Errorlogging.FSRSviolatesConstraint
-OriginTableType.df<-ReadCreateTable("ErrorLogging_FSRSviolatesType.txt")
-DestTableType.df<-ReadCreateTable("ErrorLogging_FSRSviolatesConstraint.txt")
-OriginTableType.df<-TranslateName(OriginTableType.df)
-MergeType.df<-MergeSourceAndCSISnameTables(OriginTableType.df,DestTableType.df)
+OriginTableType.df<-read_create_table("ErrorLogging_FSRSviolatesType.txt")
+DestTableType.df<-read_create_table("ErrorLogging_FSRSviolatesConstraint.txt")
+OriginTableType.df<-translate_name(OriginTableType.df)
+MergeType.df<-merge_source_and_csis_name_tables(OriginTableType.df,DestTableType.df)
 
 #Create Try Convert
 TryConvertList<-Create_Try_Converts(MergeType.df,"Errorlogging","FSRSviolatesType")
 write(TryConvertList,"FSRStryConvertList.txt")
 
 #Transfer from Errorlogging.FSRSviolatesType to Errorlogging.FSRSviolatesConstraint
-InsertList<-CreateInsert(MergeType.df,
+InsertList<-create_insert(MergeType.df,
              "ErrorLogging",
              "FSRSviolatesType",
              "ErrorLogging",
              "FSRSviolatesConstraint",
              DateType=101)
 write(InsertList,"FSRSinsert.txt")
-write(CreateCSISdates("Contract","FSRS"),"CSISdates.txt")
+write(create_csis_dates("Contract","FSRS"),"CSISdates.txt")
 
 #******Importing into Contract.FSRS 
 #Match up Errorlogging.FSRSviolatesConstraint to Contract.FSRS 
-DestTableConstraint.df<-ReadCreateTable("Contract_FSRS.txt")
-OriginTableConstraint.df<-ReadCreateTable("ErrorLogging_FSRSviolatesConstraint.txt")
-OriginTableConstraint.df<-TranslateName(OriginTableConstraint.df)
-MergeConstraint.df<-MergeSourceAndCSISnameTables(OriginTableConstraint.df,DestTableConstraint.df)
+DestTableConstraint.df<-read_create_table("Contract_FSRS.txt")
+OriginTableConstraint.df<-read_create_table("ErrorLogging_FSRSviolatesConstraint.txt")
+OriginTableConstraint.df<-translate_name(OriginTableConstraint.df)
+MergeConstraint.df<-merge_source_and_csis_name_tables(OriginTableConstraint.df,DestTableConstraint.df)
 
 
 #Transfer from Errorlogging.FSRSviolatesConstraint to Contract.FSRS
-ConstTable.df<-TranslateName(DestTableConstraint.df)
-MergeConst<-MergeSourceAndCSISnameTables(ConstTable.df,ConstTable.df)
-InsertList<-CreateInsert(MergeConst,
+ConstTable.df<-translate_name(DestTableConstraint.df)
+MergeConst<-merge_source_and_csis_name_tables(ConstTable.df,ConstTable.df)
+InsertList<-create_insert(MergeConst,
                          "ErrorLogging",
                          "FSRSviolatesConstraint",
                          "Contract",
@@ -45,19 +43,19 @@ write(InsertList,"Insert2.txt")
 
 
 
-fkTable.df<-ReadCreateTable("Contract_FSRS.txt")
+fkTable.df<-read_create_table("Contract_FSRS.txt")
 
-  debug(ConvertFieldToForeignKey)
-  Output<-ConvertFieldToForeignKey("Contract","FSRS","[PrimeAwardPrincipalPlaceCountry]",
+  debug(convert_field_to_foreign_key)
+  Output<-convert_field_to_foreign_key("Contract","FSRS","[PrimeAwardPrincipalPlaceCountry]",
                            fkTable.df,
                            "FPDStypeTable","Country3lettercode")
-  write(Output,"ConvertfieldToForeignKey.txt")
+  write(Output,"convert_field_to_foreign_key.txt")
   
-  # ConvertFieldToForeignKey("Contract","FSRS","[SubAwardeeDunsnumber]",
+  # convert_field_to_foreign_key("Contract","FSRS","[SubAwardeeDunsnumber]",
   #                          fkTable.df,
   #                          "Contractor","Dunsnumber")
   # 
-  # ConvertFieldToForeignKey("Contract","FSRS","[SubAwardeeParentDuns]",
+  # convert_field_to_foreign_key("Contract","FSRS","[SubAwardeeParentDuns]",
   #                          fkTable.df,
   #                          "Contractor","Dunsnumber")
   
@@ -72,33 +70,33 @@ fkTable.df<-ReadCreateTable("Contract_FSRS.txt")
   # --scientific notation to decimal
   
   # 
-  # OriginalTable.df<-ReadCreateTable("ErrorLogging_FSRSviolatesType.csv")
-  # TargetTable.df<-ReadCreateTable("Contract_FSRS.csv")
-  # OriginalTable.df<-TranslateName(OriginalTable.df)
-  # MergeTable.df<-MergeSourceAndCSISnameTables(OriginalTable.df,TargetTable.df)
+  # OriginalTable.df<-read_create_table("ErrorLogging_FSRSviolatesType.csv")
+  # TargetTable.df<-read_create_table("Contract_FSRS.csv")
+  # OriginalTable.df<-translate_name(OriginalTable.df)
+  # MergeTable.df<-merge_source_and_csis_name_tables(OriginalTable.df,TargetTable.df)
   # 
-  # # ChangeList<-ConvertAllOfType(TargetTable.df,
+  # # ChangeList<-convert_all_of_type(TargetTable.df,
   # #                  "[real]",
   # #                  "[decimal](19, 4)",
   # #                  "Contract",
   # #                  "FSRS")
   # # write(ChangeList,"ChangeList.txt")
   # # 
-  # # ChangeList<-ConvertAllOfType(TargetTable.df,
+  # # ChangeList<-convert_all_of_type(TargetTable.df,
   # #                              "[real]",
   # #                              "[decimal](19, 4)",
   # #                              "Errorlogging",
   # #                              "FSRSviolatesConstraint")
   # # write(ChangeList,"ChangeList.txt")
   # 
-  # ListProblemType(TargetTable.df)
-  # debug(ConvertSwitch)
+  # list_problem_type(TargetTable.df)
+  # debug(convert_switch)
   # 
   # debug(OneSwitch)
   # TryConvertList<-Create_Try_Converts(MergeTable.df,"ErrorLogging","FSRSviolatesType")
   # write(TryConvertList,"TryConvertList.txt")
   # 
-  # InsertList<-CreateInsert(MergeTable.df,
+  # InsertList<-create_insert(MergeTable.df,
   #                          "ErrorLogging",
   #                          "FSRSviolatesType",
   #                          "ErrorLogging",

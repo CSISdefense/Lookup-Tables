@@ -1,7 +1,7 @@
 USE [DIIG]
 GO
 
-/****** Object:  Table [ErrorLogging].[FPDSViolatesConstraint]    Script Date: 9/20/2016 10:33:15 AM ******/
+/****** Object:  Table [ErrorLogging].[FPDSViolatesConstraint]    Script Date: 10/27/2017 2:08:59 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -54,7 +54,7 @@ CREATE TABLE [ErrorLogging].[FPDSViolatesConstraint](
 	[rec_flag] [varchar](4) NULL,
 	[typeofidc] [varchar](41) NULL,
 	[multipleorsingleawardidc] [varchar](1) NULL,
-	[programacronym] [varchar](28) NULL,
+	[programacronym] [varchar](29) NULL,
 	[vendorname] [varchar](150) NULL,
 	[vendoralternatename] [varchar](150) NULL,
 	[vendorlegalorganizationname] [varchar](150) NULL,
@@ -238,7 +238,8 @@ CREATE TABLE [ErrorLogging].[FPDSViolatesConstraint](
 	[prime_awardee_executive2] [varchar](100) NULL,
 	[prime_awardee_executive2_compensation] [decimal](19, 4) NULL,
 	[prime_awardee_executive1] [varchar](100) NULL,
-	[prime_awardee_executive1_compensation] [decimal](19, 4) NULL
+	[prime_awardee_executive1_compensation] [decimal](19, 4) NULL,
+	[IsDuplicateUTI] [bit] NULL
 ) ON [PRIMARY]
 
 GO
@@ -250,6 +251,9 @@ ALTER TABLE [ErrorLogging].[FPDSViolatesConstraint] ADD  CONSTRAINT [DF_FPDSViol
 GO
 
 ALTER TABLE [ErrorLogging].[FPDSViolatesConstraint] ADD  CONSTRAINT [DF_FPDSViolatesConstraint_CSISModifiedDate]  DEFAULT (getdate()) FOR [CSISModifiedDate]
+GO
+
+ALTER TABLE [ErrorLogging].[FPDSViolatesConstraint] ADD  DEFAULT ((0)) FOR [IsDuplicateUTI]
 GO
 
 

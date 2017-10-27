@@ -1,7 +1,7 @@
 USE [DIIG]
 GO
 
-/****** Object:  Table [Contract].[FSRS]    Script Date: 9/19/2016 11:12:47 AM ******/
+/****** Object:  Table [Contract].[FSRS]    Script Date: 10/27/2017 2:10:12 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -26,10 +26,10 @@ CREATE TABLE [Contract].[FSRS](
 	[PrimeAwardPrincipalPlaceState] [varchar](7) NULL,
 	[PrimeAwardPrincipalPlaceZIP] [varchar](50) NULL,
 	[PrimeAwardPrincipalPlaceDistrict] [varchar](9) NULL,
-	[PrimeAwardPrincipalPlaceCountry] [varchar](7) NULL,
+	[PrimeAwardPrincipalPlaceCountry] [varchar](3) NULL,
 	[PrimeAwardeeParentDuns] [varchar](13) NULL,
 	[PrimeAwardeeParentContractorName] [varchar](91) NULL,
-	[PrimeAwardContractingAgencyID] [varchar](9) NULL,
+	[PrimeAwardContractingAgencyID] [varchar](4) NULL,
 	[PrimeAwardContractingAgencyName] [varchar](67) NULL,
 	[PrimeAwardContractingOfficeID] [varchar](11) NULL,
 	[PrimeAwardContractingOfficeName] [varchar](73) NULL,
@@ -126,6 +126,27 @@ ALTER TABLE [Contract].[FSRS] ADD  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
 
 ALTER TABLE [Contract].[FSRS] ADD  DEFAULT (getdate()) FOR [CSIScreatedDate]
+GO
+
+ALTER TABLE [Contract].[FSRS]  WITH CHECK ADD  CONSTRAINT [fk_Contract_FSRS] FOREIGN KEY([PrimeAwardContractingAgencyID])
+REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
+GO
+
+ALTER TABLE [Contract].[FSRS] CHECK CONSTRAINT [fk_Contract_FSRS]
+GO
+
+ALTER TABLE [Contract].[FSRS]  WITH CHECK ADD  CONSTRAINT [fk_Contract_FSRS_PrimeAwardPrincipalPlaceCountry] FOREIGN KEY([PrimeAwardPrincipalPlaceCountry])
+REFERENCES [FPDSTypeTable].[Country3LetterCode] ([Country3LetterCode])
+GO
+
+ALTER TABLE [Contract].[FSRS] CHECK CONSTRAINT [fk_Contract_FSRS_PrimeAwardPrincipalPlaceCountry]
+GO
+
+ALTER TABLE [Contract].[FSRS]  WITH CHECK ADD  CONSTRAINT [fk_Contract_FSRS_PrimeAwardReportID] FOREIGN KEY([PrimeAwardReportID])
+REFERENCES [Contract].[PrimeAwardReportID] ([PrimeAwardReportID])
+GO
+
+ALTER TABLE [Contract].[FSRS] CHECK CONSTRAINT [fk_Contract_FSRS_PrimeAwardReportID]
 GO
 
 ALTER TABLE [Contract].[FSRS]  WITH CHECK ADD  CONSTRAINT [fk_FSRS_PrimeAwardeeParentDuns] FOREIGN KEY([PrimeAwardeeParentDuns])
