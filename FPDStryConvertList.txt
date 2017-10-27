@@ -324,11 +324,11 @@ OR len( [multipleorsingleawardidc] ) > 1
 
 SELECT DISTINCT [programacronym],
 len([programacronym]) as Length,
-'[varchar](28)' as DestinationType
+'[varchar](29)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](28), [programacronym]) IS NULL AND
+WHERE (Try_Convert([varchar](29), [programacronym]) IS NULL AND
 NULLIF([programacronym],'') IS NOT NULL)
-OR len( [programacronym] ) > 28 
+OR len( [programacronym] ) > 29 
 
 SELECT DISTINCT [vendorname],
 len([vendorname]) as Length,

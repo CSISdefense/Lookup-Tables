@@ -9,7 +9,7 @@ OriginTableType.df<-translate_name(OriginTableType.df)
 MergeType.df<-merge_source_and_csis_name_tables(OriginTableType.df,DestTableType.df)
 
 #Create Try Convert
-TryConvertList<-Create_Try_Converts(MergeType.df,"Errorlogging","FSRSviolatesType")
+TryConvertList<-create_try_converts(MergeType.df,"Errorlogging","FSRSviolatesType")
 write(TryConvertList,"FSRStryConvertList.txt")
 
 #Transfer from Errorlogging.FSRSviolatesType to Errorlogging.FSRSviolatesConstraint
@@ -93,7 +93,7 @@ fkTable.df<-read_create_table("Contract_FSRS.txt")
   # debug(convert_switch)
   # 
   # debug(OneSwitch)
-  # TryConvertList<-Create_Try_Converts(MergeTable.df,"ErrorLogging","FSRSviolatesType")
+  # TryConvertList<-create_try_converts(MergeTable.df,"ErrorLogging","FSRSviolatesType")
   # write(TryConvertList,"TryConvertList.txt")
   # 
   # InsertList<-create_insert(MergeTable.df,

@@ -1,6 +1,7 @@
 #Setup
 source("SQLimportTools.r")
 
+
 #******Importing into Errorlogging.FPDSviolatesConstraint
 #Match up Errorlogging.FPDSviolatesType to Errorlogging.FPDSviolatesConstraint
 OriginTableType.df<-read_create_table("ErrorLogging_FPDSviolatesType.txt")
@@ -10,8 +11,19 @@ MergeType.df<-merge_source_and_csis_name_tables(OriginTableType.df,DestTableType
 
 
 
+  #Join up the files
+MergeType.df$column<-MergeType.df$SourceVariableName
+MergeType.df<-read_and_join(MergeType.df,
+    "Lookup_Column_Key.csv",
+    path="https://raw.githubusercontent.com/CSISdefense/Lookup-Tables/master/style/",
+    directory="",
+    by="column",
+  add_var="is.colon.split"
+  )
+  
+
 #Create Try Convert
-TryConvertList<-Create_Try_Converts(MergeType.df,"Errorlogging","FPDSviolatesType")
+TryConvertList<-create_try_converts(MergeType.df,"Errorlogging","FPDSviolatesType")
 write(TryConvertList,"FPDStryConvertList.txt")
 
 #Transfer from Errorlogging.FPDSviolatesType to Errorlogging.FPDSviolatesConstraint

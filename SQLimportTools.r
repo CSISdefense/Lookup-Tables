@@ -1,4 +1,5 @@
-require(plyr)
+library(plyr)
+library(csis360)
 
 read_create_table<-function(FileName){
   TargetTable.df<-read.csv(file.path("ImportAids\\",FileName),header=FALSE,sep=" ")
@@ -219,7 +220,8 @@ create_try_converts<-function(MergeTable.df,
                               Schema,
                               TableName,
                               DateType=101,
-                              IncludeAlters=TRUE){
+                              IncludeAlters=TRUE,
+  path="https://raw.githubusercontent.com/CSISdefense/Lookup-Tables/master/style/"){
   #Limit it to just cases where the variable type is changing
   MergeTable.df<-subset(MergeTable.df,SourceVariableType!=MergeTable.df$CSISvariableType)
   if(nrow(MergeTable.df)==0){
@@ -228,6 +230,10 @@ create_try_converts<-function(MergeTable.df,
   }
   MergeTable.df<-convert_switch(MergeTable.df,101,TRUE)
   MergeTable.df<-length_check(MergeTable.df)
+  
+  
+  MergeTable.df<-get_column_key(MergeTable.df)
+  
   
   ConvertList<-paste(
     "SELECT DISTINCT ",
