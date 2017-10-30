@@ -193,68 +193,108 @@ convert_switch<-function(MergeTable.df,DateType=101,IsTryConvert=FALSE){
 }
 
 
-length_check<-function(MergeTable.df){
+length_check<-function(data){
 
-    MergeTable.df$length_check<-""
+    data$length_check<-""
 
-    MergeTable.df$VariableTypeNumber<-as.numeric(
-        (substr(MergeTable.df$CSISvariableType,
-                regexpr('[(]',MergeTable.df$CSISvariableType)+1,
-                regexpr('[)]',MergeTable.df$CSISvariableType)-1)
+    data$VariableTypeNumber<-as.numeric(
+        (substr(data$CSISvariableType,
+                regexpr('[(]',data$CSISvariableType)+1,
+                regexpr('[)]',data$CSISvariableType)-1)
         ))
         
-
-    SwitchList<-MergeTable.df$VariableShortType=="[varchar]"&
-        MergeTable.df$length_check==""&
-        !is.na(MergeTable.df$VariableTypeNumber)
-    MergeTable.df$length_check[SwitchList]<-
-        paste("OR len(",MergeTable.df$SourceVariableName[SwitchList] ,")",
-              ">",MergeTable.df$VariableTypeNumber[SwitchList],"\n"
+  #No Colon
+    SwitchList<-data$VariableShortType=="[varchar]"&
+        data$length_check==""&
+        !is.na(data$VariableTypeNumber)&
+      (data$is.colon.split=="FALSE" | is.na(data$is.colon.split))
+    data$length_check[SwitchList]<-
+        paste("OR len(",data$SourceVariableName[SwitchList] ,")",
+              ">",data$VariableTypeNumber[SwitchList],"\n"
         )
+    
+    #Colon Split
+    SwitchList<-data$VariableShortType=="[varchar]"&
+      data$length_check==""&
+      !is.na(data$VariableTypeNumber)&
+      (data$is.colon.split=="TRUE")
+    data$length_check[SwitchList]<-
+      paste("OR len(",
+            "(Select LeftOfColon from FPDSTypeTable.leftofcolon(",
+            data$SourceVariableName[SwitchList],")))",
+            ">",data$VariableTypeNumber[SwitchList],"\n"
+      )
+    
+    
+    
+    data
+}
 
-    MergeTable.df
+left_of_colon<-function(data){
+  
+  data$left_of_colon<-""
+  
+  #Colon Split
+  SwitchList<-!is.na(data$is.colon.split) & data$is.colon.split=="TRUE"
+  data$left_of_colon[SwitchList]<-
+    paste("(Select LeftOfColon from FPDSTypeTable.leftofcolon(",
+          data$SourceVariableName[SwitchList],")) as leftofcolon,\n",
+    sep=""
+    )
+
+  data
 }
 
 
-create_try_converts<-function(MergeTable.df,
+create_try_converts<-function(data,
                               Schema,
                               TableName,
                               DateType=101,
                               IncludeAlters=TRUE,
   path="https://raw.githubusercontent.com/CSISdefense/Lookup-Tables/master/style/"){
   #Limit it to just cases where the variable type is changing
-  MergeTable.df<-subset(MergeTable.df,SourceVariableType!=MergeTable.df$CSISvariableType)
-  if(nrow(MergeTable.df)==0){
+  data<-subset(data,SourceVariableType!=data$CSISvariableType)
+  if(nrow(data)==0){
     warning("No try_converts necessary")
     return(0)
   }
-  MergeTable.df<-convert_switch(MergeTable.df,101,TRUE)
-  MergeTable.df<-length_check(MergeTable.df)
+  data<-convert_switch(data,101,TRUE)
   
   
-  MergeTable.df<-get_column_key(MergeTable.df)
+  data<-read_and_join(data,
+                              "Lookup_Column_Key.csv",
+                              path="https://raw.githubusercontent.com/CSISdefense/Lookup-Tables/master/style/",
+                              directory="",
+                              by="column",
+                              add_var="is.colon.split",
+                              new_var_checked=FALSE
+  )
+  
+  data<-length_check(data)
+  data<-left_of_colon(data)
   
   
+
   ConvertList<-paste(
     "SELECT DISTINCT ",
-    MergeTable.df$SourceVariableName,",\n",
-    "len(",MergeTable.df$SourceVariableName,") as Length,\n",
-    "'",MergeTable.df$CSISvariableType,"' as DestinationType","\n",
+    data$SourceVariableName,",\n",
+    "len(",data$SourceVariableName,") as Length,\n",
+    data$left_of_colon,
+    "'",data$CSISvariableType,"' as DestinationType","\n",
     "FROM ",Schema,".",TableName,"\n",
     "WHERE (",
-    MergeTable.df$ConvertList,
+    data$ConvertList,
     " IS NULL AND\n",
-    "NULLIF(",MergeTable.df$SourceVariableName,",'') IS NOT NULL)\n",
-    MergeTable.df$length_check,
+    "NULLIF(",data$SourceVariableName,",'') IS NOT NULL)\n",
+    data$length_check,
     sep="")
-  
   
   
   #Create an alter to fix that, if not supressed by user
   if(IncludeAlters){
     ConvertList<-rbind(ConvertList,
                        paste("ALTER TABLE ",Schema,".",TableName,"\n",
-                             "ALTER COLUMN ",MergeTable.df$SourceVariableName," ",
+                             "ALTER COLUMN ",data$SourceVariableName," ",
                              MergeTable.df$CSISvariableType,"\n",sep="")
     )
   }

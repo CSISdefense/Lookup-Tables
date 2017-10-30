@@ -13,17 +13,13 @@ MergeType.df<-merge_source_and_csis_name_tables(OriginTableType.df,DestTableType
 
   #Join up the files
 MergeType.df$column<-MergeType.df$SourceVariableName
-MergeType.df<-read_and_join(MergeType.df,
-    "Lookup_Column_Key.csv",
-    path="https://raw.githubusercontent.com/CSISdefense/Lookup-Tables/master/style/",
-    directory="",
-    by="column",
-  add_var="is.colon.split"
-  )
+MergeType.df$column<-substring(MergeType.df$column,2,nchar(MergeType.df$column)-1)
   
 
 #Create Try Convert
-TryConvertList<-create_try_converts(MergeType.df,"Errorlogging","FPDSviolatesType")
+debug(create_try_converts)
+TryConvertList<-create_try_converts(MergeType.df,"Errorlogging","FPDSviolatesType"
+                                    ,IncludeAlters=FALSE)
 write(TryConvertList,"FPDStryConvertList.txt")
 
 #Transfer from Errorlogging.FPDSviolatesType to Errorlogging.FPDSviolatesConstraint

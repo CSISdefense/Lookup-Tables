@@ -37,27 +37,30 @@ NULLIF([baseandalloptionsvalue],'') IS NOT NULL)
 
 SELECT DISTINCT [maj_agency_cat],
 len([maj_agency_cat]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([maj_agency_cat])) as leftofcolon,
 '[varchar](4)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](4), [maj_agency_cat]) IS NULL AND
 NULLIF([maj_agency_cat],'') IS NOT NULL)
-OR len( [maj_agency_cat] ) > 4 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [maj_agency_cat] ))) > 4 
 
 SELECT DISTINCT [mod_agency],
 len([mod_agency]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([mod_agency])) as leftofcolon,
 '[varchar](4)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](4), [mod_agency]) IS NULL AND
 NULLIF([mod_agency],'') IS NOT NULL)
-OR len( [mod_agency] ) > 4 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [mod_agency] ))) > 4 
 
 SELECT DISTINCT [maj_fund_agency_cat],
 len([maj_fund_agency_cat]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([maj_fund_agency_cat])) as leftofcolon,
 '[varchar](4)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](4), [maj_fund_agency_cat]) IS NULL AND
 NULLIF([maj_fund_agency_cat],'') IS NOT NULL)
-OR len( [maj_fund_agency_cat] ) > 4 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [maj_fund_agency_cat] ))) > 4 
 
 SELECT DISTINCT [contractingofficeagencyid],
 len([contractingofficeagencyid]) as Length,
@@ -144,19 +147,21 @@ OR len( [contractactiontype] ) > 41
 
 SELECT DISTINCT [reasonformodification],
 len([reasonformodification]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([reasonformodification])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [reasonformodification]) IS NULL AND
 NULLIF([reasonformodification],'') IS NOT NULL)
-OR len( [reasonformodification] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [reasonformodification] ))) > 1 
 
 SELECT DISTINCT [typeofcontractpricing],
 len([typeofcontractpricing]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([typeofcontractpricing])) as leftofcolon,
 '[varchar](2)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](2), [typeofcontractpricing]) IS NULL AND
 NULLIF([typeofcontractpricing],'') IS NOT NULL)
-OR len( [typeofcontractpricing] ) > 2 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [typeofcontractpricing] ))) > 2 
 
 SELECT DISTINCT [priceevaluationpercentdifference],
 len([priceevaluationpercentdifference]) as Length,
@@ -167,11 +172,12 @@ NULLIF([priceevaluationpercentdifference],'') IS NOT NULL)
 
 SELECT DISTINCT [subcontractplan],
 len([subcontractplan]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([subcontractplan])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [subcontractplan]) IS NULL AND
 NULLIF([subcontractplan],'') IS NOT NULL)
-OR len( [subcontractplan] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [subcontractplan] ))) > 1 
 
 SELECT DISTINCT [lettercontract],
 len([lettercontract]) as Length,
@@ -183,6 +189,7 @@ OR len( [lettercontract] ) > 1
 
 SELECT DISTINCT [multiyearcontract],
 len([multiyearcontract]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([multiyearcontract])) as leftofcolon,
 '[bit]' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([multiyearcontract]))) IS NULL AND
@@ -214,19 +221,21 @@ OR len( [contingencyhumanitarianpeacekeepingoperation] ) > 1
 
 SELECT DISTINCT [contractfinancing],
 len([contractfinancing]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([contractfinancing])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [contractfinancing]) IS NULL AND
 NULLIF([contractfinancing],'') IS NOT NULL)
-OR len( [contractfinancing] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [contractfinancing] ))) > 1 
 
 SELECT DISTINCT [costorpricingdata],
 len([costorpricingdata]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([costorpricingdata])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [costorpricingdata]) IS NULL AND
 NULLIF([costorpricingdata],'') IS NOT NULL)
-OR len( [costorpricingdata] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [costorpricingdata] ))) > 1 
 
 SELECT DISTINCT [costaccountingstandardsclause],
 len([costaccountingstandardsclause]) as Length,
@@ -246,6 +255,7 @@ OR len( [descriptionofcontractrequirement] ) > 4035
 
 SELECT DISTINCT [purchasecardaspaymentmethod],
 len([purchasecardaspaymentmethod]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([purchasecardaspaymentmethod])) as leftofcolon,
 '[bit]' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([purchasecardaspaymentmethod]))) IS NULL AND
@@ -260,11 +270,12 @@ NULLIF([numberofactions],'') IS NOT NULL)
 
 SELECT DISTINCT [nationalinterestactioncode],
 len([nationalinterestactioncode]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([nationalinterestactioncode])) as leftofcolon,
 '[varchar](4)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](4), [nationalinterestactioncode]) IS NULL AND
 NULLIF([nationalinterestactioncode],'') IS NOT NULL)
-OR len( [nationalinterestactioncode] ) > 4 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [nationalinterestactioncode] ))) > 4 
 
 SELECT DISTINCT [progsourceagency],
 len([progsourceagency]) as Length,
@@ -316,11 +327,12 @@ OR len( [typeofidc] ) > 41
 
 SELECT DISTINCT [multipleorsingleawardidc],
 len([multipleorsingleawardidc]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([multipleorsingleawardidc])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [multipleorsingleawardidc]) IS NULL AND
 NULLIF([multipleorsingleawardidc],'') IS NOT NULL)
-OR len( [multipleorsingleawardidc] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [multipleorsingleawardidc] ))) > 1 
 
 SELECT DISTINCT [programacronym],
 len([programacronym]) as Length,
@@ -562,27 +574,30 @@ OR len( [locationcode] ) > 9
 
 SELECT DISTINCT [statecode],
 len([statecode]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([statecode])) as leftofcolon,
 '[varchar](2)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](2), [statecode]) IS NULL AND
 NULLIF([statecode],'') IS NOT NULL)
-OR len( [statecode] ) > 2 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [statecode] ))) > 2 
 
 SELECT DISTINCT [pop_state_code],
 len([pop_state_code]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([pop_state_code])) as leftofcolon,
 '[varchar](2)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](2), [pop_state_code]) IS NULL AND
 NULLIF([pop_state_code],'') IS NOT NULL)
-OR len( [pop_state_code] ) > 2 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [pop_state_code] ))) > 2 
 
 SELECT DISTINCT [placeofperformancecountrycode],
 len([placeofperformancecountrycode]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([placeofperformancecountrycode])) as leftofcolon,
 '[varchar](3)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](3), [placeofperformancecountrycode]) IS NULL AND
 NULLIF([placeofperformancecountrycode],'') IS NOT NULL)
-OR len( [placeofperformancecountrycode] ) > 3 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [placeofperformancecountrycode] ))) > 3 
 
 SELECT DISTINCT [placeofperformancezipcode],
 len([placeofperformancezipcode]) as Length,
@@ -618,35 +633,39 @@ OR len( [psc_cat] ) > 2
 
 SELECT DISTINCT [productorservicecode],
 len([productorservicecode]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([productorservicecode])) as leftofcolon,
 '[varchar](4)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](4), [productorservicecode]) IS NULL AND
 NULLIF([productorservicecode],'') IS NOT NULL)
-OR len( [productorservicecode] ) > 4 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [productorservicecode] ))) > 4 
 
 SELECT DISTINCT [systemequipmentcode],
 len([systemequipmentcode]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([systemequipmentcode])) as leftofcolon,
 '[varchar](4)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](4), [systemequipmentcode]) IS NULL AND
 NULLIF([systemequipmentcode],'') IS NOT NULL)
-OR len( [systemequipmentcode] ) > 4 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [systemequipmentcode] ))) > 4 
 
 SELECT DISTINCT [claimantprogramcode],
 len([claimantprogramcode]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([claimantprogramcode])) as leftofcolon,
 '[varchar](3)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](3), [claimantprogramcode]) IS NULL AND
 NULLIF([claimantprogramcode],'') IS NOT NULL)
-OR len( [claimantprogramcode] ) > 3 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [claimantprogramcode] ))) > 3 
 
 SELECT DISTINCT [principalnaicscode],
 len([principalnaicscode]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([principalnaicscode])) as leftofcolon,
 '[varchar](6)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](6), [principalnaicscode]) IS NULL AND
 NULLIF([principalnaicscode],'') IS NOT NULL)
-OR len( [principalnaicscode] ) > 6 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [principalnaicscode] ))) > 6 
 
 SELECT DISTINCT [informationtechnologycommercialitemcategory],
 len([informationtechnologycommercialitemcategory]) as Length,
@@ -658,46 +677,52 @@ OR len( [informationtechnologycommercialitemcategory] ) > 30
 
 SELECT DISTINCT [gfe_gfp],
 len([gfe_gfp]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([gfe_gfp])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [gfe_gfp]) IS NULL AND
 NULLIF([gfe_gfp],'') IS NOT NULL)
-OR len( [gfe_gfp] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [gfe_gfp] ))) > 1 
 
 SELECT DISTINCT [useofepadesignatedproducts],
 len([useofepadesignatedproducts]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([useofepadesignatedproducts])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [useofepadesignatedproducts]) IS NULL AND
 NULLIF([useofepadesignatedproducts],'') IS NOT NULL)
-OR len( [useofepadesignatedproducts] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [useofepadesignatedproducts] ))) > 1 
 
 SELECT DISTINCT [recoveredmaterialclauses],
 len([recoveredmaterialclauses]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([recoveredmaterialclauses])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [recoveredmaterialclauses]) IS NULL AND
 NULLIF([recoveredmaterialclauses],'') IS NOT NULL)
-OR len( [recoveredmaterialclauses] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [recoveredmaterialclauses] ))) > 1 
 
 SELECT DISTINCT [seatransportation],
 len([seatransportation]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([seatransportation])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [seatransportation]) IS NULL AND
 NULLIF([seatransportation],'') IS NOT NULL)
-OR len( [seatransportation] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [seatransportation] ))) > 1 
 
 SELECT DISTINCT [contractbundling],
 len([contractbundling]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([contractbundling])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [contractbundling]) IS NULL AND
 NULLIF([contractbundling],'') IS NOT NULL)
-OR len( [contractbundling] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [contractbundling] ))) > 1 
 
 SELECT DISTINCT [consolidatedcontract],
 len([consolidatedcontract]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([consolidatedcontract])) as leftofcolon,
 '[bit]' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([consolidatedcontract]))) IS NULL AND
@@ -705,35 +730,39 @@ NULLIF([consolidatedcontract],'') IS NOT NULL)
 
 SELECT DISTINCT [countryoforigin],
 len([countryoforigin]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([countryoforigin])) as leftofcolon,
 '[varchar](3)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](3), [countryoforigin]) IS NULL AND
 NULLIF([countryoforigin],'') IS NOT NULL)
-OR len( [countryoforigin] ) > 3 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [countryoforigin] ))) > 3 
 
 SELECT DISTINCT [placeofmanufacture],
 len([placeofmanufacture]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([placeofmanufacture])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [placeofmanufacture]) IS NULL AND
 NULLIF([placeofmanufacture],'') IS NOT NULL)
-OR len( [placeofmanufacture] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [placeofmanufacture] ))) > 1 
 
 SELECT DISTINCT [manufacturingorganizationtype],
 len([manufacturingorganizationtype]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([manufacturingorganizationtype])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [manufacturingorganizationtype]) IS NULL AND
 NULLIF([manufacturingorganizationtype],'') IS NOT NULL)
-OR len( [manufacturingorganizationtype] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [manufacturingorganizationtype] ))) > 1 
 
 SELECT DISTINCT [agencyid],
 len([agencyid]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([agencyid])) as leftofcolon,
 '[varchar](4)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](4), [agencyid]) IS NULL AND
 NULLIF([agencyid],'') IS NOT NULL)
-OR len( [agencyid] ) > 4 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [agencyid] ))) > 4 
 
 SELECT DISTINCT [piid],
 len([piid]) as Length,
@@ -799,19 +828,21 @@ OR len( [solicitationid] ) > 69
 
 SELECT DISTINCT [extentcompeted],
 len([extentcompeted]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([extentcompeted])) as leftofcolon,
 '[varchar](3)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](3), [extentcompeted]) IS NULL AND
 NULLIF([extentcompeted],'') IS NOT NULL)
-OR len( [extentcompeted] ) > 3 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [extentcompeted] ))) > 3 
 
 SELECT DISTINCT [reasonnotcompeted],
 len([reasonnotcompeted]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([reasonnotcompeted])) as leftofcolon,
 '[varchar](3)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](3), [reasonnotcompeted]) IS NULL AND
 NULLIF([reasonnotcompeted],'') IS NOT NULL)
-OR len( [reasonnotcompeted] ) > 3 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [reasonnotcompeted] ))) > 3 
 
 SELECT DISTINCT [numberofoffersreceived],
 len([numberofoffersreceived]) as Length,
@@ -822,14 +853,16 @@ NULLIF([numberofoffersreceived],'') IS NOT NULL)
 
 SELECT DISTINCT [commercialitemacquisitionprocedures],
 len([commercialitemacquisitionprocedures]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([commercialitemacquisitionprocedures])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [commercialitemacquisitionprocedures]) IS NULL AND
 NULLIF([commercialitemacquisitionprocedures],'') IS NOT NULL)
-OR len( [commercialitemacquisitionprocedures] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [commercialitemacquisitionprocedures] ))) > 1 
 
 SELECT DISTINCT [commercialitemtestprogram],
 len([commercialitemtestprogram]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([commercialitemtestprogram])) as leftofcolon,
 '[bit]' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([commercialitemtestprogram]))) IS NULL AND
@@ -861,19 +894,21 @@ OR len( [competitiveprocedures] ) > 1
 
 SELECT DISTINCT [solicitationprocedures],
 len([solicitationprocedures]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([solicitationprocedures])) as leftofcolon,
 '[varchar](5)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](5), [solicitationprocedures]) IS NULL AND
 NULLIF([solicitationprocedures],'') IS NOT NULL)
-OR len( [solicitationprocedures] ) > 5 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [solicitationprocedures] ))) > 5 
 
 SELECT DISTINCT [typeofsetaside],
 len([typeofsetaside]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([typeofsetaside])) as leftofcolon,
 '[varchar](10)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](10), [typeofsetaside]) IS NULL AND
 NULLIF([typeofsetaside],'') IS NOT NULL)
-OR len( [typeofsetaside] ) > 10 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [typeofsetaside] ))) > 10 
 
 SELECT DISTINCT [localareasetaside],
 len([localareasetaside]) as Length,
@@ -885,11 +920,12 @@ OR len( [localareasetaside] ) > 4
 
 SELECT DISTINCT [evaluatedpreference],
 len([evaluatedpreference]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([evaluatedpreference])) as leftofcolon,
 '[varchar](6)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](6), [evaluatedpreference]) IS NULL AND
 NULLIF([evaluatedpreference],'') IS NOT NULL)
-OR len( [evaluatedpreference] ) > 6 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [evaluatedpreference] ))) > 6 
 
 SELECT DISTINCT [fedbizopps],
 len([fedbizopps]) as Length,
@@ -1142,11 +1178,12 @@ NULLIF([hospitalflag],'') IS NOT NULL)
 
 SELECT DISTINCT [contractingofficerbusinesssizedetermination],
 len([contractingofficerbusinesssizedetermination]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([contractingofficerbusinesssizedetermination])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [contractingofficerbusinesssizedetermination]) IS NULL AND
 NULLIF([contractingofficerbusinesssizedetermination],'') IS NOT NULL)
-OR len( [contractingofficerbusinesssizedetermination] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [contractingofficerbusinesssizedetermination] ))) > 1 
 
 SELECT DISTINCT [is1862landgrantcollege],
 len([is1862landgrantcollege]) as Length,
@@ -1549,30 +1586,34 @@ NULLIF([isjointventureecondisadvwomenownedsmallbusiness],'') IS NOT NULL)
 
 SELECT DISTINCT [walshhealyact],
 len([walshhealyact]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([walshhealyact])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [walshhealyact]) IS NULL AND
 NULLIF([walshhealyact],'') IS NOT NULL)
-OR len( [walshhealyact] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [walshhealyact] ))) > 1 
 
 SELECT DISTINCT [servicecontractact],
 len([servicecontractact]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([servicecontractact])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [servicecontractact]) IS NULL AND
 NULLIF([servicecontractact],'') IS NOT NULL)
-OR len( [servicecontractact] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [servicecontractact] ))) > 1 
 
 SELECT DISTINCT [davisbaconact],
 len([davisbaconact]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([davisbaconact])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [davisbaconact]) IS NULL AND
 NULLIF([davisbaconact],'') IS NOT NULL)
-OR len( [davisbaconact] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [davisbaconact] ))) > 1 
 
 SELECT DISTINCT [clingercohenact],
 len([clingercohenact]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([clingercohenact])) as leftofcolon,
 '[bit]' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([clingercohenact]))) IS NULL AND
@@ -1580,11 +1621,12 @@ NULLIF([clingercohenact],'') IS NOT NULL)
 
 SELECT DISTINCT [interagencycontractingauthority],
 len([interagencycontractingauthority]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([interagencycontractingauthority])) as leftofcolon,
 '[varchar](3)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](3), [interagencycontractingauthority]) IS NULL AND
 NULLIF([interagencycontractingauthority],'') IS NOT NULL)
-OR len( [interagencycontractingauthority] ) > 3 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [interagencycontractingauthority] ))) > 3 
 
 SELECT DISTINCT [PlaceofPerformanceCity],
 len([PlaceofPerformanceCity]) as Length,
