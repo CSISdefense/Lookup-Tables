@@ -1,131 +1,681 @@
 USE [DIIG]
 GO
 
-/****** Object:  Table [ErrorLogging].[FSRSviolatesConstraint]    Script Date: 9/19/2016 11:06:12 AM ******/
+/****** Object:  StoredProcedure [ErrorLogging].[SP_TransferFPDSViolatesConstraint]    Script Date: 10/30/2017 10:45:25 AM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-SET ANSI_PADDING ON
-GO
 
-CREATE TABLE [ErrorLogging].[FSRSviolatesConstraint](
-	[PrimeAwardReportID] [varchar](38) NULL,
-	[PrimeAwardPIID] [varchar](42) NULL,
-	[PrimeAwardIDVPIID] [varchar](29) NULL,
-	[PrimeAwardFederalAwardID] [varchar](max) NULL,
-	[TypeOfSpending] [varchar](7) NULL,
-	[PrimeAwardDateSubmitted] [date] NULL,
-	[PrimeAwardReportMonth] [smallint] NULL,
-	[PrimeAwardReportYear] [smallint] NULL,
-	[PrimeAwardReportType] [varchar](12) NULL,
-	[PrimeAwardPrincipalPlaceStreet] [varchar](45) NULL,
-	[PrimeAwardPrincipalPlaceCity] [varchar](255) NULL,
-	[PrimeAwardPrincipalPlaceState] [varchar](7) NULL,
-	[PrimeAwardPrincipalPlaceZIP] [varchar](50) NULL,
-	[PrimeAwardPrincipalPlaceDistrict] [varchar](9) NULL,
-	[PrimeAwardPrincipalPlaceCountry] [varchar](7) NULL,
-	[PrimeAwardeeParentDuns] [varchar](13) NULL,
-	[PrimeAwardeeParentContractorName] [varchar](91) NULL,
-	[PrimeAwardContractingAgencyID] [varchar](9) NULL,
-	[PrimeAwardContractingAgencyName] [varchar](67) NULL,
-	[PrimeAwardContractingOfficeID] [varchar](11) NULL,
-	[PrimeAwardContractingOfficeName] [varchar](73) NULL,
-	[PrimeAwardFundingAgencyID] [varchar](9) NULL,
-	[PrimeAwardFundingAgencyName] [varchar](68) NULL,
-	[PrimeAwardFundingOfficeID] [varchar](11) NULL,
-	[PrimeAwardFundingOfficeName] [varchar](79) NULL,
-	[PrimeAwardProgramSourceAgency] [varchar](2) NULL,
-	[PrimeAwardProgramSourceAccount] [varchar](4) NULL,
-	[PrimeAwardProgramSourceSubaccount] [varchar](3) NULL,
-	[PrimeAwardeeExecutive1] [varchar](65) NULL,
-	[PrimeAwardeeExecutive1Compensation] [decimal](19, 4) NULL,
-	[PrimeAwardeeExecutive2] [varchar](65) NULL,
-	[PrimeAwardeeExecutive2Compensation] [decimal](19, 4) NULL,
-	[PrimeAwardeeExecutive3] [varchar](65) NULL,
-	[PrimeAwardeeExecutive3Compensation] [decimal](19, 4) NULL,
-	[PrimeAwardeeExecutive4] [varchar](55) NULL,
-	[PrimeAwardeeExecutive4Compensation] [decimal](19, 4) NULL,
-	[PrimeAwardeeExecutive5] [varchar](65) NULL,
-	[PrimeAwardeeExecutive5Compensation] [decimal](19, 4) NULL,
-	[PrimeAwardPrincipalNaicsCode] [int] NULL,
-	[PrimeAwardPrincipalNaicsDesc] [varchar](123) NULL,
-	[PrimeAwardCFDAprogramNumberTitleCodes] [varchar](max) NULL,
-	[PrimeAwardAmount] [decimal](19, 4) NULL,
-	[PrimeAwardDateSigned] [date] NULL,
-	[PrimeAwardProjectDescription] [varchar](max) NULL,
-	[PrimeAwardTransactionType] [varchar](31) NULL,
-	[PrimeAwardProgramTitle] [varchar](1064) NULL,
-	[PrimeAwardeeRecoveryModelQ1] [smallint] NULL,
-	[PrimeAwardeeRecoveryModelQ2] [smallint] NULL,
-	[PrimeAwardFiscalYear] [smallint] NULL,
-	[PrimeAwardContractingMajorAgencyID] [varchar](50) NULL,
-	[PrimeAwardContractingMajorAgencyName] [varchar](45) NULL,
-	[PrimeAwardFundingMajorAgencyID] [varchar](50) NULL,
-	[PrimeAwardFundingMajorAgencyName] [varchar](61) NULL,
-	[PrimeAwardAgencyID] [varchar](max) NULL,
-	[PrimeAwardIDVagencyID] [varchar](max) NULL,
-	[SubawardeeDunsnumber] [varchar](13) NULL,
-	[SubawardeeName] [varchar](125) NULL,
-	[SubawardeeDBAname] [varchar](125) NULL,
-	[SubawardeeStreet] [varchar](255) NULL,
-	[SubawardeeCity] [varchar](34) NULL,
-	[SubawardeeState] [varchar](7) NULL,
-	[SubawardeeZipcode] [varchar](25) NULL,
-	[SubawardeeCongressionalDistrict] [varchar](9) NULL,
-	[SubawardeeCountrycode] [varchar](3) NULL,
-	[SubawardPrincipalPlaceStreet] [varchar](50) NULL,
-	[SubawardPrincipalPlaceCity] [varchar](133) NULL,
-	[SubawardPrincipalPlaceState] [varchar](7) NULL,
-	[SubawardPrincipalPlaceZip] [varchar](50) NULL,
-	[SubawardPrincipalPlaceDistrict] [varchar](9) NULL,
-	[SubawardPrincipalPlaceCountry] [varchar](3) NULL,
-	[SubawardeeParentDuns] [varchar](13) NULL,
-	[SubawardeeParentContractorName] [varchar](255) NULL,
-	[SubawardAmount] [decimal](19, 4) NULL,
-	[SubawardDate] [date] NULL,
-	[SubawardPrincipalNaicsCode] [int] NULL,
-	[SubawardPrincipalNaicsDesc] [varchar](123) NULL,
-	[SubawardFundingOfficeID] [varchar](11) NULL,
-	[SubawardFundingOfficeName] [varchar](79) NULL,
-	[SubawardFederalAgencyID] [varchar](9) NULL,
-	[SubawardFederalAgencyName] [varchar](68) NULL,
-	[SubawardMajorAgencyID] [varchar](50) NULL,
-	[SubawardMajorAgencyName] [varchar](61) NULL,
-	[SubawardNumber] [varchar](39) NULL,
-	[SubawardProjectDescription] [varchar](4500) NULL,
-	[SubawardeeRecoveryModelQ1] [smallint] NULL,
-	[SubawardeeRecoveryModelQ2] [smallint] NULL,
-	[SubawardReportMonth] [smallint] NULL,
-	[SubawardReportYear] [smallint] NULL,
-	[SubawardFiscalYear] [smallint] NULL,
-	[SubawardeeExecutive1] [varchar](96) NULL,
-	[SubawardeeExecutive1Compensation] [decimal](19, 4) NULL,
-	[SubawardeeExecutive2] [varchar](100) NULL,
-	[SubawardeeExecutive2Compensation] [decimal](19, 4) NULL,
-	[SubawardeeExecutive3] [varchar](98) NULL,
-	[SubawardeeExecutive3Compensation] [decimal](19, 4) NULL,
-	[SubawardeeExecutive4] [varchar](78) NULL,
-	[SubawardeeExecutive4Compensation] [decimal](19, 4) NULL,
-	[SubawardeeExecutive5] [varchar](100) NULL,
-	[SubawardeeExecutive5Compensation] [decimal](19, 4) NULL,
-	[SubawardeeBusinessTypes] [varchar](452) NULL,
-	[SubawardCFDAprogramNumberTitleCodes] [varchar](max) NULL,
-	[CSIScreatedDate] [datetime2](7) NULL,
-	[CSISmodifiedDate] [datetime2](7) NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 
-GO
 
-SET ANSI_PADDING OFF
-GO
 
-ALTER TABLE [ErrorLogging].[FSRSviolatesConstraint] ADD  DEFAULT (getdate()) FOR [CSIScreatedDate]
-GO
 
-ALTER TABLE [ErrorLogging].[FSRSviolatesConstraint] ADD  DEFAULT (getdate()) FOR [CSISmodifiedDate]
+-- =============================================
+-- Author:		Greg Sanders
+-- Create date: 2012/12/21
+-- Description:	Add new entries to FPDStypetables then transfer over rows that used to violate
+-- Type constraints.
+-- =============================================
+CREATE PROCEDURE  [ErrorLogging].[SP_TransferFPDSViolatesConstraint]
+	-- Add the parameters for the stored procedure here
+	--<@Param1, sysname, @p1> <Datatype_For_Param1, , int> = <Default_Value_For_Param1, , 0>, 
+	--<@Param2, sysname, @p2> <Datatype_For_Param2, , int> = <Default_Value_For_Param2, , 0>
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+DECLARE	@return_value int
+
+EXEC	@return_value = [ErrorLogging].[SP_InsertUnmatchedForeignKeysInFPDSViolatesConstraint]
+
+SELECT	'Return Value' = @return_value
+-- 'Update the less conventionally changed FPDStypetables while outputing what has been upated.
+
+-- 'Insert new dunsnumber into [Contractor].[dunsnumber]'
+INSERT INTO [Contractor].[dunsnumber] (dunsnumber)
+SELECT
+ErrorTable.dunsnumber
+FROM
+Errorlogging.FPDSViolatesConstraint AS ErrorTable
+LEFT OUTER JOIN [Contractor].[dunsnumber]  AS PKTable
+ON
+PKTable.dunsnumber=ErrorTable.dunsnumber
+WHERE ErrorTable.dunsnumber is not null and PKTable.dunsnumber is null
+GROUP BY ErrorTable.dunsnumber
+
+
+
+-- 'Insert new parentdunsnumber into [Contractor].[dunsnumber]'
+INSERT INTO [Contractor].[dunsnumber] (dunsnumber)
+SELECT
+ErrorTable.parentdunsnumber
+FROM
+Errorlogging.FPDSViolatesConstraint AS ErrorTable
+LEFT OUTER JOIN [Contractor].[dunsnumber]  AS PKTable
+ON
+PKTable.dunsnumber=ErrorTable.parentdunsnumber
+WHERE ErrorTable.parentdunsnumber is not null and PKTable.dunsnumber is null
+GROUP BY ErrorTable.parentdunsnumber
+
+
+INSERT INTO [Contractor].DunsnumberToParentContractorHistory(dunsnumber,FiscalYear)
+SELECT
+Errortable.dunsnumber,
+errortable.fiscal_year
+FROM
+Errorlogging.FPDSViolatesConstraint AS ErrorTable
+LEFT OUTER JOIN [Contractor].DunsnumberToParentContractorHistory  AS PKTable
+ON
+PKTable.dunsnumber=ErrorTable.dunsnumber
+and PKTable.FiscalYear=ErrorTable.fiscal_year
+WHERE ErrorTable.dunsnumber is not null and PKTable.dunsnumber is null
+GROUP BY ErrorTable.dunsnumber, errortable.fiscal_year
+
+
+	-- Insert new FPDS vendornames into vendorname
+	insert into Vendor.VendorName (vendorname)
+	select
+		c.vendorname
+	from Errorlogging.FPDSviolatesConstraint as C
+	left outer join Vendor.VendorName as v
+		on c.vendorname=v.vendorname
+	where v.vendorname is null and c.vendorname is not null
+	group by 	c.vendorname
+	
+
+	-- Insert new FPDS vendoralternatename into vendorname
+	insert into Vendor.VendorName (vendorname)
+	select
+		c.vendoralternatename
+	from Errorlogging.FPDSviolatesConstraint as C
+	left outer join Vendor.VendorName as v
+		on c.vendoralternatename=v.vendorname
+	where v.vendorname is null  and c.vendoralternatename is not null
+	group by 	c.vendoralternatename
+
+	-- Insert new FPDS vendordoingasbusinessname into vendorname
+	insert into Vendor.VendorName (vendorname)
+	select
+		c.vendordoingasbusinessname
+	from Errorlogging.FPDSviolatesConstraint as C
+	left outer join Vendor.VendorName as v
+		on c.vendordoingasbusinessname=v.vendorname
+	where v.vendorname is null  and c.vendordoingasbusinessname is not null
+	group by 	c.vendordoingasbusinessname
+
+
+	-- Insert new FPDS vendorlegalorganizationname into vendorname
+	insert into Vendor.VendorName (vendorname)
+	select
+		c.vendorlegalorganizationname
+	from Errorlogging.FPDSviolatesConstraint as C
+	left outer join Vendor.VendorName as v
+		on c.vendorlegalorganizationname=v.vendorname
+	where v.vendorname is null and c.vendorlegalorganizationname is not null
+	group by 	c.vendorlegalorganizationname
+
+
+		-- Insert new FPDS divisionname into vendorname
+	insert into Vendor.VendorName (vendorname)
+	select
+		c.divisionname
+	from Errorlogging.FPDSviolatesConstraint as C
+	left outer join Vendor.VendorName as v
+		on c.divisionname=v.vendorname
+	where v.vendorname is null and c.divisionname is not null
+	group by 	c.divisionname
+	
+		
+	-- Insert new FPDS mod_parent into vendorname
+	insert into Vendor.VendorName (vendorname)
+	select
+		c.mod_parent
+	from Errorlogging.FPDSviolatesConstraint as C
+	left outer join Vendor.VendorName as v
+		on c.vendorname=v.vendorname
+	where v.vendorname is null and c.mod_parent is not null
+	group by 	c.mod_parent
+	
+
+
+
+INSERT INTO contract.fpds (
+C.unique_transaction_id
+, C.transaction_status
+, C.obligatedamount
+, C.baseandexercisedoptionsvalue
+, C.baseandalloptionsvalue
+, C.maj_agency_cat
+, C.mod_agency
+, C.maj_fund_agency_cat
+, C.contractingofficeagencyid
+, C.contractingofficeid
+, C.fundingrequestingagencyid
+, C.fundingrequestingofficeid
+, C.fundedbyforeignentity
+, C.signeddate
+, C.effectivedate
+, C.currentcompletiondate
+, C.ultimatecompletiondate
+, C.lastdatetoorder
+, C.contractactiontype
+, C.reasonformodification
+, C.typeofcontractpricing
+, C.priceevaluationpercentdifference
+, C.subcontractplan
+, C.lettercontract
+, C.multiyearcontract
+, C.performancebasedservicecontract
+, C.majorprogramcode
+, C.contingencyhumanitarianpeacekeepingoperation
+, C.contractfinancing
+, C.costorpricingdata
+, C.costaccountingstandardsclause
+, C.descriptionofcontractrequirement
+, C.purchasecardaspaymentmethod
+, C.numberofactions
+, C.nationalinterestactioncode
+, C.progsourceagency
+, C.progsourceaccount
+, C.progsourcesubacct
+, C.account_title
+, C.rec_flag
+, C.typeofidc
+, C.multipleorsingleawardidc
+, C.programacronym
+, C.vendorname
+, C.vendoralternatename
+, C.vendorlegalorganizationname
+, C.vendordoingasbusinessname
+, C.divisionname
+, C.divisionnumberorofficecode
+, C.vendorenabled
+, C.vendorlocationdisableflag
+, C.ccrexception
+, C.streetaddress
+, C.streetaddress2
+, C.streetaddress3
+, C.city
+, C.state
+, C.zipcode
+, C.vendorcountrycode
+, C.vendor_state_code
+, C.vendor_cd
+, C.congressionaldistrict
+, C.vendorsitecode
+, C.vendoralternatesitecode
+, C.dunsnumber
+, C.parentdunsnumber
+, C.phoneno
+, C.faxno
+, C.registrationdate
+, C.renewaldate
+, C.mod_parent
+, C.locationcode
+, C.statecode
+, C.PlaceofPerformanceCity
+, C.pop_state_code
+, C.placeofperformancecountrycode
+, C.placeofperformancezipcode
+, C.pop_cd
+, C.placeofperformancecongressionaldistrict
+, C.psc_cat
+, C.productorservicecode
+, C.systemequipmentcode
+, C.claimantprogramcode
+, C.principalnaicscode
+, C.informationtechnologycommercialitemcategory
+, C.gfe_gfp
+, C.useofepadesignatedproducts
+, C.recoveredmaterialclauses
+, C.seatransportation
+, C.contractbundling
+, C.consolidatedcontract
+, C.countryoforigin
+, C.placeofmanufacture
+, C.manufacturingorganizationtype
+, C.agencyid
+, C.piid
+, C.modnumber
+, C.transactionnumber
+, C.fiscal_year
+, C.idvagencyid
+, C.idvpiid
+, C.idvmodificationnumber
+, C.solicitationid
+, C.extentcompeted
+, C.reasonnotcompeted
+, C.numberofoffersreceived
+, C.commercialitemacquisitionprocedures
+, C.commercialitemtestprogram
+, C.smallbusinesscompetitivenessdemonstrationprogram
+, C.a76action
+, C.competitiveprocedures
+, C.solicitationprocedures
+, C.typeofsetaside
+, C.localareasetaside
+, C.evaluatedpreference
+, C.fedbizopps
+, C.research
+, C.statutoryexceptiontofairopportunity
+, C.organizationaltype
+, C.numberofemployees
+, C.annualrevenue
+, C.firm8aflag
+, C.hubzoneflag
+, C.sdbflag
+, C.issbacertifiedsmalldisadvantagedbusiness
+, C.shelteredworkshopflag
+, C.hbcuflag
+, C.educationalinstitutionflag
+, C.womenownedflag
+, C.veteranownedflag
+, C.srdvobflag
+, C.localgovernmentflag
+, C.minorityinstitutionflag
+, C.aiobflag
+, C.stategovernmentflag
+, C.federalgovernmentflag
+, C.minorityownedbusinessflag
+, C.apaobflag
+, C.tribalgovernmentflag
+, C.baobflag
+, C.naobflag
+, C.saaobflag
+, C.nonprofitorganizationflag
+, C.isothernotforprofitorganization
+, C.isforprofitorganization
+, C.isfoundation
+, C.haobflag
+, C.ishispanicservicinginstitution
+, C.emergingsmallbusinessflag
+, C.hospitalflag
+, C.contractingofficerbusinesssizedetermination
+, C.is1862landgrantcollege
+, C.is1890landgrantcollege
+, C.is1994landgrantcollege
+, C.isveterinarycollege
+, C.isveterinaryhospital
+, C.isprivateuniversityorcollege
+, C.isschoolofforestry
+, C.isstatecontrolledinstitutionofhigherlearning
+, C.isserviceprovider
+, C.receivescontracts
+, C.receivesgrants
+, C.receivescontractsandgrants
+, C.isairportauthority
+, C.iscouncilofgovernments
+, C.ishousingauthoritiespublicortribal
+, C.isinterstateentity
+, C.isplanningcommission
+, C.isportauthority
+, C.istransitauthority
+, C.issubchapterscorporation
+, C.islimitedliabilitycorporation
+, C.isforeignownedandlocated
+, C.isarchitectureandengineering
+, C.isdotcertifieddisadvantagedbusinessenterprise
+, C.iscitylocalgovernment
+, C.iscommunitydevelopedcorporationownedfirm
+, C.iscommunitydevelopmentcorporation
+, C.isconstructionfirm
+, C.ismanufacturerofgoods
+, C.iscorporateentitynottaxexempt
+, C.iscountylocalgovernment
+, C.isdomesticshelter
+, C.isfederalgovernmentagency
+, C.isfederallyfundedresearchanddevelopmentcorp
+, C.isforeigngovernment
+, C.isindiantribe
+, C.isintermunicipallocalgovernment
+, C.isinternationalorganization
+, C.islaborsurplusareafirm
+, C.islocalgovernmentowned
+, C.ismunicipalitylocalgovernment
+, C.isnativehawaiianownedorganizationorfirm
+, C.isotherbusinessororganization
+, C.isotherminorityowned
+, C.ispartnershiporlimitedliabilitypartnership
+, C.isschooldistrictlocalgovernment
+, C.issmallagriculturalcooperative
+, C.issoleproprietorship
+, C.istownshiplocalgovernment
+, C.istriballyownedfirm
+, C.istribalcollege
+, C.isalaskannativeownedcorporationorfirm
+, C.iscorporateentitytaxexempt
+, C.iswomenownedsmallbusiness
+, C.isecondisadvwomenownedsmallbusiness
+, C.isjointventurewomenownedsmallbusiness
+, C.isjointventureecondisadvwomenownedsmallbusiness
+, C.walshhealyact
+, C.servicecontractact
+, C.davisbaconact
+, C.clingercohenact
+, C.otherstatutoryauthority
+, C.prime_awardee_executive1
+, C.prime_awardee_executive1_compensation
+, C.prime_awardee_executive2
+, C.prime_awardee_executive2_compensation
+, C.prime_awardee_executive3
+, C.prime_awardee_executive3_compensation
+, C.prime_awardee_executive4
+, C.prime_awardee_executive4_compensation
+, C.prime_awardee_executive5
+, C.prime_awardee_executive5_compensation
+, C.interagencycontractingauthority
+, C.last_modified_date
+, C.CSISCreatedDate
+, C.CSISModifiedDate
+)
+
+SELECT
+ErrorTable.unique_transaction_id
+, ErrorTable.transaction_status
+, ErrorTable.obligatedamount
+, ErrorTable.baseandexercisedoptionsvalue
+, ErrorTable.baseandalloptionsvalue
+, ErrorTable.maj_agency_cat
+, ErrorTable.mod_agency
+, ErrorTable.maj_fund_agency_cat
+, ErrorTable.contractingofficeagencyid
+, ErrorTable.contractingofficeid
+, ErrorTable.fundingrequestingagencyid
+, ErrorTable.fundingrequestingofficeid
+, ErrorTable.fundedbyforeignentity
+, ErrorTable.signeddate
+, ErrorTable.effectivedate
+, ErrorTable.currentcompletiondate
+, ErrorTable.ultimatecompletiondate
+, ErrorTable.lastdatetoorder
+, ErrorTable.contractactiontype
+, ErrorTable.reasonformodification
+, ErrorTable.typeofcontractpricing
+, ErrorTable.priceevaluationpercentdifference
+, ErrorTable.subcontractplan
+, ErrorTable.lettercontract
+, ErrorTable.multiyearcontract
+, ErrorTable.performancebasedservicecontract
+, ErrorTable.majorprogramcode
+, ErrorTable.contingencyhumanitarianpeacekeepingoperation
+, ErrorTable.contractfinancing
+, ErrorTable.costorpricingdata
+, ErrorTable.costaccountingstandardsclause
+, ErrorTable.descriptionofcontractrequirement
+, ErrorTable.purchasecardaspaymentmethod
+, ErrorTable.numberofactions
+, ErrorTable.nationalinterestactioncode
+, ErrorTable.progsourceagency
+, ErrorTable.progsourceaccount
+, ErrorTable.progsourcesubacct
+, ErrorTable.account_title
+, ErrorTable.rec_flag
+, ErrorTable.typeofidc
+, ErrorTable.multipleorsingleawardidc
+, ErrorTable.programacronym
+, ErrorTable.vendorname
+, ErrorTable.vendoralternatename
+, ErrorTable.vendorlegalorganizationname
+, ErrorTable.vendordoingasbusinessname
+, ErrorTable.divisionname
+, ErrorTable.divisionnumberorofficecode
+, ErrorTable.vendorenabled
+, ErrorTable.vendorlocationdisableflag
+, ErrorTable.ccrexception
+, ErrorTable.streetaddress
+, ErrorTable.streetaddress2
+, ErrorTable.streetaddress3
+, ErrorTable.city
+, ErrorTable.state
+, ErrorTable.zipcode
+, ErrorTable.vendorcountrycode
+, ErrorTable.vendor_state_code
+, ErrorTable.vendor_cd
+, ErrorTable.congressionaldistrict
+, ErrorTable.vendorsitecode
+, ErrorTable.vendoralternatesitecode
+, ErrorTable.dunsnumber
+, ErrorTable.parentdunsnumber
+, ErrorTable.phoneno
+, ErrorTable.faxno
+, ErrorTable.registrationdate
+, ErrorTable.renewaldate
+, ErrorTable.mod_parent
+, ErrorTable.locationcode
+, ErrorTable.statecode
+, ErrorTable.PlaceofPerformanceCity
+, ErrorTable.pop_state_code
+, ErrorTable.placeofperformancecountrycode
+, ErrorTable.placeofperformancezipcode
+, ErrorTable.pop_cd
+, ErrorTable.placeofperformancecongressionaldistrict
+, ErrorTable.psc_cat
+, ErrorTable.productorservicecode
+, ErrorTable.systemequipmentcode
+, ErrorTable.claimantprogramcode
+, ErrorTable.principalnaicscode
+, ErrorTable.informationtechnologycommercialitemcategory
+, ErrorTable.gfe_gfp
+, ErrorTable.useofepadesignatedproducts
+, ErrorTable.recoveredmaterialclauses
+, ErrorTable.seatransportation
+, ErrorTable.contractbundling
+, ErrorTable.consolidatedcontract
+, ErrorTable.countryoforigin
+, ErrorTable.placeofmanufacture
+, ErrorTable.manufacturingorganizationtype
+, ErrorTable.agencyid
+, ErrorTable.piid
+, ErrorTable.modnumber
+, ErrorTable.transactionnumber
+, ErrorTable.fiscal_year
+, ErrorTable.idvagencyid
+, ErrorTable.idvpiid
+, ErrorTable.idvmodificationnumber
+, ErrorTable.solicitationid
+, ErrorTable.extentcompeted
+, ErrorTable.reasonnotcompeted
+, ErrorTable.numberofoffersreceived
+, ErrorTable.commercialitemacquisitionprocedures
+, ErrorTable.commercialitemtestprogram
+, ErrorTable.smallbusinesscompetitivenessdemonstrationprogram
+, ErrorTable.a76action
+, ErrorTable.competitiveprocedures
+, ErrorTable.solicitationprocedures
+, ErrorTable.typeofsetaside
+, ErrorTable.localareasetaside
+, ErrorTable.evaluatedpreference
+, ErrorTable.fedbizopps
+, ErrorTable.research
+, ErrorTable.statutoryexceptiontofairopportunity
+, ErrorTable.organizationaltype
+, ErrorTable.numberofemployees
+, ErrorTable.annualrevenue
+, ErrorTable.firm8aflag
+, ErrorTable.hubzoneflag
+, ErrorTable.sdbflag
+, ErrorTable.issbacertifiedsmalldisadvantagedbusiness
+, ErrorTable.shelteredworkshopflag
+, ErrorTable.hbcuflag
+, ErrorTable.educationalinstitutionflag
+, ErrorTable.womenownedflag
+, ErrorTable.veteranownedflag
+, ErrorTable.srdvobflag
+, ErrorTable.localgovernmentflag
+, ErrorTable.minorityinstitutionflag
+, ErrorTable.aiobflag
+, ErrorTable.stategovernmentflag
+, ErrorTable.federalgovernmentflag
+, ErrorTable.minorityownedbusinessflag
+, ErrorTable.apaobflag
+, ErrorTable.tribalgovernmentflag
+, ErrorTable.baobflag
+, ErrorTable.naobflag
+, ErrorTable.saaobflag
+, ErrorTable.nonprofitorganizationflag
+, ErrorTable.isothernotforprofitorganization
+, ErrorTable.isforprofitorganization
+, ErrorTable.isfoundation
+, ErrorTable.haobflag
+, ErrorTable.ishispanicservicinginstitution
+, ErrorTable.emergingsmallbusinessflag
+, ErrorTable.hospitalflag
+, ErrorTable.contractingofficerbusinesssizedetermination
+, ErrorTable.is1862landgrantcollege
+, ErrorTable.is1890landgrantcollege
+, ErrorTable.is1994landgrantcollege
+, ErrorTable.isveterinarycollege
+, ErrorTable.isveterinaryhospital
+, ErrorTable.isprivateuniversityorcollege
+, ErrorTable.isschoolofforestry
+, ErrorTable.isstatecontrolledinstitutionofhigherlearning
+, ErrorTable.isserviceprovider
+, ErrorTable.receivescontracts
+, ErrorTable.receivesgrants
+, ErrorTable.receivescontractsandgrants
+, ErrorTable.isairportauthority
+, ErrorTable.iscouncilofgovernments
+, ErrorTable.ishousingauthoritiespublicortribal
+, ErrorTable.isinterstateentity
+, ErrorTable.isplanningcommission
+, ErrorTable.isportauthority
+, ErrorTable.istransitauthority
+, ErrorTable.issubchapterscorporation
+, ErrorTable.islimitedliabilitycorporation
+, ErrorTable.isforeignownedandlocated
+, ErrorTable.isarchitectureandengineering
+, ErrorTable.isdotcertifieddisadvantagedbusinessenterprise
+, ErrorTable.iscitylocalgovernment
+, ErrorTable.iscommunitydevelopedcorporationownedfirm
+, ErrorTable.iscommunitydevelopmentcorporation
+, ErrorTable.isconstructionfirm
+, ErrorTable.ismanufacturerofgoods
+, ErrorTable.iscorporateentitynottaxexempt
+, ErrorTable.iscountylocalgovernment
+, ErrorTable.isdomesticshelter
+, ErrorTable.isfederalgovernmentagency
+, ErrorTable.isfederallyfundedresearchanddevelopmentcorp
+, ErrorTable.isforeigngovernment
+, ErrorTable.isindiantribe
+, ErrorTable.isintermunicipallocalgovernment
+, ErrorTable.isinternationalorganization
+, ErrorTable.islaborsurplusareafirm
+, ErrorTable.islocalgovernmentowned
+, ErrorTable.ismunicipalitylocalgovernment
+, ErrorTable.isnativehawaiianownedorganizationorfirm
+, ErrorTable.isotherbusinessororganization
+, ErrorTable.isotherminorityowned
+, ErrorTable.ispartnershiporlimitedliabilitypartnership
+, ErrorTable.isschooldistrictlocalgovernment
+, ErrorTable.issmallagriculturalcooperative
+, ErrorTable.issoleproprietorship
+, ErrorTable.istownshiplocalgovernment
+, ErrorTable.istriballyownedfirm
+, ErrorTable.istribalcollege
+, ErrorTable.isalaskannativeownedcorporationorfirm
+, ErrorTable.iscorporateentitytaxexempt
+, ErrorTable.iswomenownedsmallbusiness
+, ErrorTable.isecondisadvwomenownedsmallbusiness
+, ErrorTable.isjointventurewomenownedsmallbusiness
+, ErrorTable.isjointventureecondisadvwomenownedsmallbusiness
+, ErrorTable.walshhealyact
+, ErrorTable.servicecontractact
+, ErrorTable.davisbaconact
+, ErrorTable.clingercohenact
+, ErrorTable.otherstatutoryauthority
+, ErrorTable.prime_awardee_executive1
+, ErrorTable.prime_awardee_executive1_compensation
+, ErrorTable.prime_awardee_executive2
+, ErrorTable.prime_awardee_executive2_compensation
+, ErrorTable.prime_awardee_executive3
+, ErrorTable.prime_awardee_executive3_compensation
+, ErrorTable.prime_awardee_executive4
+, ErrorTable.prime_awardee_executive4_compensation
+, ErrorTable.prime_awardee_executive5
+, ErrorTable.prime_awardee_executive5_compensation
+, ErrorTable.interagencycontractingauthority
+, ErrorTable.last_modified_date
+, ErrorTable.CSISCreatedDate
+, getdate() as CSISModifiedDate
+FROM errorlogging.FPDSViolatesConstraint AS errortable
+LEFT OUTER JOIN contract.fpds as C
+ON C.unique_transaction_id=errortable.unique_transaction_id
+	and C.CSISCreatedDate=errortable.CSISCreatedDate
+WHERE c.unique_transaction_id is null
+
+
+
+DELETE  errorlogging.FPDSViolatesConstraint 
+FROM errorlogging.FPDSViolatesConstraint AS errortable
+INNER JOIN contract.fpds  as C
+ON 
+	C.unique_transaction_id=errortable.unique_transaction_id 
+	and C.CSISCreatedDate=errortable.CSISCreatedDate
+		
+
+
+--Putting the manual adjustment here just to make sure that it happens.
+update c
+set c.obligatedamount=uni.adjustedobligatedamount
+,c.CSISModifiedDate=getdate()
+from contract.fpds as c
+inner join ErrorLogging.uniquetransactionmanuallyadjusted as uni
+on c.unique_transaction_id = uni.unique_transaction_id 
+and c.fiscal_year =uni.fiscal_year
+and c.idvpiid = uni.idvpiid
+and c.piid=uni.piid
+and c.modnumber=uni.modnumber
+and c.transactionnumber=uni.transactionnumber and 
+ c.obligatedamount=uni.originalobligatedamount
+
+
+ select uni.unique_transaction_id
+ , uni.originalobligatedamount 
+ , uni.adjustedobligatedamount
+ ,  c.obligatedamount
+from contract.fpds as c
+right outer join ErrorLogging.uniquetransactionmanuallyadjusted as uni
+on (c.unique_transaction_id = uni.unique_transaction_id 
+and c.fiscal_year =uni.fiscal_year
+and c.idvpiid = uni.idvpiid
+and c.piid=uni.piid
+and c.modnumber=uni.modnumber
+and c.transactionnumber=uni.transactionnumber) and 
+ (c.obligatedamount=uni.originalobligatedamount
+ or c.obligatedamount=uni.adjustedobligatedamount)
+
+
+select 'FPDSviolatesType' as Source
+,count(*)
+from ErrorLogging.FPDSViolatesType
+union 
+select 'FPDSviolatesConstraint' as Source
+,count(*)
+from ErrorLogging.FPDSviolatesConstraint
+
+--Add new CSIStransaction/contract/IDV/etc. IDs.
+--DECLARE	@return_value int
+
+EXEC	@return_value = [Contract].[SP_AutomatedCSISIDupdates]
+
+SELECT	'Return Value' = @return_value
+
+
+
+END
+
+
+
+
+
+
+
+
 GO
 
 

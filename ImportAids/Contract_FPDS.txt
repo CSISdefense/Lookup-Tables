@@ -1,7 +1,7 @@
 USE [DIIG]
 GO
 
-/****** Object:  Table [Contract].[FPDS]    Script Date: 10/27/2017 2:09:52 PM ******/
+/****** Object:  Table [Contract].[FPDS]    Script Date: 10/30/2017 10:58:53 AM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -100,7 +100,7 @@ CREATE TABLE [Contract].[FPDS](
 	[recoveredmaterialclauses] [varchar](1) NULL,
 	[seatransportation] [varchar](1) NULL,
 	[contractbundling] [varchar](1) NULL,
-	[consolidatedcontract] [bit] NULL,
+	[consolidatedcontract] [varchar](1) NULL,
 	[countryoforigin] [varchar](3) NULL,
 	[placeofmanufacture] [varchar](1) NULL,
 	[manufacturingorganizationtype] [varchar](1) NULL,
