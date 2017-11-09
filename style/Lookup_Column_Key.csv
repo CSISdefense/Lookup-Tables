@@ -13,70 +13,73 @@ SubCustomer.component,Agencies,Component,FALSE
 SubCustomer.platform,Agencies,Component,FALSE
 ServicesCategory.detail,Area,Services Area,FALSE
 ServicesCategory.sum,Area,Services Area,FALSE
-ProductsCategory.detail,Area,Services Area,FALSE
-ProductOrServiceArea,Area,Products Area,FALSE
-SupplyServiceERS,Area,Product or Service Area,FALSE
-ProductServiceOrRnDarea,Area,"Supply, Equipment-Related Service, Other Services",FALSE
-ProductServiceOrRnDarea.sum,Area,"Product, Service, or R&D Area",FALSE
-ProductOrServiceArea.DLA,Area,"Product, Service, or R&D",FALSE
-Competition.detail,Area,Product or Service Area,FALSE
+ServicesCategory.sum,Area,Services Area,FALSE
+ProductsCategory.detail,Area,Products Area,FALSE
+ProductOrServiceArea,Area,Product or Service Area,FALSE
+SupplyServiceERS,Area,"Supply, Equipment-Related Service, Other Services",FALSE
+ProductServiceOrRnDarea,Area,"Product, Service, or R&D Area",FALSE
+ProductServiceOrRnDarea.sum,Area,"Product, Service, or R&D",FALSE
+ProductOrServiceArea.DLA,Area,Product or Service Area,FALSE
+Competition.detail,Competition,Extent of Competition,FALSE
+Competition.detail,Competition,Extent of Competition,FALSE
 Competition.multisum,Competition,Extent of Competition,FALSE
 Competition.sum,Competition,Extent of Competition,FALSE
 No.Competition.sum,Competition,Extent of Competition,FALSE
 Competition.effective.only,Competition,Extent of Competition,FALSE
-Pricing.Mechanism.detail,Competition,Extent of Competition,FALSE
-Pricing.Mechanism.sum,Competition,Extent of Competition,FALSE
+Pricing.Mechanism.detail,Pricing,Pricing Mechanism,FALSE
+Pricing.Mechanism.sum,Pricing,Pricing Mechanism,FALSE
 Base,Pricing,Pricing Mechanism,FALSE
-Fee,Pricing,Pricing Mechanism,FALSE
-Indicator,Pricing,Pricing Mechanism,FALSE
-Vehicle.detail,Pricing,Pricing Mechanism Fee Type,FALSE
-Vehicle.sum,Europe,,FALSE
-Vendor.Size.detail,Vehicles,Contract Vehicle,FALSE
-Vendor.Size.sum,Vehicles,Contract Vehicle,FALSE
-Shiny.VendorSize,Vendors,Contract Vehicle,FALSE
-RoughUniqueEntitySize,Vendors,Contract Vehicle,FALSE
-comparison.dollar.type.detail,Vendors,Vendor Size,FALSE
-comparison.dollar.type.sum,Vendors,Vendor Size,FALSE
-Contract.Size.detail,Vendors,Vendor Size,FALSE
-Contract.Size.sum,Dollar Type,,FALSE
-Ceil,Dollar Type,,FALSE
-LowCeil,Contract Size,Contract Size,FALSE
-Ceil.Simple,Contract Size,Contract Size,FALSE
-PlatformPortfolio,Contract Size,Contract Ceiling,FALSE
-PlatformPortfolio.sum,Contract Size,Contract Ceiling,FALSE
-PlatformPortfolio.AnD,Contract Size,Contract Ceiling,FALSE
-Europe,PlatformPortfolio,Platform Portfolio,FALSE
-Country,PlatformPortfolio,Platform Portfolio,FALSE
-Coloring,PlatformPortfolio,Platform Portfolio,FALSE
+Fee,Pricing,Pricing Mechanism Fee Type,FALSE
+Indicator,Europe,,FALSE
+Vehicle.detail,Vehicles,Contract Vehicle,FALSE
+Vehicle.sum,Vehicles,Contract Vehicle,FALSE
+Vendor.Size.detail,Vendors,Contract Vehicle,FALSE
+Vendor.Size.sum,Vendors,Contract Vehicle,FALSE
+Shiny.VendorSize,Vendors,Vendor Size,FALSE
+RoughUniqueEntitySize,Vendors,Vendor Size,FALSE
+Shiny.VendorSize,Vendors,Vendor Size,FALSE
+comparison.dollar.type.detail,Dollar Type,,FALSE
+comparison.dollar.type.sum,Dollar Type,,FALSE
+Contract.Size.detail,Contract Size,Contract Size,FALSE
+Contract.Size.sum,Contract Size,Contract Size,FALSE
+Ceil,Contract Size,Contract Ceiling,FALSE
+LowCeil,Contract Size,Contract Ceiling,FALSE
+Ceil.Simple,Contract Size,Contract Ceiling,FALSE
+PlatformPortfolio,PlatformPortfolio,Platform Portfolio,FALSE
+PlatformPortfolio.sum,PlatformPortfolio,Platform Portfolio,FALSE
+PlatformPortfolio.AnD,PlatformPortfolio,Platform Portfolio,FALSE
+Europe,Europe,,FALSE
+Country,Europe,,FALSE
+Coloring,Europe,,FALSE
 Country.Proper,Europe,,FALSE
 European.Region,Europe,,FALSE
 Europe.Region.Block,Europe,,FALSE
-Deployment,Europe,,FALSE
-Term,Europe,,FALSE
-AddressCat,Europe,,FALSE
-MaxOfIsOfficialPBL,Deployment,,FALSE
-JointScore,Performance,,FALSE
-ATLpolicy,PBL,,FALSE
-USDATL,PBL,,FALSE
-MajorCommandName,PBL,,FALSE
-OMBtheater,Regime,,FALSE
-Theater,Regime,,FALSE
-CrisisFundingTheater,MajorCommand,,FALSE
-ContractingOfficeName,International,,FALSE
-CSISofficeName,International,,FALSE
-CSISofficeName.PBL,International,,FALSE
-Hypothesis,ContractingOffice,Contracting Office,FALSE
-Cost.Based_Significance,ContractingOffice,Contracting Office,FALSE
-FxCb,ContractingOffice,Contracting Office,FALSE
-Significance,Hypothesis,,FALSE
-DefOrEqu,Significance,,FALSE
-MetricName,Pricing,,FALSE
-OCOlabelDetail,Significance,,FALSE
-NIAcontradictions,Aggregate,,FALSE
-International,Aggregate,,FALSE
+Deployment,Deployment,,FALSE
+Term,Performance,,FALSE
+AddressCat,PBL,,FALSE
+MaxOfIsOfficialPBL,PBL,,FALSE
+JointScore,PBL,,FALSE
+ATLpolicy,Regime,,FALSE
+USDATL,Regime,,FALSE
+MajorCommandName,MajorCommand,,FALSE
+OMBtheater,International,,FALSE
+Theater,International,,FALSE
+CrisisFundingTheater,International,,FALSE
+ContractingOfficeName,ContractingOffice,Contracting Office,FALSE
+CSISofficeName,ContractingOffice,Contracting Office,FALSE
+CSISofficeName.PBL,ContractingOffice,Contracting Office,FALSE
+Hypothesis,Hypothesis,,FALSE
+Cost.Based_Significance,Significance,,FALSE
+FxCb,Pricing,,FALSE
+Significance,Significance,,FALSE
+DefOrEqu,Aggregate,,FALSE
+MetricName,Aggregate,,FALSE
+OCOlabelDetail,Crisis,,FALSE
+NIAcontradictions,Crisis,,FALSE
+International,International,,FALSE
 IsCSISOCO,Crisis,,FALSE
 OCOcrisisScore,Crisis,,FALSE
-CrisisFunding,International,,FALSE
+CrisisFunding,Crisis,,FALSE
 CrisisPoints,Crisis,,FALSE
 CrisisDisplay,Crisis,,FALSE
 IsOCOcrisisFunding,Crisis,,FALSE
@@ -92,21 +95,21 @@ NAICcrisisFunding,Crisis,,FALSE
 NIAlist,Crisis,,FALSE
 SAMexception.sum,Crisis,,FALSE
 SAMcrisisFunding,Crisis,,FALSE
-UnmodifiedUltimateDurationCategory,Crisis,,FALSE
-Dur,Crisis,,FALSE
-Dur.Simple,Crisis,,FALSE
-isUndefinitizedAction,Duration,,FALSE
-isUCA,Duration,,FALSE
-UCA,Duration,,FALSE
-Reachback,UCA,,FALSE
-Action.Obligation,UCA,,FALSE
-Action.Obligation.Current,UCA,,FALSE
-Action.Obligation.2016,Reachback,,FALSE
-Fiscal.Year,,Action Obligation (Current?),FALSE
-ContingencyHumanitarianPeacekeepingOperation,,Action Obligation (Current $s),TRUE
-IsMultipleYearProcRnD,,Constant 2016 $,FALSE
-IsExcludedPSC,,Fiscal Year,FALSE
-IsExcludedCO,ContingencyHumanitarianPeacekeepingOperation,Contingency or Humanitarian Peacekeeping Operation,FALSE
+UnmodifiedUltimateDurationCategory,Duration,,FALSE
+Dur,Duration,,FALSE
+Dur.Simple,Duration,,FALSE
+isUndefinitizedAction,UCA,,FALSE
+isUCA,UCA,,FALSE
+UCA,UCA,,FALSE
+Reachback,Reachback,,FALSE
+Action.Obligation,,Action Obligation (Current?),FALSE
+Action.Obligation.Current,,Action Obligation (Current $s),FALSE
+Action.Obligation.2016,,Constant 2016 $,FALSE
+Fiscal.Year,,Fiscal Year,FALSE
+ContingencyHumanitarianPeacekeepingOperation,ContingencyHumanitarianPeacekeepingOperation,Contingency or Humanitarian Peacekeeping Operation,TRUE
+IsMultipleYearProcRnD,Exclude,,FALSE
+IsExcludedPSC,Exclude,,FALSE
+IsExcludedCO,Exclude,,FALSE
 unique_transaction_id,Exclude,,FALSE
 transaction_status,Exclude,,FALSE
 obligatedamount,Exclude,,FALSE
