@@ -458,15 +458,15 @@ PlatformPortfolio,Ships & Submarines,Ships & Submarines,2,,#C0504D,,,,default gr
 PlatformPortfolio,Land Vehicles,Land Vehicles,3,,#9BBB59,,,,default grey,#554449 
 PlatformPortfolio,Space Systems,Space Systems,4,indigo,#4B0082,,,,default grey,#554449 
 PlatformPortfolio,Missile and Space Systems,Missile and Space Systems,4,,#8064A8,,,,default grey,#554449 
-PlatformPortfolio,Missile Defense,Missile Defense,5,Thistle,#D8BFD7,,,,default grey,#554449 
+PlatformPortfolio,Missile Defense,Air & Missile Defense,5,Thistle,#D8BFD7,,,,default grey,#554449 
 PlatformPortfolio,Ordnance and Missiles,Ordnance and Missiles,6,,#8064A8,,,,default grey,#554449 
 PlatformPortfolio,Weapons and Ammunition,Weapons and Ammunition,6,,#4BACC6,,,,default grey,#554449 
 PlatformPortfolio,Electronics and Communications,Electronics and Comm.,7,,#DC908A,,,,default grey,#554449 
-PlatformPortfolio,"Electronics, Comms, & Sensors","Electronics, Comms, & Sensors",7,,#DC908A,,,,default grey,#554449 
-PlatformPortfolio,Facilities and Construction,Facilities and Construction,8,,#FFD966,,,,default grey,#554449 
+PlatformPortfolio,"Electronics, Comms, & Sensors",EC&S,7,,#DC908A,,,,default grey,#554449 
+PlatformPortfolio,Facilities and Construction,F&C,8,,#FFD966,,,,default grey,#554449 
 PlatformPortfolio,Other Products,Other Products,9,,#ED7D31,,,,default grey,#554449 
 PlatformPortfolio,Other Services,Other Services,10,,#A1C77B,,,,default grey,#554449 
-PlatformPortfolio,Other R&D and Knowledge Based,Other R&D and Know. Based,11,,#9DC3E6,,,,default grey,#554449 
+PlatformPortfolio,Other R&D and Knowledge Based,Other R&D and KB,11,,#9DC3E6,,,,default grey,#554449 
 PlatformPortfolio,Unlabeled,Unlabeled,12,reddish gray,#967878,,,,default grey,#554449 
 PlatformPortfolio,Other,Other,9,,#A1C77B,,,,default grey,#554449 
 ,,,,,,,,,,
