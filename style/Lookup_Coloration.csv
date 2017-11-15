@@ -334,14 +334,14 @@ Competition,Full and Open (2+ offers),Full and Open Comp. (2+ offers),10,dark bl
 Competition,5+ Offers,5+ Offers,10,dark blue,#1F4E78,,,,default grey,#554449 
 Competition,Unlabeled,Unlabeled,11,reddish gray,#967878,,,,default grey,#554449 
 ,,,,,,,,,,
-Vendors,Small,Small,1,blue,#4F81BD,,,,default grey,#554449 
-Vendors,Medium,Medium,2,red,#9A4E4E,,,,default grey,#554449 
+Vendors,Small,Small,1,,#92B36A,,,,default grey,#554449 
+Vendors,Medium,Medium,2,,#96777d,,,,default grey,#554449 
 Vendors,Medium (<1B),Medium (<1B),3,Light Red,#D19392,,,,default grey,#554449 
 Vendors,Medium (>1B),Medium (>1B),4,Dark Red,#FF4E4E,,,,default grey,#554449 
-Vendors,Large,Large,5,green,#92D050,,,,default grey,#554449 
-Vendors,Large (Big 6),Big Six,6,olive green,#89A54E,,,,default grey,#554449 
-Vendors,Large (Big 5),Big Five,6,olive green,#89A54E,,,,default grey,#554449 
-Vendors,Big Five,Big Five,6,olive green,#89A54E,,,,default grey,#554449 
+Vendors,Large,Large,5,,#8DB8D8,,,,default grey,#554449 
+Vendors,Large (Big 6),Big Six,6,,#014196,,,,default grey,#554449 
+Vendors,Large (Big 5),Big Five,6,,#014196,,,,default grey,#554449 
+Vendors,Big Five,Big Five,6,,#014196,,,,default grey,#554449 
 Vendors,Unlabeled,Unlabeled,10,reddish gray,#967878,,,,default grey,#554449 
 Vendors,No Prime Records,No Prime Records,3,pale yellow,#FECA48,,,,default grey,#554449 
 Vendors,Always Small,Always Small,1,blue,#4F81BD,,,,default grey,#554449 
