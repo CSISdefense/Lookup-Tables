@@ -318,13 +318,13 @@ Contract.Size.Sum,$500 million and greater,$500 million and greater,9,orange,#F7
 Contract.Size.Sum,Unlabeled,Unlabeled,12,reddish gray,#967878,,,,default grey,#554449 
 ,,,,,,,,,,
 Competition,No Comp. (Unlabeled),No Comp. (Unlabeled),1,peach,#FDEADA,,,,default grey,#554449 
-Competition,Not Effective Comp.,Not Effective Comp.,2,pink,#D99694,,,,default grey,#554449 
+Competition,Not Effective Comp.,Not Effective Comp.,2,,#033651,,,,default grey,#554449 
 Competition,No Comp.,No Comp.,3,,#033651,,,,default grey,#554449 
 Competition,No Comp. (Other),No Comp. (Other),4,orange,#F79646,,,,default grey,#554449 
 Competition,No Comp. (Only 1 Source),No Comp. (Only 1 Source),5,red,#9A4E4E,,,,default grey,#554449 
 Competition,Follow on to Competed Action,Follow on to Competed Action,6,pink,#D99694,,,,default grey,#554449 
 Competition,1 Offer,1 Offer,7,,#A6CEE3,,,,default grey,#554449 
-Competition,Effective Comp.,Effective Comp.,8,blue,#326496,,,,default grey,#554449 
+Competition,Effective Comp.,Effective Comp.,8,,#758188,,,,default grey,#554449 
 Competition,Limited Comp. (2+ offers),Limited Comp. (2+ offers),8,blue,#326496,,,,default grey,#554449 
 Competition,2+ Offers,2+ Offers,8,,#758188,,,,default grey,#554449 
 Competition,2 Offers,2 Offers,8,light blue,#60B4E9,,,,default grey,#554449 
