@@ -335,7 +335,7 @@ Competition,5+ Offers,5+ Offers,10,dark blue,#1F4E78,,,,default grey,#554449
 Competition,Unlabeled,Unlabeled,11,reddish gray,#967878,,,,default grey,#554449 
 ,,,,,,,,,,
 Vendors,Small,Small,1,,#92B36A,,,,default grey,#554449 
-Vendors,Medium,Medium,2,,#7d7796,,,,default grey,#554449 
+Vendors,Medium,Medium,2,,#cb5b7f,,,,default grey,#554449 
 Vendors,Medium (<1B),Medium (<1B),3,Light Red,#D19392,,,,default grey,#554449 
 Vendors,Medium (>1B),Medium (>1B),4,Dark Red,#FF4E4E,,,,default grey,#554449 
 Vendors,Large,Large,5,,#8DB8D8,,,,default grey,#554449 
