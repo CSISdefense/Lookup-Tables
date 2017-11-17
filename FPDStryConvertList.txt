@@ -64,35 +64,39 @@ OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [maj_fund_agency_cat
 
 SELECT DISTINCT [contractingofficeagencyid],
 len([contractingofficeagencyid]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([contractingofficeagencyid])) as leftofcolon,
 '[varchar](4)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](4), [contractingofficeagencyid]) IS NULL AND
 NULLIF([contractingofficeagencyid],'') IS NOT NULL)
-OR len( [contractingofficeagencyid] ) > 4 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [contractingofficeagencyid] ))) > 4 
 
 SELECT DISTINCT [contractingofficeid],
 len([contractingofficeid]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([contractingofficeid])) as leftofcolon,
 '[varchar](6)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](6), [contractingofficeid]) IS NULL AND
 NULLIF([contractingofficeid],'') IS NOT NULL)
-OR len( [contractingofficeid] ) > 6 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [contractingofficeid] ))) > 6 
 
 SELECT DISTINCT [fundingrequestingagencyid],
 len([fundingrequestingagencyid]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([fundingrequestingagencyid])) as leftofcolon,
 '[varchar](4)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](4), [fundingrequestingagencyid]) IS NULL AND
 NULLIF([fundingrequestingagencyid],'') IS NOT NULL)
-OR len( [fundingrequestingagencyid] ) > 4 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [fundingrequestingagencyid] ))) > 4 
 
 SELECT DISTINCT [fundingrequestingofficeid],
 len([fundingrequestingofficeid]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([fundingrequestingofficeid])) as leftofcolon,
 '[varchar](6)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](6), [fundingrequestingofficeid]) IS NULL AND
 NULLIF([fundingrequestingofficeid],'') IS NOT NULL)
-OR len( [fundingrequestingofficeid] ) > 6 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [fundingrequestingofficeid] ))) > 6 
 
 SELECT DISTINCT [fundedbyforeignentity],
 len([fundedbyforeignentity]) as Length,
