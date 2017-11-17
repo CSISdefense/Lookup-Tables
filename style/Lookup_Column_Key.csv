@@ -118,10 +118,10 @@ baseandalloptionsvalue,,,FALSE
 maj_agency_cat,,,TRUE
 mod_agency,,,TRUE
 maj_fund_agency_cat,,,TRUE
-contractingofficeAgencyID,,,TRUE
-contractingOfficeID,,,TRUE
-fundingrequestingAgencyID,,,TRUE
-fundingrequestingOfficeID,,,TRUE
+contractingofficeagencyid,,,TRUE
+contractingofficeid,,,TRUE
+fundingrequestingagencyid,,,TRUE
+fundingrequestingofficeid,,,TRUE
 fundedbyforeignentity,,,FALSE
 signeddate,,,FALSE
 effectivedate,,,FALSE
