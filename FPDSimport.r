@@ -17,7 +17,7 @@ MergeType.df$column<-substring(MergeType.df$column,2,nchar(MergeType.df$column)-
   
 
 #Create Try Convert
-debug(create_try_converts)
+# debug(create_try_converts)
 TryConvertList<-create_try_converts(MergeType.df,"Errorlogging","FPDSviolatesType"
                                     ,IncludeAlters=FALSE)
 write(TryConvertList,"FPDStryConvertList.txt")
