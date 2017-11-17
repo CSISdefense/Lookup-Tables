@@ -1,7 +1,7 @@
 USE [DIIG]
 GO
 
-/****** Object:  Table [ErrorLogging].[FPDSViolatesConstraint]    Script Date: 10/27/2017 2:08:59 PM ******/
+/****** Object:  Table [ErrorLogging].[FPDSViolatesConstraint]    Script Date: 11/17/2017 3:43:33 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -68,10 +68,10 @@ CREATE TABLE [ErrorLogging].[FPDSViolatesConstraint](
 	[streetaddress2] [varchar](60) NULL,
 	[streetaddress3] [varchar](55) NULL,
 	[city] [varchar](35) NULL,
-	[state] [varchar](20) NULL,
+	[state] [varchar](30) NULL,
 	[zipcode] [varchar](28) NULL,
 	[vendorcountrycode] [varchar](50) NULL,
-	[vendor_state_code] [varchar](20) NULL,
+	[vendor_state_code] [varchar](30) NULL,
 	[vendor_cd] [varchar](22) NULL,
 	[congressionaldistrict] [varchar](22) NULL,
 	[vendorsitecode] [varchar](15) NULL,
@@ -101,7 +101,7 @@ CREATE TABLE [ErrorLogging].[FPDSViolatesConstraint](
 	[recoveredmaterialclauses] [varchar](1) NULL,
 	[seatransportation] [varchar](1) NULL,
 	[contractbundling] [varchar](1) NULL,
-	[consolidatedcontract] [bit] NULL,
+	[consolidatedcontract] [varchar](1) NULL,
 	[countryoforigin] [varchar](3) NULL,
 	[placeofmanufacture] [varchar](1) NULL,
 	[manufacturingorganizationtype] [varchar](1) NULL,
@@ -239,7 +239,8 @@ CREATE TABLE [ErrorLogging].[FPDSViolatesConstraint](
 	[prime_awardee_executive2_compensation] [decimal](19, 4) NULL,
 	[prime_awardee_executive1] [varchar](100) NULL,
 	[prime_awardee_executive1_compensation] [decimal](19, 4) NULL,
-	[IsDuplicateUTI] [bit] NULL
+	[IsDuplicateUTI] [bit] NULL,
+	[CSIStransactionID] [int] NULL
 ) ON [PRIMARY]
 
 GO
@@ -254,6 +255,10 @@ ALTER TABLE [ErrorLogging].[FPDSViolatesConstraint] ADD  CONSTRAINT [DF_FPDSViol
 GO
 
 ALTER TABLE [ErrorLogging].[FPDSViolatesConstraint] ADD  DEFAULT ((0)) FOR [IsDuplicateUTI]
+GO
+
+ALTER TABLE [ErrorLogging].[FPDSViolatesConstraint]  WITH CHECK ADD FOREIGN KEY([CSIStransactionID])
+REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
 GO
 
 

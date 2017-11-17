@@ -452,11 +452,11 @@ OR len( [city] ) > 35
 
 SELECT DISTINCT [state],
 len([state]) as Length,
-'[varchar](20)' as DestinationType
+'[varchar](30)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](20), [state]) IS NULL AND
+WHERE (Try_Convert([varchar](30), [state]) IS NULL AND
 NULLIF([state],'') IS NOT NULL)
-OR len( [state] ) > 20 
+OR len( [state] ) > 30 
 
 SELECT DISTINCT [zipcode],
 len([zipcode]) as Length,
@@ -476,11 +476,11 @@ OR len( [vendorcountrycode] ) > 50
 
 SELECT DISTINCT [vendor_state_code],
 len([vendor_state_code]) as Length,
-'[varchar](20)' as DestinationType
+'[varchar](30)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](20), [vendor_state_code]) IS NULL AND
+WHERE (Try_Convert([varchar](30), [vendor_state_code]) IS NULL AND
 NULLIF([vendor_state_code],'') IS NOT NULL)
-OR len( [vendor_state_code] ) > 20 
+OR len( [vendor_state_code] ) > 30 
 
 SELECT DISTINCT [vendor_cd],
 len([vendor_cd]) as Length,
@@ -727,10 +727,11 @@ OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [contractbundling] )
 SELECT DISTINCT [consolidatedcontract],
 len([consolidatedcontract]) as Length,
 (Select LeftOfColon from FPDSTypeTable.leftofcolon([consolidatedcontract])) as leftofcolon,
-'[bit]' as DestinationType
+'[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([consolidatedcontract]))) IS NULL AND
+WHERE (Try_Convert([varchar](1), [consolidatedcontract]) IS NULL AND
 NULLIF([consolidatedcontract],'') IS NOT NULL)
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [consolidatedcontract] ))) > 1 
 
 SELECT DISTINCT [countryoforigin],
 len([countryoforigin]) as Length,
