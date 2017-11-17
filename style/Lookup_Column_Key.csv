@@ -473,3 +473,4 @@ Acct_Type,,,FALSE
 Acct_Type_Description,,,FALSE
 Fund_Type,,,FALSE
 Fund_Type_Description,,,FALSE
+Period,Period,Period,FALSE

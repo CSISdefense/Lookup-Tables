@@ -48,7 +48,7 @@ AnnualSimpleBucketVendorRank,VendorRank
 AnnualSubCustomerVendorRank,VendorRank
 ContractAnnualCustomerVendorRank,VendorRank
 subcustomer,SubCustomer
-ï..fiscal_year,Fiscal.Year
+Ã¯..fiscal_year,Fiscal.Year
 pCEffNot Effective Comp.,pNoEffComp
 pCEffEffective Comp.,pEffComp
 pPlatElectronics and Communications ,pPlatEnC
@@ -124,7 +124,7 @@ Budget.Sub.Activity..BSA..Title,BudgetSubActivityTitle
 BSA,BSA
 BSA.Title,BSAtitle
 AG.Title,AGtitle
-SAG…,SAGtitle
+SAGâ€¦,SAGtitle
 Facility.Category.Title,FacilityCategoryTitle
 State.Country,StateCountry
 State.Country.Title,StateCountryTitle
@@ -193,3 +193,4 @@ X.......Auth.for....Appn.Amount.,AuthForAppnAmount
 X.....TOA.Base....Request.with....CR.Adj....,TOAbaseRequestWithCRadj
 StartFiscal_Year,StartFiscal_Year
 ParentID,ParentID
+Period,Period

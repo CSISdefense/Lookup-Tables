@@ -2566,3 +2566,10 @@ UCA,Unlabeled,Unlabeled,25,reddish gray,#967878,,,,default grey,#554449
 Reachback,Contigency-Contracting-Intensive Contracting Offices,Contigency-\nContracting-Intensive\nContracting Offices,1,Orange,#DB843D,,,,default grey,#554449 
 Reachback,All Other Offices,All Other Offices,2,teal,#4198AF,,,,default grey,#554449 
 Reachback,Unlabeled,Unlabeled,25,reddish gray,#967878,,,,default grey,#554449 
+,,,,,,,,,,
+,,,,,,,,,,
+Period,Outside Study Period,Outside Study Period,1,red,,,,,default grey,#554449 
+Period,Pre-Drawdown,Pre-Drawdown,2,orange,,,,,default grey,#554449 
+Period,Start Drawdown,Start Drawdown,light blue,,,,,default grey,#554449 
+Period,BCA Decline,BCA Decline,3,dark blue,,,,,default grey,#554449 
+Period,Rebound,Rebound,4,green,,,,,default grey,#554449 
