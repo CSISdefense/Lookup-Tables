@@ -70,13 +70,13 @@ Fiscal.Year,sequestration.period
 2008,Out of Period
 2009,Pre-drawdown
 2010,Pre-drawdown
-2011,Start of Drawdown
-2012,Start of Drawdown
-2013,BCA decline period
-2014,BCA decline period
-2015,BCA decline period
-2016,Current
-2017,Current
+2011,Start Drawdown
+2012,Start Drawdown
+2013,BCA Decline
+2014,BCA Decline
+2015,BCA Decline
+2016,Rebound
+2017,Rebound
 2018,Out of Period
 2019,Out of Period
 2020,Out of Period
