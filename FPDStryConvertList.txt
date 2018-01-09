@@ -217,11 +217,12 @@ OR len( [majorprogramcode] ) > 104
 
 SELECT DISTINCT [contingencyhumanitarianpeacekeepingoperation],
 len([contingencyhumanitarianpeacekeepingoperation]) as Length,
+(Select LeftOfColon from FPDSTypeTable.leftofcolon([contingencyhumanitarianpeacekeepingoperation])) as leftofcolon,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](1), [contingencyhumanitarianpeacekeepingoperation]) IS NULL AND
 NULLIF([contingencyhumanitarianpeacekeepingoperation],'') IS NOT NULL)
-OR len( [contingencyhumanitarianpeacekeepingoperation] ) > 1 
+OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [contingencyhumanitarianpeacekeepingoperation] ))) > 1 
 
 SELECT DISTINCT [contractfinancing],
 len([contractfinancing]) as Length,

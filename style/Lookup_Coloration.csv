@@ -1,4 +1,9 @@
 coloration.key,variable,Label,Display.Order,Color,RGB,shape,size,alpha,text.color,text.RGB
+Binary,TRUE,True,1,"Blue, Accent 1",#0D0DD1,,,,default grey,#554449 
+Binary,FALSE,False,2,red,#AA4643,,,,default grey,#554449 
+Binary,1,True,1,"Blue, Accent 1",#0D0DD1,,,,default grey,#554449 
+Binary,0,False,2,red,#AA4643,,,,default grey,#554449 
+,,,,,,,,,,
 Overall,Services Contract Spend,Services Contract Spend,1,"Blue, Accent 1",,,,,default grey,#554449 
 Overall,Other Services Outlays,Other Services Outlays,2,"Orange, Accent 6",,,,,default grey,#554449 
 Overall,Services Contract %,Services Contract %,3,"Blue, Accent 1, Darler 50%",,,,,default grey,#554449 
