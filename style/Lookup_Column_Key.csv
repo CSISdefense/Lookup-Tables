@@ -475,6 +475,6 @@ Fund_Type,,,,,FALSE
 Fund_Type_Description,,,,,FALSE
 Period,Period,Period,,,FALSE
 EntitySizeText,EntitySizeText,Vendor Count,,,FALSE
-AnyEntityUSplaceOfPerformance,TrueFalse,,,,FALSE
-IsEntityAbove1990constantReportingThreshold,TrueFalse,,,,FALSE
-IsEntityAbove2016constantReportingThreshold,TrueFalse,,,,FALSE
+AnyEntityUSplaceOfPerformance,Binary,,,,FALSE
+IsEntityAbove1990constantReportingThreshold,Binary,,,,FALSE
+IsEntityAbove2016constantReportingThreshold,Binary,,,,FALSE
