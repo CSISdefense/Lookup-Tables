@@ -474,7 +474,7 @@ Acct_Type_Description,,,,,FALSE
 Fund_Type,,,,,FALSE
 Fund_Type_Description,,,,,FALSE
 Period,Period,Period,,,FALSE
-EntitySizeText,EntitySizeText,Vendor Count,,,FALSE
+EntitySizeText,Vendors,Vendor Count,,,FALSE
 AnyEntityUSplaceOfPerformance,Binary,,,,FALSE
 IsEntityAbove1990constantReportingThreshold,Binary,,,,FALSE
 IsEntityAbove2016constantReportingThreshold,Binary,,,,FALSE
