@@ -477,6 +477,7 @@ Period,Period,Period,,,FALSE
 EntitySizeText,Vendors,Vendor Count,,,FALSE
 EntitySizeText.sum,Vendors,Vendor Count,,,FALSE
 AnyEntityUSplaceOfPerformance,Binary,,,,FALSE
+AnyEntityForeignPlaceOfPerformance,Binary,,,,FALSE
 IsEntityAbove1990constantReportingThreshold,Binary,,,,FALSE
 IsEntityAbove2016constantReportingThreshold,Binary,,,,FALSE
 IsEntityAbove2016constantOneMillionThreshold,Binary,,,,FALSE
