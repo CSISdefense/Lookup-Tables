@@ -1,6 +1,7 @@
 library(plyr)
 library(csis360)
 
+
 read_create_table<-function(FileName){
   TargetTable.df<-read.csv(file.path("ImportAids\\",FileName),header=FALSE,sep=" ")
   
@@ -301,6 +302,32 @@ create_try_converts<-function(data,
   
   
   ConvertList
+}
+
+
+count_empties<-function(Table.df,
+  Schema,
+  TableName){
+  
+  Table.df$NullCheck<-Table.df$CSISvariableName
+  Table.df$NullCheck[substr(Table.df$VariableType,1,9)=="[varchar]" | 
+  substr(Table.df$VariableType,1,7)=="varchar"]<-
+    paste("nullif(",Table.df$NullCheck[substr(Table.df$VariableType,1,9)=="[varchar]" | 
+  substr(Table.df$VariableType,1,7)=="varchar"],",'')",sep="")
+  
+  InsertList<-"SELECT "
+  InsertList<-c(InsertList,paste("sum(ifelse(",Table.df$NullCheck,
+    " is null,1,0)) as ",Table.df$CSISvariableName,",",sep=""))
+  #Remove the comma from the select list column
+  InsertList[length(InsertList)]<-substr(InsertList[length(InsertList)],
+    1,
+    nchar(InsertList[length(InsertList)])-1)
+  
+  InsertList<-c(InsertList,
+    paste("FROM ",Schema,".",TableName,"\n",sep="")
+  )    
+  
+  InsertList
 }
 
 

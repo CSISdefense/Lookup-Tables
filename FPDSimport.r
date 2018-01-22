@@ -39,6 +39,9 @@ OriginTableConstraint.df<-read_create_table("ErrorLogging_FPDSviolatesConstraint
 OriginTableConstraint.df<-translate_name(OriginTableConstraint.df)
 MergeConstraint.df<-merge_source_and_csis_name_tables(OriginTableConstraint.df,DestTableConstraint.df)
 
+count_list<-count_empties(OriginTableConstraint.df,"ErrorLogging","FPDSviolatesConstraint")
+write(count_list,"count_list.txt")
+
 
 #Transfer from Errorlogging.FPDSviolatesConstraint to Contract.FPDS
 ConstTable.df<-translate_name(DestTableConstraint.df)
