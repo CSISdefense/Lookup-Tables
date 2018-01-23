@@ -44,8 +44,8 @@ write(count_list,"count_list.txt")
 
 
 #Transfer from Errorlogging.FPDSviolatesConstraint to Contract.FPDS
-ConstTable.df<-translate_name(DestTableConstraint.df)
-MergeConst<-merge_source_and_csis_name_tables(ConstTable.df,ConstTable.df)
+ConstTable.df<-translate_name(OriginTableConstraint.df)
+MergeConst<-merge_source_and_csis_name_tables(ConstTable.df,DestTableConstraint.df)
 InsertList<-create_insert(MergeConst,
                          "ErrorLogging",
                          "FPDSviolatesConstraint",

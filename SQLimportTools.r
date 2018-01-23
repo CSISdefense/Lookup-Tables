@@ -315,9 +315,9 @@ count_empties<-function(Table.df,
     paste("nullif(",Table.df$NullCheck[substr(Table.df$VariableType,1,9)=="[varchar]" | 
   substr(Table.df$VariableType,1,7)=="varchar"],",'')",sep="")
   
-  InsertList<-"SELECT "
-  InsertList<-c(InsertList,paste("sum(ifelse(",Table.df$NullCheck,
-    " is null,1,0)) as ",Table.df$CSISvariableName,",",sep=""))
+  InsertList<-"SELECT count(*) as TotalRows,"
+  InsertList<-c(InsertList,paste("sum(iif(",Table.df$NullCheck,
+    " is null,1,0)) as ",Table.df$SourceVariableName,",",sep=""))
   #Remove the comma from the select list column
   InsertList[length(InsertList)]<-substr(InsertList[length(InsertList)],
     1,
@@ -340,9 +340,47 @@ create_update_FPDS<-function(MergeTable.df,
     TargetTableName,
     DateType=101){
   
-  update_list<-"UPDATE T "
-  update_list<-c(update_list,paste(MergeTable.df$CSISvariableName,"=s."
-    ,MergeTable.df$SourceVariableName,",",sep=""))
+  update_list<-"UPDATE T SET"
+  
+  #Remove rows that shouldn't be updated
+  MergeTable.df<-MergeTable.df[which(!tolower(MergeTable.df$SourceVariableName) %in% tolower(c(
+    "[CSISCreatedDate]",
+    "[unique_transaction_id]",
+    "[fiscal_year]"))),]
+
+  #Add a null check to columns missing in recent USAspending downloads
+  MissingColumns<-which(tolower(MergeTable.df$SourceVariableName) %in% tolower(c(
+    "[mod_agency]",
+    "[lettercontract]",
+    "[majorprogramcode]",
+    "[account_title]",
+    "[rec_flag]",
+    "[parentdunsnumber]",
+    "[locationcode]",
+    "[statecode]",
+    "[smallbusinesscompetitivenessdemonstrationprogram]",
+    "[isarchitectureandengineering]",
+    "[isconstructionfirm]",
+    "[isotherbusinessororganization]",
+    "[iswomenownedsmallbusiness]",
+    "[isecondisadvwomenownedsmallbusiness]",
+    "[isjointventurewomenownedsmallbusiness]",
+    "[isjointventureecondisadvwomenownedsmallbusiness]",
+    "[prime_awardee_executive5]",
+    "[prime_awardee_executive4]",
+    "[prime_awardee_executive3]",
+    "[prime_awardee_executive2]",
+    "[prime_awardee_executive1]",
+    "[progsourcesubacct]")))
+  
+  MergeTable.df$NullCheck<-paste("S.",MergeTable.df$SourceVariableName,sep="")
+  MergeTable.df$NullCheck[MissingColumns]<-
+    paste("coalesce(nullif(",MergeTable.df$NullCheck[MissingColumns],",''),",
+      "T.",MergeTable.df$CSISvariableName[MissingColumns],")",sep="")
+  
+  
+    update_list<-c(update_list,paste(MergeTable.df$CSISvariableName,"=",
+    MergeTable.df$NullCheck,",",sep=""))
   #Remove the comma from the select list column
   update_list[length(update_list)]<-substr(update_list[length(update_list)],
     1,
@@ -352,9 +390,9 @@ create_update_FPDS<-function(MergeTable.df,
     paste("FROM ",TargetSchema,".",TargetTableName," as T",sep="")
   )    
   update_list<-c(update_list,
-    paste("INNER Join ",SourceSchema,".",SourceTableName,"as S",sep=""),
-    "ON s.Unique_Transaction_ID=t.s.Unique_Transaction_ID and",
-    "s.Fiscal_Year=t.s.Fiscal_Year",
+    paste("INNER Join ",SourceSchema,".",SourceTableName," as S",sep=""),
+    "ON s.Unique_Transaction_ID=t.Unique_Transaction_ID and",
+    "s.Fiscal_Year=t.Fiscal_Year",
     "WHERE s.last_modified_date>=t.last_modified_date"
   )    
   

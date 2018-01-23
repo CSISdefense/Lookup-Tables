@@ -238,9 +238,7 @@ CREATE TABLE [ErrorLogging].[FPDSViolatesConstraint](
 	[prime_awardee_executive2] [varchar](100) NULL,
 	[prime_awardee_executive2_compensation] [decimal](19, 4) NULL,
 	[prime_awardee_executive1] [varchar](100) NULL,
-	[prime_awardee_executive1_compensation] [decimal](19, 4) NULL,
-	[IsDuplicateUTI] [bit] NULL,
-	[CSIStransactionID] [int] NULL
+	[prime_awardee_executive1_compensation] [decimal](19, 4) NULL
 ) ON [PRIMARY]
 
 GO
