@@ -309,7 +309,7 @@ count_empties<-function(Table.df,
   Schema,
   TableName){
   
-  Table.df$NullCheck<-Table.df$CSISvariableName
+  Table.df$NullCheck<-Table.df$SourceVariableName
   Table.df$NullCheck[substr(Table.df$VariableType,1,9)=="[varchar]" | 
   substr(Table.df$VariableType,1,7)=="varchar"]<-
     paste("nullif(",Table.df$NullCheck[substr(Table.df$VariableType,1,9)=="[varchar]" | 
@@ -331,6 +331,39 @@ count_empties<-function(Table.df,
 }
 
 
+
+
+create_update_FPDS<-function(MergeTable.df,
+    SourceSchema,
+    SourceTableName,
+    TargetSchema,
+    TargetTableName,
+    DateType=101){
+  
+  update_list<-"UPDATE T "
+  update_list<-c(update_list,paste(MergeTable.df$CSISvariableName,"=s."
+    ,MergeTable.df$SourceVariableName,",",sep=""))
+  #Remove the comma from the select list column
+  update_list[length(update_list)]<-substr(update_list[length(update_list)],
+    1,
+    nchar(update_list[length(update_list)])-1)
+  #Wrap up
+  update_list<-c(update_list,
+    paste("FROM ",TargetSchema,".",TargetTableName," as T",sep="")
+  )    
+  update_list<-c(update_list,
+    paste("INNER Join ",SourceSchema,".",SourceTableName,"as S",sep=""),
+    "ON s.Unique_Transaction_ID=t.s.Unique_Transaction_ID and",
+    "s.Fiscal_Year=t.s.Fiscal_Year",
+    "WHERE s.last_modified_date>=t.last_modified_date"
+  )    
+  
+    
+  update_list
+}
+
+
+
 create_insert<-function(MergeTable.df,
                        SourceSchema,
                        SourceTableName,
@@ -348,7 +381,7 @@ create_insert<-function(MergeTable.df,
   InsertList<-c(InsertList,paste(MergeTable.df$ConvertList,",",sep=""))
   #Remove the comma from the select list column
   InsertList[length(InsertList)]<-substr(InsertList[length(InsertList)],
-                                       1,
+i1,
                                        nchar(InsertList[length(InsertList)])-1)
   
   InsertList<-c(InsertList,

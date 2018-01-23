@@ -53,4 +53,12 @@ InsertList<-create_insert(MergeConst,
                          "FPDS",
                          DateType=101)
 write(InsertList,"Insert2.txt")
+debug(create_update_FPDS)
+update_list<-create_update_FPDS(MergeConst,
+  "ErrorLogging",
+  "FPDSviolatesConstraint",
+  "Contract",
+  "FPDS",
+  DateType=101)
+write(update_list,"update_list.txt")
 
