@@ -82,10 +82,15 @@ translate_name<-function(TargetTable.df){
 
 
 
-merge_source_and_csis_name_tables<-function(SourceTable.df,CSIStable.df){
+merge_source_and_csis_name_tables<-function(SourceTable.df,
+    CSIStable.df,
+    drop_unmatched=TRUE){
   colnames(SourceTable.df)[1:3]<-c("SourceVariableName",
                                    "SourceVariableType",
                                    "SourceNullable")
+  if(drop_unmatched==FALSE){
+    SourceTable.df$CSISvariableName_unmatched<-SourceTable.df$CSISvariableName
+  }
   SourceTable.df$CSISvariableNameLower<-tolower(as.character(SourceTable.df$CSISvariableName))
   SourceTable.df<-subset(SourceTable.df,select=-c(CSISvariableName))
   colnames(CSIStable.df)[1:3]<-c("CSISvariableName",
@@ -94,6 +99,16 @@ merge_source_and_csis_name_tables<-function(SourceTable.df,CSIStable.df){
   CSIStable.df$CSISvariableNameLower<-tolower(as.character(CSIStable.df$CSISvariableName))
   SourceTable.df<-plyr::join(SourceTable.df,CSIStable.df, by="CSISvariableNameLower",match="first")
   SourceTable.df<-subset(SourceTable.df,select=-c(CSISvariableNameLower))
+  if(drop_unmatched==FALSE){
+    SourceTable.df$CSISvariableName[is.na(SourceTable.df$CSISvariableName)]<-
+      SourceTable.df$CSISvariableName_unmatched[is.na(SourceTable.df$CSISvariableName)]
+    SourceTable.df<-subset(SourceTable.df,select=-c(CSISvariableName_unmatched))
+    SourceTable.df$CSISvariableType[is.na(SourceTable.df$CSISvariableType)]<-
+      SourceTable.df$SourceVariableType[is.na(SourceTable.df$CSISvariableType)]
+    SourceTable.df$CSISnullable[is.na(SourceTable.df$CSISnullable)]<-
+      SourceTable.df$SourceNullable[is.na(SourceTable.df$CSISnullable)]
+  }
+  SourceTable.df
 }
 
 

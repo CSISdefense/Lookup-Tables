@@ -1,7 +1,7 @@
 USE [DIIG]
 GO
 
-/****** Object:  Table [Contract].[FPDS]    Script Date: 2/6/2018 12:06:31 AM ******/
+/****** Object:  Table [Contract].[FPDS]    Script Date: 2/6/2018 3:04:04 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -90,7 +90,7 @@ CREATE TABLE [Contract].[FPDS](
 	[claimantprogramcode] [varchar](3) NULL,
 	[principalnaicscode] [varchar](6) NULL,
 	[informationtechnologycommercialitemcategory] [varchar](30) NULL,
-	[gfe_gfp] [varchar](1) NULL,
+	[gfe_gfp_code] [varchar](1) NULL,
 	[useofepadesignatedproducts] [varchar](1) NULL,
 	[recoveredmaterialclauses] [varchar](1) NULL,
 	[seatransportation] [varchar](1) NULL,
@@ -262,7 +262,8 @@ CREATE TABLE [Contract].[FPDS](
 	[manufacturer_of_goods] [bit] NULL,
 	[alaskan_native_servicing_institution] [bit] NULL,
 	[native_hawaiian_servicing_institution] [bit] NULL,
-	[sba_certified_8a_joint_venture] [bit] NULL
+	[sba_certified_8a_joint_venture] [bit] NULL,
+	[dot_certified_disadvantage] [bit] NULL
 ) ON [PRIMARY]
 
 GO
@@ -429,7 +430,7 @@ GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_fundingrequestingagencyid]
 GO
 
-ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [FK_FPDS_gfe_gfp] FOREIGN KEY([gfe_gfp])
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [FK_FPDS_gfe_gfp] FOREIGN KEY([gfe_gfp_code])
 REFERENCES [FPDSTypeTable].[gfe_gfp] ([gfe_gfp])
 GO
 

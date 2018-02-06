@@ -125,7 +125,7 @@ CREATE TABLE [ErrorLogging].[FPDSbetaViolatesType](
 	[number_of_offers_received] [varchar](255) NULL,
 	[commercial_item_acquisition_procedures_code] [varchar](255) NULL,
 	[commercial_item_acquisition_procedures] [varchar](255) NULL,
-	[small_business_competitiveness_demonstration _program] [varchar](255) NULL,
+	[small_business_competitiveness_demonstration_program] [varchar](255) NULL,
 	[commercial_item_test_program_code] [varchar](255) NULL,
 	[commercial_item_test_program] [varchar](255) NULL,
 	[a76_fair_act_action_code] [varchar](255) NULL,
@@ -261,7 +261,7 @@ CREATE TABLE [ErrorLogging].[FPDSbetaViolatesType](
 	[self_certified_small_disadvantaged_business] [varchar](255) NULL,
 	[small_disadvantaged_business] [varchar](255) NULL,
 	[c8a_program_participant] [varchar](255) NULL,
-	[historically_underutilized_business_zone _hubzone_firm] [varchar](255) NULL,
+	[historically_underutilized_business_zone_hubzone_firm] [varchar](255) NULL,
 	[sba_certified_8a_joint_venture] [varchar](255) NULL
 ) ON [PRIMARY]
 
