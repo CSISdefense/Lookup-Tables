@@ -1,0 +1,4 @@
+ALTER TABLE Errorlogging.FPDSbetaViolatesType
+CREATE CSISmodifiedDate datetime2 NOT NULL default gettime(),
+CSIScreatedDate datetime2 NOT NULL default gettime()
+
