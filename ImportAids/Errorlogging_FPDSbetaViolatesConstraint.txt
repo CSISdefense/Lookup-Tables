@@ -1,7 +1,7 @@
 USE [DIIG]
 GO
 
-/****** Object:  Table [ErrorLogging].[FPDSbetaViolatesConstraint]    Script Date: 2/6/2018 3:15:52 PM ******/
+/****** Object:  Table [ErrorLogging].[FPDSbetaViolatesConstraint]    Script Date: 2/8/2018 1:15:25 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -262,12 +262,20 @@ CREATE TABLE [ErrorLogging].[FPDSbetaViolatesConstraint](
 	[issbacertifiedsmalldisadvantagedbusiness] [bit] NULL,
 	[firm8aflag] [bit] NULL,
 	[hubzoneflag] [bit] NULL,
-	[sba_certified_8a_joint_venture] [bit] NULL
+	[sba_certified_8a_joint_venture] [bit] NULL,
+	[CSISmodifiedDate] [datetime2](7) NOT NULL,
+	[CSIScreatedDate] [datetime2](7) NOT NULL
 ) ON [PRIMARY]
 
 GO
 
 SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [ErrorLogging].[FPDSbetaViolatesConstraint] ADD  DEFAULT (getdate()) FOR [CSISmodifiedDate]
+GO
+
+ALTER TABLE [ErrorLogging].[FPDSbetaViolatesConstraint] ADD  DEFAULT (getdate()) FOR [CSIScreatedDate]
 GO
 
 

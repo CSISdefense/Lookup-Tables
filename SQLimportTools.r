@@ -115,8 +115,8 @@ merge_source_and_csis_name_tables<-function(SourceTable.df,
 
 create_csis_dates<-function(Schema,TableName){
   paste("ALTER TABLE ",Schema,".",TableName,"\n",
-        "CREATE CSISmodifiedDate datetime2 NOT NULL default gettime(),\n",
-        "CSIScreatedDate datetime2 NOT NULL default gettime()\n",
+        "CREATE COLUMN CSISmodifiedDate datetime2 NOT NULL default getdate(),\n",
+        "CSIScreatedDate datetime2 NOT NULL default getdate()\n",
         sep="")
 }
 
@@ -433,8 +433,7 @@ create_insert<-function(MergeTable.df,
   InsertList<-c(InsertList,")\n SELECT ")
   InsertList<-c(InsertList,paste(MergeTable.df$ConvertList,",",sep=""))
   #Remove the comma from the select list column
-  InsertList[length(InsertList)]<-substr(InsertList[length(InsertList)],
-i1,
+  InsertList[length(InsertList)]<-substr(InsertList[length(InsertList)],1,
                                        nchar(InsertList[length(InsertList)])-1)
   
   InsertList<-c(InsertList,

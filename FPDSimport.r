@@ -27,7 +27,7 @@ InsertList<-create_insert(MergeType.df,
   "FPDSviolatesType",
   "ErrorLogging",
   "FPDSviolatesConstraint",
-  DateType=101)
+  DateType=120)
 write(InsertList,"Insert.txt")
 write(create_csis_dates("Contract","FPDS"),"CSISdates.txt")
 
@@ -65,18 +65,18 @@ MergeType.df$column<-substring(MergeType.df$column,2,nchar(MergeType.df$column)-
 
 #Create Try Convert
 # undebug(create_try_converts)
-TryConvertList<-create_try_converts(MergeType.df,"Errorlogging","FPDSviolatesType"
+TryConvertList<-create_try_converts(MergeType.df,"Errorlogging","FPDSbetaViolatesType"
                                     ,IncludeAlters=FALSE)
-write(TryConvertList,"FPDStryConvertList.txt")
+write(TryConvertList,"FPDSbetatryConvertList.txt")
 
 #Transfer from Errorlogging.FPDSviolatesType to Errorlogging.FPDSviolatesConstraint
 InsertList<-create_insert(MergeType.df,
              "ErrorLogging",
-             "FPDSviolatesType",
+             "FPDSbetaViolatesType",
              "ErrorLogging",
-             "FPDSviolatesConstraint",
+             "FPDSbetaViolatesConstraint",
              DateType=101)
-write(InsertList,"Insert.txt")
+write(InsertList,"BetaInsert.txt")
 write(create_csis_dates("Contract","FPDS"),"CSISdates.txt")
 
 #******Importing into Contract.FPDS 
