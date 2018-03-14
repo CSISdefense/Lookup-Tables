@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>FPDS Users Group - Stripping descriptions from USAspending fields</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  </head>
+  <body>
+    <div class="wiki" id="content_view" style="display: block;">
+<strong>T-SQL (note, fixing entries after importing is very slow).</strong><br />
+USE YOURDATABASE<br />
+UPDATE YOURTABLE<br />
+SET productorservicecode=IIF(productorservicecode IS NULL OR ISNULL(CHARINDEX(':',productorservicecode),0)&lt;=1, productorservicecode, LEFT(productorservicecode,CHARINDEX(':',productorservicecode)-1))<br />
+<br />
+<strong>SSIS TRANSFORMATION (IN PROGRESS)</strong><br />
+<br />
+(ISNULL(productorservicecode) || TRIM(signeddate) == &quot;&quot;) ? NULL(DT_date) : (DT_date)(SUBSTRING(signeddate,FINDSTRING(signeddate,&quot;/&quot;,2) + 1,4) + &quot;-&quot; + RIGHT(&quot;0&quot; + SUBSTRING(signeddate,1,FINDSTRING(signeddate,&quot;/&quot;,1) - 1),2) + &quot;-&quot; + RIGHT(&quot;0&quot; + SUBSTRING(signeddate,FINDSTRING(signeddate,&quot;/&quot;,1) + 1,FINDSTRING(signeddate,&quot;/&quot;,2) - FINDSTRING(signeddate,&quot;/&quot;,1) - 1),2))<br />
+<br />
+USE YOURDATABASE<br />
+UPDATE YOURTABLE<br />
+SET productorservicecode=IIF(productorservicecode IS NULL OR ISNULL(CHARINDEX(':',productorservicecode),0)&lt;=1, productorservicecode, LEFT(productorservicecode,CHARINDEX(':',productorservicecode)-1))
+    </div>
+  </body>
+</html>
