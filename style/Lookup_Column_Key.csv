@@ -14,6 +14,7 @@ SubCustomer.platform,Agencies,Component,,,FALSE
 ServicesCategory.detail,Area,Services Area,,,FALSE
 ServicesCategory.sum,Area,Services Area,,,FALSE
 ServicesCategory.sum,Area,Services Area,,,FALSE
+RnDCategory.detail,Area,R&D Area,,,FALSE
 ProductsCategory.detail,Area,Products Area,,,FALSE
 ProductOrServiceArea,Area,Product or Service Area,,,FALSE
 SupplyServiceERS,Area,"Supply, Equipment-Related Service, Other Services",,,FALSE
