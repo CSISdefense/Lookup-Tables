@@ -14,6 +14,7 @@ SubCustomer.platform,Agencies,Component,,,FALSE
 ServicesCategory.detail,Area,Services Area,,,FALSE
 ServicesCategory.sum,Area,Services Area,,,FALSE
 ServicesCategory.sum,Area,Services Area,,,FALSE
+RnDCategory.detail,Area,R&D Area,,,FALSE
 ProductsCategory.detail,Area,Products Area,,,FALSE
 ProductOrServiceArea,Area,Product or Service Area,,,FALSE
 SupplyServiceERS,Area,"Supply, Equipment-Related Service, Other Services",,,FALSE
@@ -105,6 +106,7 @@ Reachback,Reachback,,,,FALSE
 Action.Obligation,,Action Obligation (Current?),Share Contract $,,FALSE
 Action.Obligation.Current,,Action Obligation (Current $s),Share Contract $,,FALSE
 Action.Obligation.2016,,Constant 2016 $,Share Contract $,,FALSE
+Action.Obligation.2017,,Constant 2017 $,Share Contract $,,FALSE
 Fiscal.Year,,Fiscal Year,,,FALSE
 contingencyhumanitarianpeacekeepingoperation,ContingencyHumanitarianPeacekeepingOperation,Contingency or Humanitarian Peacekeeping Operation,,,TRUE
 IsMultipleYearProcRnD,Exclude,,,,FALSE
