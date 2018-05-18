@@ -195,3 +195,15 @@ X.....TOA.Base....Request.with....CR.Adj....,TOAbaseRequestWithCRadj
 StartFiscal_Year,StartFiscal_Year
 ParentID,ParentID
 Period,Period
+Use of Force,Force
+Russia,Russia
+China,China
+North Korea,DPRK
+Iran,Iran
+Alliances,Allies
+Multilateralism,Multi
+Trade,Trade
+Security Assistance   ,SecAsst
+Humanitarian Assistance,HumAsst
+Development Assistance,DevAsst
+nominate_dim1,LibCon
