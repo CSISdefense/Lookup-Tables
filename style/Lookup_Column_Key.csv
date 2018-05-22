@@ -484,3 +484,4 @@ AnyEntityForeignPlaceOfPerformance,Binary,,,,FALSE
 IsEntityAbove1990constantReportingThreshold,Binary,,,,FALSE
 IsEntityAbove2016constantReportingThreshold,Binary,,,,FALSE
 IsEntityAbove2016constantOneMillionThreshold,Binary,,,,FALSE
+party_code,Party,Party,,,FALSE
