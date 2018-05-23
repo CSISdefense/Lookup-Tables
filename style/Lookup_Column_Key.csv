@@ -485,3 +485,17 @@ IsEntityAbove1990constantReportingThreshold,Binary,,,,FALSE
 IsEntityAbove2016constantReportingThreshold,Binary,,,,FALSE
 IsEntityAbove2016constantOneMillionThreshold,Binary,,,,FALSE
 party_code,Party,Party,,,FALSE
+Party,Party,Party,,,FALSE
+Cohort,Age,Age Cohort,,,FALSE
+Force,,Use of Force  (1 Oppose to 7 Support),,,FALSE
+Russia,,Russia  (1 Confront to 7 Cooperate),,,FALSE
+China,,China  (1 Confront to 7 Cooperate),,,FALSE
+DPRK,,North Korea  (1 Confront to 7 Cooperate),,,FALSE
+Iran,,Iran (1 Confront to 7 Cooperate),,,FALSE
+Allies,,Alliances (1 Oppose to 7 Support),,,FALSE
+Multi,,Multilateralism (1 Oppose to 7 Support),,,FALSE
+Trade,,Trade Agreements (1 Support to 7 Oppose),,,FALSE
+SecAsst,,Security Assistance (1 Oppose to 7 Support),,,FALSE
+HumAsst,,Humanitarian Assistance  (1 Oppose to 7 Support),,,FALSE
+DevAsst,,Development Assistance (1 Oppose to 7 Support),,,FALSE
+LibCon,,DW Nominate Scale of Liberal (1) to Conservative (7),,,FALSE

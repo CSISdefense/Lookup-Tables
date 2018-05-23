@@ -219,3 +219,5 @@ Members,Members
 Avg Threat Perception,iThreat
 Avg Foreign Aid,iAid
 Security Assistance,SecAsst
+Year of Birth**,Cohort
+Region*,Region

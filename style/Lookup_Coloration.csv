@@ -2591,3 +2591,12 @@ Period,Rebound,Rebound,4,green,,,,,default grey,#554449
 Party,100,D,1,Blue,#0070C0,,,,default grey,#554449 
 Party,200,R,2,red,#AA4643,,,,default grey,#554449 
 Party,328,I,3,orange,#DB8403,,,,default grey,#554449 
+Party,D,D,1,Blue,#0070C0,,,,default grey,#554449 
+Party,R,R,2,red,#AA4643,,,,default grey,#554449 
+Party,I,I,3,,,,,,default grey,#554449 
+Party,Dem/Ind,Dem/Ind,1,Blue,#0070C0,,,,default grey,#554449 
+Party,Republican,Republican,2,red,#AA4643,,,,default grey,#554449 
+,,,,,,,,,,
+Cohort,1,Pre-1950,1,orange,#DB8403,,,,default grey,#554449 
+Cohort,2,1950-1969,2,yellow,#FFC000,,,,default grey,#554449 
+Cohort,3,1970 and After,3,green,#92D050,,,,default grey,#554449 
