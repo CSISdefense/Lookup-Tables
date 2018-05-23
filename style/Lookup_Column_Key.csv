@@ -499,3 +499,4 @@ SecAsst,,Security Assistance (1 Oppose to 7 Support),,,FALSE
 HumAsst,,Humanitarian Assistance  (1 Oppose to 7 Support),,,FALSE
 DevAsst,,Development Assistance (1 Oppose to 7 Support),,,FALSE
 LibCon,,DW Nominate Scale of Liberal (1) to Conservative (7),,,FALSE
+Region,Region,Region,,,FALSE

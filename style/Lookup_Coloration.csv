@@ -2600,3 +2600,9 @@ Party,Republican,Republican,2,red,#AA4643,,,,default grey,#554449
 Cohort,1,Pre-1950,1,orange,#DB8403,,,,default grey,#554449 
 Cohort,2,1950-1969,2,yellow,#FFC000,,,,default grey,#554449 
 Cohort,3,1970 and After,3,green,#92D050,,,,default grey,#554449 
+,,,,,,,,,,
+Region,Midwest,Midwest,1,green,#92D050,,,,default grey,#554449 
+Region,Northeast,Northeast,2,Purpleblue,#93A9CF,,,,default grey,#554449 
+Region,Southeast,Southeast,3,Orange,#DB843D,,,,default grey,#554449 
+Region,Southwest,Southwest,4,Peach,#FAC090,,,,default grey,#554449 
+Region,West,West,5,teal,#4198AF,,,,default grey,#554449 
