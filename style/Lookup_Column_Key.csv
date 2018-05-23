@@ -485,7 +485,7 @@ IsEntityAbove1990constantReportingThreshold,Binary,,,,FALSE
 IsEntityAbove2016constantReportingThreshold,Binary,,,,FALSE
 IsEntityAbove2016constantOneMillionThreshold,Binary,,,,FALSE
 party_code,Party,Party,,,FALSE
-party2,Party,Party,,,FALSE
+Caucus,Party,Party,,,FALSE
 Party,Party,Party,,,FALSE
 Cohort,Age,Age Cohort,,,FALSE
 Force,,Use of Force  (1 Oppose to 7 Support),,,FALSE
