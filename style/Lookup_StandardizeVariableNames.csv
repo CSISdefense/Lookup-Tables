@@ -207,3 +207,17 @@ Security Assistance   ,SecAsst
 Humanitarian Assistance,HumAsst
 Development Assistance,DevAsst
 nominate_dim1,LibCon
+congress,congress
+chamber,chamber
+district_code,district_code
+state_abbrev,state_abbrev
+party_code,party_code
+born,born
+died,died
+nominate_dim2,nominate_dim2
+Members,Members
+Avg Threat Perception,iThreat
+Avg Foreign Aid,iAid
+Security Assistance,SecAsst
+Year of Birth**,Cohort
+Region*,Region
