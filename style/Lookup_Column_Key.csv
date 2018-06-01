@@ -501,10 +501,10 @@ HumAsst,,Humanitarian Assistance (1 Oppose to 7 Support),,,FALSE
 DevAsst,,Development Assistance (1 Oppose to 7 Support),,,FALSE
 LibCon,,DW Nominate Scale of Liberal (-1) to Conservative (1),,,FALSE
 Region,Region,Region,,,FALSE
-Ir_thr,,Russia Threat (7 Cooperate to 1 Confront),,,
-Ru_thr,,China Threat (7 Cooperate to 1 Confront),,,
+Ir_thr,,Iran Threat (7 Cooperate to 1 Confront),,,
+Ru_thr,,Russia Threat (7 Cooperate to 1 Confront),,,
 NK_thr,,North Korea Threat (7 Cooperate to 1 Confront),,,
-Ch_thr,,Iran Threat (7 Cooperate to 1 Confront),,,
+Ch_thr,,China Threat (7 Cooperate to 1 Confront),,,
 Protectionist,,Protectionist (1 Oppose to 7 Support),,,
 iOrderist,,Orderist Variant with Threat (1 Oppose to 7 Support),,,
 iHumanitarians,,Humanist Variant with Threat (1 Oppose to 7 Support),,,
