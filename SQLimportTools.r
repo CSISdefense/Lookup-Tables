@@ -276,16 +276,17 @@ create_try_converts<-function(data,
   }
   data<-convert_switch(data,101,TRUE)
   
-  
-  data<-read_and_join(data,
-                              "Lookup_Column_Key.csv",
-                              path="https://raw.githubusercontent.com/CSISdefense/Lookup-Tables/master/style/",
-                              directory="",
-                              by="column",
-                              add_var="is.colon.split",
-                              new_var_checked=FALSE
-  )
-  
+  #After hitting an error that there's no column named column
+  if("column" %in% colnames(data)){
+    data<-read_and_join(data,
+                        "Lookup_Column_Key.csv",
+                        path="https://raw.githubusercontent.com/CSISdefense/Lookup-Tables/master/style/",
+                        directory="",
+                        by="column",
+                        add_var="is.colon.split",
+                        new_var_checked=FALSE
+    )
+  }
   data<-length_check(data)
   data<-left_of_colon(data)
   
@@ -311,7 +312,7 @@ create_try_converts<-function(data,
     ConvertList<-rbind(ConvertList,
                        paste("ALTER TABLE ",Schema,".",TableName,"\n",
                              "ALTER COLUMN ",data$SourceVariableName," ",
-                             MergeTable.df$CSISvariableType,"\n",sep="")
+                             data$CSISvariableType,"\n",sep="")
     )
   }
   
@@ -514,7 +515,7 @@ convert_field_to_foreign_key<-function(FKschema,
                 paste("ALTER TABLE ",FKschema,".",FKtable,"\n",
                       "ADD CONSTRAINT fk_",gsub("\\[","",gsub("\\]","",FKschema))
                       ,"_",gsub("\\[","",gsub("\\]","",FKtable)),"_",
-                      gsub("\\[","",gsub("\\]","",FKcolumn)),
+                      gsub("-","_",gsub("\\[","",gsub("\\]","",FKcolumn))),
                       " foreign key(",FKcolumn,")\n"
                       ,"references ",PKschema,".",PKtable,"(",PKcolumn,")\n",sep="")
   )
