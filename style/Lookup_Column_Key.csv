@@ -484,4 +484,38 @@ AnyEntityForeignPlaceOfPerformance,Binary,,,,FALSE
 IsEntityAbove1990constantReportingThreshold,Binary,,,,FALSE
 IsEntityAbove2016constantReportingThreshold,Binary,,,,FALSE
 IsEntityAbove2016constantOneMillionThreshold,Binary,,,,FALSE
+party_code,Party,Party,,,FALSE
+Caucus,Party,Party,,,FALSE
+Party,Party,Party,,,FALSE
+Cohort,Age,Age Cohort,,,FALSE
+Force,,Use of Force (1 Oppose to 7 Support),,,FALSE
+Russia,,Russia (1 Confront to 7 Cooperate),,,FALSE
+China,,China (1 Confront to 7 Cooperate),,,FALSE
+DPRK,,North Korea (1 Confront to 7 Cooperate),,,FALSE
+Iran,,Iran (1 Confront to 7 Cooperate),,,FALSE
+Allies,,Alliances (1 Oppose to 7 Support),,,FALSE
+Multi,,Multilateralism (1 Oppose to 7 Support),,,FALSE
+Trade,,Trade Agreements (1 Oppose to 7 Support),,,FALSE
+SecAsst,,Security Assistance (1 Oppose to 7 Support),,,FALSE
+HumAsst,,Humanitarian Assistance (1 Oppose to 7 Support),,,FALSE
+DevAsst,,Development Assistance (1 Oppose to 7 Support),,,FALSE
+LibCon,,DW Nominate Scale of Liberal (-1) to Conservative (1),,,FALSE
+Region,Region,Region,,,FALSE
+Ir_thr,,Iran Threat (7 Cooperate to 1 Confront),,,
+Ru_thr,,Russia Threat (7 Cooperate to 1 Confront),,,
+NK_thr,,North Korea Threat (7 Cooperate to 1 Confront),,,
+Ch_thr,,China Threat (7 Cooperate to 1 Confront),,,
+Protectionist,,Protectionist (1 Oppose to 7 Support),,,
+iOrderist,,Orderist Variant with Threat (1 Oppose to 7 Support),,,
+iHumanitarians,,Humanist Variant with Threat (1 Oppose to 7 Support),,,
+iLibertarians,,Limitist (1 Oppose to 7 Support),,,
+Caucus,,Caucus,,,
+Factor1,,Factor1 ~Resembles Orderist (1 Low to 7 High),,,
+Factor2,,Factor2 ~Iran/N. Korea Deals (1 Low to 7 High),,,
+Factor3,,Factor3 ~Resembles Humanist (1 Low to 7 High),,,
+Factor4,,Factor 4 ~China cooperate (1 Low to 7 High),,,
+Factor5,,Factor 5 ~Russia cooperate  (1 Low to 7 High),,,
+LibCon7,,DW Nominate Scale of Liberal (1) to Conservative (7),,,
+iOrderist2,,Orderist (1 Oppose to 7 Support),,,
+iHumanitarians2,,Humanist (1 Oppose to 7 Support),,,
 congress_col,congress_col,Metric,,,FALSE
