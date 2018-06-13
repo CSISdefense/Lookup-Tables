@@ -200,12 +200,17 @@ Russia,Russia
 China,China
 North Korea,DPRK
 Iran,Iran
+Iran Threat,Ir_thr
+Iran Response,Ir_dipl
+North Korea Threat,NK_thr
+North Korea Response,NK_dipl
 Alliances,Allies
 Multilateralism,Multi
 Trade,Trade
 Security Assistance   ,SecAsst
 Humanitarian Assistance,HumAsst
 Development Assistance,DevAsst
+Hum+Dev Assistance,HumDev
 nominate_dim1,LibCon
 congress,congress
 chamber,chamber
