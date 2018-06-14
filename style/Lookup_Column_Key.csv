@@ -517,6 +517,7 @@ Factor3,,Factor3 ~Resembles Humanist (1 Low to 7 High),,,
 Factor4,,Factor 4 ~China cooperate (1 Low to 7 High),,,
 Factor5,,Factor 5 ~Russia cooperate  (1 Low to 7 High),,,
 LibCon7,,DW Nominate Scale of Liberal (1) to Conservative (7),,,
-iOrderist2,,Orderist (1 Oppose to 7 Support),,,
+iOrderist2,,Orderist with Multilateral (1 Oppose to 7 Support),,,
 iHumanitarians2,,Humanist (1 Oppose to 7 Support),,,
 congress_col,congress_col,Metric,,,FALSE
+iOrderist3,,Orderist (1 Oppose to 7 Support),,,
