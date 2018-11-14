@@ -38,7 +38,6 @@ Vendor.Size.detail,Vendors,Contract Vehicle,,,FALSE
 Vendor.Size.sum,Vendors,Contract Vehicle,,,FALSE
 Shiny.VendorSize,Vendors,Vendor Size,,,FALSE
 RoughUniqueEntitySize,Vendors,Vendor Size,,,FALSE
-Shiny.VendorSize,Vendors,Vendor Size,,,FALSE
 comparison.dollar.type.detail,Dollar Type,,,,FALSE
 comparison.dollar.type.sum,Dollar Type,,,,FALSE
 Contract.Size.detail,Contract Size,Contract Size,,,FALSE
@@ -521,3 +520,15 @@ iOrderist2,,Orderist with Multilateral (1 Oppose to 7 Support),,,
 iHumanitarians2,,Humanist (1 Oppose to 7 Support),,,
 congress_col,congress_col,Metric,,,FALSE
 iOrderist3,,Orderist (1 Oppose to 7 Support),,,
+cl_Offr,,Centered Log(Number of Offers),,,
+cl_def3_HHI_lag1,,,,,
+cl_def3_ratio_lag1,,,,,
+cl_def6_HHI_lag1,,,,,
+cl_def6_ratio_lag1,,,,,
+cl_def6_obl_lag1,,,,,
+cl_US6_avg_sal_lag1,,,,,
+cl_Ceil,,,,,
+cl_Days,,,,,
+Veh,,,,,
+PricingFee,,,,,
+b_Intl,,,,,
