@@ -38,7 +38,6 @@ Vendor.Size.detail,Vendors,Contract Vehicle,,,FALSE
 Vendor.Size.sum,Vendors,Contract Vehicle,,,FALSE
 Shiny.VendorSize,Vendors,Vendor Size,,,FALSE
 RoughUniqueEntitySize,Vendors,Vendor Size,,,FALSE
-Shiny.VendorSize,Vendors,Vendor Size,,,FALSE
 comparison.dollar.type.detail,Dollar Type,,,,FALSE
 comparison.dollar.type.sum,Dollar Type,,,,FALSE
 Contract.Size.detail,Contract Size,Contract Size,,,FALSE
@@ -521,3 +520,29 @@ iOrderist2,,Orderist with Multilateral (1 Oppose to 7 Support),,,
 iHumanitarians2,,Humanist (1 Oppose to 7 Support),,,
 congress_col,congress_col,Metric,,,FALSE
 iOrderist3,,Orderist (1 Oppose to 7 Support),,,
+cl_Offr���,,"The number of offers each contract received, logged and then rescaled",,,FALSE
+b_Term,,"Whether contracts experience a partial/complete termination(1 yes, 0 no)",,,FALSE
+b_CBre,,"Whether contracts had to be charged in a means that risked significant cost increases(1 yes, 0 no)",,,FALSE
+CompOffr,,How many offers a contract received(No Competition/1 offer/2 offer/3-4 offer/5+ offers),,,FALSE
+cl_def3_HHI_lag1,,"Measure of industrial concentration in the defense industrial base, subsector HHI",,,FALSE
+cl_def6_HHI_lag1,,"Measure of industrial concentration in the defense industrial base, detailed industry HHI",,,FALSE
+Agency,,The top contracting agency of each contract,,,FALSE
+Office,,The top contracting office of each contract,,,FALSE
+NAICS,,The top North American Industrial Classification Code of each contract,,,FALSE
+cl_def6_obl_lag1,,"Annually sums of total defense obligations by NAICS subsector and detailed industry, logged and then rescaled",,,FALSE
+cl_def3_ratio_lag1,,"Ratio of total defense obligations to revenues in the same NAICS category for U.S. economy as a whole, subsector",,,FALSE
+cl_def6_ratio_lag1,,"Ratio of total defense obligations to revenues in the same NAICS category for U.S. economy as a whole, detailed industrial",,,FALSE
+cl_US6_avg_sal_lag1,,The payroll of the relevant detailed industry by the number of employees,,,FALSE
+cl_Ceil,,"Initial contract cost ceiling as reported by the base and all options field in then-year dollars, logged and then rescaled",,,FALSE
+cl_Days,,"Initial maximum duration of the contract in days, logged and then rescaled",,,FALSE
+SIDC,,1 if the vehicle is a single-award indefinite delivery contract and 0 otherwise,,,FALSE
+MIDC,,1 if the vehicle is a multiple-award indefinite delivery contract and 0 otherwise,,,FALSE
+FSS/GWAC,,1 if the vehicle is a Federal Supply Schedule or Government-Wide Acquisition Contract and 0 otherwise,,,FALSE
+BPA/BOA,,1 if the vehicle is a Blank Purchase Agreement or Basic Ordering Agreement and 0 otherwise,,,FALSE
+Other PF,,"1 if other fixed-price consists of included fixed-price redertermination, fixed-price award fee, and fixed-price economics price adjustment, and 0 otherwise",,,FALSE
+Incentive,,"1 if incentive fee contracts, including fixed-price incentive fee, cost plus incentive fee, and cost sharing, and 0 otherwise",,,FALSE
+Combination or other,,"1 if contracts using multiple pricing machanisms or unusual and unclassified types, and 0 otherwise",,,FALSE
+Other CB,,"1 if all types of cost-based contracting, excluding incentive fee and accounts for just over 1 percent of contracts, and 0 otherwise",,,FALSE
+T&M/LH/FPLOE,,"1 if effort contract(time & materials, labor hours and fixed-price level), and 0 otherwise",,,FALSE
+b_UCA,,"1 if the contract begin as letter cobtracts or indefinitized contract awards, and 0 otherwise",,,FALSE
+b_Intl,,"1 for contracts with any transactions performed internationally, and 0 otherwise",,,FALSE
