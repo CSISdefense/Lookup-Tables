@@ -108,9 +108,9 @@ Action.Obligation.2016,,Constant 2016 $,Share Contract $,,FALSE
 Action.Obligation.2017,,Constant 2017 $,Share Contract $,,FALSE
 Fiscal.Year,,Fiscal Year,,,FALSE
 contingencyhumanitarianpeacekeepingoperation,ContingencyHumanitarianPeacekeepingOperation,Contingency or Humanitarian Peacekeeping Operation,,,TRUE
-IsMultipleYearProcRnD,Exclude,,,,FALSE
-IsExcludedPSC,Exclude,,,,FALSE
-IsExcludedCO,Exclude,,,,FALSE
+IsMultipleYearProcRnD,Binary,,,,FALSE
+IsExcludedPSC,Binary,,,,FALSE
+IsExcludedCO,Binary,,,,FALSE
 unique_transaction_id,Exclude,,,,FALSE
 transaction_status,Exclude,,,,FALSE
 obligatedamount,Exclude,,,,FALSE
