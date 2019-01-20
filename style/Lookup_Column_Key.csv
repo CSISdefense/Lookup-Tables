@@ -79,7 +79,14 @@ NIAcontradictions,Crisis,,,,FALSE
 International,International,,,,FALSE
 IsCSISOCO,Crisis,,,,FALSE
 OCOcrisisScore,Crisis,,,,FALSE
-CrisisFunding,Crisis,,,,FALSE
+CrisisFunding,Crisis,Crisis-Funding,,,FALSE
+CrisisFunding1A,Crisis,Classification\nAfter Step 1A,,,FALSE
+CrisisFunding1B,Crisis,Classification\nAfter Step 1B,,,FALSE
+CrisisFunding1C,Crisis,Classification\nAfter Step 1C,,,FALSE
+CrisisFunding2,Crisis,Classification\nAfter Step 2,,,FALSE
+CrisisFunding3,Crisis,Classification\nAfter Step 3,,,FALSE
+CrisisFunding4A,Crisis,Classification\nAfter Step 4A,,,FALSE
+CrisisFunding4B,Crisis,Classification\nAfter Step 4B,,,FALSE
 CrisisPoints,Crisis,,,,FALSE
 CrisisDisplay,Crisis,,,,FALSE
 IsOCOcrisisFunding,Crisis,,,,FALSE
