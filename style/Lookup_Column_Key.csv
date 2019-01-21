@@ -1,4 +1,4 @@
- ,coloration.key,title,share.title,period.title,is.colon.split
+column,coloration.key,title,share.title,period.title,is.colon.split
 Customer,Agencies,Customer,,,FALSE
 Customer.detail,Agencies,Customer,,,FALSE
 Customer.manual.subtitles,Agencies,Customer,,,FALSE
