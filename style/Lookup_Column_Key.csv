@@ -13,7 +13,6 @@ SubCustomer.component,Agencies,Component,,,FALSE
 SubCustomer.platform,Agencies,Component,,,FALSE
 ServicesCategory.detail,Area,Services Area,,,FALSE
 ServicesCategory.sum,Area,Services Area,,,FALSE
-ServicesCategory.sum,Area,Services Area,,,FALSE
 RnDCategory.detail,Area,R&D Area,,,FALSE
 ProductsCategory.detail,Area,Products Area,,,FALSE
 ProductOrServiceArea,Area,Product or Service Area,,,FALSE
@@ -21,7 +20,6 @@ SupplyServiceERS,Area,"Supply, Equipment-Related Service, Other Services",,,FALS
 ProductServiceOrRnDarea,Area,"Product, Service, or R&D Area",,,FALSE
 ProductServiceOrRnDarea.sum,Area,"Product, Service, or R&D",,,FALSE
 ProductOrServiceArea.DLA,Area,Product or Service Area,,,FALSE
-Competition.detail,Competition,Extent of Competition,,,FALSE
 Competition.detail,Competition,Extent of Competition,,,FALSE
 Competition.multisum,Competition,Extent of Competition,,,FALSE
 Competition.sum,Competition,Extent of Competition,,,FALSE
@@ -517,7 +515,6 @@ iOrderist,,Orderist Variant with Threat (1 Oppose to 7 Support),,,
 iHumanitarians,,Humanist Variant with Threat (1 Oppose to 7 Support),,,
 iLimitist_pure,,Limitist Pure (1 Oppose to 7 Support),,,
 iLimitist_thr,,Limitist Threat (1 Oppose to 7 Support),,,
-Caucus,,Caucus,,,
 Factor1,,Factor1 ~Resembles Orderist (1 Low to 7 High),,,
 Factor2,,Factor2 ~Iran/N. Korea Deals (1 Low to 7 High),,,
 Factor3,,Factor3 ~Resembles Humanist (1 Low to 7 High),,,
@@ -534,7 +531,6 @@ b_CBre,,"Whether contracts had to be charged in a means that risked significant 
 CompOffr,,How many offers a contract received(No Competition/1 offer/2 offer/3-4 offer/5+ offers),,,FALSE
 cl_def3_HHI_lag1,,"Measure of industrial concentration in the defense industrial base, subsector HHI",,,FALSE
 cl_def6_HHI_lag1,,"Measure of industrial concentration in the defense industrial base, detailed industry HHI",,,FALSE
-Agency,,The top contracting agency of each contract,,,FALSE
 Office,,The top contracting office of each contract,,,FALSE
 NAICS,,The top North American Industrial Classification Code of each contract,,,FALSE
 cl_def6_obl_lag1,,"Annually sums of total defense obligations by NAICS subsector and detailed industry, logged and then rescaled",,,FALSE
