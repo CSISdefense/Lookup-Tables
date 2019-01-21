@@ -1,4 +1,4 @@
-column,coloration.key,title,share.title,period.title,is.colon.split
+ ,coloration.key,title,share.title,period.title,is.colon.split
 Customer,Agencies,Customer,,,FALSE
 Customer.detail,Agencies,Customer,,,FALSE
 Customer.manual.subtitles,Agencies,Customer,,,FALSE
@@ -116,9 +116,9 @@ Action.Obligation.2017,,Constant 2017 $,Share Contract $,,FALSE
 Fiscal.Year,,Fiscal Year,,,FALSE
 contingencyhumanitarianpeacekeepingoperation,ContingencyHumanitarianPeacekeepingOperation,Contingency or Humanitarian Peacekeeping Operation,,,TRUE
 IsMultipleYearProcRnD,Binary,,,,FALSE
-IsMultipleYearProcRnD,Crisis,,,,FALSE
-IsExcludedPSC,Binary,,,,FALSE
-IsExcludedCO,Binary,,,,FALSE
+MultipleYearProcRnD,Crisis,,,,FALSE
+IsExcludedPSC,Crisis,,,,FALSE
+IsExcludedCO,Crisis,,,,FALSE
 unique_transaction_id,Exclude,,,,FALSE
 transaction_status,Exclude,,,,FALSE
 obligatedamount,Exclude,,,,FALSE
