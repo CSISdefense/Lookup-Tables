@@ -86,6 +86,7 @@ CrisisFunding3,Crisis,Classification\nAfter Step 3,,,FALSE
 CrisisFunding4A,Crisis,Classification\nAfter Step 4A,,,FALSE
 CrisisFunding4B,Crisis,Classification\nAfter Step 4B,,,FALSE
 CrisisPoints,Crisis,,,,FALSE
+CrisisPointsOnly,Crisis,,,,FALSE
 CrisisDisplay,Crisis,,,,FALSE
 IsOCOcrisisFunding,Crisis,,,,FALSE
 OCOscoreBuckets,Crisis,,,,FALSE
