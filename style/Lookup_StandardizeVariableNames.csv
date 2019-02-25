@@ -19,7 +19,6 @@ customer,Customer
 DEPLOYMENT,Deployment
 fiscal.year,Fiscal.Year
 Fiscal_Year,Fiscal.Year
-fy,Fiscal.Year
 SumofGBKdisbursements,GBKdisbursements
 SumofGBKObligations,GBKObligations
 Majorcommandid,MajorCommandID

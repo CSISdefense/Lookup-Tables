@@ -1,4 +1,4 @@
-﻿column,coloration.key,title,share.title,period.title,is.colon.split
+column,coloration.key,title,share.title,period.title,is.colon.split
 Customer,Agencies,Customer,,,FALSE
 Customer.detail,Agencies,Customer,,,FALSE
 Customer.manual.subtitles,Agencies,Customer,,,FALSE
@@ -24,8 +24,6 @@ Competition.detail,Competition,Extent of Competition,,,FALSE
 Competition.multisum,Competition,Extent of Competition,,,FALSE
 Competition.sum,Competition,Extent of Competition,,,FALSE
 No.Competition.sum,Competition,Extent of Competition,,,FALSE
-CompOffr,Competition,How many offers a contract received(No Competition/1 offer/2 offer/3-4 offer/5+ offers),,,FALSE
-NoCompOffr,Competition,How many offers a contract received(No Competition/1 offer/2 offer/3-4 offer/5+ offers),,,FALSE
 Competition.effective.only,Competition,Extent of Competition,,,FALSE
 Pricing.Mechanism.detail,Pricing,Pricing Mechanism,,,FALSE
 Pricing.Mechanism.sum,Pricing,Pricing Mechanism,,,FALSE
@@ -533,6 +531,7 @@ iOrderist3,,Orderist (1 Oppose to 7 Support),,,
 cl_Offr���,,"The number of offers each contract received, logged and then rescaled",,,FALSE
 b_Term,,"Whether contracts experience a partial/complete termination(1 yes, 0 no)",,,FALSE
 b_CBre,,"Whether contracts had to be charged in a means that risked significant cost increases(1 yes, 0 no)",,,FALSE
+CompOffr,,How many offers a contract received(No Competition/1 offer/2 offer/3-4 offer/5+ offers),,,FALSE
 cl_def3_HHI_lag1,,"Measure of industrial concentration in the defense industrial base, subsector HHI",,,FALSE
 cl_def6_HHI_lag1,,"Measure of industrial concentration in the defense industrial base, detailed industry HHI",,,FALSE
 Office,,The top contracting office of each contract,,,FALSE
