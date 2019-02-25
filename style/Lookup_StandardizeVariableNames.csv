@@ -229,7 +229,7 @@ Region*,Region
 Contracting Department ID,DepartmentID
 Contracting Department Name,DepartmentIDtext
 Contracting Agency Name,AgencyIDtext
-Contracting Agency ID,contractingofficeagencyid
+Contracting Agency ID,Contracting.Agency.ID
 Product or Service Code,ProductOrServiceCode
 Product or Service Description,ProductOrServiceCodeText
 IDV Type,idv_type_code
@@ -238,3 +238,4 @@ Award or IDV Type,contractactiontype
 Multiple or Single Award IDV,multipleorsingleawardidc
 Type of Contract,Pricing.Mechanism.Code
 Action Obligation,Action.Obligation
+contractingofficeagencyid,Contracting.Agency.ID
