@@ -227,3 +227,15 @@ Avg Foreign Aid,iAid
 Security Assistance,SecAsst
 Year of Birth**,Cohort
 Region*,Region
+Contracting Department ID,DepartmentID
+Contracting Department Name,DepartmentIDtext
+Contracting Agency Name,AgencyIDtext
+Contracting Agency ID,contractingofficeagencyid
+Product or Service Code,ProductOrServiceCode
+Product or Service Description,ProductOrServiceCodeText
+IDV Type,idv_type_code
+IDV Multiple Or Single Award IDV,idv_multipleorsingleawardidc
+Award or IDV Type,contractactiontype
+Multiple or Single Award IDV,multipleorsingleawardidc
+Type of Contract,Pricing.Mechanism.Code
+Action Obligation,Action.Obligation
