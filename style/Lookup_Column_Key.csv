@@ -1,557 +1,557 @@
-column	coloration.key	title	share.title	period.title	is.colon.split
-Customer	Agencies	Customer			FALSE
-Customer.detail	Agencies	Customer			FALSE
-Customer.manual.subtitles	Agencies	Customer			FALSE
-Customer.sum	Agencies	Customer			FALSE
-Agency	Agencies	Agency			FALSE
-Is.Defense	Agencies	Defense or Civilian			FALSE
-SubFunder.Detail	Agencies	Funding Component			FALSE
-SubCustomer	Agencies	Component			FALSE
-SubCustomer.detail	Agencies	Component			FALSE
-SubCustomer.sum	Agencies	Component			FALSE
-SubCustomer.component	Agencies	Component			FALSE
-SubCustomer.platform	Agencies	Component			FALSE
-ServicesCategory.detail	Area	Services Area			FALSE
-ServicesCategory.sum	Area	Services Area			FALSE
-RnDCategory.detail	Area	R&D Area			FALSE
-ProductsCategory.detail	Area	Products Area			FALSE
-ProductOrServiceArea	Area	Product or Service Area			FALSE
-SupplyServiceERS	Area	"Supply, Equipment-Related Service, Other Services"			FALSE
-ProductServiceOrRnDarea	Area	"Product, Service, or R&D Area"			FALSE
-ProductServiceOrRnDarea.sum	Area	"Product, Service, or R&D"			FALSE
-ProductOrServiceArea.DLA	Area	Product or Service Area			FALSE
-Competition.detail	Competition	Extent of Competition			FALSE
-Competition.multisum	Competition	Extent of Competition			FALSE
-Competition.sum	Competition	Extent of Competition			FALSE
-No.Competition.sum	Competition	Extent of Competition			FALSE
-CompOffr	Competition	How many offers a contract received(No Competition/1 offer/2 offer/3-4 offer/5+ offers)			FALSE
-NoCompOffr	Competition	How many offers a contract received(No Competition/1 offer/2 offer/3-4 offer/5+ offers)			FALSE
-Competition.effective.only	Competition	Extent of Competition			FALSE
-Pricing.Mechanism.detail	Pricing	Pricing Mechanism			FALSE
-Pricing.Mechanism.sum	Pricing	Pricing Mechanism			FALSE
-Base	Pricing	Pricing Mechanism			FALSE
-Fee	Pricing	Pricing Mechanism Fee Type			FALSE
-Indicator	Europe				FALSE
-Vehicle.detail	Vehicles	Contract Vehicle			FALSE
-Vehicle.sum	Vehicles	Contract Vehicle			FALSE
-Vendor.Size.detail	Vendors	Contract Vehicle			FALSE
-Vendor.Size.sum	Vendors	Contract Vehicle			FALSE
-Shiny.VendorSize	Vendors	Vendor Size			FALSE
-RoughUniqueEntitySize	Vendors	Vendor Size			FALSE
-comparison.dollar.type.detail	Dollar Type				FALSE
-comparison.dollar.type.sum	Dollar Type				FALSE
-Contract.Size.detail	Contract Size	Contract Size			FALSE
-Contract.Size.sum	Contract Size	Contract Size			FALSE
-Ceil	Contract Size	Contract Ceiling			FALSE
-LowCeil	Contract Size	Contract Ceiling			FALSE
-Ceil.Simple	Contract Size	Contract Ceiling			FALSE
-PlatformPortfolio	PlatformPortfolio	Platform Portfolio			FALSE
-PlatformPortfolio.sum	PlatformPortfolio	Platform Portfolio			FALSE
-PlatformPortfolio.AnD	PlatformPortfolio	Platform Portfolio			FALSE
-Europe	Europe				FALSE
-Country	Europe				FALSE
-Coloring	Europe				FALSE
-Country.Proper	Europe				FALSE
-European.Region	Europe				FALSE
-Europe.Region.Block	Europe				FALSE
-Deployment	Deployment				FALSE
-Term	Performance				FALSE
-AddressCat	PBL				FALSE
-MaxOfIsOfficialPBL	PBL				FALSE
-JointScore	PBL				FALSE
-ATLpolicy	Regime				FALSE
-USDATL	Regime				FALSE
-MajorCommandName	MajorCommand				FALSE
-OMBtheater	International				FALSE
-Theater	International				FALSE
-CrisisFundingTheater	International				FALSE
-ContractingOfficeName	ContractingOffice	Contracting Office			FALSE
-CSISofficeName	ContractingOffice	Contracting Office			FALSE
-CSISofficeName.PBL	ContractingOffice	Contracting Office			FALSE
-Hypothesis	Hypothesis				FALSE
-Cost.Based_Significance	Significance				FALSE
-FxCb	Pricing				FALSE
-Significance	Significance				FALSE
-DefOrEqu	Aggregate				FALSE
-MetricName	Aggregate				FALSE
-OCOlabelDetail	Crisis				FALSE
-NIAcontradictions	Crisis				FALSE
-International	International				FALSE
-IsCSISOCO	Crisis				FALSE
-OCOcrisisScore	Crisis				FALSE
-CrisisFunding	Crisis	Crisis-Funding			FALSE
-CrisisFunding1A	Crisis	Classification\nAfter Step 1A			FALSE
-CrisisFunding1B	Crisis	Classification\nAfter Step 1B			FALSE
-CrisisFunding1C	Crisis	Classification\nAfter Step 1C			FALSE
-CrisisFunding2	Crisis	Classification\nAfter Step 2			FALSE
-CrisisFunding3	Crisis	Classification\nAfter Step 3			FALSE
-CrisisFunding4A	Crisis	Classification\nAfter Step 4A			FALSE
-CrisisFunding4B	Crisis	Classification\nAfter Step 4B			FALSE
-CrisisPoints	Crisis				FALSE
-CrisisPointsOnly	Crisis				FALSE
-CrisisDisplay	Crisis				FALSE
-IsOCOcrisisFunding	Crisis				FALSE
-OCOscoreBuckets	Crisis				FALSE
-DecisionTree	Crisis				FALSE
-DecisionTreeDisplay	Crisis				FALSE
-DecisionTreeStep4	Crisis				FALSE
-NIAcrisisFunding	Crisis				FALSE
-ContractCrisisFunding	Crisis				FALSE
-contingencyhumanitarianpeacekeepingoperationText	Crisis				FALSE
-nationalinterestactioncodeText	Crisis				FALSE
-NAICcrisisFunding	Crisis				FALSE
-NIAlist	Crisis				FALSE
-SAMexception.sum	Crisis				FALSE
-SAMcrisisFunding	Crisis				FALSE
-UnmodifiedUltimateDurationCategory	Duration				FALSE
-Dur	Duration				FALSE
-Dur.Simple	Duration				FALSE
-isUndefinitizedAction	UCA				FALSE
-isUCA	UCA				FALSE
-UCA	UCA				FALSE
-Reachback	Reachback				FALSE
-Action.Obligation		Action Obligation (Current?)	Share Contract $		FALSE
-Action.Obligation.Current		Action Obligation (Current $s)	Share Contract $		FALSE
-Action.Obligation.2016		Constant 2016 $	Share Contract $		FALSE
-Action.Obligation.2017		Constant 2017 $	Share Contract $		FALSE
-Action.Obligation.OMB.2019		Constant 2019 $	Share Contract $		FALSE
-Obligation.2017		Obligations (2017 $)	Share Contract $		FALSE
-Fiscal.Year		Fiscal Year			FALSE
-dFYear		Fiscal Year			FALSE
-contingencyhumanitarianpeacekeepingoperation	ContingencyHumanitarianPeacekeepingOperation	Contingency or Humanitarian Peacekeeping Operation			TRUE
-IsMultipleYearProcRnD	Binary				FALSE
-MultipleYearProcRnD	Crisis				FALSE
-IsExcludedPSC	Crisis				FALSE
-IsExcludedCO	Crisis				FALSE
-unique_transaction_id	Exclude				FALSE
-transaction_status	Exclude				FALSE
-obligatedamount	Exclude				FALSE
-baseandexercisedoptionsvalue					FALSE
-baseandalloptionsvalue					FALSE
-maj_agency_cat					TRUE
-mod_agency					TRUE
-maj_fund_agency_cat					TRUE
-contractingofficeagencyid					TRUE
-contractingofficeid					TRUE
-fundingrequestingagencyid					TRUE
-fundingrequestingofficeid					TRUE
-fundedbyforeignentity					FALSE
-signeddate					FALSE
-effectivedate					FALSE
-currentcompletiondate					FALSE
-ultimatecompletiondate					FALSE
-lastdatetoorder					FALSE
-contractactiontype					FALSE
-reasonformodification					TRUE
-typeofcontractpricing					TRUE
-priceevaluationpercentdifference					FALSE
-subcontractplan					TRUE
-lettercontract					FALSE
-multiyearcontract					TRUE
-performancebasedservicecontract					FALSE
-majorprogramcode					FALSE
-contractfinancing					TRUE
-costorpricingdata					TRUE
-costaccountingstandardsclause					FALSE
-descriptionofcontractrequirement					FALSE
-purchasecardaspaymentmethod					TRUE
-numberofactions					FALSE
-nationalinterestactioncode					TRUE
-progsourceagency					FALSE
-progsourceaccount					FALSE
-progsourcesubacct					FALSE
-account_title					FALSE
-rec_flag					FALSE
-typeofidc					FALSE
-multipleorsingleawardidc					TRUE
-programacronym					FALSE
-vendorname					FALSE
-vendoralternatename					FALSE
-vendorlegalorganizationname					FALSE
-vendordoingasbusinessname					FALSE
-divisionname					FALSE
-divisionnumberorofficecode					FALSE
-vendorenabled					FALSE
-vendorlocationdisableflag					FALSE
-ccrexception					FALSE
-streetaddress					FALSE
-streetaddress2					FALSE
-streetaddress3					FALSE
-city					FALSE
-state					FALSE
-zipcode					FALSE
-vendorcountrycode					FALSE
-vendor_state_code					FALSE
-vendor_cd					FALSE
-congressionaldistrict					FALSE
-vendorsitecode					FALSE
-vendoralternatesitecode					FALSE
-parentdunsnumber					FALSE
-phoneno					FALSE
-faxno					FALSE
-registrationdate					FALSE
-renewaldate					FALSE
-mod_parent					FALSE
-locationcode					FALSE
-statecode					TRUE
-PlaceofPerformanceCity					FALSE
-pop_state_code					TRUE
-placeofperformancecountrycode					TRUE
-placeofperformancezipcode					FALSE
-pop_cd					FALSE
-placeofperformancecongressionaldistrict					FALSE
-psc_cat					FALSE
-productorservicecode					TRUE
-systemequipmentcode					TRUE
-claimantprogramcode					TRUE
-principalnaicscode					TRUE
-informationtechnologycommercialitemcategory					FALSE
-gfe_gfp					TRUE
-useofepadesignatedproducts					TRUE
-recoveredmaterialclauses					TRUE
-seatransportation					TRUE
-contractbundling					TRUE
-consolidatedcontract					TRUE
-countryoforigin					TRUE
-placeofmanufacture					TRUE
-manufacturingorganizationtype					TRUE
-agencyid					TRUE
-piid					FALSE
-modnumber					FALSE
-transactionnumber					FALSE
-fiscal_year					FALSE
-idvagencyid					FALSE
-idvpiid					FALSE
-idvmodificationnumber					FALSE
-solicitationid					FALSE
-extentcompeted					TRUE
-reasonnotcompeted					TRUE
-numberofoffersreceived					FALSE
-commercialitemacquisitionprocedures					TRUE
-commercialitemtestprogram					TRUE
-smallbusinesscompetitivenessdemonstrationprogram					FALSE
-a76action					FALSE
-competitiveprocedures					FALSE
-solicitationprocedures					TRUE
-typeofsetaside					TRUE
-localareasetaside					FALSE
-evaluatedpreference					TRUE
-fedbizopps					FALSE
-research					FALSE
-statutoryexceptiontofairopportunity					FALSE
-organizationaltype					FALSE
-numberofemployees					FALSE
-annualrevenue					FALSE
-firm8aflag					FALSE
-hubzoneflag					FALSE
-sdbflag					FALSE
-issbacertifiedsmalldisadvantagedbusiness					FALSE
-shelteredworkshopflag					FALSE
-hbcuflag					FALSE
-educationalinstitutionflag					FALSE
-womenownedflag					FALSE
-veteranownedflag					FALSE
-srdvobflag					FALSE
-localgovernmentflag					FALSE
-minorityinstitutionflag					FALSE
-aiobflag					FALSE
-stategovernmentflag					FALSE
-federalgovernmentflag					FALSE
-minorityownedbusinessflag					FALSE
-apaobflag					FALSE
-tribalgovernmentflag					FALSE
-baobflag					FALSE
-naobflag					FALSE
-saaobflag					FALSE
-nonprofitorganizationflag					FALSE
-isothernotforprofitorganization					FALSE
-isforprofitorganization					FALSE
-isfoundation					FALSE
-haobflag					FALSE
-ishispanicservicinginstitution					FALSE
-emergingsmallbusinessflag					FALSE
-hospitalflag					FALSE
-contractingofficerbusinesssizedetermination					TRUE
-is1862landgrantcollege					FALSE
-is1890landgrantcollege					FALSE
-is1994landgrantcollege					FALSE
-isveterinarycollege					FALSE
-isveterinaryhospital					FALSE
-isprivateuniversityorcollege					FALSE
-isschoolofforestry					FALSE
-isstatecontrolledinstitutionofhigherlearning					FALSE
-isserviceprovider					FALSE
-receivescontracts					FALSE
-receivesgrants					FALSE
-receivescontractsandgrants					FALSE
-isairportauthority					FALSE
-iscouncilofgovernments					FALSE
-ishousingauthoritiespublicortribal					FALSE
-isinterstateentity					FALSE
-isplanningcommission					FALSE
-isportauthority					FALSE
-istransitauthority					FALSE
-issubchapterscorporation					FALSE
-islimitedliabilitycorporation					FALSE
-isforeignownedandlocated					FALSE
-isarchitectureandengineering					FALSE
-isdotcertifieddisadvantagedbusinessenterprise					FALSE
-iscitylocalgovernment					FALSE
-iscommunitydevelopedcorporationownedfirm					FALSE
-iscommunitydevelopmentcorporation					FALSE
-isconstructionfirm					FALSE
-ismanufacturerofgoods					FALSE
-iscorporateentitynottaxexempt					FALSE
-iscountylocalgovernment					FALSE
-isdomesticshelter					FALSE
-isfederalgovernmentagency					FALSE
-isfederallyfundedresearchanddevelopmentcorp					FALSE
-isforeigngovernment					FALSE
-isindiantribe					FALSE
-isintermunicipallocalgovernment					FALSE
-isinternationalorganization					FALSE
-islaborsurplusareafirm					FALSE
-islocalgovernmentowned					FALSE
-ismunicipalitylocalgovernment					FALSE
-isnativehawaiianownedorganizationorfirm					FALSE
-isotherbusinessororganization					FALSE
-isotherminorityowned					FALSE
-ispartnershiporlimitedliabilitypartnership					FALSE
-isschooldistrictlocalgovernment					FALSE
-issmallagriculturalcooperative					FALSE
-issoleproprietorship					FALSE
-istownshiplocalgovernment					FALSE
-istriballyownedfirm					FALSE
-istribalcollege					FALSE
-isalaskannativeownedcorporationorfirm					FALSE
-iscorporateentitytaxexempt					FALSE
-iswomenownedsmallbusiness					FALSE
-isecondisadvwomenownedsmallbusiness					FALSE
-isjointventurewomenownedsmallbusiness					FALSE
-isjointventureecondisadvwomenownedsmallbusiness					FALSE
-walshhealyact					TRUE
-servicecontractact					TRUE
-davisbaconact					TRUE
-clingercohenact					TRUE
-otherstatutoryauthority					FALSE
-interagencycontractingauthority					TRUE
-signeddate_DATE					FALSE
-effectivedate_DATE					FALSE
-currentcompletiondate_DATE					FALSE
-ultimatecompletiondate_DATE					FALSE
-lastdatetoorder_DATE					FALSE
-obligatedamount_CUR					FALSE
-baseandexercisedoptionsvalue_CUR					FALSE
-baseandalloptionsvalue_CUR					FALSE
-priceevaluationpercentdifference_2UINT					FALSE
-numberofactions_4UINT					FALSE
-transactionnumber_4UINT					FALSE
-fiscal_year_2SINT					FALSE
-Convert Dates and Numbers.numberofoffersreceived					FALSE
-numberofemployees_4UINT					FALSE
-annualrevenue_CUR					FALSE
-dunsnumber					FALSE
-fyq					FALSE
-cfda_program_num					FALSE
-sai_number					FALSE
-recipient_name					FALSE
-recipient_city_code					FALSE
-recipient_city_name					FALSE
-recipient_county_code					FALSE
-recipient_county_name					FALSE
-recipient_zip					FALSE
-recipient_type					TRUE
-action_type					TRUE
-agency_code					TRUE
-federal_award_id					FALSE
-federal_award_mod					FALSE
-fed_funding_amount					FALSE
-non_fed_funding_amount					FALSE
-total_funding_amount					FALSE
-obligation_action_date					FALSE
-starting_date					FALSE
-ending_date					FALSE
-assistance_type					TRUE
-record_type					TRUE
-correction_late_ind					TRUE
-fyq_correction					FALSE
-principal_place_code					FALSE
-principal_place_state					FALSE
-principal_place_cc					FALSE
-principal_place_country_code					FALSE
-principal_place_zip					FALSE
-principal_place_cd					FALSE
-cfda_program_title					FALSE
-agency_name					FALSE
-project_description					FALSE
-duns_no					FALSE
-duns_conf_code					FALSE
-progsrc_agen_code					FALSE
-progsrc_acnt_code					FALSE
-progsrc_subacnt_code					FALSE
-receip_addr1					FALSE
-receip_addr2					FALSE
-receip_addr3					FALSE
-face_loan_guran					FALSE
-orig_sub_guran					FALSE
-principal_place_state_code					FALSE
-recip_cat_type					TRUE
-asst_cat_type					FALSE
-recipient_cd					FALSE
-recipient_country_code					FALSE
-uri					FALSE
-recipient_state_code					FALSE
-prime_awardee_executive1					FALSE
-prime_awardee_executive1_compensation					FALSE
-prime_awardee_executive2					FALSE
-prime_awardee_executive2_compensation					FALSE
-prime_awardee_executive3					FALSE
-prime_awardee_executive3_compensation					FALSE
-prime_awardee_executive4					FALSE
-prime_awardee_executive4_compensation					FALSE
-prime_awardee_executive5					FALSE
-prime_awardee_executive5_compensation					FALSE
-last_modified_date					FALSE
-exec1_fullname					FALSE
-exec1_amount					FALSE
-exec2_fullname					FALSE
-exec2_amount					FALSE
-exec3_fullname					FALSE
-exec3_amount					FALSE
-exec4_fullname					FALSE
-exec4_amount					FALSE
-exec5_fullname					FALSE
-exec5_amount					FALSE
-AWARD_NUMBER					FALSE
-AWARD_DESCRIPTION					FALSE
-POP_START_DATE					FALSE
-POP_END_DATE					FALSE
-DATE_END_QTR					FALSE
-FY					FALSE
-FISCAL_QTR					FALSE
-CALENDAR_YR					FALSE
-CALENDAR_QTR					FALSE
-IMPLEMENTING_MECHANISM					FALSE
-INTERAGENCY_TRANSFER_STATUS					FALSE
-SOURCE_OF_APPN_AGENCY					FALSE
-SOURCE_OF_APPN_SYMBOL					FALSE
-BUREAU_DIVISION_OFFICE_SERVICE					FALSE
-ORGANIZATIONAL_UNIT					FALSE
-OBLIGATION_AMT					FALSE
-DISBURSED_AMT					FALSE
-CATEGORY					FALSE
-SECTOR					FALSE
-ACTIVITY_CODE					FALSE
-ACTIVITY_NAME_OR_TITLE					FALSE
-ACTIVITY_DESCRIPTION					FALSE
-BENEFITTING_COUNTRY_REGION					FALSE
-DAC_CLASSIFICATION					FALSE
-TYING_STATUS_OF_AWARD					FALSE
-PROG_OE_FLAG					FALSE
-OBL_TYPE					FALSE
-APPN_ACCOUNT					FALSE
-FUND_CD					FALSE
-BBFY					FALSE
-EBFY					FALSE
-VENDOR_NAME					FALSE
-VENDOR_LOCATION					FALSE
-VENDOR_CATEGORY					FALSE
-DUNS_NUM					FALSE
-REPORTING_DATE					FALSE
-Obligated					FALSE
-Disbursed					FALSE
-SP					FALSE
-ATA					FALSE
-AID					FALSE
-BPOA					FALSE
-EPOA					FALSE
-A					FALSE
-MAIN					FALSE
-SUB					FALSE
-Admin_Bureau					FALSE
-GWA_TAS					FALSE
-GWA_TAS_Name					FALSE
-BETC					FALSE
-BETC_Name					FALSE
-Effective_Date					FALSE
-Suspend_Date					FALSE
-IsCredit					FALSE
-Adj_BETC					FALSE
-STAR_TAS					FALSE
-STAR_Dept_Reg					FALSE
-STAR_Dept_Xfer					FALSE
-STAR_Main_Acct					FALSE
-Txn_Type					FALSE
-Acct_Type					FALSE
-Acct_Type_Description					FALSE
-Fund_Type					FALSE
-Fund_Type_Description					FALSE
-Period	Period	Period			FALSE
-EntitySizeText	Vendors	Vendor Count			FALSE
-EntitySizeText.sum	Vendors	Vendor Count			FALSE
-EntitySizeText.detail	Vendors	Vendor Count			FALSE
-AnyEntityUSplaceOfPerformance	Binary				FALSE
-AnyEntityForeignPlaceOfPerformance	Binary				FALSE
-IsEntityAbove1990constantReportingThreshold	Binary				FALSE
-IsEntityAbove2016constantReportingThreshold	Binary				FALSE
-IsEntityAbove2016constantOneMillionThreshold	Binary				FALSE
-party_code	Party	Party			FALSE
-Caucus	Party	Party			FALSE
-Party	Party	Party			FALSE
-Cohort	Age	Age Cohort			FALSE
-Force		Use of Force (1 Oppose to 7 Support)			FALSE
-Russia		Russia (1 Confront to 7 Cooperate)			FALSE
-China		China (1 Confront to 7 Cooperate)			FALSE
-DPRK		North Korea (1 Confront to 7 Cooperate)			FALSE
-Iran		Iran (1 Confront to 7 Cooperate)			FALSE
-Allies		Alliances (1 Oppose to 7 Support)			FALSE
-Multi		Multilateralism (1 Oppose to 7 Support)			FALSE
-Trade		Trade Agreements (1 Oppose to 7 Support)			FALSE
-SecAsst		Security Assistance (1 Oppose to 7 Support)			FALSE
-HumAsst		Humanitarian Assistance (1 Oppose to 7 Support)			FALSE
-DevAsst		Development Assistance (1 Oppose to 7 Support)			FALSE
-LibCon		DW Nominate Scale of Liberal (-1) to Conservative (1)			FALSE
-Region	Region	Region			FALSE
-Ir_thr		Iran Threat (7 Cooperate to 1 Confront)			
-Ru_thr		Russia Threat (7 Cooperate to 1 Confront)			
-NK_thr		North Korea Threat (7 Cooperate to 1 Confront)			
-Ch_thr		China Threat (7 Cooperate to 1 Confront)			
-Protectionist		Protectionist (1 Oppose to 7 Support)			
-iOrderist		Orderist Variant with Threat (1 Oppose to 7 Support)			
-iHumanitarians		Humanist Variant with Threat (1 Oppose to 7 Support)			
-iLimitist_pure		Limitist Pure (1 Oppose to 7 Support)			
-iLimitist_thr		Limitist Threat (1 Oppose to 7 Support)			
-Factor1		Factor1 ~Resembles Orderist (1 Low to 7 High)			
-Factor2		Factor2 ~Iran/N. Korea Deals (1 Low to 7 High)			
-Factor3		Factor3 ~Resembles Humanist (1 Low to 7 High)			
-Factor4		Factor 4 ~China cooperate (1 Low to 7 High)			
-Factor5		Factor 5 ~Russia cooperate  (1 Low to 7 High)			
-LibCon7		DW Nominate Scale of Liberal (1) to Conservative (7)			
-iOrderist2		Orderist with Multilateral (1 Oppose to 7 Support)			
-iHumanitarians2		Humanist (1 Oppose to 7 Support)			
-congress_col	congress_col	Metric			FALSE
-iOrderist3		Orderist (1 Oppose to 7 Support)			
-cl_Offr???		"The number of offers each contract received, logged and then rescaled"			FALSE
-b_Term		"Whether contracts experience a partial/complete termination(1 yes, 0 no)"			FALSE
-b_CBre		"Whether contracts had to be charged in a means that risked significant cost increases(1 yes, 0 no)"			FALSE
-cl_def3_HHI_lag1		"Measure of industrial concentration in the defense industrial base, subsector HHI"			FALSE
-cl_def6_HHI_lag1		"Measure of industrial concentration in the defense industrial base, detailed industry HHI"			FALSE
-Office		The top contracting office of each contract			FALSE
-NAICS		The top North American Industrial Classification Code of each contract			FALSE
-cl_def6_obl_lag1		"Annually sums of total defense obligations by NAICS subsector and detailed industry, logged and then rescaled"			FALSE
-cl_def3_ratio_lag1		"Ratio of total defense obligations to revenues in the same NAICS category for U.S. economy as a whole, subsector"			FALSE
-cl_def6_ratio_lag1		"Ratio of total defense obligations to revenues in the same NAICS category for U.S. economy as a whole, detailed industrial"			FALSE
-cl_US6_avg_sal_lag1		The payroll of the relevant detailed industry by the number of employees			FALSE
-cl_Ceil		"Initial contract cost ceiling as reported by the base and all options field in then-year dollars, logged and then rescaled"			FALSE
-cl_Days		"Initial maximum duration of the contract in days, logged and then rescaled"			FALSE
-SIDC		1 if the vehicle is a single-award indefinite delivery contract and 0 otherwise			FALSE
-MIDC		1 if the vehicle is a multiple-award indefinite delivery contract and 0 otherwise			FALSE
-FSS/GWAC		1 if the vehicle is a Federal Supply Schedule or Government-Wide Acquisition Contract and 0 otherwise			FALSE
-BPA/BOA		1 if the vehicle is a Blank Purchase Agreement or Basic Ordering Agreement and 0 otherwise			FALSE
-Other PF		"1 if other fixed-price consists of included fixed-price redertermination, fixed-price award fee, and fixed-price economics price adjustment, and 0 otherwise"			FALSE
-Incentive		"1 if incentive fee contracts, including fixed-price incentive fee, cost plus incentive fee, and cost sharing, and 0 otherwise"			FALSE
-Combination or other		"1 if contracts using multiple pricing machanisms or unusual and unclassified types, and 0 otherwise"			FALSE
-Other CB		"1 if all types of cost-based contracting, excluding incentive fee and accounts for just over 1 percent of contracts, and 0 otherwise"			FALSE
-T&M/LH/FPLOE		"1 if effort contract(time & materials, labor hours and fixed-price level), and 0 otherwise"			FALSE
-b_UCA		"1 if the contract begin as letter cobtracts or indefinitized contract awards, and 0 otherwise"			FALSE
-b_Intl		"1 for contracts with any transactions performed internationally, and 0 otherwise"			FALSE
+﻿column,coloration.key,title,share.title,period.title,is.colon.split
+Customer,Agencies,Customer,,,FALSE
+Customer.detail,Agencies,Customer,,,FALSE
+Customer.manual.subtitles,Agencies,Customer,,,FALSE
+Customer.sum,Agencies,Customer,,,FALSE
+Agency,Agencies,Agency,,,FALSE
+Is.Defense,Agencies,Defense or Civilian,,,FALSE
+SubFunder.Detail,Agencies,Funding Component,,,FALSE
+SubCustomer,Agencies,Component,,,FALSE
+SubCustomer.detail,Agencies,Component,,,FALSE
+SubCustomer.sum,Agencies,Component,,,FALSE
+SubCustomer.component,Agencies,Component,,,FALSE
+SubCustomer.platform,Agencies,Component,,,FALSE
+ServicesCategory.detail,Area,Services Area,,,FALSE
+ServicesCategory.sum,Area,Services Area,,,FALSE
+RnDCategory.detail,Area,R&D Area,,,FALSE
+ProductsCategory.detail,Area,Products Area,,,FALSE
+ProductOrServiceArea,Area,Product or Service Area,,,FALSE
+SupplyServiceERS,Area,"Supply, Equipment-Related Service, Other Services",,,FALSE
+ProductServiceOrRnDarea,Area,"Product, Service, or R&D Area",,,FALSE
+ProductServiceOrRnDarea.sum,Area,"Product, Service, or R&D",,,FALSE
+ProductOrServiceArea.DLA,Area,Product or Service Area,,,FALSE
+Competition.detail,Competition,Extent of Competition,,,FALSE
+Competition.multisum,Competition,Extent of Competition,,,FALSE
+Competition.sum,Competition,Extent of Competition,,,FALSE
+No.Competition.sum,Competition,Extent of Competition,,,FALSE
+CompOffr,Competition,How many offers a contract received(No Competition/1 offer/2 offer/3-4 offer/5+ offers),,,FALSE
+NoCompOffr,Competition,How many offers a contract received(No Competition/1 offer/2 offer/3-4 offer/5+ offers),,,FALSE
+Competition.effective.only,Competition,Extent of Competition,,,FALSE
+Pricing.Mechanism.detail,Pricing,Pricing Mechanism,,,FALSE
+Pricing.Mechanism.sum,Pricing,Pricing Mechanism,,,FALSE
+Base,Pricing,Pricing Mechanism,,,FALSE
+Fee,Pricing,Pricing Mechanism Fee Type,,,FALSE
+Indicator,Europe,,,,FALSE
+Vehicle.detail,Vehicles,Contract Vehicle,,,FALSE
+Vehicle.sum,Vehicles,Contract Vehicle,,,FALSE
+Vendor.Size.detail,Vendors,Contract Vehicle,,,FALSE
+Vendor.Size.sum,Vendors,Contract Vehicle,,,FALSE
+Shiny.VendorSize,Vendors,Vendor Size,,,FALSE
+RoughUniqueEntitySize,Vendors,Vendor Size,,,FALSE
+comparison.dollar.type.detail,Dollar Type,,,,FALSE
+comparison.dollar.type.sum,Dollar Type,,,,FALSE
+Contract.Size.detail,Contract Size,Contract Size,,,FALSE
+Contract.Size.sum,Contract Size,Contract Size,,,FALSE
+Ceil,Contract Size,Contract Ceiling,,,FALSE
+LowCeil,Contract Size,Contract Ceiling,,,FALSE
+Ceil.Simple,Contract Size,Contract Ceiling,,,FALSE
+PlatformPortfolio,PlatformPortfolio,Platform Portfolio,,,FALSE
+PlatformPortfolio.sum,PlatformPortfolio,Platform Portfolio,,,FALSE
+PlatformPortfolio.AnD,PlatformPortfolio,Platform Portfolio,,,FALSE
+Europe,Europe,,,,FALSE
+Country,Europe,,,,FALSE
+Coloring,Europe,,,,FALSE
+Country.Proper,Europe,,,,FALSE
+European.Region,Europe,,,,FALSE
+Europe.Region.Block,Europe,,,,FALSE
+Deployment,Deployment,,,,FALSE
+Term,Performance,,,,FALSE
+AddressCat,PBL,,,,FALSE
+MaxOfIsOfficialPBL,PBL,,,,FALSE
+JointScore,PBL,,,,FALSE
+ATLpolicy,Regime,,,,FALSE
+USDATL,Regime,,,,FALSE
+MajorCommandName,MajorCommand,,,,FALSE
+OMBtheater,International,,,,FALSE
+Theater,International,,,,FALSE
+CrisisFundingTheater,International,,,,FALSE
+ContractingOfficeName,ContractingOffice,Contracting Office,,,FALSE
+CSISofficeName,ContractingOffice,Contracting Office,,,FALSE
+CSISofficeName.PBL,ContractingOffice,Contracting Office,,,FALSE
+Hypothesis,Hypothesis,,,,FALSE
+Cost.Based_Significance,Significance,,,,FALSE
+FxCb,Pricing,,,,FALSE
+Significance,Significance,,,,FALSE
+DefOrEqu,Aggregate,,,,FALSE
+MetricName,Aggregate,,,,FALSE
+OCOlabelDetail,Crisis,,,,FALSE
+NIAcontradictions,Crisis,,,,FALSE
+International,International,,,,FALSE
+IsCSISOCO,Crisis,,,,FALSE
+OCOcrisisScore,Crisis,,,,FALSE
+CrisisFunding,Crisis,Crisis-Funding,,,FALSE
+CrisisFunding1A,Crisis,Classification\nAfter Step 1A,,,FALSE
+CrisisFunding1B,Crisis,Classification\nAfter Step 1B,,,FALSE
+CrisisFunding1C,Crisis,Classification\nAfter Step 1C,,,FALSE
+CrisisFunding2,Crisis,Classification\nAfter Step 2,,,FALSE
+CrisisFunding3,Crisis,Classification\nAfter Step 3,,,FALSE
+CrisisFunding4A,Crisis,Classification\nAfter Step 4A,,,FALSE
+CrisisFunding4B,Crisis,Classification\nAfter Step 4B,,,FALSE
+CrisisPoints,Crisis,,,,FALSE
+CrisisPointsOnly,Crisis,,,,FALSE
+CrisisDisplay,Crisis,,,,FALSE
+IsOCOcrisisFunding,Crisis,,,,FALSE
+OCOscoreBuckets,Crisis,,,,FALSE
+DecisionTree,Crisis,,,,FALSE
+DecisionTreeDisplay,Crisis,,,,FALSE
+DecisionTreeStep4,Crisis,,,,FALSE
+NIAcrisisFunding,Crisis,,,,FALSE
+ContractCrisisFunding,Crisis,,,,FALSE
+contingencyhumanitarianpeacekeepingoperationText,Crisis,,,,FALSE
+nationalinterestactioncodeText,Crisis,,,,FALSE
+NAICcrisisFunding,Crisis,,,,FALSE
+NIAlist,Crisis,,,,FALSE
+SAMexception.sum,Crisis,,,,FALSE
+SAMcrisisFunding,Crisis,,,,FALSE
+UnmodifiedUltimateDurationCategory,Duration,,,,FALSE
+Dur,Duration,,,,FALSE
+Dur.Simple,Duration,,,,FALSE
+isUndefinitizedAction,UCA,,,,FALSE
+isUCA,UCA,,,,FALSE
+UCA,UCA,,,,FALSE
+Reachback,Reachback,,,,FALSE
+Action.Obligation,,Action Obligation (Current?),Share Contract $,,FALSE
+Action.Obligation.Current,,Action Obligation (Current $s),Share Contract $,,FALSE
+Action.Obligation.2016,,Constant 2016 $,Share Contract $,,FALSE
+Action.Obligation.2017,,Constant 2017 $,Share Contract $,,FALSE
+Action.Obligation.OMB.2019,,Constant 2019 $,Share Contract $,,FALSE
+Obligation.2017,,Obligations (2017 $),Share Contract $,,FALSE
+Fiscal.Year,,Fiscal Year,,,FALSE
+dFYear,,Fiscal Year,,,FALSE
+contingencyhumanitarianpeacekeepingoperation,ContingencyHumanitarianPeacekeepingOperation,Contingency or Humanitarian Peacekeeping Operation,,,TRUE
+IsMultipleYearProcRnD,Binary,,,,FALSE
+MultipleYearProcRnD,Crisis,,,,FALSE
+IsExcludedPSC,Crisis,,,,FALSE
+IsExcludedCO,Crisis,,,,FALSE
+unique_transaction_id,Exclude,,,,FALSE
+transaction_status,Exclude,,,,FALSE
+obligatedamount,Exclude,,,,FALSE
+baseandexercisedoptionsvalue,,,,,FALSE
+baseandalloptionsvalue,,,,,FALSE
+maj_agency_cat,,,,,TRUE
+mod_agency,,,,,TRUE
+maj_fund_agency_cat,,,,,TRUE
+contractingofficeagencyid,,,,,TRUE
+contractingofficeid,,,,,TRUE
+fundingrequestingagencyid,,,,,TRUE
+fundingrequestingofficeid,,,,,TRUE
+fundedbyforeignentity,,,,,FALSE
+signeddate,,,,,FALSE
+effectivedate,,,,,FALSE
+currentcompletiondate,,,,,FALSE
+ultimatecompletiondate,,,,,FALSE
+lastdatetoorder,,,,,FALSE
+contractactiontype,,,,,FALSE
+reasonformodification,,,,,TRUE
+typeofcontractpricing,,,,,TRUE
+priceevaluationpercentdifference,,,,,FALSE
+subcontractplan,,,,,TRUE
+lettercontract,,,,,FALSE
+multiyearcontract,,,,,TRUE
+performancebasedservicecontract,,,,,FALSE
+majorprogramcode,,,,,FALSE
+contractfinancing,,,,,TRUE
+costorpricingdata,,,,,TRUE
+costaccountingstandardsclause,,,,,FALSE
+descriptionofcontractrequirement,,,,,FALSE
+purchasecardaspaymentmethod,,,,,TRUE
+numberofactions,,,,,FALSE
+nationalinterestactioncode,,,,,TRUE
+progsourceagency,,,,,FALSE
+progsourceaccount,,,,,FALSE
+progsourcesubacct,,,,,FALSE
+account_title,,,,,FALSE
+rec_flag,,,,,FALSE
+typeofidc,,,,,FALSE
+multipleorsingleawardidc,,,,,TRUE
+programacronym,,,,,FALSE
+vendorname,,,,,FALSE
+vendoralternatename,,,,,FALSE
+vendorlegalorganizationname,,,,,FALSE
+vendordoingasbusinessname,,,,,FALSE
+divisionname,,,,,FALSE
+divisionnumberorofficecode,,,,,FALSE
+vendorenabled,,,,,FALSE
+vendorlocationdisableflag,,,,,FALSE
+ccrexception,,,,,FALSE
+streetaddress,,,,,FALSE
+streetaddress2,,,,,FALSE
+streetaddress3,,,,,FALSE
+city,,,,,FALSE
+state,,,,,FALSE
+zipcode,,,,,FALSE
+vendorcountrycode,,,,,FALSE
+vendor_state_code,,,,,FALSE
+vendor_cd,,,,,FALSE
+congressionaldistrict,,,,,FALSE
+vendorsitecode,,,,,FALSE
+vendoralternatesitecode,,,,,FALSE
+parentdunsnumber,,,,,FALSE
+phoneno,,,,,FALSE
+faxno,,,,,FALSE
+registrationdate,,,,,FALSE
+renewaldate,,,,,FALSE
+mod_parent,,,,,FALSE
+locationcode,,,,,FALSE
+statecode,,,,,TRUE
+PlaceofPerformanceCity,,,,,FALSE
+pop_state_code,,,,,TRUE
+placeofperformancecountrycode,,,,,TRUE
+placeofperformancezipcode,,,,,FALSE
+pop_cd,,,,,FALSE
+placeofperformancecongressionaldistrict,,,,,FALSE
+psc_cat,,,,,FALSE
+productorservicecode,,,,,TRUE
+systemequipmentcode,,,,,TRUE
+claimantprogramcode,,,,,TRUE
+principalnaicscode,,,,,TRUE
+informationtechnologycommercialitemcategory,,,,,FALSE
+gfe_gfp,,,,,TRUE
+useofepadesignatedproducts,,,,,TRUE
+recoveredmaterialclauses,,,,,TRUE
+seatransportation,,,,,TRUE
+contractbundling,,,,,TRUE
+consolidatedcontract,,,,,TRUE
+countryoforigin,,,,,TRUE
+placeofmanufacture,,,,,TRUE
+manufacturingorganizationtype,,,,,TRUE
+agencyid,,,,,TRUE
+piid,,,,,FALSE
+modnumber,,,,,FALSE
+transactionnumber,,,,,FALSE
+fiscal_year,,,,,FALSE
+idvagencyid,,,,,FALSE
+idvpiid,,,,,FALSE
+idvmodificationnumber,,,,,FALSE
+solicitationid,,,,,FALSE
+extentcompeted,,,,,TRUE
+reasonnotcompeted,,,,,TRUE
+numberofoffersreceived,,,,,FALSE
+commercialitemacquisitionprocedures,,,,,TRUE
+commercialitemtestprogram,,,,,TRUE
+smallbusinesscompetitivenessdemonstrationprogram,,,,,FALSE
+a76action,,,,,FALSE
+competitiveprocedures,,,,,FALSE
+solicitationprocedures,,,,,TRUE
+typeofsetaside,,,,,TRUE
+localareasetaside,,,,,FALSE
+evaluatedpreference,,,,,TRUE
+fedbizopps,,,,,FALSE
+research,,,,,FALSE
+statutoryexceptiontofairopportunity,,,,,FALSE
+organizationaltype,,,,,FALSE
+numberofemployees,,,,,FALSE
+annualrevenue,,,,,FALSE
+firm8aflag,,,,,FALSE
+hubzoneflag,,,,,FALSE
+sdbflag,,,,,FALSE
+issbacertifiedsmalldisadvantagedbusiness,,,,,FALSE
+shelteredworkshopflag,,,,,FALSE
+hbcuflag,,,,,FALSE
+educationalinstitutionflag,,,,,FALSE
+womenownedflag,,,,,FALSE
+veteranownedflag,,,,,FALSE
+srdvobflag,,,,,FALSE
+localgovernmentflag,,,,,FALSE
+minorityinstitutionflag,,,,,FALSE
+aiobflag,,,,,FALSE
+stategovernmentflag,,,,,FALSE
+federalgovernmentflag,,,,,FALSE
+minorityownedbusinessflag,,,,,FALSE
+apaobflag,,,,,FALSE
+tribalgovernmentflag,,,,,FALSE
+baobflag,,,,,FALSE
+naobflag,,,,,FALSE
+saaobflag,,,,,FALSE
+nonprofitorganizationflag,,,,,FALSE
+isothernotforprofitorganization,,,,,FALSE
+isforprofitorganization,,,,,FALSE
+isfoundation,,,,,FALSE
+haobflag,,,,,FALSE
+ishispanicservicinginstitution,,,,,FALSE
+emergingsmallbusinessflag,,,,,FALSE
+hospitalflag,,,,,FALSE
+contractingofficerbusinesssizedetermination,,,,,TRUE
+is1862landgrantcollege,,,,,FALSE
+is1890landgrantcollege,,,,,FALSE
+is1994landgrantcollege,,,,,FALSE
+isveterinarycollege,,,,,FALSE
+isveterinaryhospital,,,,,FALSE
+isprivateuniversityorcollege,,,,,FALSE
+isschoolofforestry,,,,,FALSE
+isstatecontrolledinstitutionofhigherlearning,,,,,FALSE
+isserviceprovider,,,,,FALSE
+receivescontracts,,,,,FALSE
+receivesgrants,,,,,FALSE
+receivescontractsandgrants,,,,,FALSE
+isairportauthority,,,,,FALSE
+iscouncilofgovernments,,,,,FALSE
+ishousingauthoritiespublicortribal,,,,,FALSE
+isinterstateentity,,,,,FALSE
+isplanningcommission,,,,,FALSE
+isportauthority,,,,,FALSE
+istransitauthority,,,,,FALSE
+issubchapterscorporation,,,,,FALSE
+islimitedliabilitycorporation,,,,,FALSE
+isforeignownedandlocated,,,,,FALSE
+isarchitectureandengineering,,,,,FALSE
+isdotcertifieddisadvantagedbusinessenterprise,,,,,FALSE
+iscitylocalgovernment,,,,,FALSE
+iscommunitydevelopedcorporationownedfirm,,,,,FALSE
+iscommunitydevelopmentcorporation,,,,,FALSE
+isconstructionfirm,,,,,FALSE
+ismanufacturerofgoods,,,,,FALSE
+iscorporateentitynottaxexempt,,,,,FALSE
+iscountylocalgovernment,,,,,FALSE
+isdomesticshelter,,,,,FALSE
+isfederalgovernmentagency,,,,,FALSE
+isfederallyfundedresearchanddevelopmentcorp,,,,,FALSE
+isforeigngovernment,,,,,FALSE
+isindiantribe,,,,,FALSE
+isintermunicipallocalgovernment,,,,,FALSE
+isinternationalorganization,,,,,FALSE
+islaborsurplusareafirm,,,,,FALSE
+islocalgovernmentowned,,,,,FALSE
+ismunicipalitylocalgovernment,,,,,FALSE
+isnativehawaiianownedorganizationorfirm,,,,,FALSE
+isotherbusinessororganization,,,,,FALSE
+isotherminorityowned,,,,,FALSE
+ispartnershiporlimitedliabilitypartnership,,,,,FALSE
+isschooldistrictlocalgovernment,,,,,FALSE
+issmallagriculturalcooperative,,,,,FALSE
+issoleproprietorship,,,,,FALSE
+istownshiplocalgovernment,,,,,FALSE
+istriballyownedfirm,,,,,FALSE
+istribalcollege,,,,,FALSE
+isalaskannativeownedcorporationorfirm,,,,,FALSE
+iscorporateentitytaxexempt,,,,,FALSE
+iswomenownedsmallbusiness,,,,,FALSE
+isecondisadvwomenownedsmallbusiness,,,,,FALSE
+isjointventurewomenownedsmallbusiness,,,,,FALSE
+isjointventureecondisadvwomenownedsmallbusiness,,,,,FALSE
+walshhealyact,,,,,TRUE
+servicecontractact,,,,,TRUE
+davisbaconact,,,,,TRUE
+clingercohenact,,,,,TRUE
+otherstatutoryauthority,,,,,FALSE
+interagencycontractingauthority,,,,,TRUE
+signeddate_DATE,,,,,FALSE
+effectivedate_DATE,,,,,FALSE
+currentcompletiondate_DATE,,,,,FALSE
+ultimatecompletiondate_DATE,,,,,FALSE
+lastdatetoorder_DATE,,,,,FALSE
+obligatedamount_CUR,,,,,FALSE
+baseandexercisedoptionsvalue_CUR,,,,,FALSE
+baseandalloptionsvalue_CUR,,,,,FALSE
+priceevaluationpercentdifference_2UINT,,,,,FALSE
+numberofactions_4UINT,,,,,FALSE
+transactionnumber_4UINT,,,,,FALSE
+fiscal_year_2SINT,,,,,FALSE
+Convert Dates and Numbers.numberofoffersreceived,,,,,FALSE
+numberofemployees_4UINT,,,,,FALSE
+annualrevenue_CUR,,,,,FALSE
+dunsnumber,,,,,FALSE
+fyq,,,,,FALSE
+cfda_program_num,,,,,FALSE
+sai_number,,,,,FALSE
+recipient_name,,,,,FALSE
+recipient_city_code,,,,,FALSE
+recipient_city_name,,,,,FALSE
+recipient_county_code,,,,,FALSE
+recipient_county_name,,,,,FALSE
+recipient_zip,,,,,FALSE
+recipient_type,,,,,TRUE
+action_type,,,,,TRUE
+agency_code,,,,,TRUE
+federal_award_id,,,,,FALSE
+federal_award_mod,,,,,FALSE
+fed_funding_amount,,,,,FALSE
+non_fed_funding_amount,,,,,FALSE
+total_funding_amount,,,,,FALSE
+obligation_action_date,,,,,FALSE
+starting_date,,,,,FALSE
+ending_date,,,,,FALSE
+assistance_type,,,,,TRUE
+record_type,,,,,TRUE
+correction_late_ind,,,,,TRUE
+fyq_correction,,,,,FALSE
+principal_place_code,,,,,FALSE
+principal_place_state,,,,,FALSE
+principal_place_cc,,,,,FALSE
+principal_place_country_code,,,,,FALSE
+principal_place_zip,,,,,FALSE
+principal_place_cd,,,,,FALSE
+cfda_program_title,,,,,FALSE
+agency_name,,,,,FALSE
+project_description,,,,,FALSE
+duns_no,,,,,FALSE
+duns_conf_code,,,,,FALSE
+progsrc_agen_code,,,,,FALSE
+progsrc_acnt_code,,,,,FALSE
+progsrc_subacnt_code,,,,,FALSE
+receip_addr1,,,,,FALSE
+receip_addr2,,,,,FALSE
+receip_addr3,,,,,FALSE
+face_loan_guran,,,,,FALSE
+orig_sub_guran,,,,,FALSE
+principal_place_state_code,,,,,FALSE
+recip_cat_type,,,,,TRUE
+asst_cat_type,,,,,FALSE
+recipient_cd,,,,,FALSE
+recipient_country_code,,,,,FALSE
+uri,,,,,FALSE
+recipient_state_code,,,,,FALSE
+prime_awardee_executive1,,,,,FALSE
+prime_awardee_executive1_compensation,,,,,FALSE
+prime_awardee_executive2,,,,,FALSE
+prime_awardee_executive2_compensation,,,,,FALSE
+prime_awardee_executive3,,,,,FALSE
+prime_awardee_executive3_compensation,,,,,FALSE
+prime_awardee_executive4,,,,,FALSE
+prime_awardee_executive4_compensation,,,,,FALSE
+prime_awardee_executive5,,,,,FALSE
+prime_awardee_executive5_compensation,,,,,FALSE
+last_modified_date,,,,,FALSE
+exec1_fullname,,,,,FALSE
+exec1_amount,,,,,FALSE
+exec2_fullname,,,,,FALSE
+exec2_amount,,,,,FALSE
+exec3_fullname,,,,,FALSE
+exec3_amount,,,,,FALSE
+exec4_fullname,,,,,FALSE
+exec4_amount,,,,,FALSE
+exec5_fullname,,,,,FALSE
+exec5_amount,,,,,FALSE
+AWARD_NUMBER,,,,,FALSE
+AWARD_DESCRIPTION,,,,,FALSE
+POP_START_DATE,,,,,FALSE
+POP_END_DATE,,,,,FALSE
+DATE_END_QTR,,,,,FALSE
+FY,,,,,FALSE
+FISCAL_QTR,,,,,FALSE
+CALENDAR_YR,,,,,FALSE
+CALENDAR_QTR,,,,,FALSE
+IMPLEMENTING_MECHANISM,,,,,FALSE
+INTERAGENCY_TRANSFER_STATUS,,,,,FALSE
+SOURCE_OF_APPN_AGENCY,,,,,FALSE
+SOURCE_OF_APPN_SYMBOL,,,,,FALSE
+BUREAU_DIVISION_OFFICE_SERVICE,,,,,FALSE
+ORGANIZATIONAL_UNIT,,,,,FALSE
+OBLIGATION_AMT,,,,,FALSE
+DISBURSED_AMT,,,,,FALSE
+CATEGORY,,,,,FALSE
+SECTOR,,,,,FALSE
+ACTIVITY_CODE,,,,,FALSE
+ACTIVITY_NAME_OR_TITLE,,,,,FALSE
+ACTIVITY_DESCRIPTION,,,,,FALSE
+BENEFITTING_COUNTRY_REGION,,,,,FALSE
+DAC_CLASSIFICATION,,,,,FALSE
+TYING_STATUS_OF_AWARD,,,,,FALSE
+PROG_OE_FLAG,,,,,FALSE
+OBL_TYPE,,,,,FALSE
+APPN_ACCOUNT,,,,,FALSE
+FUND_CD,,,,,FALSE
+BBFY,,,,,FALSE
+EBFY,,,,,FALSE
+VENDOR_NAME,,,,,FALSE
+VENDOR_LOCATION,,,,,FALSE
+VENDOR_CATEGORY,,,,,FALSE
+DUNS_NUM,,,,,FALSE
+REPORTING_DATE,,,,,FALSE
+Obligated,,,,,FALSE
+Disbursed,,,,,FALSE
+SP,,,,,FALSE
+ATA,,,,,FALSE
+AID,,,,,FALSE
+BPOA,,,,,FALSE
+EPOA,,,,,FALSE
+A,,,,,FALSE
+MAIN,,,,,FALSE
+SUB,,,,,FALSE
+Admin_Bureau,,,,,FALSE
+GWA_TAS,,,,,FALSE
+GWA_TAS_Name,,,,,FALSE
+BETC,,,,,FALSE
+BETC_Name,,,,,FALSE
+Effective_Date,,,,,FALSE
+Suspend_Date,,,,,FALSE
+IsCredit,,,,,FALSE
+Adj_BETC,,,,,FALSE
+STAR_TAS,,,,,FALSE
+STAR_Dept_Reg,,,,,FALSE
+STAR_Dept_Xfer,,,,,FALSE
+STAR_Main_Acct,,,,,FALSE
+Txn_Type,,,,,FALSE
+Acct_Type,,,,,FALSE
+Acct_Type_Description,,,,,FALSE
+Fund_Type,,,,,FALSE
+Fund_Type_Description,,,,,FALSE
+Period,Period,Period,,,FALSE
+EntitySizeText,Vendors,Vendor Count,,,FALSE
+EntitySizeText.sum,Vendors,Vendor Count,,,FALSE
+EntitySizeText.detail,Vendors,Vendor Count,,,FALSE
+AnyEntityUSplaceOfPerformance,Binary,,,,FALSE
+AnyEntityForeignPlaceOfPerformance,Binary,,,,FALSE
+IsEntityAbove1990constantReportingThreshold,Binary,,,,FALSE
+IsEntityAbove2016constantReportingThreshold,Binary,,,,FALSE
+IsEntityAbove2016constantOneMillionThreshold,Binary,,,,FALSE
+party_code,Party,Party,,,FALSE
+Caucus,Party,Party,,,FALSE
+Party,Party,Party,,,FALSE
+Cohort,Age,Age Cohort,,,FALSE
+Force,,Use of Force (1 Oppose to 7 Support),,,FALSE
+Russia,,Russia (1 Confront to 7 Cooperate),,,FALSE
+China,,China (1 Confront to 7 Cooperate),,,FALSE
+DPRK,,North Korea (1 Confront to 7 Cooperate),,,FALSE
+Iran,,Iran (1 Confront to 7 Cooperate),,,FALSE
+Allies,,Alliances (1 Oppose to 7 Support),,,FALSE
+Multi,,Multilateralism (1 Oppose to 7 Support),,,FALSE
+Trade,,Trade Agreements (1 Oppose to 7 Support),,,FALSE
+SecAsst,,Security Assistance (1 Oppose to 7 Support),,,FALSE
+HumAsst,,Humanitarian Assistance (1 Oppose to 7 Support),,,FALSE
+DevAsst,,Development Assistance (1 Oppose to 7 Support),,,FALSE
+LibCon,,DW Nominate Scale of Liberal (-1) to Conservative (1),,,FALSE
+Region,Region,Region,,,FALSE
+Ir_thr,,Iran Threat (7 Cooperate to 1 Confront),,,
+Ru_thr,,Russia Threat (7 Cooperate to 1 Confront),,,
+NK_thr,,North Korea Threat (7 Cooperate to 1 Confront),,,
+Ch_thr,,China Threat (7 Cooperate to 1 Confront),,,
+Protectionist,,Protectionist (1 Oppose to 7 Support),,,
+iOrderist,,Orderist Variant with Threat (1 Oppose to 7 Support),,,
+iHumanitarians,,Humanist Variant with Threat (1 Oppose to 7 Support),,,
+iLimitist_pure,,Limitist Pure (1 Oppose to 7 Support),,,
+iLimitist_thr,,Limitist Threat (1 Oppose to 7 Support),,,
+Factor1,,Factor1 ~Resembles Orderist (1 Low to 7 High),,,
+Factor2,,Factor2 ~Iran/N. Korea Deals (1 Low to 7 High),,,
+Factor3,,Factor3 ~Resembles Humanist (1 Low to 7 High),,,
+Factor4,,Factor 4 ~China cooperate (1 Low to 7 High),,,
+Factor5,,Factor 5 ~Russia cooperate  (1 Low to 7 High),,,
+LibCon7,,DW Nominate Scale of Liberal (1) to Conservative (7),,,
+iOrderist2,,Orderist with Multilateral (1 Oppose to 7 Support),,,
+iHumanitarians2,,Humanist (1 Oppose to 7 Support),,,
+congress_col,congress_col,Metric,,,FALSE
+iOrderist3,,Orderist (1 Oppose to 7 Support),,,
+cl_Offr���,,"The number of offers each contract received, logged and then rescaled",,,FALSE
+b_Term,,"Whether contracts experience a partial/complete termination(1 yes, 0 no)",,,FALSE
+b_CBre,,"Whether contracts had to be charged in a means that risked significant cost increases(1 yes, 0 no)",,,FALSE
+cl_def3_HHI_lag1,,"Measure of industrial concentration in the defense industrial base, subsector HHI",,,FALSE
+cl_def6_HHI_lag1,,"Measure of industrial concentration in the defense industrial base, detailed industry HHI",,,FALSE
+Office,,The top contracting office of each contract,,,FALSE
+NAICS,,The top North American Industrial Classification Code of each contract,,,FALSE
+cl_def6_obl_lag1,,"Annually sums of total defense obligations by NAICS subsector and detailed industry, logged and then rescaled",,,FALSE
+cl_def3_ratio_lag1,,"Ratio of total defense obligations to revenues in the same NAICS category for U.S. economy as a whole, subsector",,,FALSE
+cl_def6_ratio_lag1,,"Ratio of total defense obligations to revenues in the same NAICS category for U.S. economy as a whole, detailed industrial",,,FALSE
+cl_US6_avg_sal_lag1,,The payroll of the relevant detailed industry by the number of employees,,,FALSE
+cl_Ceil,,"Initial contract cost ceiling as reported by the base and all options field in then-year dollars, logged and then rescaled",,,FALSE
+cl_Days,,"Initial maximum duration of the contract in days, logged and then rescaled",,,FALSE
+SIDC,,1 if the vehicle is a single-award indefinite delivery contract and 0 otherwise,,,FALSE
+MIDC,,1 if the vehicle is a multiple-award indefinite delivery contract and 0 otherwise,,,FALSE
+FSS/GWAC,,1 if the vehicle is a Federal Supply Schedule or Government-Wide Acquisition Contract and 0 otherwise,,,FALSE
+BPA/BOA,,1 if the vehicle is a Blank Purchase Agreement or Basic Ordering Agreement and 0 otherwise,,,FALSE
+Other PF,,"1 if other fixed-price consists of included fixed-price redertermination, fixed-price award fee, and fixed-price economics price adjustment, and 0 otherwise",,,FALSE
+Incentive,,"1 if incentive fee contracts, including fixed-price incentive fee, cost plus incentive fee, and cost sharing, and 0 otherwise",,,FALSE
+Combination or other,,"1 if contracts using multiple pricing machanisms or unusual and unclassified types, and 0 otherwise",,,FALSE
+Other CB,,"1 if all types of cost-based contracting, excluding incentive fee and accounts for just over 1 percent of contracts, and 0 otherwise",,,FALSE
+T&M/LH/FPLOE,,"1 if effort contract(time & materials, labor hours and fixed-price level), and 0 otherwise",,,FALSE
+b_UCA,,"1 if the contract begin as letter cobtracts or indefinitized contract awards, and 0 otherwise",,,FALSE
+b_Intl,,"1 for contracts with any transactions performed internationally, and 0 otherwise",,,FALSE
