@@ -1,6 +1,6 @@
 [gfe_gfp_name] [varchar](255) NULL ,
 [research_name] [varchar](255) NULL ,
-[last_modified_date] [date] NULL ,
+[last_modified_date] [datetime2](7) NULL ,
 [piid] [varchar](50) NULL ,
 [modnumber] [varchar](25) NULL ,
 [transactionnumber] [bigint] NULL ,

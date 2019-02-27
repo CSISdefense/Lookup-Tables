@@ -120,7 +120,9 @@ create_csis_dates<-function(Schema,TableName){
         sep="")
 }
 
-convert_switch<-function(MergeTable.df,DateType=101,IsTryConvert=FALSE){
+convert_switch<-function(MergeTable.df,
+                         DateType=101,
+                         IsTryConvert=FALSE){
   #I swear I had this working, but then it broke hard and every time I tried to 
   #debug it, the crash took minutes to resolve.
   # OneSwitch<-function(VariableName,
@@ -166,7 +168,9 @@ convert_switch<-function(MergeTable.df,DateType=101,IsTryConvert=FALSE){
 
     MergeTable.df$ConvertList<-NA
     SwitchList<-MergeTable.df$SourceVariableType==MergeTable.df$CSISvariableType
+    SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
     MergeTable.df$ConvertList[SwitchList]<-MergeTable.df$SourceVariableName[SwitchList]
+    
     
     SwitchList<-MergeTable.df$VariableShortType %in% c("[decimal]","[smallint]","[bigint]")&
       is.na(MergeTable.df$ConvertList)
@@ -180,6 +184,7 @@ convert_switch<-function(MergeTable.df,DateType=101,IsTryConvert=FALSE){
     
     SwitchList<-MergeTable.df$VariableShortType=="[bit]"&
         is.na(MergeTable.df$ConvertList)
+    SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
         MergeTable.df$ConvertList[SwitchList]<-
         paste(ConvertText,"(",
               MergeTable.df$CSISvariableType[SwitchList] ,", ",
@@ -191,6 +196,7 @@ convert_switch<-function(MergeTable.df,DateType=101,IsTryConvert=FALSE){
     
     SwitchList<-MergeTable.df$VariableShortType=="[date]"&
       is.na(MergeTable.df$ConvertList)
+    SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
     MergeTable.df$ConvertList[SwitchList]<-
       paste(ConvertText,"([date], ",
                                    MergeTable.df$SourceVariableName[SwitchList] ,
@@ -198,6 +204,7 @@ convert_switch<-function(MergeTable.df,DateType=101,IsTryConvert=FALSE){
                                    sep=""
                     )
     SwitchList<-is.na(MergeTable.df$ConvertList)
+    SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
     MergeTable.df$ConvertList[SwitchList]<-
                     paste(ConvertText,"(",
                           MergeTable.df$CSISvariableType[SwitchList] ,", ",
@@ -425,7 +432,7 @@ create_insert<-function(MergeTable.df,
                        TargetTableName,
                        DateType=101){
   MergeTable.df<-convert_switch(MergeTable.df,101,FALSE)
-  
+  MergeTable.df<-MergeTable.df %>% filter(IsDroppedNameField==FALSE | is.na(IsDroppedNameField))
   InsertList<-paste("INSERT INTO ",TargetSchema,".",TargetTableName,"\n",
                     "(",sep="")
   InsertList<-c(InsertList,paste(MergeTable.df$CSISvariableName,",",sep=""))

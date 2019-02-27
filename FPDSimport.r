@@ -1,6 +1,6 @@
 #Setup
 source("SQLimportTools.r")
-
+library(tidyverse)
 
 #******Importing into Errorlogging.FPDSviolatesConstraint Classic
 #Match up Errorlogging.FPDSviolatesType to Errorlogging.FPDSviolatesConstraint
@@ -45,7 +45,8 @@ Create_Constraint_List<-paste(NewConstraintTableType.df$CSISvariableName,
 write(Create_Constraint_List,
   file="ImportAids\\Starter_ErrorLogging_FPDSbetaViolatesConstraint.txt")
 
-
+debug(create_foreign_key_assigments)
+create_foreign_key_assigments("ErrorLogging","FPDSbetaViolatesConstraint")
 #Match up Errorlogging.FPDSviolatesType to Errorlogging.FPDSviolatesConstraint
 OriginTableType.df<-read_create_table("ErrorLogging_FPDSbetaViolatesType.txt")
 DestTableType.df<-read_create_table("ErrorLogging_FPDSbetaViolatesConstraint.txt")
@@ -82,30 +83,35 @@ write(create_csis_dates("Contract","FPDS"),"CSISdates.txt")
 #******Importing into Contract.FPDS 
 #Match up Errorlogging.FPDSviolatesConstraint to Contract.FPDS 
 DestTableConstraint.df<-read_create_table("Contract_FPDS.txt")
-OriginTableConstraint.df<-read_create_table("ErrorLogging_FPDSviolatesConstraint.txt")
+OriginTableConstraint.df<-read_create_table("ErrorLogging_FPDSbetaviolatesConstraint.txt")
 OriginTableConstraint.df<-translate_name(OriginTableConstraint.df)
 MergeConstraint.df<-merge_source_and_csis_name_tables(OriginTableConstraint.df,DestTableConstraint.df)
 
-count_list<-count_empties(OriginTableConstraint.df,"ErrorLogging","FPDSviolatesConstraint")
+count_list<-count_empties(OriginTableConstraint.df,"ErrorLogging","FPDSbetaviolatesConstraint")
 write(count_list,"count_list.txt")
 
 
 #Transfer from Errorlogging.FPDSviolatesConstraint to Contract.FPDS
 ConstTable.df<-translate_name(OriginTableConstraint.df)
 MergeConst<-merge_source_and_csis_name_tables(ConstTable.df,DestTableConstraint.df)
+
+if(nrow(MergeConst[is.na(MergeConst$CSISvariableType)&is.na(MergeConst$IsDroppedNameField),])>1){
+  write.csv(MergeConst[is.na(MergeConst$CSISvariableType)&is.na(MergeConst$IsDroppedNameField),],
+            file="ImportAids/Unmatched_NameConversion.csv")
+  stop("Update ImportAides/NameList.csv using ImportAids/Unmatched_NameConversion.csv")
+}
 InsertList<-create_insert(MergeConst,
                          "ErrorLogging",
-                         "FPDSviolatesConstraint",
+                         "FPDSbetaviolatesConstraint",
                          "Contract",
                          "FPDS",
                          DateType=101)
 write(InsertList,"Insert2.txt")
-debug(create_update_FPDS)
 update_list<-create_update_FPDS(MergeConst,
   "ErrorLogging",
   "FPDSviolatesConstraint",
   "Contract",
   "FPDS",
   DateType=101)
-write(update_list,"update_list.txt")
+write(update_list,"ImportAids/update_list.txt")
 

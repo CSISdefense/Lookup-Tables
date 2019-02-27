@@ -1,8 +1,8 @@
 SELECT DISTINCT [last_modified_date],
 len([last_modified_date]) as Length,
-'[date]' as DestinationType
+'[datetime2](7)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (Try_Convert([date], [last_modified_date],101) IS NULL AND
+WHERE (Try_Convert([datetime2](7), [last_modified_date]) IS NULL AND
 NULLIF([last_modified_date],'') IS NOT NULL)
 
 SELECT DISTINCT [award_id_piid],
@@ -75,23 +75,23 @@ NULLIF([change_in_potential_award_amount],'') IS NOT NULL)
 
 SELECT DISTINCT [action_date],
 len([action_date]) as Length,
-'[date]' as DestinationType
+'[datetime2](7)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (Try_Convert([date], [action_date],101) IS NULL AND
+WHERE (Try_Convert([datetime2](7), [action_date]) IS NULL AND
 NULLIF([action_date],'') IS NOT NULL)
 
 SELECT DISTINCT [period_of_performance_start_date],
 len([period_of_performance_start_date]) as Length,
-'[date]' as DestinationType
+'[datetime2](7)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (Try_Convert([date], [period_of_performance_start_date],101) IS NULL AND
+WHERE (Try_Convert([datetime2](7), [period_of_performance_start_date]) IS NULL AND
 NULLIF([period_of_performance_start_date],'') IS NOT NULL)
 
 SELECT DISTINCT [period_of_performance_current_end_date],
 len([period_of_performance_current_end_date]) as Length,
-'[date]' as DestinationType
+'[datetime2](7)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (Try_Convert([date], [period_of_performance_current_end_date],101) IS NULL AND
+WHERE (Try_Convert([datetime2](7), [period_of_performance_current_end_date]) IS NULL AND
 NULLIF([period_of_performance_current_end_date],'') IS NOT NULL)
 
 SELECT DISTINCT [period_of_performance_potential_end_date],
@@ -103,9 +103,9 @@ NULLIF([period_of_performance_potential_end_date],'') IS NOT NULL)
 
 SELECT DISTINCT [ordering_period_end_date],
 len([ordering_period_end_date]) as Length,
-'[date]' as DestinationType
+'[datetime2](7)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (Try_Convert([date], [ordering_period_end_date],101) IS NULL AND
+WHERE (Try_Convert([datetime2](7), [ordering_period_end_date]) IS NULL AND
 NULLIF([ordering_period_end_date],'') IS NOT NULL)
 
 SELECT DISTINCT [awarding_agency_code],
