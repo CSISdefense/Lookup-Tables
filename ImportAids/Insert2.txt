@@ -390,5 +390,5 @@ Convert([datetime], [CSISmodifiedDate]),
 Convert([datetime], [CSIScreatedDate]),
 Convert([smallint], Convert(real,[Fiscal_Year])),
 [CSIStransactionID]
-FROM ErrorLogging.FPDSviolatesConstraint
+FROM ErrorLogging.FPDSbetaviolatesConstraint
 
