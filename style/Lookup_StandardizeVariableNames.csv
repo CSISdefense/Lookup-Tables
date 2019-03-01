@@ -239,3 +239,52 @@ Multiple or Single Award IDV,multipleorsingleawardidc
 Type of Contract,Pricing.Mechanism.Code
 Action Obligation,Action.Obligation
 contractingofficeagencyid,Contracting.Agency.ID
+Index,Index
+Subcontractor,Subcontractor
+Contract Number,Contract_Number
+DUNS Number,DUNS_Number
+Name,Name
+Number of Full Time Equivalent Employees  FTEs ,Number_of_Full_Time_Equivalent_Employees_FTEs_
+Number of Hours  Invoiced,Number_of_Hours_Invoiced
+CSISCreatedDate,CSISCreatedDate
+CSISModifiedDate,CSISModifiedDate
+IsDuplicateUTI,IsDuplicateUTI
+[PSC Code],[PSC_Code]
+[PSC Description],[PSC_Description]
+[Contracting Agency ID],[Contracting_Agency_ID]
+[Contracting Department ID],[Contracting_Department_ID]
+[Funding Agency ID],[Funding_Agency_ID]
+[Place of Performance City],[Place_of_Performance_City]
+[Place of Performance State],[Place_of_Performance_State]
+[Place of Performance County],[Place_of_Performance_County]
+[Date Signed],[Date_Signed]
+[Extent Competed],[Extent_Competed]
+[Fair Opportunity Limited Sources],[Fair_Opportunity_Limited_Sources]
+[Type of Contract],[Type_of_Contract]
+[Description of Requirement],[Description_of_Requirement]
+[Vendor Name],[Vendor_Name]
+[PIID],[PIID]
+[Referenced IDV PIID],[Referenced_IDV_PIID]
+[Vendor DUNS],[Vendor_DUNS]
+[Action Obligation],[Action_Obligation]
+[Contracting Department Name],[Contracting_Department_Name]
+[Contracting Agency Name],[Contracting_Agency_Name]
+[Funding Department ID],[Funding_Department_ID]
+[Funding Department Name],[Funding_Department_Name]
+[Funding Agency Name],[Funding_Agency_Name]
+[Place of Performance Zip Code],[Place_of_Performance_Zip_Code]
+[Place of Performance Country],[Place_of_Performance_Country]
+[Total Contract Value],[Total_Contract_Value]
+[Base and All Options Value],[Base_and_All_Options_Value]
+[Total Dollar Amount Invoiced],[Total_Dollar_Amount_Invoiced]
+[Number of Contractor Hours Invoiced],[Number_of_Contractor_Hours_Invoiced]
+[Number of Contractor Full Time Equivalent Employees  FTEs ],[Number_of_Contractor_Full_Time_Equivalent_Employees_FTEs_]
+[Fiscal Year],[Fiscal_Year]
+[Total Action Obligation],[Total_Action_Obligation]
+[Total Base and All Options Value],[Total_Base_and_All_Options_Value]
+[Prime Contractor Hours Invoiced],[Prime_Contractor_Hours_Invoiced]
+[Prime Contractor Full Time Equivalent Employees  FTEs ],[Prime_Contractor_Full_Time_Equivalent_Employees_FTEs_]
+[Index],[Index]
+[CSISCreatedDate],[CSISCreatedDate]
+[CSISModifiedDate],[CSISModifiedDate]
+[IsDuplicateUTI],[IsDuplicateUTI]
