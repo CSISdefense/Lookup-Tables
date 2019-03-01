@@ -2,8 +2,19 @@
 source("SQLimportTools.r")
 library(tidyverse)
 
-#******Importing into Errorlogging.FPDSviolatesConstraint Classic
+#Importing from ErrorLogging_GSAprimeStage1 to ErrorLogging_GSAprimeStage1
+Stage1<-read_create_table("ErrorLogging_GSAprimeStage1.txt")
+
+rm(OriginStage1)
+#Importing from ErrorLogging_GSAsubStage1 to ErrorLogging_GSAsubStage1
+
+
 #Match up Errorlogging.FPDSviolatesType to Errorlogging.FPDSviolatesConstraint
+
+
+
+
+
 OriginTableType.df<-read_create_table("ErrorLogging_FPDSviolatesType.txt")
 DestTableType.df<-read_create_table("ErrorLogging_FPDSviolatesConstraint.txt")
 OriginTableType.df<-translate_name(OriginTableType.df)
