@@ -1,1709 +1,1415 @@
-SELECT DISTINCT [unique_transaction_id],
-len([unique_transaction_id]) as Length,
-'[varchar](36)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](36), [unique_transaction_id]) IS NULL AND
-NULLIF([unique_transaction_id],'') IS NOT NULL)
-OR len( [unique_transaction_id] ) > 36 
-
-SELECT DISTINCT [transaction_status],
-len([transaction_status]) as Length,
-'[varchar](6)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](6), [transaction_status]) IS NULL AND
-NULLIF([transaction_status],'') IS NOT NULL)
-OR len( [transaction_status] ) > 6 
-
-SELECT DISTINCT [obligatedamount],
-len([obligatedamount]) as Length,
-'[decimal](19, 4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[obligatedamount])) IS NULL AND
-NULLIF([obligatedamount],'') IS NOT NULL)
-
-SELECT DISTINCT [baseandexercisedoptionsvalue],
-len([baseandexercisedoptionsvalue]) as Length,
-'[decimal](19, 4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[baseandexercisedoptionsvalue])) IS NULL AND
-NULLIF([baseandexercisedoptionsvalue],'') IS NOT NULL)
-
-SELECT DISTINCT [baseandalloptionsvalue],
-len([baseandalloptionsvalue]) as Length,
-'[decimal](19, 4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[baseandalloptionsvalue])) IS NULL AND
-NULLIF([baseandalloptionsvalue],'') IS NOT NULL)
-
-SELECT DISTINCT [maj_agency_cat],
-len([maj_agency_cat]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([maj_agency_cat])) as leftofcolon,
-'[varchar](4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](4), [maj_agency_cat]) IS NULL AND
-NULLIF([maj_agency_cat],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [maj_agency_cat] ))) > 4 
-
-SELECT DISTINCT [mod_agency],
-len([mod_agency]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([mod_agency])) as leftofcolon,
-'[varchar](4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](4), [mod_agency]) IS NULL AND
-NULLIF([mod_agency],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [mod_agency] ))) > 4 
-
-SELECT DISTINCT [maj_fund_agency_cat],
-len([maj_fund_agency_cat]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([maj_fund_agency_cat])) as leftofcolon,
-'[varchar](4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](4), [maj_fund_agency_cat]) IS NULL AND
-NULLIF([maj_fund_agency_cat],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [maj_fund_agency_cat] ))) > 4 
-
-SELECT DISTINCT [contractingofficeagencyid],
-len([contractingofficeagencyid]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([contractingofficeagencyid])) as leftofcolon,
-'[varchar](4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](4), [contractingofficeagencyid]) IS NULL AND
-NULLIF([contractingofficeagencyid],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [contractingofficeagencyid] ))) > 4 
-
-SELECT DISTINCT [contractingofficeid],
-len([contractingofficeid]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([contractingofficeid])) as leftofcolon,
-'[varchar](6)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](6), [contractingofficeid]) IS NULL AND
-NULLIF([contractingofficeid],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [contractingofficeid] ))) > 6 
-
-SELECT DISTINCT [fundingrequestingagencyid],
-len([fundingrequestingagencyid]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([fundingrequestingagencyid])) as leftofcolon,
-'[varchar](4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](4), [fundingrequestingagencyid]) IS NULL AND
-NULLIF([fundingrequestingagencyid],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [fundingrequestingagencyid] ))) > 4 
-
-SELECT DISTINCT [fundingrequestingofficeid],
-len([fundingrequestingofficeid]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([fundingrequestingofficeid])) as leftofcolon,
-'[varchar](6)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](6), [fundingrequestingofficeid]) IS NULL AND
-NULLIF([fundingrequestingofficeid],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [fundingrequestingofficeid] ))) > 6 
-
-SELECT DISTINCT [fundedbyforeignentity],
-len([fundedbyforeignentity]) as Length,
-'[varchar](21)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](21), [fundedbyforeignentity]) IS NULL AND
-NULLIF([fundedbyforeignentity],'') IS NOT NULL)
-OR len( [fundedbyforeignentity] ) > 21 
-
-SELECT DISTINCT [signeddate],
-len([signeddate]) as Length,
-'[date]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([date], [signeddate],101) IS NULL AND
-NULLIF([signeddate],'') IS NOT NULL)
-
-SELECT DISTINCT [effectivedate],
-len([effectivedate]) as Length,
-'[date]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([date], [effectivedate],101) IS NULL AND
-NULLIF([effectivedate],'') IS NOT NULL)
-
-SELECT DISTINCT [currentcompletiondate],
-len([currentcompletiondate]) as Length,
-'[date]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([date], [currentcompletiondate],101) IS NULL AND
-NULLIF([currentcompletiondate],'') IS NOT NULL)
-
-SELECT DISTINCT [ultimatecompletiondate],
-len([ultimatecompletiondate]) as Length,
-'[date]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([date], [ultimatecompletiondate],101) IS NULL AND
-NULLIF([ultimatecompletiondate],'') IS NOT NULL)
-
-SELECT DISTINCT [lastdatetoorder],
-len([lastdatetoorder]) as Length,
-'[date]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([date], [lastdatetoorder],101) IS NULL AND
-NULLIF([lastdatetoorder],'') IS NOT NULL)
-
-SELECT DISTINCT [contractactiontype],
-len([contractactiontype]) as Length,
-'[varchar](41)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](41), [contractactiontype]) IS NULL AND
-NULLIF([contractactiontype],'') IS NOT NULL)
-OR len( [contractactiontype] ) > 41 
-
-SELECT DISTINCT [reasonformodification],
-len([reasonformodification]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([reasonformodification])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [reasonformodification]) IS NULL AND
-NULLIF([reasonformodification],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [reasonformodification] ))) > 1 
-
-SELECT DISTINCT [typeofcontractpricing],
-len([typeofcontractpricing]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([typeofcontractpricing])) as leftofcolon,
-'[varchar](2)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](2), [typeofcontractpricing]) IS NULL AND
-NULLIF([typeofcontractpricing],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [typeofcontractpricing] ))) > 2 
-
-SELECT DISTINCT [priceevaluationpercentdifference],
-len([priceevaluationpercentdifference]) as Length,
-'[smallint]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([smallint], Try_Convert(real,[priceevaluationpercentdifference])) IS NULL AND
-NULLIF([priceevaluationpercentdifference],'') IS NOT NULL)
-
-SELECT DISTINCT [subcontractplan],
-len([subcontractplan]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([subcontractplan])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [subcontractplan]) IS NULL AND
-NULLIF([subcontractplan],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [subcontractplan] ))) > 1 
-
-SELECT DISTINCT [lettercontract],
-len([lettercontract]) as Length,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [lettercontract]) IS NULL AND
-NULLIF([lettercontract],'') IS NOT NULL)
-OR len( [lettercontract] ) > 1 
-
-SELECT DISTINCT [multiyearcontract],
-len([multiyearcontract]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([multiyearcontract])) as leftofcolon,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([multiyearcontract]))) IS NULL AND
-NULLIF([multiyearcontract],'') IS NOT NULL)
-
-SELECT DISTINCT [performancebasedservicecontract],
-len([performancebasedservicecontract]) as Length,
-'[varchar](38)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](38), [performancebasedservicecontract]) IS NULL AND
-NULLIF([performancebasedservicecontract],'') IS NOT NULL)
-OR len( [performancebasedservicecontract] ) > 38 
-
-SELECT DISTINCT [majorprogramcode],
-len([majorprogramcode]) as Length,
-'[varchar](104)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](104), [majorprogramcode]) IS NULL AND
-NULLIF([majorprogramcode],'') IS NOT NULL)
-OR len( [majorprogramcode] ) > 104 
-
-SELECT DISTINCT [contingencyhumanitarianpeacekeepingoperation],
-len([contingencyhumanitarianpeacekeepingoperation]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([contingencyhumanitarianpeacekeepingoperation])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [contingencyhumanitarianpeacekeepingoperation]) IS NULL AND
-NULLIF([contingencyhumanitarianpeacekeepingoperation],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [contingencyhumanitarianpeacekeepingoperation] ))) > 1 
-
-SELECT DISTINCT [contractfinancing],
-len([contractfinancing]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([contractfinancing])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [contractfinancing]) IS NULL AND
-NULLIF([contractfinancing],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [contractfinancing] ))) > 1 
-
-SELECT DISTINCT [costorpricingdata],
-len([costorpricingdata]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([costorpricingdata])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [costorpricingdata]) IS NULL AND
-NULLIF([costorpricingdata],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [costorpricingdata] ))) > 1 
-
-SELECT DISTINCT [costaccountingstandardsclause],
-len([costaccountingstandardsclause]) as Length,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [costaccountingstandardsclause]) IS NULL AND
-NULLIF([costaccountingstandardsclause],'') IS NOT NULL)
-OR len( [costaccountingstandardsclause] ) > 1 
-
-SELECT DISTINCT [descriptionofcontractrequirement],
-len([descriptionofcontractrequirement]) as Length,
-'[varchar](4035)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](4035), [descriptionofcontractrequirement]) IS NULL AND
-NULLIF([descriptionofcontractrequirement],'') IS NOT NULL)
-OR len( [descriptionofcontractrequirement] ) > 4035 
-
-SELECT DISTINCT [purchasecardaspaymentmethod],
-len([purchasecardaspaymentmethod]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([purchasecardaspaymentmethod])) as leftofcolon,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([purchasecardaspaymentmethod]))) IS NULL AND
-NULLIF([purchasecardaspaymentmethod],'') IS NOT NULL)
-
-SELECT DISTINCT [numberofactions],
-len([numberofactions]) as Length,
-'[bigint]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bigint], Try_Convert(real,[numberofactions])) IS NULL AND
-NULLIF([numberofactions],'') IS NOT NULL)
-
-SELECT DISTINCT [nationalinterestactioncode],
-len([nationalinterestactioncode]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([nationalinterestactioncode])) as leftofcolon,
-'[varchar](4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](4), [nationalinterestactioncode]) IS NULL AND
-NULLIF([nationalinterestactioncode],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [nationalinterestactioncode] ))) > 4 
-
-SELECT DISTINCT [progsourceagency],
-len([progsourceagency]) as Length,
-'[varchar](2)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](2), [progsourceagency]) IS NULL AND
-NULLIF([progsourceagency],'') IS NOT NULL)
-OR len( [progsourceagency] ) > 2 
-
-SELECT DISTINCT [progsourceaccount],
-len([progsourceaccount]) as Length,
-'[varchar](4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](4), [progsourceaccount]) IS NULL AND
-NULLIF([progsourceaccount],'') IS NOT NULL)
-OR len( [progsourceaccount] ) > 4 
-
-SELECT DISTINCT [progsourcesubacct],
-len([progsourcesubacct]) as Length,
-'[varchar](3)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](3), [progsourcesubacct]) IS NULL AND
-NULLIF([progsourcesubacct],'') IS NOT NULL)
-OR len( [progsourcesubacct] ) > 3 
-
-SELECT DISTINCT [account_title],
-len([account_title]) as Length,
-'[varchar](90)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](90), [account_title]) IS NULL AND
-NULLIF([account_title],'') IS NOT NULL)
-OR len( [account_title] ) > 90 
-
-SELECT DISTINCT [rec_flag],
-len([rec_flag]) as Length,
-'[varchar](4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](4), [rec_flag]) IS NULL AND
-NULLIF([rec_flag],'') IS NOT NULL)
-OR len( [rec_flag] ) > 4 
-
-SELECT DISTINCT [typeofidc],
-len([typeofidc]) as Length,
-'[varchar](41)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](41), [typeofidc]) IS NULL AND
-NULLIF([typeofidc],'') IS NOT NULL)
-OR len( [typeofidc] ) > 41 
-
-SELECT DISTINCT [multipleorsingleawardidc],
-len([multipleorsingleawardidc]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([multipleorsingleawardidc])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [multipleorsingleawardidc]) IS NULL AND
-NULLIF([multipleorsingleawardidc],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [multipleorsingleawardidc] ))) > 1 
-
-SELECT DISTINCT [programacronym],
-len([programacronym]) as Length,
-'[varchar](29)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](29), [programacronym]) IS NULL AND
-NULLIF([programacronym],'') IS NOT NULL)
-OR len( [programacronym] ) > 29 
-
-SELECT DISTINCT [vendorname],
-len([vendorname]) as Length,
-'[varchar](150)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](150), [vendorname]) IS NULL AND
-NULLIF([vendorname],'') IS NOT NULL)
-OR len( [vendorname] ) > 150 
-
-SELECT DISTINCT [vendoralternatename],
-len([vendoralternatename]) as Length,
-'[varchar](150)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](150), [vendoralternatename]) IS NULL AND
-NULLIF([vendoralternatename],'') IS NOT NULL)
-OR len( [vendoralternatename] ) > 150 
-
-SELECT DISTINCT [vendorlegalorganizationname],
-len([vendorlegalorganizationname]) as Length,
-'[varchar](150)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](150), [vendorlegalorganizationname]) IS NULL AND
-NULLIF([vendorlegalorganizationname],'') IS NOT NULL)
-OR len( [vendorlegalorganizationname] ) > 150 
-
-SELECT DISTINCT [vendordoingasbusinessname],
-len([vendordoingasbusinessname]) as Length,
-'[varchar](150)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](150), [vendordoingasbusinessname]) IS NULL AND
-NULLIF([vendordoingasbusinessname],'') IS NOT NULL)
-OR len( [vendordoingasbusinessname] ) > 150 
-
-SELECT DISTINCT [divisionname],
-len([divisionname]) as Length,
-'[varchar](150)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](150), [divisionname]) IS NULL AND
-NULLIF([divisionname],'') IS NOT NULL)
-OR len( [divisionname] ) > 150 
-
-SELECT DISTINCT [divisionnumberorofficecode],
-len([divisionnumberorofficecode]) as Length,
-'[varchar](10)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](10), [divisionnumberorofficecode]) IS NULL AND
-NULLIF([divisionnumberorofficecode],'') IS NOT NULL)
-OR len( [divisionnumberorofficecode] ) > 10 
-
-SELECT DISTINCT [vendorenabled],
-len([vendorenabled]) as Length,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [vendorenabled]) IS NULL AND
-NULLIF([vendorenabled],'') IS NOT NULL)
-OR len( [vendorenabled] ) > 1 
-
-SELECT DISTINCT [vendorlocationdisableflag],
-len([vendorlocationdisableflag]) as Length,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [vendorlocationdisableflag]) IS NULL AND
-NULLIF([vendorlocationdisableflag],'') IS NOT NULL)
-OR len( [vendorlocationdisableflag] ) > 1 
-
-SELECT DISTINCT [ccrexception],
-len([ccrexception]) as Length,
-'[varchar](70)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](70), [ccrexception]) IS NULL AND
-NULLIF([ccrexception],'') IS NOT NULL)
-OR len( [ccrexception] ) > 70 
-
-SELECT DISTINCT [streetaddress],
-len([streetaddress]) as Length,
-'[varchar](90)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](90), [streetaddress]) IS NULL AND
-NULLIF([streetaddress],'') IS NOT NULL)
-OR len( [streetaddress] ) > 90 
-
-SELECT DISTINCT [streetaddress2],
-len([streetaddress2]) as Length,
-'[varchar](60)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](60), [streetaddress2]) IS NULL AND
-NULLIF([streetaddress2],'') IS NOT NULL)
-OR len( [streetaddress2] ) > 60 
-
-SELECT DISTINCT [streetaddress3],
-len([streetaddress3]) as Length,
-'[varchar](55)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](55), [streetaddress3]) IS NULL AND
-NULLIF([streetaddress3],'') IS NOT NULL)
-OR len( [streetaddress3] ) > 55 
-
-SELECT DISTINCT [city],
-len([city]) as Length,
-'[varchar](35)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](35), [city]) IS NULL AND
-NULLIF([city],'') IS NOT NULL)
-OR len( [city] ) > 35 
-
-SELECT DISTINCT [state],
-len([state]) as Length,
-'[varchar](30)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](30), [state]) IS NULL AND
-NULLIF([state],'') IS NOT NULL)
-OR len( [state] ) > 30 
-
-SELECT DISTINCT [zipcode],
-len([zipcode]) as Length,
-'[varchar](28)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](28), [zipcode]) IS NULL AND
-NULLIF([zipcode],'') IS NOT NULL)
-OR len( [zipcode] ) > 28 
-
-SELECT DISTINCT [vendorcountrycode],
-len([vendorcountrycode]) as Length,
-'[varchar](50)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](50), [vendorcountrycode]) IS NULL AND
-NULLIF([vendorcountrycode],'') IS NOT NULL)
-OR len( [vendorcountrycode] ) > 50 
-
-SELECT DISTINCT [vendor_state_code],
-len([vendor_state_code]) as Length,
-'[varchar](30)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](30), [vendor_state_code]) IS NULL AND
-NULLIF([vendor_state_code],'') IS NOT NULL)
-OR len( [vendor_state_code] ) > 30 
-
-SELECT DISTINCT [vendor_cd],
-len([vendor_cd]) as Length,
-'[varchar](22)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](22), [vendor_cd]) IS NULL AND
-NULLIF([vendor_cd],'') IS NOT NULL)
-OR len( [vendor_cd] ) > 22 
-
-SELECT DISTINCT [congressionaldistrict],
-len([congressionaldistrict]) as Length,
-'[varchar](22)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](22), [congressionaldistrict]) IS NULL AND
-NULLIF([congressionaldistrict],'') IS NOT NULL)
-OR len( [congressionaldistrict] ) > 22 
-
-SELECT DISTINCT [vendorsitecode],
-len([vendorsitecode]) as Length,
-'[varchar](15)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](15), [vendorsitecode]) IS NULL AND
-NULLIF([vendorsitecode],'') IS NOT NULL)
-OR len( [vendorsitecode] ) > 15 
-
-SELECT DISTINCT [vendoralternatesitecode],
-len([vendoralternatesitecode]) as Length,
-'[varchar](20)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](20), [vendoralternatesitecode]) IS NULL AND
-NULLIF([vendoralternatesitecode],'') IS NOT NULL)
-OR len( [vendoralternatesitecode] ) > 20 
-
-SELECT DISTINCT [dunsnumber],
-len([dunsnumber]) as Length,
-'[varchar](13)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](13), [dunsnumber]) IS NULL AND
-NULLIF([dunsnumber],'') IS NOT NULL)
-OR len( [dunsnumber] ) > 13 
-
-SELECT DISTINCT [parentdunsnumber],
-len([parentdunsnumber]) as Length,
-'[varchar](13)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](13), [parentdunsnumber]) IS NULL AND
-NULLIF([parentdunsnumber],'') IS NOT NULL)
-OR len( [parentdunsnumber] ) > 13 
-
-SELECT DISTINCT [phoneno],
-len([phoneno]) as Length,
-'[varchar](20)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](20), [phoneno]) IS NULL AND
-NULLIF([phoneno],'') IS NOT NULL)
-OR len( [phoneno] ) > 20 
-
-SELECT DISTINCT [faxno],
-len([faxno]) as Length,
-'[varchar](30)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](30), [faxno]) IS NULL AND
-NULLIF([faxno],'') IS NOT NULL)
-OR len( [faxno] ) > 30 
-
-SELECT DISTINCT [registrationdate],
-len([registrationdate]) as Length,
-'[date]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([date], [registrationdate],101) IS NULL AND
-NULLIF([registrationdate],'') IS NOT NULL)
-
-SELECT DISTINCT [renewaldate],
-len([renewaldate]) as Length,
-'[date]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([date], [renewaldate],101) IS NULL AND
-NULLIF([renewaldate],'') IS NOT NULL)
-
-SELECT DISTINCT [mod_parent],
-len([mod_parent]) as Length,
-'[varchar](150)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](150), [mod_parent]) IS NULL AND
-NULLIF([mod_parent],'') IS NOT NULL)
-OR len( [mod_parent] ) > 150 
-
-SELECT DISTINCT [locationcode],
-len([locationcode]) as Length,
-'[varchar](9)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](9), [locationcode]) IS NULL AND
-NULLIF([locationcode],'') IS NOT NULL)
-OR len( [locationcode] ) > 9 
-
-SELECT DISTINCT [statecode],
-len([statecode]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([statecode])) as leftofcolon,
-'[varchar](2)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](2), [statecode]) IS NULL AND
-NULLIF([statecode],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [statecode] ))) > 2 
-
-SELECT DISTINCT [pop_state_code],
-len([pop_state_code]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([pop_state_code])) as leftofcolon,
-'[varchar](2)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](2), [pop_state_code]) IS NULL AND
-NULLIF([pop_state_code],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [pop_state_code] ))) > 2 
-
-SELECT DISTINCT [placeofperformancecountrycode],
-len([placeofperformancecountrycode]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([placeofperformancecountrycode])) as leftofcolon,
-'[varchar](3)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](3), [placeofperformancecountrycode]) IS NULL AND
-NULLIF([placeofperformancecountrycode],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [placeofperformancecountrycode] ))) > 3 
-
-SELECT DISTINCT [placeofperformancezipcode],
-len([placeofperformancezipcode]) as Length,
-'[varchar](10)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](10), [placeofperformancezipcode]) IS NULL AND
-NULLIF([placeofperformancezipcode],'') IS NOT NULL)
-OR len( [placeofperformancezipcode] ) > 10 
-
-SELECT DISTINCT [pop_cd],
-len([pop_cd]) as Length,
-'[varchar](4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](4), [pop_cd]) IS NULL AND
-NULLIF([pop_cd],'') IS NOT NULL)
-OR len( [pop_cd] ) > 4 
-
-SELECT DISTINCT [placeofperformancecongressionaldistrict],
-len([placeofperformancecongressionaldistrict]) as Length,
-'[varchar](6)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](6), [placeofperformancecongressionaldistrict]) IS NULL AND
-NULLIF([placeofperformancecongressionaldistrict],'') IS NOT NULL)
-OR len( [placeofperformancecongressionaldistrict] ) > 6 
-
-SELECT DISTINCT [psc_cat],
-len([psc_cat]) as Length,
-'[varchar](2)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](2), [psc_cat]) IS NULL AND
-NULLIF([psc_cat],'') IS NOT NULL)
-OR len( [psc_cat] ) > 2 
-
-SELECT DISTINCT [productorservicecode],
-len([productorservicecode]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([productorservicecode])) as leftofcolon,
-'[varchar](4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](4), [productorservicecode]) IS NULL AND
-NULLIF([productorservicecode],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [productorservicecode] ))) > 4 
-
-SELECT DISTINCT [systemequipmentcode],
-len([systemequipmentcode]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([systemequipmentcode])) as leftofcolon,
-'[varchar](4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](4), [systemequipmentcode]) IS NULL AND
-NULLIF([systemequipmentcode],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [systemequipmentcode] ))) > 4 
-
-SELECT DISTINCT [claimantprogramcode],
-len([claimantprogramcode]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([claimantprogramcode])) as leftofcolon,
-'[varchar](3)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](3), [claimantprogramcode]) IS NULL AND
-NULLIF([claimantprogramcode],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [claimantprogramcode] ))) > 3 
-
-SELECT DISTINCT [principalnaicscode],
-len([principalnaicscode]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([principalnaicscode])) as leftofcolon,
-'[varchar](6)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](6), [principalnaicscode]) IS NULL AND
-NULLIF([principalnaicscode],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [principalnaicscode] ))) > 6 
-
-SELECT DISTINCT [informationtechnologycommercialitemcategory],
-len([informationtechnologycommercialitemcategory]) as Length,
-'[varchar](30)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](30), [informationtechnologycommercialitemcategory]) IS NULL AND
-NULLIF([informationtechnologycommercialitemcategory],'') IS NOT NULL)
-OR len( [informationtechnologycommercialitemcategory] ) > 30 
-
-SELECT DISTINCT [useofepadesignatedproducts],
-len([useofepadesignatedproducts]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([useofepadesignatedproducts])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [useofepadesignatedproducts]) IS NULL AND
-NULLIF([useofepadesignatedproducts],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [useofepadesignatedproducts] ))) > 1 
-
-SELECT DISTINCT [recoveredmaterialclauses],
-len([recoveredmaterialclauses]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([recoveredmaterialclauses])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [recoveredmaterialclauses]) IS NULL AND
-NULLIF([recoveredmaterialclauses],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [recoveredmaterialclauses] ))) > 1 
-
-SELECT DISTINCT [seatransportation],
-len([seatransportation]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([seatransportation])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [seatransportation]) IS NULL AND
-NULLIF([seatransportation],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [seatransportation] ))) > 1 
-
-SELECT DISTINCT [contractbundling],
-len([contractbundling]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([contractbundling])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [contractbundling]) IS NULL AND
-NULLIF([contractbundling],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [contractbundling] ))) > 1 
-
-SELECT DISTINCT [consolidatedcontract],
-len([consolidatedcontract]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([consolidatedcontract])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [consolidatedcontract]) IS NULL AND
-NULLIF([consolidatedcontract],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [consolidatedcontract] ))) > 1 
-
-SELECT DISTINCT [countryoforigin],
-len([countryoforigin]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([countryoforigin])) as leftofcolon,
-'[varchar](3)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](3), [countryoforigin]) IS NULL AND
-NULLIF([countryoforigin],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [countryoforigin] ))) > 3 
-
-SELECT DISTINCT [placeofmanufacture],
-len([placeofmanufacture]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([placeofmanufacture])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [placeofmanufacture]) IS NULL AND
-NULLIF([placeofmanufacture],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [placeofmanufacture] ))) > 1 
-
-SELECT DISTINCT [manufacturingorganizationtype],
-len([manufacturingorganizationtype]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([manufacturingorganizationtype])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [manufacturingorganizationtype]) IS NULL AND
-NULLIF([manufacturingorganizationtype],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [manufacturingorganizationtype] ))) > 1 
-
-SELECT DISTINCT [agencyid],
-len([agencyid]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([agencyid])) as leftofcolon,
-'[varchar](4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](4), [agencyid]) IS NULL AND
-NULLIF([agencyid],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [agencyid] ))) > 4 
-
-SELECT DISTINCT [piid],
-len([piid]) as Length,
-'[varchar](50)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](50), [piid]) IS NULL AND
-NULLIF([piid],'') IS NOT NULL)
-OR len( [piid] ) > 50 
-
-SELECT DISTINCT [modnumber],
-len([modnumber]) as Length,
-'[varchar](25)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](25), [modnumber]) IS NULL AND
-NULLIF([modnumber],'') IS NOT NULL)
-OR len( [modnumber] ) > 25 
-
-SELECT DISTINCT [transactionnumber],
-len([transactionnumber]) as Length,
-'[bigint]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bigint], Try_Convert(real,[transactionnumber])) IS NULL AND
-NULLIF([transactionnumber],'') IS NOT NULL)
-
-SELECT DISTINCT [fiscal_year],
-len([fiscal_year]) as Length,
-'[smallint]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([smallint], Try_Convert(real,[fiscal_year])) IS NULL AND
-NULLIF([fiscal_year],'') IS NOT NULL)
-
-SELECT DISTINCT [idvagencyid],
-len([idvagencyid]) as Length,
-'[varchar](8)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](8), [idvagencyid]) IS NULL AND
-NULLIF([idvagencyid],'') IS NOT NULL)
-OR len( [idvagencyid] ) > 8 
-
-SELECT DISTINCT [idvpiid],
-len([idvpiid]) as Length,
-'[varchar](50)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](50), [idvpiid]) IS NULL AND
-NULLIF([idvpiid],'') IS NOT NULL)
-OR len( [idvpiid] ) > 50 
-
-SELECT DISTINCT [idvmodificationnumber],
-len([idvmodificationnumber]) as Length,
-'[varchar](25)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](25), [idvmodificationnumber]) IS NULL AND
-NULLIF([idvmodificationnumber],'') IS NOT NULL)
-OR len( [idvmodificationnumber] ) > 25 
-
-SELECT DISTINCT [solicitationid],
-len([solicitationid]) as Length,
-'[varchar](69)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](69), [solicitationid]) IS NULL AND
-NULLIF([solicitationid],'') IS NOT NULL)
-OR len( [solicitationid] ) > 69 
-
-SELECT DISTINCT [extentcompeted],
-len([extentcompeted]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([extentcompeted])) as leftofcolon,
-'[varchar](3)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](3), [extentcompeted]) IS NULL AND
-NULLIF([extentcompeted],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [extentcompeted] ))) > 3 
-
-SELECT DISTINCT [reasonnotcompeted],
-len([reasonnotcompeted]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([reasonnotcompeted])) as leftofcolon,
-'[varchar](3)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](3), [reasonnotcompeted]) IS NULL AND
-NULLIF([reasonnotcompeted],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [reasonnotcompeted] ))) > 3 
-
-SELECT DISTINCT [numberofoffersreceived],
-len([numberofoffersreceived]) as Length,
-'[bigint]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bigint], Try_Convert(real,[numberofoffersreceived])) IS NULL AND
-NULLIF([numberofoffersreceived],'') IS NOT NULL)
-
-SELECT DISTINCT [commercialitemacquisitionprocedures],
-len([commercialitemacquisitionprocedures]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([commercialitemacquisitionprocedures])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [commercialitemacquisitionprocedures]) IS NULL AND
-NULLIF([commercialitemacquisitionprocedures],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [commercialitemacquisitionprocedures] ))) > 1 
-
-SELECT DISTINCT [commercialitemtestprogram],
-len([commercialitemtestprogram]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([commercialitemtestprogram])) as leftofcolon,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([commercialitemtestprogram]))) IS NULL AND
-NULLIF([commercialitemtestprogram],'') IS NOT NULL)
-
-SELECT DISTINCT [smallbusinesscompetitivenessdemonstrationprogram],
-len([smallbusinesscompetitivenessdemonstrationprogram]) as Length,
-'[varchar](6)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](6), [smallbusinesscompetitivenessdemonstrationprogram]) IS NULL AND
-NULLIF([smallbusinesscompetitivenessdemonstrationprogram],'') IS NOT NULL)
-OR len( [smallbusinesscompetitivenessdemonstrationprogram] ) > 6 
-
-SELECT DISTINCT [a76action],
-len([a76action]) as Length,
-'[varchar](3)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](3), [a76action]) IS NULL AND
-NULLIF([a76action],'') IS NOT NULL)
-OR len( [a76action] ) > 3 
-
-SELECT DISTINCT [competitiveprocedures],
-len([competitiveprocedures]) as Length,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [competitiveprocedures]) IS NULL AND
-NULLIF([competitiveprocedures],'') IS NOT NULL)
-OR len( [competitiveprocedures] ) > 1 
-
-SELECT DISTINCT [solicitationprocedures],
-len([solicitationprocedures]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([solicitationprocedures])) as leftofcolon,
-'[varchar](5)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](5), [solicitationprocedures]) IS NULL AND
-NULLIF([solicitationprocedures],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [solicitationprocedures] ))) > 5 
-
-SELECT DISTINCT [typeofsetaside],
-len([typeofsetaside]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([typeofsetaside])) as leftofcolon,
-'[varchar](10)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](10), [typeofsetaside]) IS NULL AND
-NULLIF([typeofsetaside],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [typeofsetaside] ))) > 10 
-
-SELECT DISTINCT [localareasetaside],
-len([localareasetaside]) as Length,
-'[varchar](4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](4), [localareasetaside]) IS NULL AND
-NULLIF([localareasetaside],'') IS NOT NULL)
-OR len( [localareasetaside] ) > 4 
-
-SELECT DISTINCT [evaluatedpreference],
-len([evaluatedpreference]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([evaluatedpreference])) as leftofcolon,
-'[varchar](6)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](6), [evaluatedpreference]) IS NULL AND
-NULLIF([evaluatedpreference],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [evaluatedpreference] ))) > 6 
-
-SELECT DISTINCT [fedbizopps],
-len([fedbizopps]) as Length,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [fedbizopps]) IS NULL AND
-NULLIF([fedbizopps],'') IS NOT NULL)
-OR len( [fedbizopps] ) > 1 
-
-SELECT DISTINCT [statutoryexceptiontofairopportunity],
-len([statutoryexceptiontofairopportunity]) as Length,
-'[varchar](4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](4), [statutoryexceptiontofairopportunity]) IS NULL AND
-NULLIF([statutoryexceptiontofairopportunity],'') IS NOT NULL)
-OR len( [statutoryexceptiontofairopportunity] ) > 4 
-
-SELECT DISTINCT [organizationaltype],
-len([organizationaltype]) as Length,
-'[varchar](30)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](30), [organizationaltype]) IS NULL AND
-NULLIF([organizationaltype],'') IS NOT NULL)
-OR len( [organizationaltype] ) > 30 
-
-SELECT DISTINCT [numberofemployees],
-len([numberofemployees]) as Length,
-'[bigint]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bigint], Try_Convert(real,[numberofemployees])) IS NULL AND
-NULLIF([numberofemployees],'') IS NOT NULL)
-
-SELECT DISTINCT [annualrevenue],
-len([annualrevenue]) as Length,
-'[decimal](19, 4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[annualrevenue])) IS NULL AND
-NULLIF([annualrevenue],'') IS NOT NULL)
-
-SELECT DISTINCT [firm8aflag],
-len([firm8aflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([firm8aflag]))) IS NULL AND
-NULLIF([firm8aflag],'') IS NOT NULL)
-
-SELECT DISTINCT [hubzoneflag],
-len([hubzoneflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([hubzoneflag]))) IS NULL AND
-NULLIF([hubzoneflag],'') IS NOT NULL)
-
-SELECT DISTINCT [sdbflag],
-len([sdbflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([sdbflag]))) IS NULL AND
-NULLIF([sdbflag],'') IS NOT NULL)
-
-SELECT DISTINCT [issbacertifiedsmalldisadvantagedbusiness],
-len([issbacertifiedsmalldisadvantagedbusiness]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([issbacertifiedsmalldisadvantagedbusiness]))) IS NULL AND
-NULLIF([issbacertifiedsmalldisadvantagedbusiness],'') IS NOT NULL)
-
-SELECT DISTINCT [shelteredworkshopflag],
-len([shelteredworkshopflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([shelteredworkshopflag]))) IS NULL AND
-NULLIF([shelteredworkshopflag],'') IS NOT NULL)
-
-SELECT DISTINCT [hbcuflag],
-len([hbcuflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([hbcuflag]))) IS NULL AND
-NULLIF([hbcuflag],'') IS NOT NULL)
-
-SELECT DISTINCT [educationalinstitutionflag],
-len([educationalinstitutionflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([educationalinstitutionflag]))) IS NULL AND
-NULLIF([educationalinstitutionflag],'') IS NOT NULL)
-
-SELECT DISTINCT [womenownedflag],
-len([womenownedflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([womenownedflag]))) IS NULL AND
-NULLIF([womenownedflag],'') IS NOT NULL)
-
-SELECT DISTINCT [veteranownedflag],
-len([veteranownedflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([veteranownedflag]))) IS NULL AND
-NULLIF([veteranownedflag],'') IS NOT NULL)
-
-SELECT DISTINCT [srdvobflag],
-len([srdvobflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([srdvobflag]))) IS NULL AND
-NULLIF([srdvobflag],'') IS NOT NULL)
-
-SELECT DISTINCT [localgovernmentflag],
-len([localgovernmentflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([localgovernmentflag]))) IS NULL AND
-NULLIF([localgovernmentflag],'') IS NOT NULL)
-
-SELECT DISTINCT [minorityinstitutionflag],
-len([minorityinstitutionflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([minorityinstitutionflag]))) IS NULL AND
-NULLIF([minorityinstitutionflag],'') IS NOT NULL)
-
-SELECT DISTINCT [aiobflag],
-len([aiobflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([aiobflag]))) IS NULL AND
-NULLIF([aiobflag],'') IS NOT NULL)
-
-SELECT DISTINCT [stategovernmentflag],
-len([stategovernmentflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([stategovernmentflag]))) IS NULL AND
-NULLIF([stategovernmentflag],'') IS NOT NULL)
-
-SELECT DISTINCT [federalgovernmentflag],
-len([federalgovernmentflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([federalgovernmentflag]))) IS NULL AND
-NULLIF([federalgovernmentflag],'') IS NOT NULL)
-
-SELECT DISTINCT [minorityownedbusinessflag],
-len([minorityownedbusinessflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([minorityownedbusinessflag]))) IS NULL AND
-NULLIF([minorityownedbusinessflag],'') IS NOT NULL)
-
-SELECT DISTINCT [apaobflag],
-len([apaobflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([apaobflag]))) IS NULL AND
-NULLIF([apaobflag],'') IS NOT NULL)
-
-SELECT DISTINCT [tribalgovernmentflag],
-len([tribalgovernmentflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([tribalgovernmentflag]))) IS NULL AND
-NULLIF([tribalgovernmentflag],'') IS NOT NULL)
-
-SELECT DISTINCT [baobflag],
-len([baobflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([baobflag]))) IS NULL AND
-NULLIF([baobflag],'') IS NOT NULL)
-
-SELECT DISTINCT [naobflag],
-len([naobflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([naobflag]))) IS NULL AND
-NULLIF([naobflag],'') IS NOT NULL)
-
-SELECT DISTINCT [saaobflag],
-len([saaobflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([saaobflag]))) IS NULL AND
-NULLIF([saaobflag],'') IS NOT NULL)
-
-SELECT DISTINCT [nonprofitorganizationflag],
-len([nonprofitorganizationflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([nonprofitorganizationflag]))) IS NULL AND
-NULLIF([nonprofitorganizationflag],'') IS NOT NULL)
-
-SELECT DISTINCT [isothernotforprofitorganization],
-len([isothernotforprofitorganization]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isothernotforprofitorganization]))) IS NULL AND
-NULLIF([isothernotforprofitorganization],'') IS NOT NULL)
-
-SELECT DISTINCT [isforprofitorganization],
-len([isforprofitorganization]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isforprofitorganization]))) IS NULL AND
-NULLIF([isforprofitorganization],'') IS NOT NULL)
-
-SELECT DISTINCT [isfoundation],
-len([isfoundation]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isfoundation]))) IS NULL AND
-NULLIF([isfoundation],'') IS NOT NULL)
-
-SELECT DISTINCT [haobflag],
-len([haobflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([haobflag]))) IS NULL AND
-NULLIF([haobflag],'') IS NOT NULL)
-
-SELECT DISTINCT [ishispanicservicinginstitution],
-len([ishispanicservicinginstitution]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([ishispanicservicinginstitution]))) IS NULL AND
-NULLIF([ishispanicservicinginstitution],'') IS NOT NULL)
-
-SELECT DISTINCT [emergingsmallbusinessflag],
-len([emergingsmallbusinessflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([emergingsmallbusinessflag]))) IS NULL AND
-NULLIF([emergingsmallbusinessflag],'') IS NOT NULL)
-
-SELECT DISTINCT [hospitalflag],
-len([hospitalflag]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([hospitalflag]))) IS NULL AND
-NULLIF([hospitalflag],'') IS NOT NULL)
-
-SELECT DISTINCT [contractingofficerbusinesssizedetermination],
-len([contractingofficerbusinesssizedetermination]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([contractingofficerbusinesssizedetermination])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [contractingofficerbusinesssizedetermination]) IS NULL AND
-NULLIF([contractingofficerbusinesssizedetermination],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [contractingofficerbusinesssizedetermination] ))) > 1 
-
-SELECT DISTINCT [is1862landgrantcollege],
-len([is1862landgrantcollege]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([is1862landgrantcollege]))) IS NULL AND
-NULLIF([is1862landgrantcollege],'') IS NOT NULL)
-
-SELECT DISTINCT [is1890landgrantcollege],
-len([is1890landgrantcollege]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([is1890landgrantcollege]))) IS NULL AND
-NULLIF([is1890landgrantcollege],'') IS NOT NULL)
-
-SELECT DISTINCT [is1994landgrantcollege],
-len([is1994landgrantcollege]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([is1994landgrantcollege]))) IS NULL AND
-NULLIF([is1994landgrantcollege],'') IS NOT NULL)
-
-SELECT DISTINCT [isveterinarycollege],
-len([isveterinarycollege]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isveterinarycollege]))) IS NULL AND
-NULLIF([isveterinarycollege],'') IS NOT NULL)
-
-SELECT DISTINCT [isveterinaryhospital],
-len([isveterinaryhospital]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isveterinaryhospital]))) IS NULL AND
-NULLIF([isveterinaryhospital],'') IS NOT NULL)
-
-SELECT DISTINCT [isprivateuniversityorcollege],
-len([isprivateuniversityorcollege]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isprivateuniversityorcollege]))) IS NULL AND
-NULLIF([isprivateuniversityorcollege],'') IS NOT NULL)
-
-SELECT DISTINCT [isschoolofforestry],
-len([isschoolofforestry]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isschoolofforestry]))) IS NULL AND
-NULLIF([isschoolofforestry],'') IS NOT NULL)
-
-SELECT DISTINCT [isstatecontrolledinstitutionofhigherlearning],
-len([isstatecontrolledinstitutionofhigherlearning]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isstatecontrolledinstitutionofhigherlearning]))) IS NULL AND
-NULLIF([isstatecontrolledinstitutionofhigherlearning],'') IS NOT NULL)
-
-SELECT DISTINCT [isserviceprovider],
-len([isserviceprovider]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isserviceprovider]))) IS NULL AND
-NULLIF([isserviceprovider],'') IS NOT NULL)
-
-SELECT DISTINCT [receivescontracts],
-len([receivescontracts]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receivescontracts]))) IS NULL AND
-NULLIF([receivescontracts],'') IS NOT NULL)
-
-SELECT DISTINCT [receivesgrants],
-len([receivesgrants]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receivesgrants]))) IS NULL AND
-NULLIF([receivesgrants],'') IS NOT NULL)
-
-SELECT DISTINCT [receivescontractsandgrants],
-len([receivescontractsandgrants]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receivescontractsandgrants]))) IS NULL AND
-NULLIF([receivescontractsandgrants],'') IS NOT NULL)
-
-SELECT DISTINCT [isairportauthority],
-len([isairportauthority]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isairportauthority]))) IS NULL AND
-NULLIF([isairportauthority],'') IS NOT NULL)
-
-SELECT DISTINCT [iscouncilofgovernments],
-len([iscouncilofgovernments]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([iscouncilofgovernments]))) IS NULL AND
-NULLIF([iscouncilofgovernments],'') IS NOT NULL)
-
-SELECT DISTINCT [ishousingauthoritiespublicortribal],
-len([ishousingauthoritiespublicortribal]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([ishousingauthoritiespublicortribal]))) IS NULL AND
-NULLIF([ishousingauthoritiespublicortribal],'') IS NOT NULL)
-
-SELECT DISTINCT [isinterstateentity],
-len([isinterstateentity]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isinterstateentity]))) IS NULL AND
-NULLIF([isinterstateentity],'') IS NOT NULL)
-
-SELECT DISTINCT [isplanningcommission],
-len([isplanningcommission]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isplanningcommission]))) IS NULL AND
-NULLIF([isplanningcommission],'') IS NOT NULL)
-
-SELECT DISTINCT [isportauthority],
-len([isportauthority]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isportauthority]))) IS NULL AND
-NULLIF([isportauthority],'') IS NOT NULL)
-
-SELECT DISTINCT [istransitauthority],
-len([istransitauthority]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([istransitauthority]))) IS NULL AND
-NULLIF([istransitauthority],'') IS NOT NULL)
-
-SELECT DISTINCT [issubchapterscorporation],
-len([issubchapterscorporation]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([issubchapterscorporation]))) IS NULL AND
-NULLIF([issubchapterscorporation],'') IS NOT NULL)
-
-SELECT DISTINCT [islimitedliabilitycorporation],
-len([islimitedliabilitycorporation]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([islimitedliabilitycorporation]))) IS NULL AND
-NULLIF([islimitedliabilitycorporation],'') IS NOT NULL)
-
-SELECT DISTINCT [isforeignownedandlocated],
-len([isforeignownedandlocated]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isforeignownedandlocated]))) IS NULL AND
-NULLIF([isforeignownedandlocated],'') IS NOT NULL)
-
-SELECT DISTINCT [isarchitectureandengineering],
-len([isarchitectureandengineering]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isarchitectureandengineering]))) IS NULL AND
-NULLIF([isarchitectureandengineering],'') IS NOT NULL)
-
-SELECT DISTINCT [isdotcertifieddisadvantagedbusinessenterprise],
-len([isdotcertifieddisadvantagedbusinessenterprise]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isdotcertifieddisadvantagedbusinessenterprise]))) IS NULL AND
-NULLIF([isdotcertifieddisadvantagedbusinessenterprise],'') IS NOT NULL)
-
-SELECT DISTINCT [iscitylocalgovernment],
-len([iscitylocalgovernment]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([iscitylocalgovernment]))) IS NULL AND
-NULLIF([iscitylocalgovernment],'') IS NOT NULL)
-
-SELECT DISTINCT [iscommunitydevelopedcorporationownedfirm],
-len([iscommunitydevelopedcorporationownedfirm]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([iscommunitydevelopedcorporationownedfirm]))) IS NULL AND
-NULLIF([iscommunitydevelopedcorporationownedfirm],'') IS NOT NULL)
-
-SELECT DISTINCT [iscommunitydevelopmentcorporation],
-len([iscommunitydevelopmentcorporation]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([iscommunitydevelopmentcorporation]))) IS NULL AND
-NULLIF([iscommunitydevelopmentcorporation],'') IS NOT NULL)
-
-SELECT DISTINCT [isconstructionfirm],
-len([isconstructionfirm]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isconstructionfirm]))) IS NULL AND
-NULLIF([isconstructionfirm],'') IS NOT NULL)
-
-SELECT DISTINCT [ismanufacturerofgoods],
-len([ismanufacturerofgoods]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([ismanufacturerofgoods]))) IS NULL AND
-NULLIF([ismanufacturerofgoods],'') IS NOT NULL)
-
-SELECT DISTINCT [iscorporateentitynottaxexempt],
-len([iscorporateentitynottaxexempt]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([iscorporateentitynottaxexempt]))) IS NULL AND
-NULLIF([iscorporateentitynottaxexempt],'') IS NOT NULL)
-
-SELECT DISTINCT [iscountylocalgovernment],
-len([iscountylocalgovernment]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([iscountylocalgovernment]))) IS NULL AND
-NULLIF([iscountylocalgovernment],'') IS NOT NULL)
-
-SELECT DISTINCT [isdomesticshelter],
-len([isdomesticshelter]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isdomesticshelter]))) IS NULL AND
-NULLIF([isdomesticshelter],'') IS NOT NULL)
-
-SELECT DISTINCT [isfederalgovernmentagency],
-len([isfederalgovernmentagency]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isfederalgovernmentagency]))) IS NULL AND
-NULLIF([isfederalgovernmentagency],'') IS NOT NULL)
-
-SELECT DISTINCT [isfederallyfundedresearchanddevelopmentcorp],
-len([isfederallyfundedresearchanddevelopmentcorp]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isfederallyfundedresearchanddevelopmentcorp]))) IS NULL AND
-NULLIF([isfederallyfundedresearchanddevelopmentcorp],'') IS NOT NULL)
-
-SELECT DISTINCT [isforeigngovernment],
-len([isforeigngovernment]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isforeigngovernment]))) IS NULL AND
-NULLIF([isforeigngovernment],'') IS NOT NULL)
-
-SELECT DISTINCT [isindiantribe],
-len([isindiantribe]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isindiantribe]))) IS NULL AND
-NULLIF([isindiantribe],'') IS NOT NULL)
-
-SELECT DISTINCT [isintermunicipallocalgovernment],
-len([isintermunicipallocalgovernment]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isintermunicipallocalgovernment]))) IS NULL AND
-NULLIF([isintermunicipallocalgovernment],'') IS NOT NULL)
-
-SELECT DISTINCT [isinternationalorganization],
-len([isinternationalorganization]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isinternationalorganization]))) IS NULL AND
-NULLIF([isinternationalorganization],'') IS NOT NULL)
-
-SELECT DISTINCT [islaborsurplusareafirm],
-len([islaborsurplusareafirm]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([islaborsurplusareafirm]))) IS NULL AND
-NULLIF([islaborsurplusareafirm],'') IS NOT NULL)
-
-SELECT DISTINCT [islocalgovernmentowned],
-len([islocalgovernmentowned]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([islocalgovernmentowned]))) IS NULL AND
-NULLIF([islocalgovernmentowned],'') IS NOT NULL)
-
-SELECT DISTINCT [ismunicipalitylocalgovernment],
-len([ismunicipalitylocalgovernment]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([ismunicipalitylocalgovernment]))) IS NULL AND
-NULLIF([ismunicipalitylocalgovernment],'') IS NOT NULL)
-
-SELECT DISTINCT [isnativehawaiianownedorganizationorfirm],
-len([isnativehawaiianownedorganizationorfirm]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isnativehawaiianownedorganizationorfirm]))) IS NULL AND
-NULLIF([isnativehawaiianownedorganizationorfirm],'') IS NOT NULL)
-
-SELECT DISTINCT [isotherbusinessororganization],
-len([isotherbusinessororganization]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isotherbusinessororganization]))) IS NULL AND
-NULLIF([isotherbusinessororganization],'') IS NOT NULL)
-
-SELECT DISTINCT [isotherminorityowned],
-len([isotherminorityowned]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isotherminorityowned]))) IS NULL AND
-NULLIF([isotherminorityowned],'') IS NOT NULL)
-
-SELECT DISTINCT [ispartnershiporlimitedliabilitypartnership],
-len([ispartnershiporlimitedliabilitypartnership]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([ispartnershiporlimitedliabilitypartnership]))) IS NULL AND
-NULLIF([ispartnershiporlimitedliabilitypartnership],'') IS NOT NULL)
-
-SELECT DISTINCT [isschooldistrictlocalgovernment],
-len([isschooldistrictlocalgovernment]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isschooldistrictlocalgovernment]))) IS NULL AND
-NULLIF([isschooldistrictlocalgovernment],'') IS NOT NULL)
-
-SELECT DISTINCT [issmallagriculturalcooperative],
-len([issmallagriculturalcooperative]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([issmallagriculturalcooperative]))) IS NULL AND
-NULLIF([issmallagriculturalcooperative],'') IS NOT NULL)
-
-SELECT DISTINCT [issoleproprietorship],
-len([issoleproprietorship]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([issoleproprietorship]))) IS NULL AND
-NULLIF([issoleproprietorship],'') IS NOT NULL)
-
-SELECT DISTINCT [istownshiplocalgovernment],
-len([istownshiplocalgovernment]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([istownshiplocalgovernment]))) IS NULL AND
-NULLIF([istownshiplocalgovernment],'') IS NOT NULL)
-
-SELECT DISTINCT [istriballyownedfirm],
-len([istriballyownedfirm]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([istriballyownedfirm]))) IS NULL AND
-NULLIF([istriballyownedfirm],'') IS NOT NULL)
-
-SELECT DISTINCT [istribalcollege],
-len([istribalcollege]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([istribalcollege]))) IS NULL AND
-NULLIF([istribalcollege],'') IS NOT NULL)
-
-SELECT DISTINCT [isalaskannativeownedcorporationorfirm],
-len([isalaskannativeownedcorporationorfirm]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isalaskannativeownedcorporationorfirm]))) IS NULL AND
-NULLIF([isalaskannativeownedcorporationorfirm],'') IS NOT NULL)
-
-SELECT DISTINCT [iscorporateentitytaxexempt],
-len([iscorporateentitytaxexempt]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([iscorporateentitytaxexempt]))) IS NULL AND
-NULLIF([iscorporateentitytaxexempt],'') IS NOT NULL)
-
-SELECT DISTINCT [iswomenownedsmallbusiness],
-len([iswomenownedsmallbusiness]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([iswomenownedsmallbusiness]))) IS NULL AND
-NULLIF([iswomenownedsmallbusiness],'') IS NOT NULL)
-
-SELECT DISTINCT [isecondisadvwomenownedsmallbusiness],
-len([isecondisadvwomenownedsmallbusiness]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isecondisadvwomenownedsmallbusiness]))) IS NULL AND
-NULLIF([isecondisadvwomenownedsmallbusiness],'') IS NOT NULL)
-
-SELECT DISTINCT [isjointventurewomenownedsmallbusiness],
-len([isjointventurewomenownedsmallbusiness]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isjointventurewomenownedsmallbusiness]))) IS NULL AND
-NULLIF([isjointventurewomenownedsmallbusiness],'') IS NOT NULL)
-
-SELECT DISTINCT [isjointventureecondisadvwomenownedsmallbusiness],
-len([isjointventureecondisadvwomenownedsmallbusiness]) as Length,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([isjointventureecondisadvwomenownedsmallbusiness]))) IS NULL AND
-NULLIF([isjointventureecondisadvwomenownedsmallbusiness],'') IS NOT NULL)
-
-SELECT DISTINCT [walshhealyact],
-len([walshhealyact]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([walshhealyact])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [walshhealyact]) IS NULL AND
-NULLIF([walshhealyact],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [walshhealyact] ))) > 1 
-
-SELECT DISTINCT [servicecontractact],
-len([servicecontractact]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([servicecontractact])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [servicecontractact]) IS NULL AND
-NULLIF([servicecontractact],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [servicecontractact] ))) > 1 
-
-SELECT DISTINCT [davisbaconact],
-len([davisbaconact]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([davisbaconact])) as leftofcolon,
-'[varchar](1)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [davisbaconact]) IS NULL AND
-NULLIF([davisbaconact],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [davisbaconact] ))) > 1 
-
-SELECT DISTINCT [clingercohenact],
-len([clingercohenact]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([clingercohenact])) as leftofcolon,
-'[bit]' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([clingercohenact]))) IS NULL AND
-NULLIF([clingercohenact],'') IS NOT NULL)
-
-SELECT DISTINCT [interagencycontractingauthority],
-len([interagencycontractingauthority]) as Length,
-(Select LeftOfColon from FPDSTypeTable.leftofcolon([interagencycontractingauthority])) as leftofcolon,
-'[varchar](3)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](3), [interagencycontractingauthority]) IS NULL AND
-NULLIF([interagencycontractingauthority],'') IS NOT NULL)
-OR len( (Select LeftOfColon from FPDSTypeTable.leftofcolon( [interagencycontractingauthority] ))) > 3 
-
-SELECT DISTINCT [PlaceofPerformanceCity],
-len([PlaceofPerformanceCity]) as Length,
-'[varchar](100)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](100), [PlaceofPerformanceCity]) IS NULL AND
-NULLIF([PlaceofPerformanceCity],'') IS NOT NULL)
-OR len( [PlaceofPerformanceCity] ) > 100 
-
-SELECT DISTINCT [prime_awardee_executive1],
-len([prime_awardee_executive1]) as Length,
-'[varchar](100)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](100), [prime_awardee_executive1]) IS NULL AND
-NULLIF([prime_awardee_executive1],'') IS NOT NULL)
-OR len( [prime_awardee_executive1] ) > 100 
-
-SELECT DISTINCT [prime_awardee_executive1_compensation],
-len([prime_awardee_executive1_compensation]) as Length,
-'[decimal](19, 4)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[prime_awardee_executive1_compensation])) IS NULL AND
-NULLIF([prime_awardee_executive1_compensation],'') IS NOT NULL)
-
 SELECT DISTINCT [last_modified_date],
 len([last_modified_date]) as Length,
-'[date]' as DestinationType
+'[datetime2](7)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([date], [last_modified_date],101) IS NULL AND
+WHERE (Try_Convert([datetime2](7), [last_modified_date]) IS NULL AND
 NULLIF([last_modified_date],'') IS NOT NULL)
 
-SELECT DISTINCT [prime_awardee_executive2],
-len([prime_awardee_executive2]) as Length,
-'[varchar](100)' as DestinationType
+SELECT DISTINCT [award_id_piid],
+len([award_id_piid]) as Length,
+'[varchar](50)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](100), [prime_awardee_executive2]) IS NULL AND
-NULLIF([prime_awardee_executive2],'') IS NOT NULL)
-OR len( [prime_awardee_executive2] ) > 100 
+WHERE (Try_Convert([varchar](50), [award_id_piid]) IS NULL AND
+NULLIF([award_id_piid],'') IS NOT NULL)
+OR len( [award_id_piid] ) > 50 
 
-SELECT DISTINCT [prime_awardee_executive2_compensation],
-len([prime_awardee_executive2_compensation]) as Length,
+SELECT DISTINCT [modification_number],
+len([modification_number]) as Length,
+'[varchar](25)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](25), [modification_number]) IS NULL AND
+NULLIF([modification_number],'') IS NOT NULL)
+OR len( [modification_number] ) > 25 
+
+SELECT DISTINCT [transaction_number],
+len([transaction_number]) as Length,
+'[bigint]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bigint], Try_Convert(real,[transaction_number])) IS NULL AND
+NULLIF([transaction_number],'') IS NOT NULL)
+
+SELECT DISTINCT [parent_award_agency_id],
+len([parent_award_agency_id]) as Length,
+'[varchar](4)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](4), [parent_award_agency_id]) IS NULL AND
+NULLIF([parent_award_agency_id],'') IS NOT NULL)
+OR len( [parent_award_agency_id] ) > 4 
+
+SELECT DISTINCT [parent_award_id],
+len([parent_award_id]) as Length,
+'[varchar](50)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](50), [parent_award_id]) IS NULL AND
+NULLIF([parent_award_id],'') IS NOT NULL)
+OR len( [parent_award_id] ) > 50 
+
+SELECT DISTINCT [parent_award_modification_number],
+len([parent_award_modification_number]) as Length,
+'[varchar](25)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](25), [parent_award_modification_number]) IS NULL AND
+NULLIF([parent_award_modification_number],'') IS NOT NULL)
+OR len( [parent_award_modification_number] ) > 25 
+
+SELECT DISTINCT [federal_action_obligation],
+len([federal_action_obligation]) as Length,
 '[decimal](19, 4)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[prime_awardee_executive2_compensation])) IS NULL AND
-NULLIF([prime_awardee_executive2_compensation],'') IS NOT NULL)
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[federal_action_obligation])) IS NULL AND
+NULLIF([federal_action_obligation],'') IS NOT NULL)
 
-SELECT DISTINCT [prime_awardee_executive3],
-len([prime_awardee_executive3]) as Length,
-'[varchar](100)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](100), [prime_awardee_executive3]) IS NULL AND
-NULLIF([prime_awardee_executive3],'') IS NOT NULL)
-OR len( [prime_awardee_executive3] ) > 100 
-
-SELECT DISTINCT [prime_awardee_executive3_compensation],
-len([prime_awardee_executive3_compensation]) as Length,
+SELECT DISTINCT [change_in_current_award_amount],
+len([change_in_current_award_amount]) as Length,
 '[decimal](19, 4)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[prime_awardee_executive3_compensation])) IS NULL AND
-NULLIF([prime_awardee_executive3_compensation],'') IS NOT NULL)
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[change_in_current_award_amount])) IS NULL AND
+NULLIF([change_in_current_award_amount],'') IS NOT NULL)
 
-SELECT DISTINCT [prime_awardee_executive4],
-len([prime_awardee_executive4]) as Length,
-'[varchar](100)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](100), [prime_awardee_executive4]) IS NULL AND
-NULLIF([prime_awardee_executive4],'') IS NOT NULL)
-OR len( [prime_awardee_executive4] ) > 100 
-
-SELECT DISTINCT [prime_awardee_executive4_compensation],
-len([prime_awardee_executive4_compensation]) as Length,
+SELECT DISTINCT [change_in_potential_award_amount],
+len([change_in_potential_award_amount]) as Length,
 '[decimal](19, 4)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[prime_awardee_executive4_compensation])) IS NULL AND
-NULLIF([prime_awardee_executive4_compensation],'') IS NOT NULL)
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[change_in_potential_award_amount])) IS NULL AND
+NULLIF([change_in_potential_award_amount],'') IS NOT NULL)
 
-SELECT DISTINCT [prime_awardee_executive5],
-len([prime_awardee_executive5]) as Length,
+SELECT DISTINCT [action_date],
+len([action_date]) as Length,
+'[datetime2](7)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([datetime2](7), [action_date]) IS NULL AND
+NULLIF([action_date],'') IS NOT NULL)
+
+SELECT DISTINCT [period_of_performance_start_date],
+len([period_of_performance_start_date]) as Length,
+'[datetime2](7)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([datetime2](7), [period_of_performance_start_date]) IS NULL AND
+NULLIF([period_of_performance_start_date],'') IS NOT NULL)
+
+SELECT DISTINCT [period_of_performance_current_end_date],
+len([period_of_performance_current_end_date]) as Length,
+'[datetime2](7)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([datetime2](7), [period_of_performance_current_end_date]) IS NULL AND
+NULLIF([period_of_performance_current_end_date],'') IS NOT NULL)
+
+SELECT DISTINCT [period_of_performance_potential_end_date],
+len([period_of_performance_potential_end_date]) as Length,
+'[date]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([date], [period_of_performance_potential_end_date],101) IS NULL AND
+NULLIF([period_of_performance_potential_end_date],'') IS NOT NULL)
+
+SELECT DISTINCT [ordering_period_end_date],
+len([ordering_period_end_date]) as Length,
+'[datetime2](7)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([datetime2](7), [ordering_period_end_date]) IS NULL AND
+NULLIF([ordering_period_end_date],'') IS NOT NULL)
+
+SELECT DISTINCT [awarding_agency_code],
+len([awarding_agency_code]) as Length,
+'[varchar](4)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](4), [awarding_agency_code]) IS NULL AND
+NULLIF([awarding_agency_code],'') IS NOT NULL)
+OR len( [awarding_agency_code] ) > 4 
+
+SELECT DISTINCT [awarding_sub_agency_code],
+len([awarding_sub_agency_code]) as Length,
+'[varchar](4)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](4), [awarding_sub_agency_code]) IS NULL AND
+NULLIF([awarding_sub_agency_code],'') IS NOT NULL)
+OR len( [awarding_sub_agency_code] ) > 4 
+
+SELECT DISTINCT [awarding_office_code],
+len([awarding_office_code]) as Length,
+'[varchar](6)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](6), [awarding_office_code]) IS NULL AND
+NULLIF([awarding_office_code],'') IS NOT NULL)
+OR len( [awarding_office_code] ) > 6 
+
+SELECT DISTINCT [funding_agency_code],
+len([funding_agency_code]) as Length,
+'[varchar](4)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](4), [funding_agency_code]) IS NULL AND
+NULLIF([funding_agency_code],'') IS NOT NULL)
+OR len( [funding_agency_code] ) > 4 
+
+SELECT DISTINCT [funding_sub_agency_code],
+len([funding_sub_agency_code]) as Length,
+'[varchar](4)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](4), [funding_sub_agency_code]) IS NULL AND
+NULLIF([funding_sub_agency_code],'') IS NOT NULL)
+OR len( [funding_sub_agency_code] ) > 4 
+
+SELECT DISTINCT [funding_office_code],
+len([funding_office_code]) as Length,
+'[varchar](6)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](6), [funding_office_code]) IS NULL AND
+NULLIF([funding_office_code],'') IS NOT NULL)
+OR len( [funding_office_code] ) > 6 
+
+SELECT DISTINCT [foreign_funding],
+len([foreign_funding]) as Length,
+'[varchar](21)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](21), [foreign_funding]) IS NULL AND
+NULLIF([foreign_funding],'') IS NOT NULL)
+OR len( [foreign_funding] ) > 21 
+
+SELECT DISTINCT [sam_exception],
+len([sam_exception]) as Length,
+'[varchar](70)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](70), [sam_exception]) IS NULL AND
+NULLIF([sam_exception],'') IS NOT NULL)
+OR len( [sam_exception] ) > 70 
+
+SELECT DISTINCT [recipient_duns],
+len([recipient_duns]) as Length,
+'[varchar](13)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](13), [recipient_duns]) IS NULL AND
+NULLIF([recipient_duns],'') IS NOT NULL)
+OR len( [recipient_duns] ) > 13 
+
+SELECT DISTINCT [recipient_name],
+len([recipient_name]) as Length,
+'[nvarchar](150)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([nvarchar](150), [recipient_name]) IS NULL AND
+NULLIF([recipient_name],'') IS NOT NULL)
+
+SELECT DISTINCT [recipient_doing_business_as_name],
+len([recipient_doing_business_as_name]) as Length,
+'[nvarchar](150)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([nvarchar](150), [recipient_doing_business_as_name]) IS NULL AND
+NULLIF([recipient_doing_business_as_name],'') IS NOT NULL)
+
+SELECT DISTINCT [recipient_parent_name],
+len([recipient_parent_name]) as Length,
+'[varchar](150)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](150), [recipient_parent_name]) IS NULL AND
+NULLIF([recipient_parent_name],'') IS NOT NULL)
+OR len( [recipient_parent_name] ) > 150 
+
+SELECT DISTINCT [recipient_parent_duns],
+len([recipient_parent_duns]) as Length,
+'[varchar](13)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](13), [recipient_parent_duns]) IS NULL AND
+NULLIF([recipient_parent_duns],'') IS NOT NULL)
+OR len( [recipient_parent_duns] ) > 13 
+
+SELECT DISTINCT [recipient_country_code],
+len([recipient_country_code]) as Length,
+'[varchar](50)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](50), [recipient_country_code]) IS NULL AND
+NULLIF([recipient_country_code],'') IS NOT NULL)
+OR len( [recipient_country_code] ) > 50 
+
+SELECT DISTINCT [recipient_address_line_1],
+len([recipient_address_line_1]) as Length,
+'[varchar](90)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](90), [recipient_address_line_1]) IS NULL AND
+NULLIF([recipient_address_line_1],'') IS NOT NULL)
+OR len( [recipient_address_line_1] ) > 90 
+
+SELECT DISTINCT [recipient_address_line_2],
+len([recipient_address_line_2]) as Length,
+'[varchar](60)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](60), [recipient_address_line_2]) IS NULL AND
+NULLIF([recipient_address_line_2],'') IS NOT NULL)
+OR len( [recipient_address_line_2] ) > 60 
+
+SELECT DISTINCT [recipient_address_line_3],
+len([recipient_address_line_3]) as Length,
+'[varchar](55)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](55), [recipient_address_line_3]) IS NULL AND
+NULLIF([recipient_address_line_3],'') IS NOT NULL)
+OR len( [recipient_address_line_3] ) > 55 
+
+SELECT DISTINCT [recipient_city_name],
+len([recipient_city_name]) as Length,
+'[varchar](35)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](35), [recipient_city_name]) IS NULL AND
+NULLIF([recipient_city_name],'') IS NOT NULL)
+OR len( [recipient_city_name] ) > 35 
+
+SELECT DISTINCT [recipient_state_code],
+len([recipient_state_code]) as Length,
+'[varchar](30)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](30), [recipient_state_code]) IS NULL AND
+NULLIF([recipient_state_code],'') IS NOT NULL)
+OR len( [recipient_state_code] ) > 30 
+
+SELECT DISTINCT [recipient_zip_4_code],
+len([recipient_zip_4_code]) as Length,
+'[varchar](28)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](28), [recipient_zip_4_code]) IS NULL AND
+NULLIF([recipient_zip_4_code],'') IS NOT NULL)
+OR len( [recipient_zip_4_code] ) > 28 
+
+SELECT DISTINCT [recipient_congressional_district],
+len([recipient_congressional_district]) as Length,
+'[varchar](22)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](22), [recipient_congressional_district]) IS NULL AND
+NULLIF([recipient_congressional_district],'') IS NOT NULL)
+OR len( [recipient_congressional_district] ) > 22 
+
+SELECT DISTINCT [recipient_phone_number],
+len([recipient_phone_number]) as Length,
+'[varchar](20)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](20), [recipient_phone_number]) IS NULL AND
+NULLIF([recipient_phone_number],'') IS NOT NULL)
+OR len( [recipient_phone_number] ) > 20 
+
+SELECT DISTINCT [recipient_fax_number],
+len([recipient_fax_number]) as Length,
+'[varchar](30)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](30), [recipient_fax_number]) IS NULL AND
+NULLIF([recipient_fax_number],'') IS NOT NULL)
+OR len( [recipient_fax_number] ) > 30 
+
+SELECT DISTINCT [primary_place_of_performance_country_code],
+len([primary_place_of_performance_country_code]) as Length,
+'[varchar](3)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](3), [primary_place_of_performance_country_code]) IS NULL AND
+NULLIF([primary_place_of_performance_country_code],'') IS NOT NULL)
+OR len( [primary_place_of_performance_country_code] ) > 3 
+
+SELECT DISTINCT [primary_place_of_performance_city_name],
+len([primary_place_of_performance_city_name]) as Length,
 '[varchar](100)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](100), [prime_awardee_executive5]) IS NULL AND
-NULLIF([prime_awardee_executive5],'') IS NOT NULL)
-OR len( [prime_awardee_executive5] ) > 100 
+WHERE (Try_Convert([varchar](100), [primary_place_of_performance_city_name]) IS NULL AND
+NULLIF([primary_place_of_performance_city_name],'') IS NOT NULL)
+OR len( [primary_place_of_performance_city_name] ) > 100 
 
-SELECT DISTINCT [prime_awardee_executive5_compensation],
-len([prime_awardee_executive5_compensation]) as Length,
-'[decimal](19, 4)' as DestinationType
+SELECT DISTINCT [primary_place_of_performance_county_name],
+len([primary_place_of_performance_county_name]) as Length,
+'[varchar](22)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[prime_awardee_executive5_compensation])) IS NULL AND
-NULLIF([prime_awardee_executive5_compensation],'') IS NOT NULL)
+WHERE (Try_Convert([varchar](22), [primary_place_of_performance_county_name]) IS NULL AND
+NULLIF([primary_place_of_performance_county_name],'') IS NOT NULL)
+OR len( [primary_place_of_performance_county_name] ) > 22 
+
+SELECT DISTINCT [primary_place_of_performance_state_code],
+len([primary_place_of_performance_state_code]) as Length,
+'[varchar](2)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](2), [primary_place_of_performance_state_code]) IS NULL AND
+NULLIF([primary_place_of_performance_state_code],'') IS NOT NULL)
+OR len( [primary_place_of_performance_state_code] ) > 2 
+
+SELECT DISTINCT [primary_place_of_performance_zip_4],
+len([primary_place_of_performance_zip_4]) as Length,
+'[varchar](10)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](10), [primary_place_of_performance_zip_4]) IS NULL AND
+NULLIF([primary_place_of_performance_zip_4],'') IS NOT NULL)
+OR len( [primary_place_of_performance_zip_4] ) > 10 
+
+SELECT DISTINCT [primary_place_of_performance_congressional_district],
+len([primary_place_of_performance_congressional_district]) as Length,
+'[varchar](6)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](6), [primary_place_of_performance_congressional_district]) IS NULL AND
+NULLIF([primary_place_of_performance_congressional_district],'') IS NOT NULL)
+OR len( [primary_place_of_performance_congressional_district] ) > 6 
+
+SELECT DISTINCT [primary_place_of_performance_location_code],
+len([primary_place_of_performance_location_code]) as Length,
+'[varchar](9)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](9), [primary_place_of_performance_location_code]) IS NULL AND
+NULLIF([primary_place_of_performance_location_code],'') IS NOT NULL)
+OR len( [primary_place_of_performance_location_code] ) > 9 
+
+SELECT DISTINCT [award_type_code],
+len([award_type_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [award_type_code]) IS NULL AND
+NULLIF([award_type_code],'') IS NOT NULL)
+OR len( [award_type_code] ) > 1 
+
+SELECT DISTINCT [idv_type_code],
+len([idv_type_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [idv_type_code]) IS NULL AND
+NULLIF([idv_type_code],'') IS NOT NULL)
+OR len( [idv_type_code] ) > 1 
+
+SELECT DISTINCT [multiple_or_single_award_idv_code],
+len([multiple_or_single_award_idv_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [multiple_or_single_award_idv_code]) IS NULL AND
+NULLIF([multiple_or_single_award_idv_code],'') IS NOT NULL)
+OR len( [multiple_or_single_award_idv_code] ) > 1 
+
+SELECT DISTINCT [type_of_idc_code],
+len([type_of_idc_code]) as Length,
+'[varchar](41)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](41), [type_of_idc_code]) IS NULL AND
+NULLIF([type_of_idc_code],'') IS NOT NULL)
+OR len( [type_of_idc_code] ) > 41 
+
+SELECT DISTINCT [type_of_contract_pricing_code],
+len([type_of_contract_pricing_code]) as Length,
+'[varchar](2)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](2), [type_of_contract_pricing_code]) IS NULL AND
+NULLIF([type_of_contract_pricing_code],'') IS NOT NULL)
+OR len( [type_of_contract_pricing_code] ) > 2 
+
+SELECT DISTINCT [award_description],
+len([award_description]) as Length,
+'[varchar](4035)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](4035), [award_description]) IS NULL AND
+NULLIF([award_description],'') IS NOT NULL)
+OR len( [award_description] ) > 4035 
+
+SELECT DISTINCT [action_type_code],
+len([action_type_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [action_type_code]) IS NULL AND
+NULLIF([action_type_code],'') IS NOT NULL)
+OR len( [action_type_code] ) > 1 
+
+SELECT DISTINCT [solicitation_identifier],
+len([solicitation_identifier]) as Length,
+'[varchar](69)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](69), [solicitation_identifier]) IS NULL AND
+NULLIF([solicitation_identifier],'') IS NOT NULL)
+OR len( [solicitation_identifier] ) > 69 
+
+SELECT DISTINCT [number_of_actions],
+len([number_of_actions]) as Length,
+'[bigint]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bigint], Try_Convert(real,[number_of_actions])) IS NULL AND
+NULLIF([number_of_actions],'') IS NOT NULL)
+
+SELECT DISTINCT [product_or_service_code],
+len([product_or_service_code]) as Length,
+'[varchar](4)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](4), [product_or_service_code]) IS NULL AND
+NULLIF([product_or_service_code],'') IS NOT NULL)
+OR len( [product_or_service_code] ) > 4 
+
+SELECT DISTINCT [contract_bundling_code],
+len([contract_bundling_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [contract_bundling_code]) IS NULL AND
+NULLIF([contract_bundling_code],'') IS NOT NULL)
+OR len( [contract_bundling_code] ) > 1 
+
+SELECT DISTINCT [dod_claimant_program_code],
+len([dod_claimant_program_code]) as Length,
+'[varchar](3)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](3), [dod_claimant_program_code]) IS NULL AND
+NULLIF([dod_claimant_program_code],'') IS NOT NULL)
+OR len( [dod_claimant_program_code] ) > 3 
+
+SELECT DISTINCT [naics_code],
+len([naics_code]) as Length,
+'[varchar](6)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](6), [naics_code]) IS NULL AND
+NULLIF([naics_code],'') IS NOT NULL)
+OR len( [naics_code] ) > 6 
+
+SELECT DISTINCT [recovered_materials_sustainability_code],
+len([recovered_materials_sustainability_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [recovered_materials_sustainability_code]) IS NULL AND
+NULLIF([recovered_materials_sustainability_code],'') IS NOT NULL)
+OR len( [recovered_materials_sustainability_code] ) > 1 
+
+SELECT DISTINCT [domestic_or_foreign_entity_code],
+len([domestic_or_foreign_entity_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [domestic_or_foreign_entity_code]) IS NULL AND
+NULLIF([domestic_or_foreign_entity_code],'') IS NOT NULL)
+OR len( [domestic_or_foreign_entity_code] ) > 1 
+
+SELECT DISTINCT [dod_acquisition_program_code],
+len([dod_acquisition_program_code]) as Length,
+'[varchar](4)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](4), [dod_acquisition_program_code]) IS NULL AND
+NULLIF([dod_acquisition_program_code],'') IS NOT NULL)
+OR len( [dod_acquisition_program_code] ) > 4 
+
+SELECT DISTINCT [information_technology_commercial_item_category_code],
+len([information_technology_commercial_item_category_code]) as Length,
+'[varchar](30)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](30), [information_technology_commercial_item_category_code]) IS NULL AND
+NULLIF([information_technology_commercial_item_category_code],'') IS NOT NULL)
+OR len( [information_technology_commercial_item_category_code] ) > 30 
+
+SELECT DISTINCT [epa_designated_product_code],
+len([epa_designated_product_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [epa_designated_product_code]) IS NULL AND
+NULLIF([epa_designated_product_code],'') IS NOT NULL)
+OR len( [epa_designated_product_code] ) > 1 
+
+SELECT DISTINCT [country_of_product_or_service_origin_code],
+len([country_of_product_or_service_origin_code]) as Length,
+'[varchar](3)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](3), [country_of_product_or_service_origin_code]) IS NULL AND
+NULLIF([country_of_product_or_service_origin_code],'') IS NOT NULL)
+OR len( [country_of_product_or_service_origin_code] ) > 3 
+
+SELECT DISTINCT [place_of_manufacture_code],
+len([place_of_manufacture_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [place_of_manufacture_code]) IS NULL AND
+NULLIF([place_of_manufacture_code],'') IS NOT NULL)
+OR len( [place_of_manufacture_code] ) > 1 
+
+SELECT DISTINCT [subcontracting_plan_code],
+len([subcontracting_plan_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [subcontracting_plan_code]) IS NULL AND
+NULLIF([subcontracting_plan_code],'') IS NOT NULL)
+OR len( [subcontracting_plan_code] ) > 1 
+
+SELECT DISTINCT [extent_competed_code],
+len([extent_competed_code]) as Length,
+'[varchar](3)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](3), [extent_competed_code]) IS NULL AND
+NULLIF([extent_competed_code],'') IS NOT NULL)
+OR len( [extent_competed_code] ) > 3 
+
+SELECT DISTINCT [solicitation_procedures_code],
+len([solicitation_procedures_code]) as Length,
+'[varchar](5)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](5), [solicitation_procedures_code]) IS NULL AND
+NULLIF([solicitation_procedures_code],'') IS NOT NULL)
+OR len( [solicitation_procedures_code] ) > 5 
+
+SELECT DISTINCT [type_of_set_aside_code],
+len([type_of_set_aside_code]) as Length,
+'[varchar](10)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](10), [type_of_set_aside_code]) IS NULL AND
+NULLIF([type_of_set_aside_code],'') IS NOT NULL)
+OR len( [type_of_set_aside_code] ) > 10 
+
+SELECT DISTINCT [evaluated_preference_code],
+len([evaluated_preference_code]) as Length,
+'[varchar](6)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](6), [evaluated_preference_code]) IS NULL AND
+NULLIF([evaluated_preference_code],'') IS NOT NULL)
+OR len( [evaluated_preference_code] ) > 6 
+
+SELECT DISTINCT [research_code],
+len([research_code]) as Length,
+'[varchar](3)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](3), [research_code]) IS NULL AND
+NULLIF([research_code],'') IS NOT NULL)
+OR len( [research_code] ) > 3 
+
+SELECT DISTINCT [fair_opportunity_limited_sources_code],
+len([fair_opportunity_limited_sources_code]) as Length,
+'[varchar](4)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](4), [fair_opportunity_limited_sources_code]) IS NULL AND
+NULLIF([fair_opportunity_limited_sources_code],'') IS NOT NULL)
+OR len( [fair_opportunity_limited_sources_code] ) > 4 
+
+SELECT DISTINCT [other_than_full_and_open_competition_code],
+len([other_than_full_and_open_competition_code]) as Length,
+'[varchar](3)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](3), [other_than_full_and_open_competition_code]) IS NULL AND
+NULLIF([other_than_full_and_open_competition_code],'') IS NOT NULL)
+OR len( [other_than_full_and_open_competition_code] ) > 3 
+
+SELECT DISTINCT [number_of_offers_received],
+len([number_of_offers_received]) as Length,
+'[bigint]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bigint], Try_Convert(real,[number_of_offers_received])) IS NULL AND
+NULLIF([number_of_offers_received],'') IS NOT NULL)
+
+SELECT DISTINCT [commercial_item_acquisition_procedures_code],
+len([commercial_item_acquisition_procedures_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [commercial_item_acquisition_procedures_code]) IS NULL AND
+NULLIF([commercial_item_acquisition_procedures_code],'') IS NOT NULL)
+OR len( [commercial_item_acquisition_procedures_code] ) > 1 
+
+SELECT DISTINCT [small_business_competitiveness_demonstration_program],
+len([small_business_competitiveness_demonstration_program]) as Length,
+'[varchar](6)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](6), [small_business_competitiveness_demonstration_program]) IS NULL AND
+NULLIF([small_business_competitiveness_demonstration_program],'') IS NOT NULL)
+OR len( [small_business_competitiveness_demonstration_program] ) > 6 
+
+SELECT DISTINCT [commercial_item_test_program_code],
+len([commercial_item_test_program_code]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([commercial_item_test_program_code]))) IS NULL AND
+NULLIF([commercial_item_test_program_code],'') IS NOT NULL)
+
+SELECT DISTINCT [a76_fair_act_action_code],
+len([a76_fair_act_action_code]) as Length,
+'[varchar](3)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](3), [a76_fair_act_action_code]) IS NULL AND
+NULLIF([a76_fair_act_action_code],'') IS NOT NULL)
+OR len( [a76_fair_act_action_code] ) > 3 
+
+SELECT DISTINCT [fed_biz_opps_code],
+len([fed_biz_opps_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [fed_biz_opps_code]) IS NULL AND
+NULLIF([fed_biz_opps_code],'') IS NOT NULL)
+OR len( [fed_biz_opps_code] ) > 1 
+
+SELECT DISTINCT [local_area_set_aside_code],
+len([local_area_set_aside_code]) as Length,
+'[varchar](4)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](4), [local_area_set_aside_code]) IS NULL AND
+NULLIF([local_area_set_aside_code],'') IS NOT NULL)
+OR len( [local_area_set_aside_code] ) > 4 
+
+SELECT DISTINCT [price_evaluation_adjustment_preference_percent_difference],
+len([price_evaluation_adjustment_preference_percent_difference]) as Length,
+'[smallint]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([smallint], Try_Convert(real,[price_evaluation_adjustment_preference_percent_difference])) IS NULL AND
+NULLIF([price_evaluation_adjustment_preference_percent_difference],'') IS NOT NULL)
+
+SELECT DISTINCT [clinger_cohen_act_planning_code],
+len([clinger_cohen_act_planning_code]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([clinger_cohen_act_planning_code]))) IS NULL AND
+NULLIF([clinger_cohen_act_planning_code],'') IS NOT NULL)
+
+SELECT DISTINCT [walsh_healey_act_code],
+len([walsh_healey_act_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [walsh_healey_act_code]) IS NULL AND
+NULLIF([walsh_healey_act_code],'') IS NOT NULL)
+OR len( [walsh_healey_act_code] ) > 1 
+
+SELECT DISTINCT [service_contract_act_code],
+len([service_contract_act_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [service_contract_act_code]) IS NULL AND
+NULLIF([service_contract_act_code],'') IS NOT NULL)
+OR len( [service_contract_act_code] ) > 1 
+
+SELECT DISTINCT [davis_bacon_act_code],
+len([davis_bacon_act_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [davis_bacon_act_code]) IS NULL AND
+NULLIF([davis_bacon_act_code],'') IS NOT NULL)
+OR len( [davis_bacon_act_code] ) > 1 
+
+SELECT DISTINCT [interagency_contracting_authority_code],
+len([interagency_contracting_authority_code]) as Length,
+'[varchar](3)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](3), [interagency_contracting_authority_code]) IS NULL AND
+NULLIF([interagency_contracting_authority_code],'') IS NOT NULL)
+OR len( [interagency_contracting_authority_code] ) > 3 
+
+SELECT DISTINCT [other_statutory_authority],
+len([other_statutory_authority]) as Length,
+'[varchar](1000)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1000), [other_statutory_authority]) IS NULL AND
+NULLIF([other_statutory_authority],'') IS NOT NULL)
+OR len( [other_statutory_authority] ) > 1000 
+
+SELECT DISTINCT [program_acronym],
+len([program_acronym]) as Length,
+'[varchar](29)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](29), [program_acronym]) IS NULL AND
+NULLIF([program_acronym],'') IS NOT NULL)
+OR len( [program_acronym] ) > 29 
+
+SELECT DISTINCT [parent_award_type_code],
+len([parent_award_type_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [parent_award_type_code]) IS NULL AND
+NULLIF([parent_award_type_code],'') IS NOT NULL)
+OR len( [parent_award_type_code] ) > 1 
+
+SELECT DISTINCT [parent_award_single_or_multiple_code],
+len([parent_award_single_or_multiple_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [parent_award_single_or_multiple_code]) IS NULL AND
+NULLIF([parent_award_single_or_multiple_code],'') IS NOT NULL)
+OR len( [parent_award_single_or_multiple_code] ) > 1 
+
+SELECT DISTINCT [major_program],
+len([major_program]) as Length,
+'[varchar](104)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](104), [major_program]) IS NULL AND
+NULLIF([major_program],'') IS NOT NULL)
+OR len( [major_program] ) > 104 
+
+SELECT DISTINCT [national_interest_action_code],
+len([national_interest_action_code]) as Length,
+'[varchar](4)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](4), [national_interest_action_code]) IS NULL AND
+NULLIF([national_interest_action_code],'') IS NOT NULL)
+OR len( [national_interest_action_code] ) > 4 
+
+SELECT DISTINCT [cost_or_pricing_data_code],
+len([cost_or_pricing_data_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [cost_or_pricing_data_code]) IS NULL AND
+NULLIF([cost_or_pricing_data_code],'') IS NOT NULL)
+OR len( [cost_or_pricing_data_code] ) > 1 
+
+SELECT DISTINCT [cost_accounting_standards_clause_code],
+len([cost_accounting_standards_clause_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [cost_accounting_standards_clause_code]) IS NULL AND
+NULLIF([cost_accounting_standards_clause_code],'') IS NOT NULL)
+OR len( [cost_accounting_standards_clause_code] ) > 1 
+
+SELECT DISTINCT [gfe_gfp_code],
+len([gfe_gfp_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [gfe_gfp_code]) IS NULL AND
+NULLIF([gfe_gfp_code],'') IS NOT NULL)
+OR len( [gfe_gfp_code] ) > 1 
+
+SELECT DISTINCT [sea_transportation_code],
+len([sea_transportation_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [sea_transportation_code]) IS NULL AND
+NULLIF([sea_transportation_code],'') IS NOT NULL)
+OR len( [sea_transportation_code] ) > 1 
+
+SELECT DISTINCT [undefinitized_action_code],
+len([undefinitized_action_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [undefinitized_action_code]) IS NULL AND
+NULLIF([undefinitized_action_code],'') IS NOT NULL)
+OR len( [undefinitized_action_code] ) > 1 
+
+SELECT DISTINCT [consolidated_contract_code],
+len([consolidated_contract_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [consolidated_contract_code]) IS NULL AND
+NULLIF([consolidated_contract_code],'') IS NOT NULL)
+OR len( [consolidated_contract_code] ) > 1 
+
+SELECT DISTINCT [performance_based_service_acquisition_code],
+len([performance_based_service_acquisition_code]) as Length,
+'[varchar](38)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](38), [performance_based_service_acquisition_code]) IS NULL AND
+NULLIF([performance_based_service_acquisition_code],'') IS NOT NULL)
+OR len( [performance_based_service_acquisition_code] ) > 38 
+
+SELECT DISTINCT [multi_year_contract_code],
+len([multi_year_contract_code]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([multi_year_contract_code]))) IS NULL AND
+NULLIF([multi_year_contract_code],'') IS NOT NULL)
+
+SELECT DISTINCT [contract_financing_code],
+len([contract_financing_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [contract_financing_code]) IS NULL AND
+NULLIF([contract_financing_code],'') IS NOT NULL)
+OR len( [contract_financing_code] ) > 1 
+
+SELECT DISTINCT [purchase_card_as_payment_method_code],
+len([purchase_card_as_payment_method_code]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([purchase_card_as_payment_method_code]))) IS NULL AND
+NULLIF([purchase_card_as_payment_method_code],'') IS NOT NULL)
+
+SELECT DISTINCT [contingency_humanitarian_or_peacekeeping_operation_code],
+len([contingency_humanitarian_or_peacekeeping_operation_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](1), [contingency_humanitarian_or_peacekeeping_operation_code]) IS NULL AND
+NULLIF([contingency_humanitarian_or_peacekeeping_operation_code],'') IS NOT NULL)
+OR len( [contingency_humanitarian_or_peacekeeping_operation_code] ) > 1 
+
+SELECT DISTINCT [alaskan_native_owned_corporation_or_firm],
+len([alaskan_native_owned_corporation_or_firm]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([alaskan_native_owned_corporation_or_firm]))) IS NULL AND
+NULLIF([alaskan_native_owned_corporation_or_firm],'') IS NOT NULL)
+
+SELECT DISTINCT [american_indian_owned_business],
+len([american_indian_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([american_indian_owned_business]))) IS NULL AND
+NULLIF([american_indian_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [indian_tribe_federally_recognized],
+len([indian_tribe_federally_recognized]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([indian_tribe_federally_recognized]))) IS NULL AND
+NULLIF([indian_tribe_federally_recognized],'') IS NOT NULL)
+
+SELECT DISTINCT [native_hawaiian_owned_business],
+len([native_hawaiian_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([native_hawaiian_owned_business]))) IS NULL AND
+NULLIF([native_hawaiian_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [tribally_owned_business],
+len([tribally_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([tribally_owned_business]))) IS NULL AND
+NULLIF([tribally_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [veteran_owned_business],
+len([veteran_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([veteran_owned_business]))) IS NULL AND
+NULLIF([veteran_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [service_disabled_veteran_owned_business],
+len([service_disabled_veteran_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([service_disabled_veteran_owned_business]))) IS NULL AND
+NULLIF([service_disabled_veteran_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [woman_owned_business],
+len([woman_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([woman_owned_business]))) IS NULL AND
+NULLIF([woman_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [women_owned_small_business],
+len([women_owned_small_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([women_owned_small_business]))) IS NULL AND
+NULLIF([women_owned_small_business],'') IS NOT NULL)
+
+SELECT DISTINCT [economically_disadvantaged_women_owned_small_business],
+len([economically_disadvantaged_women_owned_small_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([economically_disadvantaged_women_owned_small_business]))) IS NULL AND
+NULLIF([economically_disadvantaged_women_owned_small_business],'') IS NOT NULL)
+
+SELECT DISTINCT [joint_venture_women_owned_small_business],
+len([joint_venture_women_owned_small_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([joint_venture_women_owned_small_business]))) IS NULL AND
+NULLIF([joint_venture_women_owned_small_business],'') IS NOT NULL)
+
+SELECT DISTINCT [joint_venture_economic_disadvantaged_women_owned_small_bus],
+len([joint_venture_economic_disadvantaged_women_owned_small_bus]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([joint_venture_economic_disadvantaged_women_owned_small_bus]))) IS NULL AND
+NULLIF([joint_venture_economic_disadvantaged_women_owned_small_bus],'') IS NOT NULL)
+
+SELECT DISTINCT [minority_owned_business],
+len([minority_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([minority_owned_business]))) IS NULL AND
+NULLIF([minority_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [subcontinent_asian_asian_indian_american_owned_business],
+len([subcontinent_asian_asian_indian_american_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([subcontinent_asian_asian_indian_american_owned_business]))) IS NULL AND
+NULLIF([subcontinent_asian_asian_indian_american_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [asian_pacific_american_owned_business],
+len([asian_pacific_american_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([asian_pacific_american_owned_business]))) IS NULL AND
+NULLIF([asian_pacific_american_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [black_american_owned_business],
+len([black_american_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([black_american_owned_business]))) IS NULL AND
+NULLIF([black_american_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [hispanic_american_owned_business],
+len([hispanic_american_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([hispanic_american_owned_business]))) IS NULL AND
+NULLIF([hispanic_american_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [native_american_owned_business],
+len([native_american_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([native_american_owned_business]))) IS NULL AND
+NULLIF([native_american_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [other_minority_owned_business],
+len([other_minority_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([other_minority_owned_business]))) IS NULL AND
+NULLIF([other_minority_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [contracting_officers_determination_of_business_size_code],
+len([contracting_officers_determination_of_business_size_code]) as Length,
+'[varchar](1)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (NA IS NULL AND
+NULLIF([contracting_officers_determination_of_business_size_code],'') IS NOT NULL)
+OR len( [contracting_officers_determination_of_business_size_code] ) > 1 
+
+SELECT DISTINCT [emerging_small_business],
+len([emerging_small_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([emerging_small_business]))) IS NULL AND
+NULLIF([emerging_small_business],'') IS NOT NULL)
+
+SELECT DISTINCT [community_developed_corporation_owned_firm],
+len([community_developed_corporation_owned_firm]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([community_developed_corporation_owned_firm]))) IS NULL AND
+NULLIF([community_developed_corporation_owned_firm],'') IS NOT NULL)
+
+SELECT DISTINCT [labor_surplus_area_firm],
+len([labor_surplus_area_firm]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([labor_surplus_area_firm]))) IS NULL AND
+NULLIF([labor_surplus_area_firm],'') IS NOT NULL)
+
+SELECT DISTINCT [us_federal_government],
+len([us_federal_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([us_federal_government]))) IS NULL AND
+NULLIF([us_federal_government],'') IS NOT NULL)
+
+SELECT DISTINCT [federally_funded_research_and_development_corp],
+len([federally_funded_research_and_development_corp]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([federally_funded_research_and_development_corp]))) IS NULL AND
+NULLIF([federally_funded_research_and_development_corp],'') IS NOT NULL)
+
+SELECT DISTINCT [federal_agency],
+len([federal_agency]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([federal_agency]))) IS NULL AND
+NULLIF([federal_agency],'') IS NOT NULL)
+
+SELECT DISTINCT [us_state_government],
+len([us_state_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([us_state_government]))) IS NULL AND
+NULLIF([us_state_government],'') IS NOT NULL)
+
+SELECT DISTINCT [us_local_government],
+len([us_local_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([us_local_government]))) IS NULL AND
+NULLIF([us_local_government],'') IS NOT NULL)
+
+SELECT DISTINCT [city_local_government],
+len([city_local_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([city_local_government]))) IS NULL AND
+NULLIF([city_local_government],'') IS NOT NULL)
+
+SELECT DISTINCT [county_local_government],
+len([county_local_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([county_local_government]))) IS NULL AND
+NULLIF([county_local_government],'') IS NOT NULL)
+
+SELECT DISTINCT [inter_municipal_local_government],
+len([inter_municipal_local_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([inter_municipal_local_government]))) IS NULL AND
+NULLIF([inter_municipal_local_government],'') IS NOT NULL)
+
+SELECT DISTINCT [local_government_owned],
+len([local_government_owned]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([local_government_owned]))) IS NULL AND
+NULLIF([local_government_owned],'') IS NOT NULL)
+
+SELECT DISTINCT [municipality_local_government],
+len([municipality_local_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([municipality_local_government]))) IS NULL AND
+NULLIF([municipality_local_government],'') IS NOT NULL)
+
+SELECT DISTINCT [school_district_local_government],
+len([school_district_local_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([school_district_local_government]))) IS NULL AND
+NULLIF([school_district_local_government],'') IS NOT NULL)
+
+SELECT DISTINCT [township_local_government],
+len([township_local_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([township_local_government]))) IS NULL AND
+NULLIF([township_local_government],'') IS NOT NULL)
+
+SELECT DISTINCT [us_tribal_government],
+len([us_tribal_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([us_tribal_government]))) IS NULL AND
+NULLIF([us_tribal_government],'') IS NOT NULL)
+
+SELECT DISTINCT [foreign_government],
+len([foreign_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([foreign_government]))) IS NULL AND
+NULLIF([foreign_government],'') IS NOT NULL)
+
+SELECT DISTINCT [corporate_entity_not_tax_exempt],
+len([corporate_entity_not_tax_exempt]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([corporate_entity_not_tax_exempt]))) IS NULL AND
+NULLIF([corporate_entity_not_tax_exempt],'') IS NOT NULL)
+
+SELECT DISTINCT [corporate_entity_tax_exempt],
+len([corporate_entity_tax_exempt]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([corporate_entity_tax_exempt]))) IS NULL AND
+NULLIF([corporate_entity_tax_exempt],'') IS NOT NULL)
+
+SELECT DISTINCT [partnership_or_limited_liability_partnership],
+len([partnership_or_limited_liability_partnership]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([partnership_or_limited_liability_partnership]))) IS NULL AND
+NULLIF([partnership_or_limited_liability_partnership],'') IS NOT NULL)
+
+SELECT DISTINCT [sole_proprietorship],
+len([sole_proprietorship]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([sole_proprietorship]))) IS NULL AND
+NULLIF([sole_proprietorship],'') IS NOT NULL)
+
+SELECT DISTINCT [small_agricultural_cooperative],
+len([small_agricultural_cooperative]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([small_agricultural_cooperative]))) IS NULL AND
+NULLIF([small_agricultural_cooperative],'') IS NOT NULL)
+
+SELECT DISTINCT [international_organization],
+len([international_organization]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([international_organization]))) IS NULL AND
+NULLIF([international_organization],'') IS NOT NULL)
+
+SELECT DISTINCT [us_government_entity],
+len([us_government_entity]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([us_government_entity]))) IS NULL AND
+NULLIF([us_government_entity],'') IS NOT NULL)
+
+SELECT DISTINCT [community_development_corporation],
+len([community_development_corporation]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([community_development_corporation]))) IS NULL AND
+NULLIF([community_development_corporation],'') IS NOT NULL)
+
+SELECT DISTINCT [domestic_shelter],
+len([domestic_shelter]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([domestic_shelter]))) IS NULL AND
+NULLIF([domestic_shelter],'') IS NOT NULL)
+
+SELECT DISTINCT [educational_institution],
+len([educational_institution]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([educational_institution]))) IS NULL AND
+NULLIF([educational_institution],'') IS NOT NULL)
+
+SELECT DISTINCT [foundation],
+len([foundation]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([foundation]))) IS NULL AND
+NULLIF([foundation],'') IS NOT NULL)
+
+SELECT DISTINCT [hospital_flag],
+len([hospital_flag]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([hospital_flag]))) IS NULL AND
+NULLIF([hospital_flag],'') IS NOT NULL)
+
+SELECT DISTINCT [manufacturer_of_goods],
+len([manufacturer_of_goods]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([manufacturer_of_goods]))) IS NULL AND
+NULLIF([manufacturer_of_goods],'') IS NOT NULL)
+
+SELECT DISTINCT [veterinary_hospital],
+len([veterinary_hospital]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([veterinary_hospital]))) IS NULL AND
+NULLIF([veterinary_hospital],'') IS NOT NULL)
+
+SELECT DISTINCT [hispanic_servicing_institution],
+len([hispanic_servicing_institution]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([hispanic_servicing_institution]))) IS NULL AND
+NULLIF([hispanic_servicing_institution],'') IS NOT NULL)
+
+SELECT DISTINCT [receives_contracts],
+len([receives_contracts]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receives_contracts]))) IS NULL AND
+NULLIF([receives_contracts],'') IS NOT NULL)
+
+SELECT DISTINCT [receives_grants],
+len([receives_grants]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receives_grants]))) IS NULL AND
+NULLIF([receives_grants],'') IS NOT NULL)
+
+SELECT DISTINCT [receives_contracts_and_grants],
+len([receives_contracts_and_grants]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receives_contracts_and_grants]))) IS NULL AND
+NULLIF([receives_contracts_and_grants],'') IS NOT NULL)
+
+SELECT DISTINCT [airport_authority],
+len([airport_authority]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([airport_authority]))) IS NULL AND
+NULLIF([airport_authority],'') IS NOT NULL)
+
+SELECT DISTINCT [council_of_governments],
+len([council_of_governments]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([council_of_governments]))) IS NULL AND
+NULLIF([council_of_governments],'') IS NOT NULL)
+
+SELECT DISTINCT [housing_authorities_public_tribal],
+len([housing_authorities_public_tribal]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([housing_authorities_public_tribal]))) IS NULL AND
+NULLIF([housing_authorities_public_tribal],'') IS NOT NULL)
+
+SELECT DISTINCT [interstate_entity],
+len([interstate_entity]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([interstate_entity]))) IS NULL AND
+NULLIF([interstate_entity],'') IS NOT NULL)
+
+SELECT DISTINCT [planning_commission],
+len([planning_commission]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([planning_commission]))) IS NULL AND
+NULLIF([planning_commission],'') IS NOT NULL)
+
+SELECT DISTINCT [port_authority],
+len([port_authority]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([port_authority]))) IS NULL AND
+NULLIF([port_authority],'') IS NOT NULL)
+
+SELECT DISTINCT [transit_authority],
+len([transit_authority]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([transit_authority]))) IS NULL AND
+NULLIF([transit_authority],'') IS NOT NULL)
+
+SELECT DISTINCT [subchapter_scorporation],
+len([subchapter_scorporation]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([subchapter_scorporation]))) IS NULL AND
+NULLIF([subchapter_scorporation],'') IS NOT NULL)
+
+SELECT DISTINCT [limited_liability_corporation],
+len([limited_liability_corporation]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([limited_liability_corporation]))) IS NULL AND
+NULLIF([limited_liability_corporation],'') IS NOT NULL)
+
+SELECT DISTINCT [foreign_owned_and_located],
+len([foreign_owned_and_located]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([foreign_owned_and_located]))) IS NULL AND
+NULLIF([foreign_owned_and_located],'') IS NOT NULL)
+
+SELECT DISTINCT [for_profit_organization],
+len([for_profit_organization]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([for_profit_organization]))) IS NULL AND
+NULLIF([for_profit_organization],'') IS NOT NULL)
+
+SELECT DISTINCT [nonprofit_organization],
+len([nonprofit_organization]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([nonprofit_organization]))) IS NULL AND
+NULLIF([nonprofit_organization],'') IS NOT NULL)
+
+SELECT DISTINCT [other_not_for_profit_organization],
+len([other_not_for_profit_organization]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([other_not_for_profit_organization]))) IS NULL AND
+NULLIF([other_not_for_profit_organization],'') IS NOT NULL)
+
+SELECT DISTINCT [the_ability_one_program],
+len([the_ability_one_program]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([the_ability_one_program]))) IS NULL AND
+NULLIF([the_ability_one_program],'') IS NOT NULL)
+
+SELECT DISTINCT [private_university_or_college],
+len([private_university_or_college]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([private_university_or_college]))) IS NULL AND
+NULLIF([private_university_or_college],'') IS NOT NULL)
+
+SELECT DISTINCT [state_controlled_institution_of_higher_learning],
+len([state_controlled_institution_of_higher_learning]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([state_controlled_institution_of_higher_learning]))) IS NULL AND
+NULLIF([state_controlled_institution_of_higher_learning],'') IS NOT NULL)
+
+SELECT DISTINCT [1862_land_grant_college],
+len([1862_land_grant_college]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([1862_land_grant_college]))) IS NULL AND
+NULLIF([1862_land_grant_college],'') IS NOT NULL)
+
+SELECT DISTINCT [1890_land_grant_college],
+len([1890_land_grant_college]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([1890_land_grant_college]))) IS NULL AND
+NULLIF([1890_land_grant_college],'') IS NOT NULL)
+
+SELECT DISTINCT [1994_land_grant_college],
+len([1994_land_grant_college]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([1994_land_grant_college]))) IS NULL AND
+NULLIF([1994_land_grant_college],'') IS NOT NULL)
+
+SELECT DISTINCT [minority_institution],
+len([minority_institution]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([minority_institution]))) IS NULL AND
+NULLIF([minority_institution],'') IS NOT NULL)
+
+SELECT DISTINCT [historically_black_college],
+len([historically_black_college]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([historically_black_college]))) IS NULL AND
+NULLIF([historically_black_college],'') IS NOT NULL)
+
+SELECT DISTINCT [tribal_college],
+len([tribal_college]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([tribal_college]))) IS NULL AND
+NULLIF([tribal_college],'') IS NOT NULL)
+
+SELECT DISTINCT [alaskan_native_servicing_institution],
+len([alaskan_native_servicing_institution]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([alaskan_native_servicing_institution]))) IS NULL AND
+NULLIF([alaskan_native_servicing_institution],'') IS NOT NULL)
+
+SELECT DISTINCT [native_hawaiian_servicing_institution],
+len([native_hawaiian_servicing_institution]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([native_hawaiian_servicing_institution]))) IS NULL AND
+NULLIF([native_hawaiian_servicing_institution],'') IS NOT NULL)
+
+SELECT DISTINCT [school_of_forestry],
+len([school_of_forestry]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([school_of_forestry]))) IS NULL AND
+NULLIF([school_of_forestry],'') IS NOT NULL)
+
+SELECT DISTINCT [veterinary_college],
+len([veterinary_college]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([veterinary_college]))) IS NULL AND
+NULLIF([veterinary_college],'') IS NOT NULL)
+
+SELECT DISTINCT [dot_certified_disadvantage],
+len([dot_certified_disadvantage]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([dot_certified_disadvantage]))) IS NULL AND
+NULLIF([dot_certified_disadvantage],'') IS NOT NULL)
+
+SELECT DISTINCT [self_certified_small_disadvantaged_business],
+len([self_certified_small_disadvantaged_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([self_certified_small_disadvantaged_business]))) IS NULL AND
+NULLIF([self_certified_small_disadvantaged_business],'') IS NOT NULL)
+
+SELECT DISTINCT [small_disadvantaged_business],
+len([small_disadvantaged_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([small_disadvantaged_business]))) IS NULL AND
+NULLIF([small_disadvantaged_business],'') IS NOT NULL)
+
+SELECT DISTINCT [c8a_program_participant],
+len([c8a_program_participant]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([c8a_program_participant]))) IS NULL AND
+NULLIF([c8a_program_participant],'') IS NOT NULL)
+
+SELECT DISTINCT [historically_underutilized_business_zone_hubzone_firm],
+len([historically_underutilized_business_zone_hubzone_firm]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([historically_underutilized_business_zone_hubzone_firm]))) IS NULL AND
+NULLIF([historically_underutilized_business_zone_hubzone_firm],'') IS NOT NULL)
+
+SELECT DISTINCT [sba_certified_8a_joint_venture],
+len([sba_certified_8a_joint_venture]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([sba_certified_8a_joint_venture]))) IS NULL AND
+NULLIF([sba_certified_8a_joint_venture],'') IS NOT NULL)
 

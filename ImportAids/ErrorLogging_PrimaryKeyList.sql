@@ -1,7 +1,4 @@
-USE [DIIG]
-GO
-
-/****** Object:  View [ErrorLogging].[PrimaryKeyList]    Script Date: 12/4/2017 3:32:19 PM ******/
+/****** Object:  View [ErrorLogging].[PrimaryKeyList]    Script Date: 3/1/2019 10:43:43 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -9,20 +6,21 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
+
 ALTER VIEW [ErrorLogging].[PrimaryKeyList] AS 
 -- Found this on SourceForge
 -- http://stackoverflow.com/questions/95967/how-do-you-list-the-primary-key-of-a-sql-server-table
 -- answered Apr 3 '13 at 20:29
 -- dekdev
-SELECT  CAST (PKnUKEY.name AS VARCHAR(30)) as ConstraintName,
-        CAST (PKnUKEY.type_desc AS VARCHAR(30)) as ConstraintType,
+SELECT  CAST (PKnUKEY.name AS VARCHAR(255)) as ConstraintName,
+        CAST (PKnUKEY.type_desc AS VARCHAR(255)) as ConstraintType,
 		        oParentColDtl.DATA_TYPE as ColumnDataType,
 		oParentColDtl.CHARACTER_MAXIMUM_LENGTH as ColumnLength,
 		s.name as PKSchemaName,
 		
 		--OBJECT_SCHEMA_NAME(PKnUTable.referenced_object_id) AS PKSchema,
-        CAST (PKnUTable.name AS VARCHAR(30)) as PKTableName,
-        CAST ( PKnUKEYCol.name AS VARCHAR(30)) as PKColumnName
+        CAST (PKnUTable.name AS VARCHAR(255)) as PKTableName,
+        CAST ( PKnUKEYCol.name AS VARCHAR(255)) as PKColumnName
 
 --select 
 --    s.name as SchemaName,
@@ -55,9 +53,6 @@ FROM sys.key_constraints as PKnUKEY
 --                                   and i.index_id=PKnUColIdx.index_id
 --    inner join sys.columns PKnUKEYCol on PKnUColIdx.object_id=PKnUKEYCol.object_id 
 --                             and PKnUColIdx.column_id=PKnUKEYCol.column_id
-
-
-
 
 GO
 

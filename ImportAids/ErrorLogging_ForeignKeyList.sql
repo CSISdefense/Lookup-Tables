@@ -1,7 +1,4 @@
-USE [DIIG]
-GO
-
-/****** Object:  View [ErrorLogging].[ForeignKeyList]    Script Date: 12/4/2017 3:32:09 PM ******/
+/****** Object:  View [ErrorLogging].[ForeignKeyList]    Script Date: 3/1/2019 10:32:02 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -16,16 +13,16 @@ ALTER VIEW [ErrorLogging].[ForeignKeyList] AS
 -- answered Apr 3 '13 at 20:29
 -- dekdev
 
-SELECT  CAST (oConstraint.name AS VARCHAR(30)) as ConstraintName,
+SELECT  CAST (oConstraint.name AS varchar(255)) as ConstraintName,
         'FK' as ConstraintType,
 		OBJECT_SCHEMA_NAME(f.parent_object_id) AS FKSchema, 
-        CAST (oParent.name AS VARCHAR(30)) as FKTableName,
-        CAST ( oParentCol.name AS VARCHAR(30)) as FKColumnName,
+        CAST (oParent.name AS varchar(255)) as FKTableName,
+        CAST ( oParentCol.name AS varchar(255)) as FKColumnName,
         oParentColDtl.DATA_TYPE as ColumnDataType,  
 		   oParentColDtl.CHARACTER_MAXIMUM_LENGTH as ColumnLength,
-		OBJECT_SCHEMA_NAME(f.referenced_object_id) AS PKSchema,
-        CAST ( oReference.name AS VARCHAR(30)) as PKTableName,
-        CAST (oReferenceCol.name AS VARCHAR(30)) as PKColumnName
+		OBJECT_SCHEMA_NAME(f.referenced_object_id) AS PKSchemaName,
+        CAST ( oReference.name AS varchar(255)) as PKTableName,
+        CAST (oReferenceCol.name AS varchar(255)) as PKColumnName
 FROM sys.foreign_keys AS f
   INNER JOIN sys.foreign_key_columns AS FKC 
 	ON f.OBJECT_ID = fkc.constraint_object_id
@@ -44,11 +41,6 @@ FROM sys.foreign_keys AS f
     INNER JOIN sys.all_columns oReferenceCol
             ON FKC.referenced_object_id=oReferenceCol.object_id /* ID of the object to which this column belongs.*/
             AND FKC.referenced_column_id=oReferenceCol.column_id/* ID of the column. Is unique within the object.Column IDs might not be sequential.*/
-
-
-
-
-
 GO
 
 

@@ -1,4 +1,4 @@
-library(plyr)
+library(tidyr)
 library(csis360)
 
 
@@ -461,11 +461,13 @@ convert_field_to_foreign_key<-function(FKschema,
                                    PKcolumn=PKtable){
 
   pkTable.df<-read.csv(file.path("ImportAids","ErrorLogging_PrimaryKeyList.csv")
-                       ,header=TRUE,sep=",")
+                       ,header=TRUE,sep=",") %>% remove_bom()
   pkTable.df<-subset(pkTable.df,
                      toupper(PKSchemaName)==toupper(PKschema) &
                        toupper(PKTableName)==toupper(PKtable) &
                      toupper(PKColumnName)==toupper(PKcolumn))
+  if(nrow(pkTable.df)==0)
+    stop(paste("No Primary Key match for",PKschema,PKtable,PKcolumn))
   #Test if the field can be converted to the primary keys typed.
 
   
@@ -474,12 +476,19 @@ convert_field_to_foreign_key<-function(FKschema,
                                 "SourceVariableType",
                                 "SourceVariableNullable")
   }
+  
   TargetTable.df<-subset(TargetTable.df,
                          toupper(SourceVariableName)==toupper(FKcolumn))
+  if(nrow(TargetTable.df)==0)
+    stop(paste("No Source match for",FKcolumn))
   
   
   Output<-''
-  TargetTable.df<-join(TargetTable.df,pkTable.df)
+  TargetTable.df<-join(TargetTable.df,pkTable.df,
+                       by=c("PKSchemaName",
+                            "PKTableName",
+                            "PKColumnName")
+                            )
   #If the VariableTypes don't match, create a select and alter to fix that'
   
     TryConvertTable.df<-TargetTable.df
@@ -529,18 +538,49 @@ convert_field_to_foreign_key<-function(FKschema,
   Output
 }
 
+get_CSISvariableNameToPrimaryKey<-function(){
+  lookup.CSISvariableNameToPrimaryKey<-read.csv(file.path("ImportAids","ErrorLogging_ForeignKeyList.csv"),
+                                                stringsAsFactors = FALSE,
+                                                na.strings=c(""))
+  
+  lookup.CSISvariableNameToPrimaryKey$FKColumnNameUp<-toupper(lookup.CSISvariableNameToPrimaryKey$FKColumnName)
+  
+  #First consolidate down to only CSISvariable names and keys, using upper to handle case sensitivity
+  lookup.CSISvariableNameToPrimaryKey <- lookup.CSISvariableNameToPrimaryKey %>% remove_bom() %>%
+    dplyr::rename(CSISvariableName= FKColumnName) %>% 
+    dplyr::group_by(FKColumnNameUp,PKSchemaName,PKTableName,PKColumnName) %>%
+    dplyr::summarise(CSISvariableName=max(CSISvariableName)) %>%
+    dplyr::group_by(CSISvariableName) %>%
+    dplyr::select(-FKColumnNameUp) 
+  
+  #Handle those cases with multiple primary keys (typically these involves heirarchical pks that appear across multiple tables)
+  #The core one should share a name with the column name (with a few exceptions, like contractr.parentcontractor)
+  lookup.CSISvariableNameToPrimaryKey <- lookup.CSISvariableNameToPrimaryKey %>%
+    dplyr::mutate(RepeatCount=length(CSISvariableName),
+                  AnyExact=max(ifelse(toupper(PKTableName)==toupper(PKColumnName),1,0))) %>%
+    dplyr::filter(AnyExact==0 | RepeatCount==1 | toupper(PKTableName)==toupper(PKColumnName)) %>%
+    dplyr::mutate(RepeatCount=length(CSISvariableName))
+  
+  print(lookup.CSISvariableNameToPrimaryKey%>% dplyr::filter(RepeatCount>1))
+  if(max(lookup.CSISvariableNameToPrimaryKey$RepeatCount>1))
+    stop("Repeated CSISvariableName")
+  lookup.CSISvariableNameToPrimaryKey$CSISvariableName<-paste("[",lookup.CSISvariableNameToPrimaryKey$CSISvariableName,"]",sep="")
+  
+  lookup.CSISvariableNameToPrimaryKey
+}
 
 create_foreign_key_assigments<-function(Schema,
-                            TableName){
+                              TableName){
   
   MergeTable.df<-read_create_table(paste(Schema,"_",TableName,".txt",sep=""))
   MergeTable.df<-translate_name(MergeTable.df)
   
   #Limit it to just cases where the variable type is changing
-  lookup.CSISvariableNameToPrimaryKey<-read.csv(file.path("ImportAids","Lookup_CSISvariableNameToPrimaryKey.csv"),
-                                  stringsAsFactors = FALSE,
-                                  na.strings=c(""))
-  MergeTable.df<-join(MergeTable.df,lookup.CSISvariableNameToPrimaryKey)
+  lookup.CSISvariableNameToPrimaryKey<-get_CSISvariableNameToPrimaryKey()
+  
+  
+  MergeTable.df<-join(MergeTable.df,lookup.CSISvariableNameToPrimaryKey,
+                      by="CSISvariableName")
   MergeTable.df<-subset(MergeTable.df,!is.na(PKSchemaName))
   if(nrow(MergeTable.df)==0){
     warning("No foreign keys to assign")
@@ -551,7 +591,9 @@ create_foreign_key_assigments<-function(Schema,
     ForeignKeyList<-rbind(ForeignKeyList,
                           convert_field_to_foreign_key(Schema,TableName,MergeTable.df$SourceVariableName[i],
                                                    MergeTable.df,
-                                                   MergeTable.df$PKSchemaName[i],MergeTable.df$PKTableName[i])
+                                                   MergeTable.df$PKSchemaName[i],
+                                                   MergeTable.df$PKTableName[i],
+                                                   MergeTable.df$PKColumnName[i])
     )
   
 

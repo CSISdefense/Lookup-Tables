@@ -20,8 +20,10 @@ Create_Constraint_List<-paste(NewConstraintTableType.df$CSISvariableName,
 write(Create_Constraint_List,
       file="ImportAids\\Starter_ErrorLogging_FPDSbetaViolatesConstraint.txt")
 
-debug(create_foreign_key_assigments)
-create_foreign_key_assigments("ErrorLogging","FPDSbetaViolatesConstraint")
+Create_Foreign_Key_Assignments<-create_foreign_key_assigments("ErrorLogging","FPDSbetaViolatesConstraint")
+write(Create_Foreign_Key_Assignments,
+      file="ImportAids\\FPDS_foreign_key_assignments.txt")
+
 
 MergeType.df<-merge_source_and_csis_name_tables(OriginTableType.df,DestTableType.df)
 
