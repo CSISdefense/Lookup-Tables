@@ -244,7 +244,7 @@ Subcontractor,Subcontractor
 Contract Number,Contract_Number
 DUNS Number,DUNS_Number
 Name,Name
-Number of Full Time Equivalent Employees  FTEs ,Number_of_Full_Time_Equivalent_Employees_FTEs_
+Number of Full Time Equivalent Employees  FTEs,Number_of_Full_Time_Equivalent_Employees_FTEs
 Number of Hours  Invoiced,Number_of_Hours_Invoiced
 CSISCreatedDate,CSISCreatedDate
 CSISModifiedDate,CSISModifiedDate
@@ -280,12 +280,12 @@ Total Contract Value,Total_Contract_Value
 Base and All Options Value,Base_and_All_Options_Value
 Total Dollar Amount Invoiced,Total_Dollar_Amount_Invoiced
 Number of Contractor Hours Invoiced,Number_of_Contractor_Hours_Invoiced
-Number of Contractor Full Time Equivalent Employees  FTEs ,Number_of_Contractor_Full_Time_Equivalent_Employees_FTEs_
+Number of Contractor Full Time Equivalent Employees  FTEs,Number_of_Contractor_Full_Time_Equivalent_Employees_FTEs
 Fiscal Year,Fiscal_Year
 Total Action Obligation,Total_Action_Obligation
 Total Base and All Options Value,Total_Base_and_All_Options_Value
 Prime Contractor Hours Invoiced,Prime_Contractor_Hours_Invoiced
-Prime Contractor Full Time Equivalent Employees  FTEs ,Prime_Contractor_Full_Time_Equivalent_Employees_FTEs_
+Prime Contractor Full Time Equivalent Employees  FTEs,Prime_Contractor_Full_Time_Equivalent_Employees_FTEs
 Index,Index
 CSISCreatedDate,CSISCreatedDate
 CSISModifiedDate,CSISModifiedDate
