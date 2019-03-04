@@ -237,6 +237,7 @@ IDV Multiple Or Single Award IDV,idv_multipleorsingleawardidc
 Award or IDV Type,contractactiontype
 Multiple or Single Award IDV,multipleorsingleawardidc
 Type of Contract,Pricing.Mechanism.Code
+Pricing.Mechanism.Code,Pricing_Mechanism_Code
 Action Obligation,Action.Obligation
 contractingofficeagencyid,Contracting.Agency.ID
 Index,Index
@@ -253,7 +254,7 @@ PSC Code,PSC_Code
 Product Or Service Code,PSC_Code
 PSC Description,PSC_Description
 Product or Service Description,PSC_Description
-Contracting Agency ID,Contracting_Agency_ID
+Contracting.Agency.ID,Contracting_Agency_ID
 Contracting Department ID,Contracting_Department_ID
 Funding Agency ID,Funding_Agency_ID
 Place of Performance City,Place_of_Performance_City
@@ -268,7 +269,7 @@ Vendor Name,Vendor_Name
 PIID,PIID
 Referenced IDV PIID,Referenced_IDV_PIID
 Vendor DUNS,Vendor_DUNS
-Action Obligation,Action_Obligation
+Action.Obligation,Action_Obligation
 Contracting Department Name,Contracting_Department_Name
 Contracting Agency Name,Contracting_Agency_Name
 Funding Department ID,Funding_Department_ID
