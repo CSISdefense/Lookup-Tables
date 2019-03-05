@@ -63,6 +63,7 @@ ATLpolicy,Regime,,,,FALSE
 USDATL,Regime,,,,FALSE
 MajorCommandName,MajorCommand,,,,FALSE
 OMBtheater,International,,,,FALSE
+OffPlace,International,,,,FALSE
 Theater,International,,,,FALSE
 CrisisFundingTheater,International,,,,FALSE
 ContractingOfficeName,ContractingOffice,Contracting Office,,,FALSE
