@@ -237,6 +237,7 @@ IDV Multiple Or Single Award IDV,idv_multipleorsingleawardidc
 Award or IDV Type,contractactiontype
 Multiple or Single Award IDV,multipleorsingleawardidc
 Type of Contract,Pricing.Mechanism.Code
+Pricing.Mechanism.Code,Pricing_Mechanism_Code
 Action Obligation,Action.Obligation
 contractingofficeagencyid,Contracting.Agency.ID
 Index,Index
@@ -244,7 +245,7 @@ Subcontractor,Subcontractor
 Contract Number,Contract_Number
 DUNS Number,DUNS_Number
 Name,Name
-Number of Full Time Equivalent Employees  FTEs ,Number_of_Full_Time_Equivalent_Employees_FTEs_
+Number of Full Time Equivalent Employees  FTEs,Number_of_Full_Time_Equivalent_Employees_FTEs
 Number of Hours  Invoiced,Number_of_Hours_Invoiced
 CSISCreatedDate,CSISCreatedDate
 CSISModifiedDate,CSISModifiedDate
@@ -253,7 +254,7 @@ PSC Code,PSC_Code
 Product Or Service Code,PSC_Code
 PSC Description,PSC_Description
 Product or Service Description,PSC_Description
-Contracting Agency ID,Contracting_Agency_ID
+Contracting.Agency.ID,Contracting_Agency_ID
 Contracting Department ID,Contracting_Department_ID
 Funding Agency ID,Funding_Agency_ID
 Place of Performance City,Place_of_Performance_City
@@ -268,7 +269,7 @@ Vendor Name,Vendor_Name
 PIID,PIID
 Referenced IDV PIID,Referenced_IDV_PIID
 Vendor DUNS,Vendor_DUNS
-Action Obligation,Action_Obligation
+Action.Obligation,Action_Obligation
 Contracting Department Name,Contracting_Department_Name
 Contracting Agency Name,Contracting_Agency_Name
 Funding Department ID,Funding_Department_ID
@@ -280,12 +281,12 @@ Total Contract Value,Total_Contract_Value
 Base and All Options Value,Base_and_All_Options_Value
 Total Dollar Amount Invoiced,Total_Dollar_Amount_Invoiced
 Number of Contractor Hours Invoiced,Number_of_Contractor_Hours_Invoiced
-Number of Contractor Full Time Equivalent Employees  FTEs ,Number_of_Contractor_Full_Time_Equivalent_Employees_FTEs_
+Number of Contractor Full Time Equivalent Employees  FTEs,Number_of_Contractor_Full_Time_Equivalent_Employees_FTEs
 Fiscal Year,Fiscal_Year
 Total Action Obligation,Total_Action_Obligation
 Total Base and All Options Value,Total_Base_and_All_Options_Value
 Prime Contractor Hours Invoiced,Prime_Contractor_Hours_Invoiced
-Prime Contractor Full Time Equivalent Employees  FTEs ,Prime_Contractor_Full_Time_Equivalent_Employees_FTEs_
+Prime Contractor Full Time Equivalent Employees  FTEs,Prime_Contractor_Full_Time_Equivalent_Employees_FTEs
 Index,Index
 CSISCreatedDate,CSISCreatedDate
 CSISModifiedDate,CSISModifiedDate
