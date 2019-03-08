@@ -4,21 +4,13 @@ library(tidyverse)
 
 #Importing from ErrorLogging_GSAprimeStage1 to ErrorLogging_GSAprimeStage1
 Stage1<-read_create_table("ErrorLogging_GSAprimeStage1.txt")
-
-rm(OriginStage1)
+Stage2<-read_create_table("ErrorLogging_GSAprimeStage2.txt")
 #Importing from ErrorLogging_GSAsubStage1 to ErrorLogging_GSAsubStage1
 
-
-#Match up Errorlogging.FPDSviolatesType to Errorlogging.FPDSviolatesConstraint
-
-
-
-
-
-OriginTableType.df<-read_create_table("ErrorLogging_FPDSviolatesType.txt")
-DestTableType.df<-read_create_table("ErrorLogging_FPDSviolatesConstraint.txt")
-OriginTableType.df<-translate_name(OriginTableType.df)
-MergeType.df<-merge_source_and_csis_name_tables(OriginTableType.df,DestTableType.df)
+debug(translate_name)
+#Match up Errorlogging.GSAprimeStage1 to Errorlogging.GSAprimeStage2
+Stage1<-translate_name(Stage1)
+MergeType.df<-merge_source_and_csis_name_tables(Stage1,Stage2)
 
 
 #Join up the files
@@ -28,21 +20,21 @@ MergeType.df$column<-substring(MergeType.df$column,2,nchar(MergeType.df$column)-
 
 #Create Try Convert
 # undebug(create_try_converts)
-TryConvertList<-create_try_converts(MergeType.df,"Errorlogging","FPDSviolatesType"
+TryConvertList<-create_try_converts(MergeType.df,"Errorlogging","GSAprimeStage1"
   ,IncludeAlters=FALSE)
 write(TryConvertList,"FPDStryConvertList.txt")
 
-#Transfer from Errorlogging.FPDSviolatesType to Errorlogging.FPDSviolatesConstraint
+#Transfer from Errorlogging.GSAprimeStage1 to Errorlogging.GSAprimeStage2
 InsertList<-create_insert(MergeType.df,
   "ErrorLogging",
-  "FPDSviolatesType",
+  "GSAprimeStage1",
   "ErrorLogging",
-  "FPDSviolatesConstraint",
+  "GSAprimeStage2",
   DateType=120)
 write(InsertList,"Insert.txt")
 write(create_csis_dates("Contract","FPDS"),"CSISdates.txt")
 
-#******Importing into Errorlogging.FPDSviolatesConstraint Beta
+#******Importing into Errorlogging.GSAprimeStage2 Beta
 #Creating Errorlogging.FPDSbetaviolatesConstraint from Errorlogging.FPDSbetaviolatesType and Contract.FPDS
 #No Need to rerun this, but good to have the code for the future
 OriginBetaTableType.df<-read_create_table("ErrorLogging_FPDSbetaViolatesType.txt")
@@ -58,11 +50,11 @@ write(Create_Constraint_List,
 
 debug(create_foreign_key_assigments)
 create_foreign_key_assigments("ErrorLogging","FPDSbetaViolatesConstraint")
-#Match up Errorlogging.FPDSviolatesType to Errorlogging.FPDSviolatesConstraint
-OriginTableType.df<-read_create_table("ErrorLogging_FPDSbetaViolatesType.txt")
-DestTableType.df<-read_create_table("ErrorLogging_FPDSbetaViolatesConstraint.txt")
-OriginTableType.df<-translate_name(OriginTableType.df)
-MergeType.df<-merge_source_and_csis_name_tables(OriginTableType.df,DestTableType.df)
+#Match up Errorlogging.GSAprimeStage1 to Errorlogging.GSAprimeStage2
+Stage1<-read_create_table("ErrorLogging_FPDSbetaViolatesType.txt")
+Stage2<-read_create_table("ErrorLogging_FPDSbetaViolatesConstraint.txt")
+Stage1<-translate_name(Stage1)
+MergeType.df<-merge_source_and_csis_name_tables(Stage1,Stage2)
 
 
 #Manual fixes
@@ -81,7 +73,7 @@ TryConvertList<-create_try_converts(MergeType.df,"Errorlogging","FPDSbetaViolate
                                     ,IncludeAlters=FALSE)
 write(TryConvertList,"FPDSbetatryConvertList.txt")
 
-#Transfer from Errorlogging.FPDSviolatesType to Errorlogging.FPDSviolatesConstraint
+#Transfer from Errorlogging.GSAprimeStage1 to Errorlogging.GSAprimeStage2
 InsertList<-create_insert(MergeType.df,
              "ErrorLogging",
              "FPDSbetaViolatesType",
@@ -92,7 +84,7 @@ write(InsertList,"BetaInsert.txt")
 write(create_csis_dates("Contract","FPDS"),"CSISdates.txt")
 
 #******Importing into Contract.FPDS 
-#Match up Errorlogging.FPDSviolatesConstraint to Contract.FPDS 
+#Match up Errorlogging.GSAprimeStage2 to Contract.FPDS 
 DestTableConstraint.df<-read_create_table("Contract_FPDS.txt")
 OriginTableConstraint.df<-read_create_table("ErrorLogging_FPDSbetaviolatesConstraint.txt")
 OriginTableConstraint.df<-translate_name(OriginTableConstraint.df)
@@ -102,7 +94,7 @@ count_list<-count_empties(OriginTableConstraint.df,"ErrorLogging","FPDSbetaviola
 write(count_list,"ImportAids//count_list.txt")
 
 
-#Transfer from Errorlogging.FPDSviolatesConstraint to Contract.FPDS
+#Transfer from Errorlogging.GSAprimeStage2 to Contract.FPDS
 ConstTable.df<-translate_name(OriginTableConstraint.df)
 MergeConst<-merge_source_and_csis_name_tables(ConstTable.df,DestTableConstraint.df)
 
@@ -120,7 +112,7 @@ InsertList<-create_insert(MergeConst,
 write(InsertList,"ImportAids/Insert2.txt")
 update_list<-create_update_FPDS(MergeConst,
   "ErrorLogging",
-  "FPDSviolatesConstraint",
+  "GSAprimeStage2",
   "Contract",
   "FPDS",
   DateType=101)
