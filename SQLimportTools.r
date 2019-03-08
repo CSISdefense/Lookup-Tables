@@ -61,17 +61,23 @@ translate_name<-function(TargetTable.df){
   if(!"SourceVariableName" %in% colnames(TargetTable.df)){
     colnames(TargetTable.df)[1]<-"SourceVariableName" 
   }
+
+  TargetTable.df$OriginalSourceVariableName<-TargetTable.df$SourceVariableName
+  TargetTable.df$SourceVariableName<-tolower(TargetTable.df$SourceVariableName)
+  
+  #Protection against one-to-many joins.
+  lookup.NameConversion$SourceVariableName<-tolower(lookup.NameConversion$SourceVariableName)
   if(any(duplicated(lookup.NameConversion$SourceVariableName))){
     print(unique(lookup.NameConversion$SourceVariableName[duplicated(lookup.NameConversion$SourceVariableName)]))
     stop("Duplicate entries in SourceVariableName")
   }
-  TargetTable.df$OriginalSourceVariableName<-TargetTable.df$SourceVariableName
-  TargetTable.df$SourceVariableName<-tolower(TargetTable.df$SourceVariableName)
-  lookup.NameConversion$SourceVariableName<-tolower(lookup.NameConversion$SourceVariableName)
+  
   TargetTable.df<-plyr::join(TargetTable.df,lookup.NameConversion)
   # TargetTable.df$VariableName<-gsub("_","",TargetTable.df$VariableName)
   
   TargetTable.df$SourceVariableName<-TargetTable.df$OriginalSourceVariableName
+
+  
   TargetTable.df<-subset(TargetTable.df,select=-c(OriginalSourceVariableName))
   
   
