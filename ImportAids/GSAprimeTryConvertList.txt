@@ -1,0 +1,15 @@
+SELECT DISTINCT [PIID],
+len([PIID]) as Length,
+'[varchar](50)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([varchar](50), [PIID]) IS NULL AND
+NULLIF([PIID],'') IS NOT NULL)
+OR len( [PIID] ) > 50 
+
+SELECT DISTINCT [Fiscal_Year],
+len([Fiscal_Year]) as Length,
+'[int]' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([int], [Fiscal_Year]) IS NULL AND
+NULLIF([Fiscal_Year],'') IS NOT NULL)
+

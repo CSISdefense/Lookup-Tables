@@ -7,9 +7,15 @@ Stage1<-read_create_table("ErrorLogging_GSAprimeStage1.txt")
 Stage2<-read_create_table("ErrorLogging_GSAprimeStage2.txt")
 #Importing from ErrorLogging_GSAsubStage1 to ErrorLogging_GSAsubStage1
 
-debug(translate_name)
+
 #Match up Errorlogging.GSAprimeStage1 to Errorlogging.GSAprimeStage2
 Stage1<-translate_name(Stage1)
+
+
+Stage2<-translate_name(Stage2)
+CreateStage2<-Stage2 %>% select(CSISvariableName,VariableType,Nullable)
+write.csv(CreateStage2,"ImportAids/CreateStage2.csv")
+debug(merge_source_and_csis_name_tables)
 MergeType.df<-merge_source_and_csis_name_tables(Stage1,Stage2)
 
 
@@ -22,7 +28,7 @@ MergeType.df$column<-substring(MergeType.df$column,2,nchar(MergeType.df$column)-
 # undebug(create_try_converts)
 TryConvertList<-create_try_converts(MergeType.df,"Errorlogging","GSAprimeStage1"
   ,IncludeAlters=FALSE)
-write(TryConvertList,"FPDStryConvertList.txt")
+write(TryConvertList,"ImportAids//GSAprimeTryConvertList.txt")
 
 #Transfer from Errorlogging.GSAprimeStage1 to Errorlogging.GSAprimeStage2
 InsertList<-create_insert(MergeType.df,

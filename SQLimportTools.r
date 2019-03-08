@@ -72,8 +72,17 @@ translate_name<-function(TargetTable.df){
     stop("Duplicate entries in SourceVariableName")
   }
   
-  TargetTable.df<-plyr::join(TargetTable.df,lookup.NameConversion)
+  TargetTable.df<-dplyr::left_join(TargetTable.df,lookup.NameConversion)
   # TargetTable.df$VariableName<-gsub("_","",TargetTable.df$VariableName)
+  
+  #Protection against duplicate CSISvariableName
+  if(any(duplicated(TargetTable.df$CSISvariableName))){
+    print(unique(TargetTable.df$CSISvariableName[duplicated(TargetTable.df$CSISvariableName)]))
+    stop("Duplicate entries in CSISvariableName after matching")
+  }
+  
+  
+  
   
   TargetTable.df$SourceVariableName<-TargetTable.df$OriginalSourceVariableName
 
@@ -85,6 +94,7 @@ translate_name<-function(TargetTable.df){
                    lookup.NameConversion$CSISvariableName]<-
     TargetTable.df$SourceVariableName[TargetTable.df$SourceVariableName %in% 
                      lookup.NameConversion$CSISvariableName]
+  
   
   
   TargetTable.df
