@@ -1,3 +1,73 @@
+SELECT DISTINCT [PSC_Code],
+len([PSC_Code]) as Length,
+'[varchar](4)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([varchar](4), [PSC_Code]) IS NULL AND
+NULLIF([PSC_Code],'') IS NOT NULL)
+OR len( [PSC_Code] ) > 4 
+
+SELECT DISTINCT [Contracting_Agency_ID],
+len([Contracting_Agency_ID]) as Length,
+'[varchar](4)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([varchar](4), [Contracting_Agency_ID]) IS NULL AND
+NULLIF([Contracting_Agency_ID],'') IS NOT NULL)
+OR len( [Contracting_Agency_ID] ) > 4 
+
+SELECT DISTINCT [DepartmentID],
+len([DepartmentID]) as Length,
+'[varchar](4)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([varchar](4), [DepartmentID]) IS NULL AND
+NULLIF([DepartmentID],'') IS NOT NULL)
+OR len( [DepartmentID] ) > 4 
+
+SELECT DISTINCT [Funding_Agency_ID],
+len([Funding_Agency_ID]) as Length,
+'[varchar](4)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([varchar](4), [Funding_Agency_ID]) IS NULL AND
+NULLIF([Funding_Agency_ID],'') IS NOT NULL)
+OR len( [Funding_Agency_ID] ) > 4 
+
+SELECT DISTINCT [Place_of_Performance_City],
+len([Place_of_Performance_City]) as Length,
+'[varchar](50)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([varchar](50), [Place_of_Performance_City]) IS NULL AND
+NULLIF([Place_of_Performance_City],'') IS NOT NULL)
+OR len( [Place_of_Performance_City] ) > 50 
+
+SELECT DISTINCT [Place_of_Performance_State],
+len([Place_of_Performance_State]) as Length,
+'[varchar](2)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([varchar](2), [Place_of_Performance_State]) IS NULL AND
+NULLIF([Place_of_Performance_State],'') IS NOT NULL)
+OR len( [Place_of_Performance_State] ) > 2 
+
+SELECT DISTINCT [Place_of_Performance_County],
+len([Place_of_Performance_County]) as Length,
+'[varchar](50)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([varchar](50), [Place_of_Performance_County]) IS NULL AND
+NULLIF([Place_of_Performance_County],'') IS NOT NULL)
+OR len( [Place_of_Performance_County] ) > 50 
+
+SELECT DISTINCT [Date_Signed],
+len([Date_Signed]) as Length,
+'[datetime2](7)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([datetime2](7), [Date_Signed]) IS NULL AND
+NULLIF([Date_Signed],'') IS NOT NULL)
+
+SELECT DISTINCT [Vendor_Name],
+len([Vendor_Name]) as Length,
+'[nvarchar](150)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([nvarchar](150), [Vendor_Name]) IS NULL AND
+NULLIF([Vendor_Name],'') IS NOT NULL)
+
 SELECT DISTINCT [PIID],
 len([PIID]) as Length,
 '[varchar](50)' as DestinationType
@@ -6,10 +76,134 @@ WHERE (Try_Convert([varchar](50), [PIID]) IS NULL AND
 NULLIF([PIID],'') IS NOT NULL)
 OR len( [PIID] ) > 50 
 
+SELECT DISTINCT [Referenced_IDV_PIID],
+len([Referenced_IDV_PIID]) as Length,
+'[varchar](50)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([varchar](50), [Referenced_IDV_PIID]) IS NULL AND
+NULLIF([Referenced_IDV_PIID],'') IS NOT NULL)
+OR len( [Referenced_IDV_PIID] ) > 50 
+
+SELECT DISTINCT [Vendor_DUNS],
+len([Vendor_DUNS]) as Length,
+'[varchar](9)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([varchar](9), [Vendor_DUNS]) IS NULL AND
+NULLIF([Vendor_DUNS],'') IS NOT NULL)
+OR len( [Vendor_DUNS] ) > 9 
+
+SELECT DISTINCT [Action_Obligation],
+len([Action_Obligation]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[Action_Obligation])) IS NULL AND
+NULLIF([Action_Obligation],'') IS NOT NULL)
+
+SELECT DISTINCT [Funding_Department_ID],
+len([Funding_Department_ID]) as Length,
+'[varchar](4)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([varchar](4), [Funding_Department_ID]) IS NULL AND
+NULLIF([Funding_Department_ID],'') IS NOT NULL)
+OR len( [Funding_Department_ID] ) > 4 
+
+SELECT DISTINCT [Place_of_Performance_Zip_Code],
+len([Place_of_Performance_Zip_Code]) as Length,
+'[varchar](10)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([varchar](10), [Place_of_Performance_Zip_Code]) IS NULL AND
+NULLIF([Place_of_Performance_Zip_Code],'') IS NOT NULL)
+OR len( [Place_of_Performance_Zip_Code] ) > 10 
+
+SELECT DISTINCT [Place_of_Performance_Country],
+len([Place_of_Performance_Country]) as Length,
+'[varchar](3)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([varchar](3), [Place_of_Performance_Country]) IS NULL AND
+NULLIF([Place_of_Performance_Country],'') IS NOT NULL)
+OR len( [Place_of_Performance_Country] ) > 3 
+
+SELECT DISTINCT [Total_Contract_Value],
+len([Total_Contract_Value]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[Total_Contract_Value])) IS NULL AND
+NULLIF([Total_Contract_Value],'') IS NOT NULL)
+
+SELECT DISTINCT [Base_and_All_Options_Value],
+len([Base_and_All_Options_Value]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[Base_and_All_Options_Value])) IS NULL AND
+NULLIF([Base_and_All_Options_Value],'') IS NOT NULL)
+
+SELECT DISTINCT [Total_Dollar_Amount_Invoiced],
+len([Total_Dollar_Amount_Invoiced]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[Total_Dollar_Amount_Invoiced])) IS NULL AND
+NULLIF([Total_Dollar_Amount_Invoiced],'') IS NOT NULL)
+
+SELECT DISTINCT [Number_of_Contractor_Hours_Invoiced],
+len([Number_of_Contractor_Hours_Invoiced]) as Length,
+'[decimal](11, 2)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([decimal](11, 2), Try_Convert(real,[Number_of_Contractor_Hours_Invoiced])) IS NULL AND
+NULLIF([Number_of_Contractor_Hours_Invoiced],'') IS NOT NULL)
+
+SELECT DISTINCT [Number_of_Contractor_Full_Time_Equivalent_Employees_FTEs],
+len([Number_of_Contractor_Full_Time_Equivalent_Employees_FTEs]) as Length,
+'[decimal](11, 9)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([decimal](11, 9), Try_Convert(real,[Number_of_Contractor_Full_Time_Equivalent_Employees_FTEs])) IS NULL AND
+NULLIF([Number_of_Contractor_Full_Time_Equivalent_Employees_FTEs],'') IS NOT NULL)
+
 SELECT DISTINCT [Fiscal_Year],
 len([Fiscal_Year]) as Length,
 '[int]' as DestinationType
 FROM Errorlogging.GSAprimeStage1
 WHERE (Try_Convert([int], [Fiscal_Year]) IS NULL AND
 NULLIF([Fiscal_Year],'') IS NOT NULL)
+
+SELECT DISTINCT [Total_Action_Obligation],
+len([Total_Action_Obligation]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[Total_Action_Obligation])) IS NULL AND
+NULLIF([Total_Action_Obligation],'') IS NOT NULL)
+
+SELECT DISTINCT [Total_Base_and_All_Options_Value],
+len([Total_Base_and_All_Options_Value]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[Total_Base_and_All_Options_Value])) IS NULL AND
+NULLIF([Total_Base_and_All_Options_Value],'') IS NOT NULL)
+
+SELECT DISTINCT [Prime_Contractor_Hours_Invoiced],
+len([Prime_Contractor_Hours_Invoiced]) as Length,
+'[decimal](10, 2)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([decimal](10, 2), Try_Convert(real,[Prime_Contractor_Hours_Invoiced])) IS NULL AND
+NULLIF([Prime_Contractor_Hours_Invoiced],'') IS NOT NULL)
+
+SELECT DISTINCT [Prime_Contractor_Full_Time_Equivalent_Employees_FTEs],
+len([Prime_Contractor_Full_Time_Equivalent_Employees_FTEs]) as Length,
+'[decimal](10, 2)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([decimal](10, 2), Try_Convert(real,[Prime_Contractor_Full_Time_Equivalent_Employees_FTEs])) IS NULL AND
+NULLIF([Prime_Contractor_Full_Time_Equivalent_Employees_FTEs],'') IS NOT NULL)
+
+SELECT DISTINCT [CSISCreatedDate],
+len([CSISCreatedDate]) as Length,
+'[datetime2](7)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([datetime2](7), [CSISCreatedDate]) IS NULL AND
+NULLIF([CSISCreatedDate],'') IS NOT NULL)
+
+SELECT DISTINCT [CSISModifiedDate],
+len([CSISModifiedDate]) as Length,
+'[datetime2](7)' as DestinationType
+FROM Errorlogging.GSAprimeStage1
+WHERE (Try_Convert([datetime2](7), [CSISModifiedDate]) IS NULL AND
+NULLIF([CSISModifiedDate],'') IS NOT NULL)
 

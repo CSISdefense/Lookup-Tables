@@ -75,6 +75,11 @@ translate_name<-function(TargetTable.df){
   TargetTable.df<-dplyr::left_join(TargetTable.df,lookup.NameConversion)
   # TargetTable.df$VariableName<-gsub("_","",TargetTable.df$VariableName)
   
+  if(any(is.na(TargetTable.df$CSISvariableName))){
+    print(unique(TargetTable.df$SourceVariableName[is.na(TargetTable.df$CSISvariableName)]))
+    stop("Unmatched columns in SourceVariableName.")
+  }
+  
   #Protection against duplicate CSISvariableName
   if(any(duplicated(TargetTable.df$CSISvariableName))){
     print(unique(TargetTable.df$CSISvariableName[duplicated(TargetTable.df$CSISvariableName)]))

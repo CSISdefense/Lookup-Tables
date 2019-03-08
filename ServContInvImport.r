@@ -4,18 +4,22 @@ library(tidyverse)
 
 #Importing from ErrorLogging_GSAprimeStage1 to ErrorLogging_GSAprimeStage1
 Stage1<-read_create_table("ErrorLogging_GSAprimeStage1.txt")
-Stage2<-read_create_table("ErrorLogging_GSAprimeStage2.txt")
-#Importing from ErrorLogging_GSAsubStage1 to ErrorLogging_GSAsubStage1
 
+#***************Create Stage 2********************************************
+Stage1<-translate_name(Stage1)
+CreateStage2<-Stage1 %>% select(CSISvariableName,VariableType,Nullable)
+
+#This is messy!
+write.csv(CreateStage2,"ImportAids/CreateStage2.csv")
+
+
+#***************Stage 2**************************************
+Stage2<-read_create_table("ErrorLogging_GSAprimeStage2.txt")
 
 #Match up Errorlogging.GSAprimeStage1 to Errorlogging.GSAprimeStage2
-Stage1<-translate_name(Stage1)
-
-
 Stage2<-translate_name(Stage2)
-CreateStage2<-Stage2 %>% select(CSISvariableName,VariableType,Nullable)
-write.csv(CreateStage2,"ImportAids/CreateStage2.csv")
-debug(merge_source_and_csis_name_tables)
+
+
 MergeType.df<-merge_source_and_csis_name_tables(Stage1,Stage2)
 
 
