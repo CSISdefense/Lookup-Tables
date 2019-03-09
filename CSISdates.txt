@@ -1,0 +1,4 @@
+ALTER TABLE Contract.FPDS
+CREATE COLUMN CSISmodifiedDate datetime2 NOT NULL default getdate(),
+CSIScreatedDate datetime2 NOT NULL default getdate()
+
