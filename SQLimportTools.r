@@ -644,7 +644,8 @@ match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate
   TargetTableType.df<-read_create_table(paste(TargetSchema,"_",TargetTable,".txt",sep=""))
   MergeTable.df<-merge_source_and_csis_name_tables(NewTableType.df,TargetTableType.df)
   TryConvertList<-create_try_converts(MergeTable.df,NewSchema,NewTable)
-  write(TryConvertList,
+  if(TryConvertList!=0)
+    write(TryConvertList,
         paste(NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","try_convert.txt",sep=""), 
         append=FALSE)
   
