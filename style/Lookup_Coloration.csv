@@ -2693,6 +2693,12 @@ Region,Southeast,Southeast,3,Orange,#DB843D,,,,default grey,#554449,SE
 Region,Southwest,Southwest,4,Peach,#FAC090,,,,default grey,#554449,SW
 Region,West,West,5,teal,#4198AF,,,,default grey,#554449,W
 ,,,,,,,,,,,
+FMS,Foreign Funds FMS,Foreign Funds FMS,1,Blue,#0070C0,,,,default grey,#554449,
+FMS,Foreign Funds non-FMS,Foreign Funds non-FMS,3,green,#92D050,,,,default grey,#554449,
+FMS,Not Applicable,Not Applicable,9,orange,#DB8403,,,,default grey,#554449,
+FMS,0,Not FMS,9,orange,#DB8403,,,,default grey,#554449,
+FMS,1,FMS,2,Purpleblue,#93A9CF,,,,default grey,#554449,
+,,,,,,,,,,,
 congress_col,Force,Force,1,,,,,,,,
 congress_col,Russia,Russia Cooperation,2,,,,,,,,
 congress_col,China,China Cooperation,3,,,,,,,,

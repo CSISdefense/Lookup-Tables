@@ -31,11 +31,13 @@ Pricing.Mechanism.detail,Pricing,Pricing Mechanism,,,FALSE
 Pricing.Mechanism.sum,Pricing,Pricing Mechanism,,,FALSE
 Base,Pricing,Pricing Mechanism,,,FALSE
 Fee,Pricing,Pricing Mechanism Fee Type,,,FALSE
+PricingFee,PricingFee,Pricing Mechanism,,,FALSE
 Indicator,Europe,,,,FALSE
 Vehicle.detail,Vehicles,Contract Vehicle,,,FALSE
 Vehicle.sum,Vehicles,Contract Vehicle,,,FALSE
 Vendor.Size.detail,Vendors,Contract Vehicle,,,FALSE
-Vendor.Size.sum,Vendors,Contract Vehicle,,,FALSE
+VendorSize,Vendors,Vendor Size,,,FALSE
+Vendor.Size.sum,Vendors,Vendor Size,,,FALSE
 Shiny.VendorSize,Vendors,Vendor Size,,,FALSE
 RoughUniqueEntitySize,Vendors,Vendor Size,,,FALSE
 comparison.dollar.type.detail,Dollar Type,,,,FALSE
@@ -120,6 +122,7 @@ Obligation.2017,,Obligations (2017 $),Share Contract $,,FALSE
 Fiscal.Year,,Fiscal Year,,,FALSE
 dFYear,,Fiscal Year,,,FALSE
 contingencyhumanitarianpeacekeepingoperation,ContingencyHumanitarianPeacekeepingOperation,Contingency or Humanitarian Peacekeeping Operation,,,TRUE
+IsFMS,FMS,,,,FALSE
 IsMultipleYearProcRnD,Binary,,,,FALSE
 MultipleYearProcRnD,Crisis,,,,FALSE
 IsExcludedPSC,Crisis,,,,FALSE
@@ -556,3 +559,4 @@ Other CB,,"1 if all types of cost-based contracting, excluding incentive fee and
 T&M/LH/FPLOE,,"1 if effort contract(time & materials, labor hours and fixed-price level), and 0 otherwise",,,FALSE
 b_UCA,,"1 if the contract begin as letter cobtracts or indefinitized contract awards, and 0 otherwise",,,FALSE
 b_Intl,,"1 for contracts with any transactions performed internationally, and 0 otherwise",,,FALSE
+foreign_funding_description,FMS,Foreign  Funding,,,
