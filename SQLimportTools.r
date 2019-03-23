@@ -113,6 +113,7 @@ merge_source_and_csis_name_tables<-function(SourceTable.df,
   colnames(SourceTable.df)[1:3]<-c("SourceVariableName",
                                    "SourceVariableType",
                                    "SourceNullable")
+  # if("CSISvariableName" %in% colnames(SourceTable.df)){
   if(drop_unmatched==FALSE){
     SourceTable.df$CSISvariableName_unmatched<-SourceTable.df$CSISvariableName
   }
@@ -252,27 +253,30 @@ length_check<-function(data){
         ))
         
   #No Colon
+
     SwitchList<-data$VariableShortType=="[varchar]"&
         data$length_check==""&
-        !is.na(data$VariableTypeNumber)&
-      (data$is.colon.split=="FALSE" | is.na(data$is.colon.split))
+        !is.na(data$VariableTypeNumber)
+    if("is.colon.split" %in% colnames(data))
+       SwitchList<-SwitchList&(data$is.colon.split=="FALSE" | is.na(data$is.colon.split))
     data$length_check[SwitchList]<-
         paste("OR len(",data$SourceVariableName[SwitchList] ,")",
               ">",data$VariableTypeNumber[SwitchList],"\n"
         )
     
     #Colon Split
-    SwitchList<-data$VariableShortType=="[varchar]"&
-      data$length_check==""&
-      !is.na(data$VariableTypeNumber)&
-      (data$is.colon.split=="TRUE")
-    data$length_check[SwitchList]<-
-      paste("OR len(",
-            "(Select LeftOfColon from FPDSTypeTable.leftofcolon(",
-            data$SourceVariableName[SwitchList],")))",
-            ">",data$VariableTypeNumber[SwitchList],"\n"
-      )
-    
+    if("is.colon.split" %in% colnames(data)){
+      SwitchList<-data$VariableShortType=="[varchar]"&
+        data$length_check==""&
+        !is.na(data$VariableTypeNumber)&
+        (data$is.colon.split=="TRUE")
+      data$length_check[SwitchList]<-
+        paste("OR len(",
+              "(Select LeftOfColon from FPDSTypeTable.leftofcolon(",
+              data$SourceVariableName[SwitchList],")))",
+              ">",data$VariableTypeNumber[SwitchList],"\n"
+        )
+    }
     
     
     data
@@ -457,7 +461,8 @@ create_insert<-function(MergeTable.df,
                        TargetTableName,
                        DateType=101){
   MergeTable.df<-convert_switch(MergeTable.df,101,FALSE)
-  MergeTable.df<-MergeTable.df %>% filter(IsDroppedNameField==FALSE | is.na(IsDroppedNameField))
+  if("IsDroppedNameField" %in% colnames(MergeTable.df))
+    MergeTable.df<-MergeTable.df %>% filter(IsDroppedNameField==FALSE | is.na(IsDroppedNameField))
   InsertList<-paste("INSERT INTO ",TargetSchema,".",TargetTableName,"\n",
                     "(",sep="")
   InsertList<-c(InsertList,paste(MergeTable.df$CSISvariableName,",",sep=""))
@@ -630,18 +635,19 @@ create_foreign_key_assigments<-function(Schema,
 }
 
 
-match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable){
+match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate=TRUE){
   #******Importing into Voter_VoterList_2016_07_14.txt
   NewTableType.df<-read_create_table(paste(NewSchema,"_",NewTable,".txt",sep=""))
-  NewTableType.df<-translate_name(NewTableType.df)
+    NewTableType.df<-translate_name(NewTableType.df)
   
   #Sync up with the VID Table
   TargetTableType.df<-read_create_table(paste(TargetSchema,"_",TargetTable,".txt",sep=""))
   MergeTable.df<-merge_source_and_csis_name_tables(NewTableType.df,TargetTableType.df)
   TryConvertList<-create_try_converts(MergeTable.df,NewSchema,NewTable)
-  write(TryConvertList,
+  if(TryConvertList!=0)
+    write(TryConvertList,
         paste(NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","try_convert.txt",sep=""), 
-        append=TRUE)
+        append=FALSE)
   
   #Transfer from Voter.VoterList_2016_07_14 to Voter.VID
   MergeTable.df<-subset(MergeTable.df,!is.na(CSISvariableType))

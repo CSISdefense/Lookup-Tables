@@ -35,7 +35,7 @@ CREATE TABLE [ErrorLogging].[GSAprimeStage2](
 	[baseandalloptionsvalue] [decimal](19, 4) NULL,
 	[totaldollaramountinvoiced] [decimal](19, 4) NULL,
 	[numberofcontractorhoursinvoiced] [decimal](11, 2) NULL,
-	[numberofcontractorfulltimeequivalentemployeesftes] [decimal](11, 9) NULL,
+	[numberofcontractorfulltimeequivalentemployeesftes] [decimal](14, 9) NULL,
 	[fiscal_year] [int] NULL,
 	[totalactionobligation] [decimal](19, 4) NULL,
 	[totalbaseandalloptionsvalue] [decimal](19, 4) NULL,
