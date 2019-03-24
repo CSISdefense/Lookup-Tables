@@ -35,7 +35,7 @@ PricingFee,Pricing,Pricing Mechanism,,,FALSE
 Indicator,Europe,,,,FALSE
 Vehicle.detail,Vehicles,Contract Vehicle,,,FALSE
 Vehicle.sum,Vehicles,Contract Vehicle,,,FALSE
-Vendor.Size.detail,Vendors,Contract Vehicle,,,FALSE
+Vendor.Size.detail,Vendors,Vendor Size,,,FALSE
 VendorSize,Vendors,Vendor Size,,,FALSE
 Vendor.Size.sum,Vendors,Vendor Size,,,FALSE
 Shiny.VendorSize,Vendors,Vendor Size,,,FALSE
@@ -560,3 +560,19 @@ T&M/LH/FPLOE,,"1 if effort contract(time & materials, labor hours and fixed-pric
 b_UCA,,"1 if the contract begin as letter cobtracts or indefinitized contract awards, and 0 otherwise",,,FALSE
 b_Intl,,"1 for contracts with any transactions performed internationally, and 0 otherwise",,,FALSE
 foreign_funding_description,FMS,Foreign  Funding,,,
+Vendor.Size,Vendors,Vendor Size,,,
+CompetitionClassification,Competition,Extent of Competition,,,
+ClassifyNumberOfOffers,,,,,
+treasuryagencycode,,,,,
+mainaccountcode,,,,,
+MainAccountTitle,,,,,
+Action.Obligation.Then.Year,Action Obligation (Current $s),Share Contract $,,,
+Number.Of.Actions,,Number of Actions,,,
+Buyer,Country,Buyer Country,,,
+Armament.category,PlatformPortfolio,Platform Portfolio,,,
+Order.date,,Order Calendar Year,,,
+Numbers.delivered,,Number of Units Delivered,,,
+Delivery.year,,Delivery Calendar Year,,,
+TIV.deal.unit,,TIV per Unit,,,
+TIV.delivery.values,,TIV Delivery Values,,,
+Local.production,Binary,Local Production,,,
