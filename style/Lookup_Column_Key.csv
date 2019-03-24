@@ -561,11 +561,6 @@ b_UCA,,"1 if the contract begin as letter cobtracts or indefinitized contract aw
 b_Intl,,"1 for contracts with any transactions performed internationally, and 0 otherwise",,,FALSE
 foreign_funding_description,FMS,Foreign  Funding,,,
 Vendor.Size,Vendors,Vendor Size,,,
-CompetitionClassification,Competition,Extent of Competition,,,
-ClassifyNumberOfOffers,,,,,
-treasuryagencycode,,,,,
-mainaccountcode,,,,,
-MainAccountTitle,,,,,
 Action.Obligation.Then.Year,Action Obligation (Current $s),Share Contract $,,,
 Number.Of.Actions,,Number of Actions,,,
 Buyer,Country,Buyer Country,,,
