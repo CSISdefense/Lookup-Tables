@@ -1,65 +1,64 @@
-/****** Object:  Table [ErrorLogging].[GSAprimeStage2]    Script Date: 3/29/2019 3:28:52 PM ******/
+/****** Object:  Table [Contract].[GSAprime]    Script Date: 3/29/2019 3:29:33 PM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [ErrorLogging].[GSAprimeStage2](
+CREATE TABLE [Contract].[GSAprime](
+	[CSISserviceCensusID] [int] NULL,
+	[piid] [varchar](50) NULL,
+	[idvpiid] [varchar](50) NULL,
+	[fiscal_year] [int] NULL,
+	[vendorname] [nvarchar](150) NULL,
+	[dunsnumber] [varchar](9) NULL,
+	[contractingofficeagencyid] [varchar](4) NULL,
+	[awarding_agency_name] [varchar](255) NULL,
+	[departmentid] [varchar](4) NULL,
+	[awarding_department_name] [varchar](255) NULL,
+	[CSIStieBreaker] [int] NULL,
 	[productorservicecode] [varchar](4) NULL,
 	[product_or_service_code_description] [varchar](255) NULL,
-	[contractingofficeagencyid] [varchar](4) NULL,
-	[departmentid] [varchar](4) NULL,
 	[fundingrequestingagencyid] [varchar](4) NULL,
+	[funding_agency_name] [varchar](255) NULL,
+	[fundingrequestingdepartmentid] [varchar](4) NULL,
+	[funding_office_name] [varchar](255) NULL,
 	[PlaceofPerformanceCity] [varchar](50) NULL,
 	[pop_state_code] [varchar](2) NULL,
 	[primary_place_of_performance_county_name] [varchar](50) NULL,
+	[placeofperformancecountrycode] [varchar](3) NULL,
 	[signeddate] [datetime2](7) NULL,
 	[extent_competed_name] [varchar](255) NULL,
 	[fair_opportunity_limited_sources_name] [varchar](255) NULL,
 	[type_of_contract_pricing_name] [varchar](255) NULL,
 	[descriptionofcontractrequirement] [varchar](4008) NULL,
-	[vendorname] [nvarchar](150) NULL,
-	[piid] [varchar](50) NULL,
-	[idvpiid] [varchar](50) NULL,
-	[dunsnumber] [varchar](9) NULL,
 	[obligatedamount] [decimal](19, 4) NULL,
-	[awarding_department_name] [varchar](255) NULL,
-	[awarding_agency_name] [varchar](255) NULL,
-	[fundingrequestingdepartmentid] [varchar](4) NULL,
-	[funding_office_name] [varchar](255) NULL,
-	[funding_agency_name] [varchar](255) NULL,
 	[placeofperformancezipcode] [varchar](10) NULL,
-	[placeofperformancecountrycode] [varchar](3) NULL,
 	[totalcontractvalue] [decimal](19, 4) NULL,
 	[baseandalloptionsvalue] [decimal](19, 4) NULL,
 	[totaldollaramountinvoiced] [decimal](19, 4) NULL,
 	[numberofcontractorhoursinvoiced] [decimal](12, 2) NULL,
 	[numberofcontractorfulltimeequivalentemployeesftes] [decimal](24, 18) NULL,
-	[fiscal_year] [int] NULL,
 	[totalactionobligation] [decimal](19, 4) NULL,
 	[totalbaseandalloptionsvalue] [decimal](19, 4) NULL,
 	[primecontractorhoursinvoiced] [decimal](10, 2) NULL,
 	[primecontractorfulltimeequivalentemployeesftes] [decimal](10, 2) NULL,
-	[CSIStieBreaker] [int] NULL,
-	[IsDuplicateUTI] [bit] NULL,
 	[CSISmodifiedDate] [datetime2](7) NOT NULL,
-	[CSIScreatedDate] [datetime2](7) NOT NULL,
-	[CSISserviceCensusID] [int] NULL
+	[CSIScreatedDate] [datetime2](7) NOT NULL
 ) ON [PRIMARY]
 GO
 
-ALTER TABLE [ErrorLogging].[GSAprimeStage2] ADD  DEFAULT (getdate()) FOR [CSISmodifiedDate]
+ALTER TABLE [Contract].[GSAprime] ADD  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
 
-ALTER TABLE [ErrorLogging].[GSAprimeStage2] ADD  DEFAULT (getdate()) FOR [CSIScreatedDate]
+ALTER TABLE [Contract].[GSAprime] ADD  DEFAULT (getdate()) FOR [CSIScreatedDate]
 GO
 
-ALTER TABLE [ErrorLogging].[GSAprimeStage2]  WITH CHECK ADD FOREIGN KEY([CSISserviceCensusID])
+ALTER TABLE [Contract].[GSAprime]  WITH CHECK ADD FOREIGN KEY([CSISserviceCensusID])
 REFERENCES [Contract].[CSISserviceCensusID] ([CSISserviceCensusID])
 GO
 
-ALTER TABLE [ErrorLogging].[GSAprimeStage2]  WITH CHECK ADD FOREIGN KEY([CSISserviceCensusID])
+ALTER TABLE [Contract].[GSAprime]  WITH CHECK ADD FOREIGN KEY([CSISserviceCensusID])
 REFERENCES [Contract].[CSISserviceCensusID] ([CSISserviceCensusID])
 GO
 
