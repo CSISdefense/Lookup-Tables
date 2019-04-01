@@ -291,3 +291,15 @@ Index,Index
 CSISCreatedDate,CSISCreatedDate
 CSISModifiedDate,CSISModifiedDate
 IsDuplicateUTI,IsDuplicateUTI
+PSC,PSC_Code
+PSC Description,PSC_Description
+Contract Invoiced Amount,Contract_Invoiced_Amount
+Number of Contractor FTEs,Number_of_Contract_FTEs
+CFTE Rate,CFTE_Rate
+CFTE Factor,CFTE_Factor
+OCO/GF,OCO_GF
+Direct Non-Labor Cost,Direct_NonLabor_Cost
+Direct Labor Dollars,Direct_Labor_Dollars
+Location Count,Location_Count
+FSC,FSC_Code
+FSC Description,FSC_Description
