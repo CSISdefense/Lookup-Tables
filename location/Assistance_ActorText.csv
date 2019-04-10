@@ -1,0 +1,243 @@
+﻿ActorText,UCDPactorID,GeographicISOalpha3
+Albania,45,ALB
+Algeria,109,DZA
+Angola,99,AGO
+Argentina,26,ARG
+Aruba,NULL,ABW
+Australia,NULL,AUS
+Austria,NULL,AUT
+Bahamas,NULL,BHS
+Bahrain,126,BHR
+Bangladesh,143,BGD
+Belarus,NULL,BLR
+Belgium,NULL,BEL
+Botswana,NULL,BWA
+Brazil,22,BRA
+Brunei,NULL,BRN
+Bulgaria,NULL,BGR
+Cambodia,148,KHM
+Canada,NULL,CAN
+Chad,87,TCD
+Chile,25,CHL
+Colombia,17,COL
+Costa Rica,15,CRI
+Cote d'Ivoire,NULL,CIV
+Croatia,48,HRV
+Cuba,5,CUB
+Cyprus,53,CYP
+Czech Republic,NULL,CZE
+Czechia,NULL,CZE
+Czechoslovakia,NULL,~CQ
+Denmark,NULL,DNK
+Dominican Republic,7,DOM
+East Germany (GDR),NULL,DDR
+Ecuador,20,ECU
+Egypt,117,EGY
+Eritrea,98,ERI
+Estonia,NULL,EST
+Ethiopia,97,ETH
+Fiji,NULL,FJI
+Finland,NULL,FIN
+France,33,FRA
+Gabon,85,GAB
+Georgia,63,GEO
+Germany,NULL,DEU
+Germany (FRG),NULL,DEU
+Ghana,81,GHA
+Government of Afghanistan,130,AFG
+Government of Albania,45,ALB
+Government of Algeria,109,DZA
+Government of Angola,99,AGO
+Government of Argentina,26,ARG
+Government of Azerbaijan,64,AZE
+Government of Bahrain,126,BHR
+Government of Bangladesh,143,BGD
+Government of Bolivia,23,BOL
+Government of Brazil,22,BRA
+Government of Burkina Faso,78,BFA
+Government of Burundi,93,BDI
+Government of Cambodia,148,KHM
+Government of Cambodia (Kampuchea),148,KHM
+Government of Cameroon,83,CMR
+Government of Central African Republic,86,CAF
+Government of Chad,87,TCD
+Government of Chile,25,CHL
+Government of Colombia,17,COL
+Government of Comoros,107,COM
+Government of Costa Rica,15,CRI
+Government of Croatia,48,HRV
+Government of Cuba,5,CUB
+Government of Cyprus,53,CYP
+Government of Djibouti,96,DJI
+Government of Dominican Republic,7,DOM
+Government of Ecuador,20,ECU
+Government of Egypt,117,EGY
+Government of El Salvador,13,SLV
+Government of Eritrea,98,ERI
+Government of Ethiopia,97,ETH
+Government of France,33,FRA
+Government of Gabon,85,GAB
+Government of Georgia,63,GEO
+Government of Ghana,81,GHA
+Government of Greece,52,GRC
+Government of Grenada,9,GRD
+Government of Guatemala,11,GTM
+Government of Guinea,77,GIN
+Government of Guinea-Bissau,70,GNB
+Government of Haiti,6,HTI
+Government of Honduras,12,HND
+Government of Hungary,40,HUN
+Government of India,141,IND
+Government of Indonesia,155,IDN
+Government of Iran,114,IRN
+Government of Iraq,116,IRQ
+Government of Israel,121,ISR
+Government of Jordan,120,JOR
+Government of Kazakhstan,134,KAZ
+Government of Kenya,91,KEN
+Government of Kuwait,125,KWT
+Government of Kyrgyzstan,132,KGZ
+Government of Laos,149,LAO
+Government of Lebanon,119,LBN
+Government of Lesotho,104,LSO
+Government of Liberia,79,LBR
+Government of Libya,111,LBY
+Government of Madagascar,106,MDG
+Government of Malawi,3912,MWI
+Government of Malaysia,152,MYS
+Government of Mali,72,MLI
+Government of Mauritania,74,MRT
+Government of Mexico,10,MEX
+Government of Moldova,55,MDA
+Government of Morocco,108,MAR
+Government of Mozambique,100,MOZ
+Government of Nepal,146,NPL
+Government of Netherlands,30,NLD
+Government of Nicaragua,14,NIC
+Government of Niger,75,NER
+Government of Nigeria,84,NGA
+Government of Oman,129,OMN
+Government of Pakistan,142,PAK
+Government of Panama,16,PAN
+Government of Papua New Guinea,157,PNG
+Government of Paraguay,24,PRY
+Government of Peru,21,PER
+Government of Philippines,154,PHL
+Government of Portugal,36,PRT
+Government of Rhodesia,101,ZWE
+Government of Russia (Soviet Union),57,RUS
+Government of Rwanda,94,RWA
+Government of Saudi Arabia,122,SAU
+Government of Senegal,73,SEN
+Government of Serbia (Yugoslavia),49,SRB
+Government of Sierra Leone,80,SLE
+Government of Solomon Islands,4499,SLB
+Government of Somalia,95,SOM
+Government of South Africa,102,ZAF
+Government of South Sudan,113,SSD
+Government of Soviet Union,57,RUS
+Government of Spain,35,ESP
+Government of Sri Lanka,145,LKA
+Government of Sudan,112,SDN
+Government of Suriname,19,SUR
+Government of Syria,118,SYR
+Government of Tajikistan,131,TJK
+Government of Tanzania,92,TZA
+Government of Thailand,147,THA
+Government of Togo,82,TGO
+Government of Trinidad and Tobago,8,TTO
+Government of Tunisia,110,TUN
+Government of Turkey,115,TUR
+Government of Uganda,90,UGA
+Government of Ukraine,61,UKR
+Government of United Kingdom,28,GBR
+Government of United States of America,3,USA
+Government of Uruguay,27,URY
+Government of Uzbekistan,133,UZB
+Government of Venezuela,18,VEN
+Government of Yugoslavia,49,SRB
+Government of Zambia,3986,ZMB
+Government of Zimbabwe (Rhodesia),101,ZWE
+Greece,52,GRC
+Guatemala,11,GTM
+Guyana,NULL,GUY
+Hungary,40,HUN
+Iceland,NULL,ISL
+India,141,IND
+Indonesia,155,IDN
+Iran,114,IRN
+Iraq,116,IRQ
+Ireland,NULL,IRL
+Israel,121,ISR
+Italy,NULL,ITA
+Japan,NULL,JPN
+Jordan,120,JOR
+Kazakhstan,134,KAZ
+Kenya,91,KEN
+Kuwait,125,KWT
+Kyrgyzstan,132,KGZ
+Latvia,NULL,LVA
+Lebanon,119,LBN
+Libya,111,LBY
+Lithuania,NULL,LTU
+Luxembourg,NULL,LUX
+Malawi,3912,MWI
+Malaysia,152,MYS
+Malta,NULL,MLT
+Mexico,10,MEX
+Moldova,55,MDA
+Montenegro,NULL,MNE
+Morocco,108,MAR
+Mozambique,100,MOZ
+Mujahedin (Afghanistan)*,NULL,AFG
+Netherlands,30,NLD
+New Zealand,NULL,NZL
+Nicaragua,14,NIC
+Niger,75,NER
+Nigeria,84,NGA
+Norway,NULL,NOR
+Oman,129,OMN
+Pakistan,142,PAK
+Panama,16,PAN
+Peru,21,PER
+Philippines,154,PHL
+Poland,NULL,POL
+Portugal,36,PRT
+Qatar,NULL,QAT
+Republic of Armenia,330,ARM
+Republic of Azerbaijan,165,AZE
+Republic of Croatia,337,HRV
+Republic of Georgia,843,GEO
+Republic of Slovenia,336,SVN
+Republic of South Sudan,1129,SSD
+Romania,NULL,ROU
+Russia,57,RUS
+Saudi Arabia,122,SAU
+Senegal,73,SEN
+Serbia,49,SRB
+Seychelles,NULL,SYC
+Singapore,NULL,SGP
+Slovakia,NULL,SVK
+South Africa,102,ZAF
+Soviet Union,57,RUS
+Spain,35,ESP
+Sri Lanka,145,LKA
+Sudan,112,SDN
+Sweden,NULL,SWE
+Switzerland,NULL,CHE
+Syria,118,SYR
+Thailand,147,THA
+Turkey,115,TUR
+UAE,NULL,ARE
+Uganda,90,UGA
+Ukraine,61,UKR
+United Kingdom,28,GBR
+United Nations**,NULL,?WO
+United States,3,USA
+Unknown supplier(s),NULL,?WO
+Uruguay,27,URY
+Uzbekistan,133,UZB
+Venezuela,18,VEN
+Yugoslavia,49,^YG
+Zambia,3986,ZMB
+Zimbabwe,101,ZWE
