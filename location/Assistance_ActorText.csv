@@ -1,25 +1,49 @@
 ﻿ActorText,UCDPactorID,GeographicISOalpha3
+Afghanistan,130,AFG
+African Union**,NULL,*AF
 Albania,45,ALB
 Algeria,109,DZA
+Amal (Lebanon)*,NULL,LBN
+ANC (South Africa)*,NULL,ZAF
 Angola,99,AGO
+Anti-Castro rebels (Cuba)*,NULL,CUB
 Argentina,26,ARG
+Armas (Guatemala)*,NULL,GTM
+Armenia,NULL,ARM
 Aruba,NULL,ABW
 Australia,NULL,AUS
 Austria,NULL,AUT
+Azerbaijan,64,AZE
 Bahamas,NULL,BHS
 Bahrain,126,BHR
 Bangladesh,143,BGD
+Barbados,NULL,BRB
 Belarus,NULL,BLR
 Belgium,NULL,BEL
+Belize,NULL,BLZ
+Benin,NULL,BEN
+Bhutan,NULL,BTN
+Biafra,NULL,*BI
+Bolivia,23,BOL
+Bosnia-Herzegovina,50,BIH
 Botswana,NULL,BWA
 Brazil,22,BRA
 Brunei,NULL,BRN
 Bulgaria,NULL,BGR
+Burkina Faso,78,BFA
+Burundi,93,BDI
 Cambodia,148,KHM
+Cameroon,83,CMR
 Canada,NULL,CAN
+Cape Verde,NULL,CPV
+Central African Republic,86,CAF
 Chad,87,TCD
 Chile,25,CHL
+China,135,CHN
 Colombia,17,COL
+Comoros,107,COM
+Congo,88,COG
+Contras (Nicaragua)*,NULL,NIC
 Costa Rica,15,CRI
 Cote d'Ivoire,NULL,CIV
 Croatia,48,HRV
@@ -29,17 +53,28 @@ Czech Republic,NULL,CZE
 Czechia,NULL,CZE
 Czechoslovakia,NULL,~CQ
 Denmark,NULL,DNK
+Djibouti,96,DJI
 Dominican Republic,7,DOM
+DR Congo,NULL,COD
 East Germany (GDR),NULL,DDR
 Ecuador,20,ECU
 Egypt,117,EGY
+El Salvador,13,SLV
+ELF (Ethiopia)*,NULL,ERI
+EPLF (Ethiopia)*,NULL,ERI
+Equatorial Guinea,NULL,GNQ
 Eritrea,98,ERI
 Estonia,NULL,EST
 Ethiopia,97,ETH
+FAN (Chad)*,NULL,TCD
 Fiji,NULL,FJI
 Finland,NULL,FIN
+FMLN (El Salvador)*,NULL,SLV
+FNLA (Angola)*,NULL,AGO
 France,33,FRA
+FRELIMO (Portugal)*,NULL,MOZ
 Gabon,85,GAB
+Gambia,71,GMB
 Georgia,63,GEO
 Germany,NULL,DEU
 Germany (FRG),NULL,DEU
@@ -159,51 +194,111 @@ Government of Yugoslavia,49,SRB
 Government of Zambia,3986,ZMB
 Government of Zimbabwe (Rhodesia),101,ZWE
 Greece,52,GRC
+Grenada,9,GRD
 Guatemala,11,GTM
+Guinea,77,GIN
+Guinea-Bissau,70,GNB
+GUNT (Chad)*,NULL,TCD
 Guyana,NULL,GUY
+Haiti,6,HTI
+Haiti rebels*,NULL,HTI
+Hamas (Palestine)*,NULL,PSE
+Hezbollah (Lebanon)*,NULL,LBN
+Honduras,12,HND
 Hungary,40,HUN
+Huthi rebels (Yemen)*,NULL,YEM
 Iceland,NULL,ISL
 India,141,IND
 Indonesia,155,IDN
+Indonesia rebels*,NULL,IDN
 Iran,114,IRN
 Iraq,116,IRQ
 Ireland,NULL,IRL
 Israel,121,ISR
 Italy,NULL,ITA
+Jamaica,NULL,JAM
 Japan,NULL,JPN
 Jordan,120,JOR
+Katanga,NULL,*KA
 Kazakhstan,134,KAZ
 Kenya,91,KEN
+Khmer Rouge (Cambodia)*,NULL,KHM
+Kiribati,NULL,KIR
+Kosovo,NULL,*KS
 Kuwait,125,KWT
 Kyrgyzstan,132,KGZ
+Laos,149,LAO
 Latvia,NULL,LVA
 Lebanon,119,LBN
+Lebanon Palestinian rebels*,NULL,LBN
+Lesotho,104,LSO
+LF (Lebanon)*,NULL,LBN
+Liberia,79,LBR
 Libya,111,LBY
+Libya GNC,NULL,LBY
+Libya HoR,NULL,LBY
 Lithuania,NULL,LTU
+LRA (Uganda)*,NULL,UGA
+LTTE (Sri Lanka)*,NULL,LKA
 Luxembourg,NULL,LUX
+Macedonia (FYROM),NULL,MKD
+Madagascar,106,MDG
 Malawi,3912,MWI
 Malaysia,152,MYS
+Maldives,NULL,MDV
+Mali,72,MLI
 Malta,NULL,MLT
+Marshall Islands,NULL,MHL
+Mauritania,74,MRT
+Mauritius,NULL,MUS
 Mexico,10,MEX
+Micronesia,NULL,FSM
+MNLF (Philippines)*,NULL,PHL
 Moldova,55,MDA
+Mongolia,NULL,MNG
 Montenegro,NULL,MNE
 Morocco,108,MAR
 Mozambique,100,MOZ
+MPLA (Portugal)*,NULL,AGO
+MTA (Myanmar)*,NULL,MMR
 Mujahedin (Afghanistan)*,NULL,AFG
+Myanmar,NULL,MMR
+Namibia,NULL,NAM
+NATO**,NULL,*EE
+Nepal,146,NPL
 Netherlands,30,NLD
 New Zealand,NULL,NZL
 Nicaragua,14,NIC
 Niger,75,NER
 Nigeria,84,NGA
+NLA (Macedonia)*,NULL,MKD
+North Korea,138,PRK
+North Yemen,123,YEM
+Northern Alliance (Afghanistan)*,NULL,AFG
+Northern Cyprus,NULL,CYP
 Norway,NULL,NOR
+NTC (Libya)*,NULL,LBY
 Oman,129,OMN
+OSCE**,NULL,*EE
+PAIGC (Portugal)*,NULL,GNB
 Pakistan,142,PAK
+Palau,NULL,PLW
+Palestine,NULL,PSE
 Panama,16,PAN
+Papua New Guinea,157,PNG
+Paraguay,24,PRY
+Pathet Lao (Laos)*,NULL,LAO
 Peru,21,PER
 Philippines,154,PHL
+PIJ (Israel/Palestine)*,NULL,PSE
+PKK (Turkey)*,NULL,TUR
+PLO (Israel)*,NULL,PSE
 Poland,NULL,POL
 Portugal,36,PRT
+PRC (Israel/Palestine)*,NULL,PSE
+Provisional IRA (UK)*,NULL,GBR
 Qatar,NULL,QAT
+Regional Security System**,NULL,*CB
 Republic of Armenia,330,ARM
 Republic of Azerbaijan,165,AZE
 Republic of Croatia,337,HRV
@@ -211,33 +306,78 @@ Republic of Georgia,843,GEO
 Republic of Slovenia,336,SVN
 Republic of South Sudan,1129,SSD
 Romania,NULL,ROU
+RPF (Rwanda)*,NULL,RWA
+RUF (Sierra Leone)*,NULL,SLE
 Russia,57,RUS
+Rwanda,94,RWA
+Saint Kitts and Nevis,NULL,KNA
+Saint Vincent,NULL,VCT
+Samoa,NULL,WSM
 Saudi Arabia,122,SAU
 Senegal,73,SEN
 Serbia,49,SRB
 Seychelles,NULL,SYC
+Sierra Leone,80,SLE
 Singapore,NULL,SGP
+SLA (Lebanon)*,NULL,LBN
 Slovakia,NULL,SVK
+Slovenia,NULL,SVN
+SNA (Somalia)*,NULL,SOM
+Solomon Islands,4499,SLB
+Somalia,95,SOM
 South Africa,102,ZAF
+South Korea,139,KOR
+South Sudan,113,SSD
+South Vietnam,151,YEM
+South Yemen,124,*SY
+Southern rebels (Yemen)*,NULL,YEM
 Soviet Union,57,RUS
 Spain,35,ESP
+SPLA (Sudan)*,NULL,SSD
 Sri Lanka,145,LKA
 Sudan,112,SDN
+Suriname,19,SUR
+Swaziland,NULL,SWZ
 Sweden,NULL,SWE
 Switzerland,NULL,CHE
 Syria,118,SYR
+Syria rebels*,NULL,SYR
+Taiwan,137,TWN
+Taiwan (ROC),NULL,TWN
+Tajikistan,131,TJK
+Tanzania,92,TZA
 Thailand,147,THA
+Timor-Leste,NULL,TLS
+Togo,82,TGO
+Tonga,NULL,TON
+Trinidad and Tobago,8,TTO
+Tunisia,110,TUN
 Turkey,115,TUR
+Turkmenistan,NULL,TKM
+Tuvalu,NULL,TUV
 UAE,NULL,ARE
 Uganda,90,UGA
+UIC (Somalia)*,NULL,SOM
 Ukraine,61,UKR
+Ukraine Rebels*,NULL,UKR
+UNITA (Angola)*,NULL,AGO
 United Kingdom,28,GBR
-United Nations**,NULL,?WO
+United Nations**,NULL,*WO
 United States,3,USA
+United Wa State (Myanmar)*,NULL,MMR
+Unknown rebel group*,NULL,?WO
+Unknown recipient(s),NULL,?WO
 Unknown supplier(s),NULL,?WO
 Uruguay,27,URY
 Uzbekistan,133,UZB
+Vanuatu,NULL,VUT
 Venezuela,18,VEN
+Viet Cong (South Vietnam)*,NULL,YEM
+Viet Minh (France)*,NULL,VNM
+Viet Nam,NULL,VNM
+Western Sahara,NULL,ESH
+Yemen,NULL,YEM
 Yugoslavia,49,^YG
 Zambia,3986,ZMB
+ZAPU (Zimbabwe)*,NULL,ZWE
 Zimbabwe,101,ZWE
