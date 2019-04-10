@@ -1,43 +1,43 @@
 ﻿USAID region,name,alpha-2,alpha-3,country-code,iso_3166-2,region-code,sub-region-code,name1,isTerritory,isDisputed,isDependent,gbk_country_id,IsNotUSAIDforwardRecipient,isforeign,WarTheater,CombatantCommand,CrisisFundingTheater,OCOcrisisScore,IsOMBocoList
-Europe and Eurasia,Eurasia Regional,NULL,*AE,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Rest of World,NULL,NULL
-Africa,Africa Regional,NULL,*AF,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,Rest of World,0,NULL
+Europe and Eurasia,Eurasia Regional,NULL,*AE,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,EUCOM,Rest of World,NULL,NULL
+Africa,Africa Regional,NULL,*AF,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,AFRICOM,Rest of World,0,NULL
 Asia,Asia Regional,NULL,*AS,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,0,NULL
 Africa,Biafra,NULL,*BI,NULL,NULL,2,11,Republic of Biafra,1,0,0,NULL,0,1,NULL,AFRICOM,Rest of World,0,0
-Europe and Eurasia,Balkan Regional,NULL,*BK,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,Rest of World,0,NULL
+Europe and Eurasia,Balkan Regional,NULL,*BK,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,EUCOM,Rest of World,0,NULL
 Asia,CENTRAL ASIA REGIONAL,NULL,*CA,NULL,NULL,142,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,0,NULL
 Latin America and Caribbean,Caribbean (not specified),NULL,*CB,NULL,NULL,19,29,NULL,0,0,0,107,0,1,NULL,NULL,Rest of World,0,0
-Europe and Eurasia,Caucasus Regional,NULL,*CC,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,Rest of World,0,NULL
-Europe and Eurasia,Eastern European Regional,NULL,*EE,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,Rest of World,0,NULL
+Europe and Eurasia,Caucasus Regional,NULL,*CC,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,EUCOM,Rest of World,0,NULL
+Europe and Eurasia,Eastern European Regional,NULL,*EE,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,EUCOM,Rest of World,0,NULL
 Asia,East Asia Regional,NULL,*ES,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,0,NULL
 Africa,Katanga,NULL,*KA,NULL,NULL,2,17,Republic of Katanga,1,0,0,NULL,0,1,NULL,AFRICOM,Rest of World,0,0
 Europe and Eurasia,Kosovo,NULL,*KS,NULL,NULL,150,39,NULL,0,1,0,170,0,1,NULL,EUCOM,Rest of World,0,0
 Middle East,Middle East Regional,NULL,*ME,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,0,NULL
-Europe and Eurasia,Near East Regional,NULL,*NE,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,Rest of World,0,NULL
+Europe and Eurasia,Near East Regional,NULL,*NE,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,EUCOM,Rest of World,0,NULL
 Asia,South Asia Regional,NULL,*SA,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,0,NULL
 Latin America and Caribbean,South America Regional,NULL,*SM,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,0,NULL
 Asia,South Pacific Regional,NULL,*SP,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,0,NULL
 Asia,South Vietnam,NULL,*SV,NULL,NULL,142,35,"Vietnam, South",1,0,0,NULL,0,1,NULL,PACOM,Rest of World,0,0
 Middle East,South Yemen,NULL,*SY,NULL,NULL,142,145,"Yemen, South",1,0,0,NULL,0,1,Yemen,CENTCOM,Rest of World,0,0
-World,Total,NULL,*WO,NULL,NULL,1,1,NULL,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
-Europe and Eurasia,Eurasia (not specified),NULL,?AE,NULL,NULL,150,150,NULL,0,0,0,162,0,1,NULL,NULL,Rest of World,0,0
-Africa,Sub-Saharan Africa (not specified),NULL,?AH,NULL,NULL,2,15,NULL,0,0,0,73,0,1,NULL,NULL,Rest of World,0,0
+World,Total / Global Organizations,NULL,*WO,NULL,NULL,1,1,NULL,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
+Europe and Eurasia,Eurasia (not specified),NULL,?AE,NULL,NULL,150,150,NULL,0,0,0,162,0,1,NULL,EUCOM,Rest of World,0,0
+Africa,Sub-Saharan Africa (not specified),NULL,?AH,NULL,NULL,2,15,NULL,0,0,0,73,0,1,NULL,AFRICOM,Rest of World,0,0
 Asia,Asia (not specified),NULL,?AS,NULL,NULL,142,142,NULL,0,0,0,136,0,1,NULL,NULL,Rest of World,0,0
-Africa,East Africa (not specified),NULL,?EA,NULL,NULL,2,14,NULL,0,0,0,70,0,1,NULL,NULL,Rest of World,0,0
-Europe and Eurasia,Eastern Europe (not specified),NULL,?EE,NULL,NULL,150,151,NULL,0,0,0,181,0,1,NULL,NULL,Rest of World,0,0
+Africa,East Africa (not specified),NULL,?EA,NULL,NULL,2,14,NULL,0,0,0,70,0,1,NULL,AFRICOM,Rest of World,0,0
+Europe and Eurasia,Eastern Europe (not specified),NULL,?EE,NULL,NULL,150,151,NULL,0,0,0,181,0,1,NULL,EUCOM,Rest of World,0,0
 Latin America and Caribbean,Central America (not specified),NULL,?LA,NULL,NULL,19,13,NULL,0,0,0,108,0,1,NULL,NULL,Rest of World,0,0
 Latin America and Caribbean,Latin America & Caribbean (not specified),NULL,?LC,NULL,NULL,19,419,NULL,0,0,0,109,0,1,NULL,NULL,Rest of World,0,0
 Latin America and Caribbean,CENTRAL AMERICA AND MEXICO,NULL,?LM,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,0,NULL
 Middle East,Middle East & North Africa (not specified),NULL,?ME,NULL,NULL,2,15,NULL,0,0,0,20,0,1,NULL,NULL,Rest of World,0,0
 Asia,Oceania (not specified),NULL,?OC,NULL,NULL,9,9,NULL,0,0,0,149,0,1,NULL,NULL,Rest of World,0,0
-Africa,West Africa (not specified),NULL,?SA,NULL,NULL,2,11,NULL,0,0,0,72,0,1,NULL,NULL,Rest of World,0,0
-Africa,Southern Africa (not specified),NULL,?SF,NULL,NULL,2,18,NULL,0,0,0,71,0,1,NULL,NULL,Rest of World,0,0
+Africa,West Africa (not specified),NULL,?SA,NULL,NULL,2,11,NULL,0,0,0,72,0,1,NULL,AFRICOM,Rest of World,0,0
+Africa,Southern Africa (not specified),NULL,?SF,NULL,NULL,2,18,NULL,0,0,0,71,0,1,NULL,AFRICOM,Rest of World,0,0
 World,World (not specified),NULL,?WO,NULL,NULL,1,1,NULL,0,0,0,204,0,NULL,NULL,NULL,NULL,NULL,NULL
-Africa,Central Africa Regional Program for Environment,NULL,^CF,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,Rest of World,0,NULL
+Africa,Central Africa Regional Program for Environment,NULL,^CF,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,AFRICOM,Rest of World,0,NULL
 Asia,REGIONAL DEVELOPMENT MISSION ASIA,NULL,^RA,NULL,NULL,142,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,0,NULL
-Europe and Eurasia,"Serbia and Montenegro, Former",NULL,^SM,NULL,NULL,150,39,NULL,0,0,0,178,0,1,NULL,NULL,Rest of World,0,0
+Europe and Eurasia,"Serbia and Montenegro, Former",NULL,^SM,NULL,NULL,150,39,NULL,0,0,0,178,0,1,NULL,EUCOM,Rest of World,0,0
 Europe and Eurasia,Yugoslavia,NULL,^YG,NULL,NULL,NULL,NULL,NULL,NULL,0,0,NULL,NULL,1,NULL,EUCOM,Rest of World,0,0
 NULL,ASHMORE AND CARTIER ISLANDS,NULL,~AT,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,Rest of World,0,0
-"Europe and Eurasia ",CZECHOSLOVAKIA,CQ,~CQ,NULL,NULL,NULL,NULL,NULL,NULL,0,0,NULL,NULL,1,NULL,NULL,Rest of World,0,0
+"Europe and Eurasia ",CZECHOSLOVAKIA,CQ,~CQ,NULL,NULL,NULL,NULL,NULL,NULL,0,0,NULL,NULL,1,NULL,EUCOM,Rest of World,0,0
 NULL,SERBIA AND MONTENEGRO,CS,~CS,NULL,NULL,NULL,NULL,NULL,NULL,0,0,NULL,NULL,1,NULL,NULL,Rest of World,0,0
 NULL,NJUNI,NULL,~NJ,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,Rest of World,0,0
 NULL,NETHERLANDS ANTILLES [NETHERLANDS],NULL,~NT,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,Rest of World,0,0
@@ -47,7 +47,7 @@ Latin America and Caribbean,Aruba,AW,ABW,533,ISO 3166-2:AW,19,29,Aruba,1,0,1,NUL
 Afghanistan and Pakistan,Afghanistan,AF,AFG,4,ISO 3166-2:AF,142,34,Afghanistan,0,0,0,110,0,1,Afghanistan,CENTCOM,Afghanistan,3,1
 Africa,Angola,AO,AGO,24,ISO 3166-2:AO,2,17,Angola,0,0,0,21,0,1,NULL,AFRICOM,Rest of World,0,0
 Latin America and Caribbean,Anguilla,AI,AIA,660,ISO 3166-2:AI,19,29,Anguilla,1,0,1,NULL,NULL,1,NULL,NULL,Rest of World,0,0
-Europe and Eurasia,Åland Islands,AX,ALA,248,ISO 3166-2:AX,150,154,Åland Islands,1,0,1,NULL,NULL,1,NULL,NULL,Rest of World,0,0
+Europe and Eurasia,Åland Islands,AX,ALA,248,ISO 3166-2:AX,150,154,Åland Islands,1,0,1,NULL,NULL,1,NULL,EUCOM,Rest of World,0,0
 Europe and Eurasia,Albania,AL,ALB,8,ISO 3166-2:AL,150,39,Albania,0,0,0,163,0,1,NULL,EUCOM,Rest of World,0,0
 Europe and Eurasia,Andorra,AD,AND,20,ISO 3166-2:AD,150,39,Andorra,0,0,0,NULL,NULL,1,NULL,EUCOM,Rest of World,0,0
 Middle East,United Arab Emirates,AE,ARE,784,ISO 3166-2:AE,142,145,United Arab Emirates,0,0,0,17,0,1,Iraq Theater,CENTCOM,Rest of World,1,1
@@ -79,7 +79,7 @@ Latin America and Caribbean,Brazil,BR,BRA,76,ISO 3166-2:BR,19,5,Brazil,0,0,0,80,
 Latin America and Caribbean,Barbados,BB,BRB,52,ISO 3166-2:BB,19,29,Barbados,0,0,0,77,0,1,NULL,SOUTHCOM,Rest of World,0,0
 Asia,Brunei Darussalam,BN,BRN,96,ISO 3166-2:BN,142,35,Brunei Darussalam,0,0,0,113,1,1,NULL,PACOM,Rest of World,0,0
 Asia,Bhutan,BT,BTN,64,ISO 3166-2:BT,142,34,Bhutan,0,0,0,112,1,1,NULL,PACOM,Rest of World,0,0
-Europe and Eurasia,Bouvet Island,BV,BVT,74,ISO 3166-2:BV,NULL,NULL,Bouvet Island,1,0,1,NULL,NULL,1,NULL,NULL,Rest of World,0,0
+Europe and Eurasia,Bouvet Island,BV,BVT,74,ISO 3166-2:BV,NULL,NULL,Bouvet Island,1,0,1,NULL,NULL,1,NULL,EUCOM,Rest of World,0,0
 Africa,Botswana,BW,BWA,72,ISO 3166-2:BW,2,18,Botswana,0,0,0,23,0,1,NULL,AFRICOM,Rest of World,0,0
 Africa,Central African Republic,CF,CAF,140,ISO 3166-2:CF,2,17,Central African Republic,0,0,0,28,0,1,NULL,AFRICOM,Rest of World,0,0
 Washington,Canada,CA,CAN,124,ISO 3166-2:CA,19,21,Canada,0,0,0,203,1,1,NULL,NORTHCOM,Rest of World,0,0
@@ -120,14 +120,14 @@ Europe and Eurasia,Finland,FI,FIN,246,ISO 3166-2:FI,150,154,Finland,0,0,0,186,0,
 Asia,Fiji,FJ,FJI,242,ISO 3166-2:FJ,9,54,Fiji,0,0,0,138,0,1,NULL,PACOM,Rest of World,0,0
 Latin America and Caribbean,Falkland Islands (Malvinas),FK,FLK,238,ISO 3166-2:FK,19,5,Falkland Islands (Malvinas),1,0,1,NULL,NULL,1,NULL,NULL,Rest of World,0,0
 Europe and Eurasia,France,FR,FRA,250,ISO 3166-2:FR,150,155,France,0,0,0,187,1,1,NULL,EUCOM,Rest of World,0,0
-Europe and Eurasia,Faroe Islands,FO,FRO,234,ISO 3166-2:FO,150,154,Faroe Islands,1,0,1,NULL,NULL,1,NULL,NULL,Rest of World,0,0
+Europe and Eurasia,Faroe Islands,FO,FRO,234,ISO 3166-2:FO,150,154,Faroe Islands,1,0,1,NULL,NULL,1,NULL,EUCOM,Rest of World,0,0
 Asia,Micronesia (Federated States of),FM,FSM,583,ISO 3166-2:FM,9,57,"Micronesia, Federated States of",0,0,0,141,0,1,NULL,PACOM,Rest of World,0,0
 Africa,Gabon,GA,GAB,266,ISO 3166-2:GA,2,17,Gabon,0,0,0,38,0,1,NULL,AFRICOM,Rest of World,0,0
 Europe and Eurasia,United Kingdom,GB,GBR,826,ISO 3166-2:GB,150,154,United Kingdom,0,0,0,201,1,1,NULL,EUCOM,Rest of World,0,0
 Europe and Eurasia,Georgia,GE,GEO,268,ISO 3166-2:GE,142,145,Georgia,0,0,0,153,0,1,NULL,EUCOM,Rest of World,0,0
 Europe and Eurasia,Guernsey,GG,GGY,831,ISO 3166-2:GG,150,154,Guernsey,1,0,1,NULL,NULL,1,NULL,EUCOM,Rest of World,0,0
 Africa,Ghana,GH,GHA,288,ISO 3166-2:GH,2,11,Ghana,0,0,0,40,0,1,NULL,AFRICOM,Rest of World,0,0
-Europe and Eurasia,Gibraltar,GI,GIB,292,ISO 3166-2:GI,150,39,Gibraltar,1,0,1,NULL,NULL,1,NULL,NULL,Rest of World,0,0
+Europe and Eurasia,Gibraltar,GI,GIB,292,ISO 3166-2:GI,150,39,Gibraltar,1,0,1,NULL,NULL,1,NULL,EUCOM,Rest of World,0,0
 Africa,Guinea,GN,GIN,324,ISO 3166-2:GN,2,11,Guinea,0,0,0,41,0,1,NULL,AFRICOM,Rest of World,0,0
 Latin America and Caribbean,Guadeloupe,GP,GLP,312,ISO 3166-2:GP,19,29,Guadeloupe,0,0,0,NULL,NULL,1,NULL,NULL,Rest of World,0,0
 Africa,"Gambia, The",GM,GMB,270,ISO 3166-2:GM,2,11,Gambia,0,0,0,39,0,1,NULL,AFRICOM,Rest of World,0,0
@@ -135,7 +135,7 @@ Africa,Guinea-Bissau,GW,GNB,624,ISO 3166-2:GW,2,11,Guinea-Bissau,0,0,0,42,0,1,NU
 Africa,Equatorial Guinea,GQ,GNQ,226,ISO 3166-2:GQ,2,17,Equatorial Guinea,0,0,0,35,0,1,NULL,AFRICOM,Rest of World,0,0
 Europe and Eurasia,Greece,GR,GRC,300,ISO 3166-2:GR,150,39,Greece,0,0,0,189,1,1,NULL,EUCOM,Rest of World,0,0
 Latin America and Caribbean,Grenada,GD,GRD,308,ISO 3166-2:GD,19,29,Grenada,0,0,0,89,0,1,NULL,SOUTHCOM,Rest of World,0,0
-Europe and Eurasia,Greenland,GL,GRL,304,ISO 3166-2:GL,19,21,Greenland,1,0,1,NULL,NULL,1,NULL,NULL,Rest of World,0,0
+Europe and Eurasia,Greenland,GL,GRL,304,ISO 3166-2:GL,19,21,Greenland,1,0,1,NULL,NULL,1,NULL,EUCOM,Rest of World,0,0
 Latin America and Caribbean,Guatemala,GT,GTM,320,ISO 3166-2:GT,19,13,Guatemala,0,0,0,90,0,1,NULL,SOUTHCOM,Rest of World,0,0
 Latin America and Caribbean,French Guiana,GF,GUF,254,ISO 3166-2:GF,19,5,French Guiana,0,0,0,NULL,NULL,1,NULL,NULL,Rest of World,0,0
 Washington,Guam,GU,GUM,316,ISO 3166-2:GU,9,57,Guam,1,0,1,NULL,NULL,0,NULL,PACOM,Domestic,-1,0
@@ -147,7 +147,7 @@ Europe and Eurasia,Croatia,HR,HRV,191,ISO 3166-2:HR,150,39,Croatia,0,0,0,166,0,1
 Latin America and Caribbean,Haiti,HT,HTI,332,ISO 3166-2:HT,19,29,Haiti,0,0,0,92,0,1,NULL,SOUTHCOM,Rest of World,0,0
 Europe and Eurasia,Hungary,HU,HUN,348,ISO 3166-2:HU,150,151,Hungary,0,0,0,169,0,1,NULL,EUCOM,Rest of World,0,0
 Asia,Indonesia,ID,IDN,360,ISO 3166-2:ID,142,35,Indonesia,0,0,0,120,0,1,NULL,PACOM,Rest of World,0,0
-Europe and Eurasia,Isle of Man,IM,IMN,833,ISO 3166-2:IM,150,154,Isle of Man,1,0,1,NULL,NULL,1,NULL,NULL,Rest of World,0,0
+Europe and Eurasia,Isle of Man,IM,IMN,833,ISO 3166-2:IM,150,154,Isle of Man,1,0,1,NULL,NULL,1,NULL,EUCOM,Rest of World,0,0
 Asia,India,IN,IND,356,ISO 3166-2:IN,142,34,India,0,0,0,119,0,1,NULL,PACOM,Rest of World,0,0
 Asia,British Indian Ocean Territory,IO,IOT,86,ISO 3166-2:IO,NULL,NULL,British Indian Ocean Territory,1,0,1,NULL,NULL,1,NULL,NULL,Rest of World,0,0
 Europe and Eurasia,Ireland,IE,IRL,372,ISO 3166-2:IE,150,154,Ireland,0,0,0,191,0,1,NULL,EUCOM,Rest of World,0,0
@@ -241,7 +241,7 @@ Africa,Senegal,SN,SEN,686,ISO 3166-2:SN,2,11,Senegal,0,0,0,57,0,1,NULL,AFRICOM,R
 Asia,Singapore,SG,SGP,702,ISO 3166-2:SG,142,35,Singapore,0,0,0,131,1,1,NULL,PACOM,Rest of World,0,0
 Asia,South Georgia and the South Sandwich Islands,GS,SGS,239,ISO 3166-2:GS,NULL,NULL,South Georgia and the South Sandwich Islands,1,1,1,NULL,NULL,1,NULL,NULL,Rest of World,0,0
 Africa,"Saint Helena, Ascension and Tristan da Cunha",SH,SHN,654,ISO 3166-2:SH,2,11,"Saint Helena, Ascension and Tristan da Cunha",1,0,1,NULL,NULL,1,NULL,AFRICOM,Rest of World,0,0
-Europe and Eurasia,Svalbard and Jan Mayen,SJ,SJM,744,ISO 3166-2:SJ,150,154,Svalbard and Jan Mayen,1,0,1,NULL,NULL,1,NULL,NULL,Rest of World,0,0
+Europe and Eurasia,Svalbard and Jan Mayen,SJ,SJM,744,ISO 3166-2:SJ,150,154,Svalbard and Jan Mayen,1,0,1,NULL,NULL,1,NULL,EUCOM,Rest of World,0,0
 Asia,Solomon Islands,SB,SLB,90,ISO 3166-2:SB,9,54,Solomon Islands,0,0,0,146,0,1,NULL,PACOM,Rest of World,0,0
 Africa,Sierra Leone,SL,SLE,694,ISO 3166-2:SL,2,11,Sierra Leone,0,0,0,59,0,1,NULL,AFRICOM,Rest of World,0,0
 Latin America and Caribbean,El Salvador,SV,SLV,222,ISO 3166-2:SV,19,13,El Salvador,0,0,0,88,0,1,NULL,SOUTHCOM,Rest of World,0,0
