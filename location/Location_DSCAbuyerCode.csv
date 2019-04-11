@@ -1,0 +1,196 @@
+﻿DSCAbuyerCode,DSCAbuyerText,GeographicISOalpha3
+KV,Kosovo,*KS
+C2,Classified,?WO
+S9,Presidential Drawdown,?WO
+YU,Yugoslavia,^YG
+YI,Serbia And Montenegr,~CS
+IC,Indochina,~IC
+AF,Afghanistan,AFG
+AO,Angola,AGO
+AL,Albania,ALB
+AE,United Arab Emirates,ARE
+AR,Argentina,ARG
+AM,Armenia,ARM
+AC,Antigua & Barbuda,ATG
+AT,Australia,AUS
+AU,Austria,AUT
+AJ,Azerbaijan,AZE
+BY,Burundi,BDI
+BE,Belgium,BEL
+DA,Benin,BEN
+UV,Burkina Faso,BFA
+BG,Bangladesh,BGD
+BU,Bulgaria,BGR
+BA,Bahrain,BHR
+BF,Bahamas,BHS
+BK,Bosnia-herzegovina,BIH
+BH,Belize,BLZ
+BL,Bolivia,BOL
+D1,Bolivia-intl Narc,BOL
+BR,Brazil,BRA
+BB,Barbados,BRB
+BX,Brunei,BRN
+BT,Bhutan,BTN
+BC,Botswana,BWA
+CT,Central African Rep,CAF
+CN,Canada,CAN
+SZ,Switzerland,CHE
+CI,Chile,CHL
+CH,China,CHN
+IV,Ivory Coast,CIV
+CM,Cameroon,CMR
+CX,Congo (kinshasa),COD
+CF,Congo (brazzaville),COG
+CO,Colombia,COL
+D5,Colombia-intl Narc,COL
+CR,Comoros,COM
+CV,Cape Verde,CPV
+CS,Costa Rica,CRI
+CU,Cuba,CUB
+CY,Cyprus,CYP
+EZ,Czech Republic,CZE
+GY,Germany,DEU
+DJ,Djibouti,DJI
+DO,Dominica,DMA
+DE,Denmark,DNK
+DR,Dominican Republic,DOM
+AG,Algeria,DZA
+EC,Ecuador,ECU
+D6,Ecuador-intl Narc,ECU
+EG,Egypt,EGY
+ER,Eritrea,ERI
+SP,Spain,ESP
+EN,Estonia,EST
+ET,Ethiopia,ETH
+FI,Finland,FIN
+FJ,Fiji,FJI
+FR,France,FRA
+GB,Gabon,GAB
+UK,United Kingdom,GBR
+GG,Georgia,GEO
+GH,Ghana,GHA
+GV,Guinea,GIN
+GA,Gambia,GMB
+PU,Guinea-bissau,GNB
+GR,Greece,GRC
+GJ,Grenada,GRD
+GT,Guatemala,GTM
+GU,Guyana,GUY
+HO,Honduras,HND
+HR,Croatia,HRV
+HA,Haiti,HTI
+HU,Hungary,HUN
+ID,Indonesia,IDN
+IN,India,IND
+EI,Ireland,IRL
+IR,Iran,IRN
+IQ,Iraq,IRQ
+IL,Iceland,ISL
+IS,Israel,ISR
+IT,Italy,ITA
+JM,Jamaica,JAM
+JO,Jordan,JOR
+JA,Japan,JPN
+KZ,Kazakhstan,KAZ
+KE,Kenya,KEN
+KG,Kyrgyzstan,KGZ
+CB,Cambodia,KHM
+KR,Kiribati(gilbert Is),KIR
+SC,St Kitts And Nevis,KNA
+KS,Korea (seoul),KOR
+KU,Kuwait,KWT
+LA,Laos,LAO
+LE,Lebanon,LBN
+LI,Liberia,LBR
+LY,Libya,LBY
+ST,St Lucia,LCA
+CE,Sri Lanka,LKA
+LT,Lesotho,LSO
+LH,Lithuania,LTU
+LX,Luxembourg,LUX
+LG,Latvia,LVA
+MO,Morocco,MAR
+MD,Moldova,MDA
+MA,Madagascar,MDG
+MV,Maldives,MDV
+MX,Mexico,MEX
+R1,Marshall Islands,MHL
+MK,Macedonia (fyrom),MKD
+RM,Mali,MLI
+MT,Malta,MLT
+BM,Myanmar,MMR
+MJ,Rep Of Montenegro,MNE
+MG,Mongolia,MNG
+MZ,Mozambique,MOZ
+MR,Mauritania,MRT
+MP,Mauritius,MUS
+MI,Malawi,MWI
+MF,Malaysia,MYS
+WA,Namibia,NAM
+NK,Niger,NER
+NI,Nigeria,NGA
+NU,Nicaragua,NIC
+NE,Netherlands,NLD
+NO,Norway,NOR
+NP,Nepal,NPL
+NR,Nauru,NRU
+NZ,New Zealand,NZL
+MU,Oman,OMN
+PK,Pakistan,PAK
+PN,Panama,PAN
+PE,Peru,PER
+D3,Peru - Intl Narc,PER
+PI,Rep Of Philippines,PHL
+PP,Papua New Guinea,PNG
+PL,Poland,POL
+PT,Portugal,PRT
+PA,Paraguay,PRY
+PW,Palestinian Auth,PSE
+QA,Qatar,QAT
+RO,Romania,ROU
+RS,Russia,RUS
+RW,Rwanda,RWA
+SR,Saudi Arabia,SAU
+SD,Saudi Arabia Moi,SAU
+SU,Sudan,SDN
+SK,Senegal,SEN
+SN,Singapore,SGP
+BP,Solomon Islands,SLB
+SL,Sierra Leone,SLE
+ES,El Salvador,SLV
+SO,Somalia,SOM
+RB,Republic Of Serbia,SRB
+SX,Government So Sudan,SSD
+TP,Sao Tome & Principe,STP
+NS,Suriname,SUR
+LO,Slovakia,SVK
+S3,Slovenia,SVN
+SW,Sweden,SWE
+WZ,Swaziland,SWZ
+SE,Seychelles,SYC
+SY,Syria,SYR
+CD,Chad,TCD
+TO,Togo,TGO
+TH,Thailand,THA
+TI,Tajikistan,TJK
+TX,Turkmenistan,TKM
+TT,Timor-leste,TLS
+TN,Tonga,TON
+TD,Trinidad + Tobago,TTO
+TU,Tunisia,TUN
+TK,Turkey,TUR
+TV,Tuvalu,TUV
+TW,Taiwan,TWN
+TZ,Tanzania,TZA
+UG,Uganda,UGA
+UP,Ukraine,UKR
+UY,Uruguay,URY
+U2,Uzbekistan,UZB
+VC,St Vincent + Gren.,VCT
+VE,Venezuela,VEN
+VM,Vietnam,VNM
+NH,Vanuatu,VUT
+WS,Western Samoa,WSM
+YE,Yemen,YEM
+UA,South Africa,ZAF
+ZA,Zambia,ZMB
