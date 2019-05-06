@@ -16,6 +16,7 @@ ServicesCategory.sum,Area,Services Area,,,FALSE
 RnDCategory.detail,Area,R&D Area,,,FALSE
 ProductsCategory.detail,Area,Products Area,,,FALSE
 ProductOrServiceArea,Area,Product or Service Area,,,FALSE
+ProductOrService,Area,Product or Service,,,FALSE
 SupplyServiceERS,Area,"Supply, Equipment-Related Service, Other Services",,,FALSE
 ProductServiceOrRnDarea,Area,"Product, Service, or R&D Area",,,FALSE
 ProductServiceOrRnDarea.sum,Area,"Product, Service, or R&D",,,FALSE
