@@ -1,5 +1,5 @@
 CSIScontractID,override_unmodified_ceiling,override_unmodified_base,override_change_order_growth,override_exercised_growth,category
-1431340,FALSE,FALSE,FALSE,FALSE,Passed Examination: Administrative Change
+1431340,FALSE,FALSE,FALSE,FALSE,Passed Examination
 8341560,FALSE,FALSE,TRUE,FALSE,Error: Corrected Administratively
 10090818,FALSE,FALSE,TRUE,FALSE,Apparent Error: Uncorrected
 19005830,FALSE,FALSE,TRUE,FALSE,Apparent Error: Uncorrected
@@ -89,3 +89,18 @@ CSIScontractID,override_unmodified_ceiling,override_unmodified_base,override_cha
 18504240,FALSE,FALSE,FALSE,TRUE,Error: Corrected Other
 24685121,FALSE,FALSE,FALSE,TRUE,Error: Corrected Other
 24798438,FALSE,FALSE,FALSE,TRUE,Apparent Error: Uncorrected
+10060591,FALSE,FALSE,FALSE,FALSE,Passed Examination
+60378093,FALSE,FALSE,FALSE,FALSE,Passed Examination
+18192191,FALSE,FALSE,FALSE,FALSE,Passed Examination
+8665643,FALSE,FALSE,FALSE,FALSE,Passed Examination
+25049082,FALSE,FALSE,FALSE,FALSE,Passed Examination
+1286145,FALSE,FALSE,FALSE,FALSE,Passed Examination
+2362527,FALSE,FALSE,FALSE,FALSE,Passed Examination
+27649914,FALSE,FALSE,FALSE,FALSE,Passed Examination
+8666052,FALSE,FALSE,FALSE,FALSE,Passed Examination
+8114536,FALSE,FALSE,FALSE,FALSE,Passed Examination
+24799263,FALSE,FALSE,FALSE,FALSE,Passed Examination
+9991108,FALSE,FALSE,FALSE,FALSE,Passed Examination
+61815629,FALSE,FALSE,FALSE,FALSE,Passed Examination
+2970558,FALSE,FALSE,FALSE,FALSE,Passed Examination
+8413827,FALSE,FALSE,FALSE,FALSE,Passed Examination
