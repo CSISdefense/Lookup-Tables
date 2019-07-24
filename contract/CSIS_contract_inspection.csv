@@ -1,4 +1,4 @@
-CSIScontractID,override_unmodified_ceiling,override_unmodified_base,override_change_order_growth,override_exercised_growth,category
+CSIScontractID,override_unmodified_ceiling,override_unmodified_base,override_change_order_growth,override_exercised_growth,CSIS_inspection
 1431340,FALSE,FALSE,FALSE,FALSE,Passed Examination
 8341560,FALSE,FALSE,TRUE,FALSE,Error: Corrected Administratively
 10090818,FALSE,FALSE,TRUE,FALSE,Apparent Error: Uncorrected
