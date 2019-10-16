@@ -54,7 +54,7 @@ AND,Andorra,Andorra,AD,20,ISO 3166-2:AD,NULL,AN,NULL,Europe and Eurasia,150,39,N
 ARE,United Arab Emirates,United Arab Emirates,AE,784,ISO 3166-2:AE,17,NULL,NULL,Middle East,142,145,Iraq Theater,CENTCOM,Rest of World,1,0,0,0,0,1,1,NULL,NULL,0,0,0,NULL,NULL,NULL
 ARG,Argentina,Argentina,AR,32,ISO 3166-2:AR,75,AR,NULL,Latin America and Caribbean,19,5,NULL,SOUTHCOM,Rest of World,1,0,0,0,0,0,0,NULL,1998,0,1,0,NULL,NULL,NULL
 ARM,Armenia,Armenia,AM,51,ISO 3166-2:AM,150,AM,NULL,Europe and Eurasia,142,145,NULL,EUCOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
-ASM,American Samoa,American Samoa,AS,16,ISO 3166-2:AS,NULL,NULL,NULL,Asia,9,61,NULL,PACOM,Rest of World,1,1,0,1,NULL,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
+ASM,American Samoa,American Samoa,AS,16,ISO 3166-2:AS,NULL,NULL,NULL,Asia,9,61,NULL,PACOM,Rest of World,0,1,0,1,NULL,0,0,1949,NULL,1,1,1,1994,NULL,NULL
 ATA,Antarctica,Antarctica,AQ,10,ISO 3166-2:AQ,NULL,AY,NULL,World,NULL,NULL,NULL,PACOM,Rest of World,1,0,0,0,NULL,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 ATF,French Southern Territories,French Southern Territories,TF,260,ISO 3166-2:TF,NULL,TF,NULL,Asia,NULL,NULL,NULL,EUCOM,Rest of World,1,0,0,0,NULL,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 ATG,Antigua and Barbuda,Antigua and Barbuda,AG,28,ISO 3166-2:AG,74,AC,NULL,Latin America and Caribbean,19,29,NULL,SOUTHCOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
@@ -139,7 +139,7 @@ GRD,Grenada,Grenada,GD,308,ISO 3166-2:GD,89,GJ,NULL,Latin America and Caribbean,
 GRL,Greenland,Greenland,GL,304,ISO 3166-2:GL,NULL,GL,NULL,Europe and Eurasia,19,21,NULL,EUCOM,Rest of World,1,1,0,1,NULL,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 GTM,Guatemala,Guatemala,GT,320,ISO 3166-2:GT,90,GT,NULL,Latin America and Caribbean,19,13,NULL,SOUTHCOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,1,0,NULL,NULL,NULL
 GUF,French Guiana,French Guiana,GF,254,ISO 3166-2:GF,NULL,NULL,NULL,Latin America and Caribbean,19,5,NULL,NULL,Rest of World,1,0,0,0,NULL,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
-GUM,Guam,Guam,GU,316,ISO 3166-2:GU,NULL,GU,NULL,Washington,9,57,NULL,PACOM,Domestic,0,1,0,1,NULL,-1,0,NULL,NULL,1,1,1,1994,NULL,NULL
+GUM,Guam,Guam,GU,316,ISO 3166-2:GU,NULL,GU,NULL,Washington,9,57,NULL,PACOM,Domestic,0,1,0,1,NULL,-1,0,1949,NULL,1,1,1,1994,NULL,NULL
 GUY,Guyana,Guyana,GY,328,ISO 3166-2:GY,91,GY,NULL,Latin America and Caribbean,19,5,NULL,SOUTHCOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 HKG,China (Hong Kong),Hong Kong,HK,344,ISO 3166-2:HK,116,HK,NULL,Asia,142,30,NULL,PACOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 HMD,Heard Island and McDonald Islands,Heard Island and McDonald Islands,HM,334,ISO 3166-2:HM,NULL,NULL,NULL,Asia,NULL,NULL,NULL,NULL,Rest of World,1,1,0,1,NULL,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
@@ -195,7 +195,7 @@ MLT,Malta,Malta,MT,470,ISO 3166-2:MT,193,MT,NULL,Europe and Eurasia,150,39,NULL,
 MMR,Burma (Myanmar),Myanmar,MM,104,ISO 3166-2:MM,114,BM,NULL,Asia,142,35,NULL,PACOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 MNE,Montenegro,Montenegro,ME,499,ISO 3166-2:ME,174,NULL,NULL,Europe and Eurasia,150,39,NULL,EUCOM,Rest of World,1,0,0,0,0,0,0,2017,NULL,0,0,0,NULL,NULL,NULL
 MNG,Mongolia,Mongolia,MN,496,ISO 3166-2:MN,127,MG,NULL,Asia,142,30,NULL,PACOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
-MNP,Northern Mariana Islands,Northern Mariana Islands,MP,580,ISO 3166-2:MP,NULL,NULL,NULL,Washington,9,57,NULL,PACOM,Domestic,0,1,0,1,NULL,-1,0,NULL,NULL,1,1,1,1994,NULL,NULL
+MNP,Northern Mariana Islands,Northern Mariana Islands,MP,580,ISO 3166-2:MP,NULL,NULL,NULL,Washington,9,57,NULL,PACOM,Domestic,0,1,0,1,NULL,-1,0,1949,NULL,1,1,1,1994,NULL,NULL
 MOZ,Mozambique,Mozambique,MZ,508,ISO 3166-2:MZ,51,MZ,NULL,Africa,2,14,NULL,AFRICOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 MRT,Mauritania,Mauritania,MR,478,ISO 3166-2:MR,49,MR,NULL,Africa,2,11,NULL,AFRICOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 MSR,Montserrat,Montserrat,MS,500,ISO 3166-2:MS,NULL,NULL,NULL,Latin America and Caribbean,19,29,NULL,NULL,Rest of World,1,0,0,0,NULL,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
@@ -225,7 +225,7 @@ PHL,Philippines,Philippines,PH,608,ISO 3166-2:PH,130,RP,NULL,Asia,142,35,NULL,PA
 PLW,Palau,Palau,PW,585,ISO 3166-2:PW,143,NULL,NULL,Asia,9,57,NULL,PACOM,Rest of World,1,0,0,0,1,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 PNG,Papua New Guinea,Papua New Guinea,PG,598,ISO 3166-2:PG,144,PP,NULL,Asia,9,54,NULL,PACOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 POL,Poland,Poland,PL,616,ISO 3166-2:PL,175,PL,NULL,Europe and Eurasia,150,151,NULL,EUCOM,Rest of World,1,0,0,0,0,0,0,1999,NULL,0,0,0,NULL,NULL,NULL
-PRI,Puerto Rico,Puerto Rico,PR,630,ISO 3166-2:PR,NULL,PR,NULL,Washington,19,29,NULL,NORTHCOM,Domestic,0,1,0,1,NULL,-1,0,NULL,NULL,1,1,1,1994,NULL,NULL
+PRI,Puerto Rico,Puerto Rico,PR,630,ISO 3166-2:PR,NULL,PR,NULL,Washington,19,29,NULL,NORTHCOM,Domestic,0,1,0,1,NULL,-1,0,1949,NULL,1,1,1,1994,NULL,NULL
 PRK,"Korea, North","Korea, Democratic People's Republic of",KP,408,ISO 3166-2:KP,122,NULL,NULL,Asia,142,30,NULL,PACOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 PRT,Portugal,Portugal,PT,620,ISO 3166-2:PT,196,PO,NULL,Europe and Eurasia,150,39,NULL,EUCOM,Rest of World,1,0,0,0,0,0,0,1949,NULL,0,0,0,NULL,NULL,NULL
 PRY,Paraguay,Paraguay,PY,600,ISO 3166-2:PY,98,PA,NULL,Latin America and Caribbean,19,5,NULL,SOUTHCOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,1,0,NULL,NULL,NULL
@@ -248,7 +248,7 @@ SLE,Sierra Leone,Sierra Leone,SL,694,ISO 3166-2:SL,59,SL,NULL,Africa,2,11,NULL,A
 SLV,El Salvador,El Salvador,SV,222,ISO 3166-2:SV,88,ES,NULL,Latin America and Caribbean,19,13,NULL,SOUTHCOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,1,0,NULL,NULL,NULL
 SMR,San Marino,San Marino,SM,674,ISO 3166-2:SM,NULL,SM,NULL,Europe and Eurasia,150,39,NULL,EUCOM,Rest of World,1,0,0,0,NULL,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 SOM,Somalia,Somalia,SO,706,ISO 3166-2:SO,60,SO,NULL,Africa,2,14,Horn of Africa,AFRICOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
-SPM,Saint Pierre and Miquelon,Saint Pierre and Miquelon,PM,666,ISO 3166-2:PM,NULL,NULL,NULL,Washington,19,21,NULL,NORTHCOM,Domestic,0,1,0,1,NULL,-1,0,NULL,NULL,1,1,1,1994,NULL,NULL
+SPM,Saint Pierre and Miquelon,Saint Pierre and Miquelon,PM,666,ISO 3166-2:PM,NULL,NULL,NULL,Washington,19,21,NULL,NORTHCOM,Domestic,0,1,0,1,NULL,-1,0,1949,NULL,1,1,1,1994,NULL,NULL
 SRB,Serbia,Serbia,RS,688,ISO 3166-2:RS,177,NULL,NULL,Europe and Eurasia,150,39,NULL,EUCOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 SSD,South Sudan,South Sudan,SS,728,ISO 3166-2:SS,62,SS,NULL,Africa,2,15,NULL,AFRICOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 STP,Sao Tome & Principe,Sao Tome and Principe,ST,678,ISO 3166-2:ST,56,TP,NULL,Africa,2,17,NULL,AFRICOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
@@ -277,7 +277,7 @@ TWN,Taiwan,"Taiwan, Province of China",TW,158,ISO 3166-2:TW,118,TW,NULL,Asia,142
 TZA,Tanzania,"Tanzania, United Republic of",TZ,834,ISO 3166-2:TZ,65,TZ,NULL,Africa,2,14,NULL,AFRICOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 UGA,Uganda,Uganda,UG,800,ISO 3166-2:UG,67,UG,NULL,Africa,2,14,NULL,AFRICOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 UKR,Ukraine,Ukraine,UA,804,ISO 3166-2:UA,160,NULL,NULL,Europe and Eurasia,150,151,NULL,EUCOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
-UMI,United States Minor Outlying Islands,United States Minor Outlying Islands,UM,581,ISO 3166-2:UM,NULL,NULL,NULL,Washington,NULL,NULL,NULL,PACOM,Domestic,0,0,0,0,NULL,-1,0,NULL,NULL,1,1,1,1994,NULL,NULL
+UMI,United States Minor Outlying Islands,United States Minor Outlying Islands,UM,581,ISO 3166-2:UM,NULL,NULL,NULL,Washington,NULL,NULL,NULL,PACOM,Domestic,0,1,0,1,NULL,-1,0,1949,NULL,1,1,1,1994,NULL,NULL
 URY,Uruguay,Uruguay,UY,858,ISO 3166-2:UY,105,UY,NULL,Latin America and Caribbean,19,5,NULL,SOUTHCOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,1,0,NULL,NULL,NULL
 USA,United States,United States,US,840,ISO 3166-2:US,NULL,NULL,NULL,Washington,19,21,NULL,NORTHCOM,Domestic,0,0,0,0,NULL,-1,0,1949,NULL,1,1,1,1994,NULL,NULL
 UZB,Uzbekistan,Uzbekistan,UZ,860,ISO 3166-2:UZ,161,UZ,NULL,Asia,142,143,Afghan Theater,CENTCOM,Regional Support,1,0,0,0,0,1,1,NULL,NULL,0,0,0,NULL,NULL,NULL
@@ -285,7 +285,7 @@ VAT,Holy See (Vatican City State),Holy See (Vatican City State),VA,336,ISO 3166-
 VCT,St. Vincent and Grenadines,Saint Vincent and the Grenadines,VC,670,ISO 3166-2:VC,102,VC,NULL,Latin America and Caribbean,19,29,NULL,SOUTHCOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 VEN,Venezuela,"Venezuela, Bolivarian Republic of",VE,862,ISO 3166-2:VE,106,VE,NULL,Latin America and Caribbean,19,5,NULL,SOUTHCOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,1,0,NULL,NULL,NULL
 VGB,"Virgin Islands, British","Virgin Islands, British",VG,92,ISO 3166-2:VG,NULL,VI,NULL,Latin America and Caribbean,19,29,NULL,NORTHCOM,Rest of World,1,0,0,0,NULL,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
-VIR,"Virgin Islands, U.S.","Virgin Islands, U.S.",VI,850,ISO 3166-2:VI,NULL,VQ,NULL,Latin America and Caribbean,19,29,NULL,NULL,Domestic,0,1,0,1,NULL,-1,0,NULL,NULL,1,1,1,1994,NULL,NULL
+VIR,"Virgin Islands, U.S.","Virgin Islands, U.S.",VI,850,ISO 3166-2:VI,NULL,VQ,NULL,Latin America and Caribbean,19,29,NULL,NULL,Domestic,0,1,0,1,NULL,-1,0,1949,NULL,1,1,1,1994,NULL,NULL
 VNM,Vietnam,Viet Nam,VN,704,ISO 3166-2:VN,135,VM,NULL,Asia,142,35,NULL,PACOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 VUT,Vanuatu,Vanuatu,VU,548,ISO 3166-2:VU,148,NH,NULL,Asia,9,54,NULL,PACOM,Rest of World,1,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 WLF,Wallis and Futuna,Wallis and Futuna,WF,876,ISO 3166-2:WF,NULL,WF,NULL,Asia,9,61,NULL,NULL,Rest of World,1,1,0,1,NULL,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
