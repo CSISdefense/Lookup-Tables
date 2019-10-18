@@ -82,7 +82,7 @@ COK,Cook Islands,Cook Islands,CK,184,ISO 3166-2:CK,NULL,NULL,NULL,Asia,Europe an
 BVT,Bouvet Island,Bouvet Island,BV,74,ISO 3166-2:BV,NULL,BV,NULL,Europe and Eurasia,Europe and Eurasia,NULL,NULL,NULL,EUCOM,Rest of World,1,NOR,1,0,1,NULL,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 COD,Congo (Kinshasa),"Congo, the Democratic Republic of the",CD,180,ISO 3166-2:CD,32,CG,NULL,Africa,Africa,2,17,NULL,AFRICOM,Rest of World,1,NULL,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 CIV,Cote d'Ivoire,Côte d'Ivoire,CI,384,ISO 3166-2:CI,33,IV,NULL,Africa,Africa,2,11,NULL,AFRICOM,Rest of World,1,NULL,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
-CAN,Canada,Canada,CA,124,ISO 3166-2:CA,203,CA,NULL,Canada,Canada,19,21,NULL,NORTHCOM,Rest of World,1,NULL,0,0,0,1,0,0,1949,NULL,0,0,1,1994,NULL,NULL
+CAN,Canada,Canada,CA,124,ISO 3166-2:CA,203,CA,NULL,Canada,Western Hemisphere,19,21,NULL,NORTHCOM,Rest of World,1,NULL,0,0,0,1,0,0,1949,NULL,0,0,1,1994,NULL,NULL
 *ES,East Asia Regional,NULL,NULL,NULL,NULL,NULL,NULL,NULL,Asia,East Asia and Pacific,NULL,NULL,NULL,NULL,NULL,1,NULL,NULL,NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
 ?AE,Eurasia (not specified),NULL,NULL,NULL,NULL,162,NULL,NULL,Europe and Eurasia,Europe and Eurasia,150,150,NULL,EUCOM,Rest of World,1,NULL,0,0,0,0,0,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
 CRI,Costa Rica,Costa Rica,CR,188,ISO 3166-2:CR,83,CS,NULL,Latin America and Caribbean,Western Hemisphere,19,13,NULL,SOUTHCOM,Rest of World,1,NULL,0,0,0,0,0,0,NULL,NULL,0,1,0,NULL,NULL,NULL
