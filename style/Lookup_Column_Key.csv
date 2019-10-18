@@ -52,6 +52,7 @@ Ceil.Simple,Contract Size,Contract Ceiling,,,FALSE
 PlatformPortfolio,PlatformPortfolio,Platform Portfolio,,,FALSE
 PlatformPortfolio.sum,PlatformPortfolio,Platform Portfolio,,,FALSE
 PlatformPortfolio.AnD,PlatformPortfolio,Platform Portfolio,,,FALSE
+PlatformPortfolio.USITC,PlatformPortfolio,Platform Portfolio,,,FALSE
 Europe,Europe,,,,FALSE
 Country,Europe,,,,FALSE
 Coloring,Europe,,,,FALSE
