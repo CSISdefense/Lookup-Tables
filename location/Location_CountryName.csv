@@ -529,7 +529,7 @@ NIC: NICARAGUA,NIC,NIC
 NICARAGUA,NIC,NIC
 NIGER,NER,NER
 NIGERIA,NGA,NGA
-Niue,NULL,NIU
+Niue,NIU,NIU
 NIUE [NEW ZEALAND],NIU,NIU
 NJUNI,~NJ,~NJ
 NLD,NLD,NLD
@@ -857,12 +857,10 @@ Latin America & Caribbean (not specified),?LC,?LC
 Macao,MAC,MAC
 "Macedonia, the former Yugoslav Republic of",MKD,MKD
 Mainland Southeast Asia / the Indochinese Peninsula,NULL,~IC
-Mayotte,NULL,MYT
 Micronesia (Federated States of),FSM,FSM
 "Micronesia, Federated States of",FSM,FSM
 Middle East & North Africa (not specified),*ME,?ME
 "Moldova, Republic of",MDA,MDA
-Niue,NIU,NIU
 Norfolk Island,NULL,NFK
 North Korea,PRK,PRK
 North Macedonia',MKD,MKD
@@ -879,7 +877,6 @@ Saint Barthélemy,NULL,BLM
 "Saint Helena, Ascension and Tristan da Cunha",NULL,SHN
 Saint Martin (French part),NULL,MAF
 Saint Pierre and Miquelon,SPM,SPM
-San Marino,NULL,SMR
 Sint Maarten (Dutch part),NULL,SXM
 South Georgia and the South Sandwich Islands,NULL,SGS
 South Vietnam,NULL,*SV
