@@ -168,7 +168,7 @@ KGZ,Kyrgyzstan,Kyrgyzstan,KG,417,ISO 3166-2:KG,155,KG,NULL,Asia,South and Centra
 KHM,Cambodia,Cambodia,KH,116,ISO 3166-2:KH,115,CB,NULL,Asia,East Asia and Pacific,142,35,NULL,PACOM,Rest of World,1,NULL,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 KIR,Kiribati,Kiribati,KI,296,ISO 3166-2:KI,139,KR,NULL,Asia,East Asia and Pacific,9,57,NULL,PACOM,Rest of World,1,NULL,0,0,0,1,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 KNA,St. Kitts and Nevis,Saint Kitts and Nevis,KN,659,ISO 3166-2:KN,100,SC,NULL,Latin America and Caribbean,Western Hemisphere,19,29,NULL,SOUTHCOM,Rest of World,1,NULL,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
-KOR,South Korea,"Korea, Republic of",KR,410,ISO 3166-2:KR,123,KS,NULL,Asia,East Asia and Pacific,142,30,NULL,PACOM,Rest of World,1,NULL,0,0,0,0,0,0,NULL,1989,0,0,0,NULL,NULL,NULL
+KOR,South Korea,"Korea, Republic of",KR,410,ISO 3166-2:KR,123,KS,NULL,Asia,East Asia and Pacific,142,30,NULL,PACOM,Rest of World,1,NULL,0,0,0,0,0,0,NULL,1989,0,0,0,NULL,REPUBLIC OF KOREA TREATY (Bilateral),1953
 KWT,Kuwait,Kuwait,KW,414,ISO 3166-2:KW,8,NULL,NULL,Middle East,Near East,142,145,Iraq Theater,CENTCOM,Regional Support,1,NULL,0,0,0,0,1,1,NULL,2004,0,0,0,NULL,NULL,NULL
 LAO,Laos,Lao People's Democratic Republic,LA,418,ISO 3166-2:LA,124,LA,NULL,Asia,East Asia and Pacific,142,35,NULL,PACOM,Rest of World,1,NULL,0,0,0,0,0,0,NULL,NULL,0,0,0,NULL,NULL,NULL
 LBN,Lebanon,Lebanon,LB,422,ISO 3166-2:LB,9,LE,NULL,Middle East,Near East,142,145,NULL,CENTCOM,Rest of World,1,NULL,0,0,0,0,1,1,NULL,NULL,0,0,0,NULL,NULL,NULL
