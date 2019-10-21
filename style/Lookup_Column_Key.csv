@@ -595,6 +595,7 @@ dtDelivYear,,Year of Obligation or Delivery (Calendar or Fiscal Varies by Source
 Mixed Year,,Year of Obligation or Delivery (Calendar or Fiscal Varies by Source),,,
 AcquisitionCooperation,Relationship,Cooperative Acquisition Arrangement,,,
 MutualDefense,Relationship,Mutual Defense Agreement,,,
+AcquisitionDefense,Relationship,Mutual Defense Agreement and Acquisition Arrangement,,,
 SEATO,Binary,South East Asian Treaty Organization Member,,,
 RioTreaty,Binary,Rio Treaty Member,,,
 FiveEyes,Binary,Five Eyes Member,,,
