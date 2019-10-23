@@ -600,3 +600,4 @@ MutualAcquisition,Relationship,Mutual Defense Agreement and Acquisition Arrangem
 SEATO,Binary,South East Asian Treaty Organization Member,,,
 RioTreaty,Binary,Rio Treaty Member,,,
 FiveEyes,Binary,Five Eyes Member,,,
+AgreeDeliv,FMS,Agreement or Delivery,,,
