@@ -2798,6 +2798,8 @@ FMS,Foreign Funds non-FMS,Foreign Funds non-FMS,3,c,#92D050,,,,default grey,#554
 FMS,Not Applicable,Not Applicable,9,orange,#DB8403,,,,default grey,#554449,
 FMS,0,Not FMS,9,orange,#DB8403,,,,default grey,#554449,
 FMS,1,FMS,2,Purpleblue,#93A9CF,,,,default grey,#554449,
+FMS,Agreement,Agreement,10,light Blue,#93CDDD,,,,default grey,#554449,
+FMS,Delivery,Delivery,11,Blue,#0070C0,,,,default grey,#554449,
 ,,,,,,,,,,,
 congress_col,Force,Force,1,,,,,,,,
 congress_col,Russia,Russia Cooperation,2,,,,,,,,
