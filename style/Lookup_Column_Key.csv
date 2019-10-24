@@ -52,6 +52,8 @@ Ceil.Simple,Contract Size,Contract Ceiling,,,FALSE
 PlatformPortfolio,PlatformPortfolio,Platform Portfolio,,,FALSE
 PlatformPortfolio.sum,PlatformPortfolio,Platform Portfolio,,,FALSE
 PlatformPortfolio.AnD,PlatformPortfolio,Platform Portfolio,,,FALSE
+PlatformPortfolio.USITC,PlatformPortfolio,Platform Portfolio,,,FALSE
+PlatformPortfolio.DSCA,PlatformPortfolio,Platform Portfolio,,,FALSE
 Europe,Europe,,,,FALSE
 Country,Europe,,,,FALSE
 Coloring,Europe,,,,FALSE
@@ -575,6 +577,7 @@ Action.Obligation.Then.Year,,Action Obligation (Current $s),Share Contract $,,
 Number.Of.Actions,,Number of Actions,Share of Actions,,
 Buyer,Country,Buyer Country,,,
 USAID.region,Region,Region,,,
+StateRegion,Region,Region,,,
 Armament.category,PlatformPortfolio,Platform Portfolio,,,
 Order.date,,Order Calendar Year,,,
 Numbers.delivered,,Number of Units Delivered,,,
@@ -583,10 +586,18 @@ TIV.deal.unit,,TIV per Unit,,,
 TIV.delivery.values,,TIV of Deliveries,Share of TIV,,
 Local.production,Binary,Local Production,,,
 Source,Source,Data Source,,,
+Source_PSR,Source,Data Source,,,
 Metric,Source,Value Metric,,,
 SourceProduct,Source,Data Source,,,
-delivery_value,,Obligation / Delivery Value (Metric Varies by Source),,,
-delivery_2012,,Value of Obligations / Deliveries (2012-100),,,
+delivery_value,,Obligation or Delivery Value (Metric Varies by Source),,,
+delivery_2012,,Value of Obligations or Deliveries (2012-100),,,
 FMStype,FMS,Broad Category of FMS,,,
 dtDelivYear,,Year of Obligation or Delivery (Calendar or Fiscal Varies by Source),,,
 Mixed Year,,Year of Obligation or Delivery (Calendar or Fiscal Varies by Source),,,
+AcquisitionCooperation,Relationship,Cooperative Acquisition Arrangement,,,
+MutualDefense,Relationship,Mutual Defense Agreement,,,
+MutualAcquisition,Relationship,Mutual Defense Agreement and Acquisition Arrangement,,,
+SEATO,Binary,South East Asian Treaty Organization Member,,,
+RioTreaty,Binary,Rio Treaty Member,,,
+FiveEyes,Binary,Five Eyes Member,,,
+AgreeDeliv,FMS,Agreement or Delivery,,,
