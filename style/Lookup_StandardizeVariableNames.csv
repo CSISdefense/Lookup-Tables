@@ -37,10 +37,10 @@ TypeofContractPricingtext,Pricing.Mechanism
 TypeOfContractPricing,Pricing.Mechanism.Code
 Simple,SimpleArea
 ProductorServiceArea,ProductOrServiceArea
-ProductsCategory,ProductOrServiceArea
-ServiceCategory,ProductOrServiceArea
-Services.Category,ProductOrServiceArea
-ServicesCategory,ProductOrServiceArea
+ProductsCategory,ProductsCategory
+ServiceCategory,ServicesCategory
+Services.Category,ServicesCategory
+ServicesCategory,ServicesCategory
 simplearea,SimpleArea
 Sub_Customer,SubCustomer
 SubCustomerSum,SubCustomer
@@ -257,7 +257,7 @@ IDV Type,idv_type_code
 IDV Multiple Or Single Award IDV,idv_multipleorsingleawardidc
 Award or IDV Type,contractactiontype
 Multiple or Single Award IDV,multipleorsingleawardidc
-Type of Contract,Pricing.Mechanism.Code
+Type of Contract,Pricing_Mechanism_Code
 Pricing.Mechanism.Code,Pricing_Mechanism_Code
 Action Obligation,Action_Obligation
 contractingofficeagencyid,Contracting.Agency.ID
@@ -271,10 +271,10 @@ Number of Hours  Invoiced,Number_of_Hours_Invoiced
 CSISCreatedDate,CSISCreatedDate
 CSISModifiedDate,CSISModifiedDate
 IsDuplicateUTI,IsDuplicateUTI
-PSC Code,PSC_Code
-Product Or Service Code,PSC_Code
-PSC Description,PSC_Description
-Product or Service Description,PSC_Description
+PSC Code,ProductOrServiceCode
+Product Or Service Code,ProductOrServiceCode
+PSC Description,ProductOrServiceCodeText
+Product or Service Description,ProductOrServiceCodeText
 Contracting.Agency.ID,Contracting_Agency_ID
 Contracting Department ID,Contracting_Department_ID
 Funding Agency ID,Funding_Agency_ID
