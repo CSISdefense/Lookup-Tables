@@ -1,0 +1,181 @@
+"","country","ISO3","2017","2016","2015","2014","2013","2012","2011"
+"1","Afghanistan","AFG",15,15,11,12,8,8,NA
+"2","Albania","ALB",38,39,36,33,31,33,NA
+"3","Algeria","DZA",33,34,36,36,36,34,NA
+"4","Angola","AGO",19,18,15,19,23,22,NA
+"5","Argentina","ARG",39,36,32,34,34,35,NA
+"6","Armenia","ARM",35,33,35,37,36,34,NA
+"7","Australia","AUS",77,79,79,80,81,85,NA
+"8","Austria","AUT",75,75,76,72,69,69,NA
+"9","Azerbaijan","AZE",31,30,29,29,28,27,NA
+"10","Bahamas","BHS",65,66,NA,71,71,71,NA
+"11","Bahrain","BHR",36,43,51,49,48,51,NA
+"12","Bangladesh","BGD",28,26,25,25,27,26,NA
+"13","Barbados","BRB",68,61,NA,74,75,76,NA
+"14","Belarus","BLR",44,40,32,31,29,31,NA
+"15","Belgium","BEL",75,77,77,76,75,75,NA
+"16","Benin","BEN",39,36,37,39,36,36,NA
+"17","Bhutan","BTN",67,65,65,65,63,63,NA
+"18","Bolivia","BOL",33,33,34,35,34,34,NA
+"19","Bosnia and Herzegovina","BIH",38,39,38,39,42,42,NA
+"20","Botswana","BWA",61,60,63,63,64,65,NA
+"21","Brazil","BRA",37,40,38,43,42,43,NA
+"22","Brunei Darussalam","BRN",62,58,NA,NA,60,55,5.142163
+"23","Bulgaria","BGR",43,41,41,43,41,41,NA
+"24","Burkina Faso","BFA",42,42,38,38,38,38,NA
+"25","Burundi","BDI",22,20,21,20,21,19,NA
+"26","Cambodia","KHM",21,21,21,21,20,22,NA
+"27","Cameroon","CMR",25,26,27,27,25,26,NA
+"28","Canada","CAN",82,82,83,81,81,84,NA
+"29","Cape Verde","CPV",55,59,55,57,58,60,NA
+"30","Central African Republic","CAF",23,20,24,24,25,26,NA
+"31","Chad","TCD",20,20,22,22,19,19,NA
+"32","Chile","CHL",67,66,70,73,71,72,NA
+"33","China","CHN",41,40,37,36,40,39,NA
+"34","Colombia","COL",37,37,37,37,36,36,NA
+"35","Comoros","COM",27,24,26,26,28,28,NA
+"36","Costa Rica","CRI",59,58,55,54,53,54,NA
+"37","C<f4>te d<U+0092>Ivoire","CIV",36,34,32,32,27,29,NA
+"38","Croatia","HRV",49,49,51,48,48,46,NA
+"39","Cuba","CUB",47,47,47,46,46,48,NA
+"40","Cyprus","CYP",57,55,61,63,63,66,NA
+"41","Czech Republic","CZE",57,55,56,51,48,49,NA
+"42","Democratic Republic of the Congo","COD",21,21,22,22,22,21,NA
+"43","Denmark","DNK",88,90,91,92,91,90,NA
+"44","Djibouti","DJI",31,30,34,34,36,36,NA
+"45","Dominica","DMA",57,59,NA,58,58,58,NA
+"46","Dominican Republic","DOM",29,31,33,32,29,32,NA
+"47","Ecuador","ECU",32,31,32,33,35,32,NA
+"48","Egypt","EGY",32,34,36,37,32,32,NA
+"49","El Salvador","SLV",33,36,39,39,38,38,NA
+"50","Equatorial Guinea","GNQ",17,NA,NA,NA,19,20,NA
+"51","Eritrea","ERI",20,18,18,18,20,25,NA
+"52","Estonia","EST",71,70,70,69,68,64,NA
+"53","Ethiopia","ETH",35,34,33,33,33,33,NA
+"54","Finland","FIN",85,89,90,89,89,90,NA
+"55","France","FRA",70,69,70,69,71,71,NA
+"56","Gabon","GAB",32,35,34,37,34,35,NA
+"57","Gambia","GMB",30,26,28,29,28,34,NA
+"58","Georgia","GEO",56,57,52,52,49,52,NA
+"59","Germany","DEU",81,81,81,79,78,79,NA
+"60","Ghana","GHA",40,43,47,48,46,45,NA
+"61","Greece","GRC",48,44,46,43,40,36,NA
+"62","Grenada","GRD",52,56,NA,NA,NA,NA,NA
+"63","Guatemala","GTM",28,28,28,32,29,33,NA
+"64","Guinea","GIN",27,27,25,25,24,24,NA
+"65","Guinea-Bissau","GNB",17,16,17,19,19,25,NA
+"66","Guyana","GUY",38,34,29,30,27,28,NA
+"67","Haiti","HTI",22,20,17,19,19,19,NA
+"68","Honduras","HND",29,30,31,29,26,28,NA
+"69","Hong Kong","HKG",77,77,75,74,75,77,NA
+"70","Hungary","HUN",45,48,51,54,54,55,NA
+"71","Iceland","ISL",77,78,79,79,78,82,NA
+"72","India","IND",40,40,38,38,36,36,NA
+"73","Indonesia","IDN",37,37,36,34,32,32,NA
+"74","Iran","IRN",30,29,27,27,25,28,NA
+"75","Iraq","IRQ",18,17,16,16,16,18,NA
+"76","Ireland","IRL",74,73,75,74,72,69,NA
+"77","Israel","ISR",62,64,61,60,61,60,NA
+"78","Italy","ITA",50,47,44,43,43,42,NA
+"79","Jamaica","JAM",44,39,41,38,38,38,NA
+"80","Japan","JPN",73,72,75,76,74,74,NA
+"81","Jordan","JOR",48,48,53,49,45,48,NA
+"82","Kazakhstan","KAZ",31,29,28,29,26,28,NA
+"83","Kenya","KEN",28,26,25,25,27,27,NA
+"84","Korea (North)","PRK",17,12,8,8,8,8,NA
+"85","Korea (South)","KOR",54,53,54,55,55,56,NA
+"86","Kosovo","KSV",39,36,33,33,33,34,NA
+"87","Kuwait","KWT",39,41,49,44,43,44,NA
+"88","Kyrgyzstan","KGZ",29,28,28,27,24,24,NA
+"89","Laos","LAO",29,30,25,25,26,21,NA
+"90","Latvia","LVA",58,57,56,55,53,49,NA
+"91","Lebanon","LBN",28,28,28,27,28,30,NA
+"92","Lesotho","LSO",42,39,44,49,49,45,NA
+"93","Liberia","LBR",31,37,37,37,38,41,NA
+"94","Libya","LBY",17,14,16,18,15,21,NA
+"95","Lithuania","LTU",59,59,59,58,57,54,NA
+"96","Luxembourg","LUX",82,81,85,82,80,80,NA
+"97","Macedonia","MKD",35,NA,NA,NA,44,43,NA
+"98","Madagascar","MDG",24,37,42,45,28,32,NA
+"99","Malawi","MWI",31,31,31,33,37,37,NA
+"100","Malaysia","MYS",47,49,50,52,50,49,NA
+"101","Maldives","MDV",33,36,NA,NA,NA,NA,NA
+"102","Mali","MLI",31,32,35,32,28,34,NA
+"103","Malta","MLT",56,55,60,55,56,57,NA
+"104","Mauritania","MRT",28,27,31,30,30,31,NA
+"105","Mauritius","MUS",50,54,53,54,52,57,NA
+"106","Mexico","MEX",29,30,31,35,34,34,NA
+"107","Moldova","MDA",31,30,33,35,35,36,NA
+"108","Mongolia","MNG",36,38,39,39,38,36,NA
+"109","Montenegro","MNE",46,45,44,42,44,41,NA
+"110","Morocco","MAR",40,37,36,39,37,37,NA
+"111","Mozambique","MOZ",25,27,31,31,30,31,NA
+"112","Myanmar","MMR",30,28,22,21,21,15,NA
+"113","Namibia","NAM",51,52,53,49,48,48,NA
+"114","Nepal","NPL",31,29,27,29,31,27,NA
+"115","Netherlands","NLD",82,83,84,83,83,84,NA
+"116","New Zealand","NZL",89,90,91,91,91,90,NA
+"117","Nicaragua","NIC",26,26,27,28,28,29,NA
+"118","Niger","NER",33,35,34,35,34,33,NA
+"119","Nigeria","NGA",27,28,26,27,25,27,NA
+"120","Norway","NOR",85,85,88,86,86,85,NA
+"121","Oman","OMN",44,45,45,45,47,47,NA
+"122","Pakistan","PAK",32,32,30,29,28,27,NA
+"123","Panama","PAN",37,38,39,37,35,38,NA
+"124","Papua New Guinea","PNG",29,28,25,25,25,25,NA
+"125","Paraguay","PRY",29,30,27,24,24,25,NA
+"126","Peru","PER",37,35,36,38,38,38,NA
+"127","Philippines","PHL",34,35,35,38,36,34,NA
+"128","Poland","POL",60,62,63,61,60,58,NA
+"129","Portugal","PRT",63,62,64,63,62,63,NA
+"130","Qatar","QAT",63,61,71,69,68,68,NA
+"131","Republic of Congo","COG",21,20,23,23,22,26,NA
+"132","Romania","ROU",48,48,46,43,43,44,NA
+"133","Russia","RUS",29,29,29,27,28,28,NA
+"134","Rwanda","RWA",55,54,54,49,53,53,NA
+"135","Saint Lucia","LCA",55,60,NA,71,71,71,NA
+"136","Saint Vincent and the Grenadines","VCT",58,60,NA,62,62,62,NA
+"137","Sao Tome and Principe","STP",46,46,42,42,42,42,NA
+"138","Saudi Arabia","SAU",49,46,52,49,46,44,NA
+"139","Senegal","SEN",45,45,44,43,41,36,NA
+"140","Serbia","SRB",41,42,40,41,42,39,NA
+"141","Seychelles","SYC",60,NA,55,55,54,52,NA
+"142","Sierra Leone","SLE",30,30,29,31,30,31,NA
+"143","Singapore","SGP",84,84,85,84,86,87,NA
+"144","Slovakia","SVK",50,51,51,50,47,46,NA
+"145","Slovenia","SVN",61,61,60,58,57,61,NA
+"146","Solomon Islands","SLB",39,42,NA,NA,NA,NA,NA
+"147","Somalia","SOM",9,10,8,8,8,8,NA
+"148","South Africa","ZAF",43,45,44,44,42,43,NA
+"149","South Sudan","SSD",12,11,15,15,14,NA,NA
+"150","Spain","ESP",57,58,58,60,59,65,NA
+"151","Sri Lanka","LKA",38,36,37,38,37,40,NA
+"152","Sudan","SDN",16,14,12,11,11,13,NA
+"153","Suriname","SUR",41,45,36,36,36,37,NA
+"154","Swaziland","SWZ",39,NA,NA,43,39,37,NA
+"155","Sweden","SWE",84,88,89,87,89,88,NA
+"156","Switzerland","CHE",85,86,86,86,85,86,NA
+"157","Syria","SYR",14,13,18,20,17,26,NA
+"158","Taiwan","TWN",63,61,62,61,61,61,NA
+"159","Tajikistan","TJK",21,25,26,23,22,22,NA
+"160","Tanzania","TZA",36,32,30,31,33,35,NA
+"161","Thailand","THA",37,35,38,38,35,37,NA
+"162","Timor-Leste","TLS",38,35,28,28,30,33,NA
+"163","Togo","TGO",32,32,32,29,29,30,NA
+"164","Trinidad and Tobago","TTO",41,35,39,38,38,39,NA
+"165","Tunisia","TUN",42,41,38,40,41,41,NA
+"166","Turkey","TUR",40,41,42,45,50,49,NA
+"167","Turkmenistan","TKM",19,22,18,17,17,17,NA
+"168","Uganda","UGA",26,25,25,26,26,29,NA
+"169","Ukraine","UKR",30,29,27,26,25,26,NA
+"170","United Arab Emirates","ARE",71,66,70,70,69,68,NA
+"171","United Kingdom","GBR",82,81,81,78,76,74,NA
+"172","United States of America","USA",75,74,76,74,73,73,NA
+"173","Uruguay","URY",70,71,74,73,73,72,NA
+"174","Uzbekistan","UZB",22,21,19,18,17,17,NA
+"175","Vanuatu","VUT",43,NA,NA,NA,NA,NA,NA
+"176","Venezuela","VEN",18,17,17,19,20,19,NA
+"177","Vietnam","VNM",35,33,31,31,31,31,NA
+"178","Yemen","YEM",16,14,18,19,18,23,NA
+"179","Zambia","ZMB",37,38,38,38,38,37,NA
+"180","Zimbabwe","ZWE",22,22,21,21,21,20,NA
