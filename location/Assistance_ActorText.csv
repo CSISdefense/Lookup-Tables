@@ -1,383 +1,383 @@
-﻿ActorText,UCDPactorID,GeographicISOalpha3
-Afghanistan,130,AFG
-African Union**,NULL,*AF
-Albania,45,ALB
-Algeria,109,DZA
-Amal (Lebanon)*,NULL,LBN
-ANC (South Africa)*,NULL,ZAF
-Angola,99,AGO
-Anti-Castro rebels (Cuba)*,NULL,CUB
-Argentina,26,ARG
-Armas (Guatemala)*,NULL,GTM
-Armenia,NULL,ARM
-Aruba,NULL,ABW
-Australia,NULL,AUS
-Austria,NULL,AUT
-Azerbaijan,64,AZE
-Bahamas,NULL,BHS
-Bahrain,126,BHR
-Bangladesh,143,BGD
-Barbados,NULL,BRB
-Belarus,NULL,BLR
-Belgium,NULL,BEL
-Belize,NULL,BLZ
-Benin,NULL,BEN
-Bhutan,NULL,BTN
-Biafra,NULL,*BI
-Bolivia,23,BOL
-Bosnia-Herzegovina,50,BIH
-Botswana,NULL,BWA
-Brazil,22,BRA
-Brunei,NULL,BRN
-Bulgaria,NULL,BGR
-Burkina Faso,78,BFA
-Burundi,93,BDI
-Cambodia,148,KHM
-Cameroon,83,CMR
-Canada,NULL,CAN
-Cape Verde,NULL,CPV
-Central African Republic,86,CAF
-Chad,87,TCD
-Chile,25,CHL
-China,135,CHN
-Colombia,17,COL
-Comoros,107,COM
-Congo,88,COG
-Contras (Nicaragua)*,NULL,NIC
-Costa Rica,15,CRI
-Cote d'Ivoire,NULL,CIV
-Croatia,48,HRV
-Cuba,5,CUB
-Cyprus,53,CYP
-Czech Republic,NULL,CZE
-Czechia,NULL,CZE
-Czechoslovakia,NULL,~CQ
-Denmark,NULL,DNK
-Djibouti,96,DJI
-Dominican Republic,7,DOM
-DR Congo,NULL,COD
-East Germany (GDR),NULL,DDR
-Ecuador,20,ECU
-Egypt,117,EGY
-El Salvador,13,SLV
-ELF (Ethiopia)*,NULL,ERI
-EPLF (Ethiopia)*,NULL,ERI
-Equatorial Guinea,NULL,GNQ
-Eritrea,98,ERI
-Estonia,NULL,EST
-Ethiopia,97,ETH
-FAN (Chad)*,NULL,TCD
-Fiji,NULL,FJI
-Finland,NULL,FIN
-FMLN (El Salvador)*,NULL,SLV
-FNLA (Angola)*,NULL,AGO
-France,33,FRA
-FRELIMO (Portugal)*,NULL,MOZ
-Gabon,85,GAB
-Gambia,71,GMB
-Georgia,63,GEO
-Germany,NULL,DEU
-Germany (FRG),NULL,DEU
-Ghana,81,GHA
-Government of Afghanistan,130,AFG
-Government of Albania,45,ALB
-Government of Algeria,109,DZA
-Government of Angola,99,AGO
-Government of Argentina,26,ARG
-Government of Azerbaijan,64,AZE
-Government of Bahrain,126,BHR
-Government of Bangladesh,143,BGD
-Government of Bolivia,23,BOL
-Government of Brazil,22,BRA
-Government of Burkina Faso,78,BFA
-Government of Burundi,93,BDI
-Government of Cambodia,148,KHM
-Government of Cambodia (Kampuchea),148,KHM
-Government of Cameroon,83,CMR
-Government of Central African Republic,86,CAF
-Government of Chad,87,TCD
-Government of Chile,25,CHL
-Government of Colombia,17,COL
-Government of Comoros,107,COM
-Government of Costa Rica,15,CRI
-Government of Croatia,48,HRV
-Government of Cuba,5,CUB
-Government of Cyprus,53,CYP
-Government of Djibouti,96,DJI
-Government of Dominican Republic,7,DOM
-Government of Ecuador,20,ECU
-Government of Egypt,117,EGY
-Government of El Salvador,13,SLV
-Government of Eritrea,98,ERI
-Government of Ethiopia,97,ETH
-Government of France,33,FRA
-Government of Gabon,85,GAB
-Government of Georgia,63,GEO
-Government of Ghana,81,GHA
-Government of Greece,52,GRC
-Government of Grenada,9,GRD
-Government of Guatemala,11,GTM
-Government of Guinea,77,GIN
-Government of Guinea-Bissau,70,GNB
-Government of Haiti,6,HTI
-Government of Honduras,12,HND
-Government of Hungary,40,HUN
-Government of India,141,IND
-Government of Indonesia,155,IDN
-Government of Iran,114,IRN
-Government of Iraq,116,IRQ
-Government of Israel,121,ISR
-Government of Jordan,120,JOR
-Government of Kazakhstan,134,KAZ
-Government of Kenya,91,KEN
-Government of Kuwait,125,KWT
-Government of Kyrgyzstan,132,KGZ
-Government of Laos,149,LAO
-Government of Lebanon,119,LBN
-Government of Lesotho,104,LSO
-Government of Liberia,79,LBR
-Government of Libya,111,LBY
-Government of Madagascar,106,MDG
-Government of Malawi,3912,MWI
-Government of Malaysia,152,MYS
-Government of Mali,72,MLI
-Government of Mauritania,74,MRT
-Government of Mexico,10,MEX
-Government of Moldova,55,MDA
-Government of Morocco,108,MAR
-Government of Mozambique,100,MOZ
-Government of Nepal,146,NPL
-Government of Netherlands,30,NLD
-Government of Nicaragua,14,NIC
-Government of Niger,75,NER
-Government of Nigeria,84,NGA
-Government of Oman,129,OMN
-Government of Pakistan,142,PAK
-Government of Panama,16,PAN
-Government of Papua New Guinea,157,PNG
-Government of Paraguay,24,PRY
-Government of Peru,21,PER
-Government of Philippines,154,PHL
-Government of Portugal,36,PRT
-Government of Rhodesia,101,ZWE
-Government of Russia (Soviet Union),57,RUS
-Government of Rwanda,94,RWA
-Government of Saudi Arabia,122,SAU
-Government of Senegal,73,SEN
-Government of Serbia (Yugoslavia),49,SRB
-Government of Sierra Leone,80,SLE
-Government of Solomon Islands,4499,SLB
-Government of Somalia,95,SOM
-Government of South Africa,102,ZAF
-Government of South Sudan,113,SSD
-Government of Soviet Union,57,RUS
-Government of Spain,35,ESP
-Government of Sri Lanka,145,LKA
-Government of Sudan,112,SDN
-Government of Suriname,19,SUR
-Government of Syria,118,SYR
-Government of Tajikistan,131,TJK
-Government of Tanzania,92,TZA
-Government of Thailand,147,THA
-Government of Togo,82,TGO
-Government of Trinidad and Tobago,8,TTO
-Government of Tunisia,110,TUN
-Government of Turkey,115,TUR
-Government of Uganda,90,UGA
-Government of Ukraine,61,UKR
-Government of United Kingdom,28,GBR
-Government of United States of America,3,USA
-Government of Uruguay,27,URY
-Government of Uzbekistan,133,UZB
-Government of Venezuela,18,VEN
-Government of Yugoslavia,49,SRB
-Government of Zambia,3986,ZMB
-Government of Zimbabwe (Rhodesia),101,ZWE
-Greece,52,GRC
-Grenada,9,GRD
-Guatemala,11,GTM
-Guinea,77,GIN
-Guinea-Bissau,70,GNB
-GUNT (Chad)*,NULL,TCD
-Guyana,NULL,GUY
-Haiti,6,HTI
-Haiti rebels*,NULL,HTI
-Hamas (Palestine)*,NULL,PSE
-Hezbollah (Lebanon)*,NULL,LBN
-Honduras,12,HND
-Hungary,40,HUN
-Huthi rebels (Yemen)*,NULL,YEM
-Iceland,NULL,ISL
-India,141,IND
-Indonesia,155,IDN
-Indonesia rebels*,NULL,IDN
-Iran,114,IRN
-Iraq,116,IRQ
-Ireland,NULL,IRL
-Israel,121,ISR
-Italy,NULL,ITA
-Jamaica,NULL,JAM
-Japan,NULL,JPN
-Jordan,120,JOR
-Katanga,NULL,*KA
-Kazakhstan,134,KAZ
-Kenya,91,KEN
-Khmer Rouge (Cambodia)*,NULL,KHM
-Kiribati,NULL,KIR
-Kosovo,NULL,*KS
-Kuwait,125,KWT
-Kyrgyzstan,132,KGZ
-Laos,149,LAO
-Latvia,NULL,LVA
-Lebanon,119,LBN
-Lebanon Palestinian rebels*,NULL,LBN
-Lesotho,104,LSO
-LF (Lebanon)*,NULL,LBN
-Liberia,79,LBR
-Libya,111,LBY
-Libya GNC,NULL,LBY
-Libya HoR,NULL,LBY
-Lithuania,NULL,LTU
-LRA (Uganda)*,NULL,UGA
-LTTE (Sri Lanka)*,NULL,LKA
-Luxembourg,NULL,LUX
-Macedonia (FYROM),NULL,MKD
-Madagascar,106,MDG
-Malawi,3912,MWI
-Malaysia,152,MYS
-Maldives,NULL,MDV
-Mali,72,MLI
-Malta,NULL,MLT
-Marshall Islands,NULL,MHL
-Mauritania,74,MRT
-Mauritius,NULL,MUS
-Mexico,10,MEX
-Micronesia,NULL,FSM
-MNLF (Philippines)*,NULL,PHL
-Moldova,55,MDA
-Mongolia,NULL,MNG
-Montenegro,NULL,MNE
-Morocco,108,MAR
-Mozambique,100,MOZ
-MPLA (Portugal)*,NULL,AGO
-MTA (Myanmar)*,NULL,MMR
-Mujahedin (Afghanistan)*,NULL,AFG
-Myanmar,NULL,MMR
-Namibia,NULL,NAM
-NATO**,NULL,*EE
-Nepal,146,NPL
-Netherlands,30,NLD
-New Zealand,NULL,NZL
-Nicaragua,14,NIC
-Niger,75,NER
-Nigeria,84,NGA
-NLA (Macedonia)*,NULL,MKD
-North Korea,138,PRK
-North Yemen,123,YEM
-Northern Alliance (Afghanistan)*,NULL,AFG
-Northern Cyprus,NULL,CYP
-Norway,NULL,NOR
-NTC (Libya)*,NULL,LBY
-Oman,129,OMN
-OSCE**,NULL,*EE
-PAIGC (Portugal)*,NULL,GNB
-Pakistan,142,PAK
-Palau,NULL,PLW
-Palestine,NULL,PSE
-Panama,16,PAN
-Papua New Guinea,157,PNG
-Paraguay,24,PRY
-Pathet Lao (Laos)*,NULL,LAO
-Peru,21,PER
-Philippines,154,PHL
-PIJ (Israel/Palestine)*,NULL,PSE
-PKK (Turkey)*,NULL,TUR
-PLO (Israel)*,NULL,PSE
-Poland,NULL,POL
-Portugal,36,PRT
-PRC (Israel/Palestine)*,NULL,PSE
-Provisional IRA (UK)*,NULL,GBR
-Qatar,NULL,QAT
-Regional Security System**,NULL,*CB
-Republic of Armenia,330,ARM
-Republic of Azerbaijan,165,AZE
-Republic of Croatia,337,HRV
-Republic of Georgia,843,GEO
-Republic of Slovenia,336,SVN
-Republic of South Sudan,1129,SSD
-Romania,NULL,ROU
-RPF (Rwanda)*,NULL,RWA
-RUF (Sierra Leone)*,NULL,SLE
-Russia,57,RUS
-Rwanda,94,RWA
-Saint Kitts and Nevis,NULL,KNA
-Saint Vincent,NULL,VCT
-Samoa,NULL,WSM
-Saudi Arabia,122,SAU
-Senegal,73,SEN
-Serbia,49,SRB
-Seychelles,NULL,SYC
-Sierra Leone,80,SLE
-Singapore,NULL,SGP
-SLA (Lebanon)*,NULL,LBN
-Slovakia,NULL,SVK
-Slovenia,NULL,SVN
-SNA (Somalia)*,NULL,SOM
-Solomon Islands,4499,SLB
-Somalia,95,SOM
-South Africa,102,ZAF
-South Korea,139,KOR
-South Sudan,113,SSD
-South Vietnam,151,YEM
-South Yemen,124,*SY
-Southern rebels (Yemen)*,NULL,YEM
-Soviet Union,57,RUS
-Spain,35,ESP
-SPLA (Sudan)*,NULL,SSD
-Sri Lanka,145,LKA
-Sudan,112,SDN
-Suriname,19,SUR
-Swaziland,NULL,SWZ
-Sweden,NULL,SWE
-Switzerland,NULL,CHE
-Syria,118,SYR
-Syria rebels*,NULL,SYR
-Taiwan,137,TWN
-Taiwan (ROC),NULL,TWN
-Tajikistan,131,TJK
-Tanzania,92,TZA
-Thailand,147,THA
-Timor-Leste,NULL,TLS
-Togo,82,TGO
-Tonga,NULL,TON
-Trinidad and Tobago,8,TTO
-Tunisia,110,TUN
-Turkey,115,TUR
-Turkmenistan,NULL,TKM
-Tuvalu,NULL,TUV
-UAE,NULL,ARE
-Uganda,90,UGA
-UIC (Somalia)*,NULL,SOM
-Ukraine,61,UKR
-Ukraine Rebels*,NULL,UKR
-UNITA (Angola)*,NULL,AGO
-United Kingdom,28,GBR
-United Nations**,NULL,*WO
-United States,3,USA
-United Wa State (Myanmar)*,NULL,MMR
-Unknown rebel group*,NULL,?WO
-Unknown recipient(s),NULL,?WO
-Unknown supplier(s),NULL,?WO
-Uruguay,27,URY
-Uzbekistan,133,UZB
-Vanuatu,NULL,VUT
-Venezuela,18,VEN
-Viet Cong (South Vietnam)*,NULL,YEM
-Viet Minh (France)*,NULL,VNM
-Viet Nam,NULL,VNM
-Western Sahara,NULL,ESH
-Yemen,NULL,YEM
-Yugoslavia,49,^YG
-Zambia,3986,ZMB
-ZAPU (Zimbabwe)*,NULL,ZWE
-Zimbabwe,101,ZWE
+﻿ActorText,UCDPactorID,GeographicISOalpha3,NonStateActor
+Afghanistan,130,AFG,FALSE
+African Union**,NULL,*AF,TRUE
+Albania,45,ALB,FALSE
+Algeria,109,DZA,FALSE
+Amal (Lebanon)*,NULL,LBN,TRUE
+ANC (South Africa)*,NULL,ZAF,TRUE
+Angola,99,AGO,FALSE
+Anti-Castro rebels (Cuba)*,NULL,CUB,TRUE
+Argentina,26,ARG,FALSE
+Armas (Guatemala)*,NULL,GTM,TRUE
+Armenia,NULL,ARM,FALSE
+Aruba,NULL,ABW,FALSE
+Australia,NULL,AUS,FALSE
+Austria,NULL,AUT,FALSE
+Azerbaijan,64,AZE,FALSE
+Bahamas,NULL,BHS,FALSE
+Bahrain,126,BHR,FALSE
+Bangladesh,143,BGD,FALSE
+Barbados,NULL,BRB,FALSE
+Belarus,NULL,BLR,FALSE
+Belgium,NULL,BEL,FALSE
+Belize,NULL,BLZ,FALSE
+Benin,NULL,BEN,FALSE
+Bhutan,NULL,BTN,FALSE
+Biafra,NULL,*BI,FALSE
+Bolivia,23,BOL,FALSE
+Bosnia-Herzegovina,50,BIH,FALSE
+Botswana,NULL,BWA,FALSE
+Brazil,22,BRA,FALSE
+Brunei,NULL,BRN,FALSE
+Bulgaria,NULL,BGR,FALSE
+Burkina Faso,78,BFA,FALSE
+Burundi,93,BDI,FALSE
+Cambodia,148,KHM,FALSE
+Cameroon,83,CMR,FALSE
+Canada,NULL,CAN,FALSE
+Cape Verde,NULL,CPV,FALSE
+Central African Republic,86,CAF,FALSE
+Chad,87,TCD,FALSE
+Chile,25,CHL,FALSE
+China,135,CHN,FALSE
+Colombia,17,COL,FALSE
+Comoros,107,COM,FALSE
+Congo,88,COG,FALSE
+Contras (Nicaragua)*,NULL,NIC,TRUE
+Costa Rica,15,CRI,FALSE
+Cote d'Ivoire,NULL,CIV,FALSE
+Croatia,48,HRV,FALSE
+Cuba,5,CUB,FALSE
+Cyprus,53,CYP,FALSE
+Czech Republic,NULL,CZE,FALSE
+Czechia,NULL,CZE,FALSE
+Czechoslovakia,NULL,~CQ,FALSE
+Denmark,NULL,DNK,FALSE
+Djibouti,96,DJI,FALSE
+Dominican Republic,7,DOM,FALSE
+DR Congo,NULL,COD,FALSE
+East Germany (GDR),NULL,DDR,FALSE
+Ecuador,20,ECU,FALSE
+Egypt,117,EGY,FALSE
+El Salvador,13,SLV,FALSE
+ELF (Ethiopia)*,NULL,ERI,TRUE
+EPLF (Ethiopia)*,NULL,ERI,TRUE
+Equatorial Guinea,NULL,GNQ,FALSE
+Eritrea,98,ERI,FALSE
+Estonia,NULL,EST,FALSE
+Ethiopia,97,ETH,FALSE
+FAN (Chad)*,NULL,TCD,TRUE
+Fiji,NULL,FJI,FALSE
+Finland,NULL,FIN,FALSE
+FMLN (El Salvador)*,NULL,SLV,TRUE
+FNLA (Angola)*,NULL,AGO,TRUE
+France,33,FRA,FALSE
+FRELIMO (Portugal)*,NULL,MOZ,TRUE
+Gabon,85,GAB,FALSE
+Gambia,71,GMB,FALSE
+Georgia,63,GEO,FALSE
+Germany,NULL,DEU,FALSE
+Germany (FRG),NULL,DEU,FALSE
+Ghana,81,GHA,FALSE
+Government of Afghanistan,130,AFG,FALSE
+Government of Albania,45,ALB,FALSE
+Government of Algeria,109,DZA,FALSE
+Government of Angola,99,AGO,FALSE
+Government of Argentina,26,ARG,FALSE
+Government of Azerbaijan,64,AZE,FALSE
+Government of Bahrain,126,BHR,FALSE
+Government of Bangladesh,143,BGD,FALSE
+Government of Bolivia,23,BOL,FALSE
+Government of Brazil,22,BRA,FALSE
+Government of Burkina Faso,78,BFA,FALSE
+Government of Burundi,93,BDI,FALSE
+Government of Cambodia,148,KHM,FALSE
+Government of Cambodia (Kampuchea),148,KHM,FALSE
+Government of Cameroon,83,CMR,FALSE
+Government of Central African Republic,86,CAF,FALSE
+Government of Chad,87,TCD,FALSE
+Government of Chile,25,CHL,FALSE
+Government of Colombia,17,COL,FALSE
+Government of Comoros,107,COM,FALSE
+Government of Costa Rica,15,CRI,FALSE
+Government of Croatia,48,HRV,FALSE
+Government of Cuba,5,CUB,FALSE
+Government of Cyprus,53,CYP,FALSE
+Government of Djibouti,96,DJI,FALSE
+Government of Dominican Republic,7,DOM,FALSE
+Government of Ecuador,20,ECU,FALSE
+Government of Egypt,117,EGY,FALSE
+Government of El Salvador,13,SLV,FALSE
+Government of Eritrea,98,ERI,FALSE
+Government of Ethiopia,97,ETH,FALSE
+Government of France,33,FRA,FALSE
+Government of Gabon,85,GAB,FALSE
+Government of Georgia,63,GEO,FALSE
+Government of Ghana,81,GHA,FALSE
+Government of Greece,52,GRC,FALSE
+Government of Grenada,9,GRD,FALSE
+Government of Guatemala,11,GTM,FALSE
+Government of Guinea,77,GIN,FALSE
+Government of Guinea-Bissau,70,GNB,FALSE
+Government of Haiti,6,HTI,FALSE
+Government of Honduras,12,HND,FALSE
+Government of Hungary,40,HUN,FALSE
+Government of India,141,IND,FALSE
+Government of Indonesia,155,IDN,FALSE
+Government of Iran,114,IRN,FALSE
+Government of Iraq,116,IRQ,FALSE
+Government of Israel,121,ISR,FALSE
+Government of Jordan,120,JOR,FALSE
+Government of Kazakhstan,134,KAZ,FALSE
+Government of Kenya,91,KEN,FALSE
+Government of Kuwait,125,KWT,FALSE
+Government of Kyrgyzstan,132,KGZ,FALSE
+Government of Laos,149,LAO,FALSE
+Government of Lebanon,119,LBN,FALSE
+Government of Lesotho,104,LSO,FALSE
+Government of Liberia,79,LBR,FALSE
+Government of Libya,111,LBY,FALSE
+Government of Madagascar,106,MDG,FALSE
+Government of Malawi,3912,MWI,FALSE
+Government of Malaysia,152,MYS,FALSE
+Government of Mali,72,MLI,FALSE
+Government of Mauritania,74,MRT,FALSE
+Government of Mexico,10,MEX,FALSE
+Government of Moldova,55,MDA,FALSE
+Government of Morocco,108,MAR,FALSE
+Government of Mozambique,100,MOZ,FALSE
+Government of Nepal,146,NPL,FALSE
+Government of Netherlands,30,NLD,FALSE
+Government of Nicaragua,14,NIC,FALSE
+Government of Niger,75,NER,FALSE
+Government of Nigeria,84,NGA,FALSE
+Government of Oman,129,OMN,FALSE
+Government of Pakistan,142,PAK,FALSE
+Government of Panama,16,PAN,FALSE
+Government of Papua New Guinea,157,PNG,FALSE
+Government of Paraguay,24,PRY,FALSE
+Government of Peru,21,PER,FALSE
+Government of Philippines,154,PHL,FALSE
+Government of Portugal,36,PRT,FALSE
+Government of Rhodesia,101,ZWE,FALSE
+Government of Russia (Soviet Union),57,RUS,FALSE
+Government of Rwanda,94,RWA,FALSE
+Government of Saudi Arabia,122,SAU,FALSE
+Government of Senegal,73,SEN,FALSE
+Government of Serbia (Yugoslavia),49,SRB,FALSE
+Government of Sierra Leone,80,SLE,FALSE
+Government of Solomon Islands,4499,SLB,FALSE
+Government of Somalia,95,SOM,FALSE
+Government of South Africa,102,ZAF,FALSE
+Government of South Sudan,113,SSD,FALSE
+Government of Soviet Union,57,RUS,FALSE
+Government of Spain,35,ESP,FALSE
+Government of Sri Lanka,145,LKA,FALSE
+Government of Sudan,112,SDN,FALSE
+Government of Suriname,19,SUR,FALSE
+Government of Syria,118,SYR,FALSE
+Government of Tajikistan,131,TJK,FALSE
+Government of Tanzania,92,TZA,FALSE
+Government of Thailand,147,THA,FALSE
+Government of Togo,82,TGO,FALSE
+Government of Trinidad and Tobago,8,TTO,FALSE
+Government of Tunisia,110,TUN,FALSE
+Government of Turkey,115,TUR,FALSE
+Government of Uganda,90,UGA,FALSE
+Government of Ukraine,61,UKR,FALSE
+Government of United Kingdom,28,GBR,FALSE
+Government of United States of America,3,USA,FALSE
+Government of Uruguay,27,URY,FALSE
+Government of Uzbekistan,133,UZB,FALSE
+Government of Venezuela,18,VEN,FALSE
+Government of Yugoslavia,49,SRB,FALSE
+Government of Zambia,3986,ZMB,FALSE
+Government of Zimbabwe (Rhodesia),101,ZWE,FALSE
+Greece,52,GRC,FALSE
+Grenada,9,GRD,FALSE
+Guatemala,11,GTM,FALSE
+Guinea,77,GIN,FALSE
+Guinea-Bissau,70,GNB,FALSE
+GUNT (Chad)*,NULL,TCD,TRUE
+Guyana,NULL,GUY,FALSE
+Haiti,6,HTI,FALSE
+Haiti rebels*,NULL,HTI,TRUE
+Hamas (Palestine)*,NULL,PSE,TRUE
+Hezbollah (Lebanon)*,NULL,LBN,TRUE
+Honduras,12,HND,FALSE
+Hungary,40,HUN,FALSE
+Huthi rebels (Yemen)*,NULL,YEM,TRUE
+Iceland,NULL,ISL,FALSE
+India,141,IND,FALSE
+Indonesia,155,IDN,FALSE
+Indonesia rebels*,NULL,IDN,TRUE
+Iran,114,IRN,FALSE
+Iraq,116,IRQ,FALSE
+Ireland,NULL,IRL,FALSE
+Israel,121,ISR,FALSE
+Italy,NULL,ITA,FALSE
+Jamaica,NULL,JAM,FALSE
+Japan,NULL,JPN,FALSE
+Jordan,120,JOR,FALSE
+Katanga,NULL,*KA,FALSE
+Kazakhstan,134,KAZ,FALSE
+Kenya,91,KEN,FALSE
+Khmer Rouge (Cambodia)*,NULL,KHM,TRUE
+Kiribati,NULL,KIR,FALSE
+Kosovo,NULL,*KS,FALSE
+Kuwait,125,KWT,FALSE
+Kyrgyzstan,132,KGZ,FALSE
+Laos,149,LAO,FALSE
+Latvia,NULL,LVA,FALSE
+Lebanon,119,LBN,FALSE
+Lebanon Palestinian rebels*,NULL,LBN,TRUE
+Lesotho,104,LSO,FALSE
+LF (Lebanon)*,NULL,LBN,TRUE
+Liberia,79,LBR,FALSE
+Libya,111,LBY,FALSE
+Libya GNC,NULL,LBY,TRUE
+Libya HoR,NULL,LBY,TRUE
+Lithuania,NULL,LTU,FALSE
+LRA (Uganda)*,NULL,UGA,TRUE
+LTTE (Sri Lanka)*,NULL,LKA,TRUE
+Luxembourg,NULL,LUX,FALSE
+Macedonia (FYROM),NULL,MKD,FALSE
+Madagascar,106,MDG,FALSE
+Malawi,3912,MWI,FALSE
+Malaysia,152,MYS,FALSE
+Maldives,NULL,MDV,FALSE
+Mali,72,MLI,FALSE
+Malta,NULL,MLT,FALSE
+Marshall Islands,NULL,MHL,FALSE
+Mauritania,74,MRT,FALSE
+Mauritius,NULL,MUS,FALSE
+Mexico,10,MEX,FALSE
+Micronesia,NULL,FSM,FALSE
+MNLF (Philippines)*,NULL,PHL,TRUE
+Moldova,55,MDA,FALSE
+Mongolia,NULL,MNG,FALSE
+Montenegro,NULL,MNE,FALSE
+Morocco,108,MAR,FALSE
+Mozambique,100,MOZ,FALSE
+MPLA (Portugal)*,NULL,AGO,TRUE
+MTA (Myanmar)*,NULL,MMR,TRUE
+Mujahedin (Afghanistan)*,NULL,AFG,TRUE
+Myanmar,NULL,MMR,FALSE
+Namibia,NULL,NAM,FALSE
+NATO**,NULL,*EE,TRUE
+Nepal,146,NPL,FALSE
+Netherlands,30,NLD,FALSE
+New Zealand,NULL,NZL,FALSE
+Nicaragua,14,NIC,FALSE
+Niger,75,NER,FALSE
+Nigeria,84,NGA,FALSE
+NLA (Macedonia)*,NULL,MKD,TRUE
+North Korea,138,PRK,FALSE
+North Yemen,123,YEM,FALSE
+Northern Alliance (Afghanistan)*,NULL,AFG,TRUE
+Northern Cyprus,NULL,CYP,FALSE
+Norway,NULL,NOR,FALSE
+NTC (Libya)*,NULL,LBY,TRUE
+Oman,129,OMN,FALSE
+OSCE**,NULL,*EE,TRUE
+PAIGC (Portugal)*,NULL,GNB,TRUE
+Pakistan,142,PAK,FALSE
+Palau,NULL,PLW,FALSE
+Palestine,NULL,PSE,FALSE
+Panama,16,PAN,FALSE
+Papua New Guinea,157,PNG,FALSE
+Paraguay,24,PRY,FALSE
+Pathet Lao (Laos)*,NULL,LAO,TRUE
+Peru,21,PER,FALSE
+Philippines,154,PHL,FALSE
+PIJ (Israel/Palestine)*,NULL,PSE,TRUE
+PKK (Turkey)*,NULL,TUR,TRUE
+PLO (Israel)*,NULL,PSE,TRUE
+Poland,NULL,POL,FALSE
+Portugal,36,PRT,FALSE
+PRC (Israel/Palestine)*,NULL,PSE,TRUE
+Provisional IRA (UK)*,NULL,GBR,TRUE
+Qatar,NULL,QAT,FALSE
+Regional Security System**,NULL,*CB,TRUE
+Republic of Armenia,330,ARM,FALSE
+Republic of Azerbaijan,165,AZE,FALSE
+Republic of Croatia,337,HRV,FALSE
+Republic of Georgia,843,GEO,FALSE
+Republic of Slovenia,336,SVN,FALSE
+Republic of South Sudan,1129,SSD,FALSE
+Romania,NULL,ROU,FALSE
+RPF (Rwanda)*,NULL,RWA,TRUE
+RUF (Sierra Leone)*,NULL,SLE,TRUE
+Russia,57,RUS,FALSE
+Rwanda,94,RWA,FALSE
+Saint Kitts and Nevis,NULL,KNA,FALSE
+Saint Vincent,NULL,VCT,FALSE
+Samoa,NULL,WSM,FALSE
+Saudi Arabia,122,SAU,FALSE
+Senegal,73,SEN,FALSE
+Serbia,49,SRB,FALSE
+Seychelles,NULL,SYC,FALSE
+Sierra Leone,80,SLE,FALSE
+Singapore,NULL,SGP,FALSE
+SLA (Lebanon)*,NULL,LBN,TRUE
+Slovakia,NULL,SVK,FALSE
+Slovenia,NULL,SVN,FALSE
+SNA (Somalia)*,NULL,SOM,TRUE
+Solomon Islands,4499,SLB,FALSE
+Somalia,95,SOM,FALSE
+South Africa,102,ZAF,FALSE
+South Korea,139,KOR,FALSE
+South Sudan,113,SSD,FALSE
+South Vietnam,151,YEM,FALSE
+South Yemen,124,*SY,FALSE
+Southern rebels (Yemen)*,NULL,YEM,TRUE
+Soviet Union,57,RUS,FALSE
+Spain,35,ESP,FALSE
+SPLA (Sudan)*,NULL,SSD,TRUE
+Sri Lanka,145,LKA,FALSE
+Sudan,112,SDN,FALSE
+Suriname,19,SUR,FALSE
+Swaziland,NULL,SWZ,FALSE
+Sweden,NULL,SWE,FALSE
+Switzerland,NULL,CHE,FALSE
+Syria,118,SYR,FALSE
+Syria rebels*,NULL,SYR,TRUE
+Taiwan,137,TWN,FALSE
+Taiwan (ROC),NULL,TWN,FALSE
+Tajikistan,131,TJK,FALSE
+Tanzania,92,TZA,FALSE
+Thailand,147,THA,FALSE
+Timor-Leste,NULL,TLS,FALSE
+Togo,82,TGO,FALSE
+Tonga,NULL,TON,FALSE
+Trinidad and Tobago,8,TTO,FALSE
+Tunisia,110,TUN,FALSE
+Turkey,115,TUR,FALSE
+Turkmenistan,NULL,TKM,FALSE
+Tuvalu,NULL,TUV,FALSE
+UAE,NULL,ARE,FALSE
+Uganda,90,UGA,FALSE
+UIC (Somalia)*,NULL,SOM,TRUE
+Ukraine,61,UKR,FALSE
+Ukraine Rebels*,NULL,UKR,TRUE
+UNITA (Angola)*,NULL,AGO,TRUE
+United Kingdom,28,GBR,FALSE
+United Nations**,NULL,*WO,TRUE
+United States,3,USA,FALSE
+United Wa State (Myanmar)*,NULL,MMR,TRUE
+Unknown rebel group*,NULL,?WO,TRUE
+Unknown recipient(s),NULL,?WO,NULL
+Unknown supplier(s),NULL,?WO,NULL
+Uruguay,27,URY,FALSE
+Uzbekistan,133,UZB,FALSE
+Vanuatu,NULL,VUT,FALSE
+Venezuela,18,VEN,FALSE
+Viet Cong (South Vietnam)*,NULL,YEM,TRUE
+Viet Minh (France)*,NULL,VNM,TRUE
+Viet Nam,NULL,VNM,FALSE
+Western Sahara,NULL,ESH,FALSE
+Yemen,NULL,YEM,FALSE
+Yugoslavia,49,^YG,FALSE
+Zambia,3986,ZMB,FALSE
+ZAPU (Zimbabwe)*,NULL,ZWE,TRUE
+Zimbabwe,101,ZWE,FALSE
