@@ -278,6 +278,10 @@ Product or Service Description,ProductOrServiceCodeText
 Contracting.Agency.ID,Contracting_Agency_ID
 Contracting Department ID,Contracting_Department_ID
 Funding Agency ID,Funding_Agency_ID
+placeofmanufacture,PlaceOfManufacture
+placeofmanufactureText,PlaceOfManufactureText
+IsManufacturedInUS,IsManufacturedInUS
+BAAcategory,BAAcategory
 Place of Performance City,Place_of_Performance_City
 Place of Performance State,Place_of_Performance_State
 Place of Performance County,Place_of_Performance_County
