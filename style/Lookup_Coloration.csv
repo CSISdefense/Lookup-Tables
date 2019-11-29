@@ -2798,7 +2798,7 @@ FMS,Foreign Funds non-FMS,Foreign Funds non-FMS,3,National Guard,#0e99d6,,,,defa
 FMS,Labeled Foreign Funds,Labeled Foreign Funds,1,National Guard,#0e99d6,,,,default grey,#554449,
 FMS,Labeled Not Applicable,Labeled Not Applicable,2,orange,#DB8403,,,,default grey,#554449,
 FMS,Classified by Algorithm (Account Agrees),Classified by Algorithm (Account Agrees),3,"DIIG Secondary, Mallard",#3D4936,,,,default grey,#554449,
-FMS,Classified by Algorithm (Account Overriden),Classified by Algorithm (Account Overriden),4,"DIIG Additional, Sea Pink",#d37d7,,,,default grey,#554449,
+FMS,Classified by Algorithm (Account Overriden),Classified by Algorithm (Account Overriden),4,"DIIG Additional, Sea Pink",#d37d7d,,,,default grey,#554449,
 FMS,Classified by Algorithm (Unlabeled Account),Classified by Algorithm (Unlabeled Account),5,"DIIG Secondary, Sea Green",#7ac49b,,,,default grey,#554449,
 FMS,Classified by Account (pre-2012),Classified by Account (pre-2012),6,"DIIG Secondary, Pale Green",#c2e3cd,,,,default grey,#554449,
 FMS,Not Applicable,Labeled Not FMS,9,orange,#DB8403,,,,default grey,#554449,
