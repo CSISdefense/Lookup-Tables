@@ -578,6 +578,7 @@ T&M/LH/FPLOE,,"1 if effort contract(time & materials, labor hours and fixed-pric
 b_UCA,,"1 if the contract begin as letter cobtracts or indefinitized contract awards, and 0 otherwise",,,FALSE
 b_Intl,,"1 for contracts with any transactions performed internationally, and 0 otherwise",,,FALSE
 foreign_funding_description,FMS,Foreign  Funding,,,
+foreign_funding_sum,FMS,Foreign  Funding,,,
 foreign_funding_override,FMS,Foreign  Funding,,,
 foreign_funding_override_sum,FMS,Foreign  Funding,,,
 Vendor.Size,Vendors,Vendor Size,,,
