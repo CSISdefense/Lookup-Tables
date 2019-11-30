@@ -83,6 +83,9 @@ DefOrEqu,Aggregate,,,,FALSE
 MetricName,Aggregate,,,,FALSE
 OCOlabelDetail,Crisis,,,,FALSE
 NIAcontradictions,Crisis,,,,FALSE
+PlaceIsForeign,International,,,,FALSE
+OriginIsForeign,International,,,,FALSE
+VendorIsForeign,International,,,,FALSE
 International,International,,,,FALSE
 IsCSISOCO,Crisis,,,,FALSE
 OCOcrisisScore,Crisis,,,,FALSE
@@ -580,6 +583,9 @@ Buyer,Country,Buyer Country,,,
 Seller,Country,Seller Country,,,
 USAID.region,Region,Region,,,
 StateRegion,Region,Region,,,
+PlaceStateRegion,Region,Region,,,
+VendorStateRegion,Region,Region,,,
+OriginStateRegion,Region,Region,,,
 Armament.category,PlatformPortfolio,Platform Portfolio,,,
 Order.date,,Order Calendar Year,,,
 Numbers.delivered,,Number of Units Delivered,,,
@@ -599,6 +605,15 @@ Mixed Year,,Year of Obligation or Delivery (Calendar or Fiscal Varies by Source)
 AcquisitionCooperation,Relationship,Cooperative Acquisition Arrangement,,,
 MutualDefense,Relationship,Mutual Defense Agreement,,,
 MutualAcquisition,Relationship,Mutual Defense Agreement and Acquisition Arrangement,,,
+PlaceAcquisitionCooperation,Relationship,Cooperative Acquisition Arrangement,,,
+PlaceMutualDefense,Relationship,Mutual Defense Agreement,,,
+PlaceMutualAcquisition,Relationship,Mutual Defense Agreement and Acquisition Arrangement,,,
+OriginAcquisitionCooperation,Relationship,Cooperative Acquisition Arrangement,,,
+OriginMutualDefense,Relationship,Mutual Defense Agreement,,,
+OriginMutualAcquisition,Relationship,Mutual Defense Agreement and Acquisition Arrangement,,,
+VendorAcquisitionCooperation,Relationship,Cooperative Acquisition Arrangement,,,
+VendorMutualDefense,Relationship,Mutual Defense Agreement,,,
+VendorMutualAcquisition,Relationship,Mutual Defense Agreement and Acquisition Arrangement,,,
 SEATO,Binary,South East Asian Treaty Organization Member,,,
 RioTreaty,Binary,Rio Treaty Member,,,
 FiveEyes,Binary,Five Eyes Member,,,
