@@ -227,8 +227,8 @@ Agencies,State and IAP,State&IAP,6,Orange,#DB843D,,,,default grey,#554449,
 Agencies,DHS,DHS,7,Purpleblue,#93A9CF,,,,default grey,#554449,
 Agencies,Other Agencies,Other,8,Light Red,#D19392,,,,default grey,#554449,
 Agencies,TRUE,Defense,1,Olive Green,#9BBB59,,,,default grey,#554449,
+Agencies,Civilian,Civilian,2,dark blue,#4572A7,,,,default grey,#554449,
 Agencies,FALSE,Civilian,2,dark blue,#4572A7,,,,default grey,#554449,
-,,,,,,,,,,,
 ,,,,,,,,,,,
 Agencies,"Energy
 (5% 2013-2014, -6% 2012-2013)","Energy

@@ -3,6 +3,7 @@ Customer,Agencies,Customer,,,FALSE
 Customer.detail,Agencies,Customer,,,FALSE
 Customer.manual.subtitles,Agencies,Customer,,,FALSE
 Customer.sum,Agencies,Customer,,,FALSE
+Customer.FMS,Agencies,Customer,,,FALSE
 Agency,Agencies,Agency,,,FALSE
 Is.Defense,Agencies,Defense or Civilian,,,FALSE
 SubFunder.Detail,Agencies,Funding Component,,,FALSE
@@ -83,10 +84,11 @@ DefOrEqu,Aggregate,,,,FALSE
 MetricName,Aggregate,,,,FALSE
 OCOlabelDetail,Crisis,,,,FALSE
 NIAcontradictions,Crisis,,,,FALSE
-PlaceIsForeign,International,,,,FALSE
-OriginIsForeign,International,,,,FALSE
-VendorIsForeign,International,,,,FALSE
+PlaceIsForeign,International,Foreign Place of Performance,,,FALSE
+OriginIsForeign,International,Foreign Origin,,,FALSE
+VendorIsForeign,International,Foreign Vendor,,,FALSE
 International,International,,,,FALSE
+PlaceOfManufactureText,International,Place of Manufacture,,,FALSE
 IsCSISOCO,Crisis,,,,FALSE
 OCOcrisisScore,Crisis,,,,FALSE
 CrisisFunding,Crisis,Crisis-Funding,,,FALSE
