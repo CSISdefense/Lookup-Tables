@@ -2826,7 +2826,7 @@ FMS,Classified by Algorithm,Classified by Algorithm (Account Agrees),3,"DIIG Pri
 FMS,Straightforward Classification,Straightforward Classification,3,"DIIG Primary, Green",#4c9361,,,,default grey,#554449,
 FMS,Classified by Algorithm (Account Agrees),Classified by Algorithm (Account Agrees),3,"DIIG Secondary, Mallard",#3D4936,,,,default grey,#554449,
 FMS,Classified by Algorithm (Account Overriden),Classified by Algorithm (Account Overriden),4,"DIIG Additional, Sea Pink",#d37d7d,,,,default grey,#554449,
-FMS,Classification Challeng,Classification Challeng,4,"DIIG Additional, Sea Pink",#d37d7d,,,,default grey,#554449,
+FMS,Classification Challenge,Classification Challenge,4,"DIIG Additional, Sea Pink",#d37d7d,,,,default grey,#554449,
 FMS,Classified by Algorithm (Unlabeled Account),Classified by Algorithm (Unlabeled Account),5,"DIIG Secondary, Sea Green",#7ac49b,,,,default grey,#554449,
 FMS,Classified by Account (pre-2012),Classified by Account (pre-2012),6,"DIIG Secondary, Pale Green",#c2e3cd,,,,default grey,#554449,
 FMS,Not Applicable,Labeled Not FMS,9,orange,#DB8403,,,,default grey,#554449,
