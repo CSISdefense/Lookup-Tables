@@ -21,6 +21,8 @@ Source,DSCA FMCS,"DSCA FMSC (Constant $, \nDeliv. Fis. Year)",4,olive green,#89A
 Source,TIV,Trend-Indicator Values,6,purple,#71588F,,,,default grey,#554449,
 Source,TIV United States,U.S. Trend-Indicator Values,6,purple,#71588F,,,,default grey,#554449,
 Source,TIV South Korea,ROK Trend-Indicator Values,7,"DIIG Secondary, Amaranth",#7c131b,,,,default grey,#554449,
+Source,United States,United States,6,purple,#71588F,,,,default grey,#554449,
+Source,South Korea,Republic of Korea,7,"DIIG Secondary, Amaranth",#7c131b,,,,default grey,#554449,
 Source,Dollars,Dollars,1,green,#92D050,,,,default grey,#554449,
 ,,,,,,,,,,,
 Overall,Services Contract Spend,Services Contract Spend,1,"Blue, Accent 1",,,,,default grey,#554449,
