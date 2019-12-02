@@ -119,9 +119,9 @@ SAMcrisisFunding,Crisis,,,,FALSE
 UnmodifiedUltimateDurationCategory,Duration,,,,FALSE
 Dur,Duration,,,,FALSE
 Dur.Simple,Duration,,,,FALSE
-isUndefinitizedAction,Pricing,,,,FALSE
-isUCA,Pricing,,,,FALSE
-UCA,Pricing,,,,FALSE
+isUndefinitizedAction,UCA,,,,FALSE
+isUCA,UCA,,,,FALSE
+UCA,UCA,,,,FALSE
 Reachback,Reachback,,,,FALSE
 Action.Obligation,,Action Obligation (Current?),Share Contract $,,FALSE
 Action.Obligation.Current,,Action Obligation (Current $s),Share Contract $,,FALSE
