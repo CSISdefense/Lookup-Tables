@@ -3,6 +3,7 @@ Customer,Agencies,Customer,,,FALSE
 Customer.detail,Agencies,Customer,,,FALSE
 Customer.manual.subtitles,Agencies,Customer,,,FALSE
 Customer.sum,Agencies,Customer,,,FALSE
+Customer.FMS,Agencies,Customer,,,FALSE
 Agency,Agencies,Agency,,,FALSE
 Is.Defense,Agencies,Defense or Civilian,,,FALSE
 SubFunder.Detail,Agencies,Funding Component,,,FALSE
@@ -83,7 +84,12 @@ DefOrEqu,Aggregate,,,,FALSE
 MetricName,Aggregate,,,,FALSE
 OCOlabelDetail,Crisis,,,,FALSE
 NIAcontradictions,Crisis,,,,FALSE
+PlaceIsForeign,International,Foreign Place of Performance,,,FALSE
+OriginIsForeign,International,Foreign Origin,,,FALSE
+VendorIsForeign,International,Foreign Vendor,,,FALSE
 International,International,,,,FALSE
+PlaceOfManufactureText,International,Place of Manufacture,,,FALSE
+PlaceOfManufacture_Sum,International,Place of Manufacture,,,FALSE
 IsCSISOCO,Crisis,,,,FALSE
 OCOcrisisScore,Crisis,,,,FALSE
 CrisisFunding,Crisis,Crisis-Funding,,,FALSE
@@ -573,13 +579,19 @@ T&M/LH/FPLOE,,"1 if effort contract(time & materials, labor hours and fixed-pric
 b_UCA,,"1 if the contract begin as letter cobtracts or indefinitized contract awards, and 0 otherwise",,,FALSE
 b_Intl,,"1 for contracts with any transactions performed internationally, and 0 otherwise",,,FALSE
 foreign_funding_description,FMS,Foreign  Funding,,,
+foreign_funding_sum,FMS,Foreign  Funding,,,
+foreign_funding_override,FMS,Foreign  Funding,,,
+foreign_funding_override_sum,FMS,Foreign  Funding,,,
 Vendor.Size,Vendors,Vendor Size,,,
 Action.Obligation.Then.Year,,Action Obligation (Current $s),Share Contract $,,
 Number.Of.Actions,,Number of Actions,Share of Actions,,
 Buyer,Country,Buyer Country,,,
-Seller,Country,Seller Country,,,
+Seller,Source,Seller Country,,,
 USAID.region,Region,Region,,,
 StateRegion,Region,Region,,,
+PlaceStateRegion,Region,Region,,,
+VendorStateRegion,Region,Region,,,
+OriginStateRegion,Region,Region,,,
 Armament.category,PlatformPortfolio,Platform Portfolio,,,
 Order.date,,Order Calendar Year,,,
 Numbers.delivered,,Number of Units Delivered,,,
@@ -589,7 +601,9 @@ TIV.delivery.values,,TIV of Deliveries,Share of TIV,,
 Local.production,Binary,Local Production,,,
 Source,Source,Data Source,,,
 Source_PSR,Source,Data Source,,,
+Source_Seller,Source,Data Source,,,
 Metric,Source,Value Metric,,,
+Metric_Seller,Source,Value Metric,,,
 SourceProduct,Source,Data Source,,,
 delivery_value,,Obligation or Delivery Value (Metric Varies by Source),,,
 delivery_2012,,Value of Obligations or Deliveries (2012-100),,,
@@ -599,6 +613,15 @@ Mixed Year,,Year of Obligation or Delivery (Calendar or Fiscal Varies by Source)
 AcquisitionCooperation,Relationship,Cooperative Acquisition Arrangement,,,
 MutualDefense,Relationship,Mutual Defense Agreement,,,
 MutualAcquisition,Relationship,Mutual Defense Agreement and Acquisition Arrangement,,,
+PlaceAcquisitionCooperation,Relationship,Cooperative Acquisition Arrangement,,,
+PlaceMutualDefense,Relationship,Mutual Defense Agreement,,,
+PlaceMutualAcquisition,Relationship,Mutual Defense Agreement and Acquisition Arrangement,,,
+OriginAcquisitionCooperation,Relationship,Cooperative Acquisition Arrangement,,,
+OriginMutualDefense,Relationship,Mutual Defense Agreement,,,
+OriginMutualAcquisition,Relationship,Mutual Defense Agreement and Acquisition Arrangement,,,
+VendorAcquisitionCooperation,Relationship,Cooperative Acquisition Arrangement,,,
+VendorMutualDefense,Relationship,Mutual Defense Agreement,,,
+VendorMutualAcquisition,Relationship,Mutual Defense Agreement and Acquisition Arrangement,,,
 SEATO,Binary,South East Asian Treaty Organization Member,,,
 RioTreaty,Binary,Rio Treaty Member,,,
 FiveEyes,Binary,Five Eyes Member,,,
