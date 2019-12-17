@@ -112,6 +112,8 @@ SAMexception.sum,Crisis,,,,FALSE
 SAMcrisisFunding,Crisis,,,,FALSE
 UnmodifiedUltimateDurationCategory,Duration,,,,FALSE
 Dur,Duration,,,,FALSE
+ActualDur,Duration,,,,FALSE
+qDuration,Duration,,,,FALSE
 Dur.Simple,Duration,,,,FALSE
 isUndefinitizedAction,UCA,,,,FALSE
 isUCA,UCA,,,,FALSE

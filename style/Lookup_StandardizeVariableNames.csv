@@ -1,328 +1,331 @@
-Original,Replacement
-SumOfobligatedAmount,Action_Obligation
-ObligatedAmount,Action_Obligation
-Action.Obligation.Current,Action_Obligation_Then_Year
-Action.Obligation.Then.Year,Action_Obligation_Then_Year
-Action_Obligation.Then.Year,Action_Obligation_Then_Year
-PrimeOrSubObligatedAmount.Deflator.2016,PrimeOrSubObligatedAmount_2016
-Action.Obligation.Deflator.2016,Action_Obligation_2016
-Action.Obligation.Deflator.2017,Action_Obligation_2017
-Action.Obligation.2016,Action_Obligation_2016
-Action.Obligation.2017,Action_Obligation_2017
-Action_Obligation.2016,Action_Obligation_2016
-Action_Obligation.2017,Action_Obligation_2017
-SumOfnumberOfActions,Number.Of.Actions
-SingleYearObligatedAmount,Contract.Size
-SizeOfSumOfObligatedAmount,Contract.Size
-Base.and.All.Options.Value,ContractBaseAndAllOptionsValue
-Sumofbaseandalloptionsvalue,ContractBaseAndAllOptionsValue
-SumOfbaseandexercisedoptionsvalue,ContractBaseAndExercisedOptionsValue
-ContractingAgencyID,Contracting.Agency.ID
-SumOfContractObligatedAmount,ContractObligatedAmount
-ParentOrPartnerName,ContractorDisplayName
-customer,Customer
-DEPLOYMENT,Deployment
-fiscal.year,Fiscal.Year
-Fiscal_Year,Fiscal.Year
-SumofGBKdisbursements,GBKdisbursements
-SumofGBKObligations,GBKObligations
-Majorcommandid,MajorCommandID
-SumofOutlayNoOffsetAccount,OutlayNoOffsetAccount
-SumofOutlay,OutlayOffsetAccount
-SumofOutlayOffsetAccount,OutlayOffsetAccount
-PoPStateCode,PoPstateCode
-StateCode,PoPstateCode
-FundingMechanismClassification,Pricing.Mechanism
-TypeofContractPricingtext,Pricing.Mechanism
-TypeOfContractPricing,Pricing.Mechanism.Code
-Simple,SimpleArea
-ProductorServiceArea,ProductOrServiceArea
-ProductsCategory,ProductsCategory
-ServiceCategory,ServicesCategory
-Services.Category,ServicesCategory
-ServicesCategory,ServicesCategory
-simplearea,SimpleArea
-Sub_Customer,SubCustomer
-SubCustomerSum,SubCustomer
-SumOfUnmodifiedbaseandalloptionsvalue,UnmodifiedCeiling
-UnmodifiedContractBaseAndAllOptionsValue,UnmodifiedCeiling
-UnmodifiedContractBaseAndAllOptionsValue.Then.Year,UnmodifiedCeiling_Then_Year
-UnmodifiedContractBaseAndAllOptionsValue_Then_Year,UnmodifiedCeiling_Then_Year
-SumOfUnmodifiedbaseandexercisedoptionsvalue,UnmodifiedBase
-UnmodifiedContractBaseAndExercisedOptionsValue,UnmodifiedBase
-ln_base,l_Base
-ChangeOrderCeilingGrowth,ChangeOrderCeilingGrowth
-SteadyScopeCeilingModification,SteadyScopeCeilingModification
-AdminCeilingModification,AdminCeilingModification
-EndingCeilingModification,EndingCeilingModification
-OtherCeilingModification,OtherCeilingModification
-ExercisedOptions,SteadyScopeOptionGrowthAlone
-RescindedOptions,SteadyScopeOptionRescinded
-SumOfUnmodifiedobligatedAmount,UnmodifiedContractObligatedAmount
-UnmodifiedContractBaseAndAllOptionsValue.Then.Year,UnmodifiedCeiling_Then_Year
-UnmodifiedContractBaseAndAllOptionsValue.OMB20_GDP18,UnmodifiedCeiling_OMB20_GDP18
-UnmodifiedContractBaseAndAllOptionsValue_OMB20_GDP18,UnmodifiedCeiling_OMB20_GDP18
-ChangeOrderCeilingGrowth,ChangeOrderCeilingGrowth
-VehicleClassification,Vehicle
-Size,Vendor.Size
-VendorSize,Vendor.Size
-AnnualSimpleBucketVendorRank,VendorRank
-AnnualSubCustomerVendorRank,VendorRank
-ContractAnnualCustomerVendorRank,VendorRank
-subcustomer,SubCustomer
-ï..fiscal_year,Fiscal.Year
-pCEffNot Effective Comp.,pNoEffComp
-pCEffEffective Comp.,pEffComp
-pPlatElectronics and Communications ,pPlatEnC
-pPlatFacilities and Construction,pPlatFnC
-pPlatLand Vehicles,pPlatLand
-pPlatWeapons and Ammunition,pPlatWnA
-pPlatOther,pPlatOther
-pPlatMissile and Space Systems,pPlatMnS
-pPlatAircraft and Drones,pPlatAir
-pPlatShips & Submarines,pPlatVessel
-pPSRProducts (All),pPSRProducts
-pPSRServices (Non-R&D),pPSRServices
-pPSRR&D,pRnD
-pPSCElectronics & Communications,pPscEnC
-pPSCOther                     ,pPscOther                     
-pPSCFuels,pPscFuels
-pPSCICT,pPscICT
-pPSCFRS&C,pPscFRSnC
-pPSCPAMS,pPscPAMS
-pPSCERS,pPscERS
-pPSCEngines & Power Plants,pPscEngines
-pPSCLaunchers & Munitions,pPscLnM
-pPSCMED,pPscMED
-pPSCMissiles & Space,pPscMnS
-pPSCAircraft,pPscAir
-pPSCGround Vehicles,pPscLand
-pPSCR&D,pPscRnD
-pPSCShips,pPscShips
-pPscClothing & Subsistence,pPscCloth
-pPriceFixed,pPriceFixed
-pPriceTime/Mat.,pPriceTime
-pPriceCost+,pPriceCost
-pPriceOther,pPriceOther
-pPriceCombination,pPriceComb
-pFeeNone,pFeeNone
-pFeeRedetermination,pFeeRedermination
-pFeeEPA,pFeeEPA
-pFeeFixed,pFeeFixed
-pFeeAward,pFeeAward
-pFeeIncentive,pFeeIncentive
-pFeeLevel Of Effort,pFeeEffort
-pCompNo Comp.,pCompNoComp
-pComp1 Offer,pComp1Offer
-pComp2 Offers,pComp2Offers
-pComp3+ Offers,pComp3pOffers
-pComp3-4 Offers,pComp3or4Offers
-pComp5+ Offers,pComp5pOffers
-pCompNo Comp. (Other),pNoCompOther
-pCompNo Comp. (Only 1 Source),pNoComp1Source
-pCompFollow on to Competed Action,pNoCompFollowOn
-pIDVIDV,pIDV
-pIDVAward,pAward
-pVehFSS,pVehFSS
-pVehSingle-Awd.,pVehSAC
-pVehPur. Order,pVehPur
-pVehDefinitive,pVehDef
-pVehMulti-Awd.,pVehMAC
-pVehUnlbd. IDV,pVehIDVUnl
-pVehOther IDV,pVehOIDV
-pVehBPA,pVehBPA
-year,Year
-region,Region
-iYear,Year
-Classification,Classified  
-Account,Account
-Account.Title,AccountTitle
-Budget.Activity,BudgetActivity
-Budget.Activity.Title,BudgetActivityTitle
-Budget.Activity.Short.Title,BudgetActivityTitle
-Budget.Sub.Activity,BudgetSubActivity
-Budget.Sub.Activity.Title,BudgetSubActivityTitle
-Budget.Sub.Activity..BSA..Title,BudgetSubActivityTitle
-BSA,BSA
-BSA.Title,BSAtitle
-AG.Title,AGtitle
-SAG…,SAGtitle
-Facility.Category.Title,FacilityCategoryTitle
-State.Country,StateCountry
-State.Country.Title,StateCountryTitle
-Location.Title,LocationTitle
-Line.Item,LineItem
-Line.Item.Title,LineItemTitle
-Construction.Project,ConstructionProject
-Construction.Project.Title,ConstructionProjectTitle
-Cost.Type,CostType
-Cost.Type.Title,CostTypeTitle
-Classified,Classified
-FiscalYear,FiscalYear
-Actual,Actual
-App,App
-Base.App,Base_App
-Base.PB,Base_PB
-OCO.App,OCO_App
-OCO.PB,OCO_PB
-PB,PB
-Quant.Actual,Quant_Actual
-Quant.App,Quant_App
-Quant.Base.App,Quant_Base_App
-Quant.Base.PB,Quant_Base_PB
-Quant.OCO.App,Quant_OCO_App
-Quant.OCO.PB,Quant_OCO_PB
-Quant.PB,Quant_PB
-Organization,Organization
-Line.Number,LineNumber
-PE,ProgramElement
-PE.Title,ProgramElementTitle
-PE...BLI,ProgramElement
-Program.Element.Title,ProgramElementTitle
-Program.Element...Budget.Line.Item..BLI..Title,ProgramElementTitle
-Include.in.TOA,IncludeInTOA
-Add..Non.Add,AddOrNonAdd
-Mil.Dept.DW,MilDeptDW
-X.....Auth.........Amount...,AuthAmount
-X...Auth.for....Appn.Amount.,AuthForAppnAmount
-X.....Appn.........Amount...,AppnAmount
-X.....TOA..........Amount...,TOAamount
-AG...Budget.SubActivity..BSA..Title,BudgetSubActivityTitle
-SAG...Budget.Line.Item..BLI..Title,BudgetLineItem
-SAG...BLI,SAG
-Add/.Non-Add,AddOrNonAdd
-TOAamount,TOAamount
-X..Emergency......Disaster...Relief.Act.of......2013....,EmergencyDisasterReliefActof2013
-X....TOA..Total...Base.Request.with.CR.Adj..,TOAtotalBaseRequestWithCRadj
-X.....TOA......Annualized....CR.Base...,TOAannualizedCRbase
-X.....TOA......Annualized....CR.OCO....,TOAannualizedCROCO
-X....Auth.......Amount..,AuthAmount
-X.Auth.for...Appn.Amount,AuthForAppnAmount
-X....Appn.......Amount..,AppnAmount
-X.....TOA.......Amount..,TOAamount
-X......Auth.......Amount..,AuthAmount
-X...Auth.for...Appn.Amount,AuthForAppnAmount
-X..Appn.Base..Request.with....CR.Adj...,AppnBaseRequestWithCRadj
-X..TOA.Base...Request.with....CR.Adj...,TOAbaseRequestWithCRadj
-X....Appn......Annualized....CR.Base...,AppnAnnualizedCRbase
-Annualized.CR.Base..,AnnualizedCRbase
-X..Appn.OCO...Request.with....CR.Adj...,AppnOCOrequestWithCRadj
-X...TOA.OCO...Request.with....CR.Adj...,TOAOCOrequestWithCRadj
-X....Appn......Annualized....CR.OCO....,AppnAnnualizedCROCO
-X.........Appn.........Amount...,AppnAmount
-X.........Auth.........Amount...,AuthAmount
-X.......Auth.for....Appn.Amount.,AuthForAppnAmount
-X.....TOA.Base....Request.with....CR.Adj....,TOAbaseRequestWithCRadj
-StartFiscal_Year,StartFiscal_Year
-ParentID,ParentID
-Period,Period
-Use of Force,Force
-Russia,Russia
-China,China
-North Korea,DPRK
-Iran,Iran
-Iran Threat,Ir_thr
-Iran Response,Ir_dipl
-North Korea Threat,NK_thr
-North Korea Response,NK_dipl
-Alliances,Allies
-Multilateralism,Multi
-Trade,Trade
-Security Assistance   ,SecAsst
-Humanitarian Assistance,HumAsst
-Development Assistance,DevAsst
-Hum+Dev Assistance,HumDev
-nominate_dim1,LibCon
-congress,congress
-chamber,chamber
-district_code,district_code
-state_abbrev,state_abbrev
-party_code,party_code
-born,born
-died,died
-nominate_dim2,nominate_dim2
-Members,Members
-Avg Threat Perception,iThreat
-Avg Foreign Aid,iAid
-Security Assistance,SecAsst
-Year of Birth**,Cohort
-Region*,Region
-Contracting Department ID,DepartmentID
-Contracting Department Name,DepartmentIDtext
-Contracting Agency Name,AgencyIDtext
-Contracting Agency ID,Contracting.Agency.ID
-Product or Service Code,ProductOrServiceCode
-Product or Service Description,ProductOrServiceCodeText
-IDV Type,idv_type_code
-IDV Multiple Or Single Award IDV,idv_multipleorsingleawardidc
-Award or IDV Type,contractactiontype
-Multiple or Single Award IDV,multipleorsingleawardidc
-Type of Contract,Pricing_Mechanism_Code
-Pricing.Mechanism.Code,Pricing_Mechanism_Code
-Action Obligation,Action_Obligation
-contractingofficeagencyid,Contracting.Agency.ID
-Index,Index
-Subcontractor,Subcontractor
-Contract Number,Contract_Number
-DUNS Number,DUNS_Number
-Name,Name
-Number of Full Time Equivalent Employees  FTEs,Number_of_Full_Time_Equivalent_Employees_FTEs
-Number of Hours  Invoiced,Number_of_Hours_Invoiced
-CSISCreatedDate,CSISCreatedDate
-CSISModifiedDate,CSISModifiedDate
-IsDuplicateUTI,IsDuplicateUTI
-PSC Code,ProductOrServiceCode
-Product Or Service Code,ProductOrServiceCode
-PSC Description,ProductOrServiceCodeText
-Product or Service Description,ProductOrServiceCodeText
-Contracting.Agency.ID,Contracting_Agency_ID
-Contracting Department ID,Contracting_Department_ID
-Funding Agency ID,Funding_Agency_ID
-placeofmanufacture,PlaceOfManufacture
-placeofmanufactureText,PlaceOfManufactureText
-IsManufacturedInUS,IsManufacturedInUS
-BAAcategory,BAAcategory
-Place of Performance City,Place_of_Performance_City
-Place of Performance State,Place_of_Performance_State
-Place of Performance County,Place_of_Performance_County
-Date Signed,Date_Signed
-Extent Competed,Extent_Competed
-Fair Opportunity Limited Sources,Fair_Opportunity_Limited_Sources
-Type of Contract,Type_of_Contract
-Description of Requirement,Description_of_Requirement
-Vendor Name,Vendor_Name
-PIID,PIID
-Referenced IDV PIID,Referenced_IDV_PIID
-Vendor DUNS,Vendor_DUNS
-Action.Obligation,Action_Obligation
-Contracting Department Name,Contracting_Department_Name
-Contracting Agency Name,Contracting_Agency_Name
-Funding Department ID,Funding_Department_ID
-Funding Department Name,Funding_Department_Name
-Funding Agency Name,Funding_Agency_Name
-Place of Performance Zip Code,Place_of_Performance_Zip_Code
-Place of Performance Country,Place_of_Performance_Country
-Total Contract Value,Total_Contract_Value
-Base and All Options Value,Base_and_All_Options_Value
-Total Dollar Amount Invoiced,Total_Dollar_Amount_Invoiced
-Number of Contractor Hours Invoiced,Number_of_Contractor_Hours_Invoiced
-Number of Contractor Full Time Equivalent Employees  FTEs,Number_of_Contractor_Full_Time_Equivalent_Employees_FTEs
-Fiscal Year,Fiscal_Year
-Total Action Obligation,Total_Action_Obligation
-Total Base and All Options Value,Total_Base_and_All_Options_Value
-Prime Contractor Hours Invoiced,Prime_Contractor_Hours_Invoiced
-Prime Contractor Full Time Equivalent Employees  FTEs,Prime_Contractor_Full_Time_Equivalent_Employees_FTEs
-Index,Index
-CSISCreatedDate,CSISCreatedDate
-CSISModifiedDate,CSISModifiedDate
-IsDuplicateUTI,IsDuplicateUTI
-PSC,PSC_Code
-PSC Description,PSC_Description
-Contract Invoiced Amount,Contract_Invoiced_Amount
-Number of Contractor FTEs,Number_of_Contract_FTEs
-CFTE Rate,CFTE_Rate
-CFTE Factor,CFTE_Factor
-OCO/GF,OCO_GF
-Direct Non-Labor Cost,Direct_NonLabor_Cost
-Direct Labor Dollars,Direct_Labor_Dollars
-Location Count,Location_Count
+Original,Replacement,,,
+SumOfobligatedAmount,Action_Obligation,,,
+ObligatedAmount,Action_Obligation,,,
+obligatedamount,Action_Obligation,,,
+obligatedamount_Then_Year,Action_Obligation_Then_Year,,,
+Action.Obligation.Current,Action_Obligation_Then_Year,,,
+Action.Obligation.Then.Year,Action_Obligation_Then_Year,,,
+Action_Obligation.Then.Year,Action_Obligation_Then_Year,,,
+PrimeOrSubObligatedAmount.Deflator.2016,PrimeOrSubObligatedAmount_2016,,,
+Action.Obligation.Deflator.2016,Action_Obligation_2016,,,
+Action.Obligation.Deflator.2017,Action_Obligation_2017,,,
+Action.Obligation.2016,Action_Obligation_2016,,,
+Action.Obligation.2017,Action_Obligation_2017,,,
+Action_Obligation.2016,Action_Obligation_2016,,,
+Action_Obligation.2017,Action_Obligation_2017,,,
+obligatedamount_OMB20_GDP18,Action_Obligation_OMB20_GDP18,,,
+SumOfnumberOfActions,Number.Of.Actions,,,
+SingleYearObligatedAmount,Contract.Size,,,
+SizeOfSumOfObligatedAmount,Contract.Size,,,
+Base.and.All.Options.Value,ContractBaseAndAllOptionsValue,,,
+Sumofbaseandalloptionsvalue,ContractBaseAndAllOptionsValue,,,
+SumOfbaseandexercisedoptionsvalue,ContractBaseAndExercisedOptionsValue,,,
+ContractingAgencyID,Contracting.Agency.ID,,,
+SumOfContractObligatedAmount,ContractObligatedAmount,,,
+ParentOrPartnerName,ContractorDisplayName,,,
+customer,Customer,,,
+DEPLOYMENT,Deployment,,,
+fiscal.year,Fiscal.Year,,,
+Fiscal_Year,Fiscal.Year,,,
+SumofGBKdisbursements,GBKdisbursements,,,
+SumofGBKObligations,GBKObligations,,,
+Majorcommandid,MajorCommandID,,,
+SumofOutlayNoOffsetAccount,OutlayNoOffsetAccount,,,
+SumofOutlay,OutlayOffsetAccount,,,
+SumofOutlayOffsetAccount,OutlayOffsetAccount,,,
+PoPStateCode,PoPstateCode,,,
+StateCode,PoPstateCode,,,
+FundingMechanismClassification,Pricing.Mechanism,,,
+TypeofContractPricingtext,Pricing.Mechanism,,,
+TypeOfContractPricing,Pricing.Mechanism.Code,,,
+Simple,SimpleArea,,,
+ProductorServiceArea,ProductOrServiceArea,,,
+ProductsCategory,ProductsCategory,,,
+ServiceCategory,ServicesCategory,,,
+Services.Category,ServicesCategory,,,
+ServicesCategory,ServicesCategory,,,
+simplearea,SimpleArea,,,
+Sub_Customer,SubCustomer,,,
+SubCustomerSum,SubCustomer,,,
+SumOfUnmodifiedbaseandalloptionsvalue,UnmodifiedCeiling,,,
+UnmodifiedContractBaseAndAllOptionsValue,UnmodifiedCeiling,,,
+UnmodifiedContractBaseAndAllOptionsValue.Then.Year,UnmodifiedCeiling_Then_Year,,,
+UnmodifiedContractBaseAndAllOptionsValue_Then_Year,UnmodifiedCeiling_Then_Year,,,
+SumOfUnmodifiedbaseandexercisedoptionsvalue,UnmodifiedBase,,,
+UnmodifiedContractBaseAndExercisedOptionsValue,UnmodifiedBase,,,
+ln_base,l_Base,,,
+ChangeOrderCeilingGrowth,ChangeOrderCeilingGrowth,,,
+SteadyScopeCeilingModification,SteadyScopeCeilingModification,,,
+AdminCeilingModification,AdminCeilingModification,,,
+EndingCeilingModification,EndingCeilingModification,,,
+OtherCeilingModification,OtherCeilingModification,,,
+ExercisedOptions,SteadyScopeOptionGrowthAlone,,,
+RescindedOptions,SteadyScopeOptionRescinded,,,
+SumOfUnmodifiedobligatedAmount,UnmodifiedContractObligatedAmount,,,
+UnmodifiedContractBaseAndAllOptionsValue.Then.Year,UnmodifiedCeiling_Then_Year,,,
+UnmodifiedContractBaseAndAllOptionsValue.OMB20_GDP18,UnmodifiedCeiling_OMB20_GDP18,,,
+UnmodifiedContractBaseAndAllOptionsValue_OMB20_GDP18,UnmodifiedCeiling_OMB20_GDP18,,,
+ChangeOrderCeilingGrowth,ChangeOrderCeilingGrowth,,,
+VehicleClassification,Vehicle,,,
+Size,Vendor.Size,,,
+VendorSize,Vendor.Size,,,
+AnnualSimpleBucketVendorRank,VendorRank,,,
+AnnualSubCustomerVendorRank,VendorRank,,,
+ContractAnnualCustomerVendorRank,VendorRank,,,
+subcustomer,SubCustomer,,,
+ï..fiscal_year,Fiscal.Year,,,
+pCEffNot Effective Comp.,pNoEffComp,,,
+pCEffEffective Comp.,pEffComp,,,
+pPlatElectronics and Communications ,pPlatEnC,,,
+pPlatFacilities and Construction,pPlatFnC,,,
+pPlatLand Vehicles,pPlatLand,,,
+pPlatWeapons and Ammunition,pPlatWnA,,,
+pPlatOther,pPlatOther,,,
+pPlatMissile and Space Systems,pPlatMnS,,,
+pPlatAircraft and Drones,pPlatAir,,,
+pPlatShips & Submarines,pPlatVessel,,,
+pPSRProducts (All),pPSRProducts,,,
+pPSRServices (Non-R&D),pPSRServices,,,
+pPSRR&D,pRnD,,,
+pPSCElectronics & Communications,pPscEnC,,,
+pPSCOther                     ,pPscOther                     ,,,
+pPSCFuels,pPscFuels,,,
+pPSCICT,pPscICT,,,
+pPSCFRS&C,pPscFRSnC,,,
+pPSCPAMS,pPscPAMS,,,
+pPSCERS,pPscERS,,,
+pPSCEngines & Power Plants,pPscEngines,,,
+pPSCLaunchers & Munitions,pPscLnM,,,
+pPSCMED,pPscMED,,,
+pPSCMissiles & Space,pPscMnS,,,
+pPSCAircraft,pPscAir,,,
+pPSCGround Vehicles,pPscLand,,,
+pPSCR&D,pPscRnD,,,
+pPSCShips,pPscShips,,,
+pPscClothing & Subsistence,pPscCloth,,,
+pPriceFixed,pPriceFixed,,,
+pPriceTime/Mat.,pPriceTime,,,
+pPriceCost+,pPriceCost,,,
+pPriceOther,pPriceOther,,,
+pPriceCombination,pPriceComb,,,
+pFeeNone,pFeeNone,,,
+pFeeRedetermination,pFeeRedermination,,,
+pFeeEPA,pFeeEPA,,,
+pFeeFixed,pFeeFixed,,,
+pFeeAward,pFeeAward,,,
+pFeeIncentive,pFeeIncentive,,,
+pFeeLevel Of Effort,pFeeEffort,,,
+pCompNo Comp.,pCompNoComp,,,
+pComp1 Offer,pComp1Offer,,,
+pComp2 Offers,pComp2Offers,,,
+pComp3+ Offers,pComp3pOffers,,,
+pComp3-4 Offers,pComp3or4Offers,,,
+pComp5+ Offers,pComp5pOffers,,,
+pCompNo Comp. (Other),pNoCompOther,,,
+pCompNo Comp. (Only 1 Source),pNoComp1Source,,,
+pCompFollow on to Competed Action,pNoCompFollowOn,,,
+pIDVIDV,pIDV,,,
+pIDVAward,pAward,,,
+pVehFSS,pVehFSS,,,
+pVehSingle-Awd.,pVehSAC,,,
+pVehPur. Order,pVehPur,,,
+pVehDefinitive,pVehDef,,,
+pVehMulti-Awd.,pVehMAC,,,
+pVehUnlbd. IDV,pVehIDVUnl,,,
+pVehOther IDV,pVehOIDV,,,
+pVehBPA,pVehBPA,,,
+year,Year,,,
+region,Region,,,
+iYear,Year,,,
+Classification,Classified  ,,,
+Account,Account,,,
+Account.Title,AccountTitle,,,
+Budget.Activity,BudgetActivity,,,
+Budget.Activity.Title,BudgetActivityTitle,,,
+Budget.Activity.Short.Title,BudgetActivityTitle,,,
+Budget.Sub.Activity,BudgetSubActivity,,,
+Budget.Sub.Activity.Title,BudgetSubActivityTitle,,,
+Budget.Sub.Activity..BSA..Title,BudgetSubActivityTitle,,,
+BSA,BSA,,,
+BSA.Title,BSAtitle,,,
+AG.Title,AGtitle,,,
+SAG…,SAGtitle,,,
+Facility.Category.Title,FacilityCategoryTitle,,,
+State.Country,StateCountry,,,
+State.Country.Title,StateCountryTitle,,,
+Location.Title,LocationTitle,,,
+Line.Item,LineItem,,,
+Line.Item.Title,LineItemTitle,,,
+Construction.Project,ConstructionProject,,,
+Construction.Project.Title,ConstructionProjectTitle,,,
+Cost.Type,CostType,,,
+Cost.Type.Title,CostTypeTitle,,,
+Classified,Classified,,,
+FiscalYear,FiscalYear,,,
+Actual,Actual,,,
+App,App,,,
+Base.App,Base_App,,,
+Base.PB,Base_PB,,,
+OCO.App,OCO_App,,,
+OCO.PB,OCO_PB,,,
+PB,PB,,,
+Quant.Actual,Quant_Actual,,,
+Quant.App,Quant_App,,,
+Quant.Base.App,Quant_Base_App,,,
+Quant.Base.PB,Quant_Base_PB,,,
+Quant.OCO.App,Quant_OCO_App,,,
+Quant.OCO.PB,Quant_OCO_PB,,,
+Quant.PB,Quant_PB,,,
+Organization,Organization,,,
+Line.Number,LineNumber,,,
+PE,ProgramElement,,,
+PE.Title,ProgramElementTitle,,,
+PE...BLI,ProgramElement,,,
+Program.Element.Title,ProgramElementTitle,,,
+Program.Element...Budget.Line.Item..BLI..Title,ProgramElementTitle,,,
+Include.in.TOA,IncludeInTOA,,,
+Add..Non.Add,AddOrNonAdd,,,
+Mil.Dept.DW,MilDeptDW,,,
+X.....Auth.........Amount...,AuthAmount,,,
+X...Auth.for....Appn.Amount.,AuthForAppnAmount,,,
+X.....Appn.........Amount...,AppnAmount,,,
+X.....TOA..........Amount...,TOAamount,,,
+AG...Budget.SubActivity..BSA..Title,BudgetSubActivityTitle,,,
+SAG...Budget.Line.Item..BLI..Title,BudgetLineItem,,,
+SAG...BLI,SAG,,,
+Add/.Non-Add,AddOrNonAdd,,,
+TOAamount,TOAamount,,,
+X..Emergency......Disaster...Relief.Act.of......2013....,EmergencyDisasterReliefActof2013,,,
+X....TOA..Total...Base.Request.with.CR.Adj..,TOAtotalBaseRequestWithCRadj,,,
+X.....TOA......Annualized....CR.Base...,TOAannualizedCRbase,,,
+X.....TOA......Annualized....CR.OCO....,TOAannualizedCROCO,,,
+X....Auth.......Amount..,AuthAmount,,,
+X.Auth.for...Appn.Amount,AuthForAppnAmount,,,
+X....Appn.......Amount..,AppnAmount,,,
+X.....TOA.......Amount..,TOAamount,,,
+X......Auth.......Amount..,AuthAmount,,,
+X...Auth.for...Appn.Amount,AuthForAppnAmount,,,
+X..Appn.Base..Request.with....CR.Adj...,AppnBaseRequestWithCRadj,,,
+X..TOA.Base...Request.with....CR.Adj...,TOAbaseRequestWithCRadj,,,
+X....Appn......Annualized....CR.Base...,AppnAnnualizedCRbase,,,
+Annualized.CR.Base..,AnnualizedCRbase,,,
+X..Appn.OCO...Request.with....CR.Adj...,AppnOCOrequestWithCRadj,,,
+X...TOA.OCO...Request.with....CR.Adj...,TOAOCOrequestWithCRadj,,,
+X....Appn......Annualized....CR.OCO....,AppnAnnualizedCROCO,,,
+X.........Appn.........Amount...,AppnAmount,,,
+X.........Auth.........Amount...,AuthAmount,,,
+X.......Auth.for....Appn.Amount.,AuthForAppnAmount,,,
+X.....TOA.Base....Request.with....CR.Adj....,TOAbaseRequestWithCRadj,,,
+StartFiscal_Year,StartFiscal_Year,,,
+ParentID,ParentID,,,
+Period,Period,,,
+Use of Force,Force,,,
+Russia,Russia,,,
+China,China,,,
+North Korea,DPRK,,,
+Iran,Iran,,,
+Iran Threat,Ir_thr,,,
+Iran Response,Ir_dipl,,,
+North Korea Threat,NK_thr,,,
+North Korea Response,NK_dipl,,,
+Alliances,Allies,,,
+Multilateralism,Multi,,,
+Trade,Trade,,,
+Security Assistance   ,SecAsst,,,
+Humanitarian Assistance,HumAsst,,,
+Development Assistance,DevAsst,,,
+Hum+Dev Assistance,HumDev,,,
+nominate_dim1,LibCon,,,
+congress,congress,,,
+chamber,chamber,,,
+district_code,district_code,,,
+state_abbrev,state_abbrev,,,
+party_code,party_code,,,
+born,born,,,
+died,died,,,
+nominate_dim2,nominate_dim2,,,
+Members,Members,,,
+Avg Threat Perception,iThreat,,,
+Avg Foreign Aid,iAid,,,
+Security Assistance,SecAsst,,,
+Year of Birth**,Cohort,,,
+Region*,Region,,,
+Contracting Department ID,DepartmentID,,,
+Contracting Department Name,DepartmentIDtext,,,
+Contracting Agency Name,AgencyIDtext,,,
+Contracting Agency ID,Contracting.Agency.ID,,,
+Product or Service Code,ProductOrServiceCode,,,
+Product or Service Description,ProductOrServiceCodeText,,,
+IDV Type,idv_type_code,,,
+IDV Multiple Or Single Award IDV,idv_multipleorsingleawardidc,,,
+Award or IDV Type,contractactiontype,,,
+Multiple or Single Award IDV,multipleorsingleawardidc,,,
+Type of Contract,Pricing_Mechanism_Code,,,
+Pricing.Mechanism.Code,Pricing_Mechanism_Code,,,
+Action Obligation,Action_Obligation,,,
+contractingofficeagencyid,Contracting.Agency.ID,,,
+Index,Index,,,
+Subcontractor,Subcontractor,,,
+Contract Number,Contract_Number,,,
+DUNS Number,DUNS_Number,,,
+Name,Name,,,
+Number of Full Time Equivalent Employees  FTEs,Number_of_Full_Time_Equivalent_Employees_FTEs,,,
+Number of Hours  Invoiced,Number_of_Hours_Invoiced,,,
+CSISCreatedDate,CSISCreatedDate,,,
+CSISModifiedDate,CSISModifiedDate,,,
+IsDuplicateUTI,IsDuplicateUTI,,,
+PSC Code,ProductOrServiceCode,,,
+Product Or Service Code,ProductOrServiceCode,,,
+PSC Description,ProductOrServiceCodeText,,,
+Product or Service Description,ProductOrServiceCodeText,,,
+Contracting.Agency.ID,Contracting_Agency_ID,,,
+Contracting Department ID,Contracting_Department_ID,,,
+Funding Agency ID,Funding_Agency_ID,,,
+placeofmanufacture,PlaceOfManufacture,,,
+placeofmanufactureText,PlaceOfManufactureText,,,
+IsManufacturedInUS,IsManufacturedInUS,,,
+BAAcategory,BAAcategory,,,
+Place of Performance City,Place_of_Performance_City,,,
+Place of Performance State,Place_of_Performance_State,,,
+Place of Performance County,Place_of_Performance_County,,,
+Date Signed,Date_Signed,,,
+Extent Competed,Extent_Competed,,,
+Fair Opportunity Limited Sources,Fair_Opportunity_Limited_Sources,,,
+Type of Contract,Type_of_Contract,,,
+Description of Requirement,Description_of_Requirement,,,
+Vendor Name,Vendor_Name,,,
+PIID,PIID,,,
+Referenced IDV PIID,Referenced_IDV_PIID,,,
+Vendor DUNS,Vendor_DUNS,,,
+Action.Obligation,Action_Obligation,,,
+Contracting Department Name,Contracting_Department_Name,,,
+Contracting Agency Name,Contracting_Agency_Name,,,
+Funding Department ID,Funding_Department_ID,,,
+Funding Department Name,Funding_Department_Name,,,
+Funding Agency Name,Funding_Agency_Name,,,
+Place of Performance Zip Code,Place_of_Performance_Zip_Code,,,
+Place of Performance Country,Place_of_Performance_Country,,,
+Total Contract Value,Total_Contract_Value,,,
+Base and All Options Value,Base_and_All_Options_Value,,,
+Total Dollar Amount Invoiced,Total_Dollar_Amount_Invoiced,,,
+Number of Contractor Hours Invoiced,Number_of_Contractor_Hours_Invoiced,,,
+Number of Contractor Full Time Equivalent Employees  FTEs,Number_of_Contractor_Full_Time_Equivalent_Employees_FTEs,,,
+Fiscal Year,Fiscal_Year,,,
+Total Action Obligation,Total_Action_Obligation,,,
+Total Base and All Options Value,Total_Base_and_All_Options_Value,,,
+Prime Contractor Hours Invoiced,Prime_Contractor_Hours_Invoiced,,,
+Prime Contractor Full Time Equivalent Employees  FTEs,Prime_Contractor_Full_Time_Equivalent_Employees_FTEs,,,
+Index,Index,,,
+CSISCreatedDate,CSISCreatedDate,,,
+CSISModifiedDate,CSISModifiedDate,,,
+IsDuplicateUTI,IsDuplicateUTI,,,
+PSC,PSC_Code,,,
+PSC Description,PSC_Description,,,
+Contract Invoiced Amount,Contract_Invoiced_Amount,,,
+Number of Contractor FTEs,Number_of_Contract_FTEs,,,
+CFTE Rate,CFTE_Rate,,,
+CFTE Factor,CFTE_Factor,,,
+OCO/GF,OCO_GF,,,
+Direct Non-Labor Cost,Direct_NonLabor_Cost,,,
+Direct Labor Dollars,Direct_Labor_Dollars,,,
+Location Count,Location_Count,,,
