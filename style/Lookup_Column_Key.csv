@@ -10,6 +10,7 @@ SubFunder.Detail,Agencies,Funding Component,,,FALSE
 SubCustomer,Agencies,Component,,,FALSE
 SubCustomer.detail,Agencies,Component,,,FALSE
 SubCustomer.sum,Agencies,Component,,,FALSE
+SubCustomer.FMS,Agencies,Component,,,FALSE
 SubCustomer.component,Agencies,Component,,,FALSE
 SubCustomer.platform,Agencies,Component,,,FALSE
 ServicesCategory.detail,Area,Services Area,,,FALSE
