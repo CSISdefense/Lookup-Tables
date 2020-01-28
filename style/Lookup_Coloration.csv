@@ -2823,6 +2823,9 @@ Vote,MD Past Regged ,MD Regged Non-Voter,3,yellow,#FFC000,,,,default grey,#55444
 Vote,MD First Cycle,MD First Cycle,4,green,#92D050,,,,default grey,#554449,
 Vote,MD First Elec,MD First Elec,5,Blue,#0070C0,,,,default grey,#554449,
 ,,,,,,,,,,,
+Precinct,0,Control  Precinct,0,Peach,#FAC090,,,,default grey,#554449,
+Precinct,1,Target Precinct,1,teal,#4198AF,,,,default grey,#554449,
+,,,,,,,,,,,
 Region,Midwest,Midwest,1,green,#92D050,,,,default grey,#554449,M
 Region,Northeast,Northeast,2,Purpleblue,#93A9CF,,,,default grey,#554449,N
 Region,Southeast,Southeast,3,Orange,#DB843D,,,,default grey,#554449,SE
