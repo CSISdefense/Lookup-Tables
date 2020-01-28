@@ -183,6 +183,7 @@ Congo,COG,COG
 Congo (brazzaville),COG,COG
 Congo (kinshasa),COD,COD
 "Congo, Democratic Republic of",COD,COD
+Democratic Repubic of the Congo,COD,COD
 "Congo, Peoples Republic of the (Brazzaville)",COG,COG
 "CONGO,DEMOCRATIC REPUBLIC OF THE (KINSHASA)",COD,COD
 "CONGO,REPUBLIC OF THE (BRAZZAVILLE)",COG,COG
@@ -243,6 +244,7 @@ EGYPT,EGY,EGY
 EL SALVADOR,SLV,SLV
 ELSALVADOR,SLV,SLV
 Eq Guinea,GNQ,GNQ
+Equitorial Guinea,GNQ,GNQ
 EQUATORIAL GUINEA,GNQ,GNQ
 ERITREA,ERI,ERI
 ESP,ESP,ESP
@@ -646,6 +648,7 @@ SINGAPORE,SGP,SGP
 Sint Maarten,NULL,MAF
 SLB,SLB,SLB
 SLB: SOLOMON ISLANDS,SLB,SLB
+Soloman Islands,SLB,SLB
 SLE,SLE,SLE
 SLE: SIERRA LEONE,SLE,SLE
 SLOVAKIA,SVK,SVK
@@ -680,6 +683,7 @@ St Lucia,LCA,LCA
 St Pierre & Miq,SPM,SPM
 St Vinc & Gren,VCT,VCT
 St Vincent + Gren.,VCT,VCT
+St. Vincent and G,VCT,VCT
 STP,STP,STP
 STP: SAO TOME AND PRINCIPE,STP,STP
 SUDAN,SDN,SDN
@@ -831,6 +835,7 @@ China (Hong Kong),HKG,HKG
 Christmas Island,NULL,CXR
 Cocos (Keeling) Islands,NULL,CCK
 "Congo, Republic of the",COG,COG
+Republic of the Congo,COG,COG
 "Congo, the Democratic Republic of the",COD,COD
 Cook Islands,COK,COK
 Côte d'Ivoire,CIV,CIV
