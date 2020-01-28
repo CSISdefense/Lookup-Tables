@@ -2806,10 +2806,22 @@ Party,Dem/Ind,Dem/Ind,1,Blue,#0070C0,,,,default grey,#554449,D
 Party,Republican,Republican,2,red,#AA4643,,,,default grey,#554449,R
 Party,Democrat,Democrat,1,Blue,#0070C0,,,,default grey,#554449,D
 Party,Independent,Independent,3,orange,#DB8403,,,,default grey,#554449,I
+Party,Democratic,Democratic,1,Blue,#0070C0,,,,default grey,#554449,D
+Party,All Other,All Other,3,orange,#DB8403,,,,default grey,#554449,I
 ,,,,,,,,,,,
 Age,1,Pre-1950,1,orange,#DB8403,,,,default grey,#554449,1
 Age,2,1950-1969,2,yellow,#FFC000,,,,default grey,#554449,2
 Age,3,1970 and After,3,green,#92D050,,,,default grey,#554449,3
+Age,Approx. 18-29,,4,Blue,#0070C0,,,,default grey,#554449,
+Age,Approx. 30-44,,3,green,#92D050,,,,default grey,#554449,
+Age,Approx. 35-49,,2,yellow,#FFC000,,,,default grey,#554449,
+Age,Approx. 60+,,1,orange,#DB8403,,,,default grey,#554449,
+,,,,,,,,,,,
+Vote,MD Always Voter,MD Always Voter,1,red,#AA4643,,,,default grey,#554449,
+Vote,MD Past Voter ,MD Sometimes Voter,2,orange,#DB8403,,,,default grey,#554449,
+Vote,MD Past Regged ,MD Regged Non-Voter,3,yellow,#FFC000,,,,default grey,#554449,
+Vote,MD First Cycle,MD First Cycle,4,green,#92D050,,,,default grey,#554449,
+Vote,MD First Elec,MD First Elec,5,Blue,#0070C0,,,,default grey,#554449,
 ,,,,,,,,,,,
 Region,Midwest,Midwest,1,green,#92D050,,,,default grey,#554449,M
 Region,Northeast,Northeast,2,Purpleblue,#93A9CF,,,,default grey,#554449,N
