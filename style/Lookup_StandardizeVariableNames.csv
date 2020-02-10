@@ -139,9 +139,13 @@ year,Year
 region,Region
 iYear,Year
 Classification,Classified  
-Account,Account
-Account.Title,AccountTitle
+Account,MainAccountCode
+Account.Code,MainAccountCode
+Account.Title,MainAccountName
+Account.Name,MainAccountName
+BA,BudgetActivity
 Budget.Activity,BudgetActivity
+BA.Title,BudgetActivityTitle
 Budget.Activity.Title,BudgetActivityTitle
 Budget.Activity.Short.Title,BudgetActivityTitle
 Budget.Sub.Activity,BudgetSubActivity
@@ -156,7 +160,9 @@ State.Country,StateCountry
 State.Country.Title,StateCountryTitle
 Location.Title,LocationTitle
 Line.Item,LineItem
+LI,LineItem
 Line.Item.Title,LineItemTitle
+LI.Title,LineItemTitle
 Construction.Project,ConstructionProject
 Construction.Project.Title,ConstructionProjectTitle
 Cost.Type,CostType
