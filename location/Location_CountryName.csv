@@ -233,6 +233,7 @@ DZA,DZA,DZA
 EAST AFRICA REGIONAL,?EA,?EA
 East Asia Regional,*ES,*ES
 EAST TIMOR (TIMOR-LESTE),TLS,TLS
+East Timor,TLS,TLS
 Eastern European Regional,*EE,*EE
 ECU,ECU,ECU
 ECU: ECUADOR,ECU,ECU
@@ -280,6 +281,7 @@ FRENCH GUIANA [FRANCE],GUF,GUF
 FRENCH POLYNESIA,PYF,PYF
 FSM,FSM,FSM
 FSM: MICRONESIA (FEDERATED STATES OF),FSM,FSM
+Federated States of Micronesia,FSM,FSM
 GAB,GAB,GAB
 GAB: GABON,GAB,GAB
 GABON,GAB,GAB
@@ -292,6 +294,7 @@ GEO,GEO,GEO
 GEO: GEORGIA,GEO,GEO
 GEORGIA,GEO,GEO
 GERMANY,DEU,DEU
+German Federal Republic,DEU,DEU
 Germany (FRG),DEU,DEU
 Germany DR,NULL,DDR
 GHA,GHA,GHA
@@ -778,6 +781,7 @@ URY: URUGUAY,URY,URY
 US,US,USA
 USA,USA,USA
 USA: UNITED STATES OF AMERICA,USA,USA
+United States of America,USA,USA
 UZB,UZB,UZB
 UZBEKISTAN,UZB,UZB
 VANUATU,VUT,VUT
@@ -812,6 +816,7 @@ XWB,XWB,NULL
 YEM,YEM,YEM
 YEM: YEMEN,YEM,YEM
 YEMEN,YEM,YEM
+Yemen Arab Republic,YEM,YEM
 Yemen (Aden),NULL,*SY
 Yugoslavia,^YG,^YG
 Yugoslavia89-92,^YG,^YG
@@ -837,6 +842,7 @@ Cocos (Keeling) Islands,NULL,CCK
 "Congo, Republic of the",COG,COG
 Republic of the Congo,COG,COG
 "Congo, the Democratic Republic of the",COD,COD
+Democratic Republic of the Congo,COD,COD
 Cook Islands,COK,COK
 Côte d'Ivoire,CIV,CIV
 Curaçao,CUW,CUW
@@ -885,12 +891,15 @@ Saint Pierre and Miquelon,SPM,SPM
 Sint Maarten (Dutch part),NULL,SXM
 South Georgia and the South Sandwich Islands,NULL,SGS
 South Vietnam,NULL,*SV
+Republic of Vietnam,NULL,*SV
 South Yemen,NULL,*SY
+Yemen People's Republic,NULL,*SY
 Southern Africa (not specified),?SF,?SF
 SPRATLY ISLANDS [UNDETERMINED],NULL,~PG
 St. Kitts and Nevis,KNA,KNA
 St. Lucia,LCA,LCA
 St. Vincent and Grenadines,VCT,VCT
+St. Vincent and the Grenadines,VCT,VCT
 Sub-Saharan Africa (not specified),NULL,?AH
 Svalbard and Jan Mayen,NULL,SJM
 Syrian Arab Republic,SYR,SYR
