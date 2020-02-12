@@ -233,7 +233,7 @@ PRY,Paraguay,Paraguay,PY,600,ISO 3166-2:PY,98,PA,NULL,Latin America and Caribbea
 PSE,West Bank/Gaza,"Palestinian Territory, Occupied",PS,275,ISO 3166-2:PS,18,NULL,NULL,Middle East,Near East,142,145,NULL,CENTCOM,Rest of World,1,NULL,1,1,1,0,1,1,NULL,NULL,0,NULL,0,0,NULL,NULL,NULL
 PYF,French Polynesia,French Polynesia,PF,258,ISO 3166-2:PF,NULL,FP,NULL,Asia,Europe and Eurasia,9,61,NULL,PACOM,Rest of World,1,FRA,1,0,1,NULL,0,0,1949,NULL,1,1974,0,0,NULL,NULL,NULL
 QAT,Qatar,Qatar,QA,634,ISO 3166-2:QA,13,QA,NULL,Middle East,Near East,142,145,Iraq Theater,CENTCOM,Regional Support,1,NULL,0,0,0,1,1,1,NULL,NULL,0,NULL,0,0,NULL,NULL,NULL
-REU,Réunion,Réunion,RE,638,ISO 3166-2:RE,NULL,NULL,NULL,Africa,Europe and Eurasia,2,14,NULL,AFRICOM,Rest of World,1,FRA,1,0,0,NULL,0,0,1949,NULL,1,1974,0,0,NULL,NULL,NULL
+REU,Réunion,Réunion,RE,638,ISO 3166-2:RE,NULL,NULL,NULL,Africa,Europe and Eurasia,2,14,NULL,AFRICOM,Rest of World,1,FRA,1,0,1,NULL,0,0,1949,NULL,1,1974,0,0,NULL,NULL,NULL
 ROU,Romania,Romania,RO,642,ISO 3166-2:RO,176,RO,NULL,Europe and Eurasia,Europe and Eurasia,150,151,NULL,EUCOM,Rest of World,1,NULL,0,0,0,0,0,0,2004,NULL,0,NULL,0,0,NULL,NULL,NULL
 RUS,Russia,Russian Federation,RU,643,ISO 3166-2:RU,157,NULL,NULL,Europe and Eurasia,Europe and Eurasia,150,151,NULL,EUCOM,Rest of World,1,NULL,0,0,0,0,0,0,NULL,NULL,0,NULL,0,0,NULL,NULL,NULL
 RWA,Rwanda,Rwanda,RW,646,ISO 3166-2:RW,55,RW,NULL,Africa,Africa,2,14,NULL,AFRICOM,Rest of World,1,NULL,0,0,0,0,0,0,NULL,NULL,0,NULL,0,0,NULL,NULL,NULL
