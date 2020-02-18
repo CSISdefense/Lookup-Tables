@@ -8,7 +8,7 @@ read_create_table<-function(FileName){
   #For now we're ignoring everything except the lines describing variable types
   CreateRow<-which(TargetTable.df$V1=="CREATE")
   TargetTable.df<-TargetTable.df[-c(1:CreateRow),]
-  EndRow<-which(TargetTable.df$V1==")")
+  EndRow<-min(which(TargetTable.df$V1==")" | TargetTable.df$V2=="CONSTRAINT"))
   TargetTable.df<-TargetTable.df[-c(EndRow:nrow(TargetTable.df)),]
   TargetTable.df$V1<-as.character(TargetTable.df$V1)
   #Once we have the table in, the next step is to clean up anything seperated on spaces
