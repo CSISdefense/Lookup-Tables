@@ -642,7 +642,7 @@ create_foreign_key_assigments<-function(Schema,
 }
 
 
-match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate=TRUE){
+match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate=TRUE,insert=FALSE){
   #******Importing into Voter_VoterList_2016_07_14.txt
   NewTableType.df<-read_create_table(paste(NewSchema,"_",NewTable,".txt",sep=""))
     NewTableType.df<-translate_name(NewTableType.df)
@@ -651,22 +651,24 @@ match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate
   TargetTableType.df<-read_create_table(paste(TargetSchema,"_",TargetTable,".txt",sep=""))
   MergeTable.df<-merge_source_and_csis_name_tables(NewTableType.df,TargetTableType.df)
   TryConvertList<-create_try_converts(MergeTable.df,NewSchema,NewTable)
-  if(TryConvertList!=0)
+  if(nrow(TryConvertList)>0){
     write(TryConvertList,
         paste("Output//",NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","try_convert.txt",sep=""), 
         append=FALSE)
-  
-  #Transfer from Voter.VoterList_2016_07_14 to Voter.VID
-  MergeTable.df<-subset(MergeTable.df,!is.na(CSISvariableType))
-  
-  InsertList<-create_insert(MergeTable.df,
-                           NewSchema,
-                           NewTable,
-                           TargetSchema,
-                           TargetTable,
-                           DateType=101)
-  write(InsertList,
-        paste("Output//",NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","Insert.txt",sep=""))
+  }
+  if(insert==TRUE){
+    #Transfer from Voter.VoterList_2016_07_14 to Voter.VID
+    MergeTable.df<-subset(MergeTable.df,!is.na(CSISvariableType))
+    
+    InsertList<-create_insert(MergeTable.df,
+                              NewSchema,
+                              NewTable,
+                              TargetSchema,
+                              TargetTable,
+                              DateType=101)
+    write(InsertList,
+          paste("Output//",NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","Insert.txt",sep=""))
+  }
 }
 
 
