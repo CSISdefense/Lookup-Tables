@@ -1,6 +1,6 @@
 library(tidyr)
 library(csis360)
-
+library(dplyr)
 
 read_create_table<-function(FileName){
   TargetTable.df<-read.csv(file.path("ImportAids\\",FileName),header=FALSE,sep=" ")
@@ -123,7 +123,7 @@ merge_source_and_csis_name_tables<-function(SourceTable.df,
                                  "CSISvariableType",
                                  "CSISnullable")
   CSIStable.df$CSISvariableNameLower<-tolower(as.character(CSIStable.df$CSISvariableName))
-  SourceTable.df<-plyr::join(SourceTable.df,CSIStable.df, by="CSISvariableNameLower",match="first")
+  SourceTable.df<-left_join(SourceTable.df,CSIStable.df, by="CSISvariableNameLower",match="first")
   SourceTable.df<-subset(SourceTable.df,select=-c(CSISvariableNameLower))
   if(drop_unmatched==FALSE){
     SourceTable.df$CSISvariableName[is.na(SourceTable.df$CSISvariableName)]<-
@@ -514,7 +514,7 @@ convert_field_to_foreign_key<-function(FKschema,
   
   
   Output<-''
-  TargetTable.df<-join(TargetTable.df,pkTable.df,
+  TargetTable.df<-left_join(TargetTable.df,pkTable.df,
                        by=c("PKSchemaName",
                             "PKTableName",
                             "PKColumnName")
@@ -569,11 +569,18 @@ convert_field_to_foreign_key<-function(FKschema,
 }
 
 get_CSISvariableNameToPrimaryKey<-function(){
-  lookup.CSISvariableNameToPrimaryKey<-read.csv(file.path("ImportAids","ErrorLogging_ForeignKeyList.csv"),
+  lookup.CSISvariableNameToPrimaryKey<-read.csv(file.path("data","semi_clean","ErrorLogging_ForeignKeyList.csv"),
                                                 stringsAsFactors = FALSE,
                                                 na.strings=c(""))
   
   lookup.CSISvariableNameToPrimaryKey$FKColumnNameUp<-toupper(lookup.CSISvariableNameToPrimaryKey$FKColumnName)
+  
+  #Starting by dropping cases in which case a primary key is a foreign key for a different table.
+  #E.g. MailingElectionDate->ElectionDate. In this case, we want MailingElectionDate to match up to the higher level in the 
+  #heirarchy, Election.MailingElectionDate. We don't need them to match with the base, Eletion.ElectionDate because everything
+  #in Election.MailingElectionDate already is a component of the subsequent table, thanks to the existing foreign key.
+  lookup.CSISvariableNameToPrimaryKey<- lookup.CSISvariableNameToPrimaryKey %>%
+    dplyr::filter(toupper(FKTableName)!=toupper(FKColumnName))
   
   #First consolidate down to only CSISvariable names and keys, using upper to handle case sensitivity
   lookup.CSISvariableNameToPrimaryKey <- lookup.CSISvariableNameToPrimaryKey %>% remove_bom() %>%
@@ -584,7 +591,7 @@ get_CSISvariableNameToPrimaryKey<-function(){
     dplyr::select(-FKColumnNameUp) 
   
   #Handle those cases with multiple primary keys (typically these involves heirarchical pks that appear across multiple tables)
-  #The core one should share a name with the column name (with a few exceptions, like contractr.parentcontractor)
+  #The core one should share a name with the column name (with a few exceptions, like contractor.parentcontractor)
   lookup.CSISvariableNameToPrimaryKey <- lookup.CSISvariableNameToPrimaryKey %>%
     dplyr::mutate(RepeatCount=length(CSISvariableName),
                   AnyExact=max(ifelse(toupper(PKTableName)==toupper(PKColumnName),1,0))) %>%
@@ -609,7 +616,7 @@ create_foreign_key_assigments<-function(Schema,
   lookup.CSISvariableNameToPrimaryKey<-get_CSISvariableNameToPrimaryKey()
   
   
-  MergeTable.df<-join(MergeTable.df,lookup.CSISvariableNameToPrimaryKey,
+  MergeTable.df<-left_join(MergeTable.df,lookup.CSISvariableNameToPrimaryKey,
                       by="CSISvariableName")
   MergeTable.df<-subset(MergeTable.df,!is.na(PKSchemaName))
   if(nrow(MergeTable.df)==0){
@@ -628,7 +635,7 @@ create_foreign_key_assigments<-function(Schema,
   
 
   write(ForeignKeyList,
-        paste(Schema,"_",TableName,"_foreign_key.txt",sep=""), 
+        paste("Output//",Schema,"_",TableName,"_foreign_key.txt",sep=""), 
         append=FALSE)  
   
     ForeignKeyList
@@ -646,7 +653,7 @@ match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate
   TryConvertList<-create_try_converts(MergeTable.df,NewSchema,NewTable)
   if(TryConvertList!=0)
     write(TryConvertList,
-        paste(NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","try_convert.txt",sep=""), 
+        paste("Output//",NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","try_convert.txt",sep=""), 
         append=FALSE)
   
   #Transfer from Voter.VoterList_2016_07_14 to Voter.VID
@@ -659,7 +666,7 @@ match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate
                            TargetTable,
                            DateType=101)
   write(InsertList,
-        paste(NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","Insert.txt",sep=""))
+        paste("Output//",NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","Insert.txt",sep=""))
 }
 
 
@@ -692,6 +699,6 @@ shift_table<-function(Schema,
   Output[length(Output)]<-substring(Output[length(Output)],1,nchar(Output[length(Output)])-1)
   Output<- rbind(Output,paste("WHERE",WhereValue,"\n\n"))
   write(Output,
-        paste("Shift_",Schema,"_",Table,"_by_",NColShift,".txt",sep=""),
+        paste("Output//","Shift_",Schema,"_",Table,"_by_",NColShift,".txt",sep=""),
         append=FALSE)
 }
