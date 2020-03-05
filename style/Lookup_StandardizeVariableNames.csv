@@ -1,7 +1,6 @@
 Original,Replacement
 SumOfobligatedAmount,Action_Obligation
 ObligatedAmount,Action_Obligation
-obligatedamount,Action_Obligation
 obligatedamount_Then_Year,Action_Obligation_Then_Year
 Action.Obligation.Current,Action_Obligation_Then_Year
 Action.Obligation.Then.Year,Action_Obligation_Then_Year
@@ -63,10 +62,8 @@ OtherCeilingModification,OtherCeilingModification
 ExercisedOptions,SteadyScopeOptionGrowthAlone
 RescindedOptions,SteadyScopeOptionRescinded
 SumOfUnmodifiedobligatedAmount,UnmodifiedContractObligatedAmount
-UnmodifiedContractBaseAndAllOptionsValue.Then.Year,UnmodifiedCeiling_Then_Year
 UnmodifiedContractBaseAndAllOptionsValue.OMB20_GDP18,UnmodifiedCeiling_OMB20_GDP18
 UnmodifiedContractBaseAndAllOptionsValue_OMB20_GDP18,UnmodifiedCeiling_OMB20_GDP18
-ChangeOrderCeilingGrowth,ChangeOrderCeilingGrowth
 VehicleClassification,Vehicle
 Size,Vendor.Size
 VendorSize,Vendor.Size
@@ -149,7 +146,6 @@ BA,BudgetActivity
 BA.#,BudgetActivity
 Budget.Activity,BudgetActivity
 BA.Title,BudgetActivityTitle
-BA.Title,BudgetActivityTitle
 Budget.Activity.Title,BudgetActivityTitle
 Budget.Activity.Short.Title,BudgetActivityTitle
 BSA.#,BudgetSubActivity
@@ -160,6 +156,7 @@ Budget.Sub.Activity..BSA..Title,BudgetSubActivityTitle
 BSA,BSA
 BSA.Title,BSAtitle
 AG.Title,AGtitle
+ID.Code,IDcode
 SAG…,SAGtitle
 Facility.Category.Title,FacilityCategoryTitle
 State.Country,StateCountry
@@ -169,11 +166,9 @@ Line.Item.#,LineItem
 Line.Item,LineItem
 LI,LineItem
 Line.Item.Title,LineItemTitle
-Line.Item.Title,LineItemTitle
 LI.Title,LineItemTitle
 Construction.Project,ConstructionProject
 Construction.Project.Title,ConstructionProjectTitle
-Cost.Type,CostType
 Cost.Type,CostType
 Cost.Type.Title,CostTypeTitle
 Classified,Classified
@@ -322,9 +317,7 @@ CSISCreatedDate,CSISCreatedDate
 CSISModifiedDate,CSISModifiedDate
 IsDuplicateUTI,IsDuplicateUTI
 PSC Code,ProductOrServiceCode
-Product Or Service Code,ProductOrServiceCode
 PSC Description,ProductOrServiceCodeText
-Product or Service Description,ProductOrServiceCodeText
 Contracting.Agency.ID,Contracting_Agency_ID
 Contracting Department ID,Contracting_Department_ID
 Funding Agency ID,Funding_Agency_ID
@@ -362,10 +355,6 @@ Total Action Obligation,Total_Action_Obligation
 Total Base and All Options Value,Total_Base_and_All_Options_Value
 Prime Contractor Hours Invoiced,Prime_Contractor_Hours_Invoiced
 Prime Contractor Full Time Equivalent Employees  FTEs,Prime_Contractor_Full_Time_Equivalent_Employees_FTEs
-Index,Index
-CSISCreatedDate,CSISCreatedDate
-CSISModifiedDate,CSISModifiedDate
-IsDuplicateUTI,IsDuplicateUTI
 PSC,PSC_Code
 PSC Description,PSC_Description
 Contract Invoiced Amount,Contract_Invoiced_Amount
