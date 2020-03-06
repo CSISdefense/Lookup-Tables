@@ -1,7 +1,6 @@
 Original,Replacement
 SumOfobligatedAmount,Action_Obligation
 ObligatedAmount,Action_Obligation
-obligatedamount,Action_Obligation
 obligatedamount_Then_Year,Action_Obligation_Then_Year
 Action.Obligation.Current,Action_Obligation_Then_Year
 Action.Obligation.Then.Year,Action_Obligation_Then_Year
@@ -63,10 +62,8 @@ OtherCeilingModification,OtherCeilingModification
 ExercisedOptions,SteadyScopeOptionGrowthAlone
 RescindedOptions,SteadyScopeOptionRescinded
 SumOfUnmodifiedobligatedAmount,UnmodifiedContractObligatedAmount
-UnmodifiedContractBaseAndAllOptionsValue.Then.Year,UnmodifiedCeiling_Then_Year
 UnmodifiedContractBaseAndAllOptionsValue.OMB20_GDP18,UnmodifiedCeiling_OMB20_GDP18
 UnmodifiedContractBaseAndAllOptionsValue_OMB20_GDP18,UnmodifiedCeiling_OMB20_GDP18
-ChangeOrderCeilingGrowth,ChangeOrderCeilingGrowth
 VehicleClassification,Vehicle
 Size,Vendor.Size
 VendorSize,Vendor.Size
@@ -138,27 +135,34 @@ pVehBPA,pVehBPA
 year,Year
 region,Region
 iYear,Year
-Classification,Classified  
+Classification,Classified
+APP.#,AccountDSI
 Account,MainAccountCode
 Account.Code,MainAccountCode
+APP.Title,MainAccountName
 Account.Title,MainAccountName
 Account.Name,MainAccountName
 BA,BudgetActivity
+BA.#,BudgetActivity
 Budget.Activity,BudgetActivity
 BA.Title,BudgetActivityTitle
 Budget.Activity.Title,BudgetActivityTitle
 Budget.Activity.Short.Title,BudgetActivityTitle
+BSA.#,BudgetSubActivity
 Budget.Sub.Activity,BudgetSubActivity
+BSA.Title,BudgetSubActivityTitle
 Budget.Sub.Activity.Title,BudgetSubActivityTitle
 Budget.Sub.Activity..BSA..Title,BudgetSubActivityTitle
 BSA,BSA
 BSA.Title,BSAtitle
 AG.Title,AGtitle
+ID.Code,IDcode
 SAG…,SAGtitle
 Facility.Category.Title,FacilityCategoryTitle
 State.Country,StateCountry
 State.Country.Title,StateCountryTitle
 Location.Title,LocationTitle
+Line.Item.#,LineItem
 Line.Item,LineItem
 LI,LineItem
 Line.Item.Title,LineItemTitle
@@ -183,7 +187,9 @@ Quant.Base.PB,Quant_Base_PB
 Quant.OCO.App,Quant_OCO_App
 Quant.OCO.PB,Quant_OCO_PB
 Quant.PB,Quant_PB
+Service...Agency,Organization
 Organization,Organization
+Line.#,LineNumber
 Line.Number,LineNumber
 PE,ProgramElement
 PE.Title,ProgramElementTitle
@@ -223,6 +229,35 @@ X.........Appn.........Amount...,AppnAmount
 X.........Auth.........Amount...,AuthAmount
 X.......Auth.for....Appn.Amount.,AuthForAppnAmount
 X.....TOA.Base....Request.with....CR.Adj....,TOAbaseRequestWithCRadj
+Program.Elements.for.Code.B.Items,ProgramElementsforCodeBItems
+Other.Related.Program.Elements,OtherRelatedProgramElements
+Item.Group,ItemGroup
+Is.Modification?,IsModification
+Item.Category,ItemCategory
+Item.Number,ItemNumber
+Item.Name,ItemName
+DODIC,DODIC
+Item.MDAP,ItemMDAP
+Cost.Element.Category,CostElementCategory
+Cost.Element.Category.Name,CostElementCategoryName
+Recurrence,Recurrence
+Cost.Element.Name,CostElementName
+Sub.Cost.Element.Name,SubCostElementName
+Mod.Item.Group,ModItemGroup
+Mod.Item.Group.MDAP,ModItemGroupMDAP
+Mod.Type,ModType
+Mod.Item.Number,ModItemNumber
+Mod.Item.Name,ModItemName
+Kit.Type,KitType
+Kit.Name...Support.Cost.Element,KitNameOrSupportCostElement
+Spares.Name,SparesName
+Spares.Type,SparesType
+Spares.BA.#,SparesBA
+Spares.BA.Title,SparesBATitle
+Spares.Line.Item.#,SparesLineItem
+Spares.Line.Item.Title,SparesLineItemTitle
+Spares.MDAP.Code,SparesMDAPCode
+Description,Description
 StartFiscal_Year,StartFiscal_Year
 ParentID,ParentID
 Period,Period
@@ -282,9 +317,7 @@ CSISCreatedDate,CSISCreatedDate
 CSISModifiedDate,CSISModifiedDate
 IsDuplicateUTI,IsDuplicateUTI
 PSC Code,ProductOrServiceCode
-Product Or Service Code,ProductOrServiceCode
 PSC Description,ProductOrServiceCodeText
-Product or Service Description,ProductOrServiceCodeText
 Contracting.Agency.ID,Contracting_Agency_ID
 Contracting Department ID,Contracting_Department_ID
 Funding Agency ID,Funding_Agency_ID
@@ -322,10 +355,6 @@ Total Action Obligation,Total_Action_Obligation
 Total Base and All Options Value,Total_Base_and_All_Options_Value
 Prime Contractor Hours Invoiced,Prime_Contractor_Hours_Invoiced
 Prime Contractor Full Time Equivalent Employees  FTEs,Prime_Contractor_Full_Time_Equivalent_Employees_FTEs
-Index,Index
-CSISCreatedDate,CSISCreatedDate
-CSISModifiedDate,CSISModifiedDate
-IsDuplicateUTI,IsDuplicateUTI
 PSC,PSC_Code
 PSC Description,PSC_Description
 Contract Invoiced Amount,Contract_Invoiced_Amount
