@@ -143,6 +143,7 @@ APP.Title,MainAccountName
 Account.Title,MainAccountName
 Account.Name,MainAccountName
 BA,BudgetActivity
+BA#,BudgetActivity
 BA.#,BudgetActivity
 Budget.Activity,BudgetActivity
 BA.Title,BudgetActivityTitle
@@ -189,13 +190,16 @@ Quant.OCO.PB,Quant_OCO_PB
 Quant.PB,Quant_PB
 Service...Agency,Organization
 Organization,Organization
+Line#,LineNumber
 Line.#,LineNumber
 Line.Number,LineNumber
 PE,ProgramElement
+PE#,ProgramElement
 PE.Title,ProgramElementTitle
 PE...BLI,ProgramElement
 Program.Element.Title,ProgramElementTitle
 Program.Element...Budget.Line.Item..BLI..Title,ProgramElementTitle
+Project#,ProjectNumber
 Include.in.TOA,IncludeInTOA
 Add..Non.Add,AddOrNonAdd
 Mil.Dept.DW,MilDeptDW
