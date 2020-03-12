@@ -1,5 +1,5 @@
 #Setup
-source("SQLimportTools.r")
+source("scripts//SQLimportTools.r")
 library(tidyverse)
 
 #Importing from ErrorLogging_GSAprimeStage1 to ErrorLogging_GSAprimeStage1

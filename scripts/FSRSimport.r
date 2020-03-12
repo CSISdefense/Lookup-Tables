@@ -1,5 +1,5 @@
 #Setup
-source("SQLimportTools.r")
+source("scripts//SQLimportTools.r")
 
 #******Importing into Errorlogging.FSRSviolatesConstraint
 #Match up Errorlogging.FSRSviolatesType to Errorlogging.FSRSviolatesConstraint

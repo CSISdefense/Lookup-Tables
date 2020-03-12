@@ -2,8 +2,8 @@ library(tidyr)
 library(csis360)
 library(dplyr)
 
-read_create_table<-function(FileName){
-  TargetTable.df<-read.csv(file.path("ImportAids\\",FileName),header=FALSE,sep=" ")
+read_create_table<-function(FileName,dir="ImportAids\\"){
+  TargetTable.df<-read.csv(file.path(dir,FileName),header=FALSE,sep=" ")
   
   #For now we're ignoring everything except the lines describing variable types
   CreateRow<-which(TargetTable.df$V1=="CREATE")
