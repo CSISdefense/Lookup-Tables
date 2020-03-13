@@ -263,31 +263,6 @@ CREATE TABLE [ErrorLogging].[FPDSbetaViolatesConstraint](
 	[CSISstage2id] [int] IDENTITY(1,1) NOT NULL
 ) ON [PRIMARY]
 GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_errorlogging_fpdsbetaviolatesconstraint_sixUTI] ON [ErrorLogging].[FPDSbetaViolatesConstraint]
-(
-	[piid] ASC,
-	[idvpiid] ASC,
-	[modnumber] ASC,
-	[idvmodificationnumber] ASC,
-	[contractingofficeagencyid] ASC,
-	[transactionnumber] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
-CREATE NONCLUSTERED INDEX [ix_FPDSbetaViolatesConstraint_CSIStransactionID] ON [ErrorLogging].[FPDSbetaViolatesConstraint]
-(
-	[CSIStransactionID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_FPDSbetaViolatesConstraint_CSIStransactionID_idvmodificationnumber] ON [ErrorLogging].[FPDSbetaViolatesConstraint]
-(
-	[CSIStransactionID] ASC,
-	[idvmodificationnumber] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
 ALTER TABLE [ErrorLogging].[FPDSbetaViolatesConstraint] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__7193879D]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
 ALTER TABLE [ErrorLogging].[FPDSbetaViolatesConstraint] ADD  CONSTRAINT [DF__FPDSbetaV__CSISc__7287ABD6]  DEFAULT (getdate()) FOR [CSIScreatedDate]

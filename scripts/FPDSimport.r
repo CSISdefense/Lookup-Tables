@@ -8,6 +8,7 @@ library(tidyverse)
 #No Need to rerun this, but good to have the code for the future
 
 
+debug(read_create_table)
 Stage1TableType.df<-read_create_table("ErrorLogging.FPDSbetaViolatesType.Table.sql",
                                           dir="SQL")
 Stage1TableType.df<-translate_name(Stage1TableType.df)
@@ -19,7 +20,6 @@ Stage2TableType.df<-read_create_table("ErrorLogging.FPDSbetaViolatesConstraint.T
 translate_name(Stage2TableType.df,test_only = TRUE)
 
 
-debug(read_create_table)
 FinalTableType.df<-read_create_table("Contract.FPDS.Table.sql",
                                      dir="SQL")
 translate_name(FinalTableType.df,test_only=TRUE)

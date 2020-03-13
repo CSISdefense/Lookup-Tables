@@ -1,0 +1,20 @@
+USE [CSIS360]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Assistance].[UCDPactorID](
+	[UCDPactorID] [smallint] NOT NULL,
+	[Name] [varchar](100) NULL,
+	[NameFull] [nvarchar](255) NULL,
+	[GeographicISOalpha3] [nvarchar](3) NULL,
+ CONSTRAINT [pk_UCDPactorlist] PRIMARY KEY CLUSTERED 
+(
+	[UCDPactorID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [Assistance].[UCDPactorID]  WITH CHECK ADD FOREIGN KEY([GeographicISOalpha3])
+REFERENCES [Location].[CountryCodes] ([alpha-3])
+GO

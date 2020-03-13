@@ -239,22 +239,6 @@ CREATE TABLE [ErrorLogging].[LegacyFPDSstage1](
 	[CSIStransactionID] [int] NULL
 ) ON [PRIMARY]
 GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_FPDSviolates_Type_Transaction_ID_CSIScreatedDate] ON [ErrorLogging].[LegacyFPDSstage1]
-(
-	[unique_transaction_id] ASC,
-	[CSISCreatedDate] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_FPDSviolatesType_Transaction_ID_Fiscal_Year] ON [ErrorLogging].[LegacyFPDSstage1]
-(
-	[unique_transaction_id] ASC,
-	[fiscal_year] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
 ALTER TABLE [ErrorLogging].[LegacyFPDSstage1] ADD  CONSTRAINT [DF_FPDS_CSISCreatedDate]  DEFAULT (getdate()) FOR [CSISCreatedDate]
 GO
 ALTER TABLE [ErrorLogging].[LegacyFPDSstage1] ADD  CONSTRAINT [DF_FPDS_CSISModifiedDate]  DEFAULT (getdate()) FOR [CSISModifiedDate]

@@ -1,0 +1,13 @@
+USE [CSIS360]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Contract].[CMR_PIID_List](
+	[PBL ID] [float] NULL,
+	[DLA_PBL_PIIDs] [nvarchar](255) NULL,
+	[F3] [nvarchar](255) NULL,
+	[F4] [nvarchar](255) NULL
+) ON [PRIMARY]
+GO

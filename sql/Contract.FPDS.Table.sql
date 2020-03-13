@@ -214,8 +214,6 @@ CREATE TABLE [Contract].[FPDS](
 	[numberofemployees] [bigint] NULL,
 	[annualrevenue] [decimal](19, 4) NULL,
 	[CSIStransactionID] [int] NOT NULL,
-	[CSISUniqueIndexID] [uniqueidentifier] NULL,
-	[CSISUniqueIndexIdentity] [uniqueidentifier] NOT NULL,
 	[PlaceofPerformanceCity] [varchar](100) NULL,
 	[prime_awardee_executive1] [varchar](100) NULL,
 	[prime_awardee_executive2] [varchar](100) NULL,
@@ -230,7 +228,6 @@ CREATE TABLE [Contract].[FPDS](
 	[last_modified_date] [datetime2](7) NULL,
 	[TypeOfBusiness] [varchar](1) NULL,
 	[ContractActionTypeDD350] [varchar](8) NULL,
-	[TypeIndefiniteDeliveryContract] [varchar](1) NULL,
 	[headquartercode] [varchar](13) NULL,
 	[CAGE] [varchar](5) NULL,
 	[ContractNumber] [varchar](15) NULL,
@@ -259,117 +256,9 @@ CREATE TABLE [Contract].[FPDS](
 	[dot_certified_disadvantage] [bit] NULL
 ) ON [PRIMARY]
 GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [Contract_FPDS_systemequipmentcode_fiscal_year] ON [Contract].[FPDS]
-(
-	[systemequipmentcode] ASC
-)
-INCLUDE ( 	[fiscal_year]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_contract_fpds_contractactiontype] ON [Contract].[FPDS]
-(
-	[contractactiontype] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_ContractingOfficeAgencyID] ON [Contract].[FPDS]
-(
-	[contractingofficeagencyid] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_FPDS_ContractNumber_ContractOfficeAgencyID_IDVMod_ModNumber_TransNumber] ON [Contract].[FPDS]
-(
-	[ContractNumber] ASC,
-	[contractingofficeagencyid] ASC,
-	[idvmodificationnumber] ASC,
-	[modnumber] ASC,
-	[transactionnumber] ASC
-)
-WHERE ([ContractNumber] IS NOT NULL)
-WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
-CREATE UNIQUE NONCLUSTERED INDEX [ix_contract_FPDS_csistranscationID] ON [Contract].[FPDS]
-(
-	[CSIStransactionID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_Dunsnumber_Fiscal_Year] ON [Contract].[FPDS]
-(
-	[dunsnumber] ASC,
-	[fiscal_year] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_headquartercode_Fiscal_Year] ON [Contract].[FPDS]
-(
-	[headquartercode] ASC,
-	[fiscal_year] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_FPDS_IDVPIID_PIID_ContractOfficeAgencyID_IDVMod_ModNumber_TransNumber] ON [Contract].[FPDS]
-(
-	[idvpiid] ASC,
-	[piid] ASC,
-	[contractingofficeagencyid] ASC,
-	[idvmodificationnumber] ASC,
-	[modnumber] ASC,
-	[transactionnumber] ASC
-)
-WHERE ([IDVPIID] IS NOT NULL AND [PIID] IS NOT NULL)
-WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_ParentDunsnumber_Fiscal_Year] ON [Contract].[FPDS]
-(
-	[parentdunsnumber] ASC,
-	[fiscal_year] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_PIID_IDVPIID_detail] ON [Contract].[FPDS]
-(
-	[piid] ASC,
-	[idvpiid] ASC,
-	[contractingofficeagencyid] ASC,
-	[idvmodificationnumber] ASC,
-	[modnumber] ASC,
-	[transactionnumber] ASC
-)
-WHERE ([Unique_transaction_ID] IS NOT NULL)
-WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_reasonformodification] ON [Contract].[FPDS]
-(
-	[fiscal_year] ASC
-)
-INCLUDE ( 	[obligatedamount],
-	[baseandexercisedoptionsvalue],
-	[baseandalloptionsvalue],
-	[reasonformodification],
-	[CSIStransactionID]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
 ALTER TABLE [Contract].[FPDS] ADD  CONSTRAINT [DF_FPDS_CSISCreatedDate]  DEFAULT (getdate()) FOR [CSISCreatedDate]
 GO
 ALTER TABLE [Contract].[FPDS] ADD  CONSTRAINT [DF_FPDS_CSISModifiedDate]  DEFAULT (getdate()) FOR [CSISModifiedDate]
-GO
-ALTER TABLE [Contract].[FPDS] ADD  CONSTRAINT [DF_FPDS_Contract_CSISUniqueIndexID]  DEFAULT (newsequentialid()) FOR [CSISUniqueIndexID]
-GO
-ALTER TABLE [Contract].[FPDS] ADD  CONSTRAINT [DF_FPDS_Contract_CSISUniqueIndexIdentity]  DEFAULT (newsequentialid()) FOR [CSISUniqueIndexIdentity]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_award_type_code] FOREIGN KEY([award_type_code])
 REFERENCES [FPDSTypeTable].[award_type_code] ([award_type_code])

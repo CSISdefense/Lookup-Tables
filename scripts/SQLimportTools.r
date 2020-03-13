@@ -25,7 +25,7 @@ read_create_table<-function(FileName,dir="ImportAids\\"){
     TargetTable.df$V2[id_row],
     TargetTable.df$V3[id_row]
   )
-  if(all(TargetTable.df$V1[id_row+1]=="NOT")){
+  if(length(id_row)>0 &  all(TargetTable.df$V1[id_row+1]=="NOT")){
     TargetTable.df$V3<-as.character(TargetTable.df$V3)
     TargetTable.df$V3[id_row]<-"NOT NULL,"
     TargetTable.df<-TargetTable.df[-(id_row+1),]
@@ -43,10 +43,11 @@ read_create_table<-function(FileName,dir="ImportAids\\"){
     TargetTable.df$V4[substring(TargetTable.df$V2,1,9)=="[decimal]"]<-""
   }
   #In the script outputted version of the file, it's shunted to the next line.
-  else{
+  else {
     dec_row<-which(substring(TargetTable.df$V2,1,9)=="[decimal]")
     TargetTable.df$V3[dec_row]<-TargetTable.df$V1[dec_row+1]
-    TargetTable.df<-TargetTable.df[-(dec_row+1),]
+    if(length(dec_row)>0)
+      TargetTable.df<-TargetTable.df[-(dec_row+1),]
   }
   #Handle NOT NULL which can split across two lines
   null_row<-which(TargetTable.df$V1=="NULL,")

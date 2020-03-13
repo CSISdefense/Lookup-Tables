@@ -293,20 +293,6 @@ CREATE TABLE [ErrorLogging].[FPDSbetaViolatesType](
 	[action_date_fiscal_year] [varchar](255) NULL
 ) ON [PRIMARY]
 GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_Fiscal_Year_CSIStransactionID] ON [ErrorLogging].[FPDSbetaViolatesType]
-(
-	[action_date_fiscal_year] ASC,
-	[CSIStransactionID] ASC
-)
-INCLUDE ( 	[award_id_piid],
-	[modification_number],
-	[parent_award_id_piid],
-	[parent_award_modification_number],
-	[awarding_sub_agency_code],
-	[Transaction_Number_bigint]) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-GO
 ALTER TABLE [ErrorLogging].[FPDSbetaViolatesType] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__6FAB3F2B]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
 ALTER TABLE [ErrorLogging].[FPDSbetaViolatesType] ADD  CONSTRAINT [DF__FPDSbetaV__CSISc__709F6364]  DEFAULT (getdate()) FOR [CSIScreatedDate]
