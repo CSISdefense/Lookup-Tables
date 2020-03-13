@@ -16,14 +16,13 @@ Stage1TableType.df<-translate_name(Stage1TableType.df)
 
 Stage2TableType.df<-read_create_table("ErrorLogging.FPDSbetaViolatesConstraint.Table.sql",
                                           dir="SQL")
-debug(translate_name)
 translate_name(Stage2TableType.df,test_only = TRUE)
 
 
 debug(read_create_table)
 FinalTableType.df<-read_create_table("Contract.FPDS.Table.sql",
                                      dir="SQL")
-translate_name(FinalTableType.df)
+translate_name(FinalTableType.df,test_only=TRUE)
   
   
   read_create_table("Contract_FPDS.txt")
