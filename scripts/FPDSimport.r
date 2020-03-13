@@ -6,10 +6,28 @@ library(tidyverse)
 #******Importing into Errorlogging.FPDSviolatesConstraint Beta
 #Creating Stage 2 database from Stage 1 database and Final Destination
 #No Need to rerun this, but good to have the code for the future
-OriginBetaTableType.df<-read_create_table("ErrorLogging_FPDSbetaViolatesType.txt")
-OriginBetaTableType.df<-translate_name(OriginBetaTableType.df)
-FinalTableType.df<-read_create_table("Contract_FPDS.txt")
-NewConstraintTableType.df<-merge_source_and_csis_name_tables(OriginBetaTableType.df,FinalTableType.df,
+
+
+Stage1TableType.df<-read_create_table("ErrorLogging.FPDSbetaViolatesType.Table.sql",
+                                          dir="SQL")
+Stage1TableType.df<-translate_name(Stage1TableType.df)
+
+
+
+Stage2TableType.df<-read_create_table("ErrorLogging.FPDSbetaViolatesConstraint.Table.sql",
+                                          dir="SQL")
+debug(translate_name)
+translate_name(Stage2TableType.df,test_only = TRUE)
+
+
+debug(read_create_table)
+FinalTableType.df<-read_create_table("Contract.FPDS.Table.sql",
+                                     dir="SQL")
+translate_name(FinalTableType.df)
+  
+  
+  read_create_table("Contract_FPDS.txt")
+NewConstraintTableType.df<-merge_source_and_csis_name_tables(Stage1TableType.df,FinalTableType.df,
                                                              drop_unmatched=FALSE)
 
 

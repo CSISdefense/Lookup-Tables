@@ -11,6 +11,7 @@ read_create_table<-function(FileName,dir="ImportAids\\"){
   EndRow<-min(which(TargetTable.df$V1==")" | TargetTable.df$V2=="CONSTRAINT"))
   TargetTable.df<-TargetTable.df[-c(EndRow:nrow(TargetTable.df)),]
   TargetTable.df$V1<-as.character(TargetTable.df$V1)
+  
   #Once we have the table in, the next step is to clean up anything seperated on spaces
   #that should not have been for our purposes.
   # 
@@ -19,11 +20,44 @@ read_create_table<-function(FileName,dir="ImportAids\\"){
     TargetTable.df$V2[substring(TargetTable.df$V2,1,9)=="[decimal]"],
     TargetTable.df$V3[substring(TargetTable.df$V2,1,9)=="[decimal]"]
   )
+  id_row<-which(substring(TargetTable.df$V3,1,8)=="IDENTITY")
+  TargetTable.df$V2[id_row]<-paste(
+    TargetTable.df$V2[id_row],
+    TargetTable.df$V3[id_row]
+  )
+  if(all(TargetTable.df$V1[id_row+1]=="NOT")){
+    TargetTable.df$V3<-as.character(TargetTable.df$V3)
+    TargetTable.df$V3[id_row]<-"NOT NULL,"
+    TargetTable.df<-TargetTable.df[-(id_row+1),]
+    TargetTable.df$V3<-factor(TargetTable.df$V3)
+  }
+  rm(id_row)
+  
+  
   #Just in case the only Not NULL is a decimal
   TargetTable.df$V3<-as.character(TargetTable.df$V3)
-  TargetTable.df$V3[substring(TargetTable.df$V2,1,9)=="[decimal]"]<-
-    as.character(TargetTable.df$V4[substring(TargetTable.df$V2,1,9)=="[decimal]"])
-  TargetTable.df$V4[substring(TargetTable.df$V2,1,9)=="[decimal]"]<-""
+  #In the saved version of the file, the null is shunted to column four
+  if("V4" %in% colnames(TargetTable.df)){
+    TargetTable.df$V3[substring(TargetTable.df$V2,1,9)=="[decimal]"]<-
+      as.character(TargetTable.df$V4[substring(TargetTable.df$V2,1,9)=="[decimal]"])
+    TargetTable.df$V4[substring(TargetTable.df$V2,1,9)=="[decimal]"]<-""
+  }
+  #In the script outputted version of the file, it's shunted to the next line.
+  else{
+    dec_row<-which(substring(TargetTable.df$V2,1,9)=="[decimal]")
+    TargetTable.df$V3[dec_row]<-TargetTable.df$V1[dec_row+1]
+    TargetTable.df<-TargetTable.df[-(dec_row+1),]
+  }
+  #Handle NOT NULL which can split across two lines
+  null_row<-which(TargetTable.df$V1=="NULL,")
+  if(all(TargetTable.df$V3[null_row-1]=="NOT")){
+    TargetTable.df$V3<-as.character(TargetTable.df$V3)
+    TargetTable.df$V3[null_row-1]<-"NOT NULL,"
+    TargetTable.df<-TargetTable.df[-null_row,]
+    TargetTable.df$V3<-factor(TargetTable.df$V3)
+  }
+  else stop("NULLs, in first column that don't have a matching NOT")
+  
   
   TargetTable.df<-TargetTable.df[,c(1:3)]
   colnames(TargetTable.df)<-c("VariableName",
@@ -55,7 +89,7 @@ list_problem_type<-function(TargetTable.df){
 }
 
 
-translate_name<-function(TargetTable.df){
+translate_name<-function(TargetTable.df,test_only=FALSE){
   lookup.NameConversion<-read.csv("ImportAids\\NameConversion.csv",
                                   stringsAsFactors = FALSE)
   if(!"SourceVariableName" %in% colnames(TargetTable.df)){
@@ -82,7 +116,9 @@ translate_name<-function(TargetTable.df){
   
   #Protection against duplicate CSISvariableName
   if(any(duplicated(TargetTable.df$CSISvariableName))){
-    print(unique(TargetTable.df$CSISvariableName[duplicated(TargetTable.df$CSISvariableName)]))
+    print(all_duplicate(TargetTable.df[,c("SourceVariableName","CSISvariableName")],key="CSISvariableName"))
+      # unique(TargetTable.df[duplicated(TargetTable.df$CSISvariableName),c("SourceVariableName","CSISvariableName")])
+      # )
     stop("Duplicate entries in CSISvariableName after matching")
   }
   
@@ -101,7 +137,7 @@ translate_name<-function(TargetTable.df){
                      lookup.NameConversion$CSISvariableName]
   
   
-  
+  if(test_only) return(TRUE)
   TargetTable.df
 }
 
