@@ -427,9 +427,15 @@ create_update_FPDS<-function(MergeTable.df,
     SourceTableName,
     TargetSchema,
     TargetTableName,
-    DateType=101){
+    DateType=101,
+    drop_name=FALSE,
+    update_with_null=FALSE){
   
   update_list<-"UPDATE T SET"
+  
+  if("IsDroppedNameField" %in% colnames(MergeTable.df) & drop_name==TRUE)
+    MergeTable.df<-MergeTable.df %>% filter(IsDroppedNameField==FALSE | is.na(IsDroppedNameField))
+  
   
   #Remove rows that shouldn't be updated
   MergeTable.df<-MergeTable.df[which(!tolower(MergeTable.df$SourceVariableName) %in% tolower(c(
@@ -438,6 +444,7 @@ create_update_FPDS<-function(MergeTable.df,
     "[fiscal_year]"))),]
 
   #Add a null check to columns missing in recent USAspending downloads
+  if(update_with_null==TRUE){
   MissingColumns<-which(tolower(MergeTable.df$SourceVariableName) %in% tolower(c(
     "[mod_agency]",
     "[lettercontract]",
@@ -461,6 +468,10 @@ create_update_FPDS<-function(MergeTable.df,
     "[prime_awardee_executive2]",
     "[prime_awardee_executive1]",
     "[progsourcesubacct]")))
+  }
+  else
+    MissingColumns<-1:nrow(MergeTable.df)
+  
   
   MergeTable.df$NullCheck<-paste("S.",MergeTable.df$SourceVariableName,sep="")
   MergeTable.df$NullCheck[MissingColumns]<-
@@ -480,8 +491,7 @@ create_update_FPDS<-function(MergeTable.df,
   )    
   update_list<-c(update_list,
     paste("INNER Join ",SourceSchema,".",SourceTableName," as S",sep=""),
-    "ON s.Unique_Transaction_ID=t.Unique_Transaction_ID and",
-    "s.Fiscal_Year=t.Fiscal_Year",
+    "ON s.CSIStransactionID=t.CSIStransactionID and",
     "WHERE s.last_modified_date>=t.last_modified_date"
   )    
   

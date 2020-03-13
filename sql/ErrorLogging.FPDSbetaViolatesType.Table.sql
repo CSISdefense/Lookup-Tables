@@ -277,8 +277,6 @@ CREATE TABLE [ErrorLogging].[FPDSbetaViolatesType](
 	[solicitation_date] [varchar](255) NULL,
 	[treasury_accounts_funding_this_award] [varchar](255) NULL,
 	[federal_accounts_funding_this_award] [varchar](255) NULL,
-	[simplified_procedures_for_certain_commercial_items_code] [varchar](255) NULL,
-	[simplified_procedures_for_certain_commercial_items] [varchar](255) NULL,
 	[highly_compensated_officer_1_name] [varchar](255) NULL,
 	[highly_compensated_officer_1_amount] [varchar](255) NULL,
 	[highly_compensated_officer_2_name] [varchar](255) NULL,

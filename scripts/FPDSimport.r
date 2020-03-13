@@ -8,25 +8,21 @@ library(tidyverse)
 #No Need to rerun this, but good to have the code for the future
 
 
-debug(read_create_table)
+
 Stage1TableType.df<-read_create_table("ErrorLogging.FPDSbetaViolatesType.Table.sql",
                                           dir="SQL")
 Stage1TableType.df<-translate_name(Stage1TableType.df)
 
 
 
-Stage2TableType.df<-read_create_table("ErrorLogging.FPDSbetaViolatesConstraint.Table.sql",
-                                          dir="SQL")
-translate_name(Stage2TableType.df,test_only = TRUE)
 
-
-FinalTableType.df<-read_create_table("Contract.FPDS.Table.sql",
+DestinationTable.df<-read_create_table("Contract.FPDS.Table.sql",
                                      dir="SQL")
-translate_name(FinalTableType.df,test_only=TRUE)
+translate_name(DestinationTable.df,test_only=TRUE)
   
   
   read_create_table("Contract_FPDS.txt")
-NewConstraintTableType.df<-merge_source_and_csis_name_tables(Stage1TableType.df,FinalTableType.df,
+NewConstraintTableType.df<-merge_source_and_csis_name_tables(Stage1TableType.df,DestinationTable.df,
                                                              drop_unmatched=FALSE)
 
 
@@ -68,18 +64,18 @@ write(create_csis_dates("Contract","FPDS"),"ImportAids//CSISdates.txt")
 
 #******Importing into Contract.FPDS 
 #Match up Errorlogging.FPDSviolatesConstraint to Contract.FPDS 
-DestTableConstraint.df<-read_create_table("Contract_FPDS.txt")
-OriginTableConstraint.df<-read_create_table("ErrorLogging_FPDSbetaviolatesConstraint.txt")
-OriginTableConstraint.df<-translate_name(OriginTableConstraint.df)
-MergeConstraint.df<-merge_source_and_csis_name_tables(OriginTableConstraint.df,DestTableConstraint.df)
+Stage2TableType.df<-read_create_table("ErrorLogging.FPDSbetaViolatesConstraint.Table.sql",
+                                      dir="SQL")
+Stage2TableType.df<-translate_name(Stage2TableType.df)
+MergeConstraint.df<-merge_source_and_csis_name_tables(Stage2TableType.df,DestinationTable.df)
 
-count_list<-count_empties(OriginTableConstraint.df,"ErrorLogging","FPDSbetaviolatesConstraint")
+count_list<-count_empties(Stage2TableType.df,"ErrorLogging","FPDSbetaviolatesConstraint")
 write(count_list,"ImportAids//count_list.txt")
 
 
 #Transfer from Errorlogging.FPDSviolatesConstraint to Contract.FPDS
-ConstTable.df<-translate_name(OriginTableConstraint.df)
-MergeConst<-merge_source_and_csis_name_tables(ConstTable.df,DestTableConstraint.df)
+ConstTable.df<-translate_name(Stage2TableType.df)
+MergeConst<-merge_source_and_csis_name_tables(ConstTable.df,DestinationTable.df)
 
 if(nrow(MergeConst[is.na(MergeConst$CSISvariableType)&is.na(MergeConst$IsDroppedNameField),])>1){
   write.csv(MergeConst[is.na(MergeConst$CSISvariableType)&is.na(MergeConst$IsDroppedNameField),],
@@ -98,6 +94,12 @@ update_list<-create_update_FPDS(MergeConst,
   "FPDSviolatesConstraint",
   "Contract",
   "FPDS",
-  DateType=101)
+  DateType=101,
+  drop_name=TRUE)
 write(update_list,"ImportAids/update_list.txt")
 
+
+
+
+Stage2TableType.df<-
+translate_name(Stage2TableType.df,test_only = TRUE)
