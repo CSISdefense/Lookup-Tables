@@ -74,11 +74,30 @@ TryConvertList<-create_try_converts(MergeStage2.df,"Errorlogging","FPDSbetaviola
 write(TryConvertList,"ImportAids\\Stage2TryConvertList.txt")
 
 #Create Foreign Key Assignments
-undebug(create_foreign_key_assigments)
-create_foreign_key_assigments("ErrorLogging",
+debug(get_CSISvariableNameToPrimaryKey)
+select_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                         "FPDSbetaViolatesConstraint",
                                         dir="sql",
-                              suppress_alter = TRUE)
+                              suppress_alter = TRUE,
+                              suppress_insert = TRUE)
+write(select_missing_code,
+      file=file.path("Output","ErrorLogging_FPDSbetaViolatesConstraint_select_foreign_key.txt"), 
+      append=FALSE)  
+
+
+input_missing_code <- create_foreign_key_assigments("ErrorLogging",
+                                                     "FPDSbetaViolatesConstraint",
+                                                     dir="sql",
+                                                     suppress_select = TRUE,
+                                                    suppress_alter = TRUE)
+write(input_missing_code,
+      file=file.path("Output","ErrorLogging_FPDSbetaViolatesConstraint_select_foreign_key.txt"),  
+      append=FALSE) 
+
+
+
+
+
 
 #Create the code to count empty rows by variable.
 count_list<-count_empties(Stage2TableType.df,"ErrorLogging","FPDSbetaviolatesConstraint")
