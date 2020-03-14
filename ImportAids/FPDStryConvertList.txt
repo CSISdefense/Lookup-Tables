@@ -36,13 +36,13 @@ WHERE (Try_Convert([varchar](4), [parent_award_agency_id]) IS NULL AND
 NULLIF([parent_award_agency_id],'') IS NOT NULL)
 OR len( [parent_award_agency_id] ) > 4 
 
-SELECT DISTINCT [parent_award_id],
-len([parent_award_id]) as Length,
+SELECT DISTINCT [parent_award_id_piid],
+len([parent_award_id_piid]) as Length,
 '[varchar](50)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](50), [parent_award_id]) IS NULL AND
-NULLIF([parent_award_id],'') IS NOT NULL)
-OR len( [parent_award_id] ) > 50 
+WHERE (Try_Convert([varchar](50), [parent_award_id_piid]) IS NULL AND
+NULLIF([parent_award_id_piid],'') IS NOT NULL)
+OR len( [parent_award_id_piid] ) > 50 
 
 SELECT DISTINCT [parent_award_modification_number],
 len([parent_award_modification_number]) as Length,
@@ -59,39 +59,39 @@ FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[federal_action_obligation])) IS NULL AND
 NULLIF([federal_action_obligation],'') IS NOT NULL)
 
-SELECT DISTINCT [change_in_current_award_amount],
-len([change_in_current_award_amount]) as Length,
+SELECT DISTINCT [base_and_exercised_options_value],
+len([base_and_exercised_options_value]) as Length,
 '[decimal](19, 4)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[change_in_current_award_amount])) IS NULL AND
-NULLIF([change_in_current_award_amount],'') IS NOT NULL)
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[base_and_exercised_options_value])) IS NULL AND
+NULLIF([base_and_exercised_options_value],'') IS NOT NULL)
 
-SELECT DISTINCT [change_in_potential_award_amount],
-len([change_in_potential_award_amount]) as Length,
+SELECT DISTINCT [base_and_all_options_value],
+len([base_and_all_options_value]) as Length,
 '[decimal](19, 4)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[change_in_potential_award_amount])) IS NULL AND
-NULLIF([change_in_potential_award_amount],'') IS NOT NULL)
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[base_and_all_options_value])) IS NULL AND
+NULLIF([base_and_all_options_value],'') IS NOT NULL)
 
 SELECT DISTINCT [action_date],
 len([action_date]) as Length,
-'[datetime2](7)' as DestinationType
+'[date]' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([datetime2](7), [action_date]) IS NULL AND
+WHERE (Try_Convert([date], [action_date],101) IS NULL AND
 NULLIF([action_date],'') IS NOT NULL)
 
 SELECT DISTINCT [period_of_performance_start_date],
 len([period_of_performance_start_date]) as Length,
-'[datetime2](7)' as DestinationType
+'[date]' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([datetime2](7), [period_of_performance_start_date]) IS NULL AND
+WHERE (Try_Convert([date], [period_of_performance_start_date],101) IS NULL AND
 NULLIF([period_of_performance_start_date],'') IS NOT NULL)
 
 SELECT DISTINCT [period_of_performance_current_end_date],
 len([period_of_performance_current_end_date]) as Length,
-'[datetime2](7)' as DestinationType
+'[date]' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([datetime2](7), [period_of_performance_current_end_date]) IS NULL AND
+WHERE (Try_Convert([date], [period_of_performance_current_end_date],101) IS NULL AND
 NULLIF([period_of_performance_current_end_date],'') IS NOT NULL)
 
 SELECT DISTINCT [period_of_performance_potential_end_date],
@@ -103,9 +103,9 @@ NULLIF([period_of_performance_potential_end_date],'') IS NOT NULL)
 
 SELECT DISTINCT [ordering_period_end_date],
 len([ordering_period_end_date]) as Length,
-'[datetime2](7)' as DestinationType
+'[date]' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([datetime2](7), [ordering_period_end_date]) IS NULL AND
+WHERE (Try_Convert([date], [ordering_period_end_date],101) IS NULL AND
 NULLIF([ordering_period_end_date],'') IS NOT NULL)
 
 SELECT DISTINCT [awarding_agency_code],
@@ -212,11 +212,10 @@ OR len( [recipient_parent_duns] ) > 13
 
 SELECT DISTINCT [recipient_country_code],
 len([recipient_country_code]) as Length,
-'[varchar](50)' as DestinationType
+'[nvarchar](50)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](50), [recipient_country_code]) IS NULL AND
+WHERE (Try_Convert([nvarchar](50), [recipient_country_code]) IS NULL AND
 NULLIF([recipient_country_code],'') IS NOT NULL)
-OR len( [recipient_country_code] ) > 50 
 
 SELECT DISTINCT [recipient_address_line_1],
 len([recipient_address_line_1]) as Length,
@@ -233,14 +232,6 @@ FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](60), [recipient_address_line_2]) IS NULL AND
 NULLIF([recipient_address_line_2],'') IS NOT NULL)
 OR len( [recipient_address_line_2] ) > 60 
-
-SELECT DISTINCT [recipient_address_line_3],
-len([recipient_address_line_3]) as Length,
-'[varchar](55)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](55), [recipient_address_line_3]) IS NULL AND
-NULLIF([recipient_address_line_3],'') IS NOT NULL)
-OR len( [recipient_address_line_3] ) > 55 
 
 SELECT DISTINCT [recipient_city_name],
 len([recipient_city_name]) as Length,
@@ -337,14 +328,6 @@ FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](6), [primary_place_of_performance_congressional_district]) IS NULL AND
 NULLIF([primary_place_of_performance_congressional_district],'') IS NOT NULL)
 OR len( [primary_place_of_performance_congressional_district] ) > 6 
-
-SELECT DISTINCT [primary_place_of_performance_location_code],
-len([primary_place_of_performance_location_code]) as Length,
-'[varchar](9)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](9), [primary_place_of_performance_location_code]) IS NULL AND
-NULLIF([primary_place_of_performance_location_code],'') IS NOT NULL)
-OR len( [primary_place_of_performance_location_code] ) > 9 
 
 SELECT DISTINCT [award_type_code],
 len([award_type_code]) as Length,
@@ -637,29 +620,29 @@ FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([clinger_cohen_act_planning_code]))) IS NULL AND
 NULLIF([clinger_cohen_act_planning_code],'') IS NOT NULL)
 
-SELECT DISTINCT [walsh_healey_act_code],
-len([walsh_healey_act_code]) as Length,
+SELECT DISTINCT [materials_supplies_articles_equipment_code],
+len([materials_supplies_articles_equipment_code]) as Length,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [walsh_healey_act_code]) IS NULL AND
-NULLIF([walsh_healey_act_code],'') IS NOT NULL)
-OR len( [walsh_healey_act_code] ) > 1 
+WHERE (Try_Convert([varchar](1), [materials_supplies_articles_equipment_code]) IS NULL AND
+NULLIF([materials_supplies_articles_equipment_code],'') IS NOT NULL)
+OR len( [materials_supplies_articles_equipment_code] ) > 1 
 
-SELECT DISTINCT [service_contract_act_code],
-len([service_contract_act_code]) as Length,
+SELECT DISTINCT [labor_standards_code],
+len([labor_standards_code]) as Length,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [service_contract_act_code]) IS NULL AND
-NULLIF([service_contract_act_code],'') IS NOT NULL)
-OR len( [service_contract_act_code] ) > 1 
+WHERE (Try_Convert([varchar](1), [labor_standards_code]) IS NULL AND
+NULLIF([labor_standards_code],'') IS NOT NULL)
+OR len( [labor_standards_code] ) > 1 
 
-SELECT DISTINCT [davis_bacon_act_code],
-len([davis_bacon_act_code]) as Length,
+SELECT DISTINCT [construction_wage_rate_requirements_code],
+len([construction_wage_rate_requirements_code]) as Length,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1), [davis_bacon_act_code]) IS NULL AND
-NULLIF([davis_bacon_act_code],'') IS NOT NULL)
-OR len( [davis_bacon_act_code] ) > 1 
+WHERE (Try_Convert([varchar](1), [construction_wage_rate_requirements_code]) IS NULL AND
+NULLIF([construction_wage_rate_requirements_code],'') IS NOT NULL)
+OR len( [construction_wage_rate_requirements_code] ) > 1 
 
 SELECT DISTINCT [interagency_contracting_authority_code],
 len([interagency_contracting_authority_code]) as Length,
@@ -668,14 +651,6 @@ FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([varchar](3), [interagency_contracting_authority_code]) IS NULL AND
 NULLIF([interagency_contracting_authority_code],'') IS NOT NULL)
 OR len( [interagency_contracting_authority_code] ) > 3 
-
-SELECT DISTINCT [other_statutory_authority],
-len([other_statutory_authority]) as Length,
-'[varchar](1000)' as DestinationType
-FROM Errorlogging.FPDSviolatesType
-WHERE (Try_Convert([varchar](1000), [other_statutory_authority]) IS NULL AND
-NULLIF([other_statutory_authority],'') IS NOT NULL)
-OR len( [other_statutory_authority] ) > 1000 
 
 SELECT DISTINCT [program_acronym],
 len([program_acronym]) as Length,
@@ -1412,4 +1387,130 @@ len([sba_certified_8a_joint_venture]) as Length,
 FROM Errorlogging.FPDSviolatesType
 WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([sba_certified_8a_joint_venture]))) IS NULL AND
 NULLIF([sba_certified_8a_joint_venture],'') IS NOT NULL)
+
+SELECT DISTINCT [CSISmodifiedDate],
+len([CSISmodifiedDate]) as Length,
+'[datetime]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([datetime], [CSISmodifiedDate]) IS NULL AND
+NULLIF([CSISmodifiedDate],'') IS NOT NULL)
+
+SELECT DISTINCT [CSIScreatedDate],
+len([CSIScreatedDate]) as Length,
+'[datetime]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([datetime], [CSIScreatedDate]) IS NULL AND
+NULLIF([CSIScreatedDate],'') IS NOT NULL)
+
+SELECT DISTINCT [cage_code],
+len([cage_code]) as Length,
+'[varchar](5)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](5), [cage_code]) IS NULL AND
+NULLIF([cage_code],'') IS NOT NULL)
+OR len( [cage_code] ) > 5 
+
+SELECT DISTINCT [organizational_type],
+len([organizational_type]) as Length,
+'[varchar](30)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](30), [organizational_type]) IS NULL AND
+NULLIF([organizational_type],'') IS NOT NULL)
+OR len( [organizational_type] ) > 30 
+
+SELECT DISTINCT [number_of_employees],
+len([number_of_employees]) as Length,
+'[bigint]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([bigint], Try_Convert(real,[number_of_employees])) IS NULL AND
+NULLIF([number_of_employees],'') IS NOT NULL)
+
+SELECT DISTINCT [annual_revenues],
+len([annual_revenues]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[annual_revenues])) IS NULL AND
+NULLIF([annual_revenues],'') IS NOT NULL)
+
+SELECT DISTINCT [highly_compensated_officer_1_name],
+len([highly_compensated_officer_1_name]) as Length,
+'[varchar](100)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](100), [highly_compensated_officer_1_name]) IS NULL AND
+NULLIF([highly_compensated_officer_1_name],'') IS NOT NULL)
+OR len( [highly_compensated_officer_1_name] ) > 100 
+
+SELECT DISTINCT [highly_compensated_officer_1_amount],
+len([highly_compensated_officer_1_amount]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[highly_compensated_officer_1_amount])) IS NULL AND
+NULLIF([highly_compensated_officer_1_amount],'') IS NOT NULL)
+
+SELECT DISTINCT [highly_compensated_officer_2_name],
+len([highly_compensated_officer_2_name]) as Length,
+'[varchar](100)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](100), [highly_compensated_officer_2_name]) IS NULL AND
+NULLIF([highly_compensated_officer_2_name],'') IS NOT NULL)
+OR len( [highly_compensated_officer_2_name] ) > 100 
+
+SELECT DISTINCT [highly_compensated_officer_2_amount],
+len([highly_compensated_officer_2_amount]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[highly_compensated_officer_2_amount])) IS NULL AND
+NULLIF([highly_compensated_officer_2_amount],'') IS NOT NULL)
+
+SELECT DISTINCT [highly_compensated_officer_3_name],
+len([highly_compensated_officer_3_name]) as Length,
+'[varchar](100)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](100), [highly_compensated_officer_3_name]) IS NULL AND
+NULLIF([highly_compensated_officer_3_name],'') IS NOT NULL)
+OR len( [highly_compensated_officer_3_name] ) > 100 
+
+SELECT DISTINCT [highly_compensated_officer_3_amount],
+len([highly_compensated_officer_3_amount]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[highly_compensated_officer_3_amount])) IS NULL AND
+NULLIF([highly_compensated_officer_3_amount],'') IS NOT NULL)
+
+SELECT DISTINCT [highly_compensated_officer_4_name],
+len([highly_compensated_officer_4_name]) as Length,
+'[varchar](100)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](100), [highly_compensated_officer_4_name]) IS NULL AND
+NULLIF([highly_compensated_officer_4_name],'') IS NOT NULL)
+OR len( [highly_compensated_officer_4_name] ) > 100 
+
+SELECT DISTINCT [highly_compensated_officer_4_amount],
+len([highly_compensated_officer_4_amount]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[highly_compensated_officer_4_amount])) IS NULL AND
+NULLIF([highly_compensated_officer_4_amount],'') IS NOT NULL)
+
+SELECT DISTINCT [highly_compensated_officer_5_name],
+len([highly_compensated_officer_5_name]) as Length,
+'[varchar](100)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([varchar](100), [highly_compensated_officer_5_name]) IS NULL AND
+NULLIF([highly_compensated_officer_5_name],'') IS NOT NULL)
+OR len( [highly_compensated_officer_5_name] ) > 100 
+
+SELECT DISTINCT [highly_compensated_officer_5_amount],
+len([highly_compensated_officer_5_amount]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,[highly_compensated_officer_5_amount])) IS NULL AND
+NULLIF([highly_compensated_officer_5_amount],'') IS NOT NULL)
+
+SELECT DISTINCT [action_date_fiscal_year],
+len([action_date_fiscal_year]) as Length,
+'[smallint]' as DestinationType
+FROM Errorlogging.FPDSviolatesType
+WHERE (Try_Convert([smallint], Try_Convert(real,[action_date_fiscal_year])) IS NULL AND
+NULLIF([action_date_fiscal_year],'') IS NOT NULL)
 

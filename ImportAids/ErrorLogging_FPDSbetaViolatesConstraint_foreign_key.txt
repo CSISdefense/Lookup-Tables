@@ -1,0 +1,817 @@
+
+
+SELECT DISTINCT fk.[idvagencyid]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[idvagencyid]
+WHERE pk.AgencyID is NULL
+
+INSERT INTO FPDSTypeTable.AgencyID
+(AgencyID)
+SELECT DISTINCT fk.[idvagencyid]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[idvagencyid]
+WHERE pk.AgencyID is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_idvagencyid foreign key([idvagencyid])
+references FPDSTypeTable.AgencyID(AgencyID)
+
+
+SELECT DISTINCT fk.[contractingofficeagencyid]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[contractingofficeagencyid]
+WHERE pk.AgencyID is NULL
+
+INSERT INTO FPDSTypeTable.AgencyID
+(AgencyID)
+SELECT DISTINCT fk.[contractingofficeagencyid]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[contractingofficeagencyid]
+WHERE pk.AgencyID is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_contractingofficeagencyid foreign key([contractingofficeagencyid])
+references FPDSTypeTable.AgencyID(AgencyID)
+
+
+SELECT DISTINCT fk.[maj_fund_agency_cat]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[maj_fund_agency_cat]
+WHERE pk.AgencyID is NULL
+
+INSERT INTO FPDSTypeTable.AgencyID
+(AgencyID)
+SELECT DISTINCT fk.[maj_fund_agency_cat]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[maj_fund_agency_cat]
+WHERE pk.AgencyID is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_maj_fund_agency_cat foreign key([maj_fund_agency_cat])
+references FPDSTypeTable.AgencyID(AgencyID)
+
+
+SELECT DISTINCT fk.[fundingrequestingagencyid]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[fundingrequestingagencyid]
+WHERE pk.AgencyID is NULL
+
+INSERT INTO FPDSTypeTable.AgencyID
+(AgencyID)
+SELECT DISTINCT fk.[fundingrequestingagencyid]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[fundingrequestingagencyid]
+WHERE pk.AgencyID is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_fundingrequestingagencyid foreign key([fundingrequestingagencyid])
+references FPDSTypeTable.AgencyID(AgencyID)
+
+
+SELECT DISTINCT fk.[fundingrequestingofficeid]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN Office.ContractingOfficeCode as pk
+On pk.ContractingOfficeCode=fk.[fundingrequestingofficeid]
+WHERE pk.ContractingOfficeCode is NULL
+
+INSERT INTO Office.ContractingOfficeCode
+(ContractingOfficeCode)
+SELECT DISTINCT fk.[fundingrequestingofficeid]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN Office.ContractingOfficeCode as pk
+On pk.ContractingOfficeCode=fk.[fundingrequestingofficeid]
+WHERE pk.ContractingOfficeCode is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_fundingrequestingofficeid foreign key([fundingrequestingofficeid])
+references Office.ContractingOfficeCode(ContractingOfficeCode)
+
+
+SELECT DISTINCT fk.[dunsnumber]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN Contractor.DunsnumberToParentContractorHistory as pk
+On pk.DUNSnumber=fk.[dunsnumber]
+WHERE pk.DUNSnumber is NULL
+
+INSERT INTO Contractor.DunsnumberToParentContractorHistory
+(DUNSnumber)
+SELECT DISTINCT fk.[dunsnumber]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN Contractor.DunsnumberToParentContractorHistory as pk
+On pk.DUNSnumber=fk.[dunsnumber]
+WHERE pk.DUNSnumber is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_dunsnumber foreign key([dunsnumber])
+references Contractor.DunsnumberToParentContractorHistory(DUNSnumber)
+
+SELECT DISTINCT [vendordoingasbusinessname],
+len([vendordoingasbusinessname]) as Length,
+'[nvarchar]' as DestinationType
+FROM ErrorLogging.FPDSbetaViolatesConstraint
+WHERE (Try_Convert([nvarchar], [vendordoingasbusinessname]) IS NULL AND
+NULLIF([vendordoingasbusinessname],'') IS NOT NULL)
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ALTER COLUMN [vendordoingasbusinessname] [nvarchar]
+
+SELECT DISTINCT fk.[vendordoingasbusinessname]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[vendordoingasbusinessname]
+WHERE pk.vendorname is NULL
+
+INSERT INTO Vendor.VendorName
+(vendorname)
+SELECT DISTINCT fk.[vendordoingasbusinessname]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[vendordoingasbusinessname]
+WHERE pk.vendorname is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_vendordoingasbusinessname foreign key([vendordoingasbusinessname])
+references Vendor.VendorName(vendorname)
+
+
+SELECT DISTINCT fk.[vendorcountrycode]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.vendorcountrycode as pk
+On pk.vendorcountrycode=fk.[vendorcountrycode]
+WHERE pk.vendorcountrycode is NULL
+
+INSERT INTO FPDSTypeTable.vendorcountrycode
+(vendorcountrycode)
+SELECT DISTINCT fk.[vendorcountrycode]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.vendorcountrycode as pk
+On pk.vendorcountrycode=fk.[vendorcountrycode]
+WHERE pk.vendorcountrycode is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_vendorcountrycode foreign key([vendorcountrycode])
+references FPDSTypeTable.vendorcountrycode(vendorcountrycode)
+
+
+SELECT DISTINCT fk.[placeofperformancecountrycode]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
+On pk.Country3LetterCode=fk.[placeofperformancecountrycode]
+WHERE pk.Country3LetterCode is NULL
+
+INSERT INTO FPDSTypeTable.Country3LetterCode
+(Country3LetterCode)
+SELECT DISTINCT fk.[placeofperformancecountrycode]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
+On pk.Country3LetterCode=fk.[placeofperformancecountrycode]
+WHERE pk.Country3LetterCode is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_placeofperformancecountrycode foreign key([placeofperformancecountrycode])
+references FPDSTypeTable.Country3LetterCode(Country3LetterCode)
+
+
+SELECT DISTINCT fk.[pop_state_code]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.statecode as pk
+On pk.statecode=fk.[pop_state_code]
+WHERE pk.statecode is NULL
+
+INSERT INTO FPDSTypeTable.statecode
+(statecode)
+SELECT DISTINCT fk.[pop_state_code]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.statecode as pk
+On pk.statecode=fk.[pop_state_code]
+WHERE pk.statecode is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_pop_state_code foreign key([pop_state_code])
+references FPDSTypeTable.statecode(statecode)
+
+
+SELECT DISTINCT fk.[award_type_code]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.award_type_code as pk
+On pk.award_type_code=fk.[award_type_code]
+WHERE pk.award_type_code is NULL
+
+INSERT INTO FPDSTypeTable.award_type_code
+(award_type_code)
+SELECT DISTINCT fk.[award_type_code]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.award_type_code as pk
+On pk.award_type_code=fk.[award_type_code]
+WHERE pk.award_type_code is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_award_type_code foreign key([award_type_code])
+references FPDSTypeTable.award_type_code(award_type_code)
+
+
+SELECT DISTINCT fk.[idv_type_code]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
+On pk.idv_type_code=fk.[idv_type_code]
+WHERE pk.idv_type_code is NULL
+
+INSERT INTO FPDSTypeTable.idv_type_code
+(idv_type_code)
+SELECT DISTINCT fk.[idv_type_code]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
+On pk.idv_type_code=fk.[idv_type_code]
+WHERE pk.idv_type_code is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_idv_type_code foreign key([idv_type_code])
+references FPDSTypeTable.idv_type_code(idv_type_code)
+
+
+SELECT DISTINCT fk.[typeofcontractpricing]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.typeofcontractpricing as pk
+On pk.TypeOfContractPricing=fk.[typeofcontractpricing]
+WHERE pk.TypeOfContractPricing is NULL
+
+INSERT INTO FPDSTypeTable.typeofcontractpricing
+(TypeOfContractPricing)
+SELECT DISTINCT fk.[typeofcontractpricing]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.typeofcontractpricing as pk
+On pk.TypeOfContractPricing=fk.[typeofcontractpricing]
+WHERE pk.TypeOfContractPricing is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_typeofcontractpricing foreign key([typeofcontractpricing])
+references FPDSTypeTable.typeofcontractpricing(TypeOfContractPricing)
+
+
+SELECT DISTINCT fk.[reasonformodification]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.reasonformodification as pk
+On pk.reasonformodification=fk.[reasonformodification]
+WHERE pk.reasonformodification is NULL
+
+INSERT INTO FPDSTypeTable.reasonformodification
+(reasonformodification)
+SELECT DISTINCT fk.[reasonformodification]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.reasonformodification as pk
+On pk.reasonformodification=fk.[reasonformodification]
+WHERE pk.reasonformodification is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_reasonformodification foreign key([reasonformodification])
+references FPDSTypeTable.reasonformodification(reasonformodification)
+
+
+SELECT DISTINCT fk.[productorservicecode]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.ProductOrServiceCode as pk
+On pk.ProductOrServiceCode=fk.[productorservicecode]
+WHERE pk.ProductOrServiceCode is NULL
+
+INSERT INTO FPDSTypeTable.ProductOrServiceCode
+(ProductOrServiceCode)
+SELECT DISTINCT fk.[productorservicecode]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.ProductOrServiceCode as pk
+On pk.ProductOrServiceCode=fk.[productorservicecode]
+WHERE pk.ProductOrServiceCode is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_productorservicecode foreign key([productorservicecode])
+references FPDSTypeTable.ProductOrServiceCode(ProductOrServiceCode)
+
+
+SELECT DISTINCT fk.[contractbundling]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.contractbundling as pk
+On pk.contractbundling=fk.[contractbundling]
+WHERE pk.contractbundling is NULL
+
+INSERT INTO FPDSTypeTable.contractbundling
+(contractbundling)
+SELECT DISTINCT fk.[contractbundling]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.contractbundling as pk
+On pk.contractbundling=fk.[contractbundling]
+WHERE pk.contractbundling is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_contractbundling foreign key([contractbundling])
+references FPDSTypeTable.contractbundling(contractbundling)
+
+
+SELECT DISTINCT fk.[claimantprogramcode]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.ClaimantProgramCode as pk
+On pk.ClaimantProgramCode=fk.[claimantprogramcode]
+WHERE pk.ClaimantProgramCode is NULL
+
+INSERT INTO FPDSTypeTable.ClaimantProgramCode
+(ClaimantProgramCode)
+SELECT DISTINCT fk.[claimantprogramcode]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.ClaimantProgramCode as pk
+On pk.ClaimantProgramCode=fk.[claimantprogramcode]
+WHERE pk.ClaimantProgramCode is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_claimantprogramcode foreign key([claimantprogramcode])
+references FPDSTypeTable.ClaimantProgramCode(ClaimantProgramCode)
+
+
+SELECT DISTINCT fk.[principalnaicscode]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.PrincipalNaicsCode as pk
+On pk.principalnaicscode=fk.[principalnaicscode]
+WHERE pk.principalnaicscode is NULL
+
+INSERT INTO FPDSTypeTable.PrincipalNaicsCode
+(principalnaicscode)
+SELECT DISTINCT fk.[principalnaicscode]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.PrincipalNaicsCode as pk
+On pk.principalnaicscode=fk.[principalnaicscode]
+WHERE pk.principalnaicscode is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_principalnaicscode foreign key([principalnaicscode])
+references FPDSTypeTable.PrincipalNaicsCode(principalnaicscode)
+
+
+SELECT DISTINCT fk.[recoveredmaterialclauses]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.recoveredmaterialclauses as pk
+On pk.recoveredmaterialclauses=fk.[recoveredmaterialclauses]
+WHERE pk.recoveredmaterialclauses is NULL
+
+INSERT INTO FPDSTypeTable.recoveredmaterialclauses
+(recoveredmaterialclauses)
+SELECT DISTINCT fk.[recoveredmaterialclauses]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.recoveredmaterialclauses as pk
+On pk.recoveredmaterialclauses=fk.[recoveredmaterialclauses]
+WHERE pk.recoveredmaterialclauses is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_recoveredmaterialclauses foreign key([recoveredmaterialclauses])
+references FPDSTypeTable.recoveredmaterialclauses(recoveredmaterialclauses)
+
+
+SELECT DISTINCT fk.[manufacturingorganizationtype]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.manufacturingorganizationtype as pk
+On pk.manufacturingorganizationtype=fk.[manufacturingorganizationtype]
+WHERE pk.manufacturingorganizationtype is NULL
+
+INSERT INTO FPDSTypeTable.manufacturingorganizationtype
+(manufacturingorganizationtype)
+SELECT DISTINCT fk.[manufacturingorganizationtype]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.manufacturingorganizationtype as pk
+On pk.manufacturingorganizationtype=fk.[manufacturingorganizationtype]
+WHERE pk.manufacturingorganizationtype is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_manufacturingorganizationtype foreign key([manufacturingorganizationtype])
+references FPDSTypeTable.manufacturingorganizationtype(manufacturingorganizationtype)
+
+
+SELECT DISTINCT fk.[useofepadesignatedproducts]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.useofepadesignatedproducts as pk
+On pk.useofepadesignatedproducts=fk.[useofepadesignatedproducts]
+WHERE pk.useofepadesignatedproducts is NULL
+
+INSERT INTO FPDSTypeTable.useofepadesignatedproducts
+(useofepadesignatedproducts)
+SELECT DISTINCT fk.[useofepadesignatedproducts]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.useofepadesignatedproducts as pk
+On pk.useofepadesignatedproducts=fk.[useofepadesignatedproducts]
+WHERE pk.useofepadesignatedproducts is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_useofepadesignatedproducts foreign key([useofepadesignatedproducts])
+references FPDSTypeTable.useofepadesignatedproducts(useofepadesignatedproducts)
+
+
+SELECT DISTINCT fk.[countryoforigin]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
+On pk.Country3LetterCode=fk.[countryoforigin]
+WHERE pk.Country3LetterCode is NULL
+
+INSERT INTO FPDSTypeTable.Country3LetterCode
+(Country3LetterCode)
+SELECT DISTINCT fk.[countryoforigin]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
+On pk.Country3LetterCode=fk.[countryoforigin]
+WHERE pk.Country3LetterCode is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_countryoforigin foreign key([countryoforigin])
+references FPDSTypeTable.Country3LetterCode(Country3LetterCode)
+
+
+SELECT DISTINCT fk.[placeofmanufacture]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.PlaceOfManufacture as pk
+On pk.placeofmanufacture=fk.[placeofmanufacture]
+WHERE pk.placeofmanufacture is NULL
+
+INSERT INTO FPDSTypeTable.PlaceOfManufacture
+(placeofmanufacture)
+SELECT DISTINCT fk.[placeofmanufacture]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.PlaceOfManufacture as pk
+On pk.placeofmanufacture=fk.[placeofmanufacture]
+WHERE pk.placeofmanufacture is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_placeofmanufacture foreign key([placeofmanufacture])
+references FPDSTypeTable.PlaceOfManufacture(placeofmanufacture)
+
+
+SELECT DISTINCT fk.[subcontractplan]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.subcontractplan as pk
+On pk.subcontractplan=fk.[subcontractplan]
+WHERE pk.subcontractplan is NULL
+
+INSERT INTO FPDSTypeTable.subcontractplan
+(subcontractplan)
+SELECT DISTINCT fk.[subcontractplan]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.subcontractplan as pk
+On pk.subcontractplan=fk.[subcontractplan]
+WHERE pk.subcontractplan is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_subcontractplan foreign key([subcontractplan])
+references FPDSTypeTable.subcontractplan(subcontractplan)
+
+
+SELECT DISTINCT fk.[solicitationprocedures]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.solicitationprocedures as pk
+On pk.solicitationprocedures=fk.[solicitationprocedures]
+WHERE pk.solicitationprocedures is NULL
+
+INSERT INTO FPDSTypeTable.solicitationprocedures
+(solicitationprocedures)
+SELECT DISTINCT fk.[solicitationprocedures]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.solicitationprocedures as pk
+On pk.solicitationprocedures=fk.[solicitationprocedures]
+WHERE pk.solicitationprocedures is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_solicitationprocedures foreign key([solicitationprocedures])
+references FPDSTypeTable.solicitationprocedures(solicitationprocedures)
+
+
+SELECT DISTINCT fk.[typeofsetaside]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.typeofsetaside as pk
+On pk.typeofsetaside=fk.[typeofsetaside]
+WHERE pk.typeofsetaside is NULL
+
+INSERT INTO FPDSTypeTable.typeofsetaside
+(typeofsetaside)
+SELECT DISTINCT fk.[typeofsetaside]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.typeofsetaside as pk
+On pk.typeofsetaside=fk.[typeofsetaside]
+WHERE pk.typeofsetaside is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_typeofsetaside foreign key([typeofsetaside])
+references FPDSTypeTable.typeofsetaside(typeofsetaside)
+
+
+SELECT DISTINCT fk.[evaluatedpreference]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.evaluatedpreference as pk
+On pk.evaluatedpreference=fk.[evaluatedpreference]
+WHERE pk.evaluatedpreference is NULL
+
+INSERT INTO FPDSTypeTable.evaluatedpreference
+(evaluatedpreference)
+SELECT DISTINCT fk.[evaluatedpreference]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.evaluatedpreference as pk
+On pk.evaluatedpreference=fk.[evaluatedpreference]
+WHERE pk.evaluatedpreference is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_evaluatedpreference foreign key([evaluatedpreference])
+references FPDSTypeTable.evaluatedpreference(evaluatedpreference)
+
+
+SELECT DISTINCT fk.[reasonnotcompeted]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.reasonnotcompeted as pk
+On pk.reasonnotcompeted=fk.[reasonnotcompeted]
+WHERE pk.reasonnotcompeted is NULL
+
+INSERT INTO FPDSTypeTable.reasonnotcompeted
+(reasonnotcompeted)
+SELECT DISTINCT fk.[reasonnotcompeted]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.reasonnotcompeted as pk
+On pk.reasonnotcompeted=fk.[reasonnotcompeted]
+WHERE pk.reasonnotcompeted is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_reasonnotcompeted foreign key([reasonnotcompeted])
+references FPDSTypeTable.reasonnotcompeted(reasonnotcompeted)
+
+
+SELECT DISTINCT fk.[commercialitemacquisitionprocedures]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.CommercialItemAcquisitionProcedures as pk
+On pk.CommercialItemAcquisitionProcedures=fk.[commercialitemacquisitionprocedures]
+WHERE pk.CommercialItemAcquisitionProcedures is NULL
+
+INSERT INTO FPDSTypeTable.CommercialItemAcquisitionProcedures
+(CommercialItemAcquisitionProcedures)
+SELECT DISTINCT fk.[commercialitemacquisitionprocedures]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.CommercialItemAcquisitionProcedures as pk
+On pk.CommercialItemAcquisitionProcedures=fk.[commercialitemacquisitionprocedures]
+WHERE pk.CommercialItemAcquisitionProcedures is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_commercialitemacquisitionprocedures foreign key([commercialitemacquisitionprocedures])
+references FPDSTypeTable.CommercialItemAcquisitionProcedures(CommercialItemAcquisitionProcedures)
+
+
+SELECT DISTINCT fk.[walshhealyact]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.walshhealyact as pk
+On pk.walshhealyact=fk.[walshhealyact]
+WHERE pk.walshhealyact is NULL
+
+INSERT INTO FPDSTypeTable.walshhealyact
+(walshhealyact)
+SELECT DISTINCT fk.[walshhealyact]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.walshhealyact as pk
+On pk.walshhealyact=fk.[walshhealyact]
+WHERE pk.walshhealyact is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_walshhealyact foreign key([walshhealyact])
+references FPDSTypeTable.walshhealyact(walshhealyact)
+
+
+SELECT DISTINCT fk.[servicecontractact]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.servicecontractact as pk
+On pk.servicecontractact=fk.[servicecontractact]
+WHERE pk.servicecontractact is NULL
+
+INSERT INTO FPDSTypeTable.servicecontractact
+(servicecontractact)
+SELECT DISTINCT fk.[servicecontractact]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.servicecontractact as pk
+On pk.servicecontractact=fk.[servicecontractact]
+WHERE pk.servicecontractact is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_servicecontractact foreign key([servicecontractact])
+references FPDSTypeTable.servicecontractact(servicecontractact)
+
+
+SELECT DISTINCT fk.[davisbaconact]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.davisbaconact as pk
+On pk.davisbaconact=fk.[davisbaconact]
+WHERE pk.davisbaconact is NULL
+
+INSERT INTO FPDSTypeTable.davisbaconact
+(davisbaconact)
+SELECT DISTINCT fk.[davisbaconact]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.davisbaconact as pk
+On pk.davisbaconact=fk.[davisbaconact]
+WHERE pk.davisbaconact is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_davisbaconact foreign key([davisbaconact])
+references FPDSTypeTable.davisbaconact(davisbaconact)
+
+
+SELECT DISTINCT fk.[interagencycontractingauthority]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.interagencycontractingauthority as pk
+On pk.interagencycontractingauthority=fk.[interagencycontractingauthority]
+WHERE pk.interagencycontractingauthority is NULL
+
+INSERT INTO FPDSTypeTable.interagencycontractingauthority
+(interagencycontractingauthority)
+SELECT DISTINCT fk.[interagencycontractingauthority]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.interagencycontractingauthority as pk
+On pk.interagencycontractingauthority=fk.[interagencycontractingauthority]
+WHERE pk.interagencycontractingauthority is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_interagencycontractingauthority foreign key([interagencycontractingauthority])
+references FPDSTypeTable.interagencycontractingauthority(interagencycontractingauthority)
+
+
+SELECT DISTINCT fk.[parent_award_type_code]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
+On pk.idv_type_code=fk.[parent_award_type_code]
+WHERE pk.idv_type_code is NULL
+
+INSERT INTO FPDSTypeTable.idv_type_code
+(idv_type_code)
+SELECT DISTINCT fk.[parent_award_type_code]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
+On pk.idv_type_code=fk.[parent_award_type_code]
+WHERE pk.idv_type_code is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_parent_award_type_code foreign key([parent_award_type_code])
+references FPDSTypeTable.idv_type_code(idv_type_code)
+
+
+SELECT DISTINCT fk.[nationalinterestactioncode]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN Assistance.NationalInterestActionCode as pk
+On pk.nationalinterestactioncode=fk.[nationalinterestactioncode]
+WHERE pk.nationalinterestactioncode is NULL
+
+INSERT INTO Assistance.NationalInterestActionCode
+(nationalinterestactioncode)
+SELECT DISTINCT fk.[nationalinterestactioncode]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN Assistance.NationalInterestActionCode as pk
+On pk.nationalinterestactioncode=fk.[nationalinterestactioncode]
+WHERE pk.nationalinterestactioncode is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_nationalinterestactioncode foreign key([nationalinterestactioncode])
+references Assistance.NationalInterestActionCode(nationalinterestactioncode)
+
+
+SELECT DISTINCT fk.[costorpricingdata]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.costorpricingdata as pk
+On pk.costorpricingdata=fk.[costorpricingdata]
+WHERE pk.costorpricingdata is NULL
+
+INSERT INTO FPDSTypeTable.costorpricingdata
+(costorpricingdata)
+SELECT DISTINCT fk.[costorpricingdata]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.costorpricingdata as pk
+On pk.costorpricingdata=fk.[costorpricingdata]
+WHERE pk.costorpricingdata is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_costorpricingdata foreign key([costorpricingdata])
+references FPDSTypeTable.costorpricingdata(costorpricingdata)
+
+
+SELECT DISTINCT fk.[gfe_gfp_code]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.gfe_gfp as pk
+On pk.gfe_gfp=fk.[gfe_gfp_code]
+WHERE pk.gfe_gfp is NULL
+
+INSERT INTO FPDSTypeTable.gfe_gfp
+(gfe_gfp)
+SELECT DISTINCT fk.[gfe_gfp_code]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.gfe_gfp as pk
+On pk.gfe_gfp=fk.[gfe_gfp_code]
+WHERE pk.gfe_gfp is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_gfe_gfp_code foreign key([gfe_gfp_code])
+references FPDSTypeTable.gfe_gfp(gfe_gfp)
+
+
+SELECT DISTINCT fk.[seatransportation]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.seatransportation as pk
+On pk.seatransportation=fk.[seatransportation]
+WHERE pk.seatransportation is NULL
+
+INSERT INTO FPDSTypeTable.seatransportation
+(seatransportation)
+SELECT DISTINCT fk.[seatransportation]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.seatransportation as pk
+On pk.seatransportation=fk.[seatransportation]
+WHERE pk.seatransportation is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_seatransportation foreign key([seatransportation])
+references FPDSTypeTable.seatransportation(seatransportation)
+
+
+SELECT DISTINCT fk.[lettercontract]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.lettercontract as pk
+On pk.LetterContract=fk.[lettercontract]
+WHERE pk.LetterContract is NULL
+
+INSERT INTO FPDSTypeTable.lettercontract
+(LetterContract)
+SELECT DISTINCT fk.[lettercontract]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN FPDSTypeTable.lettercontract as pk
+On pk.LetterContract=fk.[lettercontract]
+WHERE pk.LetterContract is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_lettercontract foreign key([lettercontract])
+references FPDSTypeTable.lettercontract(LetterContract)
+
+
+SELECT DISTINCT fk.[contingencyhumanitarianpeacekeepingoperation]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN Assistance.ContingencyHumanitarianPeacekeepingOperation as pk
+On pk.ContingencyHumanitarianPeacekeepingOperation=fk.[contingencyhumanitarianpeacekeepingoperation]
+WHERE pk.ContingencyHumanitarianPeacekeepingOperation is NULL
+
+INSERT INTO Assistance.ContingencyHumanitarianPeacekeepingOperation
+(ContingencyHumanitarianPeacekeepingOperation)
+SELECT DISTINCT fk.[contingencyhumanitarianpeacekeepingoperation]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN Assistance.ContingencyHumanitarianPeacekeepingOperation as pk
+On pk.ContingencyHumanitarianPeacekeepingOperation=fk.[contingencyhumanitarianpeacekeepingoperation]
+WHERE pk.ContingencyHumanitarianPeacekeepingOperation is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_contingencyhumanitarianpeacekeepingoperation foreign key([contingencyhumanitarianpeacekeepingoperation])
+references Assistance.ContingencyHumanitarianPeacekeepingOperation(ContingencyHumanitarianPeacekeepingOperation)
+
+SELECT DISTINCT [Fiscal_Year],
+len([Fiscal_Year]) as Length,
+'[smallint]' as DestinationType
+FROM ErrorLogging.FPDSbetaViolatesConstraint
+WHERE (Try_Convert([smallint], Try_Convert(real,[Fiscal_Year])) IS NULL AND
+NULLIF([Fiscal_Year],'') IS NOT NULL)
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ALTER COLUMN [Fiscal_Year] [smallint]
+
+SELECT DISTINCT fk.[Fiscal_Year]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN Contractor.DunsnumberToParentContractorHistory as pk
+On pk.FiscalYear=fk.[Fiscal_Year]
+WHERE pk.FiscalYear is NULL
+
+INSERT INTO Contractor.DunsnumberToParentContractorHistory
+(FiscalYear)
+SELECT DISTINCT fk.[Fiscal_Year]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN Contractor.DunsnumberToParentContractorHistory as pk
+On pk.FiscalYear=fk.[Fiscal_Year]
+WHERE pk.FiscalYear is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_Fiscal_Year foreign key([Fiscal_Year])
+references Contractor.DunsnumberToParentContractorHistory(FiscalYear)
+
+
+SELECT DISTINCT fk.[CSIStransactionID]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN Contract.CSIStransactionID as pk
+On pk.CSIStransactionID=fk.[CSIStransactionID]
+WHERE pk.CSIStransactionID is NULL
+
+INSERT INTO Contract.CSIStransactionID
+(CSIStransactionID)
+SELECT DISTINCT fk.[CSIStransactionID]
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN Contract.CSIStransactionID as pk
+On pk.CSIStransactionID=fk.[CSIStransactionID]
+WHERE pk.CSIStransactionID is NULL
+
+ALTER TABLE ErrorLogging.FPDSbetaViolatesConstraint
+ADD CONSTRAINT fk_ErrorLogging_FPDSbetaViolatesConstraint_CSIStransactionID foreign key([CSIStransactionID])
+references Contract.CSIStransactionID(CSIStransactionID)
+

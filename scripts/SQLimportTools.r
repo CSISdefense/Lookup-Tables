@@ -3,7 +3,8 @@ library(csis360)
 library(dplyr)
 
 read_create_table<-function(FileName,dir="ImportAids\\"){
-  TargetTable.df<-read.csv(file.path(dir,FileName),header=FALSE,sep=" ")
+  if(!is.null(dir)) FileName<-file.path(dir,FileName)
+  TargetTable.df<-read.csv(FileName,header=FALSE,sep=" ")
   
   #For now we're ignoring everything except the lines describing variable types
   CreateRow<-which(TargetTable.df$V1=="CREATE")
@@ -25,7 +26,11 @@ read_create_table<-function(FileName,dir="ImportAids\\"){
     TargetTable.df$V2[id_row],
     TargetTable.df$V3[id_row]
   )
-  if(length(id_row)>0 &  all(TargetTable.df$V1[id_row+1]=="NOT")){
+  if("V4" %in% colnames(TargetTable.df)){
+    TargetTable.df$V3[id_row]<-as.character(TargetTable.df$V4[id_row])
+    TargetTable.df$V4[id_row]<-""
+  }
+  else if(length(id_row)>0 &  all(TargetTable.df$V1[id_row+1]=="NOT")){
     TargetTable.df$V3<-as.character(TargetTable.df$V3)
     TargetTable.df$V3[id_row]<-"NOT NULL,"
     TargetTable.df<-TargetTable.df[-(id_row+1),]
@@ -621,7 +626,14 @@ convert_field_to_foreign_key<-function(FKschema,
 }
 
 get_CSISvariableNameToPrimaryKey<-function(){
-  lookup.CSISvariableNameToPrimaryKey<-read.csv(file.path("data","semi_clean","ErrorLogging_ForeignKeyList.csv"),
+  if(file.exists(file.path("data","semi_clean","ErrorLogging_ForeignKeyList.csv")))
+    fk_file<-file.path("data","semi_clean","ErrorLogging_ForeignKeyList.csv")
+  else if(file.exists(file.path("ImportAids","ErrorLogging_ForeignKeyList.csv")))
+    fk_file<-file.path("ImportAids","ErrorLogging_ForeignKeyList.csv")
+  else stop("File Not Found")
+    
+  
+  lookup.CSISvariableNameToPrimaryKey<-read.csv(fk_file,
                                                 stringsAsFactors = FALSE,
                                                 na.strings=c(""))
   
@@ -659,9 +671,16 @@ get_CSISvariableNameToPrimaryKey<-function(){
 }
 
 create_foreign_key_assigments<-function(Schema,
-                              TableName){
-  
-  MergeTable.df<-read_create_table(paste(Schema,"_",TableName,".txt",sep=""))
+                              TableName,
+                              dir="SQL"){
+  table_file<-file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))
+  if (file.exists(file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))))
+      table_file<-file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))
+  else if (file.path(dir,paste(Schema,"_",TableName,".txt",sep="")))
+      table_file<-file.path(dir,paste(Schema,"_",TableName,".txt",sep=""))
+  else stop("Table file not found")
+    
+  MergeTable.df<-read_create_table(table_file,dir=NULL)
   MergeTable.df<-translate_name(MergeTable.df)
   
   #Limit it to just cases where the variable type is changing
@@ -686,8 +705,12 @@ create_foreign_key_assigments<-function(Schema,
     )
   
 
+  if(dir.exists( "Output")) dir<-"Output"
+  else if(dir.exists( "ImportAids")) dir<-"ImportAids"
+  else (stop("Not sure what dir to put output into"))
+  
   write(ForeignKeyList,
-        paste("Output//",Schema,"_",TableName,"_foreign_key.txt",sep=""), 
+        file=file.path(dir,paste(Schema,"_",TableName,"_foreign_key.txt",sep="")), 
         append=FALSE)  
   
     ForeignKeyList
