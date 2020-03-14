@@ -1,0 +1,80 @@
+SELECT DISTINCT [signeddate],
+len([signeddate]) as Length,
+'[date]' as DestinationType
+FROM Errorlogging.FPDSbetaviolatesConstraint
+WHERE (Try_Convert([date], [signeddate],101) IS NULL AND
+NULLIF([signeddate],'') IS NOT NULL)
+
+ALTER TABLE Errorlogging.FPDSbetaviolatesConstraint
+ALTER COLUMN [signeddate] [date]
+
+SELECT DISTINCT [effectivedate],
+len([effectivedate]) as Length,
+'[date]' as DestinationType
+FROM Errorlogging.FPDSbetaviolatesConstraint
+WHERE (Try_Convert([date], [effectivedate],101) IS NULL AND
+NULLIF([effectivedate],'') IS NOT NULL)
+
+ALTER TABLE Errorlogging.FPDSbetaviolatesConstraint
+ALTER COLUMN [effectivedate] [date]
+
+SELECT DISTINCT [currentcompletiondate],
+len([currentcompletiondate]) as Length,
+'[date]' as DestinationType
+FROM Errorlogging.FPDSbetaviolatesConstraint
+WHERE (Try_Convert([date], [currentcompletiondate],101) IS NULL AND
+NULLIF([currentcompletiondate],'') IS NOT NULL)
+
+ALTER TABLE Errorlogging.FPDSbetaviolatesConstraint
+ALTER COLUMN [currentcompletiondate] [date]
+
+SELECT DISTINCT [lastdatetoorder],
+len([lastdatetoorder]) as Length,
+'[date]' as DestinationType
+FROM Errorlogging.FPDSbetaviolatesConstraint
+WHERE (Try_Convert([date], [lastdatetoorder],101) IS NULL AND
+NULLIF([lastdatetoorder],'') IS NOT NULL)
+
+ALTER TABLE Errorlogging.FPDSbetaviolatesConstraint
+ALTER COLUMN [lastdatetoorder] [date]
+
+SELECT DISTINCT [vendorcountrycode],
+len([vendorcountrycode]) as Length,
+'[nvarchar](50)' as DestinationType
+FROM Errorlogging.FPDSbetaviolatesConstraint
+WHERE (Try_Convert([nvarchar](50), [vendorcountrycode]) IS NULL AND
+NULLIF([vendorcountrycode],'') IS NOT NULL)
+
+ALTER TABLE Errorlogging.FPDSbetaviolatesConstraint
+ALTER COLUMN [vendorcountrycode] [nvarchar](50)
+
+SELECT DISTINCT [CSISmodifiedDate],
+len([CSISmodifiedDate]) as Length,
+'[datetime]' as DestinationType
+FROM Errorlogging.FPDSbetaviolatesConstraint
+WHERE (Try_Convert([datetime], [CSISmodifiedDate]) IS NULL AND
+NULLIF([CSISmodifiedDate],'') IS NOT NULL)
+
+ALTER TABLE Errorlogging.FPDSbetaviolatesConstraint
+ALTER COLUMN [CSISmodifiedDate] [datetime]
+
+SELECT DISTINCT [CSIScreatedDate],
+len([CSIScreatedDate]) as Length,
+'[datetime]' as DestinationType
+FROM Errorlogging.FPDSbetaviolatesConstraint
+WHERE (Try_Convert([datetime], [CSIScreatedDate]) IS NULL AND
+NULLIF([CSIScreatedDate],'') IS NOT NULL)
+
+ALTER TABLE Errorlogging.FPDSbetaviolatesConstraint
+ALTER COLUMN [CSIScreatedDate] [datetime]
+
+SELECT DISTINCT [Fiscal_Year],
+len([Fiscal_Year]) as Length,
+'[smallint]' as DestinationType
+FROM Errorlogging.FPDSbetaviolatesConstraint
+WHERE (Try_Convert([smallint], Try_Convert(real,[Fiscal_Year])) IS NULL AND
+NULLIF([Fiscal_Year],'') IS NOT NULL)
+
+ALTER TABLE Errorlogging.FPDSbetaviolatesConstraint
+ALTER COLUMN [Fiscal_Year] [smallint]
+

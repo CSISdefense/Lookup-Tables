@@ -445,7 +445,7 @@ create_update_FPDS<-function(MergeTable.df,
 
   #Add a null check to columns missing in recent USAspending downloads
   if(update_with_null==TRUE){
-  MissingColumns<-which(tolower(MergeTable.df$SourceVariableName) %in% tolower(c(
+  NullCheckCols<-which(tolower(MergeTable.df$SourceVariableName) %in% tolower(c(
     "[mod_agency]",
     "[lettercontract]",
     "[majorprogramcode]",
@@ -470,13 +470,18 @@ create_update_FPDS<-function(MergeTable.df,
     "[progsourcesubacct]")))
   }
   else
-    MissingColumns<-1:nrow(MergeTable.df)
+    NullCheckCols<-1:nrow(MergeTable.df)
+  
+  varchar<-substring(MergeTable.df$SourceVariableType,2,8) %in% c("varchar","nvarcha")
   
   
   MergeTable.df$NullCheck<-paste("S.",MergeTable.df$SourceVariableName,sep="")
-  MergeTable.df$NullCheck[MissingColumns]<-
-    paste("coalesce(nullif(",MergeTable.df$NullCheck[MissingColumns],",''),",
-      "T.",MergeTable.df$CSISvariableName[MissingColumns],")",sep="")
+  MergeTable.df$NullCheck[NullCheckCols&varchar]<-
+    paste("coalesce(nullif(",MergeTable.df$NullCheck[NullCheckCols&varchar],",''),",
+      "T.",MergeTable.df$CSISvariableName[NullCheckCols&varchar],")",sep="")
+  MergeTable.df$NullCheck[NullCheckCols&!varchar]<-
+    paste("coalesce(",MergeTable.df$NullCheck[NullCheckCols&!varchar],",",
+          "T.",MergeTable.df$CSISvariableName[NullCheckCols&!varchar],")",sep="")
   
   
     update_list<-c(update_list,paste(MergeTable.df$CSISvariableName,"=",

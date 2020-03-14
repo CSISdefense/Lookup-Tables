@@ -7,21 +7,15 @@ library(tidyverse)
 #Creating Stage 2 database from Stage 1 database and Final Destination
 #No Need to rerun this, but good to have the code for the future
 
-
-
 Stage1TableType.df<-read_create_table("ErrorLogging.FPDSbetaViolatesType.Table.sql",
                                           dir="SQL")
 Stage1TableType.df<-translate_name(Stage1TableType.df)
 
 
-
-
 DestinationTable.df<-read_create_table("Contract.FPDS.Table.sql",
                                      dir="SQL")
 translate_name(DestinationTable.df,test_only=TRUE)
-  
-  
-  read_create_table("Contract_FPDS.txt")
+
 NewConstraintTableType.df<-merge_source_and_csis_name_tables(Stage1TableType.df,DestinationTable.df,
                                                              drop_unmatched=FALSE)
 
@@ -63,11 +57,19 @@ write(InsertList,"ImportAids\\Insert.txt")
 write(create_csis_dates("Contract","FPDS"),"ImportAids//CSISdates.txt")
 
 #******Importing into Contract.FPDS 
+
+
+
 #Match up Errorlogging.FPDSviolatesConstraint to Contract.FPDS 
 Stage2TableType.df<-read_create_table("ErrorLogging.FPDSbetaViolatesConstraint.Table.sql",
                                       dir="SQL")
 Stage2TableType.df<-translate_name(Stage2TableType.df)
 MergeConstraint.df<-merge_source_and_csis_name_tables(Stage2TableType.df,DestinationTable.df)
+
+TryConvertList<-create_try_converts(MergeConstraint.df,"Errorlogging","FPDSbetaviolatesConstraint"
+                                    ,IncludeAlters=TRUE)
+write(TryConvertList,"ImportAids\\Stage2TryConvertList.txt")
+
 
 count_list<-count_empties(Stage2TableType.df,"ErrorLogging","FPDSbetaviolatesConstraint")
 write(count_list,"ImportAids//count_list.txt")
@@ -91,7 +93,7 @@ InsertList<-create_insert(MergeConst,
 write(InsertList,"ImportAids/Insert2.txt")
 update_list<-create_update_FPDS(MergeConst,
   "ErrorLogging",
-  "FPDSviolatesConstraint",
+  "FPDSbetaviolatesConstraint",
   "Contract",
   "FPDS",
   DateType=101,
