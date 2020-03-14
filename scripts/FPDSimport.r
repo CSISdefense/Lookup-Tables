@@ -77,7 +77,8 @@ write(TryConvertList,"ImportAids\\Stage2TryConvertList.txt")
 undebug(create_foreign_key_assigments)
 create_foreign_key_assigments("ErrorLogging",
                                         "FPDSbetaViolatesConstraint",
-                                        dir="sql")
+                                        dir="sql",
+                              suppress_alter = TRUE)
 
 #Create the code to count empty rows by variable.
 count_list<-count_empties(Stage2TableType.df,"ErrorLogging","FPDSbetaviolatesConstraint")

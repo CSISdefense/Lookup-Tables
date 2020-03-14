@@ -545,7 +545,10 @@ convert_field_to_foreign_key<-function(FKschema,
                                    TargetTable.df,
                                    PKschema,
                                    PKtable,
-                                   PKcolumn=PKtable){
+                                   PKcolumn=PKtable,
+                                   suppress_select=FALSE,
+                                   suppress_alter=FALSE,
+                                   suppress_insert=FALSE){
 
   pkTable.df<-read.csv(file.path("ImportAids","ErrorLogging_PrimaryKeyList.csv")
                        ,header=TRUE,sep=",") %>% remove_bom()
@@ -594,6 +597,8 @@ convert_field_to_foreign_key<-function(FKschema,
     rm(TryConvertTable.df)
   }
   
+  
+  if(suppress_select==FALSE)  
   #Select all of the unmached values in the foreign key table
   Output<-rbind(Output,
                 paste("SELECT DISTINCT fk.",FKcolumn,"\n",
@@ -603,6 +608,7 @@ convert_field_to_foreign_key<-function(FKschema,
                       "WHERE pk.",PKcolumn," is NULL\n",sep="")
   )
   
+  if(suppress_insert==FALSE)  
   #Insert unmatched values into the primary key table
   Output<-rbind(Output,
                 paste("INSERT INTO ",PKschema,".",PKtable,"\n",
@@ -614,6 +620,8 @@ convert_field_to_foreign_key<-function(FKschema,
                       "WHERE pk.",PKcolumn," is NULL\n",sep="")
   )
   
+ 
+  if(suppress_alter==FALSE)    
   Output<-rbind(Output,
                 paste("ALTER TABLE ",FKschema,".",FKtable,"\n",
                       "ADD CONSTRAINT fk_",gsub("\\[","",gsub("\\]","",FKschema))
@@ -672,7 +680,10 @@ get_CSISvariableNameToPrimaryKey<-function(){
 
 create_foreign_key_assigments<-function(Schema,
                               TableName,
-                              dir="SQL"){
+                              dir="SQL",
+                              suppress_select=FALSE,
+                              suppress_alter=FALSE,
+                              suppress_insert=FALSE){
   table_file<-file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))
   if (file.exists(file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))))
       table_file<-file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))
@@ -701,17 +712,11 @@ create_foreign_key_assigments<-function(Schema,
                                                    MergeTable.df,
                                                    MergeTable.df$PKSchemaName[i],
                                                    MergeTable.df$PKTableName[i],
-                                                   MergeTable.df$PKColumnName[i])
+                                                   MergeTable.df$PKColumnName[i],
+                                                   suppress_select=suppress_select,
+                                                   suppress_alter=suppress_alter,
+                                                   suppress_insert=suppress_insert)
     )
-  
-
-  if(dir.exists( "Output")) dir<-"Output"
-  else if(dir.exists( "ImportAids")) dir<-"ImportAids"
-  else (stop("Not sure what dir to put output into"))
-  
-  write(ForeignKeyList,
-        file=file.path(dir,paste(Schema,"_",TableName,"_foreign_key.txt",sep="")), 
-        append=FALSE)  
   
     ForeignKeyList
 }
