@@ -106,7 +106,7 @@ input_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                                      suppress_select = TRUE,
                                                     suppress_alter = TRUE)
 write(input_missing_code,
-      file=file.path("Output","ErrorLogging_FPDSbetaViolatesConstraint_select_foreign_key.txt"),  
+      file=file.path("Output","ErrorLogging_FPDSbetaViolatesConstraint_input_foreign_key.txt"),  
       append=FALSE) 
 
 
