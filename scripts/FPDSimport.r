@@ -51,7 +51,7 @@ missing_column<-MergeType.df %>% filter(
 
 if(nrow(missing_column)>0){
   warning("Columns need to be added to the destination database")
-  stop("Columns need to be added to the destination database")
+  # stop("Columns need to be added to the destination database")
 } else{
   #Create Try Convert
   
@@ -87,10 +87,9 @@ MergeStage2.df<-merge_source_and_csis_name_tables(Stage2TableType.df,Destination
 #That said, the differences in date format mean some will be generated.
 TryConvertList<-create_try_converts(MergeStage2.df,"Errorlogging","FPDSbetaviolatesConstraint"
                                     ,IncludeAlters=TRUE)
-write(TryConvertList,"ImportAids\\Stage2TryConvertList.txt")
+write(TryConvertList,"Output\\Stage2TryConvertList.txt")
 
 #Create Foreign Key Assignments
-debug(get_CSISvariableNameToPrimaryKey)
 select_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                         "FPDSbetaViolatesConstraint",
                                         dir="sql",
@@ -117,7 +116,7 @@ write(input_missing_code,
 
 #Create the code to count empty rows by variable.
 count_list<-count_empties(Stage2TableType.df,"ErrorLogging","FPDSbetaviolatesConstraint")
-write(count_list,"ImportAids//count_list.txt")
+write(count_list,"Output//count_list.txt")
 
 
 
