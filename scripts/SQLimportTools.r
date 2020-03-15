@@ -229,6 +229,8 @@ convert_switch<-function(MergeTable.df,
   #                                            VariableShortType,
   #                                            CSISvariableType))
   # MergeTable.df
+  if(any(is.na(MergeTable.df$CSISvariableType)))
+    stop("Some columns are missing a destination type")
   
     ConvertText<-ifelse(IsTryConvert,"Try_Convert","Convert")
     MergeTable.df$VariableShortType<-substr(MergeTable.df$CSISvariableType,1,
@@ -345,7 +347,8 @@ create_try_converts<-function(data,
                               TableName,
                               DateType=101,
                               IncludeAlters=TRUE,
-  path="https://raw.githubusercontent.com/CSISdefense/Lookup-Tables/master/style/"){
+  path="https://raw.githubusercontent.com/CSISdefense/Lookup-Tables/master/style/",
+  Add_Colon_Split=FALSE){
   #Limit it to just cases where the variable type is changing
   data<-subset(data,SourceVariableType!=data$CSISvariableType)
   if(nrow(data)==0){
@@ -354,8 +357,12 @@ create_try_converts<-function(data,
   }
   data<-convert_switch(data,101,TRUE)
   
-  #After hitting an error that there's no column named column
-  if("column" %in% colnames(data)){
+  #This is only relevant to legacy FPDS
+  if(Add_Colon_Split==TRUE){
+    #Join up the files
+    data$column<-data$SourceVariableName
+    data$column<-substring(data$column,2,nchar(data$column)-1)
+    
     data<-read_and_join(data,
                         "Lookup_Column_Key.csv",
                         path="https://raw.githubusercontent.com/CSISdefense/Lookup-Tables/master/style/",
@@ -516,10 +523,17 @@ create_insert<-function(MergeTable.df,
                        SourceTableName,
                        TargetSchema,
                        TargetTableName,
-                       DateType=101){
-  MergeTable.df<-convert_switch(MergeTable.df,101,FALSE)
+                       DateType=101,
+                       allow_missing=TRUE){
+  
   if("IsDroppedNameField" %in% colnames(MergeTable.df))
     MergeTable.df<-MergeTable.df %>% filter(IsDroppedNameField==FALSE | is.na(IsDroppedNameField))
+  if(allow_missing==TRUE)
+    MergeTable.df<-MergeTable.df %>% filter(!is.na(CSISvariableType))
+  else if(any(is.na(MergeTable.df$CSISvariableType)))
+    stop("Some columns are missing a destination type")
+    
+  MergeTable.df<-convert_switch(MergeTable.df,101,FALSE)
   InsertList<-paste("INSERT INTO ",TargetSchema,".",TargetTableName,"\n",
                     "(",sep="")
   InsertList<-c(InsertList,paste(MergeTable.df$CSISvariableName,",",sep=""))
@@ -644,7 +658,7 @@ get_CSISvariableNameToPrimaryKey<-function(){
   lookup.CSISvariableNameToPrimaryKey<-read.csv(fk_file,
                                                 stringsAsFactors = FALSE,
                                                 na.strings=c(""))
-  
+  lookup.CSISvariableNameToPrimaryKey<-remove_bom(lookup.CSISvariableNameToPrimaryKey)
   lookup.CSISvariableNameToPrimaryKey$FKColumnNameUp<-toupper(lookup.CSISvariableNameToPrimaryKey$FKColumnName)
   
   #Starting by dropping cases in which case a primary key is a foreign key for a different table.
@@ -670,9 +684,12 @@ get_CSISvariableNameToPrimaryKey<-function(){
     dplyr::filter(AnyExact==0 | RepeatCount==1 | toupper(PKTableName)==toupper(PKColumnName)) %>%
     dplyr::mutate(RepeatCount=length(CSISvariableName))
   
-  print(lookup.CSISvariableNameToPrimaryKey%>% dplyr::filter(RepeatCount>1))
-  if(max(lookup.CSISvariableNameToPrimaryKey$RepeatCount>1))
-    stop("Repeated CSISvariableName")
+  
+  if(max(lookup.CSISvariableNameToPrimaryKey$RepeatCount>1)){
+    print(lookup.CSISvariableNameToPrimaryKey%>% dplyr::filter(RepeatCount>1))
+    warning("Repeated CSISvariableName")
+    lookup.CSISvariableNameToPrimaryKey<-  lookup.CSISvariableNameToPrimaryKey %>% dplyr::filter(RepeatCount==1 | toupper(PKTableName)==toupper(PKColumnName))
+  }
   lookup.CSISvariableNameToPrimaryKey$CSISvariableName<-paste("[",lookup.CSISvariableNameToPrimaryKey$CSISvariableName,"]",sep="")
   
   lookup.CSISvariableNameToPrimaryKey
