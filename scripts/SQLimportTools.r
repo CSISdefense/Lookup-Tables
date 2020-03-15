@@ -618,7 +618,7 @@ convert_field_to_foreign_key<-function(FKschema,
     #Select all of the unmached values in the foreign key table
     Output<-rbind(Output,
                   paste("SELECT fk.",FKcolumn,"\n",
-                        "'",PKschema,".",PKtable,' as PrimaryKeyTable\n',
+                        "'",PKschema,".",PKtable,"' as PrimaryKeyTable\n",
                         "FROM ",FKschema,".",FKtable," as fk\n",
                         "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
                         "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
