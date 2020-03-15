@@ -1,6 +1,6 @@
 
 
-SELECT fk.[idvagencyid]
+SELECT fk.[idvagencyid],
 'FPDSTypeTable.AgencyID' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
@@ -8,7 +8,7 @@ On pk.AgencyID=fk.[idvagencyid]
 WHERE pk.AgencyID is NULL
 GROUP BY fk.[idvagencyid]
 
-SELECT fk.[contractingofficeagencyid]
+SELECT fk.[contractingofficeagencyid],
 'FPDSTypeTable.AgencyID' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
@@ -16,7 +16,7 @@ On pk.AgencyID=fk.[contractingofficeagencyid]
 WHERE pk.AgencyID is NULL
 GROUP BY fk.[contractingofficeagencyid]
 
-SELECT fk.[contractingofficeid]
+SELECT fk.[contractingofficeid],
 'Office.ContractingOfficeCodeHistory' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN Office.ContractingOfficeCodeHistory as pk
@@ -24,7 +24,7 @@ On pk.ContractingOfficeCode=fk.[contractingofficeid]
 WHERE pk.ContractingOfficeCode is NULL
 GROUP BY fk.[contractingofficeid]
 
-SELECT fk.[maj_fund_agency_cat]
+SELECT fk.[maj_fund_agency_cat],
 'FPDSTypeTable.AgencyID' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
@@ -32,7 +32,7 @@ On pk.AgencyID=fk.[maj_fund_agency_cat]
 WHERE pk.AgencyID is NULL
 GROUP BY fk.[maj_fund_agency_cat]
 
-SELECT fk.[fundingrequestingagencyid]
+SELECT fk.[fundingrequestingagencyid],
 'FPDSTypeTable.AgencyID' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
@@ -40,7 +40,7 @@ On pk.AgencyID=fk.[fundingrequestingagencyid]
 WHERE pk.AgencyID is NULL
 GROUP BY fk.[fundingrequestingagencyid]
 
-SELECT fk.[fundingrequestingofficeid]
+SELECT fk.[fundingrequestingofficeid],
 'Office.ContractingOfficeCode' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN Office.ContractingOfficeCode as pk
@@ -48,7 +48,7 @@ On pk.ContractingOfficeCode=fk.[fundingrequestingofficeid]
 WHERE pk.ContractingOfficeCode is NULL
 GROUP BY fk.[fundingrequestingofficeid]
 
-SELECT fk.[dunsnumber]
+SELECT fk.[dunsnumber],
 'Contractor.DunsnumberToParentContractorHistory' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN Contractor.DunsnumberToParentContractorHistory as pk
@@ -56,7 +56,7 @@ On pk.DUNSnumber=fk.[dunsnumber]
 WHERE pk.DUNSnumber is NULL
 GROUP BY fk.[dunsnumber]
 
-SELECT fk.[vendordoingasbusinessname]
+SELECT fk.[vendordoingasbusinessname],
 'Vendor.VendorName' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN Vendor.VendorName as pk
@@ -64,7 +64,7 @@ On pk.vendorname=fk.[vendordoingasbusinessname]
 WHERE pk.vendorname is NULL
 GROUP BY fk.[vendordoingasbusinessname]
 
-SELECT fk.[vendorcountrycode]
+SELECT fk.[vendorcountrycode],
 'FPDSTypeTable.vendorcountrycode' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.vendorcountrycode as pk
@@ -72,7 +72,7 @@ On pk.vendorcountrycode=fk.[vendorcountrycode]
 WHERE pk.vendorcountrycode is NULL
 GROUP BY fk.[vendorcountrycode]
 
-SELECT fk.[placeofperformancecountrycode]
+SELECT fk.[placeofperformancecountrycode],
 'FPDSTypeTable.Country3LetterCode' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
@@ -80,7 +80,7 @@ On pk.Country3LetterCode=fk.[placeofperformancecountrycode]
 WHERE pk.Country3LetterCode is NULL
 GROUP BY fk.[placeofperformancecountrycode]
 
-SELECT fk.[pop_state_code]
+SELECT fk.[pop_state_code],
 'FPDSTypeTable.statecode' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.statecode as pk
@@ -88,7 +88,7 @@ On pk.statecode=fk.[pop_state_code]
 WHERE pk.statecode is NULL
 GROUP BY fk.[pop_state_code]
 
-SELECT fk.[award_type_code]
+SELECT fk.[award_type_code],
 'FPDSTypeTable.award_type_code' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.award_type_code as pk
@@ -96,7 +96,7 @@ On pk.award_type_code=fk.[award_type_code]
 WHERE pk.award_type_code is NULL
 GROUP BY fk.[award_type_code]
 
-SELECT fk.[idv_type_code]
+SELECT fk.[idv_type_code],
 'FPDSTypeTable.idv_type_code' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
@@ -104,7 +104,7 @@ On pk.idv_type_code=fk.[idv_type_code]
 WHERE pk.idv_type_code is NULL
 GROUP BY fk.[idv_type_code]
 
-SELECT fk.[typeofcontractpricing]
+SELECT fk.[typeofcontractpricing],
 'FPDSTypeTable.typeofcontractpricing' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.typeofcontractpricing as pk
@@ -112,7 +112,7 @@ On pk.TypeOfContractPricing=fk.[typeofcontractpricing]
 WHERE pk.TypeOfContractPricing is NULL
 GROUP BY fk.[typeofcontractpricing]
 
-SELECT fk.[reasonformodification]
+SELECT fk.[reasonformodification],
 'FPDSTypeTable.reasonformodification' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.reasonformodification as pk
@@ -120,7 +120,7 @@ On pk.reasonformodification=fk.[reasonformodification]
 WHERE pk.reasonformodification is NULL
 GROUP BY fk.[reasonformodification]
 
-SELECT fk.[productorservicecode]
+SELECT fk.[productorservicecode],
 'FPDSTypeTable.ProductOrServiceCode' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.ProductOrServiceCode as pk
@@ -128,7 +128,7 @@ On pk.ProductOrServiceCode=fk.[productorservicecode]
 WHERE pk.ProductOrServiceCode is NULL
 GROUP BY fk.[productorservicecode]
 
-SELECT fk.[contractbundling]
+SELECT fk.[contractbundling],
 'FPDSTypeTable.contractbundling' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.contractbundling as pk
@@ -136,7 +136,7 @@ On pk.contractbundling=fk.[contractbundling]
 WHERE pk.contractbundling is NULL
 GROUP BY fk.[contractbundling]
 
-SELECT fk.[claimantprogramcode]
+SELECT fk.[claimantprogramcode],
 'FPDSTypeTable.ClaimantProgramCode' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.ClaimantProgramCode as pk
@@ -144,7 +144,7 @@ On pk.ClaimantProgramCode=fk.[claimantprogramcode]
 WHERE pk.ClaimantProgramCode is NULL
 GROUP BY fk.[claimantprogramcode]
 
-SELECT fk.[principalnaicscode]
+SELECT fk.[principalnaicscode],
 'FPDSTypeTable.PrincipalNaicsCode' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.PrincipalNaicsCode as pk
@@ -152,7 +152,7 @@ On pk.principalnaicscode=fk.[principalnaicscode]
 WHERE pk.principalnaicscode is NULL
 GROUP BY fk.[principalnaicscode]
 
-SELECT fk.[recoveredmaterialclauses]
+SELECT fk.[recoveredmaterialclauses],
 'FPDSTypeTable.recoveredmaterialclauses' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.recoveredmaterialclauses as pk
@@ -160,7 +160,7 @@ On pk.recoveredmaterialclauses=fk.[recoveredmaterialclauses]
 WHERE pk.recoveredmaterialclauses is NULL
 GROUP BY fk.[recoveredmaterialclauses]
 
-SELECT fk.[manufacturingorganizationtype]
+SELECT fk.[manufacturingorganizationtype],
 'FPDSTypeTable.manufacturingorganizationtype' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.manufacturingorganizationtype as pk
@@ -168,7 +168,7 @@ On pk.manufacturingorganizationtype=fk.[manufacturingorganizationtype]
 WHERE pk.manufacturingorganizationtype is NULL
 GROUP BY fk.[manufacturingorganizationtype]
 
-SELECT fk.[useofepadesignatedproducts]
+SELECT fk.[useofepadesignatedproducts],
 'FPDSTypeTable.useofepadesignatedproducts' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.useofepadesignatedproducts as pk
@@ -176,7 +176,7 @@ On pk.useofepadesignatedproducts=fk.[useofepadesignatedproducts]
 WHERE pk.useofepadesignatedproducts is NULL
 GROUP BY fk.[useofepadesignatedproducts]
 
-SELECT fk.[countryoforigin]
+SELECT fk.[countryoforigin],
 'FPDSTypeTable.Country3LetterCode' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
@@ -184,7 +184,7 @@ On pk.Country3LetterCode=fk.[countryoforigin]
 WHERE pk.Country3LetterCode is NULL
 GROUP BY fk.[countryoforigin]
 
-SELECT fk.[placeofmanufacture]
+SELECT fk.[placeofmanufacture],
 'FPDSTypeTable.PlaceOfManufacture' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.PlaceOfManufacture as pk
@@ -192,7 +192,7 @@ On pk.PlaceOfManufacture=fk.[placeofmanufacture]
 WHERE pk.PlaceOfManufacture is NULL
 GROUP BY fk.[placeofmanufacture]
 
-SELECT fk.[subcontractplan]
+SELECT fk.[subcontractplan],
 'FPDSTypeTable.subcontractplan' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.subcontractplan as pk
@@ -200,7 +200,7 @@ On pk.subcontractplan=fk.[subcontractplan]
 WHERE pk.subcontractplan is NULL
 GROUP BY fk.[subcontractplan]
 
-SELECT fk.[solicitationprocedures]
+SELECT fk.[solicitationprocedures],
 'FPDSTypeTable.solicitationprocedures' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.solicitationprocedures as pk
@@ -208,7 +208,7 @@ On pk.solicitationprocedures=fk.[solicitationprocedures]
 WHERE pk.solicitationprocedures is NULL
 GROUP BY fk.[solicitationprocedures]
 
-SELECT fk.[typeofsetaside]
+SELECT fk.[typeofsetaside],
 'FPDSTypeTable.typeofsetaside' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.typeofsetaside as pk
@@ -216,7 +216,7 @@ On pk.typeofsetaside=fk.[typeofsetaside]
 WHERE pk.typeofsetaside is NULL
 GROUP BY fk.[typeofsetaside]
 
-SELECT fk.[evaluatedpreference]
+SELECT fk.[evaluatedpreference],
 'FPDSTypeTable.evaluatedpreference' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.evaluatedpreference as pk
@@ -224,7 +224,7 @@ On pk.evaluatedpreference=fk.[evaluatedpreference]
 WHERE pk.evaluatedpreference is NULL
 GROUP BY fk.[evaluatedpreference]
 
-SELECT fk.[reasonnotcompeted]
+SELECT fk.[reasonnotcompeted],
 'FPDSTypeTable.reasonnotcompeted' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.reasonnotcompeted as pk
@@ -232,7 +232,7 @@ On pk.reasonnotcompeted=fk.[reasonnotcompeted]
 WHERE pk.reasonnotcompeted is NULL
 GROUP BY fk.[reasonnotcompeted]
 
-SELECT fk.[commercialitemacquisitionprocedures]
+SELECT fk.[commercialitemacquisitionprocedures],
 'FPDSTypeTable.CommercialItemAcquisitionProcedures' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.CommercialItemAcquisitionProcedures as pk
@@ -240,7 +240,7 @@ On pk.CommercialItemAcquisitionProcedures=fk.[commercialitemacquisitionprocedure
 WHERE pk.CommercialItemAcquisitionProcedures is NULL
 GROUP BY fk.[commercialitemacquisitionprocedures]
 
-SELECT fk.[walshhealyact]
+SELECT fk.[walshhealyact],
 'FPDSTypeTable.walshhealyact' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.walshhealyact as pk
@@ -248,7 +248,7 @@ On pk.walshhealyact=fk.[walshhealyact]
 WHERE pk.walshhealyact is NULL
 GROUP BY fk.[walshhealyact]
 
-SELECT fk.[servicecontractact]
+SELECT fk.[servicecontractact],
 'FPDSTypeTable.servicecontractact' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.servicecontractact as pk
@@ -256,7 +256,7 @@ On pk.servicecontractact=fk.[servicecontractact]
 WHERE pk.servicecontractact is NULL
 GROUP BY fk.[servicecontractact]
 
-SELECT fk.[davisbaconact]
+SELECT fk.[davisbaconact],
 'FPDSTypeTable.davisbaconact' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.davisbaconact as pk
@@ -264,7 +264,7 @@ On pk.davisbaconact=fk.[davisbaconact]
 WHERE pk.davisbaconact is NULL
 GROUP BY fk.[davisbaconact]
 
-SELECT fk.[interagencycontractingauthority]
+SELECT fk.[interagencycontractingauthority],
 'FPDSTypeTable.interagencycontractingauthority' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.interagencycontractingauthority as pk
@@ -272,7 +272,7 @@ On pk.interagencycontractingauthority=fk.[interagencycontractingauthority]
 WHERE pk.interagencycontractingauthority is NULL
 GROUP BY fk.[interagencycontractingauthority]
 
-SELECT fk.[parent_award_type_code]
+SELECT fk.[parent_award_type_code],
 'FPDSTypeTable.idv_type_code' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
@@ -280,7 +280,7 @@ On pk.idv_type_code=fk.[parent_award_type_code]
 WHERE pk.idv_type_code is NULL
 GROUP BY fk.[parent_award_type_code]
 
-SELECT fk.[majorprogramcode]
+SELECT fk.[majorprogramcode],
 'Contract.MajorProgramCode' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN Contract.MajorProgramCode as pk
@@ -288,7 +288,7 @@ On pk.majorprogramcode=fk.[majorprogramcode]
 WHERE pk.majorprogramcode is NULL
 GROUP BY fk.[majorprogramcode]
 
-SELECT fk.[nationalinterestactioncode]
+SELECT fk.[nationalinterestactioncode],
 'Assistance.NationalInterestActionCode' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN Assistance.NationalInterestActionCode as pk
@@ -296,7 +296,7 @@ On pk.nationalinterestactioncode=fk.[nationalinterestactioncode]
 WHERE pk.nationalinterestactioncode is NULL
 GROUP BY fk.[nationalinterestactioncode]
 
-SELECT fk.[costorpricingdata]
+SELECT fk.[costorpricingdata],
 'FPDSTypeTable.costorpricingdata' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.costorpricingdata as pk
@@ -304,7 +304,7 @@ On pk.costorpricingdata=fk.[costorpricingdata]
 WHERE pk.costorpricingdata is NULL
 GROUP BY fk.[costorpricingdata]
 
-SELECT fk.[gfe_gfp_code]
+SELECT fk.[gfe_gfp_code],
 'FPDSTypeTable.gfe_gfp' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.gfe_gfp as pk
@@ -312,7 +312,7 @@ On pk.gfe_gfp=fk.[gfe_gfp_code]
 WHERE pk.gfe_gfp is NULL
 GROUP BY fk.[gfe_gfp_code]
 
-SELECT fk.[seatransportation]
+SELECT fk.[seatransportation],
 'FPDSTypeTable.seatransportation' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.seatransportation as pk
@@ -320,7 +320,7 @@ On pk.seatransportation=fk.[seatransportation]
 WHERE pk.seatransportation is NULL
 GROUP BY fk.[seatransportation]
 
-SELECT fk.[lettercontract]
+SELECT fk.[lettercontract],
 'FPDSTypeTable.lettercontract' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.lettercontract as pk
@@ -328,7 +328,7 @@ On pk.LetterContract=fk.[lettercontract]
 WHERE pk.LetterContract is NULL
 GROUP BY fk.[lettercontract]
 
-SELECT fk.[contingencyhumanitarianpeacekeepingoperation]
+SELECT fk.[contingencyhumanitarianpeacekeepingoperation],
 'Assistance.ContingencyHumanitarianPeacekeepingOperation' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN Assistance.ContingencyHumanitarianPeacekeepingOperation as pk
@@ -336,7 +336,7 @@ On pk.ContingencyHumanitarianPeacekeepingOperation=fk.[contingencyhumanitarianpe
 WHERE pk.ContingencyHumanitarianPeacekeepingOperation is NULL
 GROUP BY fk.[contingencyhumanitarianpeacekeepingoperation]
 
-SELECT fk.[CSIStransactionID]
+SELECT fk.[CSIStransactionID],
 'Contract.CSIStransactionID' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN Contract.CSIStransactionID as pk
