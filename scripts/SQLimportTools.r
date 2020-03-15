@@ -587,7 +587,7 @@ convert_field_to_foreign_key<-function(FKschema,
     stop(paste("No Source match for",FKcolumn))
   
   
-  Output<-''
+
   TargetTable.df<-left_join(TargetTable.df,pkTable.df,
                        by=c("PKSchemaName",
                             "PKTableName",
@@ -603,7 +603,9 @@ convert_field_to_foreign_key<-function(FKschema,
                                              "(",pkTable.df$ColumnLength,")",
                                              sep="")
     }
-  if(TryConvertTable.df$CSISvariableType!=TryConvertTable.df$SourceVariableType){  
+
+  Output<-''
+  if(suppress_alter==FALSE & TryConvertTable.df$CSISvariableType!=TryConvertTable.df$SourceVariableType){  
     Output<-create_try_converts(TryConvertTable.df,
                                 FKschema,
                                 FKtable)
@@ -615,11 +617,13 @@ convert_field_to_foreign_key<-function(FKschema,
   if(suppress_select==FALSE)  
   #Select all of the unmached values in the foreign key table
   Output<-rbind(Output,
-                paste("SELECT DISTINCT fk.",FKcolumn,"\n",
+                paste("SELECT fk.",FKcolumn,"\n",
                       "FROM ",FKschema,".",FKtable," as fk\n",
                       "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
                       "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
-                      "WHERE pk.",PKcolumn," is NULL\n",sep="")
+                      "WHERE pk.",PKcolumn," is NULL\n",
+                      "GROUP BY ",FKcolumn,
+                      sep="")
   )
   
   if(suppress_insert==FALSE)  
@@ -631,7 +635,9 @@ convert_field_to_foreign_key<-function(FKschema,
                       "FROM ",FKschema,".",FKtable," as fk\n",
                       "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
                       "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
-                      "WHERE pk.",PKcolumn," is NULL\n",sep="")
+                      "WHERE pk.",PKcolumn," is NULL\n",
+                    "GROUP BY ",FKcolumn,
+                    sep="")
   )
   
  
