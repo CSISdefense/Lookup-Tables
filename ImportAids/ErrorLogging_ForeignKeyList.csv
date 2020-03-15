@@ -1,4 +1,5 @@
-﻿fk_DefenseP1_AccountDSI,FK,budget,DefenseP1,AccountDSI,varchar,5,budget,AccountDSI,AccountDSI
+﻿ConstraintName,ConstraintType,FKSchema,FKTableName,FKColumnName,ColumnDataType,ColumnLength,PKSchemaName,PKTableName,PKColumnName
+fk_DefenseP1_AccountDSI,FK,budget,DefenseP1,AccountDSI,varchar,5,budget,AccountDSI,AccountDSI
 fk_DefenseP1_BSA,FK,budget,DefenseP1,AccountDSI,varchar,5,budget,BSA,AccountDSI
 fk_DefenseP1_BudgetActivity,FK,budget,DefenseP1,AccountDSI,varchar,5,budget,BudgetActivity,AccountDSI
 fk_DefenseP1_CostType,FK,budget,DefenseP1,AccountDSI,varchar,5,budget,CostType,AccountDSI
