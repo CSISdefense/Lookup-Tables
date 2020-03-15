@@ -615,41 +615,42 @@ convert_field_to_foreign_key<-function(FKschema,
   
   
   if(suppress_select==FALSE)  
-  #Select all of the unmached values in the foreign key table
-  Output<-rbind(Output,
-                paste("SELECT fk.",FKcolumn,"\n",
-                      "FROM ",FKschema,".",FKtable," as fk\n",
-                      "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
-                      "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
-                      "WHERE pk.",PKcolumn," is NULL\n",
-                      "GROUP BY ",FKcolumn,
-                      sep="")
-  )
+    #Select all of the unmached values in the foreign key table
+    Output<-rbind(Output,
+                  paste("SELECT fk.",FKcolumn,"\n",
+                        "'",PKschema,".",PKtable,' as PrimaryKeyTable\n',
+                        "FROM ",FKschema,".",FKtable," as fk\n",
+                        "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
+                        "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
+                        "WHERE pk.",PKcolumn," is NULL\n",
+                        "GROUP BY fk.",FKcolumn,
+                        sep="")
+    )
   
   if(suppress_insert==FALSE)  
-  #Insert unmatched values into the primary key table
-  Output<-rbind(Output,
-                paste("INSERT INTO ",PKschema,".",PKtable,"\n",
-                      "(",PKcolumn,")\n",
-                    "SELECT DISTINCT fk.",FKcolumn,"\n",
-                      "FROM ",FKschema,".",FKtable," as fk\n",
-                      "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
-                      "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
-                      "WHERE pk.",PKcolumn," is NULL\n",
-                    "GROUP BY ",FKcolumn,
-                    sep="")
-  )
+    #Insert unmatched values into the primary key table
+    Output<-rbind(Output,
+                  paste("INSERT INTO ",PKschema,".",PKtable,"\n",
+                        "(",PKcolumn,")\n",
+                        "SELECT DISTINCT fk.",FKcolumn,"\n",
+                        "FROM ",FKschema,".",FKtable," as fk\n",
+                        "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
+                        "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
+                        "WHERE pk.",PKcolumn," is NULL\n",
+                        "GROUP BY fk.",FKcolumn,
+                        sep="")
+    )
   
- 
+  
   if(suppress_alter==FALSE)    
-  Output<-rbind(Output,
-                paste("ALTER TABLE ",FKschema,".",FKtable,"\n",
-                      "ADD CONSTRAINT fk_",gsub("\\[","",gsub("\\]","",FKschema))
-                      ,"_",gsub("\\[","",gsub("\\]","",FKtable)),"_",
-                      gsub("-","_",gsub("\\[","",gsub("\\]","",FKcolumn))),
-                      " foreign key(",FKcolumn,")\n"
-                      ,"references ",PKschema,".",PKtable,"(",PKcolumn,")\n",sep="")
-  )
+    Output<-rbind(Output,
+                  paste("ALTER TABLE ",FKschema,".",FKtable,"\n",
+                        "ADD CONSTRAINT fk_",gsub("\\[","",gsub("\\]","",FKschema))
+                        ,"_",gsub("\\[","",gsub("\\]","",FKtable)),"_",
+                        gsub("-","_",gsub("\\[","",gsub("\\]","",FKcolumn))),
+                        " foreign key(",FKcolumn,")\n"
+                        ,"references ",PKschema,".",PKtable,"(",PKcolumn,")\n",sep="")
+    )
   Output
 }
 
