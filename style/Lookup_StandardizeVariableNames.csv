@@ -154,8 +154,8 @@ Budget.Sub.Activity,BudgetSubActivity
 BSA.Title,BudgetSubActivityTitle
 Budget.Sub.Activity.Title,BudgetSubActivityTitle
 Budget.Sub.Activity..BSA..Title,BudgetSubActivityTitle
-BSA,BSA
-BSA.Title,BSAtitle
+BSA,BudgetSubActivity
+BSA.Title,BudgetSubActivityTitle
 AG.Title,AGtitle
 ID.Code,IDcode
 SAG…,SAGtitle
