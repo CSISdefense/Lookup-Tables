@@ -560,6 +560,7 @@ convert_field_to_foreign_key<-function(FKschema,
                                    PKschema,
                                    PKtable,
                                    PKcolumn=PKtable,
+                                   Pair=NULL,
                                    suppress_select=FALSE,
                                    suppress_alter=FALSE,
                                    suppress_insert=FALSE){
@@ -580,6 +581,7 @@ convert_field_to_foreign_key<-function(FKschema,
                                 "SourceVariableType",
                                 "SourceVariableNullable")
   }
+  if(Pair=="") Pair<-NULL
   
   TargetTable.df<-subset(TargetTable.df,
                          toupper(SourceVariableName)==toupper(FKcolumn))
@@ -621,12 +623,16 @@ convert_field_to_foreign_key<-function(FKschema,
         "--List new ",FKcolumn," for insertion into ",PKschema,".",PKtable,"\n",
                     "SELECT fk.",FKcolumn,",\n",
         "len(fk.",FKcolumn,") as length,\n",
+        ifelse(!is.null(Pair),paste("fk.",Pair,",\n",sep=""),""),
                         "'",PKschema,".",PKtable,"' as PrimaryKeyTable\n",
                         "FROM ",FKschema,".",FKtable," as fk\n",
                         "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
                         "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
-                        "WHERE pk.",PKcolumn," is NULL\n",
-                        "GROUP BY fk.",FKcolumn,
+        #If a pair exists, check if it's null rather than checking the PKcolumn
+                        "WHERE pk.",ifelse(!is.null(Pair),Pair,PKcolumn)," is NULL\n",
+        #If a pair exists, check if it has changed
+        ifelse(!is.null(Pair),paste("OR fk.",Pair,"<> pk.",Pair,"\n",sep=""),""),
+                        "GROUP BY fk.",FKcolumn,ifelse(!is.null(Pair),paste(", fk.",Pair,sep=""),""),
                         sep="")
     )
   
@@ -740,6 +746,7 @@ create_foreign_key_assigments<-function(Schema,
                                                    MergeTable.df$PKSchemaName[i],
                                                    MergeTable.df$PKTableName[i],
                                                    MergeTable.df$PKColumnName[i],
+                                                   MergeTable.df$Pair[i],
                                                    suppress_select=suppress_select,
                                                    suppress_alter=suppress_alter,
                                                    suppress_insert=suppress_insert)

@@ -113,22 +113,26 @@ GROUP BY fk.[pop_state_code]
 --List new [award_type_code] for insertion into FPDSTypeTable.award_type_code
 SELECT fk.[award_type_code],
 len(fk.[award_type_code]) as length,
+fk.[award_type_name],
 'FPDSTypeTable.award_type_code' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.award_type_code as pk
 On pk.award_type_code=fk.[award_type_code]
-WHERE pk.award_type_code is NULL
-GROUP BY fk.[award_type_code]
+WHERE pk.[award_type_name] is NULL
+OR fk.[award_type_name]<> pk.[award_type_name]
+GROUP BY fk.[award_type_code], fk.[award_type_name]
 
 --List new [idv_type_code] for insertion into FPDSTypeTable.idv_type_code
 SELECT fk.[idv_type_code],
 len(fk.[idv_type_code]) as length,
+fk.[idv_type_name],
 'FPDSTypeTable.idv_type_code' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
 On pk.idv_type_code=fk.[idv_type_code]
-WHERE pk.idv_type_code is NULL
-GROUP BY fk.[idv_type_code]
+WHERE pk.[idv_type_name] is NULL
+OR fk.[idv_type_name]<> pk.[idv_type_name]
+GROUP BY fk.[idv_type_code], fk.[idv_type_name]
 
 --List new [typeofcontractpricing] for insertion into FPDSTypeTable.typeofcontractpricing
 SELECT fk.[typeofcontractpricing],
@@ -343,12 +347,14 @@ GROUP BY fk.[interagencycontractingauthority]
 --List new [parent_award_type_code] for insertion into FPDSTypeTable.idv_type_code
 SELECT fk.[parent_award_type_code],
 len(fk.[parent_award_type_code]) as length,
+fk.[parent_award_type_name],
 'FPDSTypeTable.idv_type_code' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
 On pk.idv_type_code=fk.[parent_award_type_code]
-WHERE pk.idv_type_code is NULL
-GROUP BY fk.[parent_award_type_code]
+WHERE pk.[parent_award_type_name] is NULL
+OR fk.[parent_award_type_name]<> pk.[parent_award_type_name]
+GROUP BY fk.[parent_award_type_code], fk.[parent_award_type_name]
 
 --List new [majorprogramcode] for insertion into Contract.MajorProgramCode
 SELECT fk.[majorprogramcode],
@@ -383,12 +389,14 @@ GROUP BY fk.[costorpricingdata]
 --List new [gfe_gfp_code] for insertion into FPDSTypeTable.gfe_gfp
 SELECT fk.[gfe_gfp_code],
 len(fk.[gfe_gfp_code]) as length,
+fk.[gfe_gfp_name],
 'FPDSTypeTable.gfe_gfp' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.gfe_gfp as pk
 On pk.gfe_gfp=fk.[gfe_gfp_code]
-WHERE pk.gfe_gfp is NULL
-GROUP BY fk.[gfe_gfp_code]
+WHERE pk.[gfe_gfp_name] is NULL
+OR fk.[gfe_gfp_name]<> pk.[gfe_gfp_name]
+GROUP BY fk.[gfe_gfp_code], fk.[gfe_gfp_name]
 
 --List new [seatransportation] for insertion into FPDSTypeTable.seatransportation
 SELECT fk.[seatransportation],
