@@ -141,6 +141,7 @@ Account,MainAccountCode
 Account.Code,MainAccountCode
 APP.Title,MainAccountName
 Account.Title,MainAccountName
+AccountTitle,MainAccountName
 Account.Name,MainAccountName
 BA,BudgetActivity
 BA#,BudgetActivity
