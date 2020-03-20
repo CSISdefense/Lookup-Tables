@@ -560,7 +560,8 @@ convert_field_to_foreign_key<-function(FKschema,
                                    PKschema,
                                    PKtable,
                                    PKcolumn=PKtable,
-                                   Pair=NULL,
+                                   FKname=NULL,
+                                   PKname=FKname,
                                    suppress_select=FALSE,
                                    suppress_alter=FALSE,
                                    suppress_insert=FALSE){
@@ -581,7 +582,11 @@ convert_field_to_foreign_key<-function(FKschema,
                                 "SourceVariableType",
                                 "SourceVariableNullable")
   }
-  if(Pair=="") Pair<-NULL
+  
+  if(length(FKname)>0){ 
+    if(FKname=="") FKname<-NULL
+    else FKname<-gsub("\\[|\\]","",FKname)
+  }
   
   TargetTable.df<-subset(TargetTable.df,
                          toupper(SourceVariableName)==toupper(FKcolumn))
@@ -616,25 +621,45 @@ convert_field_to_foreign_key<-function(FKschema,
   }
   
   
-  if(suppress_select==FALSE)  
-    #Select all of the unmached values in the foreign key table
-    Output<-rbind(
-      Output,paste(
-        "--List new ",FKcolumn," for insertion into ",PKschema,".",PKtable,"\n",
-                    "SELECT fk.",FKcolumn,",\n",
-        "len(fk.",FKcolumn,") as length,\n",
-        ifelse(!is.null(Pair),paste("fk.",Pair,",\n",sep=""),""),
-                        "'",PKschema,".",PKtable,"' as PrimaryKeyTable\n",
-                        "FROM ",FKschema,".",FKtable," as fk\n",
-                        "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
-                        "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
-        #If a pair exists, check if it's null rather than checking the PKcolumn
-                        "WHERE pk.",ifelse(!is.null(Pair),Pair,PKcolumn)," is NULL\n",
-        #If a pair exists, check if it has changed
-        ifelse(!is.null(Pair),paste("OR fk.",Pair,"<> pk.",Pair,"\n",sep=""),""),
-                        "GROUP BY fk.",FKcolumn,ifelse(!is.null(Pair),paste(", fk.",Pair,sep=""),""),
-                        sep="")
-    )
+  if(suppress_select==FALSE){
+  
+  iifFKname<-paste("iif(fk.",FKname,"=pk.",PKname," or\n",
+                   "(fk.",FKname,"='' and pk.",PKname," is NULL),",
+                   sep="")
+  
+  #Select all of the unmached values in the foreign key table
+  Output<-rbind(
+    Output,paste(
+      "--List new ",FKcolumn, 
+      #** Select List
+      ifelse(!is.null(FKname),paste(" and updated",FKname),""),
+      " for insertion into ",PKschema,".",PKtable,"\n",
+      "SELECT fk.",FKcolumn,",\n",
+      # "len(fk.",FKcolumn,") as length,\n", Don't need it for this one
+      #**If there's a name to go with the code
+      ifelse(!is.null(FKname),
+             paste("max(",iifFKname,"NULL,fk.",FKname,")) as MaxOfNewFK",FKname,",\n",
+                   "count(distinct ",iifFKname,"NULL,fk.",FKname,")) as unmatched_name_count,\n",
+                   "pk.",PKname," as PK",PKname,",\n",
+                   "max(",iifFKname,"NULL,fk.",FKname,")) as MaxOfNewFK",FKname,",\n",
+                   "count(distinct ",iifFKname,"1,0)) as any_name_match,\n",sep=""),""),
+      "'",PKschema,".",PKtable,"' as PrimaryKeyTable\n",
+      #** Tables and Joins
+      "FROM ",FKschema,".",FKtable," as fk\n",
+      "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
+      "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
+      #If no FKname, a simple WHERE
+      ifelse(!is.null(FKname),"",paste("WHERE pk.",PKcolumn," is NULL\n",sep="")),
+      #If a FKname exists, check if it has changed
+      "GROUP BY fk.",FKcolumn,
+      ifelse(!is.null(FKname),paste(", pk.",PKname,"\n",
+                                    "HAVING count(distinct ",iifFKname,"1,0))=1\n",sep=""),
+             "\n"),
+      
+      
+      sep="")
+  )
+  }
   
   if(suppress_insert==FALSE)  
     #Insert unmatched values into the primary key table
@@ -746,7 +771,7 @@ create_foreign_key_assigments<-function(Schema,
                                                    MergeTable.df$PKSchemaName[i],
                                                    MergeTable.df$PKTableName[i],
                                                    MergeTable.df$PKColumnName[i],
-                                                   MergeTable.df$Pair[i],
+                                                   FKname=MergeTable.df$Pair[i],
                                                    suppress_select=suppress_select,
                                                    suppress_alter=suppress_alter,
                                                    suppress_insert=suppress_insert)
