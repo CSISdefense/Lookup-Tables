@@ -561,7 +561,7 @@ convert_field_to_foreign_key<-function(FKschema,
                                    PKtable,
                                    PKcolumn=PKtable,
                                    FKname=NULL,
-                                   PKname=FKname,
+                                   PKname=NULL,
                                    suppress_select=FALSE,
                                    suppress_alter=FALSE,
                                    suppress_insert=FALSE){
@@ -575,7 +575,7 @@ convert_field_to_foreign_key<-function(FKschema,
   if(nrow(pkTable.df)==0)
     stop(paste("No Primary Key match for",PKschema,PKtable,PKcolumn))
   #Test if the field can be converted to the primary keys typed.
-
+  
   
   if(!"SourceVariableType" %in% colnames(TargetTable.df)){
     colnames(TargetTable.df)[1:3]<-c("SourceVariableName" ,
@@ -587,6 +587,19 @@ convert_field_to_foreign_key<-function(FKschema,
     if(FKname=="") FKname<-NULL
     else FKname<-gsub("\\[|\\]","",FKname)
   }
+  
+  if(length(PKname)>0){ 
+    if(PKname=="") PKname<-NULL
+    else PKname<-gsub("\\[|\\]","",PKname)
+  }
+  
+  
+  #If there's no destination, then no point tracking the source name
+  if (is.null(PKname)){
+    warning(paste("No Primary Key Text field (PKname) to match FKname",FKname))
+    FKname<-NULL
+  }
+  
   
   TargetTable.df<-subset(TargetTable.df,
                          toupper(SourceVariableName)==toupper(FKcolumn))
