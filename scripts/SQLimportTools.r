@@ -128,8 +128,9 @@ translate_name<-function(TargetTable.df,test_only=FALSE){
     stop("Duplicate entries in CSISvariableName after matching")
   }
   
-  
-  
+  #Add the CSISvariableName fields: IsDroppedNameField	Pair
+  TargetTable.df<-read_and_join_experiment(TargetTable.df,
+                           path="",dir="ImportAids\\",lookup_file = "CSISvariableName.csv")
   
   TargetTable.df$SourceVariableName<-TargetTable.df$OriginalSourceVariableName
 
@@ -561,7 +562,7 @@ convert_field_to_foreign_key<-function(FKschema,
                                    PKtable,
                                    PKcolumn=PKtable,
                                    FKname=NULL,
-                                   PKname=FKname,
+                                   PKname=NULL,
                                    suppress_select=FALSE,
                                    suppress_alter=FALSE,
                                    suppress_insert=FALSE){
@@ -571,11 +572,11 @@ convert_field_to_foreign_key<-function(FKschema,
   pkTable.df<-subset(pkTable.df,
                      toupper(PKSchemaName)==toupper(PKschema) &
                        toupper(PKTableName)==toupper(PKtable) &
-                     toupper(PKColumnName)==toupper(PKcolumn))
+                     toupper(PKColumnCode)==toupper(PKcolumn))
   if(nrow(pkTable.df)==0)
     stop(paste("No Primary Key match for",PKschema,PKtable,PKcolumn))
   #Test if the field can be converted to the primary keys typed.
-
+  
   
   if(!"SourceVariableType" %in% colnames(TargetTable.df)){
     colnames(TargetTable.df)[1:3]<-c("SourceVariableName" ,
@@ -588,6 +589,19 @@ convert_field_to_foreign_key<-function(FKschema,
     else FKname<-gsub("\\[|\\]","",FKname)
   }
   
+  if(length(PKname)>0){ 
+    if(PKname=="") PKname<-NULL
+    else PKname<-gsub("\\[|\\]","",PKname)
+  }
+  
+  
+  #If there's no destination, then no point tracking the source name
+  if (is.null(PKname)){
+    warning(paste("No Primary Key Text field (PKname) to match FKname",FKname))
+    FKname<-NULL
+  }
+  
+  
   TargetTable.df<-subset(TargetTable.df,
                          toupper(SourceVariableName)==toupper(FKcolumn))
   if(nrow(TargetTable.df)==0)
@@ -598,12 +612,12 @@ convert_field_to_foreign_key<-function(FKschema,
   TargetTable.df<-left_join(TargetTable.df,pkTable.df,
                        by=c("PKSchemaName",
                             "PKTableName",
-                            "PKColumnName")
+                            "PKColumnCode")
                             )
   #If the VariableTypes don't match, create a select and alter to fix that'
   
     TryConvertTable.df<-TargetTable.df
-    TryConvertTable.df$CSISvariableName<-pkTable.df$PKColumnName
+    TryConvertTable.df$CSISvariableName<-pkTable.df$PKColumnCode
     TryConvertTable.df$CSISvariableType<-paste('[',pkTable.df$ColumnDataType,']',sep='')
     if(TryConvertTable.df$CSISvariableType[1]=="[varchar]"){
       TryConvertTable.df$CSISvariableType<-paste(TryConvertTable.df$CSISvariableType,
@@ -624,7 +638,8 @@ convert_field_to_foreign_key<-function(FKschema,
   if(suppress_select==FALSE){
   
   iifFKname<-paste("iif(fk.",FKname,"=pk.",PKname," or\n",
-                   "(fk.",FKname,"='' and pk.",PKname," is NULL),",
+                   "\t(fk.",FKname,"='' and pk.",PKname," is NULL) or\n",
+                   "\tcharindex('('+fk.",FKname,"+')',pk.",PKname," )>0,\n",
                    sep="")
   
   #Select all of the unmached values in the foreign key table
@@ -638,11 +653,13 @@ convert_field_to_foreign_key<-function(FKschema,
       # "len(fk.",FKcolumn,") as length,\n", Don't need it for this one
       #**If there's a name to go with the code
       ifelse(!is.null(FKname),
-             paste("max(",iifFKname,"NULL,fk.",FKname,")) as MaxOfNewFK",FKname,",\n",
-                   "count(distinct ",iifFKname,"NULL,fk.",FKname,")) as unmatched_name_count,\n",
+             paste("max(",iifFKname,
+                   "\tNULL,fk.",FKname,")) as MaxOfNewFK",FKname,",\n",
+                   "count(distinct ",iifFKname,
+                   "\tNULL,fk.",FKname,")) as unmatched_name_count,\n",
                    "pk.",PKname," as PK",PKname,",\n",
-                   "max(",iifFKname,"NULL,fk.",FKname,")) as MaxOfNewFK",FKname,",\n",
-                   "count(distinct ",iifFKname,"1,0)) as any_name_match,\n",sep=""),""),
+                   "max(",iifFKname,
+                   "\t1,0)) as any_name_match,\n",sep=""),""),
       "'",PKschema,".",PKtable,"' as PrimaryKeyTable\n",
       #** Tables and Joins
       "FROM ",FKschema,".",FKtable," as fk\n",
@@ -653,10 +670,9 @@ convert_field_to_foreign_key<-function(FKschema,
       #If a FKname exists, check if it has changed
       "GROUP BY fk.",FKcolumn,
       ifelse(!is.null(FKname),paste(", pk.",PKname,"\n",
-                                    "HAVING count(distinct ",iifFKname,"1,0))=1\n",sep=""),
-             "\n"),
-      
-      
+                                    "HAVING max(",iifFKname,
+                                    "\t0,1))=1",sep=""),""),
+      "\nORDER BY fk.",FKcolumn,"\n",
       sep="")
   )
   }
@@ -665,9 +681,11 @@ convert_field_to_foreign_key<-function(FKschema,
     #Insert unmatched values into the primary key table
     Output<-rbind(Output,
                   paste("INSERT INTO ",PKschema,".",PKtable,"\n",
-                        "(",PKcolumn,")\n",
-                        "SELECT DISTINCT fk.",FKcolumn,"\n",
+                        "(",PKcolumn,ifelse(is.null(FKname),"",paste(",",PKname,sep="")),")\n",
+                        "SELECT fk.",FKcolumn,"\n",
+                        ifelse(is.null(FKname),"",paste(",max(fk.",FKname,") as ",PKname,"\n",sep="")),
                         "FROM ",FKschema,".",FKtable," as fk\n",
+                        
                         "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
                         "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
                         "WHERE pk.",PKcolumn," is NULL\n",
@@ -712,7 +730,7 @@ get_CSISvariableNameToPrimaryKey<-function(){
   #First consolidate down to only CSISvariable names and keys, using upper to handle case sensitivity
   lookup.CSISvariableNameToPrimaryKey <- lookup.CSISvariableNameToPrimaryKey %>% remove_bom() %>%
     dplyr::rename(CSISvariableName= FKColumnName) %>% 
-    dplyr::group_by(FKColumnNameUp,PKSchemaName,PKTableName,PKColumnName) %>%
+    dplyr::group_by(FKColumnNameUp,PKSchemaName,PKTableName,PKColumnCode,PKcolumnCount,PKcolumnText) %>%
     dplyr::summarise(CSISvariableName=max(CSISvariableName)) %>%
     dplyr::group_by(CSISvariableName) %>%
     dplyr::select(-FKColumnNameUp) 
@@ -721,15 +739,15 @@ get_CSISvariableNameToPrimaryKey<-function(){
   #The core one should share a name with the column name (with a few exceptions, like contractor.parentcontractor)
   lookup.CSISvariableNameToPrimaryKey <- lookup.CSISvariableNameToPrimaryKey %>%
     dplyr::mutate(RepeatCount=length(CSISvariableName),
-                  AnyExact=max(ifelse(toupper(PKTableName)==toupper(PKColumnName),1,0))) %>%
-    dplyr::filter(AnyExact==0 | RepeatCount==1 | toupper(PKTableName)==toupper(PKColumnName)) %>%
+                  AnyExact=max(ifelse(toupper(PKTableName)==toupper(PKColumnCode),1,0))) %>%
+    dplyr::filter(AnyExact==0 | RepeatCount==1 | toupper(PKTableName)==toupper(PKColumnCode)) %>%
     dplyr::mutate(RepeatCount=length(CSISvariableName))
   
   
   if(max(lookup.CSISvariableNameToPrimaryKey$RepeatCount>1)){
     print(lookup.CSISvariableNameToPrimaryKey%>% dplyr::filter(RepeatCount>1))
     warning("Repeated CSISvariableName")
-    lookup.CSISvariableNameToPrimaryKey<-  lookup.CSISvariableNameToPrimaryKey %>% dplyr::filter(RepeatCount==1 | toupper(PKTableName)==toupper(PKColumnName))
+    lookup.CSISvariableNameToPrimaryKey<-  lookup.CSISvariableNameToPrimaryKey %>% dplyr::filter(RepeatCount==1 | toupper(PKTableName)==toupper(PKColumnCode))
   }
   lookup.CSISvariableNameToPrimaryKey$CSISvariableName<-paste("[",lookup.CSISvariableNameToPrimaryKey$CSISvariableName,"]",sep="")
   
@@ -770,8 +788,9 @@ create_foreign_key_assigments<-function(Schema,
                                                    MergeTable.df,
                                                    MergeTable.df$PKSchemaName[i],
                                                    MergeTable.df$PKTableName[i],
-                                                   MergeTable.df$PKColumnName[i],
+                                                   MergeTable.df$PKColumnCode[i],
                                                    FKname=MergeTable.df$Pair[i],
+                                                   PKname=MergeTable.df$PKcolumnText[i],
                                                    suppress_select=suppress_select,
                                                    suppress_alter=suppress_alter,
                                                    suppress_insert=suppress_insert)

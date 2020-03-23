@@ -1,8 +1,9 @@
 
 
 INSERT INTO FPDSTypeTable.AgencyID
-(AgencyID)
-SELECT DISTINCT fk.[idvagencyid]
+(AgencyID,AgencyIDtext)
+SELECT fk.[idvagencyid]
+,max(fk.parent_award_agency_name) as AgencyIDtext
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
 On pk.AgencyID=fk.[idvagencyid]
@@ -10,8 +11,9 @@ WHERE pk.AgencyID is NULL
 GROUP BY fk.[idvagencyid]
 
 INSERT INTO FPDSTypeTable.AgencyID
-(AgencyID)
-SELECT DISTINCT fk.[contractingofficeagencyid]
+(AgencyID,AgencyIDtext)
+SELECT fk.[contractingofficeagencyid]
+,max(fk.awarding_sub_agency_name) as AgencyIDtext
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
 On pk.AgencyID=fk.[contractingofficeagencyid]
@@ -19,8 +21,9 @@ WHERE pk.AgencyID is NULL
 GROUP BY fk.[contractingofficeagencyid]
 
 INSERT INTO Office.ContractingOfficeCodeHistory
-(ContractingOfficeCode)
-SELECT DISTINCT fk.[contractingofficeid]
+(ContractingOfficeCode,NULL)
+SELECT fk.[contractingofficeid]
+,max(fk.awarding_office_name) as NULL
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN Office.ContractingOfficeCodeHistory as pk
 On pk.ContractingOfficeCode=fk.[contractingofficeid]
@@ -28,8 +31,9 @@ WHERE pk.ContractingOfficeCode is NULL
 GROUP BY fk.[contractingofficeid]
 
 INSERT INTO FPDSTypeTable.AgencyID
-(AgencyID)
-SELECT DISTINCT fk.[maj_fund_agency_cat]
+(AgencyID,AgencyIDtext)
+SELECT fk.[maj_fund_agency_cat]
+,max(fk.funding_agency_name) as AgencyIDtext
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
 On pk.AgencyID=fk.[maj_fund_agency_cat]
@@ -37,8 +41,9 @@ WHERE pk.AgencyID is NULL
 GROUP BY fk.[maj_fund_agency_cat]
 
 INSERT INTO FPDSTypeTable.AgencyID
-(AgencyID)
-SELECT DISTINCT fk.[fundingrequestingagencyid]
+(AgencyID,AgencyIDtext)
+SELECT fk.[fundingrequestingagencyid]
+,max(fk.funding_sub_agency_name) as AgencyIDtext
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
 On pk.AgencyID=fk.[fundingrequestingagencyid]
@@ -46,8 +51,9 @@ WHERE pk.AgencyID is NULL
 GROUP BY fk.[fundingrequestingagencyid]
 
 INSERT INTO Office.ContractingOfficeCode
-(ContractingOfficeCode)
-SELECT DISTINCT fk.[fundingrequestingofficeid]
+(ContractingOfficeCode,ContractingOfficeName)
+SELECT fk.[fundingrequestingofficeid]
+,max(fk.funding_office_name) as ContractingOfficeName
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN Office.ContractingOfficeCode as pk
 On pk.ContractingOfficeCode=fk.[fundingrequestingofficeid]
@@ -56,7 +62,7 @@ GROUP BY fk.[fundingrequestingofficeid]
 
 INSERT INTO Contractor.DunsnumberToParentContractorHistory
 (DUNSnumber)
-SELECT DISTINCT fk.[dunsnumber]
+SELECT fk.[dunsnumber]
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN Contractor.DunsnumberToParentContractorHistory as pk
 On pk.DUNSnumber=fk.[dunsnumber]
@@ -65,7 +71,7 @@ GROUP BY fk.[dunsnumber]
 
 INSERT INTO Vendor.VendorName
 (vendorname)
-SELECT DISTINCT fk.[vendordoingasbusinessname]
+SELECT fk.[vendordoingasbusinessname]
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN Vendor.VendorName as pk
 On pk.vendorname=fk.[vendordoingasbusinessname]
@@ -73,8 +79,9 @@ WHERE pk.vendorname is NULL
 GROUP BY fk.[vendordoingasbusinessname]
 
 INSERT INTO FPDSTypeTable.vendorcountrycode
-(vendorcountrycode)
-SELECT DISTINCT fk.[vendorcountrycode]
+(vendorcountrycode,NULL)
+SELECT fk.[vendorcountrycode]
+,max(fk.recipient_country_name) as NULL
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.vendorcountrycode as pk
 On pk.vendorcountrycode=fk.[vendorcountrycode]
@@ -82,8 +89,9 @@ WHERE pk.vendorcountrycode is NULL
 GROUP BY fk.[vendorcountrycode]
 
 INSERT INTO FPDSTypeTable.Country3LetterCode
-(Country3LetterCode)
-SELECT DISTINCT fk.[placeofperformancecountrycode]
+(Country3LetterCode,Country3LetterCodeText)
+SELECT fk.[placeofperformancecountrycode]
+,max(fk.primary_place_of_performance_country_name) as Country3LetterCodeText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
 On pk.Country3LetterCode=fk.[placeofperformancecountrycode]
@@ -91,8 +99,9 @@ WHERE pk.Country3LetterCode is NULL
 GROUP BY fk.[placeofperformancecountrycode]
 
 INSERT INTO FPDSTypeTable.statecode
-(statecode)
-SELECT DISTINCT fk.[pop_state_code]
+(statecode,statecodeText)
+SELECT fk.[pop_state_code]
+,max(fk.primary_place_of_performance_state_name) as statecodeText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.statecode as pk
 On pk.statecode=fk.[pop_state_code]
@@ -100,8 +109,9 @@ WHERE pk.statecode is NULL
 GROUP BY fk.[pop_state_code]
 
 INSERT INTO FPDSTypeTable.award_type_code
-(award_type_code)
-SELECT DISTINCT fk.[award_type_code]
+(award_type_code,award_type_name)
+SELECT fk.[award_type_code]
+,max(fk.award_type_name) as award_type_name
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.award_type_code as pk
 On pk.award_type_code=fk.[award_type_code]
@@ -109,8 +119,9 @@ WHERE pk.award_type_code is NULL
 GROUP BY fk.[award_type_code]
 
 INSERT INTO FPDSTypeTable.idv_type_code
-(idv_type_code)
-SELECT DISTINCT fk.[idv_type_code]
+(idv_type_code,idv_type_name)
+SELECT fk.[idv_type_code]
+,max(fk.idv_type_name) as idv_type_name
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
 On pk.idv_type_code=fk.[idv_type_code]
@@ -118,8 +129,9 @@ WHERE pk.idv_type_code is NULL
 GROUP BY fk.[idv_type_code]
 
 INSERT INTO FPDSTypeTable.typeofcontractpricing
-(TypeOfContractPricing)
-SELECT DISTINCT fk.[typeofcontractpricing]
+(TypeOfContractPricing,TypeOfContractPricingText)
+SELECT fk.[typeofcontractpricing]
+,max(fk.type_of_contract_pricing_name) as TypeOfContractPricingText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.typeofcontractpricing as pk
 On pk.TypeOfContractPricing=fk.[typeofcontractpricing]
@@ -127,8 +139,9 @@ WHERE pk.TypeOfContractPricing is NULL
 GROUP BY fk.[typeofcontractpricing]
 
 INSERT INTO FPDSTypeTable.reasonformodification
-(reasonformodification)
-SELECT DISTINCT fk.[reasonformodification]
+(reasonformodification,reasonformodificationText)
+SELECT fk.[reasonformodification]
+,max(fk.action_type_name) as reasonformodificationText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.reasonformodification as pk
 On pk.reasonformodification=fk.[reasonformodification]
@@ -136,8 +149,9 @@ WHERE pk.reasonformodification is NULL
 GROUP BY fk.[reasonformodification]
 
 INSERT INTO FPDSTypeTable.ProductOrServiceCode
-(ProductOrServiceCode)
-SELECT DISTINCT fk.[productorservicecode]
+(ProductOrServiceCode,ProductOrServiceCodeText)
+SELECT fk.[productorservicecode]
+,max(fk.product_or_service_code_description) as ProductOrServiceCodeText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.ProductOrServiceCode as pk
 On pk.ProductOrServiceCode=fk.[productorservicecode]
@@ -145,8 +159,9 @@ WHERE pk.ProductOrServiceCode is NULL
 GROUP BY fk.[productorservicecode]
 
 INSERT INTO FPDSTypeTable.contractbundling
-(contractbundling)
-SELECT DISTINCT fk.[contractbundling]
+(contractbundling,contractbundlingText)
+SELECT fk.[contractbundling]
+,max(fk.contract_bundling_name) as contractbundlingText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.contractbundling as pk
 On pk.contractbundling=fk.[contractbundling]
@@ -154,8 +169,9 @@ WHERE pk.contractbundling is NULL
 GROUP BY fk.[contractbundling]
 
 INSERT INTO FPDSTypeTable.ClaimantProgramCode
-(ClaimantProgramCode)
-SELECT DISTINCT fk.[claimantprogramcode]
+(ClaimantProgramCode,ClaimantProgramCodeText)
+SELECT fk.[claimantprogramcode]
+,max(fk.dod_claimant_program_description) as ClaimantProgramCodeText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.ClaimantProgramCode as pk
 On pk.ClaimantProgramCode=fk.[claimantprogramcode]
@@ -163,8 +179,9 @@ WHERE pk.ClaimantProgramCode is NULL
 GROUP BY fk.[claimantprogramcode]
 
 INSERT INTO FPDSTypeTable.PrincipalNaicsCode
-(principalnaicscode)
-SELECT DISTINCT fk.[principalnaicscode]
+(principalnaicscode,principalnaicscodeText)
+SELECT fk.[principalnaicscode]
+,max(fk.naics_description) as principalnaicscodeText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.PrincipalNaicsCode as pk
 On pk.principalnaicscode=fk.[principalnaicscode]
@@ -172,8 +189,9 @@ WHERE pk.principalnaicscode is NULL
 GROUP BY fk.[principalnaicscode]
 
 INSERT INTO FPDSTypeTable.recoveredmaterialclauses
-(recoveredmaterialclauses)
-SELECT DISTINCT fk.[recoveredmaterialclauses]
+(recoveredmaterialclauses,recoveredmaterialclausesText)
+SELECT fk.[recoveredmaterialclauses]
+,max(fk.recovered_materials_sustainability_name) as recoveredmaterialclausesText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.recoveredmaterialclauses as pk
 On pk.recoveredmaterialclauses=fk.[recoveredmaterialclauses]
@@ -181,8 +199,9 @@ WHERE pk.recoveredmaterialclauses is NULL
 GROUP BY fk.[recoveredmaterialclauses]
 
 INSERT INTO FPDSTypeTable.manufacturingorganizationtype
-(manufacturingorganizationtype)
-SELECT DISTINCT fk.[manufacturingorganizationtype]
+(manufacturingorganizationtype,manufacturingorganizationtypeText)
+SELECT fk.[manufacturingorganizationtype]
+,max(fk.domestic_or_foreign_entity_name) as manufacturingorganizationtypeText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.manufacturingorganizationtype as pk
 On pk.manufacturingorganizationtype=fk.[manufacturingorganizationtype]
@@ -190,8 +209,9 @@ WHERE pk.manufacturingorganizationtype is NULL
 GROUP BY fk.[manufacturingorganizationtype]
 
 INSERT INTO FPDSTypeTable.useofepadesignatedproducts
-(useofepadesignatedproducts)
-SELECT DISTINCT fk.[useofepadesignatedproducts]
+(useofepadesignatedproducts,useofepadesignatedproductsText)
+SELECT fk.[useofepadesignatedproducts]
+,max(fk.epa_designated_product_name) as useofepadesignatedproductsText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.useofepadesignatedproducts as pk
 On pk.useofepadesignatedproducts=fk.[useofepadesignatedproducts]
@@ -199,8 +219,9 @@ WHERE pk.useofepadesignatedproducts is NULL
 GROUP BY fk.[useofepadesignatedproducts]
 
 INSERT INTO FPDSTypeTable.Country3LetterCode
-(Country3LetterCode)
-SELECT DISTINCT fk.[countryoforigin]
+(Country3LetterCode,Country3LetterCodeText)
+SELECT fk.[countryoforigin]
+,max(fk.country_of_product_or_service_origin_name) as Country3LetterCodeText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
 On pk.Country3LetterCode=fk.[countryoforigin]
@@ -208,8 +229,9 @@ WHERE pk.Country3LetterCode is NULL
 GROUP BY fk.[countryoforigin]
 
 INSERT INTO FPDSTypeTable.PlaceOfManufacture
-(PlaceOfManufacture)
-SELECT DISTINCT fk.[placeofmanufacture]
+(PlaceOfManufacture,PlaceOfManufactureText)
+SELECT fk.[placeofmanufacture]
+,max(fk.place_of_manufacture_name) as PlaceOfManufactureText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.PlaceOfManufacture as pk
 On pk.PlaceOfManufacture=fk.[placeofmanufacture]
@@ -217,8 +239,9 @@ WHERE pk.PlaceOfManufacture is NULL
 GROUP BY fk.[placeofmanufacture]
 
 INSERT INTO FPDSTypeTable.subcontractplan
-(subcontractplan)
-SELECT DISTINCT fk.[subcontractplan]
+(subcontractplan,subcontractplanText)
+SELECT fk.[subcontractplan]
+,max(fk.subcontracting_plan_name) as subcontractplanText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.subcontractplan as pk
 On pk.subcontractplan=fk.[subcontractplan]
@@ -226,8 +249,9 @@ WHERE pk.subcontractplan is NULL
 GROUP BY fk.[subcontractplan]
 
 INSERT INTO FPDSTypeTable.solicitationprocedures
-(solicitationprocedures)
-SELECT DISTINCT fk.[solicitationprocedures]
+(solicitationprocedures,solicitationproceduresText)
+SELECT fk.[solicitationprocedures]
+,max(fk.solicitation_procedures_name) as solicitationproceduresText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.solicitationprocedures as pk
 On pk.solicitationprocedures=fk.[solicitationprocedures]
@@ -235,8 +259,9 @@ WHERE pk.solicitationprocedures is NULL
 GROUP BY fk.[solicitationprocedures]
 
 INSERT INTO FPDSTypeTable.typeofsetaside
-(typeofsetaside)
-SELECT DISTINCT fk.[typeofsetaside]
+(typeofsetaside,typeofsetasideText)
+SELECT fk.[typeofsetaside]
+,max(fk.type_of_set_aside_name) as typeofsetasideText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.typeofsetaside as pk
 On pk.typeofsetaside=fk.[typeofsetaside]
@@ -244,8 +269,9 @@ WHERE pk.typeofsetaside is NULL
 GROUP BY fk.[typeofsetaside]
 
 INSERT INTO FPDSTypeTable.evaluatedpreference
-(evaluatedpreference)
-SELECT DISTINCT fk.[evaluatedpreference]
+(evaluatedpreference,evaluatedpreferenceText)
+SELECT fk.[evaluatedpreference]
+,max(fk.evaluated_preference_name) as evaluatedpreferenceText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.evaluatedpreference as pk
 On pk.evaluatedpreference=fk.[evaluatedpreference]
@@ -253,8 +279,9 @@ WHERE pk.evaluatedpreference is NULL
 GROUP BY fk.[evaluatedpreference]
 
 INSERT INTO FPDSTypeTable.reasonnotcompeted
-(reasonnotcompeted)
-SELECT DISTINCT fk.[reasonnotcompeted]
+(reasonnotcompeted,reasonnotcompetedText)
+SELECT fk.[reasonnotcompeted]
+,max(fk.other_than_full_and_open_competition_name) as reasonnotcompetedText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.reasonnotcompeted as pk
 On pk.reasonnotcompeted=fk.[reasonnotcompeted]
@@ -262,8 +289,9 @@ WHERE pk.reasonnotcompeted is NULL
 GROUP BY fk.[reasonnotcompeted]
 
 INSERT INTO FPDSTypeTable.CommercialItemAcquisitionProcedures
-(CommercialItemAcquisitionProcedures)
-SELECT DISTINCT fk.[commercialitemacquisitionprocedures]
+(CommercialItemAcquisitionProcedures,CommercialItemAcquisitionProceduresText)
+SELECT fk.[commercialitemacquisitionprocedures]
+,max(fk.commercial_item_acquisition_procedures_name) as CommercialItemAcquisitionProceduresText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.CommercialItemAcquisitionProcedures as pk
 On pk.CommercialItemAcquisitionProcedures=fk.[commercialitemacquisitionprocedures]
@@ -271,8 +299,9 @@ WHERE pk.CommercialItemAcquisitionProcedures is NULL
 GROUP BY fk.[commercialitemacquisitionprocedures]
 
 INSERT INTO FPDSTypeTable.walshhealyact
-(walshhealyact)
-SELECT DISTINCT fk.[walshhealyact]
+(walshhealyact,walshhealyactText)
+SELECT fk.[walshhealyact]
+,max(fk.walsh_healey_act_name) as walshhealyactText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.walshhealyact as pk
 On pk.walshhealyact=fk.[walshhealyact]
@@ -280,8 +309,9 @@ WHERE pk.walshhealyact is NULL
 GROUP BY fk.[walshhealyact]
 
 INSERT INTO FPDSTypeTable.servicecontractact
-(servicecontractact)
-SELECT DISTINCT fk.[servicecontractact]
+(servicecontractact,servicecontractactText)
+SELECT fk.[servicecontractact]
+,max(fk.service_contract_act_name) as servicecontractactText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.servicecontractact as pk
 On pk.servicecontractact=fk.[servicecontractact]
@@ -289,8 +319,9 @@ WHERE pk.servicecontractact is NULL
 GROUP BY fk.[servicecontractact]
 
 INSERT INTO FPDSTypeTable.davisbaconact
-(davisbaconact)
-SELECT DISTINCT fk.[davisbaconact]
+(davisbaconact,davisbaconactText)
+SELECT fk.[davisbaconact]
+,max(fk.davis_bacon_act_name) as davisbaconactText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.davisbaconact as pk
 On pk.davisbaconact=fk.[davisbaconact]
@@ -298,8 +329,9 @@ WHERE pk.davisbaconact is NULL
 GROUP BY fk.[davisbaconact]
 
 INSERT INTO FPDSTypeTable.interagencycontractingauthority
-(interagencycontractingauthority)
-SELECT DISTINCT fk.[interagencycontractingauthority]
+(interagencycontractingauthority,interagencycontractingauthorityText)
+SELECT fk.[interagencycontractingauthority]
+,max(fk.interagency_contracting_authority_name) as interagencycontractingauthorityText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.interagencycontractingauthority as pk
 On pk.interagencycontractingauthority=fk.[interagencycontractingauthority]
@@ -307,8 +339,9 @@ WHERE pk.interagencycontractingauthority is NULL
 GROUP BY fk.[interagencycontractingauthority]
 
 INSERT INTO FPDSTypeTable.idv_type_code
-(idv_type_code)
-SELECT DISTINCT fk.[parent_award_type_code]
+(idv_type_code,idv_type_name)
+SELECT fk.[parent_award_type_code]
+,max(fk.parent_award_type_name) as idv_type_name
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
 On pk.idv_type_code=fk.[parent_award_type_code]
@@ -317,7 +350,7 @@ GROUP BY fk.[parent_award_type_code]
 
 INSERT INTO Contract.MajorProgramCode
 (majorprogramcode)
-SELECT DISTINCT fk.[majorprogramcode]
+SELECT fk.[majorprogramcode]
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN Contract.MajorProgramCode as pk
 On pk.majorprogramcode=fk.[majorprogramcode]
@@ -325,8 +358,9 @@ WHERE pk.majorprogramcode is NULL
 GROUP BY fk.[majorprogramcode]
 
 INSERT INTO Assistance.NationalInterestActionCode
-(nationalinterestactioncode)
-SELECT DISTINCT fk.[nationalinterestactioncode]
+(nationalinterestactioncode,nationalinterestactioncodeText)
+SELECT fk.[nationalinterestactioncode]
+,max(fk.national_interest_action_name) as nationalinterestactioncodeText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN Assistance.NationalInterestActionCode as pk
 On pk.nationalinterestactioncode=fk.[nationalinterestactioncode]
@@ -334,8 +368,9 @@ WHERE pk.nationalinterestactioncode is NULL
 GROUP BY fk.[nationalinterestactioncode]
 
 INSERT INTO FPDSTypeTable.costorpricingdata
-(costorpricingdata)
-SELECT DISTINCT fk.[costorpricingdata]
+(costorpricingdata,costorpricingdataText)
+SELECT fk.[costorpricingdata]
+,max(fk.cost_or_pricing_data_name) as costorpricingdataText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.costorpricingdata as pk
 On pk.costorpricingdata=fk.[costorpricingdata]
@@ -343,8 +378,9 @@ WHERE pk.costorpricingdata is NULL
 GROUP BY fk.[costorpricingdata]
 
 INSERT INTO FPDSTypeTable.gfe_gfp
-(gfe_gfp)
-SELECT DISTINCT fk.[gfe_gfp_code]
+(gfe_gfp,gfe_gfpText)
+SELECT fk.[gfe_gfp_code]
+,max(fk.gfe_gfp_name) as gfe_gfpText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.gfe_gfp as pk
 On pk.gfe_gfp=fk.[gfe_gfp_code]
@@ -352,8 +388,9 @@ WHERE pk.gfe_gfp is NULL
 GROUP BY fk.[gfe_gfp_code]
 
 INSERT INTO FPDSTypeTable.seatransportation
-(seatransportation)
-SELECT DISTINCT fk.[seatransportation]
+(seatransportation,seatransportationText)
+SELECT fk.[seatransportation]
+,max(fk.sea_transportation_name) as seatransportationText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.seatransportation as pk
 On pk.seatransportation=fk.[seatransportation]
@@ -361,8 +398,9 @@ WHERE pk.seatransportation is NULL
 GROUP BY fk.[seatransportation]
 
 INSERT INTO FPDSTypeTable.lettercontract
-(LetterContract)
-SELECT DISTINCT fk.[lettercontract]
+(LetterContract,UndefinitizedActionText)
+SELECT fk.[lettercontract]
+,max(fk.undefinitized_action_name) as UndefinitizedActionText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.lettercontract as pk
 On pk.LetterContract=fk.[lettercontract]
@@ -370,8 +408,9 @@ WHERE pk.LetterContract is NULL
 GROUP BY fk.[lettercontract]
 
 INSERT INTO Assistance.ContingencyHumanitarianPeacekeepingOperation
-(ContingencyHumanitarianPeacekeepingOperation)
-SELECT DISTINCT fk.[contingencyhumanitarianpeacekeepingoperation]
+(ContingencyHumanitarianPeacekeepingOperation,contingencyhumanitarianpeacekeepingoperationText)
+SELECT fk.[contingencyhumanitarianpeacekeepingoperation]
+,max(fk.contingency_humanitarian_or_peacekeeping_operation_name) as contingencyhumanitarianpeacekeepingoperationText
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN Assistance.ContingencyHumanitarianPeacekeepingOperation as pk
 On pk.ContingencyHumanitarianPeacekeepingOperation=fk.[contingencyhumanitarianpeacekeepingoperation]
@@ -380,7 +419,7 @@ GROUP BY fk.[contingencyhumanitarianpeacekeepingoperation]
 
 INSERT INTO Contract.CSIStransactionID
 (CSIStransactionID)
-SELECT DISTINCT fk.[CSIStransactionID]
+SELECT fk.[CSIStransactionID]
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN Contract.CSIStransactionID as pk
 On pk.CSIStransactionID=fk.[CSIStransactionID]
