@@ -637,7 +637,8 @@ convert_field_to_foreign_key<-function(FKschema,
   if(suppress_select==FALSE){
   
   iifFKname<-paste("iif(fk.",FKname,"=pk.",PKname," or\n",
-                   "\t(fk.",FKname,"='' and pk.",PKname," is NULL),\n",
+                   "\t(fk.",FKname,"='' and pk.",PKname," is NULL) or\n",
+                   "\tcharindex('('+fk.",FKname,"+')',pk.",PKname," )>0,\n",
                    sep="")
   
   #Select all of the unmached values in the foreign key table
