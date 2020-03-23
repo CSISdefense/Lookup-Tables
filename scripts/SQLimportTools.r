@@ -571,7 +571,7 @@ convert_field_to_foreign_key<-function(FKschema,
   pkTable.df<-subset(pkTable.df,
                      toupper(PKSchemaName)==toupper(PKschema) &
                        toupper(PKTableName)==toupper(PKtable) &
-                     toupper(PKColumnName)==toupper(PKcolumn))
+                     toupper(PKColumnCode)==toupper(PKcolumn))
   if(nrow(pkTable.df)==0)
     stop(paste("No Primary Key match for",PKschema,PKtable,PKcolumn))
   #Test if the field can be converted to the primary keys typed.
@@ -598,12 +598,12 @@ convert_field_to_foreign_key<-function(FKschema,
   TargetTable.df<-left_join(TargetTable.df,pkTable.df,
                        by=c("PKSchemaName",
                             "PKTableName",
-                            "PKColumnName")
+                            "PKColumnCode")
                             )
   #If the VariableTypes don't match, create a select and alter to fix that'
   
     TryConvertTable.df<-TargetTable.df
-    TryConvertTable.df$CSISvariableName<-pkTable.df$PKColumnName
+    TryConvertTable.df$CSISvariableName<-pkTable.df$PKColumnCode
     TryConvertTable.df$CSISvariableType<-paste('[',pkTable.df$ColumnDataType,']',sep='')
     if(TryConvertTable.df$CSISvariableType[1]=="[varchar]"){
       TryConvertTable.df$CSISvariableType<-paste(TryConvertTable.df$CSISvariableType,
@@ -713,7 +713,7 @@ get_CSISvariableNameToPrimaryKey<-function(){
   #First consolidate down to only CSISvariable names and keys, using upper to handle case sensitivity
   lookup.CSISvariableNameToPrimaryKey <- lookup.CSISvariableNameToPrimaryKey %>% remove_bom() %>%
     dplyr::rename(CSISvariableName= FKColumnName) %>% 
-    dplyr::group_by(FKColumnNameUp,PKSchemaName,PKTableName,PKColumnName) %>%
+    dplyr::group_by(FKColumnNameUp,PKSchemaName,PKTableName,PKColumnCode,PKcolumnCount,PKcolumnText) %>%
     dplyr::summarise(CSISvariableName=max(CSISvariableName)) %>%
     dplyr::group_by(CSISvariableName) %>%
     dplyr::select(-FKColumnNameUp) 
@@ -722,15 +722,15 @@ get_CSISvariableNameToPrimaryKey<-function(){
   #The core one should share a name with the column name (with a few exceptions, like contractor.parentcontractor)
   lookup.CSISvariableNameToPrimaryKey <- lookup.CSISvariableNameToPrimaryKey %>%
     dplyr::mutate(RepeatCount=length(CSISvariableName),
-                  AnyExact=max(ifelse(toupper(PKTableName)==toupper(PKColumnName),1,0))) %>%
-    dplyr::filter(AnyExact==0 | RepeatCount==1 | toupper(PKTableName)==toupper(PKColumnName)) %>%
+                  AnyExact=max(ifelse(toupper(PKTableName)==toupper(PKColumnCode),1,0))) %>%
+    dplyr::filter(AnyExact==0 | RepeatCount==1 | toupper(PKTableName)==toupper(PKColumnCode)) %>%
     dplyr::mutate(RepeatCount=length(CSISvariableName))
   
   
   if(max(lookup.CSISvariableNameToPrimaryKey$RepeatCount>1)){
     print(lookup.CSISvariableNameToPrimaryKey%>% dplyr::filter(RepeatCount>1))
     warning("Repeated CSISvariableName")
-    lookup.CSISvariableNameToPrimaryKey<-  lookup.CSISvariableNameToPrimaryKey %>% dplyr::filter(RepeatCount==1 | toupper(PKTableName)==toupper(PKColumnName))
+    lookup.CSISvariableNameToPrimaryKey<-  lookup.CSISvariableNameToPrimaryKey %>% dplyr::filter(RepeatCount==1 | toupper(PKTableName)==toupper(PKColumnCode))
   }
   lookup.CSISvariableNameToPrimaryKey$CSISvariableName<-paste("[",lookup.CSISvariableNameToPrimaryKey$CSISvariableName,"]",sep="")
   
@@ -771,8 +771,9 @@ create_foreign_key_assigments<-function(Schema,
                                                    MergeTable.df,
                                                    MergeTable.df$PKSchemaName[i],
                                                    MergeTable.df$PKTableName[i],
-                                                   MergeTable.df$PKColumnName[i],
+                                                   MergeTable.df$PKColumnCode[i],
                                                    FKname=MergeTable.df$Pair[i],
+                                                   PKname=MergeTable.df$PKcolumnText[i],
                                                    suppress_select=suppress_select,
                                                    suppress_alter=suppress_alter,
                                                    suppress_insert=suppress_insert)

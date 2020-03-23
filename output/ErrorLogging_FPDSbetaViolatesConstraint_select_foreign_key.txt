@@ -400,23 +400,23 @@ ORDER BY fk.[interagencycontractingauthority]
 
 --List new [parent_award_type_code] and updated parent_award_type_name for insertion into FPDSTypeTable.idv_type_code
 SELECT fk.[parent_award_type_code],
-max(iif(fk.parent_award_type_name=pk.parent_award_type_name or
-	(fk.parent_award_type_name='' and pk.parent_award_type_name is NULL),
+max(iif(fk.parent_award_type_name=pk.idv_type_name or
+	(fk.parent_award_type_name='' and pk.idv_type_name is NULL),
 	NULL,fk.parent_award_type_name)) as MaxOfNewFKparent_award_type_name,
-count(distinct iif(fk.parent_award_type_name=pk.parent_award_type_name or
-	(fk.parent_award_type_name='' and pk.parent_award_type_name is NULL),
+count(distinct iif(fk.parent_award_type_name=pk.idv_type_name or
+	(fk.parent_award_type_name='' and pk.idv_type_name is NULL),
 	NULL,fk.parent_award_type_name)) as unmatched_name_count,
-pk.parent_award_type_name as PKparent_award_type_name,
-max(iif(fk.parent_award_type_name=pk.parent_award_type_name or
-	(fk.parent_award_type_name='' and pk.parent_award_type_name is NULL),
+pk.idv_type_name as PKidv_type_name,
+max(iif(fk.parent_award_type_name=pk.idv_type_name or
+	(fk.parent_award_type_name='' and pk.idv_type_name is NULL),
 	1,0)) as any_name_match,
 'FPDSTypeTable.idv_type_code' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
 On pk.idv_type_code=fk.[parent_award_type_code]
-GROUP BY fk.[parent_award_type_code], pk.parent_award_type_name
-HAVING max(iif(fk.parent_award_type_name=pk.parent_award_type_name or
-	(fk.parent_award_type_name='' and pk.parent_award_type_name is NULL),
+GROUP BY fk.[parent_award_type_code], pk.idv_type_name
+HAVING max(iif(fk.parent_award_type_name=pk.idv_type_name or
+	(fk.parent_award_type_name='' and pk.idv_type_name is NULL),
 	0,1))=1
 ORDER BY fk.[parent_award_type_code]
 
@@ -456,23 +456,23 @@ ORDER BY fk.[costorpricingdata]
 
 --List new [gfe_gfp_code] and updated gfe_gfp_name for insertion into FPDSTypeTable.gfe_gfp
 SELECT fk.[gfe_gfp_code],
-max(iif(fk.gfe_gfp_name=pk.gfe_gfp_name or
-	(fk.gfe_gfp_name='' and pk.gfe_gfp_name is NULL),
+max(iif(fk.gfe_gfp_name=pk.gfe_gfpText or
+	(fk.gfe_gfp_name='' and pk.gfe_gfpText is NULL),
 	NULL,fk.gfe_gfp_name)) as MaxOfNewFKgfe_gfp_name,
-count(distinct iif(fk.gfe_gfp_name=pk.gfe_gfp_name or
-	(fk.gfe_gfp_name='' and pk.gfe_gfp_name is NULL),
+count(distinct iif(fk.gfe_gfp_name=pk.gfe_gfpText or
+	(fk.gfe_gfp_name='' and pk.gfe_gfpText is NULL),
 	NULL,fk.gfe_gfp_name)) as unmatched_name_count,
-pk.gfe_gfp_name as PKgfe_gfp_name,
-max(iif(fk.gfe_gfp_name=pk.gfe_gfp_name or
-	(fk.gfe_gfp_name='' and pk.gfe_gfp_name is NULL),
+pk.gfe_gfpText as PKgfe_gfpText,
+max(iif(fk.gfe_gfp_name=pk.gfe_gfpText or
+	(fk.gfe_gfp_name='' and pk.gfe_gfpText is NULL),
 	1,0)) as any_name_match,
 'FPDSTypeTable.gfe_gfp' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.gfe_gfp as pk
 On pk.gfe_gfp=fk.[gfe_gfp_code]
-GROUP BY fk.[gfe_gfp_code], pk.gfe_gfp_name
-HAVING max(iif(fk.gfe_gfp_name=pk.gfe_gfp_name or
-	(fk.gfe_gfp_name='' and pk.gfe_gfp_name is NULL),
+GROUP BY fk.[gfe_gfp_code], pk.gfe_gfpText
+HAVING max(iif(fk.gfe_gfp_name=pk.gfe_gfpText or
+	(fk.gfe_gfp_name='' and pk.gfe_gfpText is NULL),
 	0,1))=1
 ORDER BY fk.[gfe_gfp_code]
 
