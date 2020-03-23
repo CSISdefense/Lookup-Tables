@@ -1,0 +1,13 @@
+"","x"
+"1","SELECT 
+max(len( [current_total_value_of_award] )) as  [current_total_value_of_award],
+max(len( [potential_total_value_of_award] )) as  [potential_total_value_of_award],
+max(len( [award_or_idv_flag] )) as  [award_or_idv_flag],
+max(len( [inherently_governmental_functions] )) as  [inherently_governmental_functions],
+max(len( [total_dollars_obligated] )) as  [total_dollars_obligated],
+max(len( [contract_transaction_unique_key] )) as  [contract_transaction_unique_key],
+max(len( [contract_award_unique_key] )) as  [contract_award_unique_key],
+max(len( [solicitation_date] )) as  [solicitation_date],
+max(len( [treasury_accounts_funding_this_award] )) as  [treasury_accounts_funding_this_award],
+max(len( [federal_accounts_funding_this_award] )) as  [federal_accounts_funding_this_award],
+max(len( [usaspending_permalink] )) as  [usaspending_permalink]FROM ErrorLogging.FPDSbetaViolatesType"
