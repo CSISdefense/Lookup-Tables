@@ -681,9 +681,11 @@ convert_field_to_foreign_key<-function(FKschema,
     #Insert unmatched values into the primary key table
     Output<-rbind(Output,
                   paste("INSERT INTO ",PKschema,".",PKtable,"\n",
-                        "(",PKcolumn,")\n",
-                        "SELECT DISTINCT fk.",FKcolumn,"\n",
+                        "(",PKcolumn,ifelse(is.null(FKname),"",paste(",",PKname,sep="")),")\n",
+                        "SELECT fk.",FKcolumn,"\n",
+                        ifelse(is.null(FKname),"",paste(",max(fk.",FKname,") as ",PKname,"\n",sep="")),
                         "FROM ",FKschema,".",FKtable," as fk\n",
+                        
                         "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
                         "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
                         "WHERE pk.",PKcolumn," is NULL\n",
