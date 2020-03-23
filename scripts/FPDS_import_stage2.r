@@ -1,35 +1,6 @@
-##### From Stage 1 to Stage 2 ####### 
-MergeType.df<-merge_source_and_csis_name_tables(Stage1TableType.df,DestinationTable.df)
-
-# At some point, add checking for varchar(255) or missing from Contract.FPDS
-missing_column<-MergeType.df %>% filter(
-  (is.na(IsDroppedNameField) | IsDroppedNameField==FALSE) &
-    (is.na(CSISvariableType )| is.null(CSISvariableType)))
-
-if(nrow(missing_column)>0){
-  warning("Columns need to be added to the destination database")
-  # stop("Columns need to be added to the destination database")
-} else{
-  #Create Try Convert
-  
-  TryConvertList<-create_try_converts(MergeType.df,"Errorlogging","FPDSviolatesType",
-                                      IncludeAlters=FALSE,
-                                      Add_Colon_Split=TRUE)
-  write(TryConvertList,"Output\\FPDStryConvertList.txt")
-  
-  
-  
-  #Transfer from Errorlogging.FPDSviolatesType to Errorlogging.FPDSviolatesConstraint
-  InsertList<-create_insert(MergeType.df,
-                            "ErrorLogging",
-                            "FPDSviolatesType",
-                            "ErrorLogging",
-                            "FPDSviolatesConstraint",
-                            DateType=120,
-                            allow_missing=FALSE) #This should be redundant with the missing check above
-  write(InsertList,"Output\\Insert.txt")
-
-}
+#Setup
+source("scripts//SQLimportTools.r")
+library(tidyverse)
 
 ###### From Stage 2 to Contract.FPDS #########
 #Match up Errorlogging.FPDSviolatesConstraint to Contract.FPDS 
