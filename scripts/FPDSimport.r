@@ -91,6 +91,7 @@ write(TryConvertList,"Output\\Stage2TryConvertList.txt")
 
 #Create Foreign Key Assignments
 # debug(create_foreign_key_assigments)
+debug(translate_name)
 select_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                         "FPDSbetaViolatesConstraint",
                                         dir="sql",

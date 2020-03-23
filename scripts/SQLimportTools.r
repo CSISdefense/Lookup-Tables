@@ -128,8 +128,9 @@ translate_name<-function(TargetTable.df,test_only=FALSE){
     stop("Duplicate entries in CSISvariableName after matching")
   }
   
-  
-  
+  #Add the CSISvariableName fields: IsDroppedNameField	Pair
+  TargetTable.df<-read_and_join_experiment(TargetTable.df,
+                           path="",dir="ImportAids\\",lookup_file = "CSISvariableName.csv")
   
   TargetTable.df$SourceVariableName<-TargetTable.df$OriginalSourceVariableName
 
