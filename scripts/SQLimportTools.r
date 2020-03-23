@@ -624,7 +624,7 @@ convert_field_to_foreign_key<-function(FKschema,
   if(suppress_select==FALSE){
   
   iifFKname<-paste("iif(fk.",FKname,"=pk.",PKname," or\n",
-                   "(fk.",FKname,"='' and pk.",PKname," is NULL),",
+                   "\t(fk.",FKname,"='' and pk.",PKname," is NULL),\n",
                    sep="")
   
   #Select all of the unmached values in the foreign key table
@@ -638,11 +638,13 @@ convert_field_to_foreign_key<-function(FKschema,
       # "len(fk.",FKcolumn,") as length,\n", Don't need it for this one
       #**If there's a name to go with the code
       ifelse(!is.null(FKname),
-             paste("max(",iifFKname,"NULL,fk.",FKname,")) as MaxOfNewFK",FKname,",\n",
-                   "count(distinct ",iifFKname,"NULL,fk.",FKname,")) as unmatched_name_count,\n",
+             paste("max(",iifFKname,
+                   "\tNULL,fk.",FKname,")) as MaxOfNewFK",FKname,",\n",
+                   "count(distinct ",iifFKname,
+                   "\tNULL,fk.",FKname,")) as unmatched_name_count,\n",
                    "pk.",PKname," as PK",PKname,",\n",
-                   "max(",iifFKname,"NULL,fk.",FKname,")) as MaxOfNewFK",FKname,",\n",
-                   "count(distinct ",iifFKname,"1,0)) as any_name_match,\n",sep=""),""),
+                   "max(",iifFKname,
+                   "\t1,0)) as any_name_match,\n",sep=""),""),
       "'",PKschema,".",PKtable,"' as PrimaryKeyTable\n",
       #** Tables and Joins
       "FROM ",FKschema,".",FKtable," as fk\n",
@@ -653,10 +655,9 @@ convert_field_to_foreign_key<-function(FKschema,
       #If a FKname exists, check if it has changed
       "GROUP BY fk.",FKcolumn,
       ifelse(!is.null(FKname),paste(", pk.",PKname,"\n",
-                                    "HAVING count(distinct ",iifFKname,"1,0))=1\n",sep=""),
-             "\n"),
-      
-      
+                                    "HAVING max(",iifFKname,
+                                    "\t0,1))=1",sep=""),""),
+      "\nORDER BY fk.",FKcolumn,"\n",
       sep="")
   )
   }

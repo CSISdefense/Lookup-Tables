@@ -8,6 +8,7 @@ LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
 On pk.AgencyID=fk.[idvagencyid]
 WHERE pk.AgencyID is NULL
 GROUP BY fk.[idvagencyid]
+ORDER BY fk.[idvagencyid]
 
 
 --List new [contractingofficeagencyid] for insertion into FPDSTypeTable.AgencyID
@@ -18,6 +19,7 @@ LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
 On pk.AgencyID=fk.[contractingofficeagencyid]
 WHERE pk.AgencyID is NULL
 GROUP BY fk.[contractingofficeagencyid]
+ORDER BY fk.[contractingofficeagencyid]
 
 
 --List new [contractingofficeid] for insertion into Office.ContractingOfficeCodeHistory
@@ -28,6 +30,7 @@ LEFT OUTER JOIN Office.ContractingOfficeCodeHistory as pk
 On pk.ContractingOfficeCode=fk.[contractingofficeid]
 WHERE pk.ContractingOfficeCode is NULL
 GROUP BY fk.[contractingofficeid]
+ORDER BY fk.[contractingofficeid]
 
 
 --List new [maj_fund_agency_cat] for insertion into FPDSTypeTable.AgencyID
@@ -38,6 +41,7 @@ LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
 On pk.AgencyID=fk.[maj_fund_agency_cat]
 WHERE pk.AgencyID is NULL
 GROUP BY fk.[maj_fund_agency_cat]
+ORDER BY fk.[maj_fund_agency_cat]
 
 
 --List new [fundingrequestingagencyid] for insertion into FPDSTypeTable.AgencyID
@@ -48,6 +52,7 @@ LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
 On pk.AgencyID=fk.[fundingrequestingagencyid]
 WHERE pk.AgencyID is NULL
 GROUP BY fk.[fundingrequestingagencyid]
+ORDER BY fk.[fundingrequestingagencyid]
 
 
 --List new [fundingrequestingofficeid] for insertion into Office.ContractingOfficeCode
@@ -58,6 +63,7 @@ LEFT OUTER JOIN Office.ContractingOfficeCode as pk
 On pk.ContractingOfficeCode=fk.[fundingrequestingofficeid]
 WHERE pk.ContractingOfficeCode is NULL
 GROUP BY fk.[fundingrequestingofficeid]
+ORDER BY fk.[fundingrequestingofficeid]
 
 
 --List new [dunsnumber] for insertion into Contractor.DunsnumberToParentContractorHistory
@@ -68,6 +74,7 @@ LEFT OUTER JOIN Contractor.DunsnumberToParentContractorHistory as pk
 On pk.DUNSnumber=fk.[dunsnumber]
 WHERE pk.DUNSnumber is NULL
 GROUP BY fk.[dunsnumber]
+ORDER BY fk.[dunsnumber]
 
 
 --List new [vendordoingasbusinessname] for insertion into Vendor.VendorName
@@ -78,6 +85,7 @@ LEFT OUTER JOIN Vendor.VendorName as pk
 On pk.vendorname=fk.[vendordoingasbusinessname]
 WHERE pk.vendorname is NULL
 GROUP BY fk.[vendordoingasbusinessname]
+ORDER BY fk.[vendordoingasbusinessname]
 
 
 --List new [vendorcountrycode] for insertion into FPDSTypeTable.vendorcountrycode
@@ -88,6 +96,7 @@ LEFT OUTER JOIN FPDSTypeTable.vendorcountrycode as pk
 On pk.vendorcountrycode=fk.[vendorcountrycode]
 WHERE pk.vendorcountrycode is NULL
 GROUP BY fk.[vendorcountrycode]
+ORDER BY fk.[vendorcountrycode]
 
 
 --List new [placeofperformancecountrycode] for insertion into FPDSTypeTable.Country3LetterCode
@@ -98,6 +107,7 @@ LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
 On pk.Country3LetterCode=fk.[placeofperformancecountrycode]
 WHERE pk.Country3LetterCode is NULL
 GROUP BY fk.[placeofperformancecountrycode]
+ORDER BY fk.[placeofperformancecountrycode]
 
 
 --List new [pop_state_code] for insertion into FPDSTypeTable.statecode
@@ -108,46 +118,53 @@ LEFT OUTER JOIN FPDSTypeTable.statecode as pk
 On pk.statecode=fk.[pop_state_code]
 WHERE pk.statecode is NULL
 GROUP BY fk.[pop_state_code]
+ORDER BY fk.[pop_state_code]
 
 
 --List new [award_type_code] and updated award_type_name for insertion into FPDSTypeTable.award_type_code
 SELECT fk.[award_type_code],
 max(iif(fk.award_type_name=pk.award_type_name or
-(fk.award_type_name='' and pk.award_type_name is NULL),NULL,fk.award_type_name)) as MaxOfNewFKaward_type_name,
+	(fk.award_type_name='' and pk.award_type_name is NULL),
+	NULL,fk.award_type_name)) as MaxOfNewFKaward_type_name,
 count(distinct iif(fk.award_type_name=pk.award_type_name or
-(fk.award_type_name='' and pk.award_type_name is NULL),NULL,fk.award_type_name)) as unmatched_name_count,
+	(fk.award_type_name='' and pk.award_type_name is NULL),
+	NULL,fk.award_type_name)) as unmatched_name_count,
 pk.award_type_name as PKaward_type_name,
 max(iif(fk.award_type_name=pk.award_type_name or
-(fk.award_type_name='' and pk.award_type_name is NULL),NULL,fk.award_type_name)) as MaxOfNewFKaward_type_name,
-count(distinct iif(fk.award_type_name=pk.award_type_name or
-(fk.award_type_name='' and pk.award_type_name is NULL),1,0)) as any_name_match,
+	(fk.award_type_name='' and pk.award_type_name is NULL),
+	1,0)) as any_name_match,
 'FPDSTypeTable.award_type_code' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.award_type_code as pk
 On pk.award_type_code=fk.[award_type_code]
 GROUP BY fk.[award_type_code], pk.award_type_name
-HAVING count(distinct iif(fk.award_type_name=pk.award_type_name or
-(fk.award_type_name='' and pk.award_type_name is NULL),1,0))=1
+HAVING max(iif(fk.award_type_name=pk.award_type_name or
+	(fk.award_type_name='' and pk.award_type_name is NULL),
+	0,1))=1
+ORDER BY fk.[award_type_code]
 
 
 --List new [idv_type_code] and updated idv_type_name for insertion into FPDSTypeTable.idv_type_code
 SELECT fk.[idv_type_code],
 max(iif(fk.idv_type_name=pk.idv_type_name or
-(fk.idv_type_name='' and pk.idv_type_name is NULL),NULL,fk.idv_type_name)) as MaxOfNewFKidv_type_name,
+	(fk.idv_type_name='' and pk.idv_type_name is NULL),
+	NULL,fk.idv_type_name)) as MaxOfNewFKidv_type_name,
 count(distinct iif(fk.idv_type_name=pk.idv_type_name or
-(fk.idv_type_name='' and pk.idv_type_name is NULL),NULL,fk.idv_type_name)) as unmatched_name_count,
+	(fk.idv_type_name='' and pk.idv_type_name is NULL),
+	NULL,fk.idv_type_name)) as unmatched_name_count,
 pk.idv_type_name as PKidv_type_name,
 max(iif(fk.idv_type_name=pk.idv_type_name or
-(fk.idv_type_name='' and pk.idv_type_name is NULL),NULL,fk.idv_type_name)) as MaxOfNewFKidv_type_name,
-count(distinct iif(fk.idv_type_name=pk.idv_type_name or
-(fk.idv_type_name='' and pk.idv_type_name is NULL),1,0)) as any_name_match,
+	(fk.idv_type_name='' and pk.idv_type_name is NULL),
+	1,0)) as any_name_match,
 'FPDSTypeTable.idv_type_code' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
 On pk.idv_type_code=fk.[idv_type_code]
 GROUP BY fk.[idv_type_code], pk.idv_type_name
-HAVING count(distinct iif(fk.idv_type_name=pk.idv_type_name or
-(fk.idv_type_name='' and pk.idv_type_name is NULL),1,0))=1
+HAVING max(iif(fk.idv_type_name=pk.idv_type_name or
+	(fk.idv_type_name='' and pk.idv_type_name is NULL),
+	0,1))=1
+ORDER BY fk.[idv_type_code]
 
 
 --List new [typeofcontractpricing] for insertion into FPDSTypeTable.typeofcontractpricing
@@ -158,6 +175,7 @@ LEFT OUTER JOIN FPDSTypeTable.typeofcontractpricing as pk
 On pk.TypeOfContractPricing=fk.[typeofcontractpricing]
 WHERE pk.TypeOfContractPricing is NULL
 GROUP BY fk.[typeofcontractpricing]
+ORDER BY fk.[typeofcontractpricing]
 
 
 --List new [reasonformodification] for insertion into FPDSTypeTable.reasonformodification
@@ -168,6 +186,7 @@ LEFT OUTER JOIN FPDSTypeTable.reasonformodification as pk
 On pk.reasonformodification=fk.[reasonformodification]
 WHERE pk.reasonformodification is NULL
 GROUP BY fk.[reasonformodification]
+ORDER BY fk.[reasonformodification]
 
 
 --List new [productorservicecode] for insertion into FPDSTypeTable.ProductOrServiceCode
@@ -178,6 +197,7 @@ LEFT OUTER JOIN FPDSTypeTable.ProductOrServiceCode as pk
 On pk.ProductOrServiceCode=fk.[productorservicecode]
 WHERE pk.ProductOrServiceCode is NULL
 GROUP BY fk.[productorservicecode]
+ORDER BY fk.[productorservicecode]
 
 
 --List new [contractbundling] for insertion into FPDSTypeTable.contractbundling
@@ -188,6 +208,7 @@ LEFT OUTER JOIN FPDSTypeTable.contractbundling as pk
 On pk.contractbundling=fk.[contractbundling]
 WHERE pk.contractbundling is NULL
 GROUP BY fk.[contractbundling]
+ORDER BY fk.[contractbundling]
 
 
 --List new [claimantprogramcode] for insertion into FPDSTypeTable.ClaimantProgramCode
@@ -198,6 +219,7 @@ LEFT OUTER JOIN FPDSTypeTable.ClaimantProgramCode as pk
 On pk.ClaimantProgramCode=fk.[claimantprogramcode]
 WHERE pk.ClaimantProgramCode is NULL
 GROUP BY fk.[claimantprogramcode]
+ORDER BY fk.[claimantprogramcode]
 
 
 --List new [principalnaicscode] for insertion into FPDSTypeTable.PrincipalNaicsCode
@@ -208,6 +230,7 @@ LEFT OUTER JOIN FPDSTypeTable.PrincipalNaicsCode as pk
 On pk.principalnaicscode=fk.[principalnaicscode]
 WHERE pk.principalnaicscode is NULL
 GROUP BY fk.[principalnaicscode]
+ORDER BY fk.[principalnaicscode]
 
 
 --List new [recoveredmaterialclauses] for insertion into FPDSTypeTable.recoveredmaterialclauses
@@ -218,6 +241,7 @@ LEFT OUTER JOIN FPDSTypeTable.recoveredmaterialclauses as pk
 On pk.recoveredmaterialclauses=fk.[recoveredmaterialclauses]
 WHERE pk.recoveredmaterialclauses is NULL
 GROUP BY fk.[recoveredmaterialclauses]
+ORDER BY fk.[recoveredmaterialclauses]
 
 
 --List new [manufacturingorganizationtype] for insertion into FPDSTypeTable.manufacturingorganizationtype
@@ -228,6 +252,7 @@ LEFT OUTER JOIN FPDSTypeTable.manufacturingorganizationtype as pk
 On pk.manufacturingorganizationtype=fk.[manufacturingorganizationtype]
 WHERE pk.manufacturingorganizationtype is NULL
 GROUP BY fk.[manufacturingorganizationtype]
+ORDER BY fk.[manufacturingorganizationtype]
 
 
 --List new [useofepadesignatedproducts] for insertion into FPDSTypeTable.useofepadesignatedproducts
@@ -238,6 +263,7 @@ LEFT OUTER JOIN FPDSTypeTable.useofepadesignatedproducts as pk
 On pk.useofepadesignatedproducts=fk.[useofepadesignatedproducts]
 WHERE pk.useofepadesignatedproducts is NULL
 GROUP BY fk.[useofepadesignatedproducts]
+ORDER BY fk.[useofepadesignatedproducts]
 
 
 --List new [countryoforigin] for insertion into FPDSTypeTable.Country3LetterCode
@@ -248,6 +274,7 @@ LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
 On pk.Country3LetterCode=fk.[countryoforigin]
 WHERE pk.Country3LetterCode is NULL
 GROUP BY fk.[countryoforigin]
+ORDER BY fk.[countryoforigin]
 
 
 --List new [placeofmanufacture] for insertion into FPDSTypeTable.PlaceOfManufacture
@@ -258,6 +285,7 @@ LEFT OUTER JOIN FPDSTypeTable.PlaceOfManufacture as pk
 On pk.PlaceOfManufacture=fk.[placeofmanufacture]
 WHERE pk.PlaceOfManufacture is NULL
 GROUP BY fk.[placeofmanufacture]
+ORDER BY fk.[placeofmanufacture]
 
 
 --List new [subcontractplan] for insertion into FPDSTypeTable.subcontractplan
@@ -268,6 +296,7 @@ LEFT OUTER JOIN FPDSTypeTable.subcontractplan as pk
 On pk.subcontractplan=fk.[subcontractplan]
 WHERE pk.subcontractplan is NULL
 GROUP BY fk.[subcontractplan]
+ORDER BY fk.[subcontractplan]
 
 
 --List new [solicitationprocedures] for insertion into FPDSTypeTable.solicitationprocedures
@@ -278,6 +307,7 @@ LEFT OUTER JOIN FPDSTypeTable.solicitationprocedures as pk
 On pk.solicitationprocedures=fk.[solicitationprocedures]
 WHERE pk.solicitationprocedures is NULL
 GROUP BY fk.[solicitationprocedures]
+ORDER BY fk.[solicitationprocedures]
 
 
 --List new [typeofsetaside] for insertion into FPDSTypeTable.typeofsetaside
@@ -288,6 +318,7 @@ LEFT OUTER JOIN FPDSTypeTable.typeofsetaside as pk
 On pk.typeofsetaside=fk.[typeofsetaside]
 WHERE pk.typeofsetaside is NULL
 GROUP BY fk.[typeofsetaside]
+ORDER BY fk.[typeofsetaside]
 
 
 --List new [evaluatedpreference] for insertion into FPDSTypeTable.evaluatedpreference
@@ -298,6 +329,7 @@ LEFT OUTER JOIN FPDSTypeTable.evaluatedpreference as pk
 On pk.evaluatedpreference=fk.[evaluatedpreference]
 WHERE pk.evaluatedpreference is NULL
 GROUP BY fk.[evaluatedpreference]
+ORDER BY fk.[evaluatedpreference]
 
 
 --List new [reasonnotcompeted] for insertion into FPDSTypeTable.reasonnotcompeted
@@ -308,6 +340,7 @@ LEFT OUTER JOIN FPDSTypeTable.reasonnotcompeted as pk
 On pk.reasonnotcompeted=fk.[reasonnotcompeted]
 WHERE pk.reasonnotcompeted is NULL
 GROUP BY fk.[reasonnotcompeted]
+ORDER BY fk.[reasonnotcompeted]
 
 
 --List new [commercialitemacquisitionprocedures] for insertion into FPDSTypeTable.CommercialItemAcquisitionProcedures
@@ -318,6 +351,7 @@ LEFT OUTER JOIN FPDSTypeTable.CommercialItemAcquisitionProcedures as pk
 On pk.CommercialItemAcquisitionProcedures=fk.[commercialitemacquisitionprocedures]
 WHERE pk.CommercialItemAcquisitionProcedures is NULL
 GROUP BY fk.[commercialitemacquisitionprocedures]
+ORDER BY fk.[commercialitemacquisitionprocedures]
 
 
 --List new [walshhealyact] for insertion into FPDSTypeTable.walshhealyact
@@ -328,6 +362,7 @@ LEFT OUTER JOIN FPDSTypeTable.walshhealyact as pk
 On pk.walshhealyact=fk.[walshhealyact]
 WHERE pk.walshhealyact is NULL
 GROUP BY fk.[walshhealyact]
+ORDER BY fk.[walshhealyact]
 
 
 --List new [servicecontractact] for insertion into FPDSTypeTable.servicecontractact
@@ -338,6 +373,7 @@ LEFT OUTER JOIN FPDSTypeTable.servicecontractact as pk
 On pk.servicecontractact=fk.[servicecontractact]
 WHERE pk.servicecontractact is NULL
 GROUP BY fk.[servicecontractact]
+ORDER BY fk.[servicecontractact]
 
 
 --List new [davisbaconact] for insertion into FPDSTypeTable.davisbaconact
@@ -348,6 +384,7 @@ LEFT OUTER JOIN FPDSTypeTable.davisbaconact as pk
 On pk.davisbaconact=fk.[davisbaconact]
 WHERE pk.davisbaconact is NULL
 GROUP BY fk.[davisbaconact]
+ORDER BY fk.[davisbaconact]
 
 
 --List new [interagencycontractingauthority] for insertion into FPDSTypeTable.interagencycontractingauthority
@@ -358,26 +395,30 @@ LEFT OUTER JOIN FPDSTypeTable.interagencycontractingauthority as pk
 On pk.interagencycontractingauthority=fk.[interagencycontractingauthority]
 WHERE pk.interagencycontractingauthority is NULL
 GROUP BY fk.[interagencycontractingauthority]
+ORDER BY fk.[interagencycontractingauthority]
 
 
 --List new [parent_award_type_code] and updated parent_award_type_name for insertion into FPDSTypeTable.idv_type_code
 SELECT fk.[parent_award_type_code],
 max(iif(fk.parent_award_type_name=pk.parent_award_type_name or
-(fk.parent_award_type_name='' and pk.parent_award_type_name is NULL),NULL,fk.parent_award_type_name)) as MaxOfNewFKparent_award_type_name,
+	(fk.parent_award_type_name='' and pk.parent_award_type_name is NULL),
+	NULL,fk.parent_award_type_name)) as MaxOfNewFKparent_award_type_name,
 count(distinct iif(fk.parent_award_type_name=pk.parent_award_type_name or
-(fk.parent_award_type_name='' and pk.parent_award_type_name is NULL),NULL,fk.parent_award_type_name)) as unmatched_name_count,
+	(fk.parent_award_type_name='' and pk.parent_award_type_name is NULL),
+	NULL,fk.parent_award_type_name)) as unmatched_name_count,
 pk.parent_award_type_name as PKparent_award_type_name,
 max(iif(fk.parent_award_type_name=pk.parent_award_type_name or
-(fk.parent_award_type_name='' and pk.parent_award_type_name is NULL),NULL,fk.parent_award_type_name)) as MaxOfNewFKparent_award_type_name,
-count(distinct iif(fk.parent_award_type_name=pk.parent_award_type_name or
-(fk.parent_award_type_name='' and pk.parent_award_type_name is NULL),1,0)) as any_name_match,
+	(fk.parent_award_type_name='' and pk.parent_award_type_name is NULL),
+	1,0)) as any_name_match,
 'FPDSTypeTable.idv_type_code' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
 On pk.idv_type_code=fk.[parent_award_type_code]
 GROUP BY fk.[parent_award_type_code], pk.parent_award_type_name
-HAVING count(distinct iif(fk.parent_award_type_name=pk.parent_award_type_name or
-(fk.parent_award_type_name='' and pk.parent_award_type_name is NULL),1,0))=1
+HAVING max(iif(fk.parent_award_type_name=pk.parent_award_type_name or
+	(fk.parent_award_type_name='' and pk.parent_award_type_name is NULL),
+	0,1))=1
+ORDER BY fk.[parent_award_type_code]
 
 
 --List new [majorprogramcode] for insertion into Contract.MajorProgramCode
@@ -388,6 +429,7 @@ LEFT OUTER JOIN Contract.MajorProgramCode as pk
 On pk.majorprogramcode=fk.[majorprogramcode]
 WHERE pk.majorprogramcode is NULL
 GROUP BY fk.[majorprogramcode]
+ORDER BY fk.[majorprogramcode]
 
 
 --List new [nationalinterestactioncode] for insertion into Assistance.NationalInterestActionCode
@@ -398,6 +440,7 @@ LEFT OUTER JOIN Assistance.NationalInterestActionCode as pk
 On pk.nationalinterestactioncode=fk.[nationalinterestactioncode]
 WHERE pk.nationalinterestactioncode is NULL
 GROUP BY fk.[nationalinterestactioncode]
+ORDER BY fk.[nationalinterestactioncode]
 
 
 --List new [costorpricingdata] for insertion into FPDSTypeTable.costorpricingdata
@@ -408,26 +451,30 @@ LEFT OUTER JOIN FPDSTypeTable.costorpricingdata as pk
 On pk.costorpricingdata=fk.[costorpricingdata]
 WHERE pk.costorpricingdata is NULL
 GROUP BY fk.[costorpricingdata]
+ORDER BY fk.[costorpricingdata]
 
 
 --List new [gfe_gfp_code] and updated gfe_gfp_name for insertion into FPDSTypeTable.gfe_gfp
 SELECT fk.[gfe_gfp_code],
 max(iif(fk.gfe_gfp_name=pk.gfe_gfp_name or
-(fk.gfe_gfp_name='' and pk.gfe_gfp_name is NULL),NULL,fk.gfe_gfp_name)) as MaxOfNewFKgfe_gfp_name,
+	(fk.gfe_gfp_name='' and pk.gfe_gfp_name is NULL),
+	NULL,fk.gfe_gfp_name)) as MaxOfNewFKgfe_gfp_name,
 count(distinct iif(fk.gfe_gfp_name=pk.gfe_gfp_name or
-(fk.gfe_gfp_name='' and pk.gfe_gfp_name is NULL),NULL,fk.gfe_gfp_name)) as unmatched_name_count,
+	(fk.gfe_gfp_name='' and pk.gfe_gfp_name is NULL),
+	NULL,fk.gfe_gfp_name)) as unmatched_name_count,
 pk.gfe_gfp_name as PKgfe_gfp_name,
 max(iif(fk.gfe_gfp_name=pk.gfe_gfp_name or
-(fk.gfe_gfp_name='' and pk.gfe_gfp_name is NULL),NULL,fk.gfe_gfp_name)) as MaxOfNewFKgfe_gfp_name,
-count(distinct iif(fk.gfe_gfp_name=pk.gfe_gfp_name or
-(fk.gfe_gfp_name='' and pk.gfe_gfp_name is NULL),1,0)) as any_name_match,
+	(fk.gfe_gfp_name='' and pk.gfe_gfp_name is NULL),
+	1,0)) as any_name_match,
 'FPDSTypeTable.gfe_gfp' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.gfe_gfp as pk
 On pk.gfe_gfp=fk.[gfe_gfp_code]
 GROUP BY fk.[gfe_gfp_code], pk.gfe_gfp_name
-HAVING count(distinct iif(fk.gfe_gfp_name=pk.gfe_gfp_name or
-(fk.gfe_gfp_name='' and pk.gfe_gfp_name is NULL),1,0))=1
+HAVING max(iif(fk.gfe_gfp_name=pk.gfe_gfp_name or
+	(fk.gfe_gfp_name='' and pk.gfe_gfp_name is NULL),
+	0,1))=1
+ORDER BY fk.[gfe_gfp_code]
 
 
 --List new [seatransportation] for insertion into FPDSTypeTable.seatransportation
@@ -438,6 +485,7 @@ LEFT OUTER JOIN FPDSTypeTable.seatransportation as pk
 On pk.seatransportation=fk.[seatransportation]
 WHERE pk.seatransportation is NULL
 GROUP BY fk.[seatransportation]
+ORDER BY fk.[seatransportation]
 
 
 --List new [lettercontract] for insertion into FPDSTypeTable.lettercontract
@@ -448,6 +496,7 @@ LEFT OUTER JOIN FPDSTypeTable.lettercontract as pk
 On pk.LetterContract=fk.[lettercontract]
 WHERE pk.LetterContract is NULL
 GROUP BY fk.[lettercontract]
+ORDER BY fk.[lettercontract]
 
 
 --List new [contingencyhumanitarianpeacekeepingoperation] for insertion into Assistance.ContingencyHumanitarianPeacekeepingOperation
@@ -458,6 +507,7 @@ LEFT OUTER JOIN Assistance.ContingencyHumanitarianPeacekeepingOperation as pk
 On pk.ContingencyHumanitarianPeacekeepingOperation=fk.[contingencyhumanitarianpeacekeepingoperation]
 WHERE pk.ContingencyHumanitarianPeacekeepingOperation is NULL
 GROUP BY fk.[contingencyhumanitarianpeacekeepingoperation]
+ORDER BY fk.[contingencyhumanitarianpeacekeepingoperation]
 
 
 --List new [CSIStransactionID] for insertion into Contract.CSIStransactionID
@@ -468,4 +518,5 @@ LEFT OUTER JOIN Contract.CSIStransactionID as pk
 On pk.CSIStransactionID=fk.[CSIStransactionID]
 WHERE pk.CSIStransactionID is NULL
 GROUP BY fk.[CSIStransactionID]
+ORDER BY fk.[CSIStransactionID]
 
