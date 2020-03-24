@@ -136,7 +136,8 @@ if(!file.exists("sql\\ErrorLogging.FPDSbetaViolatesConstraint.table.sql")){
                               "ErrorLogging",
                               "FPDSbetaViolatesConstraint",
                               DateType=120,
-                              allow_missing=FALSE) #This should be redundant with the missing check above
+                              allow_missing=FALSE,
+                              Apply_Drop=FALSE) #This should be redundant with the missing check above
     write(InsertList,"Output\\FPDS_Insert_from_Stage1_to_Stage2.txt")
   }
 }
