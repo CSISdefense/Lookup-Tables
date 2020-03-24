@@ -1,5 +1,0 @@
-SELECT 
-max(len( [current_total_value_of_award] )) as  [current_total_value_of_award],
-max(len( [potential_total_value_of_award] )) as  [potential_total_value_of_award],
-max(len( [total_dollars_obligated] )) as  [total_dollars_obligated]
-FROM ErrorLogging.FPDSbetaViolatesType
