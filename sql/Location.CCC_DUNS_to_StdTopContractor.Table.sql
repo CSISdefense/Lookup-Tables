@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [Location].[CCC_DUNS_to_StdTopContractor](
 	[DUNSNumber] [varchar](13) NOT NULL,
 	[Is_CCC_Vendor] [bit] NULL,
@@ -16,10 +14,7 @@ CREATE TABLE [Location].[CCC_DUNS_to_StdTopContractor](
 	[City] [varchar](35) NULL,
 	[vendorcountrycode] [varchar](50) NULL,
 	[vendor_state_code] [varchar](20) NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO
 ALTER TABLE [Location].[CCC_DUNS_to_StdTopContractor]  WITH NOCHECK ADD  CONSTRAINT [fk_Location_CCC_DUNS_to_StdTopContractor] FOREIGN KEY([DUNSNumber])
 REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])

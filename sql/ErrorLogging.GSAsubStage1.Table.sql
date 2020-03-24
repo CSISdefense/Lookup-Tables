@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [ErrorLogging].[GSAsubStage1](
 	[Subcontractor] [varchar](255) NULL,
 	[Contract_Number] [varchar](255) NULL,
@@ -17,10 +15,7 @@ CREATE TABLE [ErrorLogging].[GSAsubStage1](
 	[CSISCreatedDate] [datetime] NOT NULL,
 	[CSISModifiedDate] [datetime] NOT NULL,
 	[IsDuplicateUTI] [bit] NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[GSAsubStage1] ADD  CONSTRAINT [DF_GSAsubcontract_CSISCreatedDate]  DEFAULT (getdate()) FOR [CSISCreatedDate]
 GO

@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [Location].[Principle_Place_Code](
 	[principal_place_code] [varchar](7) NULL,
 	[principal_place_state] [varchar](50) NULL,
@@ -13,8 +11,5 @@ CREATE TABLE [Location].[Principle_Place_Code](
 	[principal_place_zip] [bigint] NULL,
 	[principal_place_cd] [varchar](4) NULL,
 	[IsInternational] [varchar](1) NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO

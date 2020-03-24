@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [Contract].[UnlabeledDunsnumberCSIStransactionIDentityID](
 	[fiscal_year] [smallint] NULL,
 	[vendorname] [nvarchar](150) NULL,
@@ -19,11 +17,8 @@ CREATE TABLE [Contract].[UnlabeledDunsnumberCSIStransactionIDentityID](
  CONSTRAINT [pk_Contract_UnlabeledDunsnumberCSIStransactionIDentityIDhistory] PRIMARY KEY CLUSTERED 
 (
 	[CSIStransactionID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-)
-
-GO
-SET ANSI_PADDING OFF
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 ALTER TABLE [Contract].[UnlabeledDunsnumberCSIStransactionIDentityID]  WITH CHECK ADD FOREIGN KEY([CSIStransactionID])
 REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])

@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [agency].[DefenseServiceIdentifier](
 	[DefenseServiceIdentifier] [varchar](3) NOT NULL,
 	[DefenseOrganization] [varchar](5) NULL,
@@ -14,11 +12,8 @@ CREATE TABLE [agency].[DefenseServiceIdentifier](
  CONSTRAINT [pk_DefenseServiceIdentifier] PRIMARY KEY CLUSTERED 
 (
 	[DefenseServiceIdentifier] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-)
-
-GO
-SET ANSI_PADDING OFF
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 ALTER TABLE [agency].[DefenseServiceIdentifier]  WITH NOCHECK ADD  CONSTRAINT [FK__DefenseSe__Simpl__08F60FE2] FOREIGN KEY([SimpleDefenseServiceIndicator])
 REFERENCES [agency].[DefenseServiceIdentifier] ([DefenseServiceIdentifier])

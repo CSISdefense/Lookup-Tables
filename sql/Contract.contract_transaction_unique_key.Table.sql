@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [Contract].[contract_transaction_unique_key](
 	[contract_transaction_unique_key] [varchar](255) NULL,
 	[contract_award_unique_key] [varchar](255) NULL,
@@ -14,8 +12,5 @@ CREATE TABLE [Contract].[contract_transaction_unique_key](
 	[transaction_number] [varchar](255) NULL,
 	[award_or_idv_flag] [varchar](255) NULL,
 	[awarding_sub_agency_code] [varchar](255) NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO

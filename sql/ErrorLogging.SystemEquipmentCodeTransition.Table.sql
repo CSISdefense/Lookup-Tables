@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [ErrorLogging].[SystemEquipmentCodeTransition](
 	[CSIStransactionID1] [int] NULL,
 	[SystemEquipmentCode1] [varchar](4) NULL,
@@ -16,8 +14,5 @@ CREATE TABLE [ErrorLogging].[SystemEquipmentCodeTransition](
 	[obligatedamount] [decimal](38, 4) NULL,
 	[numberofactions] [bigint] NULL,
 	[NumberOfRows] [int] NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO

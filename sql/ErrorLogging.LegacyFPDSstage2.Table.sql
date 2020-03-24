@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [ErrorLogging].[LegacyFPDSstage2](
 	[unique_transaction_id] [varchar](36) NULL,
 	[transaction_status] [varchar](6) NULL,
@@ -235,10 +233,7 @@ CREATE TABLE [ErrorLogging].[LegacyFPDSstage2](
 	[prime_awardee_executive1] [varchar](100) NULL,
 	[prime_awardee_executive1_compensation] [decimal](19, 4) NULL,
 	[CSIStransactionID] [int] NOT NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[LegacyFPDSstage2] ADD  CONSTRAINT [DF_FPDSViolatesConstraint_CSISCreatedDate]  DEFAULT (getdate()) FOR [CSISCreatedDate]
 GO

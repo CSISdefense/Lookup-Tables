@@ -15,6 +15,5 @@ CREATE TABLE [dbo].['Defense Major Command Codes ###$'](
 	[Fiscal Year] [nvarchar](255) NULL,
 	[Action Obligation] [money] NULL,
 	[NoName] [float] NULL
-)
-
+) ON [PRIMARY]
 GO

@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [GrantLoanAssistance].[OverseasLoanOrGrantFundingAccount](
 	[Fiscal_Year] [int] NOT NULL,
 	[YearType] [varchar](50) NOT NULL,
@@ -18,10 +16,7 @@ CREATE TABLE [GrantLoanAssistance].[OverseasLoanOrGrantFundingAccount](
 	[SubHeaderName] [varchar](150) NULL,
 	[HeaderName] [varchar](150) NULL,
 	[AssistanceType] [varchar](150) NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO
 ALTER TABLE [GrantLoanAssistance].[OverseasLoanOrGrantFundingAccount]  WITH NOCHECK ADD  CONSTRAINT [fk_OverseasLoanOrGrantFundingAccount_AccountCode] FOREIGN KEY([TreasuryAgencyCode], [AccountCode])
 REFERENCES [budget].[MainAccountCode] ([TreasuryAgencyCode], [MainAccountCode])

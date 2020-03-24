@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [Contractor].[DunsnumberToParentContractorHistory](
 	[DUNSnumber] [varchar](13) NOT NULL,
 	[CEC] [varchar](13) NULL,
@@ -45,11 +43,8 @@ CREATE TABLE [Contractor].[DunsnumberToParentContractorHistory](
 (
 	[DUNSnumber] ASC,
 	[FiscalYear] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-)
-
-GO
-SET ANSI_PADDING OFF
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory] ADD  CONSTRAINT [DF_DunsnumberToParentContractorHistory_TooHard]  DEFAULT ((0)) FOR [TooHard]
 GO

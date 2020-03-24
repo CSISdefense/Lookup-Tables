@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [FPDSTypeTable].[AccountCodeSubFunctionCode](
 	[agencycode] [varchar](3) NULL,
 	[AgencyName] [varchar](100) NULL,
@@ -18,8 +16,5 @@ CREATE TABLE [FPDSTypeTable].[AccountCodeSubFunctionCode](
 	[SubfunctionTitle] [varchar](100) NULL,
 	[IncludeInIAP] [bit] NULL,
 	[personnel] [bit] NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO

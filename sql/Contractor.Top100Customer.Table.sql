@@ -10,6 +10,5 @@ CREATE TABLE [Contractor].[Top100Customer](
 	[Dollars Obligated] [float] NULL,
 	[%Total Actions] [float] NULL,
 	[% Total Dollars] [float] NULL
-)
-
+) ON [PRIMARY]
 GO

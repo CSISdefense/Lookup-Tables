@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [Office].[Defense_Major_Command_Codes_and_Offices](
 	[MajorCommandID] [varchar](8) NULL,
 	[MajorCommandCode] [varchar](24) NULL,
@@ -18,8 +16,5 @@ CREATE TABLE [Office].[Defense_Major_Command_Codes_and_Offices](
 	[ActionObligation] [decimal](28, 0) NULL,
 	[ContractingActions] [bigint] NULL,
 	[NumberOfRecords] [int] NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO

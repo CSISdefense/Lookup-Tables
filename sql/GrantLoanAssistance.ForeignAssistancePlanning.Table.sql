@@ -13,6 +13,5 @@ CREATE TABLE [GrantLoanAssistance].[ForeignAssistancePlanning](
 	[Category] [nvarchar](255) NULL,
 	[Sector] [nvarchar](255) NULL,
 	[Amount] [float] NULL
-)
-
+) ON [PRIMARY]
 GO

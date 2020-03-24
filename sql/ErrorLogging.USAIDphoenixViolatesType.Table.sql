@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [ErrorLogging].[USAIDphoenixViolatesType](
 	[ErrorDescription] [varchar](255) NULL,
 	[ErrorCode] [int] NULL,
@@ -47,8 +45,5 @@ CREATE TABLE [ErrorLogging].[USAIDphoenixViolatesType](
 	[DISBURSED] [varchar](255) NULL,
 	[CSISCreatedDate] [datetime2](7) NULL,
 	[CSISModifiedDate] [datetime2](7) NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO

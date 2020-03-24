@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [Project].[SystemEquipmentCodetoProjectIDhistory](
 	[systemequipmentcode] [varchar](4) NOT NULL,
 	[systemequipmentcodeText] [nvarchar](255) NULL,
@@ -15,10 +13,7 @@ CREATE TABLE [Project].[SystemEquipmentCodetoProjectIDhistory](
 	[ProjectID] [int] NULL,
 	[CSISmodifiedDate] [datetime2](7) NOT NULL,
 	[CSISmodifiedBy] [varchar](150) NOT NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO
 ALTER TABLE [Project].[SystemEquipmentCodetoProjectIDhistory] ADD  CONSTRAINT [DF__SystemEqu__CSISm__1FD9753A]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO

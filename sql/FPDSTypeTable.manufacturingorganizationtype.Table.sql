@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [FPDSTypeTable].[manufacturingorganizationtype](
 	[Unseperated] [varchar](255) NULL,
 	[manufacturingorganizationtype] [varchar](1) NOT NULL,
@@ -13,9 +11,6 @@ CREATE TABLE [FPDSTypeTable].[manufacturingorganizationtype](
  CONSTRAINT [PK_manufacturingorganizationtype NO PK] PRIMARY KEY CLUSTERED 
 (
 	[manufacturingorganizationtype] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-)
-
-GO
-SET ANSI_PADDING OFF
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO

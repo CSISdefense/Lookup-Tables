@@ -10,6 +10,5 @@ CREATE TABLE [dbo].[FPDSTypeTable.[NAICScodes](
 	[Industry_Cat_TEXT] [nvarchar](255) NULL,
 	[Industry_SubCat_TEXT] [nvarchar](255) NULL,
 	[Industry_SubSubCat_TEXT] [nvarchar](255) NULL
-)
-
+) ON [PRIMARY]
 GO

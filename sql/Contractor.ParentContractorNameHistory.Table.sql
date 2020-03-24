@@ -20,9 +20,8 @@ CREATE TABLE [Contractor].[ParentContractorNameHistory](
 (
 	[ParentID] ASC,
 	[FiscalYear] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-)
-
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 ALTER TABLE [Contractor].[ParentContractorNameHistory]  WITH NOCHECK ADD  CONSTRAINT [fk_Contractor_ParentContractorNameHistory_ParentID] FOREIGN KEY([ParentID])
 REFERENCES [Contractor].[ParentContractor] ([ParentID])

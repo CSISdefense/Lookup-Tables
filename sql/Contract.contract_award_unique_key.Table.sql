@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [Contract].[contract_award_unique_key](
 	[contract_award_unique_key] [varchar](75) NOT NULL,
 	[AgencyID] [varchar](4) NULL,
@@ -17,9 +15,6 @@ CREATE TABLE [Contract].[contract_award_unique_key](
  CONSTRAINT [pk_contract_award_unique_key] PRIMARY KEY CLUSTERED 
 (
 	[contract_award_unique_key] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-)
-
-GO
-SET ANSI_PADDING OFF
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO

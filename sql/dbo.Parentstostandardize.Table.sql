@@ -9,6 +9,5 @@ CREATE TABLE [dbo].[Parentstostandardize](
 	[vendorname] [nvarchar](255) NULL,
 	[StandardizedVendorName] [nvarchar](255) NULL,
 	[parentid] [nvarchar](255) NULL
-)
-
+) ON [PRIMARY]
 GO

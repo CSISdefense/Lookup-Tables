@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [budget].[AccountDSIocoBreakdown](
 	[AccountDSIlong] [varchar](50) NULL,
 	[AccountTitle] [varchar](100) NULL,
@@ -19,10 +17,7 @@ CREATE TABLE [budget].[AccountDSIocoBreakdown](
 	[AccountDSI] [varchar](5) NULL,
 	[TreasuryAgencyCode] [smallint] NULL,
 	[MainAccountCode] [smallint] NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO
 ALTER TABLE [budget].[AccountDSIocoBreakdown]  WITH NOCHECK ADD  CONSTRAINT [FK__AccountDS__Accou__5DF6A344] FOREIGN KEY([AccountDSI])
 REFERENCES [budget].[AccountDSI] ([AccountDSI])

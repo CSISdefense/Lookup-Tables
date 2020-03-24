@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [ProductOrServiceCode].[ProductOrServiceArea](
 	[ProductOrServiceArea] [varchar](28) NOT NULL,
 	[SimpleBucket] [varchar](8) NULL,
@@ -16,11 +14,8 @@ CREATE TABLE [ProductOrServiceCode].[ProductOrServiceArea](
  CONSTRAINT [PK__ProductO__A027931C831F5CF0] PRIMARY KEY CLUSTERED 
 (
 	[ProductOrServiceArea] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-)
-
-GO
-SET ANSI_PADDING OFF
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 ALTER TABLE [ProductOrServiceCode].[ProductOrServiceArea]  WITH NOCHECK ADD  CONSTRAINT [FK__ProductOr__Platf__7C703D6C] FOREIGN KEY([PlatformPortfolio])
 REFERENCES [ProductOrServiceCode].[PlatformPortfolio] ([PlatformPortfolio])

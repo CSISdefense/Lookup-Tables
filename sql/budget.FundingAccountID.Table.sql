@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [budget].[FundingAccountID](
 	[FundingAccountID] [varchar](7) NOT NULL,
 	[TreasuryAgencyCode] [smallint] NOT NULL,
@@ -14,11 +12,8 @@ CREATE TABLE [budget].[FundingAccountID](
  CONSTRAINT [pk_Funding_Account_ID] PRIMARY KEY CLUSTERED 
 (
 	[FundingAccountID] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-)
-
-GO
-SET ANSI_PADDING OFF
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 ALTER TABLE [budget].[FundingAccountID]  WITH NOCHECK ADD  CONSTRAINT [fk_Funding_Account_ID_MainAccountCode] FOREIGN KEY([TreasuryAgencyCode], [mainaccountcode])
 REFERENCES [budget].[MainAccountCode] ([TreasuryAgencyCode], [MainAccountCode])
