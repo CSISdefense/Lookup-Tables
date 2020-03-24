@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [dbo].[allSAM](
 	["doingBusinessAsName"] [varchar](255) NULL,
 	[registrationDate] [varchar](255) NULL,
@@ -43,8 +41,5 @@ CREATE TABLE [dbo].[allSAM](
 	["samAddress line2"] [varchar](255) NULL,
 	["samAddress city"] [varchar](255) NULL,
 	["naics"] [varchar](255) NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO

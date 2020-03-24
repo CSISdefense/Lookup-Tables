@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [ErrorLogging].[FPDSbetaViolatesConstraint](
 	[gfe_gfp_name] [varchar](255) NULL,
 	[research_name] [varchar](255) NULL,
@@ -262,11 +260,36 @@ CREATE TABLE [ErrorLogging].[FPDSbetaViolatesConstraint](
 	[CSIScreatedDate] [datetime2](7) NOT NULL,
 	[Fiscal_Year] [smallint] NULL,
 	[CSIStransactionID] [int] NULL,
-	[CSISstage2id] [int] IDENTITY(1,1) NOT NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+	[CSISstage2id] [int] IDENTITY(1,1) NOT NULL,
+	[current_total_value_of_award] [decimal](19, 4) NULL,
+	[potential_total_value_of_award] [decimal](19, 4) NULL,
+	[sam_exception_description] [varchar](70) NULL,
+	[CAGE] [varchar](5) NULL,
+	[award_or_idv_flag] [varchar](5) NULL,
+	[inherently_governmental_functions] [varchar](10) NULL,
+	[inherently_governmental_functions_description] [varchar](40) NULL,
+	[organizationaltype] [varchar](30) NULL,
+	[numberofemployees] [bigint] NULL,
+	[annualrevenue] [decimal](19, 4) NULL,
+	[total_dollars_obligated] [decimal](19, 4) NULL,
+	[foreign_funding_description] [varchar](25) NULL,
+	[contract_transaction_unique_key] [varchar](66) NULL,
+	[contract_award_unique_key] [varchar](66) NULL,
+	[solicitation_date] [date] NULL,
+	[treasury_accounts_funding_this_award] [varchar](4000) NULL,
+	[federal_accounts_funding_this_award] [varchar](1000) NULL,
+	[prime_awardee_executive1] [varchar](100) NULL,
+	[prime_awardee_executive1_compensation] [decimal](19, 4) NULL,
+	[prime_awardee_executive2] [varchar](100) NULL,
+	[prime_awardee_executive2_compensation] [decimal](19, 4) NULL,
+	[prime_awardee_executive3] [varchar](100) NULL,
+	[prime_awardee_executive3_compensation] [decimal](19, 4) NULL,
+	[prime_awardee_executive4] [varchar](100) NULL,
+	[prime_awardee_executive4_compensation] [decimal](19, 4) NULL,
+	[prime_awardee_executive5] [varchar](100) NULL,
+	[prime_awardee_executive5_compensation] [decimal](19, 4) NULL,
+	[usaspending_permalink] [varchar](150) NULL
+) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FPDSbetaViolatesConstraint] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__7193879D]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO

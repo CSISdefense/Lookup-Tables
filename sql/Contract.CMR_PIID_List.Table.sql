@@ -9,6 +9,5 @@ CREATE TABLE [Contract].[CMR_PIID_List](
 	[DLA_PBL_PIIDs] [nvarchar](255) NULL,
 	[F3] [nvarchar](255) NULL,
 	[F4] [nvarchar](255) NULL
-)
-
+) ON [PRIMARY]
 GO

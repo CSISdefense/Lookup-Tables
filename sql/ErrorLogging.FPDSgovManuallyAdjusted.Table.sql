@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [ErrorLogging].[FPDSgovManuallyAdjusted](
 	[ContractingOfficeAgencyID] [nvarchar](255) NULL,
 	[ContractingOfficeID] [nvarchar](255) NULL,
@@ -32,10 +30,7 @@ CREATE TABLE [ErrorLogging].[FPDSgovManuallyAdjusted](
 	[CSIStransactionID] [int] NOT NULL,
 	[idvmodificationnumber] [varchar](50) NULL,
 	[AdjustedObligatedAmount] [money] NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdjusted]  WITH NOCHECK ADD  CONSTRAINT [FK__FPDSgovMa__CSISt__2E279491] FOREIGN KEY([CSIStransactionID])
 REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])

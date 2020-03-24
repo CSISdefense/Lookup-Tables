@@ -191,7 +191,8 @@ create_csis_dates<-function(Schema,TableName){
 
 convert_switch<-function(MergeTable.df,
                          DateType=101,
-                         IsTryConvert=FALSE){
+                         IsTryConvert=FALSE,
+                         Apply_Drop=TRUE){
   #I swear I had this working, but then it broke hard and every time I tried to 
   #debug it, the crash took minutes to resolve.
   # OneSwitch<-function(VariableName,
@@ -239,7 +240,8 @@ convert_switch<-function(MergeTable.df,
 
     MergeTable.df$ConvertList<-NA
     SwitchList<-MergeTable.df$SourceVariableType==MergeTable.df$CSISvariableType
-    SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
+    if(Apply_Drop==TRUE)
+      SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
     MergeTable.df$ConvertList[SwitchList]<-MergeTable.df$SourceVariableName[SwitchList]
     
     
@@ -252,30 +254,38 @@ convert_switch<-function(MergeTable.df,
                                       MergeTable.df$SourceVariableName[SwitchList] ,"))",
                                       sep=""
                     )
+    if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
     
     SwitchList<-MergeTable.df$VariableShortType=="[bit]"&
         is.na(MergeTable.df$ConvertList)
-    SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
-        MergeTable.df$ConvertList[SwitchList]<-
-        paste(ConvertText,"(",
-              MergeTable.df$CSISvariableType[SwitchList] ,", ",
-              "(SELECT ReturnBit from Errorlogging.ConvertYNtoBit(",
-              MergeTable.df$SourceVariableName[SwitchList] ,
-              ")))",
-              sep=""
-        )
+    if(Apply_Drop==TRUE)
+      SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
+    MergeTable.df$ConvertList[SwitchList]<-
+      paste(ConvertText,"(",
+            MergeTable.df$CSISvariableType[SwitchList] ,", ",
+            "(SELECT ReturnBit from Errorlogging.ConvertYNtoBit(",
+            MergeTable.df$SourceVariableName[SwitchList] ,
+            ")))",
+            sep=""
+      )
+    if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
     
     SwitchList<-MergeTable.df$VariableShortType=="[date]"&
       is.na(MergeTable.df$ConvertList)
-    SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
+    
+    if(Apply_Drop==TRUE)
+      SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
     MergeTable.df$ConvertList[SwitchList]<-
       paste(ConvertText,"([date], ",
                                    MergeTable.df$SourceVariableName[SwitchList] ,
                                    ",",as.character(DateType),")",
                                    sep=""
                     )
+    if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
+    
     SwitchList<-is.na(MergeTable.df$ConvertList)
-    SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
+        if(Apply_Drop==TRUE)
+      SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
     MergeTable.df$ConvertList[SwitchList]<-
                     paste(ConvertText,"(",
                           MergeTable.df$CSISvariableType[SwitchList] ,", ",
@@ -283,6 +293,8 @@ convert_switch<-function(MergeTable.df,
                           ")",
                           sep=""
                     )
+    if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
+    
     MergeTable.df
 }
 
@@ -349,14 +361,18 @@ create_try_converts<-function(data,
                               DateType=101,
                               IncludeAlters=TRUE,
   path="https://raw.githubusercontent.com/CSISdefense/Lookup-Tables/master/style/",
-  Add_Colon_Split=FALSE){
+  Add_Colon_Split=FALSE,
+  Apply_Drop=TRUE){
   #Limit it to just cases where the variable type is changing
   data<-subset(data,SourceVariableType!=data$CSISvariableType)
+  
+  
   if(nrow(data)==0){
     warning("No try_converts necessary")
     return(0)
   }
-  data<-convert_switch(data,101,TRUE)
+  data<-convert_switch(data,101,TRUE,Apply_Drop=Apply_Drop)
+  if(any(is.na(data$ConvertList))) stop("NA ConvertList")
   
   #This is only relevant to legacy FPDS
   if(Add_Colon_Split==TRUE){
@@ -525,16 +541,17 @@ create_insert<-function(MergeTable.df,
                        TargetSchema,
                        TargetTableName,
                        DateType=101,
-                       allow_missing=TRUE){
+                       allow_missing=TRUE,
+                       Apply_Drop=TRUE){
   
-  if("IsDroppedNameField" %in% colnames(MergeTable.df))
+  if("IsDroppedNameField" %in% colnames(MergeTable.df) & Apply_Drop==TRUE)
     MergeTable.df<-MergeTable.df %>% filter(IsDroppedNameField==FALSE | is.na(IsDroppedNameField))
   if(allow_missing==TRUE)
     MergeTable.df<-MergeTable.df %>% filter(!is.na(CSISvariableType))
   else if(any(is.na(MergeTable.df$CSISvariableType)))
     stop("Some columns are missing a destination type")
     
-  MergeTable.df<-convert_switch(MergeTable.df,101,FALSE)
+  MergeTable.df<-convert_switch(MergeTable.df,101,FALSE,Apply_Drop = Apply_Drop)
   InsertList<-paste("INSERT INTO ",TargetSchema,".",TargetTableName,"\n",
                     "(",sep="")
   InsertList<-c(InsertList,paste(MergeTable.df$CSISvariableName,",",sep=""))

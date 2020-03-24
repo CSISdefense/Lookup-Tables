@@ -10,8 +10,7 @@ CREATE TABLE [Contract].[ContractIDtoSystemEquipmentCodeWeak](
 	[Comments] [nvarchar](255) NULL,
 	[PrimaryProjectID] [int] NULL,
 	[ContractLabelID] [int] NULL
-)
-
+) ON [PRIMARY]
 GO
 ALTER TABLE [Contract].[ContractIDtoSystemEquipmentCodeWeak]  WITH NOCHECK ADD  CONSTRAINT [FK__ContractI__Contr__69285ECE] FOREIGN KEY([ContractLabelID])
 REFERENCES [Contract].[ContractLabelID] ([ContractLabelID])

@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [Assistance].[USAIDgreenbook](
 	[gbk_country_id] [float] NULL,
 	[gbk_country_name] [nvarchar](255) NULL,
@@ -30,10 +28,7 @@ CREATE TABLE [Assistance].[USAIDgreenbook](
 	[transaction_type_id] [smallint] NOT NULL,
 	[transaction_type_name] [nvarchar](255) NULL,
 	[transaction_amount] [decimal](19, 4) NOT NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO
 ALTER TABLE [Assistance].[USAIDgreenbook]  WITH NOCHECK ADD  CONSTRAINT [FK_assistance_USAIDgreenbook_funding_agency_ID] FOREIGN KEY([implementing_agency_id])
 REFERENCES [agency].[USAIDgreenbookAgencyID] ([USAIDgreenbookAgencyID])

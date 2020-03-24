@@ -33,6 +33,5 @@ CREATE TABLE [dbo].[2014_P-1](
 	[FY 2014_Total_Quantity] [float] NULL,
 	[FY 2014_Total_Amount] [float] NULL,
 	[Classification] [nvarchar](255) NULL
-)
-
+) ON [PRIMARY]
 GO

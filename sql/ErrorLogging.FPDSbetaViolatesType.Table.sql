@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [ErrorLogging].[FPDSbetaViolatesType](
 	[gfe_gfp] [varchar](255) NULL,
 	[research] [varchar](255) NULL,
@@ -291,10 +289,7 @@ CREATE TABLE [ErrorLogging].[FPDSbetaViolatesType](
 	[highly_compensated_officer_5_amount] [varchar](255) NULL,
 	[usaspending_permalink] [varchar](500) NULL,
 	[action_date_fiscal_year] [varchar](255) NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FPDSbetaViolatesType] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__6FAB3F2B]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO

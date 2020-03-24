@@ -7,6 +7,5 @@ GO
 CREATE TABLE [Assistance].[RecipientCategory](
 	[Recipient Name] [nvarchar](255) NULL,
 	[Recipient Category] [nvarchar](255) NULL
-)
-
+) ON [PRIMARY]
 GO

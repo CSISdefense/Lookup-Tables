@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [Vendor].[ParentIDHistory](
 	[ParentID] [nvarchar](255) NULL,
 	[FiscalYear] [smallint] NOT NULL,
@@ -15,10 +13,7 @@ CREATE TABLE [Vendor].[ParentIDHistory](
 	[AnyEntityUSplaceOfPerformance] [bit] NULL,
 	[IsEntityAbove2016constantOneMillionThreshold] [bit] NULL,
 	[AnyEntityForeignPlaceOfPerformance] [bit] NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO
 ALTER TABLE [Vendor].[ParentIDHistory]  WITH NOCHECK ADD  CONSTRAINT [FK__ParentIDH__Entit__48076225] FOREIGN KEY([EntitySizeCode])
 REFERENCES [Vendor].[EntitySizeCode] ([EntitySizeCode])

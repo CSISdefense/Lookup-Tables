@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [budget].[gwa_tas](
 	[gwa_tas] [varchar](17) NOT NULL,
 	[GWA_TAS_Name] [varchar](200) NULL,
@@ -29,11 +27,8 @@ CREATE TABLE [budget].[gwa_tas](
  CONSTRAINT [pk_gwa_tas] PRIMARY KEY CLUSTERED 
 (
 	[gwa_tas] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-)
-
-GO
-SET ANSI_PADDING OFF
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 ALTER TABLE [budget].[gwa_tas]  WITH NOCHECK ADD  CONSTRAINT [FK_budget_gwa_tas_treasuryagencycode_mainaccountcode_subaccountcode] FOREIGN KEY([aid], [main], [sub])
 REFERENCES [budget].[SubAccountCode] ([TreasuryAgencyCode], [MainAccountCode], [SubAccountCode])

@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [Office].[ContractingAgencyIDofficeIDtoMajorCommandIDhistory](
 	[ContractingOfficeID] [varchar](6) NOT NULL,
 	[ContractingOfficeName] [varchar](50) NULL,
@@ -23,11 +21,8 @@ CREATE TABLE [Office].[ContractingAgencyIDofficeIDtoMajorCommandIDhistory](
 	[ContractingAgencyID] ASC,
 	[ContractingOfficeID] ASC,
 	[Fiscal_Year] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-)
-
-GO
-SET ANSI_PADDING OFF
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 ALTER TABLE [Office].[ContractingAgencyIDofficeIDtoMajorCommandIDhistory] ADD  CONSTRAINT [DF__Contracti__CSISm__153BEB36]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO

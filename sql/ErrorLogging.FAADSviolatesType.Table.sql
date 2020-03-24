@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [ErrorLogging].[FAADSviolatesType](
 	[unique_transaction_id] [varchar](255) NULL,
 	[transaction_status] [varchar](255) NULL,
@@ -77,10 +75,7 @@ CREATE TABLE [ErrorLogging].[FAADSviolatesType](
 	[exec5_amount] [varchar](255) NULL,
 	[last_modified_date] [varchar](255) NULL,
 	[principal_place_country_code] [varchar](255) NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FAADSviolatesType] ADD  CONSTRAINT [DF_ERRORLOGGING_GRANTSviolatestype_CSISCreatedDate]  DEFAULT (getdate()) FOR [CSISCreatedDate]
 GO

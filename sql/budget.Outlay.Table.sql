@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [budget].[Outlay](
 	[Outlay] [decimal](19, 4) NULL,
 	[Fiscal_Year] [int] NULL,
@@ -23,10 +21,7 @@ CREATE TABLE [budget].[Outlay](
 	[CSIScreatedDate] [datetime2](7) NOT NULL,
 	[TreasuryAgencyCode] [smallint] NULL,
 	[OMBaccountCode] [varchar](6) NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO
 ALTER TABLE [budget].[Outlay] ADD  CONSTRAINT [DF__Outlay__CSIScrea__44AB0736]  DEFAULT (getdate()) FOR [CSIScreatedDate]
 GO

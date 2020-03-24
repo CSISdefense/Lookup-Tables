@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [FPDSTypeTable].[ContractActionType](
 	[contractactiontype] [varchar](41) NOT NULL,
 	[contractactiontypeText] [nvarchar](255) NULL,
@@ -17,11 +15,8 @@ CREATE TABLE [FPDSTypeTable].[ContractActionType](
  CONSTRAINT [pk_contractactiontype] PRIMARY KEY CLUSTERED 
 (
 	[contractactiontype] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-)
-
-GO
-SET ANSI_PADDING OFF
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 ALTER TABLE [FPDSTypeTable].[ContractActionType]  WITH CHECK ADD FOREIGN KEY([award_type_code])
 REFERENCES [FPDSTypeTable].[award_type_code] ([award_type_code])

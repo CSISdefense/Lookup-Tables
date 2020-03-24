@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [budget].[BudgetActivity](
 	[AccountDSI] [varchar](5) NOT NULL,
 	[BudgetActivity] [smallint] NOT NULL,
@@ -17,11 +15,8 @@ CREATE TABLE [budget].[BudgetActivity](
 (
 	[AccountDSI] ASC,
 	[BudgetActivity] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-)
-
-GO
-SET ANSI_PADDING OFF
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 ALTER TABLE [budget].[BudgetActivity]  WITH NOCHECK ADD  CONSTRAINT [FK__BudgetAct__Defen__0CC6A0C6] FOREIGN KEY([DefenseOrganization])
 REFERENCES [agency].[DefenseOrganization] ([DefenseOrganization])

@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [budget].[ArchiveHarrisonP1](
 	[ID] [smallint] NULL,
 	[SourceFiscalYear] [int] NULL,
@@ -36,8 +34,5 @@ CREATE TABLE [budget].[ArchiveHarrisonP1](
 	[QuantEnactedType] [int] NULL,
 	[QuantSpecialTotal] [int] NULL,
 	[QuantActualTotal] [int] NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO

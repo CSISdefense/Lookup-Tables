@@ -11,6 +11,5 @@ CREATE TABLE [Vendor].[Top100VendorsByCustomer](
 	[%Total Actions] [float] NULL,
 	[% Total Dollars] [float] NULL,
 	[Agency] [nvarchar](255) NULL
-)
-
+) ON [PRIMARY]
 GO

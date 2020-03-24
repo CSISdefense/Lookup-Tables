@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [dbo].[ProductOrServiceCodes](
 	[ProductOrServiceCode] [varchar](255) NULL,
 	[ProductOrServiceCodeText] [varchar](255) NULL,
@@ -39,8 +37,5 @@ CREATE TABLE [dbo].[ProductOrServiceCodes](
 	[OCOcrisisPercent] [varchar](255) NULL,
 	[CrisisPercent] [varchar](255) NULL,
 	[CrisisProductOrServiceArea] [varchar](255) NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO

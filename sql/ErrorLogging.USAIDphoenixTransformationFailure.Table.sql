@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [ErrorLogging].[USAIDphoenixTransformationFailure](
 	[AWARD_NUMBER] [varchar](30) NULL,
 	[AWARD_DESCRIPTION] [varchar](255) NULL,
@@ -44,8 +42,5 @@ CREATE TABLE [ErrorLogging].[USAIDphoenixTransformationFailure](
 	[DISBURSED] [real] NULL,
 	[ErrorCode] [int] NULL,
 	[ErrorColumn] [int] NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO

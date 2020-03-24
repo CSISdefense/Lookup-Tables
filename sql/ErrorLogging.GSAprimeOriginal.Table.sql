@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [ErrorLogging].[GSAprimeOriginal](
 	[PSC Code] [varchar](255) NULL,
 	[PSC Description] [varchar](255) NULL,
@@ -43,8 +41,5 @@ CREATE TABLE [ErrorLogging].[GSAprimeOriginal](
 	[Prime Contractor Hours Invoiced] [varchar](255) NULL,
 	[Prime Contractor Full Time Equivalent Employees  FTEs] [varchar](255) NULL,
 	[CSIStieBreaker] [varchar](255) NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO

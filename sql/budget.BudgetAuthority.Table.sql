@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [budget].[BudgetAuthority](
 	[AgencyCode] [smallint] NULL,
 	[AgencyName] [varchar](88) NULL,
@@ -22,10 +20,7 @@ CREATE TABLE [budget].[BudgetAuthority](
 	[BudgetAuthority] [decimal](19, 4) NULL,
 	[CSISdateCreated] [datetime2](7) NOT NULL,
 	[YearType] [varchar](20) NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO
 ALTER TABLE [budget].[BudgetAuthority]  WITH NOCHECK ADD  CONSTRAINT [fk_BudgetAuthority_BureauCode] FOREIGN KEY([AgencyCode], [BureauCode])
 REFERENCES [agency].[BureauCode] ([OMBagencyCode], [BureauCode])

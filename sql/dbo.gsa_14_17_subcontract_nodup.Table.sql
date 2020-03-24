@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [dbo].[gsa_14_17_subcontract_nodup](
 	[Subcontractor] [varchar](255) NULL,
 	[Contract Number] [varchar](255) NULL,
@@ -14,8 +12,5 @@ CREATE TABLE [dbo].[gsa_14_17_subcontract_nodup](
 	[Name] [varchar](255) NULL,
 	[Number of Full Time Equivalent Employees  FTEs] [varchar](255) NULL,
 	[Number of Hours  Invoiced] [varchar](255) NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO

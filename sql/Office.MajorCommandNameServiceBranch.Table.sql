@@ -10,6 +10,5 @@ CREATE TABLE [Office].[MajorCommandNameServiceBranch](
 	[ServiceBranch] [nvarchar](255) NULL,
 	[ActionObligated] [decimal](19, 4) NULL,
 	[Actions] [nvarchar](255) NULL
-)
-
+) ON [PRIMARY]
 GO

@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [budget].[progsource](
 	[progsourceagency] [varchar](2) NULL,
 	[progsourceaccount] [varchar](4) NULL,
@@ -24,11 +22,8 @@ CREATE TABLE [budget].[progsource](
 	[progsourceagency] ASC,
 	[progsourceaccount] ASC,
 	[progsourcesubacct] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
-)
-
-GO
-SET ANSI_PADDING OFF
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 ALTER TABLE [budget].[progsource] ADD  CONSTRAINT [DF__progsourc__CSISm__3AB788A8]  DEFAULT (suser_sname()) FOR [CSISmodifiedby]
 GO

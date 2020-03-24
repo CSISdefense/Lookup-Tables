@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [ErrorLogging].[GSAprimeStage2](
 	[productorservicecode] [varchar](4) NULL,
 	[product_or_service_code_description] [varchar](255) NULL,
@@ -47,10 +45,7 @@ CREATE TABLE [ErrorLogging].[GSAprimeStage2](
 	[CSISmodifiedDate] [datetime2](7) NOT NULL,
 	[CSIScreatedDate] [datetime2](7) NOT NULL,
 	[CSISserviceCensusID] [int] NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[GSAprimeStage2] ADD  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO

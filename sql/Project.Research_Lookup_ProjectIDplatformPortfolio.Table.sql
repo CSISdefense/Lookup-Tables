@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [Project].[Research_Lookup_ProjectIDplatformPortfolio](
 	[Proj+A1 H8ectID] [varchar](50) NULL,
 	[ProjectName] [varchar](50) NULL,
@@ -28,8 +26,5 @@ CREATE TABLE [Project].[Research_Lookup_ProjectIDplatformPortfolio](
 	[Replacement] [varchar](50) NULL,
 	[Notes] [varchar](50) NULL,
 	[Column 20] [varchar](50) NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO

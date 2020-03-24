@@ -4,8 +4,6 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-SET ANSI_PADDING ON
-GO
 CREATE TABLE [Contract].[GSAprime](
 	[CSISserviceCensusID] [int] NULL,
 	[piid] [varchar](50) NULL,
@@ -46,10 +44,7 @@ CREATE TABLE [Contract].[GSAprime](
 	[primecontractorfulltimeequivalentemployeesftes] [decimal](10, 2) NULL,
 	[CSISmodifiedDate] [datetime2](7) NOT NULL,
 	[CSIScreatedDate] [datetime2](7) NOT NULL
-)
-
-GO
-SET ANSI_PADDING OFF
+) ON [PRIMARY]
 GO
 ALTER TABLE [Contract].[GSAprime] ADD  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO

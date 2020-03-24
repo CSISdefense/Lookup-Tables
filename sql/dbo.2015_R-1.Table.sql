@@ -22,6 +22,5 @@ CREATE TABLE [dbo].[2015_R-1](
 	[FY 2015_OCO] [float] NULL,
 	[FY 2015_Total] [float] NULL,
 	[Classification] [nvarchar](255) NULL
-)
-
+) ON [PRIMARY]
 GO

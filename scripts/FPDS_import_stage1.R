@@ -71,7 +71,7 @@ if(!file.exists("sql\\ErrorLogging.FPDSbetaViolatesConstraint.table.sql")){
         file="Output\\Starter_ErrorLogging_FPDSbetaViolatesConstraint.txt")
   write(create_csis_dates("ErrorLogging","FPDSbetaViolatesConstraint"),"Output//CSISdates.txt")
 } else{
-  warning("Be sure to generate scripts after adding any new columns to Contract.FPDS")
+
   
   ##### From Stage 1 to Stage 2, Taking Advantage of Newly Added Coluns in Contract.FPDS####### 
   Stage2TableType.df<-read_create_table("ErrorLogging.FPDSbetaViolatesConstraint.Table.sql",
@@ -86,7 +86,7 @@ if(!file.exists("sql\\ErrorLogging.FPDSbetaViolatesConstraint.table.sql")){
     translate_name() %>% merge_source_and_csis_name_tables(DestinationTable.df)
   
   if(nrow(missing_in_stage2)>0){
-  
+    warning("Be sure to generate scripts after adding any new columns to Contract.FPDS")  
     missing_in_stage2$SourceVariableName[!is.na(missing_in_stage2$CSISvariableName)]<-
       missing_in_stage2$CSISvariableName[!is.na(missing_in_stage2$CSISvariableName)]
     missing_in_stage2$SourceVariableType[!is.na(missing_in_stage2$CSISvariableName)]<-
@@ -119,20 +119,25 @@ if(!file.exists("sql\\ErrorLogging.FPDSbetaViolatesConstraint.table.sql")){
     stop("Columns need to be added to the stage 2 database") 
   } else {
       #Create Try Convert
-      
-      TryConvertList<-create_try_converts(Merge1to2.df,"Errorlogging","FPDSviolatesType",
-                                          IncludeAlters=FALSE,
-                                          Add_Colon_Split=TRUE)
-      write(TryConvertList,"Output\\FPDS_Stage1_try_Convert_List.txt")
     
-    #Transfer from Errorlogging.FPDSviolatesType to Errorlogging.FPDSviolatesConstraint
+    Merge1to2.df<-Merge1to2.df%>% dplyr::filter(!SourceVariableName %in% ignore_cols)  
+    
+  
+      TryConvertList<-create_try_converts(Merge1to2.df,"Errorlogging","FPDSbetaViolatesType",
+                                          IncludeAlters=FALSE,
+                                          Add_Colon_Split=FALSE,
+                                          Apply_Drop=FALSE)
+      write(TryConvertList,"Output\\FPDS_Stage1_Try_Convert.txt")
+    
+    #Transfer from Errorlogging.FPDSbetaViolatesType to Errorlogging.FPDSbetaViolatesConstraint
     InsertList<-create_insert(Merge1to2.df,
                               "ErrorLogging",
-                              "FPDSviolatesType",
+                              "FPDSbetaViolatesType",
                               "ErrorLogging",
-                              "FPDSviolatesConstraint",
+                              "FPDSbetaViolatesConstraint",
                               DateType=120,
-                              allow_missing=FALSE) #This should be redundant with the missing check above
+                              allow_missing=FALSE,
+                              Apply_Drop=FALSE) #This should be redundant with the missing check above
     write(InsertList,"Output\\FPDS_Insert_from_Stage1_to_Stage2.txt")
   }
 }
