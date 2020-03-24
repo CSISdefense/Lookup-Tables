@@ -14,7 +14,8 @@ CREATE TABLE [Contract].[PBLlistOSDdetails](
 	[IsTotal] [bit] NOT NULL,
 	[CSIScontractID] [int] NULL,
 	[CSISidvpiidID] [int] NULL
-) ON [PRIMARY]
+)
+
 GO
 ALTER TABLE [Contract].[PBLlistOSDdetails] ADD  CONSTRAINT [DF__PBLlistOS__IsTot__54624C12]  DEFAULT ((0)) FOR [IsTotal]
 GO

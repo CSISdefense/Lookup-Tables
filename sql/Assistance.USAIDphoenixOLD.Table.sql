@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Assistance].[USAIDphoenixOLD](
 	[AWARD_NUMBER] [nvarchar](255) NULL,
 	[AWARD_DESCRIPTION] [varchar](4000) NULL,
@@ -48,7 +50,10 @@ CREATE TABLE [Assistance].[USAIDphoenixOLD](
 	[CSISawardID] [bigint] NULL,
 	[CSIScreatedDate] [datetime2](7) NULL,
 	[CSISmodifiedDate] [datetime2](7) NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [Assistance].[USAIDphoenixOLD] ADD  CONSTRAINT [DF_USAIDPhoenix_CSIScreatedDate]  DEFAULT (getdate()) FOR [CSIScreatedDate]
 GO

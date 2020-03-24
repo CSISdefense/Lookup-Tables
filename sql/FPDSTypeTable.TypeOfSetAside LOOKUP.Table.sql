@@ -10,5 +10,6 @@ CREATE TABLE [FPDSTypeTable].[TypeOfSetAside LOOKUP](
 	[Text] [nvarchar](255) NULL,
 	[Description] [nvarchar](max) NULL,
 	[Cat2] [nvarchar](255) NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+)
+
 GO

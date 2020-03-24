@@ -7,5 +7,6 @@ GO
 CREATE TABLE [dbo].[PSCcodeName](
 	[PSC CODE] [nvarchar](255) NULL,
 	[PRODUCT AND SERVICE CODE NAME] [nvarchar](255) NULL
-) ON [PRIMARY]
+)
+
 GO

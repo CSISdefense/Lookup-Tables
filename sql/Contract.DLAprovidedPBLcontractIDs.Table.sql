@@ -6,5 +6,6 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [Contract].[DLAprovidedPBLcontractIDs](
 	[ContractID] [nvarchar](255) NULL
-) ON [PRIMARY]
+)
+
 GO

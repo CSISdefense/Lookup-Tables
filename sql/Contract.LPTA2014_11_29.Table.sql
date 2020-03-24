@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Contract].[LPTA2014_11_29](
 	[link] [varchar](79) NULL,
 	[Title] [varchar](585) NULL,
@@ -79,5 +81,8 @@ CREATE TABLE [Contract].[LPTA2014_11_29](
 	[Awardee Contact Fax] [varchar](13) NULL,
 	[Awardee Contact Fax2] [varchar](13) NULL,
 	[Source URL] [varchar](134) NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO

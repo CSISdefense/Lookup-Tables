@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Contract].[GoviniPBLbyDescriptionOrTitle](
 	[link] [varchar](78) NULL,
 	[Title] [varchar](272) NULL,
@@ -86,5 +88,8 @@ CREATE TABLE [Contract].[GoviniPBLbyDescriptionOrTitle](
 	[Awardee Contact Fax2] [varchar](max) NULL,
 	[Description] [varchar](max) NULL,
 	[Source URL] [varchar](84) NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO

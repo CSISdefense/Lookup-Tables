@@ -9,5 +9,6 @@ CREATE TABLE [dbo].[Sheet1$](
 	[TopPlatformPortfolioByObligatedAmount] [nvarchar](255) NULL,
 	[PlatformPortfolio] [nvarchar](255) NULL,
 	[IsNotEquipment] [float] NULL
-) ON [PRIMARY]
+)
+
 GO

@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [ErrorLogging].[FPDSbetaViolatesConstraint](
 	[gfe_gfp_name] [varchar](255) NULL,
 	[research_name] [varchar](255) NULL,
@@ -42,7 +44,7 @@ CREATE TABLE [ErrorLogging].[FPDSbetaViolatesConstraint](
 	[vendordoingasbusinessname] [nvarchar](150) NULL,
 	[mod_parent] [varchar](150) NULL,
 	[parentdunsnumber] [varchar](13) NULL,
-	[vendorcountrycode] [varchar](50) NULL,
+	[vendorcountrycode] [nvarchar](50) NULL,
 	[recipient_country_name] [varchar](255) NULL,
 	[streetaddress] [varchar](90) NULL,
 	[streetaddress2] [varchar](60) NULL,
@@ -258,10 +260,13 @@ CREATE TABLE [ErrorLogging].[FPDSbetaViolatesConstraint](
 	[sba_certified_8a_joint_venture] [bit] NULL,
 	[CSISmodifiedDate] [datetime2](7) NOT NULL,
 	[CSIScreatedDate] [datetime2](7) NOT NULL,
-	[Fiscal_Year] [int] NULL,
+	[Fiscal_Year] [smallint] NULL,
 	[CSIStransactionID] [int] NULL,
 	[CSISstage2id] [int] IDENTITY(1,1) NOT NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [ErrorLogging].[FPDSbetaViolatesConstraint] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__7193879D]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO

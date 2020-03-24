@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [ErrorLogging].[TASViolatesType](
 	[ErrorDescription] [varchar](255) NULL,
 	[ErrorCode] [int] NULL,
@@ -35,5 +37,8 @@ CREATE TABLE [ErrorLogging].[TASViolatesType](
 	[Acct_Type_Description] [varchar](255) NULL,
 	[Fund_Type] [varchar](255) NULL,
 	[Fund_Type_Description] [varchar](255) NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO

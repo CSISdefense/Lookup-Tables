@@ -7,5 +7,6 @@ GO
 CREATE TABLE [FPDSTypeTable].[ReferencedIDVTypeOfIDC NOT USING](
 	[TypeOfIDC_code] [nvarchar](255) NULL,
 	[TypeOfIDC_name] [nvarchar](255) NULL
-) ON [PRIMARY]
+)
+
 GO

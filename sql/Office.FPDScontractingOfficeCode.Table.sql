@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Office].[FPDScontractingOfficeCode](
 	[DepartmentID] [varchar](4) NULL,
 	[DepartmentNAME] [nvarchar](255) NULL,
@@ -24,7 +26,10 @@ CREATE TABLE [Office].[FPDScontractingOfficeCode](
 	[progsourceaccount] [varchar](4) NULL,
 	[progsourcesubacct] [varchar](3) NULL,
 	[CSIScreatedDate] [datetime2](7) NOT NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [Office].[FPDScontractingOfficeCode] ADD  CONSTRAINT [DF__FPDScontr__CSISc__69FC8776]  DEFAULT (getdate()) FOR [CSIScreatedDate]
 GO

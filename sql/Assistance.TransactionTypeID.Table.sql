@@ -7,5 +7,6 @@ GO
 CREATE TABLE [Assistance].[TransactionTypeID](
 	[TransactionTypeID] [float] NULL,
 	[TransactionTypeName] [nvarchar](255) NULL
-) ON [PRIMARY]
+)
+
 GO

@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [dbo].[OLE DB Destination](
 	[unique_transaction_id] [varchar](36) NULL,
 	[transaction_status] [varchar](6) NULL,
@@ -243,5 +245,8 @@ CREATE TABLE [dbo].[OLE DB Destination](
 	[Account name] [varchar](116) NULL,
 	[Treasury Agency code] [smallint] NULL,
 	[On- or off-budget] [varchar](10) NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO

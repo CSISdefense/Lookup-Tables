@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Assistance].[USAIDforwardLocalOrganization](
 	[Country] [varchar](255) NULL,
 	[VendorCategory] [varchar](255) NULL,
@@ -14,7 +16,10 @@ CREATE TABLE [Assistance].[USAIDforwardLocalOrganization](
 	[standardizedvendorname] [varchar](100) NULL,
 	[parentid] [nvarchar](255) NULL,
 	[isexactregionalmatch] [bit] NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [Assistance].[USAIDforwardLocalOrganization]  WITH NOCHECK ADD  CONSTRAINT [fk_USAIDforwardLocalOrganization_ParentID] FOREIGN KEY([parentid])
 REFERENCES [Contractor].[ParentContractor] ([ParentID])

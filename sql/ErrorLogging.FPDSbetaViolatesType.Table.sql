@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [ErrorLogging].[FPDSbetaViolatesType](
 	[gfe_gfp] [varchar](255) NULL,
 	[research] [varchar](255) NULL,
@@ -136,7 +138,7 @@ CREATE TABLE [ErrorLogging].[FPDSbetaViolatesType](
 	[construction_wage_rate_requirements] [varchar](255) NULL,
 	[interagency_contracting_authority_code] [varchar](255) NULL,
 	[interagency_contracting_authority] [varchar](255) NULL,
-	[other_statutory_authority] [varchar](1000) NULL,
+	[other_statutory_authority] [varchar](4000) NULL,
 	[program_acronym] [varchar](255) NULL,
 	[parent_award_type_code] [varchar](255) NULL,
 	[parent_award_type] [varchar](255) NULL,
@@ -275,8 +277,8 @@ CREATE TABLE [ErrorLogging].[FPDSbetaViolatesType](
 	[contract_transaction_unique_key] [varchar](255) NULL,
 	[contract_award_unique_key] [varchar](255) NULL,
 	[solicitation_date] [varchar](255) NULL,
-	[treasury_accounts_funding_this_award] [varchar](255) NULL,
-	[federal_accounts_funding_this_award] [varchar](255) NULL,
+	[treasury_accounts_funding_this_award] [varchar](4000) NULL,
+	[federal_accounts_funding_this_award] [varchar](4000) NULL,
 	[highly_compensated_officer_1_name] [varchar](255) NULL,
 	[highly_compensated_officer_1_amount] [varchar](255) NULL,
 	[highly_compensated_officer_2_name] [varchar](255) NULL,
@@ -287,9 +289,12 @@ CREATE TABLE [ErrorLogging].[FPDSbetaViolatesType](
 	[highly_compensated_officer_4_amount] [varchar](255) NULL,
 	[highly_compensated_officer_5_name] [varchar](255) NULL,
 	[highly_compensated_officer_5_amount] [varchar](255) NULL,
-	[usaspending_permalink] [varchar](255) NULL,
+	[usaspending_permalink] [varchar](500) NULL,
 	[action_date_fiscal_year] [varchar](255) NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [ErrorLogging].[FPDSbetaViolatesType] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__6FAB3F2B]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO

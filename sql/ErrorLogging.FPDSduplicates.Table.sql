@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [ErrorLogging].[FPDSduplicates](
 	[unique_transaction_id] [varchar](36) NULL,
 	[transaction_status] [varchar](6) NULL,
@@ -257,7 +259,10 @@ CREATE TABLE [ErrorLogging].[FPDSduplicates](
 	[native_hawaiian_servicing_institution] [bit] NULL,
 	[sba_certified_8a_joint_venture] [bit] NULL,
 	[dot_certified_disadvantage] [bit] NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [ErrorLogging].[FPDSduplicates]  WITH CHECK ADD  CONSTRAINT [fk_ErrorLogging_FPDSduplicates] FOREIGN KEY([CSIStransactionID])
 REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])

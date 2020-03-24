@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Contract].[FSRS](
 	[PrimeAwardReportID] [varchar](38) NULL,
 	[PrimeAwardPIID] [varchar](42) NULL,
@@ -108,7 +110,10 @@ CREATE TABLE [Contract].[FSRS](
 	[SubawardCFDAprogramNumberTitleCodes] [varchar](max) NULL,
 	[CSISmodifiedDate] [datetime2](7) NOT NULL,
 	[CSIScreatedDate] [datetime2](7) NOT NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [Contract].[FSRS] ADD  CONSTRAINT [DF__FSRS__CSISmodifi__094B159D]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO

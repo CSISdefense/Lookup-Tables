@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [ErrorLogging].[GEC](
 	[Entity] [varchar](50) NULL,
 	[GEC] [varchar](50) NULL,
@@ -13,5 +15,8 @@ CREATE TABLE [ErrorLogging].[GEC](
 	[Stanag] [varchar](50) NULL,
 	[Internet] [varchar](50) NULL,
 	[Comment] [varchar](600) NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO

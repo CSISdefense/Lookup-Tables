@@ -9,5 +9,6 @@ CREATE TABLE [FPDSTypeTable].[AgencyAlternate](
 	[Contracting Agency ID] [nvarchar](255) NULL,
 	[Contracting Department Name] [nvarchar](255) NULL,
 	[Contracting Department ID] [nvarchar](255) NULL
-) ON [PRIMARY]
+)
+
 GO

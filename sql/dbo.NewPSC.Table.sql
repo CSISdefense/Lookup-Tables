@@ -8,5 +8,6 @@ CREATE TABLE [dbo].[NewPSC](
 	[NEW PSC CODE] [nvarchar](255) NULL,
 	[NEW SHORT DESCRIPTION] [nvarchar](255) NULL,
 	[START DATE] [datetime] NULL
-) ON [PRIMARY]
+)
+
 GO

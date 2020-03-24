@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [GrantLoanAssistance].[FAADS](
 	[unique_transaction_id] [varchar](32) NULL,
 	[transaction_status] [varchar](6) NULL,
@@ -77,7 +79,10 @@ CREATE TABLE [GrantLoanAssistance].[FAADS](
 	[exec5_amount] [decimal](19, 4) NULL,
 	[last_modified_date] [datetime2](7) NULL,
 	[principal_place_country_code] [varchar](3) NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [GrantLoanAssistance].[FAADS] ADD  CONSTRAINT [DF_GrantOrLoan_USAspending_CSISCreatedDate]  DEFAULT (getdate()) FOR [CSISCreatedDate]
 GO

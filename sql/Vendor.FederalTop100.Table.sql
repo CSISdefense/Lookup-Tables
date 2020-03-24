@@ -10,5 +10,6 @@ CREATE TABLE [Vendor].[FederalTop100](
 	[Dollars Obligated] [float] NULL,
 	[%Total Actions] [float] NULL,
 	[% Total Dollars] [float] NULL
-) ON [PRIMARY]
+)
+
 GO

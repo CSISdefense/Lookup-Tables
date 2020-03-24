@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Contract].[ReferencedIDVFPDSgov](
 	[ReferencedIDVAgencyID] [varchar](4) NULL,
 	[ReferencedIDVPIID] [varchar](50) NULL,
@@ -15,7 +17,10 @@ CREATE TABLE [Contract].[ReferencedIDVFPDSgov](
 	[IDVpart8orPart13] [varchar](50) NULL,
 	[NumberOfRecords] [numeric](38, 0) NULL,
 	[CSISidvmodificationID] [int] NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [Contract].[ReferencedIDVFPDSgov]  WITH CHECK ADD  CONSTRAINT [fk_Contract_ReferencedIDVFPDSgov_IDVtype] FOREIGN KEY([IDVtype])
 REFERENCES [FPDSTypeTable].[ContractActionType] ([contractactiontype])

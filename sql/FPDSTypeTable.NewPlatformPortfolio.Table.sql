@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [FPDSTypeTable].[NewPlatformPortfolio](
 	[ProductOrServiceCode] [varchar](50) NULL,
 	[ProductOrServiceCodeText] [varchar](50) NULL,
@@ -34,5 +36,8 @@ CREATE TABLE [FPDSTypeTable].[NewPlatformPortfolio](
 	[CanadaSector] [varchar](50) NULL,
 	[OCOcrisisScore] [varchar](50) NULL,
 	[VAPortfolio] [varchar](50) NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO

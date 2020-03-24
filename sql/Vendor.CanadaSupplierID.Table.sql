@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Vendor].[CanadaSupplierID](
 	[CanadaSupplierID] [bigint] NULL,
 	[Supplier] [nvarchar](255) NULL,
@@ -13,7 +15,10 @@ CREATE TABLE [Vendor].[CanadaSupplierID](
 	[SuppPostCode] [varchar](255) NULL,
 	[SuppCountry] [varchar](10) NULL,
 	[ParentID] [nvarchar](255) NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [Vendor].[CanadaSupplierID]  WITH NOCHECK ADD  CONSTRAINT [FK__CanadaSup__Paren__5749A5B5] FOREIGN KEY([ParentID])
 REFERENCES [Contractor].[ParentContractor] ([ParentID])

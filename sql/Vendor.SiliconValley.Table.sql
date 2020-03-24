@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Vendor].[SiliconValley](
 	[VendorName] [nvarchar](150) NULL,
 	[StandardizedVendorName] [nvarchar](150) NULL,
@@ -20,7 +22,10 @@ CREATE TABLE [Vendor].[SiliconValley](
 	[Tax] [varchar](255) NULL,
 	[Rank] [int] NULL,
 	[ParentID] [nvarchar](255) NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [Vendor].[SiliconValley]  WITH NOCHECK ADD  CONSTRAINT [FK__SiliconVa__Paren__34B4968F] FOREIGN KEY([ParentID])
 REFERENCES [Contractor].[ParentContractor] ([ParentID])

@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [ErrorLogging].[DefenseR1violatesConstraint](
 	[ID] [smallint] NULL,
 	[SourceFiscalYear] [int] NULL,
@@ -27,5 +29,8 @@ CREATE TABLE [ErrorLogging].[DefenseR1violatesConstraint](
 	[EnactedType] [int] NULL,
 	[SpecialType] [int] NULL,
 	[ActualTotal] [int] NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO

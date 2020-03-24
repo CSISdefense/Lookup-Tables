@@ -24,5 +24,6 @@ CREATE TABLE [ProductOrServiceCode].[DefensePortfolioGroups](
 	[Field16] [nvarchar](255) NULL,
 	[Field17] [nvarchar](255) NULL,
 	[Field18] [nvarchar](255) NULL
-) ON [PRIMARY]
+)
+
 GO

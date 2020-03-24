@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Contract].[DD350](
 	[FiscalReportingPeriod] [varchar](50) NULL,
 	[ContractingAgencyId] [varchar](4) NULL,
@@ -91,7 +93,10 @@ CREATE TABLE [Contract].[DD350](
 	[CAGEmalformed] [varchar](9) NULL,
 	[TransactionNumberCSISadded] [bigint] NULL,
 	[CSIStransactionID] [int] NOT NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [Contract].[DD350]  WITH NOCHECK ADD  CONSTRAINT [fk__contract_dd350_reasonnotcompeted] FOREIGN KEY([reasonnotcompeted])
 REFERENCES [FPDSTypeTable].[reasonnotcompeted] ([reasonnotcompeted])

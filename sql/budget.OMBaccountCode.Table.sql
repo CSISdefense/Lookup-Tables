@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [budget].[OMBaccountCode](
 	[OMBaccountCode] [varchar](6) NOT NULL,
 	[AccountName] [varchar](200) NULL,
@@ -19,8 +21,11 @@ CREATE TABLE [budget].[OMBaccountCode](
 (
 	[TreasuryAgencyCode] ASC,
 	[OMBaccountCode] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [budget].[OMBaccountCode]  WITH NOCHECK ADD  CONSTRAINT [fk_OMBaccountCode_MainAccountCode] FOREIGN KEY([TreasuryAgencyCode], [mainaccountcode])
 REFERENCES [budget].[MainAccountCode] ([TreasuryAgencyCode], [MainAccountCode])

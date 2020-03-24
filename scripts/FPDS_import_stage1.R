@@ -42,40 +42,27 @@ missing_column<-MergeType.df %>% filter(
     !SourceVariableName %in% ignore_cols)
 
 if(nrow(missing_column)>0){
-  print(missing_column[,c("SourceVariableName","SourceVariableType")])
+  print(missing_column[,c("SourceVariableName","SourceVariableType","SourceNullable")])
+
+  
+  write(file=file.path("Output","Contract_FPDS_new_column_alter_table.txt"),
+        paste("ALTER TABLE Errorlogging.FPDSbetaViolatesConstraint\nADD",
+              paste(missing_column$SourceVariableName,
+                    missing_column$SourceVariableType,
+                    missing_column$SourceNullable,",\n",collapse=" ")))
+  
+  
+  
   
   len_check<-paste("SELECT \n",
     paste("max(len(",missing_column$SourceVariableName,")) as ",missing_column$SourceVariableName,collapse=",\n"),
     "\nFROM ErrorLogging.FPDSbetaViolatesType",sep=""
     )
-  write(file=file.path("Output","FPDSbetaViolatesType_new_column_max_length.txt"),len_check)
+  write(file=file.path("Output","Contract_FPDS_new_column_max_length.txt"),len_check)
   
   stop("Columns need to be added to the destination database")
   # stop("Columns need to be added to the destination database")
-} else{
-  #Create Try Convert
-  
-  TryConvertList<-create_try_converts(MergeType.df,"Errorlogging","FPDSviolatesType",
-                                      IncludeAlters=FALSE,
-                                      Add_Colon_Split=TRUE)
-  write(TryConvertList,"Output\\FPDStryConvertList.txt")
-  
-  
-  
-  #Transfer from Errorlogging.FPDSviolatesType to Errorlogging.FPDSviolatesConstraint
-  InsertList<-create_insert(MergeType.df,
-                            "ErrorLogging",
-                            "FPDSviolatesType",
-                            "ErrorLogging",
-                            "FPDSviolatesConstraint",
-                            DateType=120,
-                            allow_missing=FALSE) #This should be redundant with the missing check above
-  write(InsertList,"Output\\FPDS_Insert_from_Stage1_to_Stage2.txt")
-}
-
-
-
-
+} 
 
 
 ##### From Stage 1 to Stage 2 ####### 
@@ -84,18 +71,69 @@ if(!file.exists("sql\\ErrorLogging.FPDSbetaViolatesConstraint.table.sql")){
         file="Output\\Starter_ErrorLogging_FPDSbetaViolatesConstraint.txt")
   write(create_csis_dates("ErrorLogging","FPDSbetaViolatesConstraint"),"Output//CSISdates.txt")
 } else{
-  warning("Should be doing new column processing here")
+  warning("Be sure to generate scripts after adding any new columns to Contract.FPDS")
   
-  ##### From Stage 1 to Stage 2 ####### 
+  ##### From Stage 1 to Stage 2, Taking Advantage of Newly Added Coluns in Contract.FPDS####### 
   Stage2TableType.df<-read_create_table("ErrorLogging.FPDSbetaViolatesConstraint.Table.sql",
                                         dir="SQL")
   
-  MergeType.df<-merge_source_and_csis_name_tables(Stage1TableType.df,Stage2TableType.df)
+  Merge1to2.df<-merge_source_and_csis_name_tables(Stage1TableType.df,Stage2TableType.df)
   
-  missing_column<-MergeType.df %>% filter(
-    (is.na(CSISvariableType )| is.null(CSISvariableType)))
+  missing_in_stage2<-Merge1to2.df %>% filter(
+    (is.na(CSISvariableType )| is.null(CSISvariableType))&
+      !SourceVariableName %in% ignore_cols) %>% 
+    select(SourceVariableName ,SourceVariableType,SourceNullable) %>%
+    translate_name() %>% merge_source_and_csis_name_tables(DestinationTable.df)
   
+  if(nrow(missing_in_stage2)>0){
   
+    missing_in_stage2$SourceVariableName[!is.na(missing_in_stage2$CSISvariableName)]<-
+      missing_in_stage2$CSISvariableName[!is.na(missing_in_stage2$CSISvariableName)]
+    missing_in_stage2$SourceVariableType[!is.na(missing_in_stage2$CSISvariableName)]<-
+      missing_in_stage2$CSISvariableType[!is.na(missing_in_stage2$CSISvariableName)]
+    missing_in_stage2$SourceNullable[!is.na(missing_in_stage2$CSISvariableName)]<-
+      missing_in_stage2$CSISnullable[!is.na(missing_in_stage2$CSISvariableName)]
+   
+    print(missing_in_stage2[,c("SourceVariableName","SourceVariableType","SourceNullable")])
+
+    
+    
+    
+    write(file=file.path("Output","ErrorLogging_FPDSbetaViolatesConstraint_new_column_alter_table.txt"),
+          paste("ALTER TABLE Errorlogging.FPDSbetaViolatesConstraint\nADD",
+                paste(missing_in_stage2$SourceVariableName,
+                      missing_in_stage2$SourceVariableType,
+                      missing_in_stage2$SourceNullable,",\n",collapse=" ")))
+    
+    
+    
+    len_check<-paste("SELECT \n",
+                     paste("max(len(",missing_in_stage2$SourceVariableName[is.na(missing_in_stage2$CSISvariableName)],
+                           ")) as ",missing_in_stage2$SourceVariableName[is.na(missing_in_stage2$CSISvariableName)],collapse=",\n"),
+                     "\nFROM ErrorLogging.FPDSbetaViolatesType",sep=""
+    )
+    write(file=file.path("Output","ErrorLogging_FPDSbetaViolatesConstraint_new_column_max_length.txt"),len_check)
+    
+    missing_in_stage2<-missing_in_stage2 %>% select(-CSISvariableName ,-CSISvariableType,-CSISnullable)
+    
+    stop("Columns need to be added to the stage 2 database") 
+  } else {
+      #Create Try Convert
+      
+      TryConvertList<-create_try_converts(Merge1to2.df,"Errorlogging","FPDSviolatesType",
+                                          IncludeAlters=FALSE,
+                                          Add_Colon_Split=TRUE)
+      write(TryConvertList,"Output\\FPDS_Stage1_try_Convert_List.txt")
+    
+    #Transfer from Errorlogging.FPDSviolatesType to Errorlogging.FPDSviolatesConstraint
+    InsertList<-create_insert(Merge1to2.df,
+                              "ErrorLogging",
+                              "FPDSviolatesType",
+                              "ErrorLogging",
+                              "FPDSviolatesConstraint",
+                              DateType=120,
+                              allow_missing=FALSE) #This should be redundant with the missing check above
+    write(InsertList,"Output\\FPDS_Insert_from_Stage1_to_Stage2.txt")
+  }
 }
 
-rm(NewConstraintTableType.df)

@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Assistance].[USAIDphoenix](
 	[AWARD_NUMBER] [varchar](30) NULL,
 	[AWARD_DESCRIPTION] [varchar](255) NULL,
@@ -43,7 +45,10 @@ CREATE TABLE [Assistance].[USAIDphoenix](
 	[CSISCreatedDate] [datetime2](7) NULL,
 	[CSISModifiedDate] [datetime2](7) NULL,
 	[CSISawardID] [int] NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [Assistance].[USAIDphoenix]  WITH NOCHECK ADD  CONSTRAINT [FK_Contractor_DUNS_NUM] FOREIGN KEY([DUNS_NUM])
 REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])

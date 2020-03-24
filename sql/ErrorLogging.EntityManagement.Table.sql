@@ -157,7 +157,8 @@ CREATE TABLE [ErrorLogging].[EntityManagement](
 	[END_OF_RECORD_INDICATOR] [nvarchar](255) NULL,
 	[CSISCreatedDate] [datetime] NOT NULL,
 	[CSISModifiedDate] [datetime] NOT NULL
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+)
+
 GO
 ALTER TABLE [ErrorLogging].[EntityManagement] ADD  CONSTRAINT [DF_SAM_CSISCreatedDate]  DEFAULT (getdate()) FOR [CSISCreatedDate]
 GO

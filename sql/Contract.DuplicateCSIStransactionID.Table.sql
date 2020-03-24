@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Contract].[DuplicateCSIStransactionID](
 	[CSIScontractID] [int] NOT NULL,
 	[idvmodificationnumber] [varchar](50) NULL,
@@ -16,5 +18,8 @@ CREATE TABLE [Contract].[DuplicateCSIStransactionID](
 	[CSISsourceIDVmodificationID] [int] NULL,
 	[CSISmodifiedBy] [nvarchar](128) NOT NULL,
 	[CSISmodifiedDate] [datetime] NOT NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
