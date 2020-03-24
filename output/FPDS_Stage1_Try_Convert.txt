@@ -412,7 +412,7 @@ SELECT DISTINCT [product_or_service_code_description],
 len([product_or_service_code_description]) as Length,
 '[varchar](255)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (NA IS NULL AND
+WHERE (Try_Convert([varchar](255), [product_or_service_code_description]) IS NULL AND
 NULLIF([product_or_service_code_description],'') IS NOT NULL)
 OR len( [product_or_service_code_description] ) > 255 
 
@@ -931,7 +931,7 @@ SELECT DISTINCT [contracting_officers_determination_of_business_size_code],
 len([contracting_officers_determination_of_business_size_code]) as Length,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (NA IS NULL AND
+WHERE (Try_Convert([varchar](1), [contracting_officers_determination_of_business_size_code]) IS NULL AND
 NULLIF([contracting_officers_determination_of_business_size_code],'') IS NOT NULL)
 OR len( [contracting_officers_determination_of_business_size_code] ) > 1 
 
@@ -1422,7 +1422,7 @@ SELECT DISTINCT [sam_exception_description],
 len([sam_exception_description]) as Length,
 '[varchar](70)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (NA IS NULL AND
+WHERE (Try_Convert([varchar](70), [sam_exception_description]) IS NULL AND
 NULLIF([sam_exception_description],'') IS NOT NULL)
 OR len( [sam_exception_description] ) > 70 
 
@@ -1454,7 +1454,7 @@ SELECT DISTINCT [inherently_governmental_functions_description],
 len([inherently_governmental_functions_description]) as Length,
 '[varchar](40)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (NA IS NULL AND
+WHERE (Try_Convert([varchar](40), [inherently_governmental_functions_description]) IS NULL AND
 NULLIF([inherently_governmental_functions_description],'') IS NOT NULL)
 OR len( [inherently_governmental_functions_description] ) > 40 
 
@@ -1491,7 +1491,7 @@ SELECT DISTINCT [foreign_funding_description],
 len([foreign_funding_description]) as Length,
 '[varchar](25)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (NA IS NULL AND
+WHERE (Try_Convert([varchar](25), [foreign_funding_description]) IS NULL AND
 NULLIF([foreign_funding_description],'') IS NOT NULL)
 OR len( [foreign_funding_description] ) > 25 
 
