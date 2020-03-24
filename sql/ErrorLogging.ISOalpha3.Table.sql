@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [ErrorLogging].[ISOalpha3](
 	[Global Code] [varchar](50) NULL,
 	[Global Name] [varchar](100) NULL,
@@ -20,5 +22,8 @@ CREATE TABLE [ErrorLogging].[ISOalpha3](
 	[Land Locked Developing Countries (LLDC)] [varchar](50) NULL,
 	[Small Island Developing States (SIDS)] [varchar](50) NULL,
 	[Developed   Developing Countries] [varchar](50) NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO

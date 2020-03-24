@@ -15,5 +15,6 @@ CREATE TABLE [Contract].[ContractIDHistory](
 	[Split] [bit] NOT NULL,
 	[Comments] [nvarchar](255) NULL,
 	[Override] [bit] NOT NULL
-) ON [PRIMARY]
+)
+
 GO

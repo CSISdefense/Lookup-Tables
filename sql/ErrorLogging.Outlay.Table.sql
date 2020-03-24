@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [ErrorLogging].[Outlay](
 	[RawYear] [nvarchar](255) NULL,
 	[AgencyCode] [varchar](3) NULL,
@@ -20,7 +22,10 @@ CREATE TABLE [ErrorLogging].[Outlay](
 	[BureauName] [varchar](100) NULL,
 	[AccountName] [varchar](200) NULL,
 	[CSIScreatedDate] [datetime2](7) NOT NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [ErrorLogging].[Outlay] ADD  CONSTRAINT [DF__Outlay__CSIScrea__496FBC53]  DEFAULT (getdate()) FOR [CSIScreatedDate]
 GO

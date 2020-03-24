@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [dbo].[awards_contracts_2](
 	[award_id_piid] [varchar](50) NULL,
 	[modification_number] [varchar](50) NULL,
@@ -256,5 +258,8 @@ CREATE TABLE [dbo].[awards_contracts_2](
 	[historically_underutilized_business_zone _hubzone_firm] [varchar](50) NULL,
 	[sba_certified_8a_joint_venture] [varchar](50) NULL,
 	[last_modified_date] [varchar](50) NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO

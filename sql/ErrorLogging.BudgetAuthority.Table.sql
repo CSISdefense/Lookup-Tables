@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [ErrorLogging].[BudgetAuthority](
 	[AgencyCode] [varchar](3) NULL,
 	[AgencyName] [varchar](88) NULL,
@@ -19,7 +21,10 @@ CREATE TABLE [ErrorLogging].[BudgetAuthority](
 	[RawYear] [nvarchar](255) NULL,
 	[BudgetAuthority] [decimal](19, 4) NULL,
 	[CSISdateCreated] [datetime2](7) NOT NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [ErrorLogging].[BudgetAuthority] ADD  CONSTRAINT [DF__BudgetAut__CSISd__3E08F69F]  DEFAULT (getdate()) FOR [CSISdateCreated]
 GO

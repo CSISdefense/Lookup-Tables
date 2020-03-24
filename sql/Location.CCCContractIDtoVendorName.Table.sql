@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Location].[CCCContractIDtoVendorName](
 	[Supplier_ID] [bigint] NULL,
 	[Supplier] [nvarchar](255) NULL,
@@ -41,7 +43,10 @@ CREATE TABLE [Location].[CCCContractIDtoVendorName](
 	[ProductCode] [bigint] NULL,
 	[CSIScontractID] [int] NULL,
 	[CSISidvpiidID] [int] NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [Location].[CCCContractIDtoVendorName]  WITH NOCHECK ADD  CONSTRAINT [FK__CCCContra__CSISc__09801FC7] FOREIGN KEY([CSIScontractID])
 REFERENCES [Contract].[CSIScontractID] ([CSIScontractID])

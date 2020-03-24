@@ -12,5 +12,6 @@ CREATE TABLE [ProductOrServiceCode].[ServicesPortfolioGroup](
 	[3#  Portfolio Category] [nvarchar](255) NULL,
 	[2#  Portfolio] [nvarchar](255) NULL,
 	[1#  Portfolio Group] [nvarchar](255) NULL
-) ON [PRIMARY]
+)
+
 GO

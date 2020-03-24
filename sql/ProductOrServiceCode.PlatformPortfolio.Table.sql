@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [ProductOrServiceCode].[PlatformPortfolio](
 	[PlatformPortfolio] [varchar](30) NOT NULL,
 	[IsLikelyInterlinked] [bit] NULL,
@@ -14,8 +16,11 @@ CREATE TABLE [ProductOrServiceCode].[PlatformPortfolio](
  CONSTRAINT [PK_PlayformPortfolio] PRIMARY KEY CLUSTERED 
 (
 	[PlatformPortfolio] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [ProductOrServiceCode].[PlatformPortfolio] ADD  CONSTRAINT [DF__PlatformP__IsWea__21ACAF13]  DEFAULT ((0)) FOR [IsPlatformWeaponOrSystem]
 GO

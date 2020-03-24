@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Project].[ProgramElementBudgetActivityToRDTEidHistory](
 	[ProgramElement] [varchar](10) NOT NULL,
 	[AccountDSI] [varchar](5) NOT NULL,
@@ -20,8 +22,11 @@ CREATE TABLE [Project].[ProgramElementBudgetActivityToRDTEidHistory](
 	[BudgetActivity] ASC,
 	[StartSourceFiscalYear] ASC,
 	[EndSourceFiscalYear] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [Project].[ProgramElementBudgetActivityToRDTEidHistory] ADD  CONSTRAINT [DF__ProgramEl__CSISm__7D4F530C]  DEFAULT (suser_sname()) FOR [CSISmodifiedBy]
 GO

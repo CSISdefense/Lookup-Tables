@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [dbo].[ProjectIDPlatform](
 	[ProjectID] [varchar](50) NULL,
 	[ProjectName] [varchar](50) NULL,
@@ -21,5 +23,8 @@ CREATE TABLE [dbo].[ProjectIDPlatform](
 	[TopParentIDObligatedAmount] [varchar](50) NULL,
 	[CSISmodifiedDate] [varchar](50) NULL,
 	[CSISmodifiedBy] [varchar](255) NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO

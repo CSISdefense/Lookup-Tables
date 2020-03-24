@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [budget].[TAS](
 	[SP] [smallint] NULL,
 	[ATA] [smallint] NULL,
@@ -32,5 +34,8 @@ CREATE TABLE [budget].[TAS](
 	[Acct_Type_Description] [varchar](22) NULL,
 	[Fund_Type] [varchar](4) NULL,
 	[Fund_Type_Description] [varchar](35) NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO

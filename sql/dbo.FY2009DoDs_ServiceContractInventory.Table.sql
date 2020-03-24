@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [dbo].[FY2009DoDs_ServiceContractInventory](
 	[Services Purchased] [varchar](255) NULL,
 	[Total Dollar Amount] [varchar](255) NULL,
@@ -23,5 +25,8 @@ CREATE TABLE [dbo].[FY2009DoDs_ServiceContractInventory](
 	[FY Activity First on Inventory] [varchar](255) NULL,
 	[Contractor FTEs] [varchar](255) NULL,
 	[Personal Services] [varchar](255) NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO

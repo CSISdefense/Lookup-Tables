@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Vendor].[StandardizedVendorNameHistory](
 	[StandardizedVendorName] [nvarchar](150) NULL,
 	[Fiscal_Year] [int] NULL,
@@ -26,8 +28,11 @@ CREATE TABLE [Vendor].[StandardizedVendorNameHistory](
 (
 	[StandardizedVendorName] ASC,
 	[Fiscal_Year] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [Vendor].[StandardizedVendorNameHistory] ADD  CONSTRAINT [DF__Standardi__CSISc__3E530F62]  DEFAULT (getdate()) FOR [CSIScreateddate]
 GO

@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [ErrorLogging].[FSRSviolatesType](
 	[prime_awardee_executive1] [varchar](255) NULL,
 	[prime_awardee_executive1_compensation] [varchar](255) NULL,
@@ -108,7 +110,10 @@ CREATE TABLE [ErrorLogging].[FSRSviolatesType](
 	[subaward_cfda_program_number_title_codes] [varchar](250) NULL,
 	[CSIScreatedDate] [datetime] NULL,
 	[CSISmodifiedDate] [datetime] NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [ErrorLogging].[FSRSviolatesType] ADD  CONSTRAINT [DF__FSRSviola__CSISc__01A9F3D5]  DEFAULT (getdate()) FOR [CSIScreatedDate]
 GO

@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [dbo].[Copy of PBLcompareLIST (2)](
 	[CONTRACT Num] [varchar](50) NULL,
 	[PSE ] [varchar](50) NULL,
@@ -12,5 +14,8 @@ CREATE TABLE [dbo].[Copy of PBLcompareLIST (2)](
 	[DOLLARS] [varchar](50) NULL,
 	[GREEN   DONE] [varchar](50) NULL,
 	[Column 6] [varchar](50) NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO

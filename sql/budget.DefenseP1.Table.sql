@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [budget].[DefenseP1](
 	[SourceFiscalYear] [int] NULL,
 	[AccountDSI] [varchar](5) NULL,
@@ -34,7 +36,10 @@ CREATE TABLE [budget].[DefenseP1](
 	[QuantEnactedType] [int] NULL,
 	[QuantSpecialType] [int] NULL,
 	[QuantActualTotal] [int] NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [budget].[DefenseP1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseP1_AccountDSI] FOREIGN KEY([AccountDSI])
 REFERENCES [budget].[AccountDSI] ([AccountDSI])

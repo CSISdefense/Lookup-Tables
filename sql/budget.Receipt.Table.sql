@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [budget].[Receipt](
 	[Fiscal_Year] [smallint] NULL,
 	[YearType] [varchar](50) NULL,
@@ -21,7 +23,10 @@ CREATE TABLE [budget].[Receipt](
 	[AccountName] [varchar](164) NULL,
 	[OnOrOffBudget] [varchar](10) NULL,
 	[CSIScreatedDate] [datetime2](7) NOT NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [budget].[Receipt] ADD  CONSTRAINT [DF__Receipts__CSIScr__7929BC6D]  DEFAULT (getdate()) FOR [CSIScreatedDate]
 GO

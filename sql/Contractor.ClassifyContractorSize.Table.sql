@@ -10,5 +10,6 @@ CREATE TABLE [Contractor].[ClassifyContractorSize](
 	[small] [bit] NULL,
 	[ClassifyContractorSize5Category] [nvarchar](50) NULL,
 	[largebig6] [bit] NULL
-) ON [PRIMARY]
+)
+
 GO

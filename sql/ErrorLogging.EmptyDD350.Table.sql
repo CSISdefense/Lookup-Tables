@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [ErrorLogging].[EmptyDD350](
 	[FiscalReportingPeriod] [varchar](50) NULL,
 	[ContractingAgencyId] [varchar](4) NULL,
@@ -91,5 +93,8 @@ CREATE TABLE [ErrorLogging].[EmptyDD350](
 	[CAGEmalformed] [varchar](9) NULL,
 	[TransactionNumberCSISadded] [bigint] NULL,
 	[CSIStransactionID] [int] NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO

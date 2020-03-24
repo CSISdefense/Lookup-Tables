@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Location].[CCC](
 	[fiscal_year] [smallint] NULL,
 	[Query_Run_Date] [datetime] NOT NULL,
@@ -47,5 +49,8 @@ CREATE TABLE [Location].[CCC](
 	[CSISidvmodificationID] [int] NULL,
 	[CSIStransactionID] [int] NULL,
 	[CSISidvpiidID] [int] NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO

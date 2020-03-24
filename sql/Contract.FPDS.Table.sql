@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [Contract].[FPDS](
 	[unique_transaction_id] [varchar](36) NULL,
 	[transaction_status] [varchar](6) NULL,
@@ -253,8 +255,22 @@ CREATE TABLE [Contract].[FPDS](
 	[alaskan_native_servicing_institution] [bit] NULL,
 	[native_hawaiian_servicing_institution] [bit] NULL,
 	[sba_certified_8a_joint_venture] [bit] NULL,
-	[dot_certified_disadvantage] [bit] NULL
-) ON [PRIMARY]
+	[dot_certified_disadvantage] [bit] NULL,
+	[contract_transaction_unique_key] [varchar](66) NULL,
+	[contract_award_unique_key] [varchar](66) NULL,
+	[current_total_value_of_award] [decimal](19, 4) NULL,
+	[potential_total_value_of_award] [decimal](19, 4) NULL,
+	[award_or_idv_flag] [varchar](5) NULL,
+	[inherently_governmental_functions] [varchar](10) NULL,
+	[total_dollars_obligated] [decimal](19, 4) NULL,
+	[solicitation_date] [date] NULL,
+	[treasury_accounts_funding_this_award] [varchar](4000) NULL,
+	[federal_accounts_funding_this_award] [varchar](1000) NULL,
+	[usaspending_permalink] [varchar](150) NULL
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [Contract].[FPDS] ADD  CONSTRAINT [DF_FPDS_CSISCreatedDate]  DEFAULT (getdate()) FOR [CSISCreatedDate]
 GO

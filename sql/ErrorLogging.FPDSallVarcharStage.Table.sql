@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [ErrorLogging].[FPDSallVarcharStage](
 	[gfe_gfp] [varchar](255) NULL,
 	[research] [varchar](255) NULL,
@@ -273,5 +275,8 @@ CREATE TABLE [ErrorLogging].[FPDSallVarcharStage](
 	[total_dollars_obligated] [varchar](255) NULL,
 	[foreign_funding_description] [varchar](255) NULL,
 	[CSIStransactionID] [int] NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO

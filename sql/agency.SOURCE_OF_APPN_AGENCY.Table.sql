@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [agency].[SOURCE_OF_APPN_AGENCY](
 	[SOURCE_OF_APPN_AGENCY] [varchar](28) NULL,
 	[treasuryagencycode] [varchar](2) NULL,
@@ -12,7 +14,10 @@ CREATE TABLE [agency].[SOURCE_OF_APPN_AGENCY](
 	[CSISmodifiedBy] [nvarchar](128) NOT NULL,
 	[FundingAgencyID] [varchar](4) NULL,
 	[ImplementingAgencyID] [varchar](4) NULL
-) ON [PRIMARY]
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [agency].[SOURCE_OF_APPN_AGENCY] ADD  CONSTRAINT [DF__SOURCE_OF__CSISc__2AB62B09]  DEFAULT (getdate()) FOR [CSIScreatedDate]
 GO

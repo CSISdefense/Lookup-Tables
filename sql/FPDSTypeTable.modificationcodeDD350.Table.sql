@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [FPDSTypeTable].[modificationcodeDD350](
 	[modificationcode] [varchar](1) NOT NULL,
 	[modificationcodeText] [nvarchar](255) NULL,
@@ -11,8 +13,11 @@ CREATE TABLE [FPDSTypeTable].[modificationcodeDD350](
  CONSTRAINT [PK_modificationcodeDD350_modificationcode] PRIMARY KEY CLUSTERED 
 (
 	[modificationcode] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
 ALTER TABLE [FPDSTypeTable].[modificationcodeDD350]  WITH NOCHECK ADD  CONSTRAINT [FK_modificationcodeDD350_reasonformodification] FOREIGN KEY([reasonformodification])
 REFERENCES [FPDSTypeTable].[reasonformodification] ([reasonformodification])

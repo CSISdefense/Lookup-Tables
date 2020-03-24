@@ -4,6 +4,8 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+SET ANSI_PADDING ON
+GO
 CREATE TABLE [FPDSTypeTable].[interagencycontractingauthority](
 	[Unseperated] [varchar](255) NULL,
 	[interagencycontractingauthority] [varchar](3) NOT NULL,
@@ -11,6 +13,9 @@ CREATE TABLE [FPDSTypeTable].[interagencycontractingauthority](
  CONSTRAINT [PK_interagencycontractingauthority] PRIMARY KEY CLUSTERED 
 (
 	[interagencycontractingauthority] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
+)
+
+GO
+SET ANSI_PADDING OFF
 GO
