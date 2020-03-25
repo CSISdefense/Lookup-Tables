@@ -450,10 +450,21 @@ create_try_converts<-function(data,
     )
   }
   
+  ConvertList<-c(ConvertList,
+                 paste("--Varchar to varchar group check. Note you have to remove an extraneous comma from the first item", 
+                       "\nSELECT\n",
+                       paste(
+                         paste("\t,max(iif(",data$length_check[varchar_list],"is null,1,0)) as ",data$SourceVariableName[varchar_list],
+                               sep = ""),
+                         collapse="\n"),
+                       "\n\tFROM ",Schema,".",TableName,"\n",
+                       collapse="",sep="")
+  )
+  
   #
   if(any(varchar_list)){
     ConvertList<-c(ConvertList,
-            paste("--Varchar to varchar group check. Note you have to remove an extraneous comma from the first item", 
+            paste("--Check across all non varchar variables for failed tryconverts", 
                        "\nSELECT\n",
                   paste(
                     paste(",iif(",data$SourceVariableName[varchar_list],
