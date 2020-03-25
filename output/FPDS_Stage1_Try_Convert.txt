@@ -61,9 +61,9 @@ NULLIF([period_of_performance_current_end_date],'') IS NOT NULL)
 
 SELECT DISTINCT [period_of_performance_potential_end_date],
 len([period_of_performance_potential_end_date]) as Length,
-'[date]' as DestinationType
+'[datetime2](7)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (Try_Convert([date], [period_of_performance_potential_end_date],101) IS NULL AND
+WHERE (Try_Convert([datetime2](7), [period_of_performance_potential_end_date]) IS NULL AND
 NULLIF([period_of_performance_potential_end_date],'') IS NOT NULL)
 
 SELECT DISTINCT [ordering_period_end_date],
@@ -941,7 +941,7 @@ SELECT
 ,iif([recipient_duns]>13,[recipient_duns],NULL) as [recipient_duns]
 ,iif([recipient_parent_name]>150,[recipient_parent_name],NULL) as [recipient_parent_name]
 ,iif([recipient_parent_duns]>13,[recipient_parent_duns],NULL) as [recipient_parent_duns]
-,iif([recipient_address_line_1]>90,[recipient_address_line_1],NULL) as [recipient_address_line_1]
+,iif([recipient_address_line_1]>100,[recipient_address_line_1],NULL) as [recipient_address_line_1]
 ,iif([recipient_address_line_2]>60,[recipient_address_line_2],NULL) as [recipient_address_line_2]
 ,iif([recipient_city_name]>35,[recipient_city_name],NULL) as [recipient_city_name]
 ,iif([recipient_state_code]>30,[recipient_state_code],NULL) as [recipient_state_code]
