@@ -277,13 +277,13 @@ convert_switch<-function(MergeTable.df,
   if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
   
   #Converting to date from any type
-  SwitchList<-MergeTable.df$CSISvariableShortType=="[date]"&
+  SwitchList<-MergeTable.df$CSISvariableShortType %in% c("[date]","[datetime2]")&
     is.na(MergeTable.df$ConvertList)
   
   if(Apply_Drop==TRUE)
     SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
   MergeTable.df$ConvertList[SwitchList]<-
-    paste(ConvertText,"([date], ",
+    paste(ConvertText,"(",MergeTable.df$CSISvariableType[SwitchList],", ",
           MergeTable.df$SourceVariableName[SwitchList] ,
           ",",as.character(DateType),")",
           sep=""
@@ -451,10 +451,10 @@ create_try_converts<-function(data,
   }
   
   ConvertList<-c(ConvertList,
-                 paste("--Varchar to varchar group check. Note you have to remove an extraneous comma from the first item", 
+                 paste("--Check across all non varchar variables for failed tryconverts",
                        "\nSELECT\n",
                        paste(
-                         paste("\t,max(iif(",data$length_check[varchar_list],"is null,1,0)) as ",data$SourceVariableName[varchar_list],
+                         paste("\t,max(iif(",data$ConvertList[!varchar_list],"is null,1,0)) as ",data$SourceVariableName[!varchar_list],
                                sep = ""),
                          collapse="\n"),
                        "\n\tFROM ",Schema,".",TableName,"\n",
@@ -464,7 +464,7 @@ create_try_converts<-function(data,
   #
   if(any(varchar_list)){
     ConvertList<-c(ConvertList,
-            paste("--Check across all non varchar variables for failed tryconverts", 
+            paste( "--Varchar to varchar group check. Note you have to remove an extraneous comma from the first item", 
                        "\nSELECT\n",
                   paste(
                     paste(",iif(",data$SourceVariableName[varchar_list],
