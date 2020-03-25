@@ -925,203 +925,204 @@ NULLIF([action_date_fiscal_year],'') IS NOT NULL)
 
 --Varchar to varchar group check. Note you have to remove an extraneous comma from the first item 
 SELECT
- ,iif(max(len([award_id_piid]))>50,
-	max(len([award_id_piid])),NULL)
-,iif(max(len([modification_number]))>25,
-	max(len([modification_number])),NULL)
-,iif(max(len([parent_award_agency_id]))>4,
-	max(len([parent_award_agency_id])),NULL)
-,iif(max(len([parent_award_id_piid]))>50,
-	max(len([parent_award_id_piid])),NULL)
-,iif(max(len([parent_award_modification_number]))>25,
-	max(len([parent_award_modification_number])),NULL)
-,iif(max(len([awarding_agency_code]))>4,
-	max(len([awarding_agency_code])),NULL)
-,iif(max(len([awarding_sub_agency_code]))>4,
-	max(len([awarding_sub_agency_code])),NULL)
-,iif(max(len([awarding_office_code]))>6,
-	max(len([awarding_office_code])),NULL)
-,iif(max(len([funding_agency_code]))>4,
-	max(len([funding_agency_code])),NULL)
-,iif(max(len([funding_sub_agency_code]))>4,
-	max(len([funding_sub_agency_code])),NULL)
-,iif(max(len([funding_office_code]))>6,
-	max(len([funding_office_code])),NULL)
-,iif(max(len([foreign_funding]))>21,
-	max(len([foreign_funding])),NULL)
-,iif(max(len([sam_exception]))>70,
-	max(len([sam_exception])),NULL)
-,iif(max(len([recipient_duns]))>13,
-	max(len([recipient_duns])),NULL)
-,iif(max(len([recipient_parent_name]))>150,
-	max(len([recipient_parent_name])),NULL)
-,iif(max(len([recipient_parent_duns]))>13,
-	max(len([recipient_parent_duns])),NULL)
-,iif(max(len([recipient_address_line_1]))>90,
-	max(len([recipient_address_line_1])),NULL)
-,iif(max(len([recipient_address_line_2]))>60,
-	max(len([recipient_address_line_2])),NULL)
-,iif(max(len([recipient_city_name]))>35,
-	max(len([recipient_city_name])),NULL)
-,iif(max(len([recipient_state_code]))>30,
-	max(len([recipient_state_code])),NULL)
-,iif(max(len([recipient_zip_4_code]))>28,
-	max(len([recipient_zip_4_code])),NULL)
-,iif(max(len([recipient_congressional_district]))>22,
-	max(len([recipient_congressional_district])),NULL)
-,iif(max(len([recipient_phone_number]))>20,
-	max(len([recipient_phone_number])),NULL)
-,iif(max(len([recipient_fax_number]))>30,
-	max(len([recipient_fax_number])),NULL)
-,iif(max(len([primary_place_of_performance_country_code]))>3,
-	max(len([primary_place_of_performance_country_code])),NULL)
-,iif(max(len([primary_place_of_performance_city_name]))>100,
-	max(len([primary_place_of_performance_city_name])),NULL)
-,iif(max(len([primary_place_of_performance_county_name]))>22,
-	max(len([primary_place_of_performance_county_name])),NULL)
-,iif(max(len([primary_place_of_performance_state_code]))>2,
-	max(len([primary_place_of_performance_state_code])),NULL)
-,iif(max(len([primary_place_of_performance_zip_4]))>10,
-	max(len([primary_place_of_performance_zip_4])),NULL)
-,iif(max(len([primary_place_of_performance_congressional_district]))>6,
-	max(len([primary_place_of_performance_congressional_district])),NULL)
-,iif(max(len([award_type_code]))>1,
-	max(len([award_type_code])),NULL)
-,iif(max(len([idv_type_code]))>1,
-	max(len([idv_type_code])),NULL)
-,iif(max(len([multiple_or_single_award_idv_code]))>1,
-	max(len([multiple_or_single_award_idv_code])),NULL)
-,iif(max(len([type_of_idc_code]))>41,
-	max(len([type_of_idc_code])),NULL)
-,iif(max(len([type_of_contract_pricing_code]))>2,
-	max(len([type_of_contract_pricing_code])),NULL)
-,iif(max(len([award_description]))>4035,
-	max(len([award_description])),NULL)
-,iif(max(len([action_type_code]))>1,
-	max(len([action_type_code])),NULL)
-,iif(max(len([solicitation_identifier]))>69,
-	max(len([solicitation_identifier])),NULL)
-,iif(max(len([product_or_service_code]))>4,
-	max(len([product_or_service_code])),NULL)
-,iif(max(len([product_or_service_code_description]))>255,
-	max(len([product_or_service_code_description])),NULL)
-,iif(max(len([contract_bundling_code]))>1,
-	max(len([contract_bundling_code])),NULL)
-,iif(max(len([dod_claimant_program_code]))>3,
-	max(len([dod_claimant_program_code])),NULL)
-,iif(max(len([naics_code]))>6,
-	max(len([naics_code])),NULL)
-,iif(max(len([recovered_materials_sustainability_code]))>1,
-	max(len([recovered_materials_sustainability_code])),NULL)
-,iif(max(len([domestic_or_foreign_entity_code]))>1,
-	max(len([domestic_or_foreign_entity_code])),NULL)
-,iif(max(len([dod_acquisition_program_code]))>4,
-	max(len([dod_acquisition_program_code])),NULL)
-,iif(max(len([information_technology_commercial_item_category_code]))>30,
-	max(len([information_technology_commercial_item_category_code])),NULL)
-,iif(max(len([epa_designated_product_code]))>1,
-	max(len([epa_designated_product_code])),NULL)
-,iif(max(len([country_of_product_or_service_origin_code]))>3,
-	max(len([country_of_product_or_service_origin_code])),NULL)
-,iif(max(len([place_of_manufacture_code]))>1,
-	max(len([place_of_manufacture_code])),NULL)
-,iif(max(len([subcontracting_plan_code]))>1,
-	max(len([subcontracting_plan_code])),NULL)
-,iif(max(len([extent_competed_code]))>3,
-	max(len([extent_competed_code])),NULL)
-,iif(max(len([solicitation_procedures_code]))>5,
-	max(len([solicitation_procedures_code])),NULL)
-,iif(max(len([type_of_set_aside_code]))>10,
-	max(len([type_of_set_aside_code])),NULL)
-,iif(max(len([evaluated_preference_code]))>6,
-	max(len([evaluated_preference_code])),NULL)
-,iif(max(len([research_code]))>3,
-	max(len([research_code])),NULL)
-,iif(max(len([fair_opportunity_limited_sources_code]))>4,
-	max(len([fair_opportunity_limited_sources_code])),NULL)
-,iif(max(len([other_than_full_and_open_competition_code]))>3,
-	max(len([other_than_full_and_open_competition_code])),NULL)
-,iif(max(len([commercial_item_acquisition_procedures_code]))>1,
-	max(len([commercial_item_acquisition_procedures_code])),NULL)
-,iif(max(len([small_business_competitiveness_demonstration_program]))>6,
-	max(len([small_business_competitiveness_demonstration_program])),NULL)
-,iif(max(len([a76_fair_act_action_code]))>3,
-	max(len([a76_fair_act_action_code])),NULL)
-,iif(max(len([fed_biz_opps_code]))>1,
-	max(len([fed_biz_opps_code])),NULL)
-,iif(max(len([local_area_set_aside_code]))>4,
-	max(len([local_area_set_aside_code])),NULL)
-,iif(max(len([materials_supplies_articles_equipment_code]))>1,
-	max(len([materials_supplies_articles_equipment_code])),NULL)
-,iif(max(len([labor_standards_code]))>1,
-	max(len([labor_standards_code])),NULL)
-,iif(max(len([construction_wage_rate_requirements_code]))>1,
-	max(len([construction_wage_rate_requirements_code])),NULL)
-,iif(max(len([interagency_contracting_authority_code]))>3,
-	max(len([interagency_contracting_authority_code])),NULL)
-,iif(max(len([other_statutory_authority]))>1000,
-	max(len([other_statutory_authority])),NULL)
-,iif(max(len([program_acronym]))>29,
-	max(len([program_acronym])),NULL)
-,iif(max(len([parent_award_type_code]))>1,
-	max(len([parent_award_type_code])),NULL)
-,iif(max(len([parent_award_single_or_multiple_code]))>1,
-	max(len([parent_award_single_or_multiple_code])),NULL)
-,iif(max(len([major_program]))>104,
-	max(len([major_program])),NULL)
-,iif(max(len([national_interest_action_code]))>4,
-	max(len([national_interest_action_code])),NULL)
-,iif(max(len([cost_or_pricing_data_code]))>1,
-	max(len([cost_or_pricing_data_code])),NULL)
-,iif(max(len([cost_accounting_standards_clause_code]))>1,
-	max(len([cost_accounting_standards_clause_code])),NULL)
-,iif(max(len([gfe_gfp_code]))>1,
-	max(len([gfe_gfp_code])),NULL)
-,iif(max(len([sea_transportation_code]))>1,
-	max(len([sea_transportation_code])),NULL)
-,iif(max(len([undefinitized_action_code]))>1,
-	max(len([undefinitized_action_code])),NULL)
-,iif(max(len([consolidated_contract_code]))>1,
-	max(len([consolidated_contract_code])),NULL)
-,iif(max(len([performance_based_service_acquisition_code]))>38,
-	max(len([performance_based_service_acquisition_code])),NULL)
-,iif(max(len([contract_financing_code]))>1,
-	max(len([contract_financing_code])),NULL)
-,iif(max(len([contingency_humanitarian_or_peacekeeping_operation_code]))>1,
-	max(len([contingency_humanitarian_or_peacekeeping_operation_code])),NULL)
-,iif(max(len([contracting_officers_determination_of_business_size_code]))>1,
-	max(len([contracting_officers_determination_of_business_size_code])),NULL)
-,iif(max(len([sam_exception_description]))>70,
-	max(len([sam_exception_description])),NULL)
-,iif(max(len([cage_code]))>5,
-	max(len([cage_code])),NULL)
-,iif(max(len([award_or_idv_flag]))>5,
-	max(len([award_or_idv_flag])),NULL)
-,iif(max(len([inherently_governmental_functions]))>10,
-	max(len([inherently_governmental_functions])),NULL)
-,iif(max(len([inherently_governmental_functions_description]))>40,
-	max(len([inherently_governmental_functions_description])),NULL)
-,iif(max(len([organizational_type]))>30,
-	max(len([organizational_type])),NULL)
-,iif(max(len([foreign_funding_description]))>25,
-	max(len([foreign_funding_description])),NULL)
-,iif(max(len([contract_transaction_unique_key]))>66,
-	max(len([contract_transaction_unique_key])),NULL)
-,iif(max(len([contract_award_unique_key]))>66,
-	max(len([contract_award_unique_key])),NULL)
-,iif(max(len([federal_accounts_funding_this_award]))>1000,
-	max(len([federal_accounts_funding_this_award])),NULL)
-,iif(max(len([highly_compensated_officer_1_name]))>100,
-	max(len([highly_compensated_officer_1_name])),NULL)
-,iif(max(len([highly_compensated_officer_2_name]))>100,
-	max(len([highly_compensated_officer_2_name])),NULL)
-,iif(max(len([highly_compensated_officer_3_name]))>100,
-	max(len([highly_compensated_officer_3_name])),NULL)
-,iif(max(len([highly_compensated_officer_4_name]))>100,
-	max(len([highly_compensated_officer_4_name])),NULL)
-,iif(max(len([highly_compensated_officer_5_name]))>100,
-	max(len([highly_compensated_officer_5_name])),NULL)
-,iif(max(len([usaspending_permalink]))>150,
-	max(len([usaspending_permalink])),NULL) 
-FROM  Errorlogging . FPDSbetaViolatesType 
+ ,iif([award_id_piid]>50,[award_id_piid],NULL) as [award_id_piid]
+,iif([modification_number]>25,[modification_number],NULL) as [modification_number]
+,iif([parent_award_agency_id]>4,[parent_award_agency_id],NULL) as [parent_award_agency_id]
+,iif([parent_award_id_piid]>50,[parent_award_id_piid],NULL) as [parent_award_id_piid]
+,iif([parent_award_modification_number]>25,[parent_award_modification_number],NULL) as [parent_award_modification_number]
+,iif([awarding_agency_code]>4,[awarding_agency_code],NULL) as [awarding_agency_code]
+,iif([awarding_sub_agency_code]>4,[awarding_sub_agency_code],NULL) as [awarding_sub_agency_code]
+,iif([awarding_office_code]>6,[awarding_office_code],NULL) as [awarding_office_code]
+,iif([funding_agency_code]>4,[funding_agency_code],NULL) as [funding_agency_code]
+,iif([funding_sub_agency_code]>4,[funding_sub_agency_code],NULL) as [funding_sub_agency_code]
+,iif([funding_office_code]>6,[funding_office_code],NULL) as [funding_office_code]
+,iif([foreign_funding]>21,[foreign_funding],NULL) as [foreign_funding]
+,iif([sam_exception]>70,[sam_exception],NULL) as [sam_exception]
+,iif([recipient_duns]>13,[recipient_duns],NULL) as [recipient_duns]
+,iif([recipient_parent_name]>150,[recipient_parent_name],NULL) as [recipient_parent_name]
+,iif([recipient_parent_duns]>13,[recipient_parent_duns],NULL) as [recipient_parent_duns]
+,iif([recipient_address_line_1]>90,[recipient_address_line_1],NULL) as [recipient_address_line_1]
+,iif([recipient_address_line_2]>60,[recipient_address_line_2],NULL) as [recipient_address_line_2]
+,iif([recipient_city_name]>35,[recipient_city_name],NULL) as [recipient_city_name]
+,iif([recipient_state_code]>30,[recipient_state_code],NULL) as [recipient_state_code]
+,iif([recipient_zip_4_code]>28,[recipient_zip_4_code],NULL) as [recipient_zip_4_code]
+,iif([recipient_congressional_district]>22,[recipient_congressional_district],NULL) as [recipient_congressional_district]
+,iif([recipient_phone_number]>20,[recipient_phone_number],NULL) as [recipient_phone_number]
+,iif([recipient_fax_number]>30,[recipient_fax_number],NULL) as [recipient_fax_number]
+,iif([primary_place_of_performance_country_code]>3,[primary_place_of_performance_country_code],NULL) as [primary_place_of_performance_country_code]
+,iif([primary_place_of_performance_city_name]>100,[primary_place_of_performance_city_name],NULL) as [primary_place_of_performance_city_name]
+,iif([primary_place_of_performance_county_name]>22,[primary_place_of_performance_county_name],NULL) as [primary_place_of_performance_county_name]
+,iif([primary_place_of_performance_state_code]>2,[primary_place_of_performance_state_code],NULL) as [primary_place_of_performance_state_code]
+,iif([primary_place_of_performance_zip_4]>10,[primary_place_of_performance_zip_4],NULL) as [primary_place_of_performance_zip_4]
+,iif([primary_place_of_performance_congressional_district]>6,[primary_place_of_performance_congressional_district],NULL) as [primary_place_of_performance_congressional_district]
+,iif([award_type_code]>1,[award_type_code],NULL) as [award_type_code]
+,iif([idv_type_code]>1,[idv_type_code],NULL) as [idv_type_code]
+,iif([multiple_or_single_award_idv_code]>1,[multiple_or_single_award_idv_code],NULL) as [multiple_or_single_award_idv_code]
+,iif([type_of_idc_code]>41,[type_of_idc_code],NULL) as [type_of_idc_code]
+,iif([type_of_contract_pricing_code]>2,[type_of_contract_pricing_code],NULL) as [type_of_contract_pricing_code]
+,iif([award_description]>4035,[award_description],NULL) as [award_description]
+,iif([action_type_code]>1,[action_type_code],NULL) as [action_type_code]
+,iif([solicitation_identifier]>69,[solicitation_identifier],NULL) as [solicitation_identifier]
+,iif([product_or_service_code]>4,[product_or_service_code],NULL) as [product_or_service_code]
+,iif([product_or_service_code_description]>255,[product_or_service_code_description],NULL) as [product_or_service_code_description]
+,iif([contract_bundling_code]>1,[contract_bundling_code],NULL) as [contract_bundling_code]
+,iif([dod_claimant_program_code]>3,[dod_claimant_program_code],NULL) as [dod_claimant_program_code]
+,iif([naics_code]>6,[naics_code],NULL) as [naics_code]
+,iif([recovered_materials_sustainability_code]>1,[recovered_materials_sustainability_code],NULL) as [recovered_materials_sustainability_code]
+,iif([domestic_or_foreign_entity_code]>1,[domestic_or_foreign_entity_code],NULL) as [domestic_or_foreign_entity_code]
+,iif([dod_acquisition_program_code]>4,[dod_acquisition_program_code],NULL) as [dod_acquisition_program_code]
+,iif([information_technology_commercial_item_category_code]>30,[information_technology_commercial_item_category_code],NULL) as [information_technology_commercial_item_category_code]
+,iif([epa_designated_product_code]>1,[epa_designated_product_code],NULL) as [epa_designated_product_code]
+,iif([country_of_product_or_service_origin_code]>3,[country_of_product_or_service_origin_code],NULL) as [country_of_product_or_service_origin_code]
+,iif([place_of_manufacture_code]>1,[place_of_manufacture_code],NULL) as [place_of_manufacture_code]
+,iif([subcontracting_plan_code]>1,[subcontracting_plan_code],NULL) as [subcontracting_plan_code]
+,iif([extent_competed_code]>3,[extent_competed_code],NULL) as [extent_competed_code]
+,iif([solicitation_procedures_code]>5,[solicitation_procedures_code],NULL) as [solicitation_procedures_code]
+,iif([type_of_set_aside_code]>10,[type_of_set_aside_code],NULL) as [type_of_set_aside_code]
+,iif([evaluated_preference_code]>6,[evaluated_preference_code],NULL) as [evaluated_preference_code]
+,iif([research_code]>3,[research_code],NULL) as [research_code]
+,iif([fair_opportunity_limited_sources_code]>4,[fair_opportunity_limited_sources_code],NULL) as [fair_opportunity_limited_sources_code]
+,iif([other_than_full_and_open_competition_code]>3,[other_than_full_and_open_competition_code],NULL) as [other_than_full_and_open_competition_code]
+,iif([commercial_item_acquisition_procedures_code]>1,[commercial_item_acquisition_procedures_code],NULL) as [commercial_item_acquisition_procedures_code]
+,iif([small_business_competitiveness_demonstration_program]>6,[small_business_competitiveness_demonstration_program],NULL) as [small_business_competitiveness_demonstration_program]
+,iif([a76_fair_act_action_code]>3,[a76_fair_act_action_code],NULL) as [a76_fair_act_action_code]
+,iif([fed_biz_opps_code]>1,[fed_biz_opps_code],NULL) as [fed_biz_opps_code]
+,iif([local_area_set_aside_code]>4,[local_area_set_aside_code],NULL) as [local_area_set_aside_code]
+,iif([materials_supplies_articles_equipment_code]>1,[materials_supplies_articles_equipment_code],NULL) as [materials_supplies_articles_equipment_code]
+,iif([labor_standards_code]>1,[labor_standards_code],NULL) as [labor_standards_code]
+,iif([construction_wage_rate_requirements_code]>1,[construction_wage_rate_requirements_code],NULL) as [construction_wage_rate_requirements_code]
+,iif([interagency_contracting_authority_code]>3,[interagency_contracting_authority_code],NULL) as [interagency_contracting_authority_code]
+,iif([other_statutory_authority]>1000,[other_statutory_authority],NULL) as [other_statutory_authority]
+,iif([program_acronym]>29,[program_acronym],NULL) as [program_acronym]
+,iif([parent_award_type_code]>1,[parent_award_type_code],NULL) as [parent_award_type_code]
+,iif([parent_award_single_or_multiple_code]>1,[parent_award_single_or_multiple_code],NULL) as [parent_award_single_or_multiple_code]
+,iif([major_program]>104,[major_program],NULL) as [major_program]
+,iif([national_interest_action_code]>4,[national_interest_action_code],NULL) as [national_interest_action_code]
+,iif([cost_or_pricing_data_code]>1,[cost_or_pricing_data_code],NULL) as [cost_or_pricing_data_code]
+,iif([cost_accounting_standards_clause_code]>1,[cost_accounting_standards_clause_code],NULL) as [cost_accounting_standards_clause_code]
+,iif([gfe_gfp_code]>1,[gfe_gfp_code],NULL) as [gfe_gfp_code]
+,iif([sea_transportation_code]>1,[sea_transportation_code],NULL) as [sea_transportation_code]
+,iif([undefinitized_action_code]>1,[undefinitized_action_code],NULL) as [undefinitized_action_code]
+,iif([consolidated_contract_code]>1,[consolidated_contract_code],NULL) as [consolidated_contract_code]
+,iif([performance_based_service_acquisition_code]>38,[performance_based_service_acquisition_code],NULL) as [performance_based_service_acquisition_code]
+,iif([contract_financing_code]>1,[contract_financing_code],NULL) as [contract_financing_code]
+,iif([contingency_humanitarian_or_peacekeeping_operation_code]>1,[contingency_humanitarian_or_peacekeeping_operation_code],NULL) as [contingency_humanitarian_or_peacekeeping_operation_code]
+,iif([contracting_officers_determination_of_business_size_code]>1,[contracting_officers_determination_of_business_size_code],NULL) as [contracting_officers_determination_of_business_size_code]
+,iif([sam_exception_description]>70,[sam_exception_description],NULL) as [sam_exception_description]
+,iif([cage_code]>5,[cage_code],NULL) as [cage_code]
+,iif([award_or_idv_flag]>5,[award_or_idv_flag],NULL) as [award_or_idv_flag]
+,iif([inherently_governmental_functions]>10,[inherently_governmental_functions],NULL) as [inherently_governmental_functions]
+,iif([inherently_governmental_functions_description]>40,[inherently_governmental_functions_description],NULL) as [inherently_governmental_functions_description]
+,iif([organizational_type]>30,[organizational_type],NULL) as [organizational_type]
+,iif([foreign_funding_description]>25,[foreign_funding_description],NULL) as [foreign_funding_description]
+,iif([contract_transaction_unique_key]>66,[contract_transaction_unique_key],NULL) as [contract_transaction_unique_key]
+,iif([contract_award_unique_key]>66,[contract_award_unique_key],NULL) as [contract_award_unique_key]
+,iif([federal_accounts_funding_this_award]>1000,[federal_accounts_funding_this_award],NULL) as [federal_accounts_funding_this_award]
+,iif([highly_compensated_officer_1_name]>100,[highly_compensated_officer_1_name],NULL) as [highly_compensated_officer_1_name]
+,iif([highly_compensated_officer_2_name]>100,[highly_compensated_officer_2_name],NULL) as [highly_compensated_officer_2_name]
+,iif([highly_compensated_officer_3_name]>100,[highly_compensated_officer_3_name],NULL) as [highly_compensated_officer_3_name]
+,iif([highly_compensated_officer_4_name]>100,[highly_compensated_officer_4_name],NULL) as [highly_compensated_officer_4_name]
+,iif([highly_compensated_officer_5_name]>100,[highly_compensated_officer_5_name],NULL) as [highly_compensated_officer_5_name]
+,iif([usaspending_permalink]>150,[usaspending_permalink],NULL) as [usaspending_permalink] 
+FROM (SELECT
+ 	,max(len([award_id_piid])) as [award_id_piid]
+	,max(len([modification_number])) as [modification_number]
+	,max(len([parent_award_agency_id])) as [parent_award_agency_id]
+	,max(len([parent_award_id_piid])) as [parent_award_id_piid]
+	,max(len([parent_award_modification_number])) as [parent_award_modification_number]
+	,max(len([awarding_agency_code])) as [awarding_agency_code]
+	,max(len([awarding_sub_agency_code])) as [awarding_sub_agency_code]
+	,max(len([awarding_office_code])) as [awarding_office_code]
+	,max(len([funding_agency_code])) as [funding_agency_code]
+	,max(len([funding_sub_agency_code])) as [funding_sub_agency_code]
+	,max(len([funding_office_code])) as [funding_office_code]
+	,max(len([foreign_funding])) as [foreign_funding]
+	,max(len([sam_exception])) as [sam_exception]
+	,max(len([recipient_duns])) as [recipient_duns]
+	,max(len([recipient_parent_name])) as [recipient_parent_name]
+	,max(len([recipient_parent_duns])) as [recipient_parent_duns]
+	,max(len([recipient_address_line_1])) as [recipient_address_line_1]
+	,max(len([recipient_address_line_2])) as [recipient_address_line_2]
+	,max(len([recipient_city_name])) as [recipient_city_name]
+	,max(len([recipient_state_code])) as [recipient_state_code]
+	,max(len([recipient_zip_4_code])) as [recipient_zip_4_code]
+	,max(len([recipient_congressional_district])) as [recipient_congressional_district]
+	,max(len([recipient_phone_number])) as [recipient_phone_number]
+	,max(len([recipient_fax_number])) as [recipient_fax_number]
+	,max(len([primary_place_of_performance_country_code])) as [primary_place_of_performance_country_code]
+	,max(len([primary_place_of_performance_city_name])) as [primary_place_of_performance_city_name]
+	,max(len([primary_place_of_performance_county_name])) as [primary_place_of_performance_county_name]
+	,max(len([primary_place_of_performance_state_code])) as [primary_place_of_performance_state_code]
+	,max(len([primary_place_of_performance_zip_4])) as [primary_place_of_performance_zip_4]
+	,max(len([primary_place_of_performance_congressional_district])) as [primary_place_of_performance_congressional_district]
+	,max(len([award_type_code])) as [award_type_code]
+	,max(len([idv_type_code])) as [idv_type_code]
+	,max(len([multiple_or_single_award_idv_code])) as [multiple_or_single_award_idv_code]
+	,max(len([type_of_idc_code])) as [type_of_idc_code]
+	,max(len([type_of_contract_pricing_code])) as [type_of_contract_pricing_code]
+	,max(len([award_description])) as [award_description]
+	,max(len([action_type_code])) as [action_type_code]
+	,max(len([solicitation_identifier])) as [solicitation_identifier]
+	,max(len([product_or_service_code])) as [product_or_service_code]
+	,max(len([product_or_service_code_description])) as [product_or_service_code_description]
+	,max(len([contract_bundling_code])) as [contract_bundling_code]
+	,max(len([dod_claimant_program_code])) as [dod_claimant_program_code]
+	,max(len([naics_code])) as [naics_code]
+	,max(len([recovered_materials_sustainability_code])) as [recovered_materials_sustainability_code]
+	,max(len([domestic_or_foreign_entity_code])) as [domestic_or_foreign_entity_code]
+	,max(len([dod_acquisition_program_code])) as [dod_acquisition_program_code]
+	,max(len([information_technology_commercial_item_category_code])) as [information_technology_commercial_item_category_code]
+	,max(len([epa_designated_product_code])) as [epa_designated_product_code]
+	,max(len([country_of_product_or_service_origin_code])) as [country_of_product_or_service_origin_code]
+	,max(len([place_of_manufacture_code])) as [place_of_manufacture_code]
+	,max(len([subcontracting_plan_code])) as [subcontracting_plan_code]
+	,max(len([extent_competed_code])) as [extent_competed_code]
+	,max(len([solicitation_procedures_code])) as [solicitation_procedures_code]
+	,max(len([type_of_set_aside_code])) as [type_of_set_aside_code]
+	,max(len([evaluated_preference_code])) as [evaluated_preference_code]
+	,max(len([research_code])) as [research_code]
+	,max(len([fair_opportunity_limited_sources_code])) as [fair_opportunity_limited_sources_code]
+	,max(len([other_than_full_and_open_competition_code])) as [other_than_full_and_open_competition_code]
+	,max(len([commercial_item_acquisition_procedures_code])) as [commercial_item_acquisition_procedures_code]
+	,max(len([small_business_competitiveness_demonstration_program])) as [small_business_competitiveness_demonstration_program]
+	,max(len([a76_fair_act_action_code])) as [a76_fair_act_action_code]
+	,max(len([fed_biz_opps_code])) as [fed_biz_opps_code]
+	,max(len([local_area_set_aside_code])) as [local_area_set_aside_code]
+	,max(len([materials_supplies_articles_equipment_code])) as [materials_supplies_articles_equipment_code]
+	,max(len([labor_standards_code])) as [labor_standards_code]
+	,max(len([construction_wage_rate_requirements_code])) as [construction_wage_rate_requirements_code]
+	,max(len([interagency_contracting_authority_code])) as [interagency_contracting_authority_code]
+	,max(len([other_statutory_authority])) as [other_statutory_authority]
+	,max(len([program_acronym])) as [program_acronym]
+	,max(len([parent_award_type_code])) as [parent_award_type_code]
+	,max(len([parent_award_single_or_multiple_code])) as [parent_award_single_or_multiple_code]
+	,max(len([major_program])) as [major_program]
+	,max(len([national_interest_action_code])) as [national_interest_action_code]
+	,max(len([cost_or_pricing_data_code])) as [cost_or_pricing_data_code]
+	,max(len([cost_accounting_standards_clause_code])) as [cost_accounting_standards_clause_code]
+	,max(len([gfe_gfp_code])) as [gfe_gfp_code]
+	,max(len([sea_transportation_code])) as [sea_transportation_code]
+	,max(len([undefinitized_action_code])) as [undefinitized_action_code]
+	,max(len([consolidated_contract_code])) as [consolidated_contract_code]
+	,max(len([performance_based_service_acquisition_code])) as [performance_based_service_acquisition_code]
+	,max(len([contract_financing_code])) as [contract_financing_code]
+	,max(len([contingency_humanitarian_or_peacekeeping_operation_code])) as [contingency_humanitarian_or_peacekeeping_operation_code]
+	,max(len([contracting_officers_determination_of_business_size_code])) as [contracting_officers_determination_of_business_size_code]
+	,max(len([sam_exception_description])) as [sam_exception_description]
+	,max(len([cage_code])) as [cage_code]
+	,max(len([award_or_idv_flag])) as [award_or_idv_flag]
+	,max(len([inherently_governmental_functions])) as [inherently_governmental_functions]
+	,max(len([inherently_governmental_functions_description])) as [inherently_governmental_functions_description]
+	,max(len([organizational_type])) as [organizational_type]
+	,max(len([foreign_funding_description])) as [foreign_funding_description]
+	,max(len([contract_transaction_unique_key])) as [contract_transaction_unique_key]
+	,max(len([contract_award_unique_key])) as [contract_award_unique_key]
+	,max(len([federal_accounts_funding_this_award])) as [federal_accounts_funding_this_award]
+	,max(len([highly_compensated_officer_1_name])) as [highly_compensated_officer_1_name]
+	,max(len([highly_compensated_officer_2_name])) as [highly_compensated_officer_2_name]
+	,max(len([highly_compensated_officer_3_name])) as [highly_compensated_officer_3_name]
+	,max(len([highly_compensated_officer_4_name])) as [highly_compensated_officer_4_name]
+	,max(len([highly_compensated_officer_5_name])) as [highly_compensated_officer_5_name]
+	,max(len([usaspending_permalink])) as [usaspending_permalink] 
+	FROM  Errorlogging . FPDSbetaViolatesType ) as ml
 

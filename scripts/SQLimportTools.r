@@ -327,9 +327,7 @@ length_check<-function(data){
       SwitchList<-SwitchList&(data$is.colon.split=="FALSE" | is.na(data$is.colon.split))
     
     data$length_check[SwitchList]<-
-      paste(",iif(max(len(",data$SourceVariableName[SwitchList] ,"))",
-            ">",data$VariableTypeNumber[SwitchList],
-            ",\n\tmax(len(",data$SourceVariableName[SwitchList] ,")),NULL)",sep=""
+      paste("max(len(",data$SourceVariableName[SwitchList] ,"))",sep=""
       )
     
     
@@ -457,9 +455,19 @@ create_try_converts<-function(data,
     ConvertList<-c(ConvertList,
             paste("--Varchar to varchar group check. Note you have to remove an extraneous comma from the first item", 
                        "\nSELECT\n",
-                       paste(data$length_check[varchar_list],
-                             collapse = "\n"),
-                       "\nFROM ",Schema,".",TableName,"\n",
+                  paste(
+                    paste(",iif(",data$SourceVariableName[varchar_list],
+                          ">",data$VariableTypeNumber[varchar_list],
+                          ",",data$SourceVariableName[varchar_list],",NULL) as ",
+                          data$SourceVariableName[varchar_list],
+                          sep = ""),
+                    collapse="\n"),
+                  "\nFROM (SELECT\n",
+                       paste(
+                         paste("\t,",data$length_check[varchar_list]," as ",data$SourceVariableName[varchar_list],
+                             sep = ""),
+                             collapse="\n"),
+                       "\n\tFROM ",Schema,".",TableName,") as ml\n",
                        collapse="")
     )
   } 
