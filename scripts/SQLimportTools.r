@@ -277,7 +277,7 @@ convert_switch<-function(MergeTable.df,
   if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
   
   #Converting to date from any type
-  SwitchList<-MergeTable.df$CSISvariableShortType %in% c("[date]","[datetime2]")&
+  SwitchList<-MergeTable.df$CSISvariableShortType %in% c("[date]")&
     is.na(MergeTable.df$ConvertList)
   
   if(Apply_Drop==TRUE)
@@ -450,11 +450,13 @@ create_try_converts<-function(data,
     )
   }
   
+  
+  not_varchar_or_bit<-!varchar_list & data$CSISvariableShortType!="[bit]"
   ConvertList<-c(ConvertList,
-                 paste("--Check across all non varchar variables for failed tryconverts",
+                 paste("--Check across all non-varchar and non-bit destination types for failed tryconverts",
                        "\nSELECT\n",
                        paste(
-                         paste("\t,max(iif(",data$ConvertList[!varchar_list],"is null,1,0)) as ",data$SourceVariableName[!varchar_list],
+                         paste("\t,max(iif(",data$ConvertList[not_varchar_or_bit],"is null,1,0)) as ",data$SourceVariableName[not_varchar_or_bit],
                                sep = ""),
                          collapse="\n"),
                        "\n\tFROM ",Schema,".",TableName,"\n",

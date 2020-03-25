@@ -2,7 +2,7 @@ SELECT DISTINCT [last_modified_date],
 len([last_modified_date]) as Length,
 '[datetime2](7)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (Try_Convert([datetime2](7), [last_modified_date],101) IS NULL AND
+WHERE (Try_Convert([datetime2](7), [last_modified_date]) IS NULL AND
 NULLIF([last_modified_date],'') IS NOT NULL)
 
 
@@ -42,35 +42,35 @@ SELECT DISTINCT [action_date],
 len([action_date]) as Length,
 '[datetime2](7)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (Try_Convert([datetime2](7), [action_date],101) IS NULL AND
+WHERE (Try_Convert([datetime2](7), [action_date]) IS NULL AND
 NULLIF([action_date],'') IS NOT NULL)
 
 SELECT DISTINCT [period_of_performance_start_date],
 len([period_of_performance_start_date]) as Length,
 '[datetime2](7)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (Try_Convert([datetime2](7), [period_of_performance_start_date],101) IS NULL AND
+WHERE (Try_Convert([datetime2](7), [period_of_performance_start_date]) IS NULL AND
 NULLIF([period_of_performance_start_date],'') IS NOT NULL)
 
 SELECT DISTINCT [period_of_performance_current_end_date],
 len([period_of_performance_current_end_date]) as Length,
 '[datetime2](7)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (Try_Convert([datetime2](7), [period_of_performance_current_end_date],101) IS NULL AND
+WHERE (Try_Convert([datetime2](7), [period_of_performance_current_end_date]) IS NULL AND
 NULLIF([period_of_performance_current_end_date],'') IS NOT NULL)
 
 SELECT DISTINCT [period_of_performance_potential_end_date],
 len([period_of_performance_potential_end_date]) as Length,
 '[datetime2](7)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (Try_Convert([datetime2](7), [period_of_performance_potential_end_date],101) IS NULL AND
+WHERE (Try_Convert([datetime2](7), [period_of_performance_potential_end_date]) IS NULL AND
 NULLIF([period_of_performance_potential_end_date],'') IS NOT NULL)
 
 SELECT DISTINCT [ordering_period_end_date],
 len([ordering_period_end_date]) as Length,
 '[datetime2](7)' as DestinationType
 FROM Errorlogging.FPDSbetaViolatesType
-WHERE (Try_Convert([datetime2](7), [ordering_period_end_date],101) IS NULL AND
+WHERE (Try_Convert([datetime2](7), [ordering_period_end_date]) IS NULL AND
 NULLIF([ordering_period_end_date],'') IS NOT NULL)
 
 
@@ -923,114 +923,24 @@ FROM Errorlogging.FPDSbetaViolatesType
 WHERE (Try_Convert([smallint], Try_Convert(real,[action_date_fiscal_year])) IS NULL AND
 NULLIF([action_date_fiscal_year],'') IS NOT NULL)
 
---Check across all non varchar variables for failed tryconverts
+--Check across all non-varchar and non-bit destination types for failed tryconverts
 SELECT
-	,max(iif(Try_Convert([datetime2](7), [last_modified_date],101)is null,1,0)) as [last_modified_date]
+	,max(iif(Try_Convert([datetime2](7), [last_modified_date])is null,1,0)) as [last_modified_date]
 	,max(iif(Try_Convert([bigint], Try_Convert(real,[transaction_number]))is null,1,0)) as [transaction_number]
 	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,[federal_action_obligation]))is null,1,0)) as [federal_action_obligation]
 	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,[base_and_exercised_options_value]))is null,1,0)) as [base_and_exercised_options_value]
 	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,[base_and_all_options_value]))is null,1,0)) as [base_and_all_options_value]
-	,max(iif(Try_Convert([datetime2](7), [action_date],101)is null,1,0)) as [action_date]
-	,max(iif(Try_Convert([datetime2](7), [period_of_performance_start_date],101)is null,1,0)) as [period_of_performance_start_date]
-	,max(iif(Try_Convert([datetime2](7), [period_of_performance_current_end_date],101)is null,1,0)) as [period_of_performance_current_end_date]
-	,max(iif(Try_Convert([datetime2](7), [period_of_performance_potential_end_date],101)is null,1,0)) as [period_of_performance_potential_end_date]
-	,max(iif(Try_Convert([datetime2](7), [ordering_period_end_date],101)is null,1,0)) as [ordering_period_end_date]
+	,max(iif(Try_Convert([datetime2](7), [action_date])is null,1,0)) as [action_date]
+	,max(iif(Try_Convert([datetime2](7), [period_of_performance_start_date])is null,1,0)) as [period_of_performance_start_date]
+	,max(iif(Try_Convert([datetime2](7), [period_of_performance_current_end_date])is null,1,0)) as [period_of_performance_current_end_date]
+	,max(iif(Try_Convert([datetime2](7), [period_of_performance_potential_end_date])is null,1,0)) as [period_of_performance_potential_end_date]
+	,max(iif(Try_Convert([datetime2](7), [ordering_period_end_date])is null,1,0)) as [ordering_period_end_date]
 	,max(iif(Try_Convert([nvarchar](150), [recipient_name])is null,1,0)) as [recipient_name]
 	,max(iif(Try_Convert([nvarchar](150), [recipient_doing_business_as_name])is null,1,0)) as [recipient_doing_business_as_name]
 	,max(iif(Try_Convert([nvarchar](50), [recipient_country_code])is null,1,0)) as [recipient_country_code]
 	,max(iif(Try_Convert([bigint], Try_Convert(real,[number_of_actions]))is null,1,0)) as [number_of_actions]
 	,max(iif(Try_Convert([bigint], Try_Convert(real,[number_of_offers_received]))is null,1,0)) as [number_of_offers_received]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([commercial_item_test_program_code])))is null,1,0)) as [commercial_item_test_program_code]
 	,max(iif(Try_Convert([smallint], Try_Convert(real,[price_evaluation_adjustment_preference_percent_difference]))is null,1,0)) as [price_evaluation_adjustment_preference_percent_difference]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([clinger_cohen_act_planning_code])))is null,1,0)) as [clinger_cohen_act_planning_code]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([multi_year_contract_code])))is null,1,0)) as [multi_year_contract_code]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([purchase_card_as_payment_method_code])))is null,1,0)) as [purchase_card_as_payment_method_code]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([alaskan_native_owned_corporation_or_firm])))is null,1,0)) as [alaskan_native_owned_corporation_or_firm]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([american_indian_owned_business])))is null,1,0)) as [american_indian_owned_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([indian_tribe_federally_recognized])))is null,1,0)) as [indian_tribe_federally_recognized]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([native_hawaiian_owned_business])))is null,1,0)) as [native_hawaiian_owned_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([tribally_owned_business])))is null,1,0)) as [tribally_owned_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([veteran_owned_business])))is null,1,0)) as [veteran_owned_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([service_disabled_veteran_owned_business])))is null,1,0)) as [service_disabled_veteran_owned_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([woman_owned_business])))is null,1,0)) as [woman_owned_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([women_owned_small_business])))is null,1,0)) as [women_owned_small_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([economically_disadvantaged_women_owned_small_business])))is null,1,0)) as [economically_disadvantaged_women_owned_small_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([joint_venture_women_owned_small_business])))is null,1,0)) as [joint_venture_women_owned_small_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([joint_venture_economic_disadvantaged_women_owned_small_bus])))is null,1,0)) as [joint_venture_economic_disadvantaged_women_owned_small_bus]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([minority_owned_business])))is null,1,0)) as [minority_owned_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([subcontinent_asian_asian_indian_american_owned_business])))is null,1,0)) as [subcontinent_asian_asian_indian_american_owned_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([asian_pacific_american_owned_business])))is null,1,0)) as [asian_pacific_american_owned_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([black_american_owned_business])))is null,1,0)) as [black_american_owned_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([hispanic_american_owned_business])))is null,1,0)) as [hispanic_american_owned_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([native_american_owned_business])))is null,1,0)) as [native_american_owned_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([other_minority_owned_business])))is null,1,0)) as [other_minority_owned_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([emerging_small_business])))is null,1,0)) as [emerging_small_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([community_developed_corporation_owned_firm])))is null,1,0)) as [community_developed_corporation_owned_firm]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([labor_surplus_area_firm])))is null,1,0)) as [labor_surplus_area_firm]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([us_federal_government])))is null,1,0)) as [us_federal_government]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([federally_funded_research_and_development_corp])))is null,1,0)) as [federally_funded_research_and_development_corp]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([federal_agency])))is null,1,0)) as [federal_agency]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([us_state_government])))is null,1,0)) as [us_state_government]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([us_local_government])))is null,1,0)) as [us_local_government]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([city_local_government])))is null,1,0)) as [city_local_government]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([county_local_government])))is null,1,0)) as [county_local_government]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([inter_municipal_local_government])))is null,1,0)) as [inter_municipal_local_government]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([local_government_owned])))is null,1,0)) as [local_government_owned]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([municipality_local_government])))is null,1,0)) as [municipality_local_government]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([school_district_local_government])))is null,1,0)) as [school_district_local_government]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([township_local_government])))is null,1,0)) as [township_local_government]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([us_tribal_government])))is null,1,0)) as [us_tribal_government]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([foreign_government])))is null,1,0)) as [foreign_government]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([corporate_entity_not_tax_exempt])))is null,1,0)) as [corporate_entity_not_tax_exempt]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([corporate_entity_tax_exempt])))is null,1,0)) as [corporate_entity_tax_exempt]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([partnership_or_limited_liability_partnership])))is null,1,0)) as [partnership_or_limited_liability_partnership]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([sole_proprietorship])))is null,1,0)) as [sole_proprietorship]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([small_agricultural_cooperative])))is null,1,0)) as [small_agricultural_cooperative]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([international_organization])))is null,1,0)) as [international_organization]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([us_government_entity])))is null,1,0)) as [us_government_entity]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([community_development_corporation])))is null,1,0)) as [community_development_corporation]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([domestic_shelter])))is null,1,0)) as [domestic_shelter]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([educational_institution])))is null,1,0)) as [educational_institution]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([foundation])))is null,1,0)) as [foundation]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([hospital_flag])))is null,1,0)) as [hospital_flag]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([manufacturer_of_goods])))is null,1,0)) as [manufacturer_of_goods]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([veterinary_hospital])))is null,1,0)) as [veterinary_hospital]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([hispanic_servicing_institution])))is null,1,0)) as [hispanic_servicing_institution]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receives_contracts])))is null,1,0)) as [receives_contracts]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receives_grants])))is null,1,0)) as [receives_grants]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receives_contracts_and_grants])))is null,1,0)) as [receives_contracts_and_grants]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([airport_authority])))is null,1,0)) as [airport_authority]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([council_of_governments])))is null,1,0)) as [council_of_governments]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([housing_authorities_public_tribal])))is null,1,0)) as [housing_authorities_public_tribal]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([interstate_entity])))is null,1,0)) as [interstate_entity]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([planning_commission])))is null,1,0)) as [planning_commission]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([port_authority])))is null,1,0)) as [port_authority]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([transit_authority])))is null,1,0)) as [transit_authority]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([subchapter_scorporation])))is null,1,0)) as [subchapter_scorporation]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([limited_liability_corporation])))is null,1,0)) as [limited_liability_corporation]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([foreign_owned_and_located])))is null,1,0)) as [foreign_owned_and_located]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([for_profit_organization])))is null,1,0)) as [for_profit_organization]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([nonprofit_organization])))is null,1,0)) as [nonprofit_organization]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([other_not_for_profit_organization])))is null,1,0)) as [other_not_for_profit_organization]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([the_ability_one_program])))is null,1,0)) as [the_ability_one_program]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([private_university_or_college])))is null,1,0)) as [private_university_or_college]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([state_controlled_institution_of_higher_learning])))is null,1,0)) as [state_controlled_institution_of_higher_learning]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([1862_land_grant_college])))is null,1,0)) as [1862_land_grant_college]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([1890_land_grant_college])))is null,1,0)) as [1890_land_grant_college]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([1994_land_grant_college])))is null,1,0)) as [1994_land_grant_college]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([minority_institution])))is null,1,0)) as [minority_institution]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([historically_black_college])))is null,1,0)) as [historically_black_college]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([tribal_college])))is null,1,0)) as [tribal_college]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([alaskan_native_servicing_institution])))is null,1,0)) as [alaskan_native_servicing_institution]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([native_hawaiian_servicing_institution])))is null,1,0)) as [native_hawaiian_servicing_institution]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([school_of_forestry])))is null,1,0)) as [school_of_forestry]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([veterinary_college])))is null,1,0)) as [veterinary_college]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([dot_certified_disadvantage])))is null,1,0)) as [dot_certified_disadvantage]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([self_certified_small_disadvantaged_business])))is null,1,0)) as [self_certified_small_disadvantaged_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([small_disadvantaged_business])))is null,1,0)) as [small_disadvantaged_business]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([c8a_program_participant])))is null,1,0)) as [c8a_program_participant]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([historically_underutilized_business_zone_hubzone_firm])))is null,1,0)) as [historically_underutilized_business_zone_hubzone_firm]
-	,max(iif(Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([sba_certified_8a_joint_venture])))is null,1,0)) as [sba_certified_8a_joint_venture]
 	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,[current_total_value_of_award]))is null,1,0)) as [current_total_value_of_award]
 	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,[potential_total_value_of_award]))is null,1,0)) as [potential_total_value_of_award]
 	,max(iif(Try_Convert([bigint], Try_Convert(real,[number_of_employees]))is null,1,0)) as [number_of_employees]
