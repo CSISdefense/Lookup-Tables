@@ -196,10 +196,10 @@ convert_switch<-function(MergeTable.df,
   #I swear I had this working, but then it broke hard and every time I tried to 
   #debug it, the crash took minutes to resolve.
   # OneSwitch<-function(VariableName,
-  #                     VariableShortType,
+  #                     CSISvariableShortType,
   #                     VariableFullType){
   #   ConvertText<-ifelse(IsTryConvert,"Try_Convert","Convert")
-  #   Outcome<-switch(VariableShortType,
+  #   Outcome<-switch(CSISvariableShortType,
   #                   "[decimal]"=paste(ConvertText,"(",VariableFullType,
   #                                     ", ",ConvertText,"(real,",
   #                                     VariableName,"))",
@@ -220,82 +220,90 @@ convert_switch<-function(MergeTable.df,
   # }
   # 
   # 
-  # MergeTable.df$VariableShortType<-substr(MergeTable.df$CSISvariableType,1,
+  # MergeTable.df$CSISvariableShortType<-substr(MergeTable.df$CSISvariableType,1,
   #                                         regexpr(']',MergeTable.df$CSISvariableType))
   # 
   # MergeTable.df<-
   #   ddply(MergeTable.df,
-  #                      .(SourceVariableName,VariableShortType,CSISvariableType),
+  #                      .(SourceVariableName,CSISvariableShortType,CSISvariableType),
   #          transform,
   #                      ConvertList=OneSwitch(SourceVariableName,
-  #                                            VariableShortType,
+  #                                            CSISvariableShortType,
   #                                            CSISvariableType))
   # MergeTable.df
   if(any(is.na(MergeTable.df$CSISvariableType)))
     stop("Some columns are missing a destination type")
   
-    ConvertText<-ifelse(IsTryConvert,"Try_Convert","Convert")
-    MergeTable.df$VariableShortType<-substr(MergeTable.df$CSISvariableType,1,
-                                            regexpr(']',MergeTable.df$CSISvariableType))
-
-    MergeTable.df$ConvertList<-NA
-    SwitchList<-MergeTable.df$SourceVariableType==MergeTable.df$CSISvariableType
-    if(Apply_Drop==TRUE)
-      SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
-    MergeTable.df$ConvertList[SwitchList]<-MergeTable.df$SourceVariableName[SwitchList]
+  ConvertText<-ifelse(IsTryConvert,"Try_Convert","Convert")
+  MergeTable.df$CSISvariableShortType<-substr(MergeTable.df$CSISvariableType,1,
+                                          regexpr(']',MergeTable.df$CSISvariableType))
+  MergeTable.df$SourceVariableShortType<-substr(MergeTable.df$SourceVariableType,1,
+                                              regexpr(']',MergeTable.df$SourceVariableType))
+  
+  MergeTable.df$ConvertList<-NA
+  
+  #Conversions within the same type
+  SwitchList<-MergeTable.df$SourceVariableType==MergeTable.df$CSISvariableType
+  if(Apply_Drop==TRUE)
+    SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
+  MergeTable.df$ConvertList[SwitchList]<-MergeTable.df$SourceVariableName[SwitchList]
+  
     
-    
-    SwitchList<-MergeTable.df$VariableShortType %in% c("[decimal]","[smallint]","[bigint]")&
-      is.na(MergeTable.df$ConvertList)
-    MergeTable.df$ConvertList[SwitchList]<-
-      paste(ConvertText,"(",
-                                      MergeTable.df$CSISvariableType[SwitchList] ,
-                                      ", ",ConvertText,"(real,",
-                                      MergeTable.df$SourceVariableName[SwitchList] ,"))",
-                                      sep=""
-                    )
-    if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
-    
-    SwitchList<-MergeTable.df$VariableShortType=="[bit]"&
-        is.na(MergeTable.df$ConvertList)
-    if(Apply_Drop==TRUE)
-      SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
-    MergeTable.df$ConvertList[SwitchList]<-
-      paste(ConvertText,"(",
-            MergeTable.df$CSISvariableType[SwitchList] ,", ",
-            "(SELECT ReturnBit from Errorlogging.ConvertYNtoBit(",
-            MergeTable.df$SourceVariableName[SwitchList] ,
-            ")))",
-            sep=""
-      )
-    if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
-    
-    SwitchList<-MergeTable.df$VariableShortType=="[date]"&
-      is.na(MergeTable.df$ConvertList)
-    
-    if(Apply_Drop==TRUE)
-      SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
-    MergeTable.df$ConvertList[SwitchList]<-
-      paste(ConvertText,"([date], ",
-                                   MergeTable.df$SourceVariableName[SwitchList] ,
-                                   ",",as.character(DateType),")",
-                                   sep=""
-                    )
-    if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
-    
-    SwitchList<-is.na(MergeTable.df$ConvertList)
-        if(Apply_Drop==TRUE)
-      SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
-    MergeTable.df$ConvertList[SwitchList]<-
-                    paste(ConvertText,"(",
-                          MergeTable.df$CSISvariableType[SwitchList] ,", ",
-                          MergeTable.df$SourceVariableName[SwitchList] ,
-                          ")",
-                          sep=""
-                    )
-    if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
-    
-    MergeTable.df
+  #Converting to a numerical type
+  SwitchList<-MergeTable.df$CSISvariableShortType %in% c("[decimal]","[smallint]","[bigint]")&
+    is.na(MergeTable.df$ConvertList)
+  MergeTable.df$ConvertList[SwitchList]<-
+    paste(ConvertText,"(",
+          MergeTable.df$CSISvariableType[SwitchList] ,
+          ", ",ConvertText,"(real,",
+          MergeTable.df$SourceVariableName[SwitchList] ,"))",
+          sep=""
+    )
+  if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
+  
+  #Converting to bit from any type
+  SwitchList<-MergeTable.df$CSISvariableShortType=="[bit]"&
+    is.na(MergeTable.df$ConvertList)
+  if(Apply_Drop==TRUE)
+    SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
+  MergeTable.df$ConvertList[SwitchList]<-
+    paste(ConvertText,"(",
+          MergeTable.df$CSISvariableType[SwitchList] ,", ",
+          "(SELECT ReturnBit from Errorlogging.ConvertYNtoBit(",
+          MergeTable.df$SourceVariableName[SwitchList] ,
+          ")))",
+          sep=""
+    )
+  if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
+  
+  #Converting to date from any type
+  SwitchList<-MergeTable.df$CSISvariableShortType=="[date]"&
+    is.na(MergeTable.df$ConvertList)
+  
+  if(Apply_Drop==TRUE)
+    SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
+  MergeTable.df$ConvertList[SwitchList]<-
+    paste(ConvertText,"([date], ",
+          MergeTable.df$SourceVariableName[SwitchList] ,
+          ",",as.character(DateType),")",
+          sep=""
+    )
+  if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
+  
+  #All remaining types
+  SwitchList<-is.na(MergeTable.df$ConvertList)
+  if(Apply_Drop==TRUE)
+    SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
+  MergeTable.df$ConvertList[SwitchList]<-
+    paste(ConvertText,"(",
+          MergeTable.df$CSISvariableType[SwitchList] ,", ",
+          MergeTable.df$SourceVariableName[SwitchList] ,
+          ")",
+          sep=""
+    )
+  if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
+  
+  MergeTable.df
 }
 
 
@@ -308,10 +316,27 @@ length_check<-function(data){
                 regexpr('[(]',data$CSISvariableType)+1,
                 regexpr('[)]',data$CSISvariableType)-1)
         ))
-        
-  #No Colon
 
-    SwitchList<-data$VariableShortType=="[varchar]"&
+    
+    #No Colon and Varchar to Varchar
+    SwitchList<-data$CSISvariableShortType=="[varchar]"&
+      data$SourceVariableShortType=="[varchar]" &
+      data$length_check==""&
+      !is.na(data$VariableTypeNumber)
+    if("is.colon.split" %in% colnames(data))
+      SwitchList<-SwitchList&(data$is.colon.split=="FALSE" | is.na(data$is.colon.split))
+    
+    data$length_check[SwitchList]<-
+      paste(",iif(max(len(",data$SourceVariableName[SwitchList] ,"))",
+            ">",data$VariableTypeNumber[SwitchList],
+            ",\n\tmax(len(",data$SourceVariableName[SwitchList] ,")),NULL)",sep=""
+      )
+    
+    
+            
+    #No Colon and other  to Varchar
+
+    SwitchList<-data$CSISvariableShortType=="[varchar]"&
         data$length_check==""&
         !is.na(data$VariableTypeNumber)
     if("is.colon.split" %in% colnames(data))
@@ -321,9 +346,11 @@ length_check<-function(data){
               ">",data$VariableTypeNumber[SwitchList],"\n"
         )
     
+    
+    
     #Colon Split
     if("is.colon.split" %in% colnames(data)){
-      SwitchList<-data$VariableShortType=="[varchar]"&
+      SwitchList<-data$CSISvariableShortType=="[varchar]"&
         data$length_check==""&
         !is.na(data$VariableTypeNumber)&
         (data$is.colon.split=="TRUE")
@@ -392,21 +419,28 @@ create_try_converts<-function(data,
   data<-length_check(data)
   data<-left_of_colon(data)
   
-  
+  #Identifying conversions from varchar to varchar, i.e. only length checks
+  varchar_list<- SwitchList<-data$CSISvariableShortType=="[varchar]"&
+    data$SourceVariableShortType=="[varchar]" &
+    !is.na(data$VariableTypeNumber)
 
-  ConvertList<-paste(
-    "SELECT DISTINCT ",
-    data$SourceVariableName,",\n",
-    "len(",data$SourceVariableName,") as Length,\n",
-    data$left_of_colon,
-    "'",data$CSISvariableType,"' as DestinationType","\n",
-    "FROM ",Schema,".",TableName,"\n",
-    "WHERE (",
-    data$ConvertList,
-    " IS NULL AND\n",
-    "NULLIF(",data$SourceVariableName,",'') IS NOT NULL)\n",
-    data$length_check,
-    sep="")
+  #Typical conversions
+  ConvertList<-NULL
+  if(any(!varchar_list))  
+    ConvertList<-paste(
+      ifelse(varchar_list,"",
+             paste("SELECT DISTINCT ",
+                   data$SourceVariableName,",\n",
+                   "len(",data$SourceVariableName,") as Length,\n",
+                   data$left_of_colon,
+                   "'",data$CSISvariableType,"' as DestinationType","\n",
+                   "FROM ",Schema,".",TableName,"\n",
+                   "WHERE (",
+                   data$ConvertList,
+                   " IS NULL AND\n",
+                   "NULLIF(",data$SourceVariableName,",'') IS NOT NULL)\n",
+                   data$length_check,sep="")),
+      sep="")
   
   
   #Create an alter to fix that, if not supressed by user
@@ -417,6 +451,18 @@ create_try_converts<-function(data,
                              data$CSISvariableType,"\n",sep="")
     )
   }
+  
+  #
+  if(any(varchar_list)){
+    ConvertList<-c(ConvertList,
+            paste("--Varchar to varchar group check. Note you have to remove an extraneous comma from the first item", 
+                       "\nSELECT\n",
+                       paste(data$length_check[varchar_list],
+                             collapse = "\n"),
+                       "\nFROM ",Schema,".",TableName,"\n",
+                       collapse="")
+    )
+  } 
   
   
   ConvertList
