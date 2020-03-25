@@ -122,7 +122,8 @@ if(!file.exists("sql\\ErrorLogging.FPDSbetaViolatesConstraint.table.sql")){
     
     Merge1to2.df<-Merge1to2.df%>% dplyr::filter(!SourceVariableName %in% ignore_cols)  
     
-  
+     
+     # debug(length_check)
       TryConvertList<-create_try_converts(Merge1to2.df,"Errorlogging","FPDSbetaViolatesType",
                                           IncludeAlters=FALSE,
                                           Add_Colon_Split=FALSE,
