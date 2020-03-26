@@ -401,7 +401,9 @@ create_try_converts<-function(data,
                               IncludeAlters=TRUE,
   path="https://raw.githubusercontent.com/CSISdefense/Lookup-Tables/master/style/",
   Add_Colon_Split=FALSE,
-  Apply_Drop=TRUE){
+  Apply_Drop=TRUE,
+  IncludeSingle=TRUE,
+  IncludeMultiple=TRUE){
   #Limit it to just cases where the variable type is changing
   data<-subset(data,SourceVariableType!=data$CSISvariableType)
   
@@ -431,94 +433,86 @@ create_try_converts<-function(data,
   data<-length_check(data)
   data<-left_of_colon(data)
   
-  #Identifying conversions from varchar to varchar, i.e. only length checks
-  varchar_list<- SwitchList<-data$CSISvariableShortType=="[varchar]"&
-    data$SourceVariableShortType=="[varchar]" &
-    !is.na(data$VariableTypeNumber)
-
-  #Typical conversions
-  ConvertList<-NULL
-  if(any(!varchar_list))  
-    ConvertList<-paste(
-      ifelse(varchar_list,"",
-             paste("SELECT DISTINCT ",
-                   data$SourceVariableName,",\n",
-                   "len(",data$SourceVariableName,") as Length,\n",
-                   data$left_of_colon,
-                   "'",data$CSISvariableType,"' as DestinationType","\n",
-                   "FROM ",Schema,".",TableName,"\n",
-                   "WHERE (",
-                   data$ConvertList,
-                   " IS NULL AND\n",
-                   "NULLIF(",data$SourceVariableName,",'') IS NOT NULL)\n",
-                   data$length_check,sep="")),
-      sep="")
+  #Single column conversion checks
   
+  if(IncludeSingle)
+    ConvertList<-paste("SELECT DISTINCT ",
+                       data$SourceVariableName,",\n",
+                       "len(",data$SourceVariableName,") as Length,\n",
+                       data$left_of_colon,
+                       "'",data$CSISvariableType,"' as DestinationType","\n",
+                       "FROM ",Schema,".",TableName,"\n",
+                       "WHERE (",
+                       data$ConvertList,
+                       " IS NULL AND\n",
+                       "NULLIF(",data$SourceVariableName,",'') IS NOT NULL)\n",
+                       data$length_check,sep="")
+  else ConvertList<-NULL
   
   #Create an alter to fix that, if not supressed by user
-  if(IncludeAlters){
+  if(IncludeAlters)
     ConvertList<-rbind(ConvertList,
                        paste("ALTER TABLE ",Schema,".",TableName,"\n",
                              "ALTER COLUMN ",data$SourceVariableName," ",
                              data$CSISvariableType,"\n",sep="")
     )
-  }
   
   
-  not_varchar_or_bit<-!varchar_list & data$CSISvariableShortType!="[bit]"
-  ConvertList<-c(ConvertList,
-                 paste("--Check across all non-varchar and non-bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.",
-                       "\nSELECT\n",
-                       paste(
-                         paste("\t,max(iif(",data$ConvertList[not_varchar_or_bit]," is null and\n\t\tnullif(",data$SourceVariableName[not_varchar_or_bit],",'') is not null,1,0)) as ",data$SourceVariableName[not_varchar_or_bit],
-                               sep = ""),
-                         collapse="\n"),
-                       "\n\tFROM ",Schema,".",TableName,"\n",
-                       collapse="",sep="")
-  )
-  
-  bit<-!varchar_list & data$CSISvariableShortType=="[bit]"
-  ConvertList<-c(ConvertList,
-                 paste("--Check across all bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.",
-                       "\nSELECT\n",
-                       paste(
-                         paste(",max(",data$SourceVariableName[bit],") as ",
-                               data$SourceVariableName[bit],
-                               sep = ""),
-                         collapse="\n"),
-                       "\nFROM (SELECT\n",
-                       paste(
-                         paste("\t,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit(",data$SourceVariableName[bit],")) as ",data$SourceVariableName[bit],
-                               sep = ""),
-                         collapse="\n"),
-                       "\n\tFROM ",Schema,".",TableName,") as ml\n",
-                       collapse="",sep="")
-  )
-  
-  
-  #
-  if(any(varchar_list)){
+  if(IncludeMultiple){
+    not_varchar_or_bit<-!varchar_list & data$CSISvariableShortType!="[bit]"
     ConvertList<-c(ConvertList,
-            paste( "--Varchar to varchar group check. Note you have to remove an extraneous comma from the first item.", 
-                       "\nSELECT\n",
-                  paste(
-                    paste(",iif(",data$SourceVariableName[varchar_list],
-                          ">",data$VariableTypeNumber[varchar_list],
-                          ",",data$SourceVariableName[varchar_list],",NULL) as ",
-                          data$SourceVariableName[varchar_list],
-                          sep = ""),
-                    collapse="\n"),
-                  "\nFROM (SELECT\n",
-                       paste(
-                         paste("\t,",data$length_check[varchar_list]," as ",data$SourceVariableName[varchar_list],
-                             sep = ""),
-                             collapse="\n"),
-                       "\n\tFROM ",Schema,".",TableName,") as ml\n",
-                       collapse="")
+                   paste("--Check across all non-varchar and non-bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.",
+                         "\nSELECT\n",
+                         paste(
+                           paste("\t,max(iif(",data$ConvertList[not_varchar_or_bit]," is null and\n\t\tnullif(",data$SourceVariableName[not_varchar_or_bit],",'') is not null,1,0)) as ",data$SourceVariableName[not_varchar_or_bit],
+                                 sep = ""),
+                           collapse="\n"),
+                         "\n\tFROM ",Schema,".",TableName,"\n",
+                         collapse="",sep="")
     )
-  } 
-  
-  
+    
+    bit<-!varchar_list & data$CSISvariableShortType=="[bit]"
+    ConvertList<-c(ConvertList,
+                   paste("--Check across all bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.",
+                         "\nSELECT\n",
+                         paste(
+                           paste(",max(",data$SourceVariableName[bit],") as ",
+                                 data$SourceVariableName[bit],
+                                 sep = ""),
+                           collapse="\n"),
+                         "\nFROM (SELECT\n",
+                         paste(
+                           paste("\t,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit(",data$SourceVariableName[bit],")) as ",data$SourceVariableName[bit],
+                                 sep = ""),
+                           collapse="\n"),
+                         "\n\tFROM ",Schema,".",TableName,") as ml\n",
+                         collapse="",sep="")
+    )
+    
+    
+    #
+    if(any(varchar_list)){
+      ConvertList<-c(ConvertList,
+                     paste( "--Varchar to varchar group check. Note you have to remove an extraneous comma from the first item.", 
+                            "\nSELECT\n",
+                            paste(
+                              paste(",iif(",data$SourceVariableName[varchar_list],
+                                    ">",data$VariableTypeNumber[varchar_list],
+                                    ",",data$SourceVariableName[varchar_list],",NULL) as ",
+                                    data$SourceVariableName[varchar_list],
+                                    sep = ""),
+                              collapse="\n"),
+                            "\nFROM (SELECT\n",
+                            paste(
+                              paste("\t,",data$length_check[varchar_list]," as ",data$SourceVariableName[varchar_list],
+                                    sep = ""),
+                              collapse="\n"),
+                            "\n\tFROM ",Schema,".",TableName,") as ml\n",
+                            collapse="")
+      )
+    } 
+    
+  }
   ConvertList
 }
 
