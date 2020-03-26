@@ -255,8 +255,8 @@ convert_switch<-function(MergeTable.df,
   MergeTable.df$ConvertList[SwitchList]<-
     paste(ConvertText,"(",
           MergeTable.df$CSISvariableType[SwitchList] ,
-          ", ",ConvertText,"(real,",
-          MergeTable.df$SourceVariableName[SwitchList] ,"))",
+          ", ",ConvertText,"(real,nullif(",
+          MergeTable.df$SourceVariableName[SwitchList] ,",'')))",
           sep=""
     )
   if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
@@ -283,12 +283,26 @@ convert_switch<-function(MergeTable.df,
   if(Apply_Drop==TRUE)
     SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
   MergeTable.df$ConvertList[SwitchList]<-
-    paste(ConvertText,"(",MergeTable.df$CSISvariableType[SwitchList],", ",
+    paste(ConvertText,"(",MergeTable.df$CSISvariableType[SwitchList],", nullif(",
           MergeTable.df$SourceVariableName[SwitchList] ,
-          ",",as.character(DateType),")",
+          ",''),",as.character(DateType),")",
           sep=""
     )
   if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
+  
+  #Converting to datetime2 from any type
+  SwitchList<-MergeTable.df$CSISvariableShortType %in% c("[datetime2]")&
+    is.na(MergeTable.df$ConvertList)
+  
+  if(Apply_Drop==TRUE)
+    SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
+  MergeTable.df$ConvertList[SwitchList]<-
+    paste(ConvertText,"(",MergeTable.df$CSISvariableType[SwitchList],", nullif(",
+          MergeTable.df$SourceVariableName[SwitchList] ,",''))", #Not applying DateType to datetime2
+          sep=""
+    )
+  if(any(is.na(MergeTable.df$ConvertList[SwitchList]))) stop("NA ConvertList")
+  
   
   #All remaining types
   SwitchList<-is.na(MergeTable.df$ConvertList)
@@ -396,7 +410,7 @@ create_try_converts<-function(data,
     warning("No try_converts necessary")
     return(0)
   }
-  data<-convert_switch(data,101,TRUE,Apply_Drop=Apply_Drop)
+  data<-convert_switch(data,DateType,TRUE,Apply_Drop=Apply_Drop)
   if(any(is.na(data$ConvertList))) stop("NA ConvertList")
   
   #This is only relevant to legacy FPDS
@@ -453,7 +467,7 @@ create_try_converts<-function(data,
   
   not_varchar_or_bit<-!varchar_list & data$CSISvariableShortType!="[bit]"
   ConvertList<-c(ConvertList,
-                 paste("--Check across all non-varchar and non-bit destination types for failed tryconverts",
+                 paste("--Check across all non-varchar and non-bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.",
                        "\nSELECT\n",
                        paste(
                          paste("\t,max(iif(",data$ConvertList[not_varchar_or_bit]," is null and\n\t\tnullif(",data$SourceVariableName[not_varchar_or_bit],",'') is not null,1,0)) as ",data$SourceVariableName[not_varchar_or_bit],
@@ -465,13 +479,19 @@ create_try_converts<-function(data,
   
   bit<-!varchar_list & data$CSISvariableShortType=="[bit]"
   ConvertList<-c(ConvertList,
-                 paste("--Check across all bit destination types for failed tryconverts",
+                 paste("--Check across all bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.",
                        "\nSELECT\n",
                        paste(
-                         paste(",(SELECT max(ReturnBit) from ErrorLogging.IsFailedConvertYNtoBit(",data$SourceVariableName[bit],")) as ",data$SourceVariableName[bit],
+                         paste(",max(",data$SourceVariableName[bit],") as ",
+                               data$SourceVariableName[bit],
                                sep = ""),
                          collapse="\n"),
-                       "\nFROM ",Schema,".",TableName,"\n",
+                       "\nFROM (SELECT\n",
+                       paste(
+                         paste("\t,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit(",data$SourceVariableName[bit],")) as ",data$SourceVariableName[bit],
+                               sep = ""),
+                         collapse="\n"),
+                       "\n\tFROM ",Schema,".",TableName,") as ml\n",
                        collapse="",sep="")
   )
   
@@ -479,7 +499,7 @@ create_try_converts<-function(data,
   #
   if(any(varchar_list)){
     ConvertList<-c(ConvertList,
-            paste( "--Varchar to varchar group check. Note you have to remove an extraneous comma from the first item", 
+            paste( "--Varchar to varchar group check. Note you have to remove an extraneous comma from the first item.", 
                        "\nSELECT\n",
                   paste(
                     paste(",iif(",data$SourceVariableName[varchar_list],
@@ -631,7 +651,7 @@ create_insert<-function(MergeTable.df,
   else if(any(is.na(MergeTable.df$CSISvariableType)))
     stop("Some columns are missing a destination type")
     
-  MergeTable.df<-convert_switch(MergeTable.df,101,FALSE,Apply_Drop = Apply_Drop)
+  MergeTable.df<-convert_switch(MergeTable.df,DateType,FALSE,Apply_Drop = Apply_Drop)
   InsertList<-paste("INSERT INTO ",TargetSchema,".",TargetTableName,"\n",
                     "(",sep="")
   InsertList<-c(InsertList,paste(MergeTable.df$CSISvariableName,",",sep=""))

@@ -127,7 +127,8 @@ if(!file.exists("sql\\ErrorLogging.FPDSbetaViolatesConstraint.table.sql")){
       TryConvertList<-create_try_converts(Merge1to2.df,"Errorlogging","FPDSbetaViolatesType",
                                           IncludeAlters=FALSE,
                                           Add_Colon_Split=FALSE,
-                                          Apply_Drop=FALSE)
+                                          Apply_Drop=FALSE,
+                                          DateType = 120)
       write(TryConvertList,"Output\\FPDS_Stage1_Try_Convert.txt")
     
     #Transfer from Errorlogging.FPDSbetaViolatesType to Errorlogging.FPDSbetaViolatesConstraint
