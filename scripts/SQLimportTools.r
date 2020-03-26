@@ -459,7 +459,14 @@ create_try_converts<-function(data,
   
   
   if(IncludeMultiple){
-    not_varchar_or_bit<-!varchar_list & data$CSISvariableShortType!="[bit]"
+    varchar_list<-data$CSISvariableShortType=="[varchar]"&
+      data$SourceVariableShortType=="[varchar]" &
+      !is.na(data$VariableTypeNumber)
+    
+    bit_list<- data$CSISvariableShortType=="[bit]"
+    
+    
+    not_varchar_or_bit<-!varchar_list & !bit_list
     ConvertList<-c(ConvertList,
                    paste("--Check across all non-varchar and non-bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.",
                          "\nSELECT\n",
@@ -471,18 +478,17 @@ create_try_converts<-function(data,
                          collapse="",sep="")
     )
     
-    bit<-!varchar_list & data$CSISvariableShortType=="[bit]"
     ConvertList<-c(ConvertList,
                    paste("--Check across all bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.",
                          "\nSELECT\n",
                          paste(
-                           paste(",max(",data$SourceVariableName[bit],") as ",
-                                 data$SourceVariableName[bit],
+                           paste(",max(",data$SourceVariableName[bit_list],") as ",
+                                 data$SourceVariableName[bit_list],
                                  sep = ""),
                            collapse="\n"),
                          "\nFROM (SELECT\n",
                          paste(
-                           paste("\t,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit(",data$SourceVariableName[bit],")) as ",data$SourceVariableName[bit],
+                           paste("\t,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit(",data$SourceVariableName[bit_list],")) as ",data$SourceVariableName[bit_list],
                                  sep = ""),
                            collapse="\n"),
                          "\n\tFROM ",Schema,".",TableName,") as ml\n",
@@ -491,6 +497,8 @@ create_try_converts<-function(data,
     
     
     #
+    
+    
     if(any(varchar_list)){
       ConvertList<-c(ConvertList,
                      paste( "--Varchar to varchar group check. Note you have to remove an extraneous comma from the first item.", 

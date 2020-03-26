@@ -1,0 +1,1373 @@
+SELECT DISTINCT [last_modified_date],
+len([last_modified_date]) as Length,
+'[datetime2](7)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([datetime2](7), nullif([last_modified_date],'')) IS NULL AND
+NULLIF([last_modified_date],'') IS NOT NULL)
+
+
+
+SELECT DISTINCT [transaction_number],
+len([transaction_number]) as Length,
+'[bigint]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bigint], Try_Convert(real,nullif([transaction_number],''))) IS NULL AND
+NULLIF([transaction_number],'') IS NOT NULL)
+
+
+
+
+SELECT DISTINCT [federal_action_obligation],
+len([federal_action_obligation]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([federal_action_obligation],''))) IS NULL AND
+NULLIF([federal_action_obligation],'') IS NOT NULL)
+
+SELECT DISTINCT [base_and_exercised_options_value],
+len([base_and_exercised_options_value]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([base_and_exercised_options_value],''))) IS NULL AND
+NULLIF([base_and_exercised_options_value],'') IS NOT NULL)
+
+SELECT DISTINCT [base_and_all_options_value],
+len([base_and_all_options_value]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([base_and_all_options_value],''))) IS NULL AND
+NULLIF([base_and_all_options_value],'') IS NOT NULL)
+
+SELECT DISTINCT [action_date],
+len([action_date]) as Length,
+'[datetime2](7)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([datetime2](7), nullif([action_date],'')) IS NULL AND
+NULLIF([action_date],'') IS NOT NULL)
+
+SELECT DISTINCT [period_of_performance_start_date],
+len([period_of_performance_start_date]) as Length,
+'[datetime2](7)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([datetime2](7), nullif([period_of_performance_start_date],'')) IS NULL AND
+NULLIF([period_of_performance_start_date],'') IS NOT NULL)
+
+SELECT DISTINCT [period_of_performance_current_end_date],
+len([period_of_performance_current_end_date]) as Length,
+'[datetime2](7)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([datetime2](7), nullif([period_of_performance_current_end_date],'')) IS NULL AND
+NULLIF([period_of_performance_current_end_date],'') IS NOT NULL)
+
+SELECT DISTINCT [period_of_performance_potential_end_date],
+len([period_of_performance_potential_end_date]) as Length,
+'[datetime2](7)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([datetime2](7), nullif([period_of_performance_potential_end_date],'')) IS NULL AND
+NULLIF([period_of_performance_potential_end_date],'') IS NOT NULL)
+
+SELECT DISTINCT [ordering_period_end_date],
+len([ordering_period_end_date]) as Length,
+'[datetime2](7)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([datetime2](7), nullif([ordering_period_end_date],'')) IS NULL AND
+NULLIF([ordering_period_end_date],'') IS NOT NULL)
+
+
+
+
+
+
+
+
+
+
+SELECT DISTINCT [recipient_name],
+len([recipient_name]) as Length,
+'[nvarchar](150)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([nvarchar](150), [recipient_name]) IS NULL AND
+NULLIF([recipient_name],'') IS NOT NULL)
+
+SELECT DISTINCT [recipient_doing_business_as_name],
+len([recipient_doing_business_as_name]) as Length,
+'[nvarchar](150)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([nvarchar](150), [recipient_doing_business_as_name]) IS NULL AND
+NULLIF([recipient_doing_business_as_name],'') IS NOT NULL)
+
+
+
+SELECT DISTINCT [recipient_country_code],
+len([recipient_country_code]) as Length,
+'[nvarchar](50)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([nvarchar](50), [recipient_country_code]) IS NULL AND
+NULLIF([recipient_country_code],'') IS NOT NULL)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT DISTINCT [number_of_actions],
+len([number_of_actions]) as Length,
+'[bigint]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bigint], Try_Convert(real,nullif([number_of_actions],''))) IS NULL AND
+NULLIF([number_of_actions],'') IS NOT NULL)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT DISTINCT [number_of_offers_received],
+len([number_of_offers_received]) as Length,
+'[bigint]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bigint], Try_Convert(real,nullif([number_of_offers_received],''))) IS NULL AND
+NULLIF([number_of_offers_received],'') IS NOT NULL)
+
+
+
+SELECT DISTINCT [commercial_item_test_program_code],
+len([commercial_item_test_program_code]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([commercial_item_test_program_code]))) IS NULL AND
+NULLIF([commercial_item_test_program_code],'') IS NOT NULL)
+
+
+
+
+SELECT DISTINCT [price_evaluation_adjustment_preference_percent_difference],
+len([price_evaluation_adjustment_preference_percent_difference]) as Length,
+'[smallint]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([smallint], Try_Convert(real,nullif([price_evaluation_adjustment_preference_percent_difference],''))) IS NULL AND
+NULLIF([price_evaluation_adjustment_preference_percent_difference],'') IS NOT NULL)
+
+SELECT DISTINCT [clinger_cohen_act_planning_code],
+len([clinger_cohen_act_planning_code]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([clinger_cohen_act_planning_code]))) IS NULL AND
+NULLIF([clinger_cohen_act_planning_code],'') IS NOT NULL)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT DISTINCT [multi_year_contract_code],
+len([multi_year_contract_code]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([multi_year_contract_code]))) IS NULL AND
+NULLIF([multi_year_contract_code],'') IS NOT NULL)
+
+
+SELECT DISTINCT [purchase_card_as_payment_method_code],
+len([purchase_card_as_payment_method_code]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([purchase_card_as_payment_method_code]))) IS NULL AND
+NULLIF([purchase_card_as_payment_method_code],'') IS NOT NULL)
+
+
+SELECT DISTINCT [alaskan_native_owned_corporation_or_firm],
+len([alaskan_native_owned_corporation_or_firm]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([alaskan_native_owned_corporation_or_firm]))) IS NULL AND
+NULLIF([alaskan_native_owned_corporation_or_firm],'') IS NOT NULL)
+
+SELECT DISTINCT [american_indian_owned_business],
+len([american_indian_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([american_indian_owned_business]))) IS NULL AND
+NULLIF([american_indian_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [indian_tribe_federally_recognized],
+len([indian_tribe_federally_recognized]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([indian_tribe_federally_recognized]))) IS NULL AND
+NULLIF([indian_tribe_federally_recognized],'') IS NOT NULL)
+
+SELECT DISTINCT [native_hawaiian_owned_business],
+len([native_hawaiian_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([native_hawaiian_owned_business]))) IS NULL AND
+NULLIF([native_hawaiian_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [tribally_owned_business],
+len([tribally_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([tribally_owned_business]))) IS NULL AND
+NULLIF([tribally_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [veteran_owned_business],
+len([veteran_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([veteran_owned_business]))) IS NULL AND
+NULLIF([veteran_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [service_disabled_veteran_owned_business],
+len([service_disabled_veteran_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([service_disabled_veteran_owned_business]))) IS NULL AND
+NULLIF([service_disabled_veteran_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [woman_owned_business],
+len([woman_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([woman_owned_business]))) IS NULL AND
+NULLIF([woman_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [women_owned_small_business],
+len([women_owned_small_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([women_owned_small_business]))) IS NULL AND
+NULLIF([women_owned_small_business],'') IS NOT NULL)
+
+SELECT DISTINCT [economically_disadvantaged_women_owned_small_business],
+len([economically_disadvantaged_women_owned_small_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([economically_disadvantaged_women_owned_small_business]))) IS NULL AND
+NULLIF([economically_disadvantaged_women_owned_small_business],'') IS NOT NULL)
+
+SELECT DISTINCT [joint_venture_women_owned_small_business],
+len([joint_venture_women_owned_small_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([joint_venture_women_owned_small_business]))) IS NULL AND
+NULLIF([joint_venture_women_owned_small_business],'') IS NOT NULL)
+
+SELECT DISTINCT [joint_venture_economic_disadvantaged_women_owned_small_bus],
+len([joint_venture_economic_disadvantaged_women_owned_small_bus]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([joint_venture_economic_disadvantaged_women_owned_small_bus]))) IS NULL AND
+NULLIF([joint_venture_economic_disadvantaged_women_owned_small_bus],'') IS NOT NULL)
+
+SELECT DISTINCT [minority_owned_business],
+len([minority_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([minority_owned_business]))) IS NULL AND
+NULLIF([minority_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [subcontinent_asian_asian_indian_american_owned_business],
+len([subcontinent_asian_asian_indian_american_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([subcontinent_asian_asian_indian_american_owned_business]))) IS NULL AND
+NULLIF([subcontinent_asian_asian_indian_american_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [asian_pacific_american_owned_business],
+len([asian_pacific_american_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([asian_pacific_american_owned_business]))) IS NULL AND
+NULLIF([asian_pacific_american_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [black_american_owned_business],
+len([black_american_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([black_american_owned_business]))) IS NULL AND
+NULLIF([black_american_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [hispanic_american_owned_business],
+len([hispanic_american_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([hispanic_american_owned_business]))) IS NULL AND
+NULLIF([hispanic_american_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [native_american_owned_business],
+len([native_american_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([native_american_owned_business]))) IS NULL AND
+NULLIF([native_american_owned_business],'') IS NOT NULL)
+
+SELECT DISTINCT [other_minority_owned_business],
+len([other_minority_owned_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([other_minority_owned_business]))) IS NULL AND
+NULLIF([other_minority_owned_business],'') IS NOT NULL)
+
+
+SELECT DISTINCT [emerging_small_business],
+len([emerging_small_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([emerging_small_business]))) IS NULL AND
+NULLIF([emerging_small_business],'') IS NOT NULL)
+
+SELECT DISTINCT [community_developed_corporation_owned_firm],
+len([community_developed_corporation_owned_firm]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([community_developed_corporation_owned_firm]))) IS NULL AND
+NULLIF([community_developed_corporation_owned_firm],'') IS NOT NULL)
+
+SELECT DISTINCT [labor_surplus_area_firm],
+len([labor_surplus_area_firm]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([labor_surplus_area_firm]))) IS NULL AND
+NULLIF([labor_surplus_area_firm],'') IS NOT NULL)
+
+SELECT DISTINCT [us_federal_government],
+len([us_federal_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([us_federal_government]))) IS NULL AND
+NULLIF([us_federal_government],'') IS NOT NULL)
+
+SELECT DISTINCT [federally_funded_research_and_development_corp],
+len([federally_funded_research_and_development_corp]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([federally_funded_research_and_development_corp]))) IS NULL AND
+NULLIF([federally_funded_research_and_development_corp],'') IS NOT NULL)
+
+SELECT DISTINCT [federal_agency],
+len([federal_agency]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([federal_agency]))) IS NULL AND
+NULLIF([federal_agency],'') IS NOT NULL)
+
+SELECT DISTINCT [us_state_government],
+len([us_state_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([us_state_government]))) IS NULL AND
+NULLIF([us_state_government],'') IS NOT NULL)
+
+SELECT DISTINCT [us_local_government],
+len([us_local_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([us_local_government]))) IS NULL AND
+NULLIF([us_local_government],'') IS NOT NULL)
+
+SELECT DISTINCT [city_local_government],
+len([city_local_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([city_local_government]))) IS NULL AND
+NULLIF([city_local_government],'') IS NOT NULL)
+
+SELECT DISTINCT [county_local_government],
+len([county_local_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([county_local_government]))) IS NULL AND
+NULLIF([county_local_government],'') IS NOT NULL)
+
+SELECT DISTINCT [inter_municipal_local_government],
+len([inter_municipal_local_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([inter_municipal_local_government]))) IS NULL AND
+NULLIF([inter_municipal_local_government],'') IS NOT NULL)
+
+SELECT DISTINCT [local_government_owned],
+len([local_government_owned]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([local_government_owned]))) IS NULL AND
+NULLIF([local_government_owned],'') IS NOT NULL)
+
+SELECT DISTINCT [municipality_local_government],
+len([municipality_local_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([municipality_local_government]))) IS NULL AND
+NULLIF([municipality_local_government],'') IS NOT NULL)
+
+SELECT DISTINCT [school_district_local_government],
+len([school_district_local_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([school_district_local_government]))) IS NULL AND
+NULLIF([school_district_local_government],'') IS NOT NULL)
+
+SELECT DISTINCT [township_local_government],
+len([township_local_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([township_local_government]))) IS NULL AND
+NULLIF([township_local_government],'') IS NOT NULL)
+
+SELECT DISTINCT [us_tribal_government],
+len([us_tribal_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([us_tribal_government]))) IS NULL AND
+NULLIF([us_tribal_government],'') IS NOT NULL)
+
+SELECT DISTINCT [foreign_government],
+len([foreign_government]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([foreign_government]))) IS NULL AND
+NULLIF([foreign_government],'') IS NOT NULL)
+
+SELECT DISTINCT [corporate_entity_not_tax_exempt],
+len([corporate_entity_not_tax_exempt]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([corporate_entity_not_tax_exempt]))) IS NULL AND
+NULLIF([corporate_entity_not_tax_exempt],'') IS NOT NULL)
+
+SELECT DISTINCT [corporate_entity_tax_exempt],
+len([corporate_entity_tax_exempt]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([corporate_entity_tax_exempt]))) IS NULL AND
+NULLIF([corporate_entity_tax_exempt],'') IS NOT NULL)
+
+SELECT DISTINCT [partnership_or_limited_liability_partnership],
+len([partnership_or_limited_liability_partnership]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([partnership_or_limited_liability_partnership]))) IS NULL AND
+NULLIF([partnership_or_limited_liability_partnership],'') IS NOT NULL)
+
+SELECT DISTINCT [sole_proprietorship],
+len([sole_proprietorship]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([sole_proprietorship]))) IS NULL AND
+NULLIF([sole_proprietorship],'') IS NOT NULL)
+
+SELECT DISTINCT [small_agricultural_cooperative],
+len([small_agricultural_cooperative]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([small_agricultural_cooperative]))) IS NULL AND
+NULLIF([small_agricultural_cooperative],'') IS NOT NULL)
+
+SELECT DISTINCT [international_organization],
+len([international_organization]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([international_organization]))) IS NULL AND
+NULLIF([international_organization],'') IS NOT NULL)
+
+SELECT DISTINCT [us_government_entity],
+len([us_government_entity]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([us_government_entity]))) IS NULL AND
+NULLIF([us_government_entity],'') IS NOT NULL)
+
+SELECT DISTINCT [community_development_corporation],
+len([community_development_corporation]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([community_development_corporation]))) IS NULL AND
+NULLIF([community_development_corporation],'') IS NOT NULL)
+
+SELECT DISTINCT [domestic_shelter],
+len([domestic_shelter]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([domestic_shelter]))) IS NULL AND
+NULLIF([domestic_shelter],'') IS NOT NULL)
+
+SELECT DISTINCT [educational_institution],
+len([educational_institution]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([educational_institution]))) IS NULL AND
+NULLIF([educational_institution],'') IS NOT NULL)
+
+SELECT DISTINCT [foundation],
+len([foundation]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([foundation]))) IS NULL AND
+NULLIF([foundation],'') IS NOT NULL)
+
+SELECT DISTINCT [hospital_flag],
+len([hospital_flag]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([hospital_flag]))) IS NULL AND
+NULLIF([hospital_flag],'') IS NOT NULL)
+
+SELECT DISTINCT [manufacturer_of_goods],
+len([manufacturer_of_goods]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([manufacturer_of_goods]))) IS NULL AND
+NULLIF([manufacturer_of_goods],'') IS NOT NULL)
+
+SELECT DISTINCT [veterinary_hospital],
+len([veterinary_hospital]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([veterinary_hospital]))) IS NULL AND
+NULLIF([veterinary_hospital],'') IS NOT NULL)
+
+SELECT DISTINCT [hispanic_servicing_institution],
+len([hispanic_servicing_institution]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([hispanic_servicing_institution]))) IS NULL AND
+NULLIF([hispanic_servicing_institution],'') IS NOT NULL)
+
+SELECT DISTINCT [receives_contracts],
+len([receives_contracts]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receives_contracts]))) IS NULL AND
+NULLIF([receives_contracts],'') IS NOT NULL)
+
+SELECT DISTINCT [receives_grants],
+len([receives_grants]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receives_grants]))) IS NULL AND
+NULLIF([receives_grants],'') IS NOT NULL)
+
+SELECT DISTINCT [receives_contracts_and_grants],
+len([receives_contracts_and_grants]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receives_contracts_and_grants]))) IS NULL AND
+NULLIF([receives_contracts_and_grants],'') IS NOT NULL)
+
+SELECT DISTINCT [airport_authority],
+len([airport_authority]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([airport_authority]))) IS NULL AND
+NULLIF([airport_authority],'') IS NOT NULL)
+
+SELECT DISTINCT [council_of_governments],
+len([council_of_governments]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([council_of_governments]))) IS NULL AND
+NULLIF([council_of_governments],'') IS NOT NULL)
+
+SELECT DISTINCT [housing_authorities_public_tribal],
+len([housing_authorities_public_tribal]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([housing_authorities_public_tribal]))) IS NULL AND
+NULLIF([housing_authorities_public_tribal],'') IS NOT NULL)
+
+SELECT DISTINCT [interstate_entity],
+len([interstate_entity]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([interstate_entity]))) IS NULL AND
+NULLIF([interstate_entity],'') IS NOT NULL)
+
+SELECT DISTINCT [planning_commission],
+len([planning_commission]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([planning_commission]))) IS NULL AND
+NULLIF([planning_commission],'') IS NOT NULL)
+
+SELECT DISTINCT [port_authority],
+len([port_authority]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([port_authority]))) IS NULL AND
+NULLIF([port_authority],'') IS NOT NULL)
+
+SELECT DISTINCT [transit_authority],
+len([transit_authority]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([transit_authority]))) IS NULL AND
+NULLIF([transit_authority],'') IS NOT NULL)
+
+SELECT DISTINCT [subchapter_scorporation],
+len([subchapter_scorporation]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([subchapter_scorporation]))) IS NULL AND
+NULLIF([subchapter_scorporation],'') IS NOT NULL)
+
+SELECT DISTINCT [limited_liability_corporation],
+len([limited_liability_corporation]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([limited_liability_corporation]))) IS NULL AND
+NULLIF([limited_liability_corporation],'') IS NOT NULL)
+
+SELECT DISTINCT [foreign_owned_and_located],
+len([foreign_owned_and_located]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([foreign_owned_and_located]))) IS NULL AND
+NULLIF([foreign_owned_and_located],'') IS NOT NULL)
+
+SELECT DISTINCT [for_profit_organization],
+len([for_profit_organization]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([for_profit_organization]))) IS NULL AND
+NULLIF([for_profit_organization],'') IS NOT NULL)
+
+SELECT DISTINCT [nonprofit_organization],
+len([nonprofit_organization]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([nonprofit_organization]))) IS NULL AND
+NULLIF([nonprofit_organization],'') IS NOT NULL)
+
+SELECT DISTINCT [other_not_for_profit_organization],
+len([other_not_for_profit_organization]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([other_not_for_profit_organization]))) IS NULL AND
+NULLIF([other_not_for_profit_organization],'') IS NOT NULL)
+
+SELECT DISTINCT [the_ability_one_program],
+len([the_ability_one_program]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([the_ability_one_program]))) IS NULL AND
+NULLIF([the_ability_one_program],'') IS NOT NULL)
+
+SELECT DISTINCT [private_university_or_college],
+len([private_university_or_college]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([private_university_or_college]))) IS NULL AND
+NULLIF([private_university_or_college],'') IS NOT NULL)
+
+SELECT DISTINCT [state_controlled_institution_of_higher_learning],
+len([state_controlled_institution_of_higher_learning]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([state_controlled_institution_of_higher_learning]))) IS NULL AND
+NULLIF([state_controlled_institution_of_higher_learning],'') IS NOT NULL)
+
+SELECT DISTINCT [1862_land_grant_college],
+len([1862_land_grant_college]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([1862_land_grant_college]))) IS NULL AND
+NULLIF([1862_land_grant_college],'') IS NOT NULL)
+
+SELECT DISTINCT [1890_land_grant_college],
+len([1890_land_grant_college]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([1890_land_grant_college]))) IS NULL AND
+NULLIF([1890_land_grant_college],'') IS NOT NULL)
+
+SELECT DISTINCT [1994_land_grant_college],
+len([1994_land_grant_college]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([1994_land_grant_college]))) IS NULL AND
+NULLIF([1994_land_grant_college],'') IS NOT NULL)
+
+SELECT DISTINCT [minority_institution],
+len([minority_institution]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([minority_institution]))) IS NULL AND
+NULLIF([minority_institution],'') IS NOT NULL)
+
+SELECT DISTINCT [historically_black_college],
+len([historically_black_college]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([historically_black_college]))) IS NULL AND
+NULLIF([historically_black_college],'') IS NOT NULL)
+
+SELECT DISTINCT [tribal_college],
+len([tribal_college]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([tribal_college]))) IS NULL AND
+NULLIF([tribal_college],'') IS NOT NULL)
+
+SELECT DISTINCT [alaskan_native_servicing_institution],
+len([alaskan_native_servicing_institution]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([alaskan_native_servicing_institution]))) IS NULL AND
+NULLIF([alaskan_native_servicing_institution],'') IS NOT NULL)
+
+SELECT DISTINCT [native_hawaiian_servicing_institution],
+len([native_hawaiian_servicing_institution]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([native_hawaiian_servicing_institution]))) IS NULL AND
+NULLIF([native_hawaiian_servicing_institution],'') IS NOT NULL)
+
+SELECT DISTINCT [school_of_forestry],
+len([school_of_forestry]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([school_of_forestry]))) IS NULL AND
+NULLIF([school_of_forestry],'') IS NOT NULL)
+
+SELECT DISTINCT [veterinary_college],
+len([veterinary_college]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([veterinary_college]))) IS NULL AND
+NULLIF([veterinary_college],'') IS NOT NULL)
+
+SELECT DISTINCT [dot_certified_disadvantage],
+len([dot_certified_disadvantage]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([dot_certified_disadvantage]))) IS NULL AND
+NULLIF([dot_certified_disadvantage],'') IS NOT NULL)
+
+SELECT DISTINCT [self_certified_small_disadvantaged_business],
+len([self_certified_small_disadvantaged_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([self_certified_small_disadvantaged_business]))) IS NULL AND
+NULLIF([self_certified_small_disadvantaged_business],'') IS NOT NULL)
+
+SELECT DISTINCT [small_disadvantaged_business],
+len([small_disadvantaged_business]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([small_disadvantaged_business]))) IS NULL AND
+NULLIF([small_disadvantaged_business],'') IS NOT NULL)
+
+SELECT DISTINCT [c8a_program_participant],
+len([c8a_program_participant]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([c8a_program_participant]))) IS NULL AND
+NULLIF([c8a_program_participant],'') IS NOT NULL)
+
+SELECT DISTINCT [historically_underutilized_business_zone_hubzone_firm],
+len([historically_underutilized_business_zone_hubzone_firm]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([historically_underutilized_business_zone_hubzone_firm]))) IS NULL AND
+NULLIF([historically_underutilized_business_zone_hubzone_firm],'') IS NOT NULL)
+
+SELECT DISTINCT [sba_certified_8a_joint_venture],
+len([sba_certified_8a_joint_venture]) as Length,
+'[bit]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([sba_certified_8a_joint_venture]))) IS NULL AND
+NULLIF([sba_certified_8a_joint_venture],'') IS NOT NULL)
+
+SELECT DISTINCT [current_total_value_of_award],
+len([current_total_value_of_award]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([current_total_value_of_award],''))) IS NULL AND
+NULLIF([current_total_value_of_award],'') IS NOT NULL)
+
+SELECT DISTINCT [potential_total_value_of_award],
+len([potential_total_value_of_award]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([potential_total_value_of_award],''))) IS NULL AND
+NULLIF([potential_total_value_of_award],'') IS NOT NULL)
+
+
+
+
+
+
+
+SELECT DISTINCT [number_of_employees],
+len([number_of_employees]) as Length,
+'[bigint]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([bigint], Try_Convert(real,nullif([number_of_employees],''))) IS NULL AND
+NULLIF([number_of_employees],'') IS NOT NULL)
+
+SELECT DISTINCT [annual_revenues],
+len([annual_revenues]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([annual_revenues],''))) IS NULL AND
+NULLIF([annual_revenues],'') IS NOT NULL)
+
+SELECT DISTINCT [total_dollars_obligated],
+len([total_dollars_obligated]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([total_dollars_obligated],''))) IS NULL AND
+NULLIF([total_dollars_obligated],'') IS NOT NULL)
+
+
+
+
+SELECT DISTINCT [solicitation_date],
+len([solicitation_date]) as Length,
+'[date]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([date], nullif([solicitation_date],''),120) IS NULL AND
+NULLIF([solicitation_date],'') IS NOT NULL)
+
+
+
+SELECT DISTINCT [highly_compensated_officer_1_amount],
+len([highly_compensated_officer_1_amount]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([highly_compensated_officer_1_amount],''))) IS NULL AND
+NULLIF([highly_compensated_officer_1_amount],'') IS NOT NULL)
+
+
+SELECT DISTINCT [highly_compensated_officer_2_amount],
+len([highly_compensated_officer_2_amount]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([highly_compensated_officer_2_amount],''))) IS NULL AND
+NULLIF([highly_compensated_officer_2_amount],'') IS NOT NULL)
+
+
+SELECT DISTINCT [highly_compensated_officer_3_amount],
+len([highly_compensated_officer_3_amount]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([highly_compensated_officer_3_amount],''))) IS NULL AND
+NULLIF([highly_compensated_officer_3_amount],'') IS NOT NULL)
+
+
+SELECT DISTINCT [highly_compensated_officer_4_amount],
+len([highly_compensated_officer_4_amount]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([highly_compensated_officer_4_amount],''))) IS NULL AND
+NULLIF([highly_compensated_officer_4_amount],'') IS NOT NULL)
+
+
+SELECT DISTINCT [highly_compensated_officer_5_amount],
+len([highly_compensated_officer_5_amount]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([highly_compensated_officer_5_amount],''))) IS NULL AND
+NULLIF([highly_compensated_officer_5_amount],'') IS NOT NULL)
+
+
+SELECT DISTINCT [action_date_fiscal_year],
+len([action_date_fiscal_year]) as Length,
+'[smallint]' as DestinationType
+FROM Errorlogging.FPDSbetaViolatesType
+WHERE (Try_Convert([smallint], Try_Convert(real,nullif([action_date_fiscal_year],''))) IS NULL AND
+NULLIF([action_date_fiscal_year],'') IS NOT NULL)
+
+--Check across all non-varchar and non-bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.
+SELECT
+	,max(iif(Try_Convert([datetime2](7), nullif([last_modified_date],'')) is null and
+		nullif([last_modified_date],'') is not null,1,0)) as [last_modified_date]
+	,max(iif(Try_Convert([bigint], Try_Convert(real,nullif([transaction_number],''))) is null and
+		nullif([transaction_number],'') is not null,1,0)) as [transaction_number]
+	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([federal_action_obligation],''))) is null and
+		nullif([federal_action_obligation],'') is not null,1,0)) as [federal_action_obligation]
+	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([base_and_exercised_options_value],''))) is null and
+		nullif([base_and_exercised_options_value],'') is not null,1,0)) as [base_and_exercised_options_value]
+	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([base_and_all_options_value],''))) is null and
+		nullif([base_and_all_options_value],'') is not null,1,0)) as [base_and_all_options_value]
+	,max(iif(Try_Convert([datetime2](7), nullif([action_date],'')) is null and
+		nullif([action_date],'') is not null,1,0)) as [action_date]
+	,max(iif(Try_Convert([datetime2](7), nullif([period_of_performance_start_date],'')) is null and
+		nullif([period_of_performance_start_date],'') is not null,1,0)) as [period_of_performance_start_date]
+	,max(iif(Try_Convert([datetime2](7), nullif([period_of_performance_current_end_date],'')) is null and
+		nullif([period_of_performance_current_end_date],'') is not null,1,0)) as [period_of_performance_current_end_date]
+	,max(iif(Try_Convert([datetime2](7), nullif([period_of_performance_potential_end_date],'')) is null and
+		nullif([period_of_performance_potential_end_date],'') is not null,1,0)) as [period_of_performance_potential_end_date]
+	,max(iif(Try_Convert([datetime2](7), nullif([ordering_period_end_date],'')) is null and
+		nullif([ordering_period_end_date],'') is not null,1,0)) as [ordering_period_end_date]
+	,max(iif(Try_Convert([nvarchar](150), [recipient_name]) is null and
+		nullif([recipient_name],'') is not null,1,0)) as [recipient_name]
+	,max(iif(Try_Convert([nvarchar](150), [recipient_doing_business_as_name]) is null and
+		nullif([recipient_doing_business_as_name],'') is not null,1,0)) as [recipient_doing_business_as_name]
+	,max(iif(Try_Convert([nvarchar](50), [recipient_country_code]) is null and
+		nullif([recipient_country_code],'') is not null,1,0)) as [recipient_country_code]
+	,max(iif(Try_Convert([bigint], Try_Convert(real,nullif([number_of_actions],''))) is null and
+		nullif([number_of_actions],'') is not null,1,0)) as [number_of_actions]
+	,max(iif(Try_Convert([bigint], Try_Convert(real,nullif([number_of_offers_received],''))) is null and
+		nullif([number_of_offers_received],'') is not null,1,0)) as [number_of_offers_received]
+	,max(iif(Try_Convert([smallint], Try_Convert(real,nullif([price_evaluation_adjustment_preference_percent_difference],''))) is null and
+		nullif([price_evaluation_adjustment_preference_percent_difference],'') is not null,1,0)) as [price_evaluation_adjustment_preference_percent_difference]
+	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([current_total_value_of_award],''))) is null and
+		nullif([current_total_value_of_award],'') is not null,1,0)) as [current_total_value_of_award]
+	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([potential_total_value_of_award],''))) is null and
+		nullif([potential_total_value_of_award],'') is not null,1,0)) as [potential_total_value_of_award]
+	,max(iif(Try_Convert([bigint], Try_Convert(real,nullif([number_of_employees],''))) is null and
+		nullif([number_of_employees],'') is not null,1,0)) as [number_of_employees]
+	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([annual_revenues],''))) is null and
+		nullif([annual_revenues],'') is not null,1,0)) as [annual_revenues]
+	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([total_dollars_obligated],''))) is null and
+		nullif([total_dollars_obligated],'') is not null,1,0)) as [total_dollars_obligated]
+	,max(iif(Try_Convert([date], nullif([solicitation_date],''),120) is null and
+		nullif([solicitation_date],'') is not null,1,0)) as [solicitation_date]
+	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([highly_compensated_officer_1_amount],''))) is null and
+		nullif([highly_compensated_officer_1_amount],'') is not null,1,0)) as [highly_compensated_officer_1_amount]
+	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([highly_compensated_officer_2_amount],''))) is null and
+		nullif([highly_compensated_officer_2_amount],'') is not null,1,0)) as [highly_compensated_officer_2_amount]
+	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([highly_compensated_officer_3_amount],''))) is null and
+		nullif([highly_compensated_officer_3_amount],'') is not null,1,0)) as [highly_compensated_officer_3_amount]
+	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([highly_compensated_officer_4_amount],''))) is null and
+		nullif([highly_compensated_officer_4_amount],'') is not null,1,0)) as [highly_compensated_officer_4_amount]
+	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([highly_compensated_officer_5_amount],''))) is null and
+		nullif([highly_compensated_officer_5_amount],'') is not null,1,0)) as [highly_compensated_officer_5_amount]
+	,max(iif(Try_Convert([smallint], Try_Convert(real,nullif([action_date_fiscal_year],''))) is null and
+		nullif([action_date_fiscal_year],'') is not null,1,0)) as [action_date_fiscal_year]
+	FROM Errorlogging.FPDSbetaViolatesType
+
+--Check across all bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.
+SELECT
+,max([commercial_item_test_program_code]) as [commercial_item_test_program_code]
+,max([clinger_cohen_act_planning_code]) as [clinger_cohen_act_planning_code]
+,max([multi_year_contract_code]) as [multi_year_contract_code]
+,max([purchase_card_as_payment_method_code]) as [purchase_card_as_payment_method_code]
+,max([alaskan_native_owned_corporation_or_firm]) as [alaskan_native_owned_corporation_or_firm]
+,max([american_indian_owned_business]) as [american_indian_owned_business]
+,max([indian_tribe_federally_recognized]) as [indian_tribe_federally_recognized]
+,max([native_hawaiian_owned_business]) as [native_hawaiian_owned_business]
+,max([tribally_owned_business]) as [tribally_owned_business]
+,max([veteran_owned_business]) as [veteran_owned_business]
+,max([service_disabled_veteran_owned_business]) as [service_disabled_veteran_owned_business]
+,max([woman_owned_business]) as [woman_owned_business]
+,max([women_owned_small_business]) as [women_owned_small_business]
+,max([economically_disadvantaged_women_owned_small_business]) as [economically_disadvantaged_women_owned_small_business]
+,max([joint_venture_women_owned_small_business]) as [joint_venture_women_owned_small_business]
+,max([joint_venture_economic_disadvantaged_women_owned_small_bus]) as [joint_venture_economic_disadvantaged_women_owned_small_bus]
+,max([minority_owned_business]) as [minority_owned_business]
+,max([subcontinent_asian_asian_indian_american_owned_business]) as [subcontinent_asian_asian_indian_american_owned_business]
+,max([asian_pacific_american_owned_business]) as [asian_pacific_american_owned_business]
+,max([black_american_owned_business]) as [black_american_owned_business]
+,max([hispanic_american_owned_business]) as [hispanic_american_owned_business]
+,max([native_american_owned_business]) as [native_american_owned_business]
+,max([other_minority_owned_business]) as [other_minority_owned_business]
+,max([emerging_small_business]) as [emerging_small_business]
+,max([community_developed_corporation_owned_firm]) as [community_developed_corporation_owned_firm]
+,max([labor_surplus_area_firm]) as [labor_surplus_area_firm]
+,max([us_federal_government]) as [us_federal_government]
+,max([federally_funded_research_and_development_corp]) as [federally_funded_research_and_development_corp]
+,max([federal_agency]) as [federal_agency]
+,max([us_state_government]) as [us_state_government]
+,max([us_local_government]) as [us_local_government]
+,max([city_local_government]) as [city_local_government]
+,max([county_local_government]) as [county_local_government]
+,max([inter_municipal_local_government]) as [inter_municipal_local_government]
+,max([local_government_owned]) as [local_government_owned]
+,max([municipality_local_government]) as [municipality_local_government]
+,max([school_district_local_government]) as [school_district_local_government]
+,max([township_local_government]) as [township_local_government]
+,max([us_tribal_government]) as [us_tribal_government]
+,max([foreign_government]) as [foreign_government]
+,max([corporate_entity_not_tax_exempt]) as [corporate_entity_not_tax_exempt]
+,max([corporate_entity_tax_exempt]) as [corporate_entity_tax_exempt]
+,max([partnership_or_limited_liability_partnership]) as [partnership_or_limited_liability_partnership]
+,max([sole_proprietorship]) as [sole_proprietorship]
+,max([small_agricultural_cooperative]) as [small_agricultural_cooperative]
+,max([international_organization]) as [international_organization]
+,max([us_government_entity]) as [us_government_entity]
+,max([community_development_corporation]) as [community_development_corporation]
+,max([domestic_shelter]) as [domestic_shelter]
+,max([educational_institution]) as [educational_institution]
+,max([foundation]) as [foundation]
+,max([hospital_flag]) as [hospital_flag]
+,max([manufacturer_of_goods]) as [manufacturer_of_goods]
+,max([veterinary_hospital]) as [veterinary_hospital]
+,max([hispanic_servicing_institution]) as [hispanic_servicing_institution]
+,max([receives_contracts]) as [receives_contracts]
+,max([receives_grants]) as [receives_grants]
+,max([receives_contracts_and_grants]) as [receives_contracts_and_grants]
+,max([airport_authority]) as [airport_authority]
+,max([council_of_governments]) as [council_of_governments]
+,max([housing_authorities_public_tribal]) as [housing_authorities_public_tribal]
+,max([interstate_entity]) as [interstate_entity]
+,max([planning_commission]) as [planning_commission]
+,max([port_authority]) as [port_authority]
+,max([transit_authority]) as [transit_authority]
+,max([subchapter_scorporation]) as [subchapter_scorporation]
+,max([limited_liability_corporation]) as [limited_liability_corporation]
+,max([foreign_owned_and_located]) as [foreign_owned_and_located]
+,max([for_profit_organization]) as [for_profit_organization]
+,max([nonprofit_organization]) as [nonprofit_organization]
+,max([other_not_for_profit_organization]) as [other_not_for_profit_organization]
+,max([the_ability_one_program]) as [the_ability_one_program]
+,max([private_university_or_college]) as [private_university_or_college]
+,max([state_controlled_institution_of_higher_learning]) as [state_controlled_institution_of_higher_learning]
+,max([1862_land_grant_college]) as [1862_land_grant_college]
+,max([1890_land_grant_college]) as [1890_land_grant_college]
+,max([1994_land_grant_college]) as [1994_land_grant_college]
+,max([minority_institution]) as [minority_institution]
+,max([historically_black_college]) as [historically_black_college]
+,max([tribal_college]) as [tribal_college]
+,max([alaskan_native_servicing_institution]) as [alaskan_native_servicing_institution]
+,max([native_hawaiian_servicing_institution]) as [native_hawaiian_servicing_institution]
+,max([school_of_forestry]) as [school_of_forestry]
+,max([veterinary_college]) as [veterinary_college]
+,max([dot_certified_disadvantage]) as [dot_certified_disadvantage]
+,max([self_certified_small_disadvantaged_business]) as [self_certified_small_disadvantaged_business]
+,max([small_disadvantaged_business]) as [small_disadvantaged_business]
+,max([c8a_program_participant]) as [c8a_program_participant]
+,max([historically_underutilized_business_zone_hubzone_firm]) as [historically_underutilized_business_zone_hubzone_firm]
+,max([sba_certified_8a_joint_venture]) as [sba_certified_8a_joint_venture]
+FROM (SELECT
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([commercial_item_test_program_code])) as [commercial_item_test_program_code]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([clinger_cohen_act_planning_code])) as [clinger_cohen_act_planning_code]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([multi_year_contract_code])) as [multi_year_contract_code]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([purchase_card_as_payment_method_code])) as [purchase_card_as_payment_method_code]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([alaskan_native_owned_corporation_or_firm])) as [alaskan_native_owned_corporation_or_firm]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([american_indian_owned_business])) as [american_indian_owned_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([indian_tribe_federally_recognized])) as [indian_tribe_federally_recognized]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([native_hawaiian_owned_business])) as [native_hawaiian_owned_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([tribally_owned_business])) as [tribally_owned_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([veteran_owned_business])) as [veteran_owned_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([service_disabled_veteran_owned_business])) as [service_disabled_veteran_owned_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([woman_owned_business])) as [woman_owned_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([women_owned_small_business])) as [women_owned_small_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([economically_disadvantaged_women_owned_small_business])) as [economically_disadvantaged_women_owned_small_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([joint_venture_women_owned_small_business])) as [joint_venture_women_owned_small_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([joint_venture_economic_disadvantaged_women_owned_small_bus])) as [joint_venture_economic_disadvantaged_women_owned_small_bus]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([minority_owned_business])) as [minority_owned_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([subcontinent_asian_asian_indian_american_owned_business])) as [subcontinent_asian_asian_indian_american_owned_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([asian_pacific_american_owned_business])) as [asian_pacific_american_owned_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([black_american_owned_business])) as [black_american_owned_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([hispanic_american_owned_business])) as [hispanic_american_owned_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([native_american_owned_business])) as [native_american_owned_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([other_minority_owned_business])) as [other_minority_owned_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([emerging_small_business])) as [emerging_small_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([community_developed_corporation_owned_firm])) as [community_developed_corporation_owned_firm]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([labor_surplus_area_firm])) as [labor_surplus_area_firm]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([us_federal_government])) as [us_federal_government]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([federally_funded_research_and_development_corp])) as [federally_funded_research_and_development_corp]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([federal_agency])) as [federal_agency]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([us_state_government])) as [us_state_government]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([us_local_government])) as [us_local_government]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([city_local_government])) as [city_local_government]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([county_local_government])) as [county_local_government]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([inter_municipal_local_government])) as [inter_municipal_local_government]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([local_government_owned])) as [local_government_owned]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([municipality_local_government])) as [municipality_local_government]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([school_district_local_government])) as [school_district_local_government]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([township_local_government])) as [township_local_government]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([us_tribal_government])) as [us_tribal_government]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([foreign_government])) as [foreign_government]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([corporate_entity_not_tax_exempt])) as [corporate_entity_not_tax_exempt]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([corporate_entity_tax_exempt])) as [corporate_entity_tax_exempt]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([partnership_or_limited_liability_partnership])) as [partnership_or_limited_liability_partnership]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([sole_proprietorship])) as [sole_proprietorship]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([small_agricultural_cooperative])) as [small_agricultural_cooperative]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([international_organization])) as [international_organization]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([us_government_entity])) as [us_government_entity]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([community_development_corporation])) as [community_development_corporation]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([domestic_shelter])) as [domestic_shelter]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([educational_institution])) as [educational_institution]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([foundation])) as [foundation]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([hospital_flag])) as [hospital_flag]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([manufacturer_of_goods])) as [manufacturer_of_goods]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([veterinary_hospital])) as [veterinary_hospital]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([hispanic_servicing_institution])) as [hispanic_servicing_institution]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([receives_contracts])) as [receives_contracts]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([receives_grants])) as [receives_grants]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([receives_contracts_and_grants])) as [receives_contracts_and_grants]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([airport_authority])) as [airport_authority]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([council_of_governments])) as [council_of_governments]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([housing_authorities_public_tribal])) as [housing_authorities_public_tribal]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([interstate_entity])) as [interstate_entity]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([planning_commission])) as [planning_commission]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([port_authority])) as [port_authority]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([transit_authority])) as [transit_authority]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([subchapter_scorporation])) as [subchapter_scorporation]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([limited_liability_corporation])) as [limited_liability_corporation]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([foreign_owned_and_located])) as [foreign_owned_and_located]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([for_profit_organization])) as [for_profit_organization]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([nonprofit_organization])) as [nonprofit_organization]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([other_not_for_profit_organization])) as [other_not_for_profit_organization]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([the_ability_one_program])) as [the_ability_one_program]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([private_university_or_college])) as [private_university_or_college]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([state_controlled_institution_of_higher_learning])) as [state_controlled_institution_of_higher_learning]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([1862_land_grant_college])) as [1862_land_grant_college]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([1890_land_grant_college])) as [1890_land_grant_college]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([1994_land_grant_college])) as [1994_land_grant_college]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([minority_institution])) as [minority_institution]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([historically_black_college])) as [historically_black_college]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([tribal_college])) as [tribal_college]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([alaskan_native_servicing_institution])) as [alaskan_native_servicing_institution]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([native_hawaiian_servicing_institution])) as [native_hawaiian_servicing_institution]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([school_of_forestry])) as [school_of_forestry]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([veterinary_college])) as [veterinary_college]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([dot_certified_disadvantage])) as [dot_certified_disadvantage]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([self_certified_small_disadvantaged_business])) as [self_certified_small_disadvantaged_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([small_disadvantaged_business])) as [small_disadvantaged_business]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([c8a_program_participant])) as [c8a_program_participant]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([historically_underutilized_business_zone_hubzone_firm])) as [historically_underutilized_business_zone_hubzone_firm]
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([sba_certified_8a_joint_venture])) as [sba_certified_8a_joint_venture]
+	FROM Errorlogging.FPDSbetaViolatesType) as ml
+
+--Varchar to varchar group check. Note you have to remove an extraneous comma from the first item. 
+SELECT
+ ,iif([award_id_piid]>50,[award_id_piid],NULL) as [award_id_piid]
+,iif([modification_number]>25,[modification_number],NULL) as [modification_number]
+,iif([parent_award_agency_id]>4,[parent_award_agency_id],NULL) as [parent_award_agency_id]
+,iif([parent_award_id_piid]>50,[parent_award_id_piid],NULL) as [parent_award_id_piid]
+,iif([parent_award_modification_number]>25,[parent_award_modification_number],NULL) as [parent_award_modification_number]
+,iif([awarding_agency_code]>4,[awarding_agency_code],NULL) as [awarding_agency_code]
+,iif([awarding_sub_agency_code]>4,[awarding_sub_agency_code],NULL) as [awarding_sub_agency_code]
+,iif([awarding_office_code]>6,[awarding_office_code],NULL) as [awarding_office_code]
+,iif([funding_agency_code]>4,[funding_agency_code],NULL) as [funding_agency_code]
+,iif([funding_sub_agency_code]>4,[funding_sub_agency_code],NULL) as [funding_sub_agency_code]
+,iif([funding_office_code]>6,[funding_office_code],NULL) as [funding_office_code]
+,iif([foreign_funding]>21,[foreign_funding],NULL) as [foreign_funding]
+,iif([sam_exception]>70,[sam_exception],NULL) as [sam_exception]
+,iif([recipient_duns]>13,[recipient_duns],NULL) as [recipient_duns]
+,iif([recipient_parent_name]>150,[recipient_parent_name],NULL) as [recipient_parent_name]
+,iif([recipient_parent_duns]>13,[recipient_parent_duns],NULL) as [recipient_parent_duns]
+,iif([recipient_address_line_1]>100,[recipient_address_line_1],NULL) as [recipient_address_line_1]
+,iif([recipient_address_line_2]>60,[recipient_address_line_2],NULL) as [recipient_address_line_2]
+,iif([recipient_city_name]>35,[recipient_city_name],NULL) as [recipient_city_name]
+,iif([recipient_state_code]>30,[recipient_state_code],NULL) as [recipient_state_code]
+,iif([recipient_zip_4_code]>28,[recipient_zip_4_code],NULL) as [recipient_zip_4_code]
+,iif([recipient_congressional_district]>22,[recipient_congressional_district],NULL) as [recipient_congressional_district]
+,iif([recipient_phone_number]>20,[recipient_phone_number],NULL) as [recipient_phone_number]
+,iif([recipient_fax_number]>30,[recipient_fax_number],NULL) as [recipient_fax_number]
+,iif([primary_place_of_performance_country_code]>3,[primary_place_of_performance_country_code],NULL) as [primary_place_of_performance_country_code]
+,iif([primary_place_of_performance_city_name]>100,[primary_place_of_performance_city_name],NULL) as [primary_place_of_performance_city_name]
+,iif([primary_place_of_performance_county_name]>22,[primary_place_of_performance_county_name],NULL) as [primary_place_of_performance_county_name]
+,iif([primary_place_of_performance_state_code]>2,[primary_place_of_performance_state_code],NULL) as [primary_place_of_performance_state_code]
+,iif([primary_place_of_performance_zip_4]>10,[primary_place_of_performance_zip_4],NULL) as [primary_place_of_performance_zip_4]
+,iif([primary_place_of_performance_congressional_district]>6,[primary_place_of_performance_congressional_district],NULL) as [primary_place_of_performance_congressional_district]
+,iif([award_type_code]>1,[award_type_code],NULL) as [award_type_code]
+,iif([idv_type_code]>1,[idv_type_code],NULL) as [idv_type_code]
+,iif([multiple_or_single_award_idv_code]>1,[multiple_or_single_award_idv_code],NULL) as [multiple_or_single_award_idv_code]
+,iif([type_of_idc_code]>41,[type_of_idc_code],NULL) as [type_of_idc_code]
+,iif([type_of_contract_pricing_code]>2,[type_of_contract_pricing_code],NULL) as [type_of_contract_pricing_code]
+,iif([award_description]>4035,[award_description],NULL) as [award_description]
+,iif([action_type_code]>1,[action_type_code],NULL) as [action_type_code]
+,iif([solicitation_identifier]>69,[solicitation_identifier],NULL) as [solicitation_identifier]
+,iif([product_or_service_code]>4,[product_or_service_code],NULL) as [product_or_service_code]
+,iif([product_or_service_code_description]>255,[product_or_service_code_description],NULL) as [product_or_service_code_description]
+,iif([contract_bundling_code]>1,[contract_bundling_code],NULL) as [contract_bundling_code]
+,iif([dod_claimant_program_code]>3,[dod_claimant_program_code],NULL) as [dod_claimant_program_code]
+,iif([naics_code]>6,[naics_code],NULL) as [naics_code]
+,iif([recovered_materials_sustainability_code]>1,[recovered_materials_sustainability_code],NULL) as [recovered_materials_sustainability_code]
+,iif([domestic_or_foreign_entity_code]>1,[domestic_or_foreign_entity_code],NULL) as [domestic_or_foreign_entity_code]
+,iif([dod_acquisition_program_code]>4,[dod_acquisition_program_code],NULL) as [dod_acquisition_program_code]
+,iif([information_technology_commercial_item_category_code]>30,[information_technology_commercial_item_category_code],NULL) as [information_technology_commercial_item_category_code]
+,iif([epa_designated_product_code]>1,[epa_designated_product_code],NULL) as [epa_designated_product_code]
+,iif([country_of_product_or_service_origin_code]>3,[country_of_product_or_service_origin_code],NULL) as [country_of_product_or_service_origin_code]
+,iif([place_of_manufacture_code]>1,[place_of_manufacture_code],NULL) as [place_of_manufacture_code]
+,iif([subcontracting_plan_code]>1,[subcontracting_plan_code],NULL) as [subcontracting_plan_code]
+,iif([extent_competed_code]>3,[extent_competed_code],NULL) as [extent_competed_code]
+,iif([solicitation_procedures_code]>5,[solicitation_procedures_code],NULL) as [solicitation_procedures_code]
+,iif([type_of_set_aside_code]>10,[type_of_set_aside_code],NULL) as [type_of_set_aside_code]
+,iif([evaluated_preference_code]>6,[evaluated_preference_code],NULL) as [evaluated_preference_code]
+,iif([research_code]>3,[research_code],NULL) as [research_code]
+,iif([fair_opportunity_limited_sources_code]>4,[fair_opportunity_limited_sources_code],NULL) as [fair_opportunity_limited_sources_code]
+,iif([other_than_full_and_open_competition_code]>3,[other_than_full_and_open_competition_code],NULL) as [other_than_full_and_open_competition_code]
+,iif([commercial_item_acquisition_procedures_code]>1,[commercial_item_acquisition_procedures_code],NULL) as [commercial_item_acquisition_procedures_code]
+,iif([small_business_competitiveness_demonstration_program]>6,[small_business_competitiveness_demonstration_program],NULL) as [small_business_competitiveness_demonstration_program]
+,iif([a76_fair_act_action_code]>3,[a76_fair_act_action_code],NULL) as [a76_fair_act_action_code]
+,iif([fed_biz_opps_code]>1,[fed_biz_opps_code],NULL) as [fed_biz_opps_code]
+,iif([local_area_set_aside_code]>4,[local_area_set_aside_code],NULL) as [local_area_set_aside_code]
+,iif([materials_supplies_articles_equipment_code]>1,[materials_supplies_articles_equipment_code],NULL) as [materials_supplies_articles_equipment_code]
+,iif([labor_standards_code]>1,[labor_standards_code],NULL) as [labor_standards_code]
+,iif([construction_wage_rate_requirements_code]>1,[construction_wage_rate_requirements_code],NULL) as [construction_wage_rate_requirements_code]
+,iif([interagency_contracting_authority_code]>3,[interagency_contracting_authority_code],NULL) as [interagency_contracting_authority_code]
+,iif([other_statutory_authority]>1000,[other_statutory_authority],NULL) as [other_statutory_authority]
+,iif([program_acronym]>29,[program_acronym],NULL) as [program_acronym]
+,iif([parent_award_type_code]>1,[parent_award_type_code],NULL) as [parent_award_type_code]
+,iif([parent_award_single_or_multiple_code]>1,[parent_award_single_or_multiple_code],NULL) as [parent_award_single_or_multiple_code]
+,iif([major_program]>104,[major_program],NULL) as [major_program]
+,iif([national_interest_action_code]>4,[national_interest_action_code],NULL) as [national_interest_action_code]
+,iif([cost_or_pricing_data_code]>1,[cost_or_pricing_data_code],NULL) as [cost_or_pricing_data_code]
+,iif([cost_accounting_standards_clause_code]>1,[cost_accounting_standards_clause_code],NULL) as [cost_accounting_standards_clause_code]
+,iif([gfe_gfp_code]>1,[gfe_gfp_code],NULL) as [gfe_gfp_code]
+,iif([sea_transportation_code]>1,[sea_transportation_code],NULL) as [sea_transportation_code]
+,iif([undefinitized_action_code]>1,[undefinitized_action_code],NULL) as [undefinitized_action_code]
+,iif([consolidated_contract_code]>1,[consolidated_contract_code],NULL) as [consolidated_contract_code]
+,iif([performance_based_service_acquisition_code]>38,[performance_based_service_acquisition_code],NULL) as [performance_based_service_acquisition_code]
+,iif([contract_financing_code]>1,[contract_financing_code],NULL) as [contract_financing_code]
+,iif([contingency_humanitarian_or_peacekeeping_operation_code]>1,[contingency_humanitarian_or_peacekeeping_operation_code],NULL) as [contingency_humanitarian_or_peacekeeping_operation_code]
+,iif([contracting_officers_determination_of_business_size_code]>1,[contracting_officers_determination_of_business_size_code],NULL) as [contracting_officers_determination_of_business_size_code]
+,iif([sam_exception_description]>70,[sam_exception_description],NULL) as [sam_exception_description]
+,iif([cage_code]>5,[cage_code],NULL) as [cage_code]
+,iif([award_or_idv_flag]>5,[award_or_idv_flag],NULL) as [award_or_idv_flag]
+,iif([inherently_governmental_functions]>10,[inherently_governmental_functions],NULL) as [inherently_governmental_functions]
+,iif([inherently_governmental_functions_description]>40,[inherently_governmental_functions_description],NULL) as [inherently_governmental_functions_description]
+,iif([organizational_type]>30,[organizational_type],NULL) as [organizational_type]
+,iif([foreign_funding_description]>25,[foreign_funding_description],NULL) as [foreign_funding_description]
+,iif([contract_transaction_unique_key]>66,[contract_transaction_unique_key],NULL) as [contract_transaction_unique_key]
+,iif([contract_award_unique_key]>66,[contract_award_unique_key],NULL) as [contract_award_unique_key]
+,iif([federal_accounts_funding_this_award]>1000,[federal_accounts_funding_this_award],NULL) as [federal_accounts_funding_this_award]
+,iif([highly_compensated_officer_1_name]>100,[highly_compensated_officer_1_name],NULL) as [highly_compensated_officer_1_name]
+,iif([highly_compensated_officer_2_name]>100,[highly_compensated_officer_2_name],NULL) as [highly_compensated_officer_2_name]
+,iif([highly_compensated_officer_3_name]>100,[highly_compensated_officer_3_name],NULL) as [highly_compensated_officer_3_name]
+,iif([highly_compensated_officer_4_name]>100,[highly_compensated_officer_4_name],NULL) as [highly_compensated_officer_4_name]
+,iif([highly_compensated_officer_5_name]>100,[highly_compensated_officer_5_name],NULL) as [highly_compensated_officer_5_name]
+,iif([usaspending_permalink]>150,[usaspending_permalink],NULL) as [usaspending_permalink] 
+FROM (SELECT
+ 	,max(len([award_id_piid])) as [award_id_piid]
+	,max(len([modification_number])) as [modification_number]
+	,max(len([parent_award_agency_id])) as [parent_award_agency_id]
+	,max(len([parent_award_id_piid])) as [parent_award_id_piid]
+	,max(len([parent_award_modification_number])) as [parent_award_modification_number]
+	,max(len([awarding_agency_code])) as [awarding_agency_code]
+	,max(len([awarding_sub_agency_code])) as [awarding_sub_agency_code]
+	,max(len([awarding_office_code])) as [awarding_office_code]
+	,max(len([funding_agency_code])) as [funding_agency_code]
+	,max(len([funding_sub_agency_code])) as [funding_sub_agency_code]
+	,max(len([funding_office_code])) as [funding_office_code]
+	,max(len([foreign_funding])) as [foreign_funding]
+	,max(len([sam_exception])) as [sam_exception]
+	,max(len([recipient_duns])) as [recipient_duns]
+	,max(len([recipient_parent_name])) as [recipient_parent_name]
+	,max(len([recipient_parent_duns])) as [recipient_parent_duns]
+	,max(len([recipient_address_line_1])) as [recipient_address_line_1]
+	,max(len([recipient_address_line_2])) as [recipient_address_line_2]
+	,max(len([recipient_city_name])) as [recipient_city_name]
+	,max(len([recipient_state_code])) as [recipient_state_code]
+	,max(len([recipient_zip_4_code])) as [recipient_zip_4_code]
+	,max(len([recipient_congressional_district])) as [recipient_congressional_district]
+	,max(len([recipient_phone_number])) as [recipient_phone_number]
+	,max(len([recipient_fax_number])) as [recipient_fax_number]
+	,max(len([primary_place_of_performance_country_code])) as [primary_place_of_performance_country_code]
+	,max(len([primary_place_of_performance_city_name])) as [primary_place_of_performance_city_name]
+	,max(len([primary_place_of_performance_county_name])) as [primary_place_of_performance_county_name]
+	,max(len([primary_place_of_performance_state_code])) as [primary_place_of_performance_state_code]
+	,max(len([primary_place_of_performance_zip_4])) as [primary_place_of_performance_zip_4]
+	,max(len([primary_place_of_performance_congressional_district])) as [primary_place_of_performance_congressional_district]
+	,max(len([award_type_code])) as [award_type_code]
+	,max(len([idv_type_code])) as [idv_type_code]
+	,max(len([multiple_or_single_award_idv_code])) as [multiple_or_single_award_idv_code]
+	,max(len([type_of_idc_code])) as [type_of_idc_code]
+	,max(len([type_of_contract_pricing_code])) as [type_of_contract_pricing_code]
+	,max(len([award_description])) as [award_description]
+	,max(len([action_type_code])) as [action_type_code]
+	,max(len([solicitation_identifier])) as [solicitation_identifier]
+	,max(len([product_or_service_code])) as [product_or_service_code]
+	,max(len([product_or_service_code_description])) as [product_or_service_code_description]
+	,max(len([contract_bundling_code])) as [contract_bundling_code]
+	,max(len([dod_claimant_program_code])) as [dod_claimant_program_code]
+	,max(len([naics_code])) as [naics_code]
+	,max(len([recovered_materials_sustainability_code])) as [recovered_materials_sustainability_code]
+	,max(len([domestic_or_foreign_entity_code])) as [domestic_or_foreign_entity_code]
+	,max(len([dod_acquisition_program_code])) as [dod_acquisition_program_code]
+	,max(len([information_technology_commercial_item_category_code])) as [information_technology_commercial_item_category_code]
+	,max(len([epa_designated_product_code])) as [epa_designated_product_code]
+	,max(len([country_of_product_or_service_origin_code])) as [country_of_product_or_service_origin_code]
+	,max(len([place_of_manufacture_code])) as [place_of_manufacture_code]
+	,max(len([subcontracting_plan_code])) as [subcontracting_plan_code]
+	,max(len([extent_competed_code])) as [extent_competed_code]
+	,max(len([solicitation_procedures_code])) as [solicitation_procedures_code]
+	,max(len([type_of_set_aside_code])) as [type_of_set_aside_code]
+	,max(len([evaluated_preference_code])) as [evaluated_preference_code]
+	,max(len([research_code])) as [research_code]
+	,max(len([fair_opportunity_limited_sources_code])) as [fair_opportunity_limited_sources_code]
+	,max(len([other_than_full_and_open_competition_code])) as [other_than_full_and_open_competition_code]
+	,max(len([commercial_item_acquisition_procedures_code])) as [commercial_item_acquisition_procedures_code]
+	,max(len([small_business_competitiveness_demonstration_program])) as [small_business_competitiveness_demonstration_program]
+	,max(len([a76_fair_act_action_code])) as [a76_fair_act_action_code]
+	,max(len([fed_biz_opps_code])) as [fed_biz_opps_code]
+	,max(len([local_area_set_aside_code])) as [local_area_set_aside_code]
+	,max(len([materials_supplies_articles_equipment_code])) as [materials_supplies_articles_equipment_code]
+	,max(len([labor_standards_code])) as [labor_standards_code]
+	,max(len([construction_wage_rate_requirements_code])) as [construction_wage_rate_requirements_code]
+	,max(len([interagency_contracting_authority_code])) as [interagency_contracting_authority_code]
+	,max(len([other_statutory_authority])) as [other_statutory_authority]
+	,max(len([program_acronym])) as [program_acronym]
+	,max(len([parent_award_type_code])) as [parent_award_type_code]
+	,max(len([parent_award_single_or_multiple_code])) as [parent_award_single_or_multiple_code]
+	,max(len([major_program])) as [major_program]
+	,max(len([national_interest_action_code])) as [national_interest_action_code]
+	,max(len([cost_or_pricing_data_code])) as [cost_or_pricing_data_code]
+	,max(len([cost_accounting_standards_clause_code])) as [cost_accounting_standards_clause_code]
+	,max(len([gfe_gfp_code])) as [gfe_gfp_code]
+	,max(len([sea_transportation_code])) as [sea_transportation_code]
+	,max(len([undefinitized_action_code])) as [undefinitized_action_code]
+	,max(len([consolidated_contract_code])) as [consolidated_contract_code]
+	,max(len([performance_based_service_acquisition_code])) as [performance_based_service_acquisition_code]
+	,max(len([contract_financing_code])) as [contract_financing_code]
+	,max(len([contingency_humanitarian_or_peacekeeping_operation_code])) as [contingency_humanitarian_or_peacekeeping_operation_code]
+	,max(len([contracting_officers_determination_of_business_size_code])) as [contracting_officers_determination_of_business_size_code]
+	,max(len([sam_exception_description])) as [sam_exception_description]
+	,max(len([cage_code])) as [cage_code]
+	,max(len([award_or_idv_flag])) as [award_or_idv_flag]
+	,max(len([inherently_governmental_functions])) as [inherently_governmental_functions]
+	,max(len([inherently_governmental_functions_description])) as [inherently_governmental_functions_description]
+	,max(len([organizational_type])) as [organizational_type]
+	,max(len([foreign_funding_description])) as [foreign_funding_description]
+	,max(len([contract_transaction_unique_key])) as [contract_transaction_unique_key]
+	,max(len([contract_award_unique_key])) as [contract_award_unique_key]
+	,max(len([federal_accounts_funding_this_award])) as [federal_accounts_funding_this_award]
+	,max(len([highly_compensated_officer_1_name])) as [highly_compensated_officer_1_name]
+	,max(len([highly_compensated_officer_2_name])) as [highly_compensated_officer_2_name]
+	,max(len([highly_compensated_officer_3_name])) as [highly_compensated_officer_3_name]
+	,max(len([highly_compensated_officer_4_name])) as [highly_compensated_officer_4_name]
+	,max(len([highly_compensated_officer_5_name])) as [highly_compensated_officer_5_name]
+	,max(len([usaspending_permalink])) as [usaspending_permalink] 
+	FROM  Errorlogging . FPDSbetaViolatesType ) as ml
+

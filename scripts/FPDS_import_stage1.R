@@ -124,12 +124,23 @@ if(!file.exists("sql\\ErrorLogging.FPDSbetaViolatesConstraint.table.sql")){
     
      
      # debug(length_check)
-      TryConvertList<-create_try_converts(Merge1to2.df,"Errorlogging","FPDSbetaViolatesType",
+      TryConvertListSingle<-create_try_converts(Merge1to2.df,"Errorlogging","FPDSbetaViolatesType",
                                           IncludeAlters=FALSE,
                                           Add_Colon_Split=FALSE,
                                           Apply_Drop=FALSE,
-                                          DateType = 120)
-      write(TryConvertList,"Output\\FPDS_Stage1_Try_Convert.txt")
+                                          DateType = 120,
+                                          IncludeMultiple = FALSE)
+      
+      write(TryConvertListSingle,"Output\\FPDS_Stage1_Try_Convert_Single.txt")
+      
+      TryConvertListMultiple<-create_try_converts(Merge1to2.df,"Errorlogging","FPDSbetaViolatesType",
+                                                IncludeAlters=FALSE,
+                                                Add_Colon_Split=FALSE,
+                                                Apply_Drop=FALSE,
+                                                DateType = 120,
+                                                IncludeSingle = FALSE)
+      
+      write(TryConvertListMultiple,"Output\\FPDS_Stage1_Try_Convert_Multiple.txt")
     
     #Transfer from Errorlogging.FPDSbetaViolatesType to Errorlogging.FPDSbetaViolatesConstraint
     InsertList<-create_insert(Merge1to2.df,
