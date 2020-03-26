@@ -189,7 +189,32 @@ UPDATE T SET
 [hubzoneflag]=coalesce(S.[hubzoneflag],T.[hubzoneflag]),
 [sba_certified_8a_joint_venture]=coalesce(S.[sba_certified_8a_joint_venture],T.[sba_certified_8a_joint_venture]),
 [CSISModifiedDate]=coalesce(S.[CSISmodifiedDate],T.[CSISModifiedDate]),
-[CSIStransactionID]=coalesce(S.[CSIStransactionID],T.[CSIStransactionID])
+[CSIStransactionID]=coalesce(S.[CSIStransactionID],T.[CSIStransactionID]),
+[current_total_value_of_award]=coalesce(S.[current_total_value_of_award],T.[current_total_value_of_award]),
+[potential_total_value_of_award]=coalesce(S.[potential_total_value_of_award],T.[potential_total_value_of_award]),
+[CAGE]=coalesce(nullif(S.[CAGE],''),T.[CAGE]),
+[award_or_idv_flag]=coalesce(nullif(S.[award_or_idv_flag],''),T.[award_or_idv_flag]),
+[inherently_governmental_functions]=coalesce(nullif(S.[inherently_governmental_functions],''),T.[inherently_governmental_functions]),
+[organizationaltype]=coalesce(nullif(S.[organizationaltype],''),T.[organizationaltype]),
+[numberofemployees]=coalesce(S.[numberofemployees],T.[numberofemployees]),
+[annualrevenue]=coalesce(S.[annualrevenue],T.[annualrevenue]),
+[total_dollars_obligated]=coalesce(S.[total_dollars_obligated],T.[total_dollars_obligated]),
+[contract_transaction_unique_key]=coalesce(nullif(S.[contract_transaction_unique_key],''),T.[contract_transaction_unique_key]),
+[contract_award_unique_key]=coalesce(nullif(S.[contract_award_unique_key],''),T.[contract_award_unique_key]),
+[solicitation_date]=coalesce(S.[solicitation_date],T.[solicitation_date]),
+[treasury_accounts_funding_this_award]=coalesce(nullif(S.[treasury_accounts_funding_this_award],''),T.[treasury_accounts_funding_this_award]),
+[federal_accounts_funding_this_award]=coalesce(nullif(S.[federal_accounts_funding_this_award],''),T.[federal_accounts_funding_this_award]),
+[prime_awardee_executive1]=coalesce(nullif(S.[prime_awardee_executive1],''),T.[prime_awardee_executive1]),
+[prime_awardee_executive1_compensation]=coalesce(S.[prime_awardee_executive1_compensation],T.[prime_awardee_executive1_compensation]),
+[prime_awardee_executive2]=coalesce(nullif(S.[prime_awardee_executive2],''),T.[prime_awardee_executive2]),
+[prime_awardee_executive2_compensation]=coalesce(S.[prime_awardee_executive2_compensation],T.[prime_awardee_executive2_compensation]),
+[prime_awardee_executive3]=coalesce(nullif(S.[prime_awardee_executive3],''),T.[prime_awardee_executive3]),
+[prime_awardee_executive3_compensation]=coalesce(S.[prime_awardee_executive3_compensation],T.[prime_awardee_executive3_compensation]),
+[prime_awardee_executive4]=coalesce(nullif(S.[prime_awardee_executive4],''),T.[prime_awardee_executive4]),
+[prime_awardee_executive4_compensation]=coalesce(S.[prime_awardee_executive4_compensation],T.[prime_awardee_executive4_compensation]),
+[prime_awardee_executive5]=coalesce(nullif(S.[prime_awardee_executive5],''),T.[prime_awardee_executive5]),
+[prime_awardee_executive5_compensation]=coalesce(S.[prime_awardee_executive5_compensation],T.[prime_awardee_executive5_compensation]),
+[usaspending_permalink]=coalesce(nullif(S.[usaspending_permalink],''),T.[usaspending_permalink])
 FROM Contract.FPDS as T
 INNER Join ErrorLogging.FPDSbetaviolatesConstraint as S
 ON s.CSIStransactionID=t.CSIStransactionID and

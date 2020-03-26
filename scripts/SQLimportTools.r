@@ -757,7 +757,7 @@ convert_field_to_foreign_key<-function(FKschema,
   if(suppress_select==FALSE){
   
   iifFKname<-paste("iif(fk.",FKname,"=pk.",PKname," or\n",
-                   "\t(fk.",FKname,"='' and pk.",PKname," is NULL) or\n",
+                   "\tfk.",FKname,"='' or\n",
                    "\tcharindex('('+fk.",FKname,"+')',pk.",PKname," )>0,\n",
                    sep="")
   
