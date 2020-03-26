@@ -463,6 +463,19 @@ create_try_converts<-function(data,
                        collapse="",sep="")
   )
   
+  bit<-!varchar_list & data$CSISvariableShortType=="[bit]"
+  ConvertList<-c(ConvertList,
+                 paste("--Check across all bit destination types for failed tryconverts",
+                       "\nSELECT\n",
+                       paste(
+                         paste(",(SELECT ReturnBit from ErrorLogging.AnyFailedConvertYNtoBit(",data$SourceVariableName[bit],")) as ",data$SourceVariableName[bit],
+                               sep = ""),
+                         collapse="\n"),
+                       "\nFROM ",Schema,".",TableName,"\n",
+                       collapse="",sep="")
+  )
+  
+  
   #
   if(any(varchar_list)){
     ConvertList<-c(ConvertList,
