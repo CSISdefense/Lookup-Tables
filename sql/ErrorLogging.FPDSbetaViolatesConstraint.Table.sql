@@ -288,7 +288,8 @@ CREATE TABLE [ErrorLogging].[FPDSbetaViolatesConstraint](
 	[prime_awardee_executive4_compensation] [decimal](19, 4) NULL,
 	[prime_awardee_executive5] [varchar](100) NULL,
 	[prime_awardee_executive5_compensation] [decimal](19, 4) NULL,
-	[usaspending_permalink] [varchar](150) NULL
+	[usaspending_permalink] [varchar](150) NULL,
+	[awarding_agency_code] [smallint] NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FPDSbetaViolatesConstraint] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__7193879D]  DEFAULT (getdate()) FOR [CSISmodifiedDate]

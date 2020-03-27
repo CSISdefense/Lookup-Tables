@@ -172,7 +172,8 @@
 [placeofperformancecongressionaldistrict],,
 [psc_cat],,
 [gfe_gfp_name],TRUE,[gfe_gfp_code]
-[agencyid],,[awarding_agency_name]
+[agencyid],,
+[awarding_agency_code],,[awarding_agency_name]
 [piid],,
 [modnumber],,
 [transactionnumber],,
@@ -278,7 +279,7 @@
 [last_modified_date],,
 [TypeOfBusiness],,
 [parent_award_agency_name],TRUE,[idvagencyid]
-[awarding_agency_name],TRUE,[agencyid]
+[awarding_agency_name],TRUE,[awarding_agency_code]
 [awarding_sub_agency_name],TRUE,[contractingofficeagencyid]
 [awarding_office_name],TRUE,[contractingofficeid]
 [funding_agency_name],TRUE,[maj_fund_agency_cat]

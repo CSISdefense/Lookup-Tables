@@ -214,7 +214,8 @@ UPDATE T SET
 [prime_awardee_executive4_compensation]=coalesce(S.[prime_awardee_executive4_compensation],T.[prime_awardee_executive4_compensation]),
 [prime_awardee_executive5]=coalesce(nullif(S.[prime_awardee_executive5],''),T.[prime_awardee_executive5]),
 [prime_awardee_executive5_compensation]=coalesce(S.[prime_awardee_executive5_compensation],T.[prime_awardee_executive5_compensation]),
-[usaspending_permalink]=coalesce(nullif(S.[usaspending_permalink],''),T.[usaspending_permalink])
+[usaspending_permalink]=coalesce(nullif(S.[usaspending_permalink],''),T.[usaspending_permalink]),
+[awarding_agency_code]=coalesce(S.[awarding_agency_code],T.[awarding_agency_code])
 FROM Contract.FPDS as T
 INNER Join ErrorLogging.FPDSbetaviolatesConstraint as S
 ON s.CSIStransactionID=t.CSIStransactionID and

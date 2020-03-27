@@ -282,6 +282,7 @@ sum(iif(nullif([prime_awardee_executive4],'') is null,1,0)) as [prime_awardee_ex
 sum(iif([prime_awardee_executive4_compensation] is null,1,0)) as [prime_awardee_executive4_compensation],
 sum(iif(nullif([prime_awardee_executive5],'') is null,1,0)) as [prime_awardee_executive5],
 sum(iif([prime_awardee_executive5_compensation] is null,1,0)) as [prime_awardee_executive5_compensation],
-sum(iif(nullif([usaspending_permalink],'') is null,1,0)) as [usaspending_permalink]
+sum(iif(nullif([usaspending_permalink],'') is null,1,0)) as [usaspending_permalink],
+sum(iif([awarding_agency_code] is null,1,0)) as [awarding_agency_code]
 FROM ErrorLogging.FPDSbetaviolatesConstraint
 

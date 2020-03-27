@@ -20,6 +20,8 @@ SELECT
 		nullif([period_of_performance_potential_end_date],'') is not null,1,0)) as [period_of_performance_potential_end_date]
 	,max(iif(Try_Convert([datetime2](7), nullif([ordering_period_end_date],'')) is null and
 		nullif([ordering_period_end_date],'') is not null,1,0)) as [ordering_period_end_date]
+	,max(iif(Try_Convert([smallint], Try_Convert(real,nullif([awarding_agency_code],''))) is null and
+		nullif([awarding_agency_code],'') is not null,1,0)) as [awarding_agency_code]
 	,max(iif(Try_Convert([nvarchar](150), [recipient_name]) is null and
 		nullif([recipient_name],'') is not null,1,0)) as [recipient_name]
 	,max(iif(Try_Convert([nvarchar](150), [recipient_doing_business_as_name]) is null and
@@ -250,7 +252,6 @@ SELECT
 ,iif([parent_award_agency_id]>4,[parent_award_agency_id],NULL) as [parent_award_agency_id]
 ,iif([parent_award_id_piid]>50,[parent_award_id_piid],NULL) as [parent_award_id_piid]
 ,iif([parent_award_modification_number]>25,[parent_award_modification_number],NULL) as [parent_award_modification_number]
-,iif([awarding_agency_code]>4,[awarding_agency_code],NULL) as [awarding_agency_code]
 ,iif([awarding_sub_agency_code]>4,[awarding_sub_agency_code],NULL) as [awarding_sub_agency_code]
 ,iif([awarding_office_code]>6,[awarding_office_code],NULL) as [awarding_office_code]
 ,iif([funding_agency_code]>4,[funding_agency_code],NULL) as [funding_agency_code]
@@ -350,7 +351,6 @@ FROM (SELECT
 	,max(len([parent_award_agency_id])) as [parent_award_agency_id]
 	,max(len([parent_award_id_piid])) as [parent_award_id_piid]
 	,max(len([parent_award_modification_number])) as [parent_award_modification_number]
-	,max(len([awarding_agency_code])) as [awarding_agency_code]
 	,max(len([awarding_sub_agency_code])) as [awarding_sub_agency_code]
 	,max(len([awarding_office_code])) as [awarding_office_code]
 	,max(len([funding_agency_code])) as [funding_agency_code]

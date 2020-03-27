@@ -264,12 +264,16 @@ CREATE TABLE [Contract].[FPDS](
 	[solicitation_date] [date] NULL,
 	[treasury_accounts_funding_this_award] [varchar](4000) NULL,
 	[federal_accounts_funding_this_award] [varchar](1000) NULL,
-	[usaspending_permalink] [varchar](150) NULL
+	[usaspending_permalink] [varchar](150) NULL,
+	[awarding_agency_code] [smallint] NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Contract].[FPDS] ADD  CONSTRAINT [DF_FPDS_CSISCreatedDate]  DEFAULT (getdate()) FOR [CSISCreatedDate]
 GO
 ALTER TABLE [Contract].[FPDS] ADD  CONSTRAINT [DF_FPDS_CSISModifiedDate]  DEFAULT (getdate()) FOR [CSISModifiedDate]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD FOREIGN KEY([awarding_agency_code])
+REFERENCES [agency].[awarding_agency_code] ([awarding_agency_code])
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_award_type_code] FOREIGN KEY([award_type_code])
 REFERENCES [FPDSTypeTable].[award_type_code] ([award_type_code])

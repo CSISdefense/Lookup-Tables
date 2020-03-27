@@ -18,7 +18,7 @@ TryConvertList<-create_try_converts(MergeStage2.df,"Errorlogging","FPDSbetaviola
 write(TryConvertList,"Output\\Stage2TryConvertList.txt")
 
 #Create Foreign Key Assignments
-
+# undebug(get_CSISvariableNameToPrimaryKey)
 select_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                         "FPDSbetaViolatesConstraint",
                                         dir="sql",
@@ -45,7 +45,7 @@ write(input_missing_code,
 
 #Create the code to count empty rows by variable.
 count_list<-count_empties(Stage2TableType.df,"ErrorLogging","FPDSbetaviolatesConstraint")
-write(count_list,"Output//count_list.txt")
+write(count_list,"Output//ErrorLogging_FPDSstage2_count_empties.txt")
 
 
 
@@ -53,8 +53,8 @@ write(count_list,"Output//count_list.txt")
 #Transfer from Errorlogging.FPDSviolatesConstraint to Contract.FPDS
 if(nrow(MergeStage2.df[is.na(MergeStage2.df$CSISvariableType)&is.na(MergeStage2.df$IsDroppedNameField),])>1){
   write.csv(MergeStage2.df[is.na(MergeStage2.df$CSISvariableType)&is.na(MergeStage2.df$IsDroppedNameField),],
-            file="ImportAids/Unmatched_NameConversion.csv")
-  stop("Update ImportAides/NameList.csv using ImportAids/Unmatched_NameConversion.csv")
+            file="Output/Unmatched_NameConversion.csv")
+  stop("Update ImportAides/NameList.csv using Output/Unmatched_NameConversion.csv")
 }
 InsertList<-create_insert(MergeStage2.df,
                          "ErrorLogging",
@@ -62,7 +62,7 @@ InsertList<-create_insert(MergeStage2.df,
                          "Contract",
                          "FPDS",
                          DateType=120)
-write(InsertList,"ImportAids/Insert2.txt")
+write(InsertList,"Output/ErrorLogging_FPDSstage2_insert_destination.txt")
 
 #Create Updates
 update_list<-create_update_FPDS(MergeStage2.df,
@@ -72,4 +72,4 @@ update_list<-create_update_FPDS(MergeStage2.df,
   "FPDS",
   DateType=101,
   drop_name=TRUE)
-write(update_list,"ImportAids/update_list.txt")
+write(update_list,"Output/ErrorLogging_FPDSstage2_update_destination.txt")

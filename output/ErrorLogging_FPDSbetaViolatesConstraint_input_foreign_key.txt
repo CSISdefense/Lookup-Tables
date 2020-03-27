@@ -1,5 +1,6 @@
 
 
+-- Insert new [idvagencyid] into FPDSTypeTable.AgencyID
 INSERT INTO FPDSTypeTable.AgencyID
 (AgencyID,AgencyIDtext)
 SELECT fk.[idvagencyid]
@@ -10,6 +11,7 @@ On pk.AgencyID=fk.[idvagencyid]
 WHERE pk.AgencyID is NULL
 GROUP BY fk.[idvagencyid]
 
+-- Insert new [contractingofficeagencyid] into FPDSTypeTable.AgencyID
 INSERT INTO FPDSTypeTable.AgencyID
 (AgencyID,AgencyIDtext)
 SELECT fk.[contractingofficeagencyid]
@@ -20,16 +22,7 @@ On pk.AgencyID=fk.[contractingofficeagencyid]
 WHERE pk.AgencyID is NULL
 GROUP BY fk.[contractingofficeagencyid]
 
-INSERT INTO Office.ContractingOfficeCodeHistory
-(ContractingOfficeCode,NULL)
-SELECT fk.[contractingofficeid]
-,max(fk.awarding_office_name) as NULL
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
-LEFT OUTER JOIN Office.ContractingOfficeCodeHistory as pk
-On pk.ContractingOfficeCode=fk.[contractingofficeid]
-WHERE pk.ContractingOfficeCode is NULL
-GROUP BY fk.[contractingofficeid]
-
+-- Insert new [maj_fund_agency_cat] into FPDSTypeTable.AgencyID
 INSERT INTO FPDSTypeTable.AgencyID
 (AgencyID,AgencyIDtext)
 SELECT fk.[maj_fund_agency_cat]
@@ -40,6 +33,7 @@ On pk.AgencyID=fk.[maj_fund_agency_cat]
 WHERE pk.AgencyID is NULL
 GROUP BY fk.[maj_fund_agency_cat]
 
+-- Insert new [fundingrequestingagencyid] into FPDSTypeTable.AgencyID
 INSERT INTO FPDSTypeTable.AgencyID
 (AgencyID,AgencyIDtext)
 SELECT fk.[fundingrequestingagencyid]
@@ -50,6 +44,7 @@ On pk.AgencyID=fk.[fundingrequestingagencyid]
 WHERE pk.AgencyID is NULL
 GROUP BY fk.[fundingrequestingagencyid]
 
+-- Insert new [fundingrequestingofficeid] into Office.ContractingOfficeCode
 INSERT INTO Office.ContractingOfficeCode
 (ContractingOfficeCode,ContractingOfficeName)
 SELECT fk.[fundingrequestingofficeid]
@@ -60,15 +55,7 @@ On pk.ContractingOfficeCode=fk.[fundingrequestingofficeid]
 WHERE pk.ContractingOfficeCode is NULL
 GROUP BY fk.[fundingrequestingofficeid]
 
-INSERT INTO Contractor.DunsnumberToParentContractorHistory
-(DUNSnumber)
-SELECT fk.[dunsnumber]
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
-LEFT OUTER JOIN Contractor.DunsnumberToParentContractorHistory as pk
-On pk.DUNSnumber=fk.[dunsnumber]
-WHERE pk.DUNSnumber is NULL
-GROUP BY fk.[dunsnumber]
-
+-- Insert new [vendordoingasbusinessname] into Vendor.VendorName
 INSERT INTO Vendor.VendorName
 (vendorname)
 SELECT fk.[vendordoingasbusinessname]
@@ -78,16 +65,17 @@ On pk.vendorname=fk.[vendordoingasbusinessname]
 WHERE pk.vendorname is NULL
 GROUP BY fk.[vendordoingasbusinessname]
 
+-- Insert new [vendorcountrycode] into FPDSTypeTable.vendorcountrycode
 INSERT INTO FPDSTypeTable.vendorcountrycode
-(vendorcountrycode,NULL)
+(vendorcountrycode)
 SELECT fk.[vendorcountrycode]
-,max(fk.recipient_country_name) as NULL
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.vendorcountrycode as pk
 On pk.vendorcountrycode=fk.[vendorcountrycode]
 WHERE pk.vendorcountrycode is NULL
 GROUP BY fk.[vendorcountrycode]
 
+-- Insert new [placeofperformancecountrycode] into FPDSTypeTable.Country3LetterCode
 INSERT INTO FPDSTypeTable.Country3LetterCode
 (Country3LetterCode,Country3LetterCodeText)
 SELECT fk.[placeofperformancecountrycode]
@@ -98,6 +86,7 @@ On pk.Country3LetterCode=fk.[placeofperformancecountrycode]
 WHERE pk.Country3LetterCode is NULL
 GROUP BY fk.[placeofperformancecountrycode]
 
+-- Insert new [pop_state_code] into FPDSTypeTable.statecode
 INSERT INTO FPDSTypeTable.statecode
 (statecode,statecodeText)
 SELECT fk.[pop_state_code]
@@ -108,6 +97,7 @@ On pk.statecode=fk.[pop_state_code]
 WHERE pk.statecode is NULL
 GROUP BY fk.[pop_state_code]
 
+-- Insert new [award_type_code] into FPDSTypeTable.award_type_code
 INSERT INTO FPDSTypeTable.award_type_code
 (award_type_code,award_type_name)
 SELECT fk.[award_type_code]
@@ -118,6 +108,7 @@ On pk.award_type_code=fk.[award_type_code]
 WHERE pk.award_type_code is NULL
 GROUP BY fk.[award_type_code]
 
+-- Insert new [idv_type_code] into FPDSTypeTable.idv_type_code
 INSERT INTO FPDSTypeTable.idv_type_code
 (idv_type_code,idv_type_name)
 SELECT fk.[idv_type_code]
@@ -128,6 +119,7 @@ On pk.idv_type_code=fk.[idv_type_code]
 WHERE pk.idv_type_code is NULL
 GROUP BY fk.[idv_type_code]
 
+-- Insert new [typeofcontractpricing] into FPDSTypeTable.typeofcontractpricing
 INSERT INTO FPDSTypeTable.typeofcontractpricing
 (TypeOfContractPricing,TypeOfContractPricingText)
 SELECT fk.[typeofcontractpricing]
@@ -138,6 +130,7 @@ On pk.TypeOfContractPricing=fk.[typeofcontractpricing]
 WHERE pk.TypeOfContractPricing is NULL
 GROUP BY fk.[typeofcontractpricing]
 
+-- Insert new [reasonformodification] into FPDSTypeTable.reasonformodification
 INSERT INTO FPDSTypeTable.reasonformodification
 (reasonformodification,reasonformodificationText)
 SELECT fk.[reasonformodification]
@@ -148,6 +141,7 @@ On pk.reasonformodification=fk.[reasonformodification]
 WHERE pk.reasonformodification is NULL
 GROUP BY fk.[reasonformodification]
 
+-- Insert new [productorservicecode] into FPDSTypeTable.ProductOrServiceCode
 INSERT INTO FPDSTypeTable.ProductOrServiceCode
 (ProductOrServiceCode,ProductOrServiceCodeText)
 SELECT fk.[productorservicecode]
@@ -158,6 +152,7 @@ On pk.ProductOrServiceCode=fk.[productorservicecode]
 WHERE pk.ProductOrServiceCode is NULL
 GROUP BY fk.[productorservicecode]
 
+-- Insert new [contractbundling] into FPDSTypeTable.contractbundling
 INSERT INTO FPDSTypeTable.contractbundling
 (contractbundling,contractbundlingText)
 SELECT fk.[contractbundling]
@@ -168,6 +163,7 @@ On pk.contractbundling=fk.[contractbundling]
 WHERE pk.contractbundling is NULL
 GROUP BY fk.[contractbundling]
 
+-- Insert new [claimantprogramcode] into FPDSTypeTable.ClaimantProgramCode
 INSERT INTO FPDSTypeTable.ClaimantProgramCode
 (ClaimantProgramCode,ClaimantProgramCodeText)
 SELECT fk.[claimantprogramcode]
@@ -178,6 +174,7 @@ On pk.ClaimantProgramCode=fk.[claimantprogramcode]
 WHERE pk.ClaimantProgramCode is NULL
 GROUP BY fk.[claimantprogramcode]
 
+-- Insert new [principalnaicscode] into FPDSTypeTable.PrincipalNaicsCode
 INSERT INTO FPDSTypeTable.PrincipalNaicsCode
 (principalnaicscode,principalnaicscodeText)
 SELECT fk.[principalnaicscode]
@@ -188,6 +185,7 @@ On pk.principalnaicscode=fk.[principalnaicscode]
 WHERE pk.principalnaicscode is NULL
 GROUP BY fk.[principalnaicscode]
 
+-- Insert new [recoveredmaterialclauses] into FPDSTypeTable.recoveredmaterialclauses
 INSERT INTO FPDSTypeTable.recoveredmaterialclauses
 (recoveredmaterialclauses,recoveredmaterialclausesText)
 SELECT fk.[recoveredmaterialclauses]
@@ -198,6 +196,7 @@ On pk.recoveredmaterialclauses=fk.[recoveredmaterialclauses]
 WHERE pk.recoveredmaterialclauses is NULL
 GROUP BY fk.[recoveredmaterialclauses]
 
+-- Insert new [manufacturingorganizationtype] into FPDSTypeTable.manufacturingorganizationtype
 INSERT INTO FPDSTypeTable.manufacturingorganizationtype
 (manufacturingorganizationtype,manufacturingorganizationtypeText)
 SELECT fk.[manufacturingorganizationtype]
@@ -208,6 +207,7 @@ On pk.manufacturingorganizationtype=fk.[manufacturingorganizationtype]
 WHERE pk.manufacturingorganizationtype is NULL
 GROUP BY fk.[manufacturingorganizationtype]
 
+-- Insert new [useofepadesignatedproducts] into FPDSTypeTable.useofepadesignatedproducts
 INSERT INTO FPDSTypeTable.useofepadesignatedproducts
 (useofepadesignatedproducts,useofepadesignatedproductsText)
 SELECT fk.[useofepadesignatedproducts]
@@ -218,6 +218,7 @@ On pk.useofepadesignatedproducts=fk.[useofepadesignatedproducts]
 WHERE pk.useofepadesignatedproducts is NULL
 GROUP BY fk.[useofepadesignatedproducts]
 
+-- Insert new [countryoforigin] into FPDSTypeTable.Country3LetterCode
 INSERT INTO FPDSTypeTable.Country3LetterCode
 (Country3LetterCode,Country3LetterCodeText)
 SELECT fk.[countryoforigin]
@@ -228,6 +229,7 @@ On pk.Country3LetterCode=fk.[countryoforigin]
 WHERE pk.Country3LetterCode is NULL
 GROUP BY fk.[countryoforigin]
 
+-- Insert new [placeofmanufacture] into FPDSTypeTable.PlaceOfManufacture
 INSERT INTO FPDSTypeTable.PlaceOfManufacture
 (PlaceOfManufacture,PlaceOfManufactureText)
 SELECT fk.[placeofmanufacture]
@@ -238,6 +240,7 @@ On pk.PlaceOfManufacture=fk.[placeofmanufacture]
 WHERE pk.PlaceOfManufacture is NULL
 GROUP BY fk.[placeofmanufacture]
 
+-- Insert new [subcontractplan] into FPDSTypeTable.subcontractplan
 INSERT INTO FPDSTypeTable.subcontractplan
 (subcontractplan,subcontractplanText)
 SELECT fk.[subcontractplan]
@@ -248,6 +251,7 @@ On pk.subcontractplan=fk.[subcontractplan]
 WHERE pk.subcontractplan is NULL
 GROUP BY fk.[subcontractplan]
 
+-- Insert new [solicitationprocedures] into FPDSTypeTable.solicitationprocedures
 INSERT INTO FPDSTypeTable.solicitationprocedures
 (solicitationprocedures,solicitationproceduresText)
 SELECT fk.[solicitationprocedures]
@@ -258,6 +262,7 @@ On pk.solicitationprocedures=fk.[solicitationprocedures]
 WHERE pk.solicitationprocedures is NULL
 GROUP BY fk.[solicitationprocedures]
 
+-- Insert new [typeofsetaside] into FPDSTypeTable.typeofsetaside
 INSERT INTO FPDSTypeTable.typeofsetaside
 (typeofsetaside,typeofsetasideText)
 SELECT fk.[typeofsetaside]
@@ -268,6 +273,7 @@ On pk.typeofsetaside=fk.[typeofsetaside]
 WHERE pk.typeofsetaside is NULL
 GROUP BY fk.[typeofsetaside]
 
+-- Insert new [evaluatedpreference] into FPDSTypeTable.evaluatedpreference
 INSERT INTO FPDSTypeTable.evaluatedpreference
 (evaluatedpreference,evaluatedpreferenceText)
 SELECT fk.[evaluatedpreference]
@@ -278,6 +284,7 @@ On pk.evaluatedpreference=fk.[evaluatedpreference]
 WHERE pk.evaluatedpreference is NULL
 GROUP BY fk.[evaluatedpreference]
 
+-- Insert new [reasonnotcompeted] into FPDSTypeTable.reasonnotcompeted
 INSERT INTO FPDSTypeTable.reasonnotcompeted
 (reasonnotcompeted,reasonnotcompetedText)
 SELECT fk.[reasonnotcompeted]
@@ -288,6 +295,7 @@ On pk.reasonnotcompeted=fk.[reasonnotcompeted]
 WHERE pk.reasonnotcompeted is NULL
 GROUP BY fk.[reasonnotcompeted]
 
+-- Insert new [commercialitemacquisitionprocedures] into FPDSTypeTable.CommercialItemAcquisitionProcedures
 INSERT INTO FPDSTypeTable.CommercialItemAcquisitionProcedures
 (CommercialItemAcquisitionProcedures,CommercialItemAcquisitionProceduresText)
 SELECT fk.[commercialitemacquisitionprocedures]
@@ -298,6 +306,7 @@ On pk.CommercialItemAcquisitionProcedures=fk.[commercialitemacquisitionprocedure
 WHERE pk.CommercialItemAcquisitionProcedures is NULL
 GROUP BY fk.[commercialitemacquisitionprocedures]
 
+-- Insert new [walshhealyact] into FPDSTypeTable.walshhealyact
 INSERT INTO FPDSTypeTable.walshhealyact
 (walshhealyact,walshhealyactText)
 SELECT fk.[walshhealyact]
@@ -308,6 +317,7 @@ On pk.walshhealyact=fk.[walshhealyact]
 WHERE pk.walshhealyact is NULL
 GROUP BY fk.[walshhealyact]
 
+-- Insert new [servicecontractact] into FPDSTypeTable.servicecontractact
 INSERT INTO FPDSTypeTable.servicecontractact
 (servicecontractact,servicecontractactText)
 SELECT fk.[servicecontractact]
@@ -318,6 +328,7 @@ On pk.servicecontractact=fk.[servicecontractact]
 WHERE pk.servicecontractact is NULL
 GROUP BY fk.[servicecontractact]
 
+-- Insert new [davisbaconact] into FPDSTypeTable.davisbaconact
 INSERT INTO FPDSTypeTable.davisbaconact
 (davisbaconact,davisbaconactText)
 SELECT fk.[davisbaconact]
@@ -328,6 +339,7 @@ On pk.davisbaconact=fk.[davisbaconact]
 WHERE pk.davisbaconact is NULL
 GROUP BY fk.[davisbaconact]
 
+-- Insert new [interagencycontractingauthority] into FPDSTypeTable.interagencycontractingauthority
 INSERT INTO FPDSTypeTable.interagencycontractingauthority
 (interagencycontractingauthority,interagencycontractingauthorityText)
 SELECT fk.[interagencycontractingauthority]
@@ -338,6 +350,7 @@ On pk.interagencycontractingauthority=fk.[interagencycontractingauthority]
 WHERE pk.interagencycontractingauthority is NULL
 GROUP BY fk.[interagencycontractingauthority]
 
+-- Insert new [parent_award_type_code] into FPDSTypeTable.idv_type_code
 INSERT INTO FPDSTypeTable.idv_type_code
 (idv_type_code,idv_type_name)
 SELECT fk.[parent_award_type_code]
@@ -348,6 +361,7 @@ On pk.idv_type_code=fk.[parent_award_type_code]
 WHERE pk.idv_type_code is NULL
 GROUP BY fk.[parent_award_type_code]
 
+-- Insert new [majorprogramcode] into Contract.MajorProgramCode
 INSERT INTO Contract.MajorProgramCode
 (majorprogramcode)
 SELECT fk.[majorprogramcode]
@@ -357,6 +371,7 @@ On pk.majorprogramcode=fk.[majorprogramcode]
 WHERE pk.majorprogramcode is NULL
 GROUP BY fk.[majorprogramcode]
 
+-- Insert new [nationalinterestactioncode] into Assistance.NationalInterestActionCode
 INSERT INTO Assistance.NationalInterestActionCode
 (nationalinterestactioncode,nationalinterestactioncodeText)
 SELECT fk.[nationalinterestactioncode]
@@ -367,6 +382,7 @@ On pk.nationalinterestactioncode=fk.[nationalinterestactioncode]
 WHERE pk.nationalinterestactioncode is NULL
 GROUP BY fk.[nationalinterestactioncode]
 
+-- Insert new [costorpricingdata] into FPDSTypeTable.costorpricingdata
 INSERT INTO FPDSTypeTable.costorpricingdata
 (costorpricingdata,costorpricingdataText)
 SELECT fk.[costorpricingdata]
@@ -377,6 +393,7 @@ On pk.costorpricingdata=fk.[costorpricingdata]
 WHERE pk.costorpricingdata is NULL
 GROUP BY fk.[costorpricingdata]
 
+-- Insert new [gfe_gfp_code] into FPDSTypeTable.gfe_gfp
 INSERT INTO FPDSTypeTable.gfe_gfp
 (gfe_gfp,gfe_gfpText)
 SELECT fk.[gfe_gfp_code]
@@ -387,6 +404,7 @@ On pk.gfe_gfp=fk.[gfe_gfp_code]
 WHERE pk.gfe_gfp is NULL
 GROUP BY fk.[gfe_gfp_code]
 
+-- Insert new [seatransportation] into FPDSTypeTable.seatransportation
 INSERT INTO FPDSTypeTable.seatransportation
 (seatransportation,seatransportationText)
 SELECT fk.[seatransportation]
@@ -397,6 +415,7 @@ On pk.seatransportation=fk.[seatransportation]
 WHERE pk.seatransportation is NULL
 GROUP BY fk.[seatransportation]
 
+-- Insert new [lettercontract] into FPDSTypeTable.lettercontract
 INSERT INTO FPDSTypeTable.lettercontract
 (LetterContract,UndefinitizedActionText)
 SELECT fk.[lettercontract]
@@ -407,6 +426,7 @@ On pk.LetterContract=fk.[lettercontract]
 WHERE pk.LetterContract is NULL
 GROUP BY fk.[lettercontract]
 
+-- Insert new [contingencyhumanitarianpeacekeepingoperation] into Assistance.ContingencyHumanitarianPeacekeepingOperation
 INSERT INTO Assistance.ContingencyHumanitarianPeacekeepingOperation
 (ContingencyHumanitarianPeacekeepingOperation,contingencyhumanitarianpeacekeepingoperationText)
 SELECT fk.[contingencyhumanitarianpeacekeepingoperation]
@@ -417,6 +437,7 @@ On pk.ContingencyHumanitarianPeacekeepingOperation=fk.[contingencyhumanitarianpe
 WHERE pk.ContingencyHumanitarianPeacekeepingOperation is NULL
 GROUP BY fk.[contingencyhumanitarianpeacekeepingoperation]
 
+-- Insert new [CSIStransactionID] into Contract.CSIStransactionID
 INSERT INTO Contract.CSIStransactionID
 (CSIStransactionID)
 SELECT fk.[CSIStransactionID]

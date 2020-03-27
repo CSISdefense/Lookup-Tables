@@ -54,33 +54,6 @@ HAVING max(iif(fk.awarding_sub_agency_name=pk.AgencyIDtext or
 ORDER BY fk.[contractingofficeagencyid]
 
 
---List new [contractingofficeid] and updated awarding_office_name for insertion into Office.ContractingOfficeCodeHistory
-SELECT fk.[contractingofficeid],
-max(iif(fk.awarding_office_name=pk.NULL or
-	fk.awarding_office_name='' or
-	charindex('('+fk.awarding_office_name+')',pk.NULL )>0,
-	NULL,fk.awarding_office_name)) as MaxOfNewFKawarding_office_name,
-count(distinct iif(fk.awarding_office_name=pk.NULL or
-	fk.awarding_office_name='' or
-	charindex('('+fk.awarding_office_name+')',pk.NULL )>0,
-	NULL,fk.awarding_office_name)) as unmatched_name_count,
-pk.NULL as PKNULL,
-max(iif(fk.awarding_office_name=pk.NULL or
-	fk.awarding_office_name='' or
-	charindex('('+fk.awarding_office_name+')',pk.NULL )>0,
-	1,0)) as any_name_match,
-'Office.ContractingOfficeCodeHistory' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
-LEFT OUTER JOIN Office.ContractingOfficeCodeHistory as pk
-On pk.ContractingOfficeCode=fk.[contractingofficeid]
-GROUP BY fk.[contractingofficeid], pk.NULL
-HAVING max(iif(fk.awarding_office_name=pk.NULL or
-	fk.awarding_office_name='' or
-	charindex('('+fk.awarding_office_name+')',pk.NULL )>0,
-	0,1))=1
-ORDER BY fk.[contractingofficeid]
-
-
 --List new [maj_fund_agency_cat] and updated funding_agency_name for insertion into FPDSTypeTable.AgencyID
 SELECT fk.[maj_fund_agency_cat],
 max(iif(fk.funding_agency_name=pk.AgencyIDtext or
@@ -162,17 +135,6 @@ HAVING max(iif(fk.funding_office_name=pk.ContractingOfficeName or
 ORDER BY fk.[fundingrequestingofficeid]
 
 
---List new [dunsnumber] for insertion into Contractor.DunsnumberToParentContractorHistory
-SELECT fk.[dunsnumber],
-'Contractor.DunsnumberToParentContractorHistory' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
-LEFT OUTER JOIN Contractor.DunsnumberToParentContractorHistory as pk
-On pk.DUNSnumber=fk.[dunsnumber]
-WHERE pk.DUNSnumber is NULL
-GROUP BY fk.[dunsnumber]
-ORDER BY fk.[dunsnumber]
-
-
 --List new [vendordoingasbusinessname] for insertion into Vendor.VendorName
 SELECT fk.[vendordoingasbusinessname],
 'Vendor.VendorName' as PrimaryKeyTable
@@ -184,30 +146,14 @@ GROUP BY fk.[vendordoingasbusinessname]
 ORDER BY fk.[vendordoingasbusinessname]
 
 
---List new [vendorcountrycode] and updated recipient_country_name for insertion into FPDSTypeTable.vendorcountrycode
+--List new [vendorcountrycode] for insertion into FPDSTypeTable.vendorcountrycode
 SELECT fk.[vendorcountrycode],
-max(iif(fk.recipient_country_name=pk.NULL or
-	fk.recipient_country_name='' or
-	charindex('('+fk.recipient_country_name+')',pk.NULL )>0,
-	NULL,fk.recipient_country_name)) as MaxOfNewFKrecipient_country_name,
-count(distinct iif(fk.recipient_country_name=pk.NULL or
-	fk.recipient_country_name='' or
-	charindex('('+fk.recipient_country_name+')',pk.NULL )>0,
-	NULL,fk.recipient_country_name)) as unmatched_name_count,
-pk.NULL as PKNULL,
-max(iif(fk.recipient_country_name=pk.NULL or
-	fk.recipient_country_name='' or
-	charindex('('+fk.recipient_country_name+')',pk.NULL )>0,
-	1,0)) as any_name_match,
 'FPDSTypeTable.vendorcountrycode' as PrimaryKeyTable
 FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
 LEFT OUTER JOIN FPDSTypeTable.vendorcountrycode as pk
 On pk.vendorcountrycode=fk.[vendorcountrycode]
-GROUP BY fk.[vendorcountrycode], pk.NULL
-HAVING max(iif(fk.recipient_country_name=pk.NULL or
-	fk.recipient_country_name='' or
-	charindex('('+fk.recipient_country_name+')',pk.NULL )>0,
-	0,1))=1
+WHERE pk.vendorcountrycode is NULL
+GROUP BY fk.[vendorcountrycode]
 ORDER BY fk.[vendorcountrycode]
 
 

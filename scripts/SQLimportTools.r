@@ -97,7 +97,8 @@ list_problem_type<-function(TargetTable.df){
 
 translate_name<-function(TargetTable.df,test_only=FALSE){
   lookup.NameConversion<-read.csv("ImportAids\\NameConversion.csv",
-                                  stringsAsFactors = FALSE)
+                                  stringsAsFactors = FALSE,
+                                  na.strings = c("NULL","NA"))
   if(!"SourceVariableName" %in% colnames(TargetTable.df)){
     colnames(TargetTable.df)[1]<-"SourceVariableName" 
   }
@@ -684,10 +685,11 @@ convert_field_to_foreign_key<-function(FKschema,
                                    PKname=NULL,
                                    suppress_select=FALSE,
                                    suppress_alter=FALSE,
-                                   suppress_insert=FALSE){
-
+                                   suppress_insert=FALSE,
+                                   allow_name_mismatch=TRUE){
+  
   pkTable.df<-read.csv(file.path("ImportAids","ErrorLogging_PrimaryKeyList.csv")
-                       ,header=TRUE,sep=",") %>% remove_bom()
+                       ,header=TRUE,sep=",",na.strings = c("NULL","NA")) %>% remove_bom()
   pkTable.df<-subset(pkTable.df,
                      toupper(PKSchemaName)==toupper(PKschema) &
                        toupper(PKTableName)==toupper(PKtable) &
@@ -696,7 +698,6 @@ convert_field_to_foreign_key<-function(FKschema,
     stop(paste("No Primary Key match for",PKschema,PKtable,PKcolumn))
   #Test if the field can be converted to the primary keys typed.
   
-  
   if(!"SourceVariableType" %in% colnames(TargetTable.df)){
     colnames(TargetTable.df)[1:3]<-c("SourceVariableName" ,
                                 "SourceVariableType",
@@ -704,19 +705,23 @@ convert_field_to_foreign_key<-function(FKschema,
   }
   
   if(length(FKname)>0){ 
-    if(FKname=="") FKname<-NULL
+    if(is.na(FKname)) FKname<-NULL
+    else if(FKname=="") FKname<-NULL
     else FKname<-gsub("\\[|\\]","",FKname)
   }
   
   if(length(PKname)>0){ 
-    if(PKname=="") PKname<-NULL
+    if(is.na(PKname)) PKname<-NULL
+    else if(PKname=="") PKname<-NULL
     else PKname<-gsub("\\[|\\]","",PKname)
   }
   
-  
   #If there's no destination, then no point tracking the source name
-  if (is.null(PKname)){
-    warning(paste("No Primary Key Text field (PKname) to match FKname",FKname))
+  if (length(PKname)==0 & length(FKname)>0){
+    if (allow_name_mismatch==FALSE)
+      stop(paste("No Primary Key Text field (PKname) to match FKname: ",FKname,""))
+    else 
+      warning(paste("No Primary Key Text field (PKname) to match FKname: ",FKname,""))
     FKname<-NULL
   }
   
@@ -799,7 +804,8 @@ convert_field_to_foreign_key<-function(FKschema,
   if(suppress_insert==FALSE)  
     #Insert unmatched values into the primary key table
     Output<-rbind(Output,
-                  paste("INSERT INTO ",PKschema,".",PKtable,"\n",
+                  paste("-- Insert new ",FKcolumn," into ",PKschema,".",PKtable,"\n",
+                    "INSERT INTO ",PKschema,".",PKtable,"\n",
                         "(",PKcolumn,ifelse(is.null(FKname),"",paste(",",PKname,sep="")),")\n",
                         "SELECT fk.",FKcolumn,"\n",
                         ifelse(is.null(FKname),"",paste(",max(fk.",FKname,") as ",PKname,"\n",sep="")),
@@ -835,7 +841,7 @@ get_CSISvariableNameToPrimaryKey<-function(){
   
   lookup.CSISvariableNameToPrimaryKey<-read.csv(fk_file,
                                                 stringsAsFactors = FALSE,
-                                                na.strings=c(""))
+                                                na.strings = c("","NULL","NA"))
   lookup.CSISvariableNameToPrimaryKey<-remove_bom(lookup.CSISvariableNameToPrimaryKey)
   lookup.CSISvariableNameToPrimaryKey$FKColumnNameUp<-toupper(lookup.CSISvariableNameToPrimaryKey$FKColumnName)
   
@@ -845,6 +851,10 @@ get_CSISvariableNameToPrimaryKey<-function(){
   #in Election.MailingElectionDate already is a component of the subsequent table, thanks to the existing foreign key.
   lookup.CSISvariableNameToPrimaryKey<- lookup.CSISvariableNameToPrimaryKey %>%
     dplyr::filter(toupper(FKTableName)!=toupper(FKColumnName))
+  
+  #Filter out multi-key primary keys, this function isn't smart enough to handle them
+  lookup.CSISvariableNameToPrimaryKey<- lookup.CSISvariableNameToPrimaryKey %>%
+    dplyr::filter(PKcolumnCount==1)
   
   #First consolidate down to only CSISvariable names and keys, using upper to handle case sensitivity
   lookup.CSISvariableNameToPrimaryKey <- lookup.CSISvariableNameToPrimaryKey %>% remove_bom() %>%

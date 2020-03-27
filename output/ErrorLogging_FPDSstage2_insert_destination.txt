@@ -217,7 +217,8 @@ INSERT INTO Contract.FPDS
 [prime_awardee_executive4_compensation],
 [prime_awardee_executive5],
 [prime_awardee_executive5_compensation],
-[usaspending_permalink]
+[usaspending_permalink],
+[awarding_agency_code]
 )
  SELECT 
 [last_modified_date],
@@ -437,6 +438,7 @@ Convert([datetime], [CSIScreatedDate]),
 [prime_awardee_executive4_compensation],
 [prime_awardee_executive5],
 [prime_awardee_executive5_compensation],
-[usaspending_permalink]
+[usaspending_permalink],
+[awarding_agency_code]
 FROM ErrorLogging.FPDSbetaviolatesConstraint
 

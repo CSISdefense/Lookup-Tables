@@ -335,7 +335,7 @@ SourceVariableName,CSISvariableName,IsDuplicate
 [period_of_performance_current_end_date],[currentcompletiondate],
 [period_of_performance_potential_end_date],[ultimatecompletiondate],
 [ordering_period_end_date],[lastdatetoorder],
-[awarding_agency_code],[agencyid],
+[awarding_agency_code],[awarding_agency_code],
 [awarding_agency_name],[awarding_agency_name],
 [awarding_sub_agency_code],[contractingofficeagencyid],
 [awarding_sub_agency_name],[awarding_sub_agency_name],
