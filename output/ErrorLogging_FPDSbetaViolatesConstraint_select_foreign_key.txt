@@ -1042,3 +1042,30 @@ WHERE pk.CSIStransactionID is NULL
 GROUP BY fk.[CSIStransactionID]
 ORDER BY fk.[CSIStransactionID]
 
+
+--List new [awarding_agency_code] and updated awarding_agency_name for insertion into agency.awarding_agency_code
+SELECT fk.[awarding_agency_code],
+max(iif(fk.awarding_agency_name=pk.awarding_agency_name or
+	fk.awarding_agency_name='' or
+	charindex('('+fk.awarding_agency_name+')',pk.awarding_agency_name )>0,
+	NULL,fk.awarding_agency_name)) as MaxOfNewFKawarding_agency_name,
+count(distinct iif(fk.awarding_agency_name=pk.awarding_agency_name or
+	fk.awarding_agency_name='' or
+	charindex('('+fk.awarding_agency_name+')',pk.awarding_agency_name )>0,
+	NULL,fk.awarding_agency_name)) as unmatched_name_count,
+pk.awarding_agency_name as PKawarding_agency_name,
+max(iif(fk.awarding_agency_name=pk.awarding_agency_name or
+	fk.awarding_agency_name='' or
+	charindex('('+fk.awarding_agency_name+')',pk.awarding_agency_name )>0,
+	1,0)) as any_name_match,
+'agency.awarding_agency_code' as PrimaryKeyTable
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN agency.awarding_agency_code as pk
+On pk.awarding_agency_code=fk.[awarding_agency_code]
+GROUP BY fk.[awarding_agency_code], pk.awarding_agency_name
+HAVING max(iif(fk.awarding_agency_name=pk.awarding_agency_name or
+	fk.awarding_agency_name='' or
+	charindex('('+fk.awarding_agency_name+')',pk.awarding_agency_name )>0,
+	0,1))=1
+ORDER BY fk.[awarding_agency_code]
+

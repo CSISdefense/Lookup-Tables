@@ -628,7 +628,7 @@ create_update_FPDS<-function(MergeTable.df,
   )    
   update_list<-c(update_list,
     paste("INNER Join ",SourceSchema,".",SourceTableName," as S",sep=""),
-    "ON s.CSIStransactionID=t.CSIStransactionID and",
+    "ON s.CSIStransactionID=t.CSIStransactionID",
     "WHERE s.last_modified_date>=t.last_modified_date"
   )    
   
@@ -645,7 +645,8 @@ create_insert<-function(MergeTable.df,
                        TargetTableName,
                        DateType=101,
                        allow_missing=TRUE,
-                       Apply_Drop=TRUE){
+                       Apply_Drop=TRUE,
+                       FPDS=FALSE){
   
   if("IsDroppedNameField" %in% colnames(MergeTable.df) & Apply_Drop==TRUE)
     MergeTable.df<-MergeTable.df %>% filter(IsDroppedNameField==FALSE | is.na(IsDroppedNameField))
@@ -667,8 +668,14 @@ create_insert<-function(MergeTable.df,
                                        nchar(InsertList[length(InsertList)])-1)
   
   InsertList<-c(InsertList,
-                    paste("FROM ",SourceSchema,".",SourceTableName,"\n",sep="")
+                    paste("FROM ",SourceSchema,".",SourceTableName,sep="")
   )
+  if (FPDS==TRUE)
+    InsertList<-c(InsertList,
+                  paste("WHERE NOT EXISTS (SELECT f.f.CSIStransactionID FROM ",TargetSchema,".",TargetTableName,"\n",
+                        "and CSIStransactionID is not NULL",sep="")
+    )
+  
   InsertList
 }
 

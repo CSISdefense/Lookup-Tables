@@ -441,4 +441,5 @@ Convert([datetime], [CSIScreatedDate]),
 [usaspending_permalink],
 [awarding_agency_code]
 FROM ErrorLogging.FPDSbetaviolatesConstraint
-
+WHERE NOT EXISTS (SELECT f.f.CSIStransactionID FROM Contract.FPDS
+and CSIStransactionID is not NULL

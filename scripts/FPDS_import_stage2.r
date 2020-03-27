@@ -61,7 +61,8 @@ InsertList<-create_insert(MergeStage2.df,
                          "FPDSbetaviolatesConstraint",
                          "Contract",
                          "FPDS",
-                         DateType=120)
+                         DateType=120,
+                         FPDS=TRUE)
 write(InsertList,"Output/ErrorLogging_FPDSstage2_insert_destination.txt")
 
 #Create Updates

@@ -446,3 +446,14 @@ LEFT OUTER JOIN Contract.CSIStransactionID as pk
 On pk.CSIStransactionID=fk.[CSIStransactionID]
 WHERE pk.CSIStransactionID is NULL
 GROUP BY fk.[CSIStransactionID]
+
+-- Insert new [awarding_agency_code] into agency.awarding_agency_code
+INSERT INTO agency.awarding_agency_code
+(awarding_agency_code,awarding_agency_name)
+SELECT fk.[awarding_agency_code]
+,max(fk.awarding_agency_name) as awarding_agency_name
+FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+LEFT OUTER JOIN agency.awarding_agency_code as pk
+On pk.awarding_agency_code=fk.[awarding_agency_code]
+WHERE pk.awarding_agency_code is NULL
+GROUP BY fk.[awarding_agency_code]

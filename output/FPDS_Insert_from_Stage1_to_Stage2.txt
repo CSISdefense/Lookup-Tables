@@ -565,4 +565,3 @@ Convert([decimal](19, 4), Convert(real,nullif([highly_compensated_officer_5_amou
 Convert([varchar](150), [usaspending_permalink]),
 Convert([smallint], Convert(real,nullif([action_date_fiscal_year],'')))
 FROM ErrorLogging.FPDSbetaViolatesType
-

@@ -218,5 +218,5 @@ UPDATE T SET
 [awarding_agency_code]=coalesce(S.[awarding_agency_code],T.[awarding_agency_code])
 FROM Contract.FPDS as T
 INNER Join ErrorLogging.FPDSbetaviolatesConstraint as S
-ON s.CSIStransactionID=t.CSIStransactionID and
+ON s.CSIStransactionID=t.CSIStransactionID
 WHERE s.last_modified_date>=t.last_modified_date
