@@ -573,7 +573,7 @@ create_update_FPDS<-function(MergeTable.df,
   MergeTable.df<-MergeTable.df[which(!tolower(MergeTable.df$SourceVariableName) %in% tolower(c(
     "[CSISCreatedDate]",
     "[unique_transaction_id]",
-    "[fiscal_year]"))),]
+    "[CSIStransactionID]"))),]
 
   #Add a null check to columns missing in recent USAspending downloads
   if(update_with_null==TRUE){

@@ -189,7 +189,7 @@ UPDATE T SET
 [hubzoneflag]=coalesce(S.[hubzoneflag],T.[hubzoneflag]),
 [sba_certified_8a_joint_venture]=coalesce(S.[sba_certified_8a_joint_venture],T.[sba_certified_8a_joint_venture]),
 [CSISModifiedDate]=coalesce(S.[CSISmodifiedDate],T.[CSISModifiedDate]),
-[CSIStransactionID]=coalesce(S.[CSIStransactionID],T.[CSIStransactionID]),
+[fiscal_year]=coalesce(S.[Fiscal_Year],T.[fiscal_year]),
 [current_total_value_of_award]=coalesce(S.[current_total_value_of_award],T.[current_total_value_of_award]),
 [potential_total_value_of_award]=coalesce(S.[potential_total_value_of_award],T.[potential_total_value_of_award]),
 [CAGE]=coalesce(nullif(S.[CAGE],''),T.[CAGE]),
