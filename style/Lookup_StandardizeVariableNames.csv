@@ -137,6 +137,7 @@ region,Region
 iYear,Year
 Classification,Classified
 APP.#,AccountDSI
+SourceFiscalYear,Pbyear
 Account,MainAccountCode
 Account.Code,MainAccountCode
 APP.Title,MainAccountName
@@ -200,6 +201,8 @@ PE.Title,ProgramElementTitle
 PE...BLI,ProgramElement
 Program.Element.Title,ProgramElementTitle
 Program.Element...Budget.Line.Item..BLI..Title,ProgramElementTitle
+R1.Program.Item.Element.Number,ProgramElement
+R1.Program.Item.Element.Name,ProgramElementTitle
 Project#,ProjectNumber
 Include.in.TOA,IncludeInTOA
 Add..Non.Add,AddOrNonAdd
