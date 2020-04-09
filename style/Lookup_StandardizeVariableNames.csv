@@ -183,6 +183,14 @@ Base.PB,Base_PB
 OCO.App,OCO_App
 OCO.PB,OCO_PB
 PB,PB
+Actual_Total,Actual
+Prior_Total,Prior
+ToComplete_Total,ToComplete
+Total_Total,Total
+FYDP2_Base,FYDP2
+FYDP3_Base,FYDP3
+FYDP4_Base,FYDP4
+FYDP5_Base,FYDP5
 Quant.Actual,Quant_Actual
 Quant.App,Quant_App
 Quant.Base.App,Quant_Base_App
