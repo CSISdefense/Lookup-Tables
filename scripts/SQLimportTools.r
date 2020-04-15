@@ -481,33 +481,35 @@ create_try_converts<-function(data,
     
     
     not_varchar_or_bit<-!varchar_list & !bit_list
-    ConvertList<-c(ConvertList,
-                   paste("--Check across all non-varchar and non-bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.",
-                         "\nSELECT\n",
-                         paste(
-                           paste("\t,max(iif(",data$ConvertList[not_varchar_or_bit]," is null and\n\t\tnullif(",data$SourceVariableName[not_varchar_or_bit],",'') is not null,1,0)) as ",data$SourceVariableName[not_varchar_or_bit],
-                                 sep = ""),
-                           collapse="\n"),
-                         "\n\tFROM ",Schema,".",TableName,"\n",
-                         collapse="",sep="")
-    )
+    if(any(not_varchar_or_bit))
+      ConvertList<-c(ConvertList,
+                     paste("--Check across all non-varchar and non-bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.",
+                           "\nSELECT\n",
+                           paste(
+                             paste("\t,max(iif(",data$ConvertList[not_varchar_or_bit]," is null and\n\t\tnullif(",data$SourceVariableName[not_varchar_or_bit],",'') is not null,1,0)) as ",data$SourceVariableName[not_varchar_or_bit],
+                                   sep = ""),
+                             collapse="\n"),
+                           "\n\tFROM ",Schema,".",TableName,"\n",
+                           collapse="",sep="")
+      )
     
-    ConvertList<-c(ConvertList,
-                   paste("--Check across all bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.",
-                         "\nSELECT\n",
-                         paste(
-                           paste(",max(",data$SourceVariableName[bit_list],") as ",
-                                 data$SourceVariableName[bit_list],
-                                 sep = ""),
-                           collapse="\n"),
-                         "\nFROM (SELECT\n",
-                         paste(
-                           paste("\t,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit(",data$SourceVariableName[bit_list],")) as ",data$SourceVariableName[bit_list],
-                                 sep = ""),
-                           collapse="\n"),
-                         "\n\tFROM ",Schema,".",TableName,") as ml\n",
-                         collapse="",sep="")
-    )
+    if(any(bit_list))
+      ConvertList<-c(ConvertList,
+                     paste("--Check across all bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.",
+                           "\nSELECT\n",
+                           paste(
+                             paste(",max(",data$SourceVariableName[bit_list],") as ",
+                                   data$SourceVariableName[bit_list],
+                                   sep = ""),
+                             collapse="\n"),
+                           "\nFROM (SELECT\n",
+                           paste(
+                             paste("\t,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit(",data$SourceVariableName[bit_list],")) as ",data$SourceVariableName[bit_list],
+                                   sep = ""),
+                             collapse="\n"),
+                           "\n\tFROM ",Schema,".",TableName,") as ml\n",
+                           collapse="",sep="")
+      )
     
     
     #
@@ -958,7 +960,7 @@ match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate
   TargetTableType.df<-read_create_table(paste(TargetSchema,".",TargetTable,sep=""),dir=dir)
   MergeTable.df<-merge_source_and_csis_name_tables(NewTableType.df,TargetTableType.df)
   TryConvertList<-create_try_converts(MergeTable.df,NewSchema,NewTable)
-  if(length(TryConvertList)>0){
+  if(TryConvertList!=0){
     write(TryConvertList,
         paste("Output//",NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","try_convert.txt",sep=""), 
         append=FALSE)
