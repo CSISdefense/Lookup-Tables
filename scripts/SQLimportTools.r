@@ -4,6 +4,14 @@ library(dplyr)
 
 read_create_table<-function(FileName,dir="ImportAids\\"){
   if(!is.null(dir)) FileName<-file.path(dir,FileName)
+  if(!file.exists(FileName)){
+    if(file.exists(paste(FileName,".txt",sep="")))
+      FileName<-paste(FileName,".txt",sep="")
+    else if(file.exists(paste(FileName,".Table.sql",sep="")))
+      FileName<-paste(FileName,".Table.sql",sep="")
+    else
+      stop(paste(FileName,"not found"))
+  }
   TargetTable.df<-read.csv(FileName,header=FALSE,sep=" ")
   
   #For now we're ignoring everything except the lines describing variable types
@@ -56,14 +64,15 @@ read_create_table<-function(FileName,dir="ImportAids\\"){
   }
   #Handle NOT NULL which can split across two lines
   null_row<-which(TargetTable.df$V1=="NULL,")
-  if(all(TargetTable.df$V3[null_row-1]=="NOT")){
-    TargetTable.df$V3<-as.character(TargetTable.df$V3)
-    TargetTable.df$V3[null_row-1]<-"NOT NULL,"
-    TargetTable.df<-TargetTable.df[-null_row,]
-    TargetTable.df$V3<-factor(TargetTable.df$V3)
+  if(length(null_row)>0){
+    if(all(TargetTable.df$V3[null_row-1]=="NOT")){
+      TargetTable.df$V3<-as.character(TargetTable.df$V3)
+      TargetTable.df$V3[null_row-1]<-"NOT NULL,"
+      TargetTable.df<-TargetTable.df[-null_row,]
+      TargetTable.df$V3<-factor(TargetTable.df$V3)
+    }
+    else stop("NULLs, in first column that don't have a matching NOT")
   }
-  else stop("NULLs, in first column that don't have a matching NOT")
-  
   
   TargetTable.df<-TargetTable.df[,c(1:3)]
   colnames(TargetTable.df)<-c("VariableName",
@@ -129,9 +138,10 @@ translate_name<-function(TargetTable.df,test_only=FALSE){
     stop("Duplicate entries in CSISvariableName after matching")
   }
   #Add the CSISvariableName fields: IsDroppedNameField	Pair
-  TargetTable.df<-read_and_join_experiment(TargetTable.df,
-                           path="",dir="ImportAids\\",lookup_file = "CSISvariableName.csv",
-                           skip_check_var = "IsDroppedNameField")
+  if(file.exists(file.path("ImportAids","CSISvariableName.csv")))
+    TargetTable.df<-read_and_join_experiment(TargetTable.df,
+                                             path="",dir="ImportAids\\",lookup_file = "CSISvariableName.csv",
+                                             skip_check_var = "IsDroppedNameField")
   
   TargetTable.df$SourceVariableName<-TargetTable.df$OriginalSourceVariableName
 
@@ -342,7 +352,7 @@ length_check<-function(data){
       SwitchList<-SwitchList&(data$is.colon.split=="FALSE" | is.na(data$is.colon.split))
     
     data$length_check[SwitchList]<-
-      paste("max(len(",data$SourceVariableName[SwitchList] ,"))",sep=""
+      paste("len(",data$SourceVariableName[SwitchList] ,")",sep=""
       )
     
     
@@ -355,9 +365,10 @@ length_check<-function(data){
     if("is.colon.split" %in% colnames(data))
        SwitchList<-SwitchList&(data$is.colon.split=="FALSE" | is.na(data$is.colon.split))
     data$length_check[SwitchList]<-
-        paste("OR len(",data$SourceVariableName[SwitchList] ,")",
-              ">",data$VariableTypeNumber[SwitchList],"\n"
+        paste("len(",data$SourceVariableName[SwitchList] ,")",sep=""
+              
         )
+    
     
     
     
@@ -446,8 +457,10 @@ create_try_converts<-function(data,
                        "WHERE (",
                        data$ConvertList,
                        " IS NULL AND\n",
-                       "NULLIF(",data$SourceVariableName,",'') IS NOT NULL)\n",
-                       data$length_check,sep="")
+                       "NULLIF(",data$SourceVariableName,",'') IS NOT NULL)",
+                       ifelse(data$CSISvariableShortType=="[varchar]",
+                              paste(" OR\n",data$length_check,">", data$VariableTypeNumber),""),
+                       "\n",sep="")
   else ConvertList<-NULL
   
   #Create an alter to fix that, if not supressed by user
@@ -513,7 +526,7 @@ create_try_converts<-function(data,
                               collapse="\n"),
                             "\nFROM (SELECT\n",
                             paste(
-                              paste("\t,",data$length_check[varchar_list]," as ",data$SourceVariableName[varchar_list],
+                              paste("\t,","max(",data$length_check[varchar_list],")"," as ",data$SourceVariableName[varchar_list],
                                     sep = ""),
                               collapse="\n"),
                             "\n\tFROM ",Schema,".",TableName,") as ml\n",
@@ -936,16 +949,16 @@ create_foreign_key_assigments<-function(Schema,
 }
 
 
-match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate=TRUE,insert=FALSE){
+match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate=TRUE,insert=FALSE,dir="ImportAids\\"){
   #******Importing into Voter_VoterList_2016_07_14.txt
-  NewTableType.df<-read_create_table(paste(NewSchema,"_",NewTable,".txt",sep=""))
+  NewTableType.df<-read_create_table(paste(NewSchema,".",NewTable,sep=""),dir=dir)
     NewTableType.df<-translate_name(NewTableType.df)
   
   #Sync up with the VID Table
-  TargetTableType.df<-read_create_table(paste(TargetSchema,"_",TargetTable,".txt",sep=""))
+  TargetTableType.df<-read_create_table(paste(TargetSchema,".",TargetTable,sep=""),dir=dir)
   MergeTable.df<-merge_source_and_csis_name_tables(NewTableType.df,TargetTableType.df)
   TryConvertList<-create_try_converts(MergeTable.df,NewSchema,NewTable)
-  if(nrow(TryConvertList)>0){
+  if(length(TryConvertList)>0){
     write(TryConvertList,
         paste("Output//",NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","try_convert.txt",sep=""), 
         append=FALSE)
