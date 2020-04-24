@@ -710,8 +710,26 @@ convert_field_to_foreign_key<-function(FKschema,
                                    suppress_insert=FALSE,
                                    allow_name_mismatch=TRUE){
   
-  pkTable.df<-read.csv(file.path("ImportAids","ErrorLogging_PrimaryKeyList.csv")
-                       ,header=TRUE,sep=",",na.strings = c("NULL","NA")) %>% remove_bom()
+  
+  fkTable.df<-get_ForeignKeyList()
+  if(any(toupper(fkTable.df$FKSchema)==toupper(FKschema) &
+         toupper(fkTable.df$FKTableName)==toupper(FKtable) &
+         toupper(paste("[",fkTable.df$FKColumnName,"]",sep=""))==toupper(FKcolumn) &
+         toupper(fkTable.df$PKSchemaName)==toupper(PKschema) &
+         toupper(fkTable.df$PKTableName)==toupper(PKtable) &
+         fkTable.df$PKcolumnCount==1)){
+    warning(paste("Matching foreign key already exists for ",FKcolumn,"\n"))
+    return("")
+  }
+  rm(fkTable.df)
+  
+  if(file.exists(file.path("data","semi_clean","ErrorLogging_PrimaryKeyList.csv")))
+    pk_file<-file.path("data","semi_clean","ErrorLogging_PrimaryKeyList.csv")
+  else if(file.exists(file.path("ImportAids","ErrorLogging_PrimaryKeyList.csv")))
+    pk_file<-file.path("ImportAids","ErrorLogging_PrimaryKeyList.csv")
+  else stop("File Not Found")
+  
+  pkTable.df<-read.csv(pk_file,header=TRUE,sep=",",na.strings = c("NULL","NA")) %>% remove_bom()
   pkTable.df<-subset(pkTable.df,
                      toupper(PKSchemaName)==toupper(PKschema) &
                        toupper(PKTableName)==toupper(PKtable) &
@@ -836,7 +854,7 @@ convert_field_to_foreign_key<-function(FKschema,
                         "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
                         "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
                         "WHERE pk.",PKcolumn," is NULL\n",
-                        "GROUP BY fk.",FKcolumn,
+                        "GROUP BY fk.",FKcolumn,"\n",
                         sep="")
     )
   
@@ -853,20 +871,31 @@ convert_field_to_foreign_key<-function(FKschema,
   Output
 }
 
-get_CSISvariableNameToPrimaryKey<-function(){
+get_ForeignKeyList<-function(){
   if(file.exists(file.path("data","semi_clean","ErrorLogging_ForeignKeyList.csv")))
     fk_file<-file.path("data","semi_clean","ErrorLogging_ForeignKeyList.csv")
   else if(file.exists(file.path("ImportAids","ErrorLogging_ForeignKeyList.csv")))
     fk_file<-file.path("ImportAids","ErrorLogging_ForeignKeyList.csv")
   else stop("File Not Found")
-    
   
-  lookup.CSISvariableNameToPrimaryKey<-read.csv(fk_file,
+  
+  fk_list<-read.csv(fk_file,
                                                 stringsAsFactors = FALSE,
                                                 na.strings = c("","NULL","NA"))
-  lookup.CSISvariableNameToPrimaryKey<-remove_bom(lookup.CSISvariableNameToPrimaryKey)
-  lookup.CSISvariableNameToPrimaryKey$FKColumnNameUp<-toupper(lookup.CSISvariableNameToPrimaryKey$FKColumnName)
   
+  fk_list<-remove_bom(fk_list)
+}
+
+
+get_CSISvariableNameToPrimaryKey<-function(){
+ 
+  
+  lookup.CSISvariableNameToPrimaryKey<-get_ForeignKeyList()
+  
+  lookup.CSISvariableNameToPrimaryKey$FKColumnNameUp<-toupper(lookup.CSISvariableNameToPrimaryKey$FKColumnName)
+ 
+  
+   
   #Starting by dropping cases in which case a primary key is a foreign key for a different table.
   #E.g. MailingElectionDate->ElectionDate. In this case, we want MailingElectionDate to match up to the higher level in the 
   #heirarchy, Election.MailingElectionDate. We don't need them to match with the base, Eletion.ElectionDate because everything
@@ -910,7 +939,8 @@ create_foreign_key_assigments<-function(Schema,
                               dir="SQL",
                               suppress_select=FALSE,
                               suppress_alter=FALSE,
-                              suppress_insert=FALSE){
+                              suppress_insert=FALSE,
+                              skip_list=NULL){
   table_file<-file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))
   if (file.exists(file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))))
       table_file<-file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))
@@ -933,7 +963,8 @@ create_foreign_key_assigments<-function(Schema,
     return(0)
   }
   ForeignKeyList<-''
-  for(i in 1:nrow(MergeTable.df))
+  for(i in 1:nrow(MergeTable.df)){
+    if(toupper(MergeTable.df$SourceVariableName[i]) %in% toupper(skip_list)) next
     ForeignKeyList<-rbind(ForeignKeyList,
                           convert_field_to_foreign_key(Schema,TableName,MergeTable.df$SourceVariableName[i],
                                                    MergeTable.df,
@@ -946,8 +977,9 @@ create_foreign_key_assigments<-function(Schema,
                                                    suppress_alter=suppress_alter,
                                                    suppress_insert=suppress_insert)
     )
+  }
   
-    ForeignKeyList
+    ForeignKeyList[ForeignKeyList!=""]
 }
 
 
