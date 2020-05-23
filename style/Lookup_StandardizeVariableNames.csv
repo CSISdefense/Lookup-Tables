@@ -152,7 +152,7 @@ Budget.Activity,BudgetActivity
 BA.Title,BudgetActivityTitle
 Budget.Activity.Title,BudgetActivityTitle
 Budget.Activity.Short.Title,BudgetActivityTitle
-BSA#,BudgetActivityTitle
+BSA#,BudgetSubActivity
 BSA.#,BudgetSubActivity
 Budget.Sub.Activity,BudgetSubActivity
 BSA.Title,BudgetSubActivityTitle
