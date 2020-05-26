@@ -205,6 +205,7 @@ Budget,Procurement,Procurement,3,"DIIG Primary, Red",#BB4243,,,,default grey,#55
 Budget,Upgrade,Upgrade,1,"DIIG Additional, Yellowish Orange",#eec260,,,,default grey,#554449,
 ,,,,,,,,,,,
 BudgetMatch,Classified,Classified,1,"DIIG Secondary, Mallard",#3D4936,,,,default grey,#554449,
+BudgetMatch,Classified/NSA,Classified/NSA,1,"DIIG Secondary, Mallard",#3D4936,,,,default grey,#554449,
 BudgetMatch,No Key Match,No Key Match,2,"DIIG Primary, Red",#BB4243,,,,default grey,#554449,
 BudgetMatch,Different Values,Different Values,3,"DIIG Additional, Yellowish Orange",#eec260,,,,default grey,#554449,
 BudgetMatch,Value Match,Value Match,4,"DIIG Primary, Green",#4c9361,,,,default grey,#554449,
