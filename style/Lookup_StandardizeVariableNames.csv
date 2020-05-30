@@ -136,6 +136,7 @@ year,Year
 region,Region
 iYear,Year
 Classification,Classified
+APP#,AccountDSI
 APP.#,AccountDSI
 SourceFiscalYear,Pbyear
 Account,MainAccountCode
@@ -151,6 +152,7 @@ Budget.Activity,BudgetActivity
 BA.Title,BudgetActivityTitle
 Budget.Activity.Title,BudgetActivityTitle
 Budget.Activity.Short.Title,BudgetActivityTitle
+BSA#,BudgetSubActivity
 BSA.#,BudgetSubActivity
 Budget.Sub.Activity,BudgetSubActivity
 BSA.Title,BudgetSubActivityTitle
@@ -165,6 +167,7 @@ Facility.Category.Title,FacilityCategoryTitle
 State.Country,StateCountry
 State.Country.Title,StateCountryTitle
 Location.Title,LocationTitle
+Line.Item#,LineItem
 Line.Item.#,LineItem
 Line.Item,LineItem
 LI,LineItem
