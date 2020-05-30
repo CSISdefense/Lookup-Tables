@@ -4,7 +4,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [budget].[DefenseP1](
+CREATE TABLE [budget].[DBAp1](
 	[SourceFiscalYear] [int] NULL,
 	[AccountDSI] [varchar](5) NULL,
 	[AccountTitle] [varchar](40) NULL,
@@ -36,33 +36,33 @@ CREATE TABLE [budget].[DefenseP1](
 	[QuantActualTotal] [int] NULL
 ) ON [PRIMARY]
 GO
-ALTER TABLE [budget].[DefenseP1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseP1_AccountDSI] FOREIGN KEY([AccountDSI])
+ALTER TABLE [budget].[DBAp1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseP1_AccountDSI] FOREIGN KEY([AccountDSI])
 REFERENCES [budget].[AccountDSI] ([AccountDSI])
 GO
-ALTER TABLE [budget].[DefenseP1] CHECK CONSTRAINT [fk_DefenseP1_AccountDSI]
+ALTER TABLE [budget].[DBAp1] CHECK CONSTRAINT [fk_DefenseP1_AccountDSI]
 GO
-ALTER TABLE [budget].[DefenseP1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseP1_BSA] FOREIGN KEY([AccountDSI], [BudgetActivity], [BSA])
+ALTER TABLE [budget].[DBAp1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseP1_BSA] FOREIGN KEY([AccountDSI], [BudgetActivity], [BSA])
 REFERENCES [budget].[BSA] ([AccountDSI], [BudgetActivity], [BSA])
 GO
-ALTER TABLE [budget].[DefenseP1] CHECK CONSTRAINT [fk_DefenseP1_BSA]
+ALTER TABLE [budget].[DBAp1] CHECK CONSTRAINT [fk_DefenseP1_BSA]
 GO
-ALTER TABLE [budget].[DefenseP1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseP1_BudgetActivity] FOREIGN KEY([AccountDSI], [BudgetActivity])
+ALTER TABLE [budget].[DBAp1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseP1_BudgetActivity] FOREIGN KEY([AccountDSI], [BudgetActivity])
 REFERENCES [budget].[BudgetActivity] ([AccountDSI], [BudgetActivity])
 GO
-ALTER TABLE [budget].[DefenseP1] CHECK CONSTRAINT [fk_DefenseP1_BudgetActivity]
+ALTER TABLE [budget].[DBAp1] CHECK CONSTRAINT [fk_DefenseP1_BudgetActivity]
 GO
-ALTER TABLE [budget].[DefenseP1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseP1_CostType] FOREIGN KEY([AccountDSI], [CostType])
+ALTER TABLE [budget].[DBAp1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseP1_CostType] FOREIGN KEY([AccountDSI], [CostType])
 REFERENCES [budget].[CostType] ([AccountDSI], [CostType])
 GO
-ALTER TABLE [budget].[DefenseP1] CHECK CONSTRAINT [fk_DefenseP1_CostType]
+ALTER TABLE [budget].[DBAp1] CHECK CONSTRAINT [fk_DefenseP1_CostType]
 GO
-ALTER TABLE [budget].[DefenseP1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseP1_DefenseOrganization] FOREIGN KEY([DefenseOrganization])
+ALTER TABLE [budget].[DBAp1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseP1_DefenseOrganization] FOREIGN KEY([DefenseOrganization])
 REFERENCES [agency].[DefenseOrganization] ([DefenseOrganization])
 GO
-ALTER TABLE [budget].[DefenseP1] CHECK CONSTRAINT [fk_DefenseP1_DefenseOrganization]
+ALTER TABLE [budget].[DBAp1] CHECK CONSTRAINT [fk_DefenseP1_DefenseOrganization]
 GO
-ALTER TABLE [budget].[DefenseP1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseP1_LineItem] FOREIGN KEY([AccountDSI], [BudgetActivity], [BSA], [LineItem])
+ALTER TABLE [budget].[DBAp1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseP1_LineItem] FOREIGN KEY([AccountDSI], [BudgetActivity], [BSA], [LineItem])
 REFERENCES [Project].[LineItem] ([AccountDSI], [BudgetActivity], [BSA], [LineItem])
 GO
-ALTER TABLE [budget].[DefenseP1] CHECK CONSTRAINT [fk_DefenseP1_LineItem]
+ALTER TABLE [budget].[DBAp1] CHECK CONSTRAINT [fk_DefenseP1_LineItem]
 GO

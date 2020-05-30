@@ -269,9 +269,6 @@ CREATE TABLE [ErrorLogging].[FPDSbetaViolatesType](
 	[annual_revenues] [varchar](255) NULL,
 	[total_dollars_obligated] [varchar](255) NULL,
 	[foreign_funding_description] [varchar](255) NULL,
-	[CSIStransactionID] [int] NULL,
-	[Transaction_Number_bigint] [bigint] NULL,
-	[last_modified_date_datetime2] [datetime2](7) NULL,
 	[contract_transaction_unique_key] [varchar](255) NULL,
 	[contract_award_unique_key] [varchar](255) NULL,
 	[solicitation_date] [varchar](255) NULL,
@@ -294,7 +291,4 @@ GO
 ALTER TABLE [ErrorLogging].[FPDSbetaViolatesType] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__6FAB3F2B]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
 ALTER TABLE [ErrorLogging].[FPDSbetaViolatesType] ADD  CONSTRAINT [DF__FPDSbetaV__CSISc__709F6364]  DEFAULT (getdate()) FOR [CSIScreatedDate]
-GO
-ALTER TABLE [ErrorLogging].[FPDSbetaViolatesType]  WITH CHECK ADD FOREIGN KEY([CSIStransactionID])
-REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
 GO

@@ -4,7 +4,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [budget].[DefenseR1](
+CREATE TABLE [budget].[DBAr1](
 	[SourceFiscalYear] [int] NULL,
 	[AccountDSI] [varchar](5) NULL,
 	[AccountTitle] [varchar](40) NULL,
@@ -26,23 +26,23 @@ CREATE TABLE [budget].[DefenseR1](
 	[ActualTotal] [int] NULL
 ) ON [PRIMARY]
 GO
-ALTER TABLE [budget].[DefenseR1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseR1_AccountDSI] FOREIGN KEY([AccountDSI])
+ALTER TABLE [budget].[DBAr1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseR1_AccountDSI] FOREIGN KEY([AccountDSI])
 REFERENCES [budget].[AccountDSI] ([AccountDSI])
 GO
-ALTER TABLE [budget].[DefenseR1] CHECK CONSTRAINT [fk_DefenseR1_AccountDSI]
+ALTER TABLE [budget].[DBAr1] CHECK CONSTRAINT [fk_DefenseR1_AccountDSI]
 GO
-ALTER TABLE [budget].[DefenseR1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseR1_BudgetActivity] FOREIGN KEY([AccountDSI], [BudgetActivity])
+ALTER TABLE [budget].[DBAr1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseR1_BudgetActivity] FOREIGN KEY([AccountDSI], [BudgetActivity])
 REFERENCES [budget].[BudgetActivity] ([AccountDSI], [BudgetActivity])
 GO
-ALTER TABLE [budget].[DefenseR1] CHECK CONSTRAINT [fk_DefenseR1_BudgetActivity]
+ALTER TABLE [budget].[DBAr1] CHECK CONSTRAINT [fk_DefenseR1_BudgetActivity]
 GO
-ALTER TABLE [budget].[DefenseR1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseR1_DefenseOrganization] FOREIGN KEY([DefenseOrganization])
+ALTER TABLE [budget].[DBAr1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseR1_DefenseOrganization] FOREIGN KEY([DefenseOrganization])
 REFERENCES [agency].[DefenseOrganization] ([DefenseOrganization])
 GO
-ALTER TABLE [budget].[DefenseR1] CHECK CONSTRAINT [fk_DefenseR1_DefenseOrganization]
+ALTER TABLE [budget].[DBAr1] CHECK CONSTRAINT [fk_DefenseR1_DefenseOrganization]
 GO
-ALTER TABLE [budget].[DefenseR1]  WITH NOCHECK ADD  CONSTRAINT [FK_ProgramElement] FOREIGN KEY([ProgramElement])
+ALTER TABLE [budget].[DBAr1]  WITH NOCHECK ADD  CONSTRAINT [FK_ProgramElement] FOREIGN KEY([ProgramElement])
 REFERENCES [Project].[ProgramElement] ([ProgramElement])
 GO
-ALTER TABLE [budget].[DefenseR1] CHECK CONSTRAINT [FK_ProgramElement]
+ALTER TABLE [budget].[DBAr1] CHECK CONSTRAINT [FK_ProgramElement]
 GO

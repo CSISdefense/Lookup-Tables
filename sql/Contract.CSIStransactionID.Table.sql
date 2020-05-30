@@ -22,6 +22,9 @@ CREATE TABLE [Contract].[CSIStransactionID](
 	[fiscal_year] [int] NULL,
 	[contractingofficeagencyid] [varchar](4) NOT NULL,
 	[IsInContractFPDS] [bit] NULL,
+	[idvagencyid] [varchar](4) NULL,
+	[AgencyID] [varchar](4) NULL,
+	[IsNew6Dup] [bit] NULL,
  CONSTRAINT [pk_CSIStransactionID] PRIMARY KEY CLUSTERED 
 (
 	[CSIStransactionID] ASC
@@ -31,6 +34,14 @@ GO
 ALTER TABLE [Contract].[CSIStransactionID] ADD  CONSTRAINT [DF__CSIStrans__CSISm__4DB54E83]  DEFAULT (suser_sname()) FOR [CSISmodifiedBy]
 GO
 ALTER TABLE [Contract].[CSIStransactionID] ADD  CONSTRAINT [DF__CSIStrans__CSISm__4EA972BC]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
+GO
+ALTER TABLE [Contract].[CSIStransactionID] ADD  DEFAULT ((0)) FOR [IsNew6Dup]
+GO
+ALTER TABLE [Contract].[CSIStransactionID]  WITH CHECK ADD FOREIGN KEY([AgencyID])
+REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
+GO
+ALTER TABLE [Contract].[CSIStransactionID]  WITH CHECK ADD FOREIGN KEY([idvagencyid])
+REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
 ALTER TABLE [Contract].[CSIStransactionID]  WITH CHECK ADD  CONSTRAINT [fk_contract_CSIStransactionID_contractingofficeagencyID] FOREIGN KEY([contractingofficeagencyid])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
