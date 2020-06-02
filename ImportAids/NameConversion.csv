@@ -750,3 +750,5 @@ SourceVariableName,CSISvariableName,IsDuplicate
 [QuantEnactedType],[QuantEnactedType],
 [QuantSpecialType],[QuantSpecialType],
 [QuantActualTotal],[QuantActualTotal],
+[Organization_Code],[DefenseOrganization],
+[Organization_Name],[DefenseOrganizationName],

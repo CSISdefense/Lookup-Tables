@@ -3,6 +3,17 @@ source("scripts//SQLimportTools.r")
 library(tidyverse)
 
 
+error_p1_long_table<-read_create_table("ErrorLogging.p1_long.Table.sql",
+                                 dir="SQL")
+
+
+len_check<-paste("SELECT \n",
+                 paste("max(len(",error_p1_long_table$VariableName     ,")) as ",error_p1_long_table$VariableName     ,collapse=",\n"),
+                 "\nFROM ErrorLogging.p1_long.Table.sql",sep=""
+)
+write(file=file.path("Output","ErrorLogging_p1_long_column_max_length.txt"),len_check)
+
+
 ##### From Stage 1 to Stage 2, Taking Advantage of Newly Added Coluns in Contract.FPDS####### 
 p1_long_table<-read_create_table("Budget.p1_long.Table.sql",
                                       dir="SQL")
