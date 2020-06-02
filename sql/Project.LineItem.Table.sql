@@ -37,7 +37,7 @@ GO
 ALTER TABLE [Project].[LineItem] CHECK CONSTRAINT [fk_LineItem_AccountDSI]
 GO
 ALTER TABLE [Project].[LineItem]  WITH NOCHECK ADD  CONSTRAINT [fk_LineItem_BSA] FOREIGN KEY([AccountDSI], [BudgetActivity], [BSA])
-REFERENCES [budget].[BSA] ([AccountDSI], [BudgetActivity], [BSA])
+REFERENCES [budget].[BudgetSubActivity] ([AccountDSI], [BudgetActivity], [BudgetSubActivity])
 GO
 ALTER TABLE [Project].[LineItem] CHECK CONSTRAINT [fk_LineItem_BSA]
 GO

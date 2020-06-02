@@ -42,7 +42,7 @@ GO
 ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory] CHECK CONSTRAINT [fk_LineItemToProcIDHistory_AccountDSI]
 GO
 ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory]  WITH NOCHECK ADD  CONSTRAINT [fk_LineItemToProcIDHistory_BSA] FOREIGN KEY([AccountDSI], [BudgetActivity], [BSA])
-REFERENCES [budget].[BSA] ([AccountDSI], [BudgetActivity], [BSA])
+REFERENCES [budget].[BudgetSubActivity] ([AccountDSI], [BudgetActivity], [BudgetSubActivity])
 GO
 ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory] CHECK CONSTRAINT [fk_LineItemToProcIDHistory_BSA]
 GO

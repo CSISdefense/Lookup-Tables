@@ -10,7 +10,7 @@ CREATE TABLE [budget].[AccountDSI](
 	[MainAccountCode] [smallint] NULL,
 	[DefenseServiceIdentifier] [varchar](3) NULL,
 	[DefenseOrganization] [varchar](5) NULL,
-	[AccountTitle] [varchar](40) NULL,
+	[MainAccountName] [varchar](45) NULL,
  CONSTRAINT [pk_AccountDSI] PRIMARY KEY CLUSTERED 
 (
 	[AccountDSI] ASC
