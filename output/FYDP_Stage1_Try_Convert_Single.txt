@@ -1,0 +1,171 @@
+SELECT DISTINCT [PByear],
+len([PByear]) as Length,
+'[int]' as DestinationType
+FROM Budget.p1_long
+WHERE (Try_Convert([int], [PByear]) IS NULL AND
+NULLIF([PByear],'') IS NOT NULL)
+
+ALTER TABLE Budget.p1_long
+ALTER COLUMN [PByear] [int]
+
+SELECT DISTINCT [AccountDSI],
+len([AccountDSI]) as Length,
+'[varchar](5)' as DestinationType
+FROM Budget.p1_long
+WHERE (Try_Convert([varchar](5), [AccountDSI]) IS NULL AND
+NULLIF([AccountDSI],'') IS NOT NULL) OR
+ len([AccountDSI]) > 5
+
+ALTER TABLE Budget.p1_long
+ALTER COLUMN [AccountDSI] [varchar](5)
+
+SELECT DISTINCT [MainAccountName],
+len([MainAccountName]) as Length,
+'[varchar](40)' as DestinationType
+FROM Budget.p1_long
+WHERE (Try_Convert([varchar](40), [MainAccountName]) IS NULL AND
+NULLIF([MainAccountName],'') IS NOT NULL) OR
+ len([MainAccountName]) > 40
+
+ALTER TABLE Budget.p1_long
+ALTER COLUMN [MainAccountName] [varchar](40)
+
+SELECT DISTINCT [Organization],
+len([Organization]) as Length,
+'[varchar](5)' as DestinationType
+FROM Budget.p1_long
+WHERE (Try_Convert([varchar](5), [Organization]) IS NULL AND
+NULLIF([Organization],'') IS NOT NULL) OR
+ len([Organization]) > 5
+
+ALTER TABLE Budget.p1_long
+ALTER COLUMN [Organization] [varchar](5)
+
+SELECT DISTINCT [BudgetActivity],
+len([BudgetActivity]) as Length,
+'[smallint]' as DestinationType
+FROM Budget.p1_long
+WHERE (Try_Convert([smallint], Try_Convert(real,nullif([BudgetActivity],''))) IS NULL AND
+NULLIF([BudgetActivity],'') IS NOT NULL)
+
+ALTER TABLE Budget.p1_long
+ALTER COLUMN [BudgetActivity] [smallint]
+
+SELECT DISTINCT [BudgetActivityTitle],
+len([BudgetActivityTitle]) as Length,
+'[varchar](50)' as DestinationType
+FROM Budget.p1_long
+WHERE (Try_Convert([varchar](50), [BudgetActivityTitle]) IS NULL AND
+NULLIF([BudgetActivityTitle],'') IS NOT NULL) OR
+ len([BudgetActivityTitle]) > 50
+
+ALTER TABLE Budget.p1_long
+ALTER COLUMN [BudgetActivityTitle] [varchar](50)
+
+SELECT DISTINCT [BudgetSubActivity],
+len([BudgetSubActivity]) as Length,
+'[smallint]' as DestinationType
+FROM Budget.p1_long
+WHERE (Try_Convert([smallint], Try_Convert(real,nullif([BudgetSubActivity],''))) IS NULL AND
+NULLIF([BudgetSubActivity],'') IS NOT NULL)
+
+ALTER TABLE Budget.p1_long
+ALTER COLUMN [BudgetSubActivity] [smallint]
+
+SELECT DISTINCT [BudgetSubActivityTitle],
+len([BudgetSubActivityTitle]) as Length,
+'[varchar](52)' as DestinationType
+FROM Budget.p1_long
+WHERE (Try_Convert([varchar](52), [BudgetSubActivityTitle]) IS NULL AND
+NULLIF([BudgetSubActivityTitle],'') IS NOT NULL) OR
+ len([BudgetSubActivityTitle]) > 52
+
+ALTER TABLE Budget.p1_long
+ALTER COLUMN [BudgetSubActivityTitle] [varchar](52)
+
+SELECT DISTINCT [LineItem],
+len([LineItem]) as Length,
+'[varchar](10)' as DestinationType
+FROM Budget.p1_long
+WHERE (Try_Convert([varchar](10), [LineItem]) IS NULL AND
+NULLIF([LineItem],'') IS NOT NULL) OR
+ len([LineItem]) > 10
+
+ALTER TABLE Budget.p1_long
+ALTER COLUMN [LineItem] [varchar](10)
+
+SELECT DISTINCT [LineItemTitle],
+len([LineItemTitle]) as Length,
+'[varchar](45)' as DestinationType
+FROM Budget.p1_long
+WHERE (Try_Convert([varchar](45), [LineItemTitle]) IS NULL AND
+NULLIF([LineItemTitle],'') IS NOT NULL) OR
+ len([LineItemTitle]) > 45
+
+ALTER TABLE Budget.p1_long
+ALTER COLUMN [LineItemTitle] [varchar](45)
+
+SELECT DISTINCT [CostType],
+len([CostType]) as Length,
+'[varchar](1)' as DestinationType
+FROM Budget.p1_long
+WHERE (Try_Convert([varchar](1), [CostType]) IS NULL AND
+NULLIF([CostType],'') IS NOT NULL) OR
+ len([CostType]) > 1
+
+ALTER TABLE Budget.p1_long
+ALTER COLUMN [CostType] [varchar](1)
+
+SELECT DISTINCT [CostTypeTitle],
+len([CostTypeTitle]) as Length,
+'[varchar](44)' as DestinationType
+FROM Budget.p1_long
+WHERE (Try_Convert([varchar](44), [CostTypeTitle]) IS NULL AND
+NULLIF([CostTypeTitle],'') IS NOT NULL) OR
+ len([CostTypeTitle]) > 44
+
+ALTER TABLE Budget.p1_long
+ALTER COLUMN [CostTypeTitle] [varchar](44)
+
+SELECT DISTINCT [AddOrNonAdd],
+len([AddOrNonAdd]) as Length,
+'[varchar](7)' as DestinationType
+FROM Budget.p1_long
+WHERE (Try_Convert([varchar](7), [AddOrNonAdd]) IS NULL AND
+NULLIF([AddOrNonAdd],'') IS NOT NULL) OR
+ len([AddOrNonAdd]) > 7
+
+ALTER TABLE Budget.p1_long
+ALTER COLUMN [AddOrNonAdd] [varchar](7)
+
+SELECT DISTINCT [Classified],
+len([Classified]) as Length,
+'[varchar](1)' as DestinationType
+FROM Budget.p1_long
+WHERE (Try_Convert([varchar](1), [Classified]) IS NULL AND
+NULLIF([Classified],'') IS NOT NULL) OR
+ len([Classified]) > 1
+
+ALTER TABLE Budget.p1_long
+ALTER COLUMN [Classified] [varchar](1)
+
+SELECT DISTINCT [FiscalYear],
+len([FiscalYear]) as Length,
+'[smallint]' as DestinationType
+FROM Budget.p1_long
+WHERE (Try_Convert([smallint], Try_Convert(real,nullif([FiscalYear],''))) IS NULL AND
+NULLIF([FiscalYear],'') IS NOT NULL)
+
+ALTER TABLE Budget.p1_long
+ALTER COLUMN [FiscalYear] [smallint]
+
+SELECT DISTINCT [LineNumber],
+len([LineNumber]) as Length,
+'[int]' as DestinationType
+FROM Budget.p1_long
+WHERE (Try_Convert([int], [LineNumber]) IS NULL AND
+NULLIF([LineNumber],'') IS NOT NULL)
+
+ALTER TABLE Budget.p1_long
+ALTER COLUMN [LineNumber] [int]
+

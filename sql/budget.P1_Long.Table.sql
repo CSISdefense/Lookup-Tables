@@ -7,8 +7,7 @@ CREATE TABLE [budget].[P1_Long](
 	[AccountDSI] [varchar](5) NOT NULL,
 	[MainAccountCode] [smallint] NOT NULL,
 	[MainAccountName] [varchar](45) NULL,
-	[DefenseOrganization] [varchar](5) NOT NULL,
-	[DefenseOrganizationName] [varchar](50) NOT NULL,
+	[Organization] [varchar](5) NOT NULL,
 	[BudgetActivity] [smallint] NOT NULL,
 	[BudgetActivityTitle] [varchar](50) NULL,
 	[BudgetSubActivity] [smallint] NOT NULL,
@@ -19,13 +18,13 @@ CREATE TABLE [budget].[P1_Long](
 	[CostTypeTitle] [varchar](44) NOT NULL,
 	[AddOrNonAdd] [varchar](7) NULL,
 	[Classified] [varchar](1) NULL,
-	[LineNumber] [int] NULL,
 	[FiscalYear] [smallint] NOT NULL,
 	[BaseOther] [varchar](14) NOT NULL,
 	[ProjectionType] [varchar](7) NOT NULL,
-	[BaseOtherSum] [varchar](7) NULL,
-	[BaseOtherInclude] [varchar](5) NULL,
 	[Quantity] [int] NULL,
-	[Value] [decimal](19, 4) NULL
+	[Value] [decimal](19, 4) NULL,
+	[LineNumber] [int] NULL,
+	[BaseOtherSum] [varchar](7) NULL,
+	[BaseOtherInclude] [varchar](5) NULL
 ) ON [PRIMARY]
 GO
