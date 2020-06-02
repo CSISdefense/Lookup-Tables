@@ -8,7 +8,7 @@ p1_long_table<-read_create_table("Budget.p1_long.Table.sql",
                                       dir="SQL")
 
 
-p1_long_table<-translate_name(p1_long)
+p1_long_table<-translate_name(p1_long_table)
 
 
 dba_p1_table<-read_create_table("Budget.DBAp1.Table.sql",

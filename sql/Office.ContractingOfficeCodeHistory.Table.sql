@@ -1,5 +1,3 @@
-USE [CSIS360]
-GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11,7 +9,7 @@ CREATE TABLE [Office].[ContractingOfficeCodeHistory](
 (
 	[fiscal_year] ASC,
 	[ContractingOfficeCode] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Office].[ContractingOfficeCodeHistory]  WITH CHECK ADD  CONSTRAINT [fk_Office_ContractingOfficeCodeHistory] FOREIGN KEY([ContractingOfficeCode])

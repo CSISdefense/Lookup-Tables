@@ -1,5 +1,3 @@
-USE [CSIS360]
-GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -24,7 +22,7 @@ CREATE TABLE [Project].[LineItemCostTypeToProcIDHistory](
 	[CostType] ASC,
 	[StartSourceFiscalYear] ASC,
 	[EndSourceFiscalYear] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory] ADD  CONSTRAINT [DF__LineItemT__CSISm__21F6C7D6]  DEFAULT (suser_sname()) FOR [CSISmodifiedBy]
@@ -42,7 +40,7 @@ GO
 ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory] CHECK CONSTRAINT [fk_LineItemToProcIDHistory_AccountDSI]
 GO
 ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory]  WITH NOCHECK ADD  CONSTRAINT [fk_LineItemToProcIDHistory_BSA] FOREIGN KEY([AccountDSI], [BudgetActivity], [BSA])
-REFERENCES [budget].[BSA] ([AccountDSI], [BudgetActivity], [BSA])
+REFERENCES [budget].[BudgetSubActivity] ([AccountDSI], [BudgetActivity], [BudgetSubActivity])
 GO
 ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory] CHECK CONSTRAINT [fk_LineItemToProcIDHistory_BSA]
 GO

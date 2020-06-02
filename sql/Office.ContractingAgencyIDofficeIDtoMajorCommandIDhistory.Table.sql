@@ -1,5 +1,3 @@
-USE [CSIS360]
-GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -21,7 +19,7 @@ CREATE TABLE [Office].[ContractingAgencyIDofficeIDtoMajorCommandIDhistory](
 	[ContractingAgencyID] ASC,
 	[ContractingOfficeID] ASC,
 	[Fiscal_Year] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Office].[ContractingAgencyIDofficeIDtoMajorCommandIDhistory] ADD  CONSTRAINT [DF__Contracti__CSISm__153BEB36]  DEFAULT (getdate()) FOR [CSISmodifiedDate]

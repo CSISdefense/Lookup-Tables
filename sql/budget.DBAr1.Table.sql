@@ -1,13 +1,11 @@
-USE [CSIS360]
-GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [budget].[DBAr1](
-	[SourceFiscalYear] [int] NULL,
+	[PByear] [smallint] NULL,
 	[AccountDSI] [varchar](5) NULL,
-	[AccountTitle] [varchar](40) NULL,
+	[MainAccountName] [varchar](45) NULL,
 	[DefenseOrganization] [varchar](5) NULL,
 	[BudgetActivity] [smallint] NULL,
 	[BudgetActivityTitle] [varchar](48) NULL,
