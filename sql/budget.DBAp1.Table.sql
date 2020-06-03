@@ -1,5 +1,3 @@
-USE [CSIS360]
-GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -11,13 +9,13 @@ CREATE TABLE [budget].[DBAp1](
 	[DefenseOrganization] [varchar](5) NULL,
 	[BudgetActivity] [smallint] NOT NULL,
 	[BudgetActivityTitle] [varchar](50) NULL,
-	[LineNumber] [int] NULL,
+	[LineNumber] [smallint] NULL,
 	[BudgetSubActivity] [smallint] NOT NULL,
-	[BudgetSubActivityTitle] [varchar](52) NULL,
-	[LineItem] [varchar](10) NULL,
-	[LineItemTitle] [varchar](45) NULL,
+	[BudgetSubActivityTitle] [varchar](75) NULL,
+	[LineItem] [varchar](13) NOT NULL,
+	[LineItemTitle] [varchar](301) NULL,
 	[CostType] [varchar](1) NULL,
-	[CostTypeTitle] [varchar](44) NULL,
+	[CostTypeTitle] [varchar](50) NULL,
 	[AddOrNonAdd] [varchar](7) NULL,
 	[Classified] [varchar](1) NULL,
 	[FiscalYear] [smallint] NULL,
@@ -62,7 +60,7 @@ GO
 ALTER TABLE [budget].[DBAp1] CHECK CONSTRAINT [fk_DefenseP1_DefenseOrganization]
 GO
 ALTER TABLE [budget].[DBAp1]  WITH NOCHECK ADD  CONSTRAINT [fk_DefenseP1_LineItem] FOREIGN KEY([AccountDSI], [BudgetActivity], [BudgetSubActivity], [LineItem])
-REFERENCES [Project].[LineItem] ([AccountDSI], [BudgetActivity], [BSA], [LineItem])
+REFERENCES [Project].[LineItem] ([AccountDSI], [BudgetActivity], [BudgetSubActivity], [LineItem])
 GO
 ALTER TABLE [budget].[DBAp1] CHECK CONSTRAINT [fk_DefenseP1_LineItem]
 GO

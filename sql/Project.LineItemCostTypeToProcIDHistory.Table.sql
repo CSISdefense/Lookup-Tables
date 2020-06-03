@@ -1,5 +1,3 @@
-USE [CSIS360]
-GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -7,24 +5,14 @@ GO
 CREATE TABLE [Project].[LineItemCostTypeToProcIDHistory](
 	[AccountDSI] [varchar](5) NOT NULL,
 	[BudgetActivity] [smallint] NOT NULL,
-	[BSA] [smallint] NOT NULL,
-	[LineItem] [varchar](10) NOT NULL,
+	[BudgetSubActivity] [smallint] NOT NULL,
+	[LineItem] [varchar](13) NOT NULL,
 	[CostType] [varchar](1) NOT NULL,
 	[ProcID] [int] NOT NULL,
 	[StartSourceFiscalYear] [int] NOT NULL,
 	[EndSourceFiscalYear] [int] NOT NULL,
 	[CSISmodifiedBy] [varchar](128) NOT NULL,
-	[CSISmodifiedDate] [datetime2](7) NOT NULL,
- CONSTRAINT [pk_LineItemCostTypeToProcIDHistory] PRIMARY KEY CLUSTERED 
-(
-	[AccountDSI] ASC,
-	[BudgetActivity] ASC,
-	[BSA] ASC,
-	[LineItem] ASC,
-	[CostType] ASC,
-	[StartSourceFiscalYear] ASC,
-	[EndSourceFiscalYear] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+	[CSISmodifiedDate] [datetime2](7) NOT NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory] ADD  CONSTRAINT [DF__LineItemT__CSISm__21F6C7D6]  DEFAULT (suser_sname()) FOR [CSISmodifiedBy]
@@ -41,7 +29,7 @@ REFERENCES [budget].[AccountDSI] ([AccountDSI])
 GO
 ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory] CHECK CONSTRAINT [fk_LineItemToProcIDHistory_AccountDSI]
 GO
-ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory]  WITH NOCHECK ADD  CONSTRAINT [fk_LineItemToProcIDHistory_BSA] FOREIGN KEY([AccountDSI], [BudgetActivity], [BSA])
+ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory]  WITH NOCHECK ADD  CONSTRAINT [fk_LineItemToProcIDHistory_BSA] FOREIGN KEY([AccountDSI], [BudgetActivity], [BudgetSubActivity])
 REFERENCES [budget].[BudgetSubActivity] ([AccountDSI], [BudgetActivity], [BudgetSubActivity])
 GO
 ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory] CHECK CONSTRAINT [fk_LineItemToProcIDHistory_BSA]
@@ -51,8 +39,8 @@ REFERENCES [budget].[BudgetActivity] ([AccountDSI], [BudgetActivity])
 GO
 ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory] CHECK CONSTRAINT [fk_LineItemToProcIDHistory_BudgetActivity]
 GO
-ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory]  WITH NOCHECK ADD  CONSTRAINT [fk_LineItemToProcIDHistory_LineItem] FOREIGN KEY([AccountDSI], [BudgetActivity], [BSA], [LineItem])
-REFERENCES [Project].[LineItem] ([AccountDSI], [BudgetActivity], [BSA], [LineItem])
+ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory]  WITH NOCHECK ADD  CONSTRAINT [fk_LineItemToProcIDHistory_LineItem] FOREIGN KEY([AccountDSI], [BudgetActivity], [BudgetSubActivity], [LineItem])
+REFERENCES [Project].[LineItem] ([AccountDSI], [BudgetActivity], [BudgetSubActivity], [LineItem])
 GO
 ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory] CHECK CONSTRAINT [fk_LineItemToProcIDHistory_LineItem]
 GO

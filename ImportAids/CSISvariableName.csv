@@ -447,7 +447,8 @@
 [AccountDSI],,
 [MainAccountCode],,[MainAccountName]
 [MainAccountName],,[MainAccountCode]
-[defenseorganization],,
+[defenseorganization],,[DefenseOrganizationName]
+[DefenseOrganizationName],,[defenseorganization]
 [BudgetActivity],,[BudgetActivityTitle]
 [BudgetActivityTitle],,[BudgetActivity]
 [BudgetSubActivity],,[BudgetSubActivityTitle]
@@ -457,7 +458,7 @@
 [CostType],,[CostTypeTitle]
 [CostTypeTitle],,[CostType]
 [AddOrNonAdd],,
-[Classified],,
+[Classified],,[ClassifiedName]
 [FiscalYear],,
 [BaseOther],,
 [ProjectionType],,
@@ -479,3 +480,18 @@
 [QuantEnactedType],,
 [QuantSpecialType],,
 [QuantActualTotal],,
+[programelement],,[programelementtitle]
+[programelementtitle],,[programelement]
+[includeintoa],,
+[description],,
+[programelementsforcodebitems],,
+[otherrelatedprogramelements],,
+[iscontinuing],,
+[exhibits],,
+[idcode],,
+[mdap],,
+[type],,
+[header1],,
+[book],,
+[isrevisedjbook],,
+[ClassifiedName],,[Classified]
