@@ -1,7 +1,7 @@
 --List new [AccountDSI] for insertion into budget.AccountDSI
 SELECT fk.[AccountDSI],
 'budget.AccountDSI' as PrimaryKeyTable
-FROM Budget.p1_long as fk
+FROM Budget.r2_long as fk
 LEFT OUTER JOIN budget.AccountDSI as pk
 On pk.AccountDSI=fk.[AccountDSI]
 WHERE pk.AccountDSI is NULL
@@ -12,14 +12,14 @@ ORDER BY fk.[AccountDSI]
 INSERT INTO budget.AccountDSI
 (AccountDSI)
 SELECT fk.[AccountDSI]
-FROM Budget.p1_long as fk
+FROM Budget.r2_long as fk
 LEFT OUTER JOIN budget.AccountDSI as pk
 On pk.AccountDSI=fk.[AccountDSI]
 WHERE pk.AccountDSI is NULL
 GROUP BY fk.[AccountDSI]
 
-ALTER TABLE Budget.p1_long
-ADD CONSTRAINT fk_Budget_p1_long_AccountDSI foreign key([AccountDSI])
+ALTER TABLE Budget.r2_long
+ADD CONSTRAINT fk_Budget_r2_long_AccountDSI foreign key([AccountDSI])
 references budget.AccountDSI(AccountDSI)
 
 --List new [DefenseOrganization] and updated DefenseOrganizationName for insertion into agency.DefenseOrganization
@@ -38,7 +38,7 @@ max(iif(fk.DefenseOrganizationName=pk.DefenseOrganizationName or
 	charindex('('+fk.DefenseOrganizationName+')',pk.DefenseOrganizationName )>0,
 	1,0)) as any_name_match,
 'agency.DefenseOrganization' as PrimaryKeyTable
-FROM Budget.p1_long as fk
+FROM Budget.r2_long as fk
 LEFT OUTER JOIN agency.DefenseOrganization as pk
 On pk.DefenseOrganization=fk.[DefenseOrganization]
 GROUP BY fk.[DefenseOrganization], pk.DefenseOrganizationName
@@ -53,13 +53,13 @@ INSERT INTO agency.DefenseOrganization
 (DefenseOrganization,DefenseOrganizationName)
 SELECT fk.[DefenseOrganization]
 ,max(fk.DefenseOrganizationName) as DefenseOrganizationName
-FROM Budget.p1_long as fk
+FROM Budget.r2_long as fk
 LEFT OUTER JOIN agency.DefenseOrganization as pk
 On pk.DefenseOrganization=fk.[DefenseOrganization]
 WHERE pk.DefenseOrganization is NULL
 GROUP BY fk.[DefenseOrganization]
 
-ALTER TABLE Budget.p1_long
-ADD CONSTRAINT fk_Budget_p1_long_DefenseOrganization foreign key([DefenseOrganization])
+ALTER TABLE Budget.r2_long
+ADD CONSTRAINT fk_Budget_r2_long_DefenseOrganization foreign key([DefenseOrganization])
 references agency.DefenseOrganization(DefenseOrganization)
 
