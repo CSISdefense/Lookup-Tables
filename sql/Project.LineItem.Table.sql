@@ -5,16 +5,16 @@ GO
 CREATE TABLE [Project].[LineItem](
 	[AccountDSI] [varchar](5) NOT NULL,
 	[BudgetActivity] [smallint] NOT NULL,
-	[BSA] [smallint] NOT NULL,
-	[LineItem] [varchar](10) NOT NULL,
+	[BudgetSubActivity] [smallint] NOT NULL,
+	[LineItem] [varchar](13) NOT NULL,
 	[LineItemTitle] [varchar](45) NULL,
 	[DefenseOrganization] [varchar](5) NULL,
 	[ProcurementCategory] [varchar](31) NULL,
- CONSTRAINT [pk_LineItem] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [pk_Project_LineItem] PRIMARY KEY CLUSTERED 
 (
 	[AccountDSI] ASC,
 	[BudgetActivity] ASC,
-	[BSA] ASC,
+	[BudgetSubActivity] ASC,
 	[LineItem] ASC
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
@@ -34,7 +34,7 @@ REFERENCES [budget].[AccountDSI] ([AccountDSI])
 GO
 ALTER TABLE [Project].[LineItem] CHECK CONSTRAINT [fk_LineItem_AccountDSI]
 GO
-ALTER TABLE [Project].[LineItem]  WITH NOCHECK ADD  CONSTRAINT [fk_LineItem_BSA] FOREIGN KEY([AccountDSI], [BudgetActivity], [BSA])
+ALTER TABLE [Project].[LineItem]  WITH NOCHECK ADD  CONSTRAINT [fk_LineItem_BSA] FOREIGN KEY([AccountDSI], [BudgetActivity], [BudgetSubActivity])
 REFERENCES [budget].[BudgetSubActivity] ([AccountDSI], [BudgetActivity], [BudgetSubActivity])
 GO
 ALTER TABLE [Project].[LineItem] CHECK CONSTRAINT [fk_LineItem_BSA]

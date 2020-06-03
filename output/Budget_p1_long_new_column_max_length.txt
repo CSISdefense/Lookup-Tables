@@ -1,9 +1,0 @@
-SELECT 
-max(len( [MainAccountCode] )) as  [MainAccountCode],
-max(len( [BaseOther] )) as  [BaseOther],
-max(len( [ProjectionType] )) as  [ProjectionType],
-max(len( [Quantity] )) as  [Quantity],
-max(len( [Value] )) as  [Value],
-max(len( [BaseOtherSum] )) as  [BaseOtherSum],
-max(len( [BaseOtherInclude] )) as  [BaseOtherInclude]
-FROM Budget.p1_long
