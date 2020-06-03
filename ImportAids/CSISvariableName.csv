@@ -479,3 +479,6 @@
 [QuantEnactedType],,
 [QuantSpecialType],,
 [QuantActualTotal],,
+[programelement],,[programelementtitle]
+[programelementtitle],,[programelement]
+[includeintoa],,

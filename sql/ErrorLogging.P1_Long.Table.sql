@@ -20,7 +20,7 @@ CREATE TABLE [ErrorLogging].[P1_Long](
 	[BudgetSubActivity] [smallint] NULL,
 	[BudgetSubActivityTitle] [varchar](52) NULL,
 	[BaseOther] [varchar](14) NULL,
-	[ProjectionType] [varchar](7) NULL,
+	[ProjectionType] [varchar](11) NULL,
 	[Quantity] [int] NULL,
 	[Value] [decimal](28, 0) NULL,
 	[BaseOtherSum] [varchar](7) NULL,

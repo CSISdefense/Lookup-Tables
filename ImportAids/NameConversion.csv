@@ -752,3 +752,6 @@ SourceVariableName,CSISvariableName,IsDuplicate
 [QuantActualTotal],[QuantActualTotal],
 [Organization_Code],[DefenseOrganization],
 [Organization_Name],[DefenseOrganizationName],
+[programelement],[programelement],
+[programelementtitle],[programelementtitle],
+[includeintoa],[includeintoa],
