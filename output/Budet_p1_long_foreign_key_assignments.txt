@@ -1,0 +1,48 @@
+--List new [AccountDSI] for insertion into budget.AccountDSI
+SELECT fk.[AccountDSI],
+'budget.AccountDSI' as PrimaryKeyTable
+FROM Budget.p1_long as fk
+LEFT OUTER JOIN budget.AccountDSI as pk
+On pk.AccountDSI=fk.[AccountDSI]
+WHERE pk.AccountDSI is NULL
+GROUP BY fk.[AccountDSI]
+ORDER BY fk.[AccountDSI]
+
+-- Insert new [AccountDSI] into budget.AccountDSI
+INSERT INTO budget.AccountDSI
+(AccountDSI)
+SELECT fk.[AccountDSI]
+FROM Budget.p1_long as fk
+LEFT OUTER JOIN budget.AccountDSI as pk
+On pk.AccountDSI=fk.[AccountDSI]
+WHERE pk.AccountDSI is NULL
+GROUP BY fk.[AccountDSI]
+
+ALTER TABLE Budget.p1_long
+ADD CONSTRAINT fk_Budget_p1_long_AccountDSI foreign key([AccountDSI])
+references budget.AccountDSI(AccountDSI)
+
+--List new [DefenseOrganization] for insertion into agency.DefenseOrganization
+SELECT fk.[DefenseOrganization],
+'agency.DefenseOrganization' as PrimaryKeyTable
+FROM Budget.p1_long as fk
+LEFT OUTER JOIN agency.DefenseOrganization as pk
+On pk.DefenseOrganization=fk.[DefenseOrganization]
+WHERE pk.DefenseOrganization is NULL
+GROUP BY fk.[DefenseOrganization]
+ORDER BY fk.[DefenseOrganization]
+
+-- Insert new [DefenseOrganization] into agency.DefenseOrganization
+INSERT INTO agency.DefenseOrganization
+(DefenseOrganization)
+SELECT fk.[DefenseOrganization]
+FROM Budget.p1_long as fk
+LEFT OUTER JOIN agency.DefenseOrganization as pk
+On pk.DefenseOrganization=fk.[DefenseOrganization]
+WHERE pk.DefenseOrganization is NULL
+GROUP BY fk.[DefenseOrganization]
+
+ALTER TABLE Budget.p1_long
+ADD CONSTRAINT fk_Budget_p1_long_DefenseOrganization foreign key([DefenseOrganization])
+references agency.DefenseOrganization(DefenseOrganization)
+

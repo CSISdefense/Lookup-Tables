@@ -32,7 +32,7 @@ table_compare<-function(x_file,y_file,source_schema,source_table,target_schema=s
                       Apply_Drop=FALSE,
                       DateType = 120,
                       IncludeMultiple = FALSE)
-  if(try_convert!=0)
+  if(any(try_convert!=0))
     write(try_convert,file.path("Output",
                     paste(source_schema,source_table,"to",target_table,"Try_Convert_Single.txt",sep="_")))
   if(reverse){
@@ -53,7 +53,7 @@ table_compare("Budget.r1_long.Table.sql",
               source_schema="Budget",
               source_table="r1_long",
               target_table="r2_long",reverse=TRUE)
-debug(table_compare)
+
 table_compare("Budget.r2_long.Table.sql",
               "Budget.DBAr1.Table.sql",
               source_schema="Budget",
@@ -139,70 +139,10 @@ dba_p1_table<-read_create_table("Budget.DBAp1.Table.sql",
 dba_p1_table<-translate_name(dba_p1_table)
 
 
-dba_p1_long<-merge_source_and_csis_name_tables(dba_p1_table,p1_long_table)
-
-Create_Constraint_List<-paste(dba_p1_long$CSISvariableName,
-                              dba_p1_long$CSISvariableType,
-                              dba_p1_long$CSISnullable,",")
-
-TryConvertList<-create_try_converts(dba_p1_long,"Budget","DBAp1",
-                                    IncludeAlters=TRUE,
-                                    Add_Colon_Split=FALSE,
-                                    Apply_Drop=FALSE,
-                                    DateType = 120,
-                                    IncludeMultiple = FALSE) %>%
-  write(file = "Output\\FYDP_dba_p1_Try_Convert_Single.txt")
-
-
-##### From P40 to DBA
-p40_long_table<-read_create_table("Budget.P40_long.Table.sql",
-                                 dir="SQL")
-
-
-p40_long_table<-translate_name(p40_long_table)
-
-
-##### From R1 to DBA
-r1_long_table<-read_create_table("Budget.r1_long.Table.sql",
-                                 dir="SQL")
-
-
-r1_long_table<-translate_name(r1_long_table)
-
-
-dba_r1_table<-read_create_table("Budget.DBAr1.Table.sql",
-                                dir="SQL")
-translate_name(dba_r1_table,test_only=TRUE)
-
-r1_dba_long<-merge_source_and_csis_name_tables(r1_long_table,dba_r1_table)
-
-Create_Constraint_List<-paste(r1_dba_long$CSISvariableName,
-                              r1_dba_long$CSISvariableType,
-                              r1_dba_long$CSISnullable,",")
-
-TryConvertList<-create_try_converts(r1_dba_long,"Budget","r1_long",
-                                    IncludeAlters=TRUE,
-                                    Add_Colon_Split=FALSE,
-                                    Apply_Drop=FALSE,
-                                    DateType = 120,
-                                    IncludeMultiple = FALSE)
-
-write(TryConvertList,"Output\\FYDP_r1_Stage1_Try_Convert_Single.txt")
 
 
 
-
-
-
-
-# At some point, add checking for varchar(255) or missing from Contract.FPDS
-missing_column<-p1_dba_long %>% filter(
-  (is.na(IsDroppedNameField) | IsDroppedNameField==FALSE) &
-    (is.na(CSISvariableType )| is.null(CSISvariableType)))#&
-    # !SourceVariableName %in% ignore_cols)
-
-len_check<-paste("SELECT \n",
-                 paste("max(len(",missing_column$SourceVariableName,")) as ",missing_column$SourceVariableName,collapse=",\n"),
-                 "\nFROM Budget.p1_long",sep=""
-)
-write(file=file.path("Output","Budget_p1_long_new_column_max_length.txt"),len_check)
+# undebug(create_foreign_key_assigments)
+output<-create_foreign_key_assigments("Budget","p1_long")
+if(length(output)>0)
+  write(output,file.path("Output","Budet_p1_long_foreign_key_assignments.txt"))

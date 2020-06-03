@@ -73,7 +73,7 @@ if(!file.exists("sql\\ErrorLogging.FPDSbetaViolatesConstraint.table.sql")){
 } else{
 
   
-  ##### From Stage 1 to Stage 2, Taking Advantage of Newly Added Coluns in Contract.FPDS####### 
+##### From Stage 1 to Stage 2, Taking Advantage of Newly Added Columns in Contract.FPDS####### 
   Stage2TableType.df<-read_create_table("ErrorLogging.FPDSbetaViolatesConstraint.Table.sql",
                                         dir="SQL")
   
