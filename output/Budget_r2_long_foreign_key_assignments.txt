@@ -1,17 +1,34 @@
---List new [AccountDSI] for insertion into budget.AccountDSI
+--List new [AccountDSI] and updated MainAccountName for insertion into budget.AccountDSI
 SELECT fk.[AccountDSI],
+max(iif(fk.MainAccountName=pk.MainAccountName or
+	fk.MainAccountName='' or
+	charindex('('+fk.MainAccountName+')',pk.MainAccountName )>0,
+	NULL,fk.MainAccountName)) as MaxOfNewFKMainAccountName,
+count(distinct iif(fk.MainAccountName=pk.MainAccountName or
+	fk.MainAccountName='' or
+	charindex('('+fk.MainAccountName+')',pk.MainAccountName )>0,
+	NULL,fk.MainAccountName)) as unmatched_name_count,
+pk.MainAccountName as PKMainAccountName,
+max(iif(fk.MainAccountName=pk.MainAccountName or
+	fk.MainAccountName='' or
+	charindex('('+fk.MainAccountName+')',pk.MainAccountName )>0,
+	1,0)) as any_name_match,
 'budget.AccountDSI' as PrimaryKeyTable
 FROM Budget.r2_long as fk
 LEFT OUTER JOIN budget.AccountDSI as pk
 On pk.AccountDSI=fk.[AccountDSI]
-WHERE pk.AccountDSI is NULL
-GROUP BY fk.[AccountDSI]
+GROUP BY fk.[AccountDSI], pk.MainAccountName
+HAVING max(iif(fk.MainAccountName=pk.MainAccountName or
+	fk.MainAccountName='' or
+	charindex('('+fk.MainAccountName+')',pk.MainAccountName )>0,
+	0,1))=1
 ORDER BY fk.[AccountDSI]
 
 -- Insert new [AccountDSI] into budget.AccountDSI
 INSERT INTO budget.AccountDSI
-(AccountDSI)
+(AccountDSI,MainAccountName)
 SELECT fk.[AccountDSI]
+,max(fk.MainAccountName) as MainAccountName
 FROM Budget.r2_long as fk
 LEFT OUTER JOIN budget.AccountDSI as pk
 On pk.AccountDSI=fk.[AccountDSI]

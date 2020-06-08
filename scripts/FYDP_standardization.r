@@ -138,11 +138,21 @@ dba_p1_table<-read_create_table("Budget.DBAp1.Table.sql",
 
 dba_p1_table<-translate_name(dba_p1_table)
 
+#### Foreign Key Assignments 
+#undebug(create_foreign_key_assigments)
 
-
-
-
-# undebug(create_foreign_key_assigments)
 output<-create_foreign_key_assigments("Budget","p1_long")
 if(length(output)>0)
-  write(output,file.path("Output","Budet_p1_long_foreign_key_assignments.txt"))
+  write(output,file.path("Output","Budget_p1_long_foreign_key_assignments.txt"))
+
+output<-create_foreign_key_assigments("Budget","p40_long")
+if(length(output)>0)
+  write(output,file.path("Output","Budget_p40_long_foreign_key_assignments.txt"))
+
+output<-create_foreign_key_assigments("Budget","r1_long")
+if(length(output)>0)
+  write(output,file.path("Output","Budget_r1_long_foreign_key_assignments.txt"))
+
+output<-create_foreign_key_assigments("Budget","r2_long")
+if(length(output)>0)
+  write(output,file.path("Output","Budget_r2_long_foreign_key_assignments.txt"))
