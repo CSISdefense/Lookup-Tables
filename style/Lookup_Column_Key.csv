@@ -118,6 +118,7 @@ NAICcrisisFunding,Crisis,,,,FALSE
 NIAlist,Crisis,,,,FALSE
 SAMexception.sum,Crisis,,,,FALSE
 SAMcrisisFunding,Crisis,,,,FALSE
+qToDefinitize,Duration,,,,FALSE
 UnmodifiedUltimateDurationCategory,Duration,,,,FALSE
 Dur,Duration,,,,FALSE
 ActualDur,Duration,,,,FALSE
