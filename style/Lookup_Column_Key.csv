@@ -149,6 +149,7 @@ Fiscal_Year,,Fiscal Year,,,FALSE
 dFYear,,Fiscal Year,,,FALSE
 contingencyhumanitarianpeacekeepingoperation,ContingencyHumanitarianPeacekeepingOperation,Contingency or Humanitarian Peacekeeping Operation,,,TRUE
 IsFMS,FMS,,,,FALSE
+IsComplete,Binary,,,,FALSE
 IsMultipleYearProcRnD,Binary,,,,FALSE
 MultipleYearProcRnD,Crisis,,,,FALSE
 IsExcludedPSC,Crisis,,,,FALSE
