@@ -533,6 +533,7 @@ Cohort,Age,Age Cohort,,,FALSE
 BirthGroup,Age,Age Cohort (Based on Birth Year),,,FALSE
 Prev,Vote,Voting History,,,FALSE
 IsTargetPrecinct,Precinct,,,,FALSE
+IsSpanishGuidePrecinct,Precinct,,,,FALSE
 Force,,Use of Force (1 Oppose to 7 Support),,,FALSE
 Russia,,Russia (1 Confront to 7 Cooperate),,,FALSE
 China,,China (1 Confront to 7 Cooperate),,,FALSE
