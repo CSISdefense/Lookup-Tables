@@ -226,6 +226,7 @@ BaseOther,Total,Total,3,"DIIG Secondary, Amaranth",#7c131b,,,,default grey,#5544
 BudgetMatch,No FYDP Expected,No FYDP Expected,1,"DIIG Primary, Navy",#1d2d5c,,,,default grey,#554449,
 BudgetMatch,Classified,Classified,1,"DIIG Primary, Navy",#1d2d5c,,,,default grey,#554449,
 BudgetMatch,Classified/NSA,Classified/NSA,1,"DIIG Primary, Navy",#1d2d5c,,,,default grey,#554449,
+BudgetMatch,Unanticipated Budget Line,Unanticipated Budget Line,2,"DIIG Secondary, Sea Green",#b2e1ea,,,,default grey,#554449,
 BudgetMatch,Defense-Wide Non-Standard,Defense-Wide Non-Standard,2,"DIIG Secondary, Sea Green",#b2e1ea,,,,default grey,#554449,
 BudgetMatch,Missing J-Book XML,Missing J-Book XML,3,"DIIG Additional, Pale Gray",#bcbcbc,,,,default grey,#554449,
 BudgetMatch,Not Confident,Not Confident,4,"DIIG Primary, Red",#BB4243,,,,default grey,#554449,
