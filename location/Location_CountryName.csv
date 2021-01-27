@@ -166,8 +166,8 @@ Christmas Is,NULL,CXR
 CIV,CIV,CIV
 CIV: CÃƒâ€TE D'IVOIRE,CIV,CIV
 CIV: CÃƒÆ’Ã¢â‚¬ÂTE D'IVOIRE,CIV,CIV
-Classified,NULL,NULL
-Classified Totals,NULL,NULL
+Classified,NULL,?WO
+Classified Totals,NULL,?WO
 CMR,CMR,CMR
 CMR: CAMEROON,CMR,CMR
 Cocos Is,NULL,CCK
@@ -932,7 +932,6 @@ NATO,NULL,^NA
 Regional Security System,NULL,^RS
 "Seasparrow (Sec 1004, P.L. 98-525)",NULL,^10
 United Nations,NULL,^UN
-Classified Totals,NULL,?WO
 General and Regional Costs,NULL,*WO
 International Organizations,NULL,?IO
 "Assistance to Europe, Eurasia, and  Central Asia (AEECA)",NULL,^AE
