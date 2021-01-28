@@ -56,7 +56,7 @@ DE,Denmark,DNK,FALSE
 DR,Dominican Republic,DOM,FALSE
 AG,Algeria,DZA,FALSE
 EC,Ecuador,ECU,FALSE
-D6,Ecuador-intl Narc,ECU,FALSE
+D6,Ecuador-intl Narc,ECU,TRUE
 EG,Egypt,EGY,FALSE
 ER,Eritrea,ERI,FALSE
 SP,Spain,ESP,FALSE
@@ -139,7 +139,7 @@ MU,Oman,OMN,FALSE
 PK,Pakistan,PAK,FALSE
 PN,Panama,PAN,FALSE
 PE,Peru,PER,FALSE
-D3,Peru - Intl Narc,PER,FALSE
+D3,Peru - Intl Narc,PER,TRUE
 PI,Rep Of Philippines,PHL,FALSE
 PP,Papua New Guinea,PNG,FALSE
 PL,Poland,POL,FALSE
