@@ -1,7 +1,7 @@
 ﻿DSCAbuyerCode,DSCAbuyerText,GeographicISOalpha3,DSCApreserveName
 KV,Kosovo,*KS,FALSE
 C2,Classified,?WO,FALSE
-S9,Presidential Drawdown,?WO,FALSE
+S9,Presidential Drawdown,^S9,FALSE
 YU,Yugoslavia,^YG,FALSE
 YI,Serbia And Montenegr,~CS,FALSE
 IC,Indochina,~IC,FALSE
@@ -26,7 +26,7 @@ BF,Bahamas,BHS,FALSE
 BK,Bosnia-herzegovina,BIH,FALSE
 BH,Belize,BLZ,FALSE
 BL,Bolivia,BOL,FALSE
-D1,Bolivia-Intl Narc,BOL,FALSE
+D1,Bolivia-Intl Narc,BOL,TRUE
 BR,Brazil,BRA,FALSE
 BB,Barbados,BRB,FALSE
 BX,Brunei,BRN,FALSE
@@ -42,7 +42,7 @@ CM,Cameroon,CMR,FALSE
 CX,Congo (Kinshasa),COD,FALSE
 CF,Congo (Brazzaville),COG,FALSE
 CO,Colombia,COL,FALSE
-D5,Colombia-intl Narc,COL,FALSE
+D5,Colombia-intl Narc,COL,TRUE
 CR,Comoros,COM,FALSE
 CV,Cape Verde,CPV,FALSE
 CS,Costa Rica,CRI,FALSE
@@ -151,7 +151,7 @@ RO,Romania,ROU,FALSE
 RS,Russia,RUS,FALSE
 RW,Rwanda,RWA,FALSE
 SR,Saudi Arabia,SAU,FALSE
-SD,Saudi Arabia MOI,SAU,FALSE
+SD,Saudi Arabia MOI,SAU,TRUE
 SU,Sudan,SDN,FALSE
 SK,Senegal,SEN,FALSE
 SN,Singapore,SGP,FALSE
