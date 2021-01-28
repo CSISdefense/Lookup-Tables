@@ -139,6 +139,7 @@ CAN,CAN,CAN
 CAN: CANADA,CAN,CAN
 CANADA,CAN,CAN
 CAPE VERDE,CPV,CPV
+"Cape Verde, Republic of",CPV,CPV
 Caribbean Regional,*CB,*CB
 Caucasus Regional,*CC,*CC
 Cayman Is,CYM,CYM
@@ -165,7 +166,8 @@ Christmas Is,NULL,CXR
 CIV,CIV,CIV
 CIV: CÃƒâ€TE D'IVOIRE,CIV,CIV
 CIV: CÃƒÆ’Ã¢â‚¬ÂTE D'IVOIRE,CIV,CIV
-Classified,NULL,NULL
+Classified,NULL,?WO
+Classified Totals,NULL,?WO
 CMR,CMR,CMR
 CMR: CAMEROON,CMR,CMR
 Cocos Is,NULL,CCK
@@ -173,6 +175,7 @@ COD,COD,COD
 "COD: CONGO, DEMOCRATIC REPUBLIC OF THE",COD,COD
 COG,COG,COG
 COG: CONGO,COG,COG
+"Congo, Republic of",COG,COG
 COK: COOK ISLANDS,COK,COK
 COL,COL,COL
 COL: COLOMBIA,COL,COL
@@ -512,7 +515,7 @@ NAM,NAM,NAM
 NAM: NAMIBIA,NAM,NAM
 NAMIBIA,NAM,NAM
 nan,nan,NULL
-NATO**,NULL,NULL
+NATO**,NULL,^NA
 Nauru,NRU,NRU
 NCL,NCL,NCL
 NCL: NEW CALEDONIA,NCL,NCL
@@ -568,6 +571,7 @@ PAN,PAN,PAN
 PAN: PANAMA,PAN,PAN
 PANAMA,PAN,PAN
 Papua New Guin,PNG,PNG
+Papua-New Guinea,PNG,PNG
 PAPUA NEW GUINEA,PNG,PNG
 PARAGUAY,PRY,PRY
 PER,PER,PER
@@ -606,6 +610,7 @@ QAT: QATAR,QAT,QAT
 QATAR,QAT,QAT
 REGIONAL DEVELOPMENT MISSION ASIA,^RA,^RA
 Rep Of Montenegro,MNE,MNE
+Republic of Montenegro,MNE,MNE
 Rep of Philippines,PHL,PHL
 Rep Of Serbia,SRB,SRB
 Republic Of Serbia,SRB,SRB
@@ -623,6 +628,7 @@ SAINT KITTS AND NEVIS,KNA,KNA
 SAINT LUCIA,LCA,LCA
 SAINT PIERRE AND MIQUELON [FRANCE],SPM,SPM
 SAINT VINCENT AND THE GRENADINES,VCT,VCT
+Saint Vincent and Grenadines,VCT,VCT
 SAMOA,WSM,WSM
 San Marino,NULL,SMR
 Sao Tome & Prin,STP,STP
@@ -742,6 +748,7 @@ TON: TONGA,TON,TON
 TONGA,TON,TON
 Trin & Tobago,TTO,TTO
 Trinidad + Tobago,TTO,TTO
+Trinidad-Tobago,TTO,TTO
 TRINIDAD AND TOBAGO,TTO,TTO
 TTO,TTO,TTO
 TTO: TRINIDAD AND TOBAGO,TTO,TTO
@@ -773,7 +780,7 @@ UMI: UNITED STATES MINOR OUTLYING ISLANDS,UMI,UMI
 United Arab Em,ARE,ARE
 UNITED ARAB EMIRATES,ARE,ARE
 UNITED KINGDOM,GBR,GBR
-United Nations**,NULL,NULL
+United Nations**,NULL,^UN
 UNITED STATES,USA,USA
 UNITED STATES MINOR OUTLYING ISLANDS,UMI,UMI
 Unknown Recipients*,NULL,NULL
@@ -919,3 +926,33 @@ West Africa (not specified),*SA,?SA
 West Bank/Gaza,PSE,PSE
 World (not specified),*WO,?WO
 "Yemen, South",NULL,*SY
+"FAA Sec 607 Sales, Payment in Advance",NULL,^60
+FAA Sec 632 Transactions,NULL,^63
+NATO,NULL,^NA
+Regional Security System,NULL,^RS
+"Seasparrow (Sec 1004, P.L. 98-525)",NULL,^10
+United Nations,NULL,^UN
+General and Regional Costs,NULL,*WO
+International Organizations,NULL,?IO
+"Assistance to Europe, Eurasia, and  Central Asia (AEECA)",NULL,^AE
+African Peacekeeping Rapid  Response Partnership (APRRP),NULL,^AR
+Coalition Readiness Support  Program (CRSP),NULL,^CR
+Counter-ISIL Train and Equip Fund  (CTEF),NULL,^CI
+Combatting Terrorism Fellowship  Program (CTFP),NULL,^CT
+Central American Maritime  Regional Initiative (SDD FMF-,NULL,^CA
+Economic Support Fund (ESF),NULL,^ES
+European Reassurance Initiative  (ERI),NULL,^ER
+U.S. Army Operating Funds in Support of Foreign Security Forces Programs,NULL,^UA
+Global Peacekeeping Operations  Initiative (GPOI),NULL,^GP
+Global Security Contingency Fund  (GSCF),NULL,^GS
+Indo Pacific Maritime Security  Initiative (MSI),NULL,^IP
+International Narcotics Control and  Law Enforcement (INCLE),NULL,^IN
+Section 1206 Train and Equip,NULL,^12
+Peacekeeping Operations (PKO),NULL,^PK
+Section 1263 South China Sea  Initiative (SCSI),NULL,^SC
+Section 2282 Global Train and  Equip (GT&E),NULL,^22
+Section 333,NULL,^33
+Section 551 for Peacekeeping  Operations,NULL,^55
+Security Cooperation Overseas  Contingency Operations (SC OCO),NULL,^OC
+State Department Directed Foreign  Military Financing (FMF),NULL,^FM
+Syria Train and Equip Fund (STEF),NULL,^ST
