@@ -36,6 +36,7 @@ Cambodia,148,KHM,FALSE
 Cameroon,83,CMR,FALSE
 Canada,NULL,CAN,FALSE
 Cape Verde,NULL,CPV,FALSE
+Cabo Verde,NULL,CPV,FALSE
 Central African Republic,86,CAF,FALSE
 Chad,87,TCD,FALSE
 Chile,25,CHL,FALSE
@@ -207,6 +208,7 @@ Hezbollah (Lebanon)*,NULL,LBN,TRUE
 Honduras,12,HND,FALSE
 Hungary,40,HUN,FALSE
 Huthi rebels (Yemen)*,NULL,YEM,TRUE
+Houthi rebels (Yemen)*,NULL,YEM,TRUE
 Iceland,NULL,ISL,FALSE
 India,141,IND,FALSE
 Indonesia,155,IDN,FALSE
@@ -381,3 +383,4 @@ Yugoslavia,49,^YG,FALSE
 Zambia,3986,ZMB,FALSE
 ZAPU (Zimbabwe)*,NULL,ZWE,TRUE
 Zimbabwe,101,ZWE,FALSE
+Darfur rebels (Sudan)*,NULL,SDN,TRUE
