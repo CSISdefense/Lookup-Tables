@@ -627,6 +627,7 @@ dtDelivYear,,Year of Obligation or Delivery (Calendar or Fiscal Varies by Source
 Mixed Year,,Year of Obligation or Delivery (Calendar or Fiscal Varies by Source),,,
 AcquisitionCooperation,Relationship,Cooperative Acquisition Arrangement,,,
 MutualDefense,Relationship,Mutual Defense Agreement,,,
+MutualAcqKSA_UAE,Relationship,Mutual Defense Agreement and Acquisition Arrangement,,,
 MutualAcquisition,Relationship,Mutual Defense Agreement and Acquisition Arrangement,,,
 PlaceAcquisitionCooperation,Relationship,Cooperative Acquisition Arrangement,,,
 PlaceMutualDefense,Relationship,Mutual Defense Agreement,,,
