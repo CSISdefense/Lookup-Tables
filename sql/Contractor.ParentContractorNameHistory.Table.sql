@@ -18,7 +18,7 @@ CREATE TABLE [Contractor].[ParentContractorNameHistory](
 (
 	[ParentID] ASC,
 	[FiscalYear] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Contractor].[ParentContractorNameHistory]  WITH NOCHECK ADD  CONSTRAINT [fk_Contractor_ParentContractorNameHistory_ParentID] FOREIGN KEY([ParentID])

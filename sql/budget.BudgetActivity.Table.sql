@@ -9,11 +9,12 @@ CREATE TABLE [budget].[BudgetActivity](
 	[DefenseOrganization] [varchar](5) NULL,
 	[ProcurementCategory] [varchar](31) NULL,
 	[RnDbudgetActivity] [varchar](50) NULL,
+	[IsNoFYDPexpected] [bit] NULL,
  CONSTRAINT [pk_BudgetActivity] PRIMARY KEY CLUSTERED 
 (
 	[AccountDSI] ASC,
 	[BudgetActivity] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [budget].[BudgetActivity]  WITH NOCHECK ADD  CONSTRAINT [FK__BudgetAct__Defen__0CC6A0C6] FOREIGN KEY([DefenseOrganization])

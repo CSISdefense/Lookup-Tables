@@ -20,7 +20,7 @@ CREATE TABLE [budget].[progsource](
 	[progsourceagency] ASC,
 	[progsourceaccount] ASC,
 	[progsourcesubacct] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [budget].[progsource] ADD  CONSTRAINT [DF__progsourc__CSISm__3AB788A8]  DEFAULT (suser_sname()) FOR [CSISmodifiedby]

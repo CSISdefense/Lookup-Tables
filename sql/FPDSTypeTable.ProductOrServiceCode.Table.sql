@@ -39,10 +39,11 @@ CREATE TABLE [FPDSTypeTable].[ProductOrServiceCode](
 	[Level1_Category] [varchar](75) NULL,
 	[Level2_Code] [decimal](4, 2) NULL,
 	[Level2_Category] [varchar](75) NULL,
+	[GreenEnergy] [varchar](20) NULL,
  CONSTRAINT [PK_ProductOrServiceCode] PRIMARY KEY CLUSTERED 
 (
 	[ProductOrServiceCode] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [FPDSTypeTable].[ProductOrServiceCode]  WITH NOCHECK ADD  CONSTRAINT [FK__ProductOr__Canad__7FC1AB63] FOREIGN KEY([CanadaSector])

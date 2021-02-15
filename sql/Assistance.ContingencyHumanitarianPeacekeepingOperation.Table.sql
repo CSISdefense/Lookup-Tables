@@ -10,6 +10,6 @@ CREATE TABLE [Assistance].[ContingencyHumanitarianPeacekeepingOperation](
  CONSTRAINT [contingencyhumanitarianpeacekeepingoperation_key] PRIMARY KEY CLUSTERED 
 (
 	[ContingencyHumanitarianPeacekeepingOperation] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO

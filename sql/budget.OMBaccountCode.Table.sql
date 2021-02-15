@@ -17,7 +17,7 @@ CREATE TABLE [budget].[OMBaccountCode](
 (
 	[TreasuryAgencyCode] ASC,
 	[OMBaccountCode] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [budget].[OMBaccountCode]  WITH NOCHECK ADD  CONSTRAINT [fk_OMBaccountCode_MainAccountCode] FOREIGN KEY([TreasuryAgencyCode], [mainaccountcode])

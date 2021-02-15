@@ -9,6 +9,6 @@ CREATE TABLE [FPDSTypeTable].[interagencycontractingauthority](
  CONSTRAINT [PK_interagencycontractingauthority] PRIMARY KEY CLUSTERED 
 (
 	[interagencycontractingauthority] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO

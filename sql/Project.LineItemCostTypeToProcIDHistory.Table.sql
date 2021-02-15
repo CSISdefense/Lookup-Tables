@@ -20,7 +20,7 @@ GO
 ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory] ADD  CONSTRAINT [DF__LineItemT__CSISm__22EAEC0F]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
 ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory]  WITH NOCHECK ADD  CONSTRAINT [fk_LineItemCostTypeToProcIDHistory_CostType] FOREIGN KEY([AccountDSI], [CostType])
-REFERENCES [budget].[CostType] ([AccountDSI], [CostType])
+REFERENCES [budget].[AccountDSIcostType] ([AccountDSI], [CostType])
 GO
 ALTER TABLE [Project].[LineItemCostTypeToProcIDHistory] CHECK CONSTRAINT [fk_LineItemCostTypeToProcIDHistory_CostType]
 GO

@@ -7,16 +7,17 @@ CREATE TABLE [Project].[LineItem](
 	[BudgetActivity] [smallint] NOT NULL,
 	[BudgetSubActivity] [smallint] NOT NULL,
 	[LineItem] [varchar](13) NOT NULL,
-	[LineItemTitle] [varchar](45) NULL,
+	[LineItemTitle] [varchar](301) NULL,
 	[DefenseOrganization] [varchar](5) NULL,
 	[ProcurementCategory] [varchar](31) NULL,
+	[IsLineItemAlsoLineNumber] [bit] NULL,
  CONSTRAINT [pk_Project_LineItem] PRIMARY KEY CLUSTERED 
 (
 	[AccountDSI] ASC,
 	[BudgetActivity] ASC,
 	[BudgetSubActivity] ASC,
 	[LineItem] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Project].[LineItem]  WITH NOCHECK ADD  CONSTRAINT [FK__LineItem__Defens__13739E55] FOREIGN KEY([DefenseOrganization])

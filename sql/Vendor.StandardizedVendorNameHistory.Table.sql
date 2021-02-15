@@ -24,7 +24,7 @@ CREATE TABLE [Vendor].[StandardizedVendorNameHistory](
 (
 	[StandardizedVendorName] ASC,
 	[Fiscal_Year] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Vendor].[StandardizedVendorNameHistory] ADD  CONSTRAINT [DF__Standardi__CSISc__3E530F62]  DEFAULT (getdate()) FOR [CSIScreateddate]

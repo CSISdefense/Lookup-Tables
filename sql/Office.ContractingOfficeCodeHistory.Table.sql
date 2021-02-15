@@ -9,7 +9,7 @@ CREATE TABLE [Office].[ContractingOfficeCodeHistory](
 (
 	[fiscal_year] ASC,
 	[ContractingOfficeCode] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Office].[ContractingOfficeCodeHistory]  WITH CHECK ADD  CONSTRAINT [fk_Office_ContractingOfficeCodeHistory] FOREIGN KEY([ContractingOfficeCode])

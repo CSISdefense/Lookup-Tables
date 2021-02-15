@@ -6,14 +6,14 @@ CREATE TABLE [agency].[DefenseServiceIdentifier](
 	[DefenseServiceIdentifier] [varchar](3) NOT NULL,
 	[DefenseOrganization] [varchar](5) NULL,
 	[TreasuryAgencyCode] [smallint] NULL,
-	[SimpleDefenseServiceIndicator] [varchar](3) NULL,
+	[SimpleDefenseServiceIdentifier] [varchar](3) NULL,
  CONSTRAINT [pk_DefenseServiceIdentifier] PRIMARY KEY CLUSTERED 
 (
 	[DefenseServiceIdentifier] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-ALTER TABLE [agency].[DefenseServiceIdentifier]  WITH NOCHECK ADD  CONSTRAINT [FK__DefenseSe__Simpl__08F60FE2] FOREIGN KEY([SimpleDefenseServiceIndicator])
+ALTER TABLE [agency].[DefenseServiceIdentifier]  WITH NOCHECK ADD  CONSTRAINT [FK__DefenseSe__Simpl__08F60FE2] FOREIGN KEY([SimpleDefenseServiceIdentifier])
 REFERENCES [agency].[DefenseServiceIdentifier] ([DefenseServiceIdentifier])
 GO
 ALTER TABLE [agency].[DefenseServiceIdentifier] CHECK CONSTRAINT [FK__DefenseSe__Simpl__08F60FE2]
