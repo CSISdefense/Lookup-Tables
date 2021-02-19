@@ -96,6 +96,7 @@ Crisis,Other Exception,Other Exception,90,yellow,#FFC000,,,,default grey,#554449
 Crisis,No Exception,No Exception,98,reddish gray,#967878,,,,default grey,#554449,
 Crisis,Contingency Operation As Defined In 10 U.S.C. 101(A)(13),Contingency Operation,1,olive green,#89A54E,,,,default grey,#554449,
 Crisis,Humanitarian Or Peacekeeping Operation As Defined In 10 U.S.C. 2302(8),Humanitarian Or Peacekeeping Operation,2,aqua,#00FFFF,,,,default grey,#554449,
+Crisis,"PRESIDENTIAL ISSUED EMERGENCY DECLARATION, OR A MAJOR DISASTER DECLARATION",Presidential Emergency or Disaster Declaration,3,orange,#DB8403,,,,default grey,#554449,
 Crisis,Not Applicable,Not Applicable,98,red,#AA4643,,,,default grey,#554449,
 Crisis,Operation Enduring Freedom (OEF),Operation Enduring Freedom (OEF),1,green,#92D050,,,,default grey,#554449,
 Crisis,Hurricane Katrina 2005,Hurricane Katrina 2005,6,orange,#DB8403,,,,default grey,#554449,
