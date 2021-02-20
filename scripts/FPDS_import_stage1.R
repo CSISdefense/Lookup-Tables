@@ -8,8 +8,9 @@ library(tidyverse)
 #This adds value when new columns have been added to the source tables
 #Code is not included to help add columns to stage 1
 
-Stage1TableType.df<-read_create_table("ErrorLogging.FPDSbetaViolatesType.Table.sql",
+Stage1TableType.df<-read_create_table("ErrorLogging.FPDSstage1.Table.sql",
                                       dir="SQL")
+
 Stage1TableType.df<-translate_name(Stage1TableType.df)
 
 
@@ -22,7 +23,7 @@ NewConstraintTableType.df<-merge_source_and_csis_name_tables(Stage1TableType.df,
 )
 
 #Create a list of variables to be copied into a query to create the stage 2 database.
-#This already exists Errorlogging.ErrorLogging_FPDSbetaViolatesConstraint
+#This already exists Errorlogging.ErrorLogging_FPDSstage2
 #We should probably convert this to check for any existing misisng columns and then 
 #to add them.
 Create_Constraint_List<-paste(NewConstraintTableType.df$CSISvariableName,
@@ -46,7 +47,7 @@ if(nrow(missing_column)>0){
 
   
   write(file=file.path("Output","Contract_FPDS_new_column_alter_table.txt"),
-        paste("ALTER TABLE Errorlogging.FPDSbetaViolatesConstraint\nADD",
+        paste("ALTER TABLE Errorlogging.FPDSstage2\nADD",
               paste(missing_column$SourceVariableName,
                     missing_column$SourceVariableType,
                     missing_column$SourceNullable,",\n",collapse=" ")))
@@ -56,7 +57,7 @@ if(nrow(missing_column)>0){
   
   len_check<-paste("SELECT \n",
     paste("max(len(",missing_column$SourceVariableName,")) as ",missing_column$SourceVariableName,collapse=",\n"),
-    "\nFROM ErrorLogging.FPDSbetaViolatesType",sep=""
+    "\nFROM ErrorLogging.FPDSstage1",sep=""
     )
   write(file=file.path("Output","Contract_FPDS_new_column_max_length.txt"),len_check)
   
@@ -66,15 +67,15 @@ if(nrow(missing_column)>0){
 
 
 ##### From Stage 1 to Stage 2 ####### 
-if(!file.exists("sql\\ErrorLogging.FPDSbetaViolatesConstraint.table.sql")){
+if(!file.exists("sql\\ErrorLogging.FPDSstage2.table.sql")){
   write(Create_Constraint_List,
-        file="Output\\Starter_ErrorLogging_FPDSbetaViolatesConstraint.txt")
-  write(create_csis_dates("ErrorLogging","FPDSbetaViolatesConstraint"),"Output//CSISdates.txt")
+        file="Output\\Starter_ErrorLogging_FPDSstage2.txt")
+  write(create_csis_dates("ErrorLogging","FPDSstage2"),"Output//CSISdates.txt")
 } else{
 
   
 ##### From Stage 1 to Stage 2, Taking Advantage of Newly Added Columns in Contract.FPDS####### 
-  Stage2TableType.df<-read_create_table("ErrorLogging.FPDSbetaViolatesConstraint.Table.sql",
+  Stage2TableType.df<-read_create_table("ErrorLogging.FPDSstage2.Table.sql",
                                         dir="SQL")
   
   Merge1to2.df<-merge_source_and_csis_name_tables(Stage1TableType.df,Stage2TableType.df)
@@ -99,8 +100,8 @@ if(!file.exists("sql\\ErrorLogging.FPDSbetaViolatesConstraint.table.sql")){
     
     
     
-    write(file=file.path("Output","ErrorLogging_FPDSbetaViolatesConstraint_new_column_alter_table.txt"),
-          paste("ALTER TABLE Errorlogging.FPDSbetaViolatesConstraint\nADD",
+    write(file=file.path("Output","ErrorLogging_FPDSstage2_new_column_alter_table.txt"),
+          paste("ALTER TABLE Errorlogging.FPDSstage2\nADD",
                 paste(missing_in_stage2$SourceVariableName,
                       missing_in_stage2$SourceVariableType,
                       missing_in_stage2$SourceNullable,",\n",collapse=" ")))
@@ -110,9 +111,9 @@ if(!file.exists("sql\\ErrorLogging.FPDSbetaViolatesConstraint.table.sql")){
     len_check<-paste("SELECT \n",
                      paste("max(len(",missing_in_stage2$SourceVariableName[is.na(missing_in_stage2$CSISvariableName)],
                            ")) as ",missing_in_stage2$SourceVariableName[is.na(missing_in_stage2$CSISvariableName)],collapse=",\n"),
-                     "\nFROM ErrorLogging.FPDSbetaViolatesType",sep=""
+                     "\nFROM ErrorLogging.FPDSstage1",sep=""
     )
-    write(file=file.path("Output","ErrorLogging_FPDSbetaViolatesConstraint_new_column_max_length.txt"),len_check)
+    write(file=file.path("Output","ErrorLogging_FPDSstage2_new_column_max_length.txt"),len_check)
     
     missing_in_stage2<-missing_in_stage2 %>% select(-CSISvariableName ,-CSISvariableType,-CSISnullable)
     
@@ -124,7 +125,7 @@ if(!file.exists("sql\\ErrorLogging.FPDSbetaViolatesConstraint.table.sql")){
     
      
      # debug(length_check)
-      TryConvertListSingle<-create_try_converts(Merge1to2.df,"Errorlogging","FPDSbetaViolatesType",
+      TryConvertListSingle<-create_try_converts(Merge1to2.df,"Errorlogging","FPDSstage1",
                                           IncludeAlters=FALSE,
                                           Add_Colon_Split=FALSE,
                                           Apply_Drop=FALSE,
@@ -133,7 +134,7 @@ if(!file.exists("sql\\ErrorLogging.FPDSbetaViolatesConstraint.table.sql")){
       
       write(TryConvertListSingle,"Output\\FPDS_Stage1_Try_Convert_Single.txt")
       
-      TryConvertListMultiple<-create_try_converts(Merge1to2.df,"Errorlogging","FPDSbetaViolatesType",
+      TryConvertListMultiple<-create_try_converts(Merge1to2.df,"Errorlogging","FPDSstage1",
                                                 IncludeAlters=FALSE,
                                                 Add_Colon_Split=FALSE,
                                                 Apply_Drop=FALSE,
@@ -142,12 +143,12 @@ if(!file.exists("sql\\ErrorLogging.FPDSbetaViolatesConstraint.table.sql")){
       
       write(TryConvertListMultiple,"Output\\FPDS_Stage1_Try_Convert_Multiple.txt")
     
-    #Transfer from Errorlogging.FPDSbetaViolatesType to Errorlogging.FPDSbetaViolatesConstraint
+    #Transfer from Errorlogging.FPDSstage1 to Errorlogging.FPDSstage2
     InsertList<-create_insert(Merge1to2.df,
                               "ErrorLogging",
-                              "FPDSbetaViolatesType",
+                              "FPDSstage1",
                               "ErrorLogging",
-                              "FPDSbetaViolatesConstraint",
+                              "FPDSstage2",
                               DateType=120,
                               allow_missing=FALSE,
                               Apply_Drop=FALSE) #This should be redundant with the missing check above

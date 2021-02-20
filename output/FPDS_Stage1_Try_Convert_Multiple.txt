@@ -58,7 +58,11 @@ SELECT
 		nullif([highly_compensated_officer_5_amount],'') is not null,1,0)) as [highly_compensated_officer_5_amount]
 	,max(iif(Try_Convert([smallint], Try_Convert(real,nullif([action_date_fiscal_year],''))) is null and
 		nullif([action_date_fiscal_year],'') is not null,1,0)) as [action_date_fiscal_year]
-	FROM Errorlogging.FPDSbetaViolatesType
+	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([outlayed_amount_funded_by_COVID19_supplementals_for_overall_award],''))) is null and
+		nullif([outlayed_amount_funded_by_COVID19_supplementals_for_overall_award],'') is not null,1,0)) as [outlayed_amount_funded_by_COVID19_supplementals_for_overall_award]
+	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([obligated_amount_funded_by_COVID19_supplementals_for_overall_award],''))) is null and
+		nullif([obligated_amount_funded_by_COVID19_supplementals_for_overall_award],'') is not null,1,0)) as [obligated_amount_funded_by_COVID19_supplementals_for_overall_award]
+	FROM Errorlogging.FPDSstage1
 
 --Check across all bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.
 SELECT
@@ -243,7 +247,7 @@ FROM (SELECT
 	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([c8a_program_participant])) as [c8a_program_participant]
 	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([historically_underutilized_business_zone_hubzone_firm])) as [historically_underutilized_business_zone_hubzone_firm]
 	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([sba_certified_8a_joint_venture])) as [sba_certified_8a_joint_venture]
-	FROM Errorlogging.FPDSbetaViolatesType) as ml
+	FROM Errorlogging.FPDSstage1) as ml
 
 --Varchar to varchar group check. Note you have to remove an extraneous comma from the first item. 
 SELECT
@@ -336,15 +340,18 @@ SELECT
 ,iif([inherently_governmental_functions_description]>40,[inherently_governmental_functions_description],NULL) as [inherently_governmental_functions_description]
 ,iif([organizational_type]>30,[organizational_type],NULL) as [organizational_type]
 ,iif([foreign_funding_description]>25,[foreign_funding_description],NULL) as [foreign_funding_description]
-,iif([contract_transaction_unique_key]>66,[contract_transaction_unique_key],NULL) as [contract_transaction_unique_key]
-,iif([contract_award_unique_key]>66,[contract_award_unique_key],NULL) as [contract_award_unique_key]
+,iif([contract_transaction_unique_key]>74,[contract_transaction_unique_key],NULL) as [contract_transaction_unique_key]
+,iif([contract_award_unique_key]>74,[contract_award_unique_key],NULL) as [contract_award_unique_key]
 ,iif([federal_accounts_funding_this_award]>1000,[federal_accounts_funding_this_award],NULL) as [federal_accounts_funding_this_award]
 ,iif([highly_compensated_officer_1_name]>100,[highly_compensated_officer_1_name],NULL) as [highly_compensated_officer_1_name]
 ,iif([highly_compensated_officer_2_name]>100,[highly_compensated_officer_2_name],NULL) as [highly_compensated_officer_2_name]
 ,iif([highly_compensated_officer_3_name]>100,[highly_compensated_officer_3_name],NULL) as [highly_compensated_officer_3_name]
 ,iif([highly_compensated_officer_4_name]>100,[highly_compensated_officer_4_name],NULL) as [highly_compensated_officer_4_name]
 ,iif([highly_compensated_officer_5_name]>100,[highly_compensated_officer_5_name],NULL) as [highly_compensated_officer_5_name]
-,iif([usaspending_permalink]>150,[usaspending_permalink],NULL) as [usaspending_permalink] 
+,iif([usaspending_permalink]>150,[usaspending_permalink],NULL) as [usaspending_permalink]
+,iif([disaster_emergency_fund_codes_for_overall_award]>500,[disaster_emergency_fund_codes_for_overall_award],NULL) as [disaster_emergency_fund_codes_for_overall_award]
+,iif([object_classes_funding_this_award]>1000,[object_classes_funding_this_award],NULL) as [object_classes_funding_this_award]
+,iif([recipient_county_name]>25,[recipient_county_name],NULL) as [recipient_county_name] 
 FROM (SELECT
  	,max(len([award_id_piid])) as [award_id_piid]
 	,max(len([modification_number])) as [modification_number]
@@ -443,6 +450,9 @@ FROM (SELECT
 	,max(len([highly_compensated_officer_3_name])) as [highly_compensated_officer_3_name]
 	,max(len([highly_compensated_officer_4_name])) as [highly_compensated_officer_4_name]
 	,max(len([highly_compensated_officer_5_name])) as [highly_compensated_officer_5_name]
-	,max(len([usaspending_permalink])) as [usaspending_permalink] 
-	FROM  Errorlogging . FPDSbetaViolatesType ) as ml
+	,max(len([usaspending_permalink])) as [usaspending_permalink]
+	,max(len([disaster_emergency_fund_codes_for_overall_award])) as [disaster_emergency_fund_codes_for_overall_award]
+	,max(len([object_classes_funding_this_award])) as [object_classes_funding_this_award]
+	,max(len([recipient_county_name])) as [recipient_county_name] 
+	FROM  Errorlogging . FPDSstage1 ) as ml
 

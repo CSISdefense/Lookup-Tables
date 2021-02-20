@@ -252,8 +252,8 @@ CREATE TABLE [Contract].[FPDS](
 	[native_hawaiian_servicing_institution] [bit] NULL,
 	[sba_certified_8a_joint_venture] [bit] NULL,
 	[dot_certified_disadvantage] [bit] NULL,
-	[contract_transaction_unique_key] [varchar](66) NULL,
-	[contract_award_unique_key] [varchar](66) NULL,
+	[contract_transaction_unique_key] [varchar](74) NULL,
+	[contract_award_unique_key] [varchar](74) NULL,
 	[current_total_value_of_award] [decimal](19, 4) NULL,
 	[potential_total_value_of_award] [decimal](19, 4) NULL,
 	[award_or_idv_flag] [varchar](5) NULL,
@@ -263,7 +263,13 @@ CREATE TABLE [Contract].[FPDS](
 	[treasury_accounts_funding_this_award] [varchar](4000) NULL,
 	[federal_accounts_funding_this_award] [varchar](1000) NULL,
 	[usaspending_permalink] [varchar](150) NULL,
-	[awarding_agency_code] [smallint] NULL
+	[awarding_agency_code] [smallint] NULL,
+	[recipient_county_name] [varchar](25) NULL,
+	[disaster_emergency_fund_codes_for_overall_award] [varchar](500) NULL,
+	[object_classes_funding_this_award] [varchar](1000) NULL,
+	[program_activities_funding_this_award] [varchar](4000) NULL,
+	[obligated_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
+	[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Contract].[FPDS] ADD  CONSTRAINT [DF_FPDS_CSISCreatedDate]  DEFAULT (getdate()) FOR [CSISCreatedDate]

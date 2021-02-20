@@ -271,8 +271,8 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[annualrevenue] [decimal](19, 4) NULL,
 	[total_dollars_obligated] [decimal](19, 4) NULL,
 	[foreign_funding_description] [varchar](25) NULL,
-	[contract_transaction_unique_key] [varchar](66) NULL,
-	[contract_award_unique_key] [varchar](66) NULL,
+	[contract_transaction_unique_key] [varchar](74) NULL,
+	[contract_award_unique_key] [varchar](74) NULL,
 	[solicitation_date] [date] NULL,
 	[treasury_accounts_funding_this_award] [varchar](4000) NULL,
 	[federal_accounts_funding_this_award] [varchar](1000) NULL,
@@ -287,7 +287,13 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[prime_awardee_executive5] [varchar](100) NULL,
 	[prime_awardee_executive5_compensation] [decimal](19, 4) NULL,
 	[usaspending_permalink] [varchar](150) NULL,
-	[awarding_agency_code] [smallint] NULL
+	[awarding_agency_code] [smallint] NULL,
+	[recipient_county_name] [varchar](25) NULL,
+	[disaster_emergency_fund_codes_for_overall_award] [varchar](500) NULL,
+	[object_classes_funding_this_award] [varchar](1000) NULL,
+	[program_activities_funding_this_award] [varchar](4000) NULL,
+	[obligated_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
+	[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FPDSstage2] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__7193879D]  DEFAULT (getdate()) FOR [CSISmodifiedDate]

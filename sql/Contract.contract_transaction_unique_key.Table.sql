@@ -3,8 +3,8 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [Contract].[contract_transaction_unique_key](
-	[contract_transaction_unique_key] [varchar](66) NOT NULL,
-	[contract_award_unique_key] [varchar](66) NOT NULL,
+	[contract_transaction_unique_key] [varchar](74) NOT NULL,
+	[contract_award_unique_key] [varchar](74) NOT NULL,
 	[modification_number] [varchar](25) NOT NULL,
 	[parent_award_modification_number] [varchar](25) NULL,
 	[transaction_number] [bigint] NOT NULL,

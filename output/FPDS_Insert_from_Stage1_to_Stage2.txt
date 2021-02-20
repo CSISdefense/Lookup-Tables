@@ -1,4 +1,4 @@
-INSERT INTO ErrorLogging.FPDSbetaViolatesConstraint
+INSERT INTO ErrorLogging.FPDSstage2
 (
 [gfe_gfp_name],
 [research_name],
@@ -263,7 +263,6 @@ INSERT INTO ErrorLogging.FPDSbetaViolatesConstraint
 [annualrevenue],
 [total_dollars_obligated],
 [foreign_funding_description],
-[CSIStransactionID],
 [contract_transaction_unique_key],
 [contract_award_unique_key],
 [solicitation_date],
@@ -280,7 +279,13 @@ INSERT INTO ErrorLogging.FPDSbetaViolatesConstraint
 [prime_awardee_executive5],
 [prime_awardee_executive5_compensation],
 [usaspending_permalink],
-[Fiscal_Year]
+[Fiscal_Year],
+[disaster_emergency_fund_codes_for_overall_award],
+[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award],
+[obligated_amount_funded_by_COVID19_supplementals_for_overall_award],
+[object_classes_funding_this_award],
+[program_activities_funding_this_award],
+[recipient_county_name]
 )
  SELECT 
 [gfe_gfp],
@@ -546,9 +551,8 @@ Convert([bigint], Convert(real,nullif([number_of_employees],''))),
 Convert([decimal](19, 4), Convert(real,nullif([annual_revenues],''))),
 Convert([decimal](19, 4), Convert(real,nullif([total_dollars_obligated],''))),
 Convert([varchar](25), [foreign_funding_description]),
-[CSIStransactionID],
-Convert([varchar](66), [contract_transaction_unique_key]),
-Convert([varchar](66), [contract_award_unique_key]),
+Convert([varchar](74), [contract_transaction_unique_key]),
+Convert([varchar](74), [contract_award_unique_key]),
 Convert([date], nullif([solicitation_date],''),120),
 [treasury_accounts_funding_this_award],
 Convert([varchar](1000), [federal_accounts_funding_this_award]),
@@ -563,5 +567,11 @@ Convert([decimal](19, 4), Convert(real,nullif([highly_compensated_officer_4_amou
 Convert([varchar](100), [highly_compensated_officer_5_name]),
 Convert([decimal](19, 4), Convert(real,nullif([highly_compensated_officer_5_amount],''))),
 Convert([varchar](150), [usaspending_permalink]),
-Convert([smallint], Convert(real,nullif([action_date_fiscal_year],'')))
-FROM ErrorLogging.FPDSbetaViolatesType
+Convert([smallint], Convert(real,nullif([action_date_fiscal_year],''))),
+Convert([varchar](500), [disaster_emergency_fund_codes_for_overall_award]),
+Convert([decimal](19, 4), Convert(real,nullif([outlayed_amount_funded_by_COVID19_supplementals_for_overall_award],''))),
+Convert([decimal](19, 4), Convert(real,nullif([obligated_amount_funded_by_COVID19_supplementals_for_overall_award],''))),
+Convert([varchar](1000), [object_classes_funding_this_award]),
+[program_activities_funding_this_award],
+Convert([varchar](25), [recipient_county_name])
+FROM ErrorLogging.FPDSstage1
