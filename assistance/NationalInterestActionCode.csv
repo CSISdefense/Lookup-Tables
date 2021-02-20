@@ -1,6 +1,6 @@
-﻿NationalInterestActionCode,NationalInterestActionName,IsHurricane,CrisisFunding
+﻿NationalInterestActionCode,national_interest_action_code,IsHurricane,CrisisFunding
 ,NULL,NULL,NULL
-": ",,NULL,NULL
+: ,,NULL,NULL
 F081,MIDWEST STORMS AND FLOODING 2008,0,Disaster
 H05K,HURRICANE KATRINA 2005,1,Disaster
 H05O,HURRICANE OPHELIA 2005,1,Disaster
@@ -13,7 +13,7 @@ H08H,HURRICANE HANNA 2008,1,Disaster
 H08I,HURRICANE IKE 2008,1,Disaster
 H10E,HURRICANE EARL 2010,1,Disaster
 H11I,HURRICANE IRENE 2011,1,Disaster
-H12I,"HURRICANE ISAAC 2012 ",1,Disaster
+H12I,HURRICANE ISAAC 2012 ,1,Disaster
 H13S,HURRICANE SANDY 2013,1,Disaster
 H17H,Hurricane Harvey 2017,1,Disaster
 H17I,Hurricane Irma 2017,1,Disaster

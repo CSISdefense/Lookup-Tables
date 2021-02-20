@@ -117,6 +117,7 @@ NIAcrisisFunding,Crisis,,,,FALSE
 ContractCrisisFunding,Crisis,,,,FALSE
 contingencyhumanitarianpeacekeepingoperationText,Crisis,,,,FALSE
 nationalinterestactioncodeText,Crisis,,,,FALSE
+national_interest_action_name,Crisis,,,,FALSE
 NAICcrisisFunding,Crisis,,,,FALSE
 NIAlist,Crisis,,,,FALSE
 SAMexception.sum,Crisis,,,,FALSE
