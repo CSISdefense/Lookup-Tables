@@ -22,12 +22,17 @@ write(TryConvertList,"Output\\Stage2TryConvertList.txt")
 
 #Create Foreign Key Assignments
 # undebug(get_CSISvariableNameToPrimaryKey)
-debug(create_foreign_key_assigments)
+# debug(create_foreign_key_assigments)
+skip_list<-c("[contract_award_unique_key]",
+             "[CSIStransactionID]",
+             "[vendorcountrycode]") #Handled via chain insert manually written
+
 select_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                         "FPDSstage2",
                                         dir="sql",
                               suppress_alter = TRUE,
-                              suppress_insert = TRUE)
+                              suppress_insert = TRUE,
+                              skip_list = skip_list) 
 write(select_missing_code,
       file=file.path("Output","ErrorLogging_FPDSstage2_select_foreign_key.txt"), 
       append=FALSE)  
@@ -37,7 +42,8 @@ input_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                                      "FPDSstage2",
                                                      dir="sql",
                                                      suppress_select = TRUE,
-                                                    suppress_alter = TRUE)
+                                                    suppress_alter = TRUE,
+                                                    skip_list = skip_list)
 write(input_missing_code,
       file=file.path("Output","ErrorLogging_FPDSstage2_input_foreign_key.txt"),  
       append=FALSE) 

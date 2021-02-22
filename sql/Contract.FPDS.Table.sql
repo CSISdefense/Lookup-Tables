@@ -470,7 +470,7 @@ GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_multipleorsingleawardidc]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_nationalinterestactioncode] FOREIGN KEY([nationalinterestactioncode])
-REFERENCES [Assistance].[NationalInterestActionCode] ([nationalinterestactioncode])
+REFERENCES [Assistance].[NationalInterestActionCode] ([NationalInterestActionCode])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_nationalinterestactioncode]
 GO

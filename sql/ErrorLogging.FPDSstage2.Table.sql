@@ -185,7 +185,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[haobflag] [bit] NULL,
 	[naobflag] [bit] NULL,
 	[other_minority_owned_business] [bit] NULL,
-	[contracting_officers_determination_of_business_size_code_name] [varchar](255) NULL,
+	[ContractingOfficerBusinessSizeDeterminationText] [varchar](255) NULL,
 	[contractingofficerbusinesssizedetermination] [varchar](1) NULL,
 	[emergingsmallbusinessflag] [bit] NULL,
 	[community_developed_corporation_owned_firm] [bit] NULL,

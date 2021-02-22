@@ -5,7 +5,7 @@ GO
 CREATE TABLE [FPDSTypeTable].[TypeofBusinessDD350](
 	[TypeOfBusiness] [varchar](1) NOT NULL,
 	[TypeofBusinessText] [nvarchar](255) NULL,
-	[Contractingofficerbusinesssizedetermination] [varchar](1) NULL,
+	[contractingofficerbusinesssizedetermination] [varchar](1) NULL,
  CONSTRAINT [PK_TypeofBusinessDD350_TypeofBusiness] PRIMARY KEY CLUSTERED 
 (
 	[TypeOfBusiness] ASC

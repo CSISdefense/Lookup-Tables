@@ -215,8 +215,14 @@ UPDATE T SET
 [prime_awardee_executive5]=coalesce(nullif(S.[prime_awardee_executive5],''),T.[prime_awardee_executive5]),
 [prime_awardee_executive5_compensation]=coalesce(S.[prime_awardee_executive5_compensation],T.[prime_awardee_executive5_compensation]),
 [usaspending_permalink]=coalesce(nullif(S.[usaspending_permalink],''),T.[usaspending_permalink]),
-[awarding_agency_code]=coalesce(S.[awarding_agency_code],T.[awarding_agency_code])
+[awarding_agency_code]=coalesce(S.[awarding_agency_code],T.[awarding_agency_code]),
+[recipient_county_name]=coalesce(nullif(S.[recipient_county_name],''),T.[recipient_county_name]),
+[disaster_emergency_fund_codes_for_overall_award]=coalesce(nullif(S.[disaster_emergency_fund_codes_for_overall_award],''),T.[disaster_emergency_fund_codes_for_overall_award]),
+[object_classes_funding_this_award]=coalesce(nullif(S.[object_classes_funding_this_award],''),T.[object_classes_funding_this_award]),
+[program_activities_funding_this_award]=coalesce(nullif(S.[program_activities_funding_this_award],''),T.[program_activities_funding_this_award]),
+[obligated_amount_funded_by_COVID19_supplementals_for_overall_award]=coalesce(S.[obligated_amount_funded_by_COVID19_supplementals_for_overall_award],T.[obligated_amount_funded_by_COVID19_supplementals_for_overall_award]),
+[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award]=coalesce(S.[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award],T.[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award])
 FROM Contract.FPDS as T
-INNER Join ErrorLogging.FPDSbetaviolatesConstraint as S
+INNER Join ErrorLogging.FPDSstage2 as S
 ON s.CSIStransactionID=t.CSIStransactionID
 WHERE s.last_modified_date>=t.last_modified_date

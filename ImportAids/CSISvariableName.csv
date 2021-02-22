@@ -387,7 +387,7 @@
 [contingency_humanitarian_or_peacekeeping_operation_name],TRUE,[contingencyhumanitarianpeacekeepingoperation]
 [indian_tribe_federally_recognized],,
 [other_minority_owned_business],,
-[contractingofficerbusinesssizedetermination],TRUE,[contracting_officers_determination_of_business_size_code_name]
+[contractingofficerbusinesssizedetermination],TRUE,[ContractingOfficerBusinessSizeDeterminationText]
 [community_developed_corporation_owned_firm],,
 [labor_surplus_area_firm],,
 [city_local_government],,
@@ -404,7 +404,7 @@
 [native_hawaiian_servicing_institution],,
 [dot_certified_disadvantage],,
 [sba_certified_8a_joint_venture],,
-[contracting_officers_determination_of_business_size_code_name],TRUE,[contractingofficerbusinesssizedetermination]
+[ContractingOfficerBusinessSizeDeterminationText],TRUE,[contractingofficerbusinesssizedetermination]
 [CSIStransactionID],,
 [CSISstage2id],TRUE,
 [DepartmentID],,

@@ -180,7 +180,7 @@ INSERT INTO ErrorLogging.FPDSstage2
 [haobflag],
 [naobflag],
 [other_minority_owned_business],
-[contracting_officers_determination_of_business_size_code_name],
+[ContractingOfficerBusinessSizeDeterminationText],
 [contractingofficerbusinesssizedetermination],
 [emergingsmallbusinessflag],
 [community_developed_corporation_owned_firm],

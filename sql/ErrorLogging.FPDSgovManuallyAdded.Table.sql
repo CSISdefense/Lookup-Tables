@@ -390,7 +390,7 @@ GO
 ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded] CHECK CONSTRAINT [fk_FPDSgovManuallyAdded_multipleorsingleawardidc]
 GO
 ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded]  WITH NOCHECK ADD  CONSTRAINT [fk_FPDSgovManuallyAdded_nationalinterestactioncode] FOREIGN KEY([nationalinterestactioncode])
-REFERENCES [Assistance].[NationalInterestActionCode] ([nationalinterestactioncode])
+REFERENCES [Assistance].[NationalInterestActionCode] ([NationalInterestActionCode])
 GO
 ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded] CHECK CONSTRAINT [fk_FPDSgovManuallyAdded_nationalinterestactioncode]
 GO

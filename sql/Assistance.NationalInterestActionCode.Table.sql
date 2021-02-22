@@ -3,13 +3,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [Assistance].[NationalInterestActionCode](
-	[nationalinterestactioncode] [varchar](4) NOT NULL,
-	[nationalinterestactioncodeText] [nvarchar](255) NULL,
+	[NationalInterestActionCode] [varchar](4) NOT NULL,
+	[national_interest_action_name] [nvarchar](255) NULL,
 	[IsHurricane] [bit] NULL,
 	[CrisisFunding] [varchar](10) NULL,
  CONSTRAINT [PK_nationalinterestactioncode NO PK] PRIMARY KEY CLUSTERED 
 (
-	[nationalinterestactioncode] ASC
+	[NationalInterestActionCode] ASC
 )WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO

@@ -151,6 +151,7 @@
 [emergingsmallbusinessflag]
 [hospitalflag]
 [contractingofficerbusinesssizedetermination]
+[ContractingOfficerBusinessSizeDeterminationText]
 [is1862landgrantcollege]
 [is1890landgrantcollege]
 [is1994landgrantcollege]

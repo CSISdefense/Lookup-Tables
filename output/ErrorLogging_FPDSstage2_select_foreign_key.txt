@@ -1,5 +1,3 @@
-
-
 --List new [idvagencyid] and updated parent_award_agency_name for insertion into FPDSTypeTable.AgencyID
 SELECT fk.[idvagencyid],
 max(iif(fk.parent_award_agency_name=pk.AgencyIDtext or
@@ -16,7 +14,7 @@ max(iif(fk.parent_award_agency_name=pk.AgencyIDtext or
 	charindex('('+fk.parent_award_agency_name+')',pk.AgencyIDtext )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.AgencyID' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
 On pk.AgencyID=fk.[idvagencyid]
 GROUP BY fk.[idvagencyid], pk.AgencyIDtext
@@ -43,7 +41,7 @@ max(iif(fk.awarding_sub_agency_name=pk.AgencyIDtext or
 	charindex('('+fk.awarding_sub_agency_name+')',pk.AgencyIDtext )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.AgencyID' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
 On pk.AgencyID=fk.[contractingofficeagencyid]
 GROUP BY fk.[contractingofficeagencyid], pk.AgencyIDtext
@@ -70,7 +68,7 @@ max(iif(fk.funding_agency_name=pk.AgencyIDtext or
 	charindex('('+fk.funding_agency_name+')',pk.AgencyIDtext )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.AgencyID' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
 On pk.AgencyID=fk.[maj_fund_agency_cat]
 GROUP BY fk.[maj_fund_agency_cat], pk.AgencyIDtext
@@ -97,7 +95,7 @@ max(iif(fk.funding_sub_agency_name=pk.AgencyIDtext or
 	charindex('('+fk.funding_sub_agency_name+')',pk.AgencyIDtext )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.AgencyID' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
 On pk.AgencyID=fk.[fundingrequestingagencyid]
 GROUP BY fk.[fundingrequestingagencyid], pk.AgencyIDtext
@@ -124,7 +122,7 @@ max(iif(fk.funding_office_name=pk.ContractingOfficeName or
 	charindex('('+fk.funding_office_name+')',pk.ContractingOfficeName )>0,
 	1,0)) as any_name_match,
 'Office.ContractingOfficeCode' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN Office.ContractingOfficeCode as pk
 On pk.ContractingOfficeCode=fk.[fundingrequestingofficeid]
 GROUP BY fk.[fundingrequestingofficeid], pk.ContractingOfficeName
@@ -138,23 +136,12 @@ ORDER BY fk.[fundingrequestingofficeid]
 --List new [vendordoingasbusinessname] for insertion into Vendor.VendorName
 SELECT fk.[vendordoingasbusinessname],
 'Vendor.VendorName' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN Vendor.VendorName as pk
 On pk.vendorname=fk.[vendordoingasbusinessname]
 WHERE pk.vendorname is NULL
 GROUP BY fk.[vendordoingasbusinessname]
 ORDER BY fk.[vendordoingasbusinessname]
-
-
---List new [vendorcountrycode] for insertion into FPDSTypeTable.vendorcountrycode
-SELECT fk.[vendorcountrycode],
-'FPDSTypeTable.vendorcountrycode' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
-LEFT OUTER JOIN FPDSTypeTable.vendorcountrycode as pk
-On pk.vendorcountrycode=fk.[vendorcountrycode]
-WHERE pk.vendorcountrycode is NULL
-GROUP BY fk.[vendorcountrycode]
-ORDER BY fk.[vendorcountrycode]
 
 
 --List new [placeofperformancecountrycode] and updated primary_place_of_performance_country_name for insertion into FPDSTypeTable.Country3LetterCode
@@ -173,7 +160,7 @@ max(iif(fk.primary_place_of_performance_country_name=pk.Country3LetterCodeText o
 	charindex('('+fk.primary_place_of_performance_country_name+')',pk.Country3LetterCodeText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.Country3LetterCode' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
 On pk.Country3LetterCode=fk.[placeofperformancecountrycode]
 GROUP BY fk.[placeofperformancecountrycode], pk.Country3LetterCodeText
@@ -200,7 +187,7 @@ max(iif(fk.primary_place_of_performance_state_name=pk.statecodeText or
 	charindex('('+fk.primary_place_of_performance_state_name+')',pk.statecodeText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.statecode' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.statecode as pk
 On pk.statecode=fk.[pop_state_code]
 GROUP BY fk.[pop_state_code], pk.statecodeText
@@ -227,7 +214,7 @@ max(iif(fk.award_type_name=pk.award_type_name or
 	charindex('('+fk.award_type_name+')',pk.award_type_name )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.award_type_code' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.award_type_code as pk
 On pk.award_type_code=fk.[award_type_code]
 GROUP BY fk.[award_type_code], pk.award_type_name
@@ -254,7 +241,7 @@ max(iif(fk.idv_type_name=pk.idv_type_name or
 	charindex('('+fk.idv_type_name+')',pk.idv_type_name )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.idv_type_code' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
 On pk.idv_type_code=fk.[idv_type_code]
 GROUP BY fk.[idv_type_code], pk.idv_type_name
@@ -281,7 +268,7 @@ max(iif(fk.type_of_contract_pricing_name=pk.TypeOfContractPricingText or
 	charindex('('+fk.type_of_contract_pricing_name+')',pk.TypeOfContractPricingText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.typeofcontractpricing' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.typeofcontractpricing as pk
 On pk.TypeOfContractPricing=fk.[typeofcontractpricing]
 GROUP BY fk.[typeofcontractpricing], pk.TypeOfContractPricingText
@@ -308,7 +295,7 @@ max(iif(fk.action_type_name=pk.reasonformodificationText or
 	charindex('('+fk.action_type_name+')',pk.reasonformodificationText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.reasonformodification' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.reasonformodification as pk
 On pk.reasonformodification=fk.[reasonformodification]
 GROUP BY fk.[reasonformodification], pk.reasonformodificationText
@@ -335,7 +322,7 @@ max(iif(fk.product_or_service_code_description=pk.ProductOrServiceCodeText or
 	charindex('('+fk.product_or_service_code_description+')',pk.ProductOrServiceCodeText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.ProductOrServiceCode' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.ProductOrServiceCode as pk
 On pk.ProductOrServiceCode=fk.[productorservicecode]
 GROUP BY fk.[productorservicecode], pk.ProductOrServiceCodeText
@@ -362,7 +349,7 @@ max(iif(fk.contract_bundling_name=pk.contractbundlingText or
 	charindex('('+fk.contract_bundling_name+')',pk.contractbundlingText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.contractbundling' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.contractbundling as pk
 On pk.contractbundling=fk.[contractbundling]
 GROUP BY fk.[contractbundling], pk.contractbundlingText
@@ -389,7 +376,7 @@ max(iif(fk.dod_claimant_program_description=pk.ClaimantProgramCodeText or
 	charindex('('+fk.dod_claimant_program_description+')',pk.ClaimantProgramCodeText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.ClaimantProgramCode' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.ClaimantProgramCode as pk
 On pk.ClaimantProgramCode=fk.[claimantprogramcode]
 GROUP BY fk.[claimantprogramcode], pk.ClaimantProgramCodeText
@@ -416,7 +403,7 @@ max(iif(fk.naics_description=pk.principalnaicscodeText or
 	charindex('('+fk.naics_description+')',pk.principalnaicscodeText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.PrincipalNaicsCode' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.PrincipalNaicsCode as pk
 On pk.principalnaicscode=fk.[principalnaicscode]
 GROUP BY fk.[principalnaicscode], pk.principalnaicscodeText
@@ -443,7 +430,7 @@ max(iif(fk.recovered_materials_sustainability_name=pk.recoveredmaterialclausesTe
 	charindex('('+fk.recovered_materials_sustainability_name+')',pk.recoveredmaterialclausesText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.recoveredmaterialclauses' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.recoveredmaterialclauses as pk
 On pk.recoveredmaterialclauses=fk.[recoveredmaterialclauses]
 GROUP BY fk.[recoveredmaterialclauses], pk.recoveredmaterialclausesText
@@ -470,7 +457,7 @@ max(iif(fk.domestic_or_foreign_entity_name=pk.manufacturingorganizationtypeText 
 	charindex('('+fk.domestic_or_foreign_entity_name+')',pk.manufacturingorganizationtypeText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.manufacturingorganizationtype' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.manufacturingorganizationtype as pk
 On pk.manufacturingorganizationtype=fk.[manufacturingorganizationtype]
 GROUP BY fk.[manufacturingorganizationtype], pk.manufacturingorganizationtypeText
@@ -497,7 +484,7 @@ max(iif(fk.epa_designated_product_name=pk.useofepadesignatedproductsText or
 	charindex('('+fk.epa_designated_product_name+')',pk.useofepadesignatedproductsText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.useofepadesignatedproducts' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.useofepadesignatedproducts as pk
 On pk.useofepadesignatedproducts=fk.[useofepadesignatedproducts]
 GROUP BY fk.[useofepadesignatedproducts], pk.useofepadesignatedproductsText
@@ -524,7 +511,7 @@ max(iif(fk.country_of_product_or_service_origin_name=pk.Country3LetterCodeText o
 	charindex('('+fk.country_of_product_or_service_origin_name+')',pk.Country3LetterCodeText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.Country3LetterCode' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
 On pk.Country3LetterCode=fk.[countryoforigin]
 GROUP BY fk.[countryoforigin], pk.Country3LetterCodeText
@@ -551,7 +538,7 @@ max(iif(fk.place_of_manufacture_name=pk.PlaceOfManufactureText or
 	charindex('('+fk.place_of_manufacture_name+')',pk.PlaceOfManufactureText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.PlaceOfManufacture' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.PlaceOfManufacture as pk
 On pk.PlaceOfManufacture=fk.[placeofmanufacture]
 GROUP BY fk.[placeofmanufacture], pk.PlaceOfManufactureText
@@ -578,7 +565,7 @@ max(iif(fk.subcontracting_plan_name=pk.subcontractplanText or
 	charindex('('+fk.subcontracting_plan_name+')',pk.subcontractplanText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.subcontractplan' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.subcontractplan as pk
 On pk.subcontractplan=fk.[subcontractplan]
 GROUP BY fk.[subcontractplan], pk.subcontractplanText
@@ -605,7 +592,7 @@ max(iif(fk.solicitation_procedures_name=pk.solicitationproceduresText or
 	charindex('('+fk.solicitation_procedures_name+')',pk.solicitationproceduresText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.solicitationprocedures' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.solicitationprocedures as pk
 On pk.solicitationprocedures=fk.[solicitationprocedures]
 GROUP BY fk.[solicitationprocedures], pk.solicitationproceduresText
@@ -632,7 +619,7 @@ max(iif(fk.type_of_set_aside_name=pk.typeofsetasideText or
 	charindex('('+fk.type_of_set_aside_name+')',pk.typeofsetasideText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.typeofsetaside' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.typeofsetaside as pk
 On pk.typeofsetaside=fk.[typeofsetaside]
 GROUP BY fk.[typeofsetaside], pk.typeofsetasideText
@@ -659,7 +646,7 @@ max(iif(fk.evaluated_preference_name=pk.evaluatedpreferenceText or
 	charindex('('+fk.evaluated_preference_name+')',pk.evaluatedpreferenceText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.evaluatedpreference' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.evaluatedpreference as pk
 On pk.evaluatedpreference=fk.[evaluatedpreference]
 GROUP BY fk.[evaluatedpreference], pk.evaluatedpreferenceText
@@ -686,7 +673,7 @@ max(iif(fk.other_than_full_and_open_competition_name=pk.reasonnotcompetedText or
 	charindex('('+fk.other_than_full_and_open_competition_name+')',pk.reasonnotcompetedText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.reasonnotcompeted' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.reasonnotcompeted as pk
 On pk.reasonnotcompeted=fk.[reasonnotcompeted]
 GROUP BY fk.[reasonnotcompeted], pk.reasonnotcompetedText
@@ -713,7 +700,7 @@ max(iif(fk.commercial_item_acquisition_procedures_name=pk.CommercialItemAcquisit
 	charindex('('+fk.commercial_item_acquisition_procedures_name+')',pk.CommercialItemAcquisitionProceduresText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.CommercialItemAcquisitionProcedures' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.CommercialItemAcquisitionProcedures as pk
 On pk.CommercialItemAcquisitionProcedures=fk.[commercialitemacquisitionprocedures]
 GROUP BY fk.[commercialitemacquisitionprocedures], pk.CommercialItemAcquisitionProceduresText
@@ -740,7 +727,7 @@ max(iif(fk.walsh_healey_act_name=pk.walshhealyactText or
 	charindex('('+fk.walsh_healey_act_name+')',pk.walshhealyactText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.walshhealyact' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.walshhealyact as pk
 On pk.walshhealyact=fk.[walshhealyact]
 GROUP BY fk.[walshhealyact], pk.walshhealyactText
@@ -767,7 +754,7 @@ max(iif(fk.service_contract_act_name=pk.servicecontractactText or
 	charindex('('+fk.service_contract_act_name+')',pk.servicecontractactText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.servicecontractact' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.servicecontractact as pk
 On pk.servicecontractact=fk.[servicecontractact]
 GROUP BY fk.[servicecontractact], pk.servicecontractactText
@@ -794,7 +781,7 @@ max(iif(fk.davis_bacon_act_name=pk.davisbaconactText or
 	charindex('('+fk.davis_bacon_act_name+')',pk.davisbaconactText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.davisbaconact' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.davisbaconact as pk
 On pk.davisbaconact=fk.[davisbaconact]
 GROUP BY fk.[davisbaconact], pk.davisbaconactText
@@ -821,7 +808,7 @@ max(iif(fk.interagency_contracting_authority_name=pk.interagencycontractingautho
 	charindex('('+fk.interagency_contracting_authority_name+')',pk.interagencycontractingauthorityText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.interagencycontractingauthority' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.interagencycontractingauthority as pk
 On pk.interagencycontractingauthority=fk.[interagencycontractingauthority]
 GROUP BY fk.[interagencycontractingauthority], pk.interagencycontractingauthorityText
@@ -848,7 +835,7 @@ max(iif(fk.parent_award_type_name=pk.idv_type_name or
 	charindex('('+fk.parent_award_type_name+')',pk.idv_type_name )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.idv_type_code' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
 On pk.idv_type_code=fk.[parent_award_type_code]
 GROUP BY fk.[parent_award_type_code], pk.idv_type_name
@@ -862,7 +849,7 @@ ORDER BY fk.[parent_award_type_code]
 --List new [majorprogramcode] for insertion into Contract.MajorProgramCode
 SELECT fk.[majorprogramcode],
 'Contract.MajorProgramCode' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN Contract.MajorProgramCode as pk
 On pk.majorprogramcode=fk.[majorprogramcode]
 WHERE pk.majorprogramcode is NULL
@@ -872,27 +859,27 @@ ORDER BY fk.[majorprogramcode]
 
 --List new [nationalinterestactioncode] and updated national_interest_action_name for insertion into Assistance.NationalInterestActionCode
 SELECT fk.[nationalinterestactioncode],
-max(iif(fk.national_interest_action_name=pk.nationalinterestactioncodeText or
+max(iif(fk.national_interest_action_name=pk.National_Interest_Action_Name or
 	fk.national_interest_action_name='' or
-	charindex('('+fk.national_interest_action_name+')',pk.nationalinterestactioncodeText )>0,
+	charindex('('+fk.national_interest_action_name+')',pk.National_Interest_Action_Name )>0,
 	NULL,fk.national_interest_action_name)) as MaxOfNewFKnational_interest_action_name,
-count(distinct iif(fk.national_interest_action_name=pk.nationalinterestactioncodeText or
+count(distinct iif(fk.national_interest_action_name=pk.National_Interest_Action_Name or
 	fk.national_interest_action_name='' or
-	charindex('('+fk.national_interest_action_name+')',pk.nationalinterestactioncodeText )>0,
+	charindex('('+fk.national_interest_action_name+')',pk.National_Interest_Action_Name )>0,
 	NULL,fk.national_interest_action_name)) as unmatched_name_count,
-pk.nationalinterestactioncodeText as PKnationalinterestactioncodeText,
-max(iif(fk.national_interest_action_name=pk.nationalinterestactioncodeText or
+pk.National_Interest_Action_Name as PKNational_Interest_Action_Name,
+max(iif(fk.national_interest_action_name=pk.National_Interest_Action_Name or
 	fk.national_interest_action_name='' or
-	charindex('('+fk.national_interest_action_name+')',pk.nationalinterestactioncodeText )>0,
+	charindex('('+fk.national_interest_action_name+')',pk.National_Interest_Action_Name )>0,
 	1,0)) as any_name_match,
 'Assistance.NationalInterestActionCode' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN Assistance.NationalInterestActionCode as pk
-On pk.nationalinterestactioncode=fk.[nationalinterestactioncode]
-GROUP BY fk.[nationalinterestactioncode], pk.nationalinterestactioncodeText
-HAVING max(iif(fk.national_interest_action_name=pk.nationalinterestactioncodeText or
+On pk.NationalInterestActionCode=fk.[nationalinterestactioncode]
+GROUP BY fk.[nationalinterestactioncode], pk.National_Interest_Action_Name
+HAVING max(iif(fk.national_interest_action_name=pk.National_Interest_Action_Name or
 	fk.national_interest_action_name='' or
-	charindex('('+fk.national_interest_action_name+')',pk.nationalinterestactioncodeText )>0,
+	charindex('('+fk.national_interest_action_name+')',pk.National_Interest_Action_Name )>0,
 	0,1))=1
 ORDER BY fk.[nationalinterestactioncode]
 
@@ -913,7 +900,7 @@ max(iif(fk.cost_or_pricing_data_name=pk.costorpricingdataText or
 	charindex('('+fk.cost_or_pricing_data_name+')',pk.costorpricingdataText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.costorpricingdata' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.costorpricingdata as pk
 On pk.costorpricingdata=fk.[costorpricingdata]
 GROUP BY fk.[costorpricingdata], pk.costorpricingdataText
@@ -940,7 +927,7 @@ max(iif(fk.gfe_gfp_name=pk.gfe_gfpText or
 	charindex('('+fk.gfe_gfp_name+')',pk.gfe_gfpText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.gfe_gfp' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.gfe_gfp as pk
 On pk.gfe_gfp=fk.[gfe_gfp_code]
 GROUP BY fk.[gfe_gfp_code], pk.gfe_gfpText
@@ -967,7 +954,7 @@ max(iif(fk.sea_transportation_name=pk.seatransportationText or
 	charindex('('+fk.sea_transportation_name+')',pk.seatransportationText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.seatransportation' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.seatransportation as pk
 On pk.seatransportation=fk.[seatransportation]
 GROUP BY fk.[seatransportation], pk.seatransportationText
@@ -994,7 +981,7 @@ max(iif(fk.undefinitized_action_name=pk.UndefinitizedActionText or
 	charindex('('+fk.undefinitized_action_name+')',pk.UndefinitizedActionText )>0,
 	1,0)) as any_name_match,
 'FPDSTypeTable.lettercontract' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN FPDSTypeTable.lettercontract as pk
 On pk.LetterContract=fk.[lettercontract]
 GROUP BY fk.[lettercontract], pk.UndefinitizedActionText
@@ -1021,7 +1008,7 @@ max(iif(fk.contingency_humanitarian_or_peacekeeping_operation_name=pk.contingenc
 	charindex('('+fk.contingency_humanitarian_or_peacekeeping_operation_name+')',pk.contingencyhumanitarianpeacekeepingoperationText )>0,
 	1,0)) as any_name_match,
 'Assistance.ContingencyHumanitarianPeacekeepingOperation' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN Assistance.ContingencyHumanitarianPeacekeepingOperation as pk
 On pk.ContingencyHumanitarianPeacekeepingOperation=fk.[contingencyhumanitarianpeacekeepingoperation]
 GROUP BY fk.[contingencyhumanitarianpeacekeepingoperation], pk.contingencyhumanitarianpeacekeepingoperationText
@@ -1032,15 +1019,31 @@ HAVING max(iif(fk.contingency_humanitarian_or_peacekeeping_operation_name=pk.con
 ORDER BY fk.[contingencyhumanitarianpeacekeepingoperation]
 
 
---List new [CSIStransactionID] for insertion into Contract.CSIStransactionID
-SELECT fk.[CSIStransactionID],
-'Contract.CSIStransactionID' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
-LEFT OUTER JOIN Contract.CSIStransactionID as pk
-On pk.CSIStransactionID=fk.[CSIStransactionID]
-WHERE pk.CSIStransactionID is NULL
-GROUP BY fk.[CSIStransactionID]
-ORDER BY fk.[CSIStransactionID]
+--List new [contractingofficerbusinesssizedetermination] and updated ContractingOfficerBusinessSizeDeterminationText for insertion into FPDSTypeTable.contractingofficerbusinesssizedetermination
+SELECT fk.[contractingofficerbusinesssizedetermination],
+max(iif(fk.ContractingOfficerBusinessSizeDeterminationText=pk.ContractingOfficerBusinessSizeDeterminationText or
+	fk.ContractingOfficerBusinessSizeDeterminationText='' or
+	charindex('('+fk.ContractingOfficerBusinessSizeDeterminationText+')',pk.ContractingOfficerBusinessSizeDeterminationText )>0,
+	NULL,fk.ContractingOfficerBusinessSizeDeterminationText)) as MaxOfNewFKContractingOfficerBusinessSizeDeterminationText,
+count(distinct iif(fk.ContractingOfficerBusinessSizeDeterminationText=pk.ContractingOfficerBusinessSizeDeterminationText or
+	fk.ContractingOfficerBusinessSizeDeterminationText='' or
+	charindex('('+fk.ContractingOfficerBusinessSizeDeterminationText+')',pk.ContractingOfficerBusinessSizeDeterminationText )>0,
+	NULL,fk.ContractingOfficerBusinessSizeDeterminationText)) as unmatched_name_count,
+pk.ContractingOfficerBusinessSizeDeterminationText as PKContractingOfficerBusinessSizeDeterminationText,
+max(iif(fk.ContractingOfficerBusinessSizeDeterminationText=pk.ContractingOfficerBusinessSizeDeterminationText or
+	fk.ContractingOfficerBusinessSizeDeterminationText='' or
+	charindex('('+fk.ContractingOfficerBusinessSizeDeterminationText+')',pk.ContractingOfficerBusinessSizeDeterminationText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.contractingofficerbusinesssizedetermination' as PrimaryKeyTable
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.contractingofficerbusinesssizedetermination as pk
+On pk.contractingofficerbusinesssizedetermination=fk.[contractingofficerbusinesssizedetermination]
+GROUP BY fk.[contractingofficerbusinesssizedetermination], pk.ContractingOfficerBusinessSizeDeterminationText
+HAVING max(iif(fk.ContractingOfficerBusinessSizeDeterminationText=pk.ContractingOfficerBusinessSizeDeterminationText or
+	fk.ContractingOfficerBusinessSizeDeterminationText='' or
+	charindex('('+fk.ContractingOfficerBusinessSizeDeterminationText+')',pk.ContractingOfficerBusinessSizeDeterminationText )>0,
+	0,1))=1
+ORDER BY fk.[contractingofficerbusinesssizedetermination]
 
 
 --List new [awarding_agency_code] and updated awarding_agency_name for insertion into agency.awarding_agency_code
@@ -1059,7 +1062,7 @@ max(iif(fk.awarding_agency_name=pk.awarding_agency_name or
 	charindex('('+fk.awarding_agency_name+')',pk.awarding_agency_name )>0,
 	1,0)) as any_name_match,
 'agency.awarding_agency_code' as PrimaryKeyTable
-FROM ErrorLogging.FPDSbetaViolatesConstraint as fk
+FROM ErrorLogging.FPDSstage2 as fk
 LEFT OUTER JOIN agency.awarding_agency_code as pk
 On pk.awarding_agency_code=fk.[awarding_agency_code]
 GROUP BY fk.[awarding_agency_code], pk.awarding_agency_name
@@ -1068,4 +1071,5 @@ HAVING max(iif(fk.awarding_agency_name=pk.awarding_agency_name or
 	charindex('('+fk.awarding_agency_name+')',pk.awarding_agency_name )>0,
 	0,1))=1
 ORDER BY fk.[awarding_agency_code]
+
 
