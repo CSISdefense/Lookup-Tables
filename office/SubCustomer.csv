@@ -2,6 +2,7 @@ Customer,SubCustomer,SubCustomer.sum,SubCustomer.detail,SubCustomer.platform,Sub
 Defense,Air Force,Air Force,Air Force,Air Force,Air Force,Air Force,FALSE
 Defense,Army,Army,Army,Army,Army,Army,FALSE
 Defense,DLA,Other DoD,DLA,DLA,DLA,DLA,FALSE
+Defense,DISA,Other DoD,Other DoD,Other DoD,Other DoD,Other DoD,FALSE
 Defense,MDA,Other DoD,Other DoD,MDA,MDA,MDA,FALSE
 Defense,MilitaryHealth,Other DoD,Other DoD,Other DoD,Other DoD,MilitaryHealth,FALSE
 Defense,Navy,Navy,Navy,Navy,Navy,Navy,FALSE
