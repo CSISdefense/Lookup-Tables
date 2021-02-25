@@ -181,7 +181,7 @@ sum(iif([baobflag] is null,1,0)) as [baobflag],
 sum(iif([haobflag] is null,1,0)) as [haobflag],
 sum(iif([naobflag] is null,1,0)) as [naobflag],
 sum(iif([other_minority_owned_business] is null,1,0)) as [other_minority_owned_business],
-sum(iif(nullif([contracting_officers_determination_of_business_size_code_name],'') is null,1,0)) as [contracting_officers_determination_of_business_size_code_name],
+sum(iif(nullif([ContractingOfficerBusinessSizeDeterminationText],'') is null,1,0)) as [ContractingOfficerBusinessSizeDeterminationText],
 sum(iif(nullif([contractingofficerbusinesssizedetermination],'') is null,1,0)) as [contractingofficerbusinesssizedetermination],
 sum(iif([emergingsmallbusinessflag] is null,1,0)) as [emergingsmallbusinessflag],
 sum(iif([community_developed_corporation_owned_firm] is null,1,0)) as [community_developed_corporation_owned_firm],
@@ -283,6 +283,12 @@ sum(iif([prime_awardee_executive4_compensation] is null,1,0)) as [prime_awardee_
 sum(iif(nullif([prime_awardee_executive5],'') is null,1,0)) as [prime_awardee_executive5],
 sum(iif([prime_awardee_executive5_compensation] is null,1,0)) as [prime_awardee_executive5_compensation],
 sum(iif(nullif([usaspending_permalink],'') is null,1,0)) as [usaspending_permalink],
-sum(iif([awarding_agency_code] is null,1,0)) as [awarding_agency_code]
-FROM ErrorLogging.FPDSbetaviolatesConstraint
+sum(iif([awarding_agency_code] is null,1,0)) as [awarding_agency_code],
+sum(iif(nullif([recipient_county_name],'') is null,1,0)) as [recipient_county_name],
+sum(iif(nullif([disaster_emergency_fund_codes_for_overall_award],'') is null,1,0)) as [disaster_emergency_fund_codes_for_overall_award],
+sum(iif(nullif([object_classes_funding_this_award],'') is null,1,0)) as [object_classes_funding_this_award],
+sum(iif(nullif([program_activities_funding_this_award],'') is null,1,0)) as [program_activities_funding_this_award],
+sum(iif([obligated_amount_funded_by_COVID19_supplementals_for_overall_award] is null,1,0)) as [obligated_amount_funded_by_COVID19_supplementals_for_overall_award],
+sum(iif([outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] is null,1,0)) as [outlayed_amount_funded_by_COVID19_supplementals_for_overall_award]
+FROM ErrorLogging.FPDSstage2
 

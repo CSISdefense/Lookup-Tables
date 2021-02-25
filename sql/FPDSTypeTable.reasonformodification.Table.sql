@@ -15,10 +15,11 @@ CREATE TABLE [FPDSTypeTable].[reasonformodification](
 	[isDefaultOrCause] [bit] NULL,
 	[isOther] [bit] NULL,
 	[isAdmin] [bit] NULL,
+	[IsDefinitize] [bit] NOT NULL,
  CONSTRAINT [reasonformodification_key] PRIMARY KEY CLUSTERED 
 (
 	[reasonformodification] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [FPDSTypeTable].[reasonformodification] ADD  CONSTRAINT [DF__reasonfor__isClo__7C5041DB]  DEFAULT ((0)) FOR [isClosed]
@@ -30,4 +31,6 @@ GO
 ALTER TABLE [FPDSTypeTable].[reasonformodification] ADD  CONSTRAINT [DF__reasonfor__isNew__7F2CAE86]  DEFAULT ((0)) FOR [isNewWork]
 GO
 ALTER TABLE [FPDSTypeTable].[reasonformodification] ADD  DEFAULT ((0)) FOR [isDefaultOrCause]
+GO
+ALTER TABLE [FPDSTypeTable].[reasonformodification] ADD  DEFAULT ((0)) FOR [IsDefinitize]
 GO

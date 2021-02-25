@@ -1,51 +1,51 @@
 SELECT DISTINCT [signeddate],
 len([signeddate]) as Length,
 '[date]' as DestinationType
-FROM Errorlogging.FPDSbetaviolatesConstraint
+FROM Errorlogging.FPDSstage2
 WHERE (Try_Convert([date], nullif([signeddate],''),101) IS NULL AND
 NULLIF([signeddate],'') IS NOT NULL)
 
-ALTER TABLE Errorlogging.FPDSbetaviolatesConstraint
+ALTER TABLE Errorlogging.FPDSstage2
 ALTER COLUMN [signeddate] [date]
 
 SELECT DISTINCT [effectivedate],
 len([effectivedate]) as Length,
 '[date]' as DestinationType
-FROM Errorlogging.FPDSbetaviolatesConstraint
+FROM Errorlogging.FPDSstage2
 WHERE (Try_Convert([date], nullif([effectivedate],''),101) IS NULL AND
 NULLIF([effectivedate],'') IS NOT NULL)
 
-ALTER TABLE Errorlogging.FPDSbetaviolatesConstraint
+ALTER TABLE Errorlogging.FPDSstage2
 ALTER COLUMN [effectivedate] [date]
 
 SELECT DISTINCT [lastdatetoorder],
 len([lastdatetoorder]) as Length,
 '[date]' as DestinationType
-FROM Errorlogging.FPDSbetaviolatesConstraint
+FROM Errorlogging.FPDSstage2
 WHERE (Try_Convert([date], nullif([lastdatetoorder],''),101) IS NULL AND
 NULLIF([lastdatetoorder],'') IS NOT NULL)
 
-ALTER TABLE Errorlogging.FPDSbetaviolatesConstraint
+ALTER TABLE Errorlogging.FPDSstage2
 ALTER COLUMN [lastdatetoorder] [date]
 
 SELECT DISTINCT [CSISmodifiedDate],
 len([CSISmodifiedDate]) as Length,
 '[datetime]' as DestinationType
-FROM Errorlogging.FPDSbetaviolatesConstraint
+FROM Errorlogging.FPDSstage2
 WHERE (Try_Convert([datetime], [CSISmodifiedDate]) IS NULL AND
 NULLIF([CSISmodifiedDate],'') IS NOT NULL)
 
-ALTER TABLE Errorlogging.FPDSbetaviolatesConstraint
+ALTER TABLE Errorlogging.FPDSstage2
 ALTER COLUMN [CSISmodifiedDate] [datetime]
 
 SELECT DISTINCT [CSIScreatedDate],
 len([CSIScreatedDate]) as Length,
 '[datetime]' as DestinationType
-FROM Errorlogging.FPDSbetaviolatesConstraint
+FROM Errorlogging.FPDSstage2
 WHERE (Try_Convert([datetime], [CSIScreatedDate]) IS NULL AND
 NULLIF([CSIScreatedDate],'') IS NOT NULL)
 
-ALTER TABLE Errorlogging.FPDSbetaviolatesConstraint
+ALTER TABLE Errorlogging.FPDSstage2
 ALTER COLUMN [CSIScreatedDate] [datetime]
 
 --Check across all non-varchar and non-bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.
@@ -60,12 +60,5 @@ SELECT
 		nullif([CSISmodifiedDate],'') is not null,1,0)) as [CSISmodifiedDate]
 	,max(iif(Try_Convert([datetime], [CSIScreatedDate]) is null and
 		nullif([CSIScreatedDate],'') is not null,1,0)) as [CSIScreatedDate]
-	FROM Errorlogging.FPDSbetaviolatesConstraint
-
---Check across all bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.
-SELECT
-,max() as 
-FROM (SELECT
-	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit()) as 
-	FROM Errorlogging.FPDSbetaviolatesConstraint) as ml
+	FROM Errorlogging.FPDSstage2
 

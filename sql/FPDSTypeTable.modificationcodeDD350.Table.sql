@@ -9,7 +9,7 @@ CREATE TABLE [FPDSTypeTable].[modificationcodeDD350](
  CONSTRAINT [PK_modificationcodeDD350_modificationcode] PRIMARY KEY CLUSTERED 
 (
 	[modificationcode] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [FPDSTypeTable].[modificationcodeDD350]  WITH NOCHECK ADD  CONSTRAINT [FK_modificationcodeDD350_reasonformodification] FOREIGN KEY([reasonformodification])

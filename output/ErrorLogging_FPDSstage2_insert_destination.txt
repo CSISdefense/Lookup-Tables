@@ -218,7 +218,13 @@ INSERT INTO Contract.FPDS
 [prime_awardee_executive5],
 [prime_awardee_executive5_compensation],
 [usaspending_permalink],
-[awarding_agency_code]
+[awarding_agency_code],
+[recipient_county_name],
+[disaster_emergency_fund_codes_for_overall_award],
+[object_classes_funding_this_award],
+[program_activities_funding_this_award],
+[obligated_amount_funded_by_COVID19_supplementals_for_overall_award],
+[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award]
 )
  SELECT 
 [last_modified_date],
@@ -439,7 +445,13 @@ Convert([datetime], [CSIScreatedDate]),
 [prime_awardee_executive5],
 [prime_awardee_executive5_compensation],
 [usaspending_permalink],
-[awarding_agency_code]
-FROM ErrorLogging.FPDSbetaviolatesConstraint
+[awarding_agency_code],
+[recipient_county_name],
+[disaster_emergency_fund_codes_for_overall_award],
+[object_classes_funding_this_award],
+[program_activities_funding_this_award],
+[obligated_amount_funded_by_COVID19_supplementals_for_overall_award],
+[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award]
+FROM ErrorLogging.FPDSstage2
 WHERE NOT EXISTS (SELECT f.f.CSIStransactionID FROM Contract.FPDS
 and CSIStransactionID is not NULL

@@ -41,7 +41,7 @@ CREATE TABLE [Contractor].[DunsnumberToParentContractorHistory](
 (
 	[DUNSnumber] ASC,
 	[FiscalYear] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory] ADD  CONSTRAINT [DF_DunsnumberToParentContractorHistory_TooHard]  DEFAULT ((0)) FOR [TooHard]

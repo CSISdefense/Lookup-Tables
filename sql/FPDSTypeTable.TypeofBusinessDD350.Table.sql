@@ -5,11 +5,11 @@ GO
 CREATE TABLE [FPDSTypeTable].[TypeofBusinessDD350](
 	[TypeOfBusiness] [varchar](1) NOT NULL,
 	[TypeofBusinessText] [nvarchar](255) NULL,
-	[Contractingofficerbusinesssizedetermination] [varchar](1) NULL,
+	[contractingofficerbusinesssizedetermination] [varchar](1) NULL,
  CONSTRAINT [PK_TypeofBusinessDD350_TypeofBusiness] PRIMARY KEY CLUSTERED 
 (
 	[TypeOfBusiness] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [FPDSTypeTable].[TypeofBusinessDD350]  WITH NOCHECK ADD  CONSTRAINT [FK_TypeofBusinessDD350_Contractingofficerbusinesssizedetermination] FOREIGN KEY([Contractingofficerbusinesssizedetermination])

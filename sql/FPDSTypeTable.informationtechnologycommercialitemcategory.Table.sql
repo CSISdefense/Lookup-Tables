@@ -9,6 +9,6 @@ CREATE TABLE [FPDSTypeTable].[informationtechnologycommercialitemcategory](
  CONSTRAINT [informationtechnologycommercialitemcategory_key] PRIMARY KEY CLUSTERED 
 (
 	[informationtechnologycommercialitemcategory] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO

@@ -1,3 +1,4 @@
+
 library(tidyr)
 library(csis360)
 library(dplyr)
@@ -836,7 +837,7 @@ convert_field_to_foreign_key<-function(FKschema,
       ifelse(!is.null(FKname),paste(", pk.",PKname,"\n",
                                     "HAVING max(",iifFKname,
                                     "\t0,1))=1",sep=""),""),
-      "\nORDER BY fk.",FKcolumn,"\n",
+      "\nORDER BY fk.",FKcolumn,"\n\n",
       sep="")
   )
   }
@@ -956,7 +957,7 @@ create_foreign_key_assigments<-function(Schema,
   
   
   MergeTable.df<-left_join(MergeTable.df,lookup.CSISvariableNameToPrimaryKey,
-                      by="CSISvariableName")
+                      by="CSISvariableName")#Note this is case sensitive which isn't ideal.
   MergeTable.df<-subset(MergeTable.df,!is.na(PKSchemaName))
   if(nrow(MergeTable.df)==0){
     warning("No foreign keys to assign")

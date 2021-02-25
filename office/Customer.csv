@@ -1,0 +1,35 @@
+Customer,Customer.detail,Customer.sum,Is.Defense,Customer.Graph,Customer.manual.subtitles
+Defense,Defense,Defense,TRUE,TRUE,Defense
+Energy,Energy,Energy,FALSE,TRUE,DoE
+GSA,GSA,GSA,FALSE,TRUE,"GSA
+(4% 2013-2014, -12% 2012-2013)"
+NASA,NASA,NASA,FALSE,TRUE,"NASA
+(4% 2013-2014, -9% 2012-2013)"
+HHS,HHS,HHS,FALSE,TRUE,"HHS
+(6% 2013-2014, 2% 2012-2013)"
+State and USAID,State and USAID,State and USAID,FALSE,TRUE,State and USAID
+DHS,DHS,DHS,FALSE,TRUE,"DHS
+(4% 2013-2014, -3% 2012-2013)"
+Other Agencies,Other Agencies,Other Agencies,FALSE,TRUE,"""Other Non-Defense Agencies""
+(2% 2013-2014, -7% 2012-2013)"
+VA,VA,VA,FALSE,TRUE,"""Other Non-Defense Agencies""
+(2% 2013-2014, -7% 2012-2013)"
+Unlabeled Customer,Unlabeled,Unlabeled,,FALSE,Unlabeled
+Army,Army,Army,TRUE,TRUE,Army
+Navy,Navy,Navy,TRUE,TRUE,Navy
+Air Force,Air Force,Air Force,TRUE,TRUE,Air Force
+DLA,DLA,DLA,TRUE,TRUE,DLA
+Other DoD,Other DoD,Other DoD,TRUE,TRUE,Other DoD
+CBP,CBP,CBP,FALSE,TRUE,CBP
+Coast Guard,Coast Guard,Coast Guard,FALSE,TRUE,Coast Guard
+TSA,TSA,TSA,FALSE,TRUE,TSA
+OSEC,OSEC,OSEC,FALSE,TRUE,OSEC
+FEMA,FEMA,FEMA,FALSE,TRUE,FEMA
+ICE,ICE,ICE,FALSE,TRUE,ICE
+Other DHS,Other DHS,Other DHS,FALSE,TRUE,Other DHS
+State,State,State,FALSE,TRUE,State
+USAID,USAID,USAID,FALSE,TRUE,USAID
+IAP,IAP,IAP,FALSE,TRUE,IAP
+State and IAP,State and IAP,State and IAP,FALSE,TRUE,"State and IAP
+(8% 2013-2014, -12% 2012-2013)"
+Uncategorized,Uncategorized,Uncategorized,,FALSE,Uncategorized

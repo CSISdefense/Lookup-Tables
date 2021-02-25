@@ -19,7 +19,7 @@ CREATE TABLE [Office].[ContractingAgencyIDofficeIDtoMajorCommandIDhistory](
 	[ContractingAgencyID] ASC,
 	[ContractingOfficeID] ASC,
 	[Fiscal_Year] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Office].[ContractingAgencyIDofficeIDtoMajorCommandIDhistory] ADD  CONSTRAINT [DF__Contracti__CSISm__153BEB36]  DEFAULT (getdate()) FOR [CSISmodifiedDate]

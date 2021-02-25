@@ -4,14 +4,13 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [Project].[ProgramElement](
 	[ProgramElement] [varchar](10) NOT NULL,
-	[ProgramElementTitle] [varchar](80) NULL,
-	[classified] [varchar](20) NULL,
+	[ProgramElementTitle] [varchar](150) NULL,
 	[DefenseServiceIdentifier] [varchar](3) NULL,
 	[ProgramElementNumber] [int] NULL,
  CONSTRAINT [pk_PrimaryElement] PRIMARY KEY CLUSTERED 
 (
 	[ProgramElement] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Project].[ProgramElement]  WITH NOCHECK ADD  CONSTRAINT [fk_ProgramElement_DefenseServiceIdentifier] FOREIGN KEY([DefenseServiceIdentifier])

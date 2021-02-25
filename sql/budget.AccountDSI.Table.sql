@@ -9,10 +9,11 @@ CREATE TABLE [budget].[AccountDSI](
 	[DefenseServiceIdentifier] [varchar](3) NULL,
 	[DefenseOrganization] [varchar](5) NULL,
 	[MainAccountName] [varchar](45) NULL,
+	[IsNoFYDpexpected] [bit] NULL,
  CONSTRAINT [pk_AccountDSI] PRIMARY KEY CLUSTERED 
 (
 	[AccountDSI] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [budget].[AccountDSI]  WITH NOCHECK ADD  CONSTRAINT [FK__AccountDS__Defen__42639768] FOREIGN KEY([DefenseOrganization])
@@ -34,4 +35,8 @@ ALTER TABLE [budget].[AccountDSI]  WITH NOCHECK ADD  CONSTRAINT [fk_AccountDSI_T
 REFERENCES [agency].[TreasuryAgencyCode] ([TreasuryAgencyCode])
 GO
 ALTER TABLE [budget].[AccountDSI] CHECK CONSTRAINT [fk_AccountDSI_TreasuryAgencyCode]
+GO
+ALTER TABLE [budget].[AccountDSI]  WITH CHECK ADD  CONSTRAINT [chk_Budget_AccountDSI] CHECK  (([AccountDSI]<>''))
+GO
+ALTER TABLE [budget].[AccountDSI] CHECK CONSTRAINT [chk_Budget_AccountDSI]
 GO
