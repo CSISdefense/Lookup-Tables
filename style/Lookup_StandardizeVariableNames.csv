@@ -436,7 +436,7 @@ Please.specify.the.contracting.mechanism,Please.specify.the.contracting.mechanis
 In.the.MOSA.project.you.are.most.familiar.with.what.vehicle.is.employed.,contract_vehicle
 Other..please.specify..1,contract_other
 How.would.the.MOSA.project.you.are.most.familiar.with.interact.with.each.of.these.acquisition.characteristics.,mosa_fixedprice
-OTA,mosa_OTA
+OTA,mosa_ota
 Indefinite.Delivery.Indefinite.Quantity.vehicle,mosa_indef
 Speedy.Contract.award,mosa_speedy
 Longer.duration.contract,mosa_longer
