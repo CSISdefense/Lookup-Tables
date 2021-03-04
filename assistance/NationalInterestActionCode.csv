@@ -1,4 +1,4 @@
-﻿NationalInterestActionCode,national_interest_action_code,IsHurricane,CrisisFunding
+﻿NationalInterestActionCode,national_interest_action_name,IsHurricane,CrisisFunding
 ,NULL,NULL,NULL
 : ,,NULL,NULL
 F081,MIDWEST STORMS AND FLOODING 2008,0,Disaster
