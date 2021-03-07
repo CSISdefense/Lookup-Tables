@@ -2,8 +2,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [ErrorLogging].[FPDSduplicates](
-	[unique_transaction_id] [varchar](36) NULL,
+CREATE TABLE [ErrorLogging].[FPDSidvAgencyIDduplicates](
 	[transaction_status] [varchar](6) NULL,
 	[obligatedamount] [decimal](19, 4) NULL,
 	[baseandexercisedoptionsvalue] [decimal](19, 4) NULL,
@@ -18,8 +17,8 @@ CREATE TABLE [ErrorLogging].[FPDSduplicates](
 	[fundedbyforeignentity] [varchar](21) NULL,
 	[signeddate] [date] NULL,
 	[effectivedate] [date] NULL,
-	[currentcompletiondate] [date] NULL,
-	[ultimatecompletiondate] [date] NULL,
+	[currentcompletiondate] [datetime2](7) NULL,
+	[ultimatecompletiondate] [datetime2](7) NULL,
 	[lastdatetoorder] [date] NULL,
 	[contractactiontype] [varchar](41) NULL,
 	[reasonformodification] [varchar](1) NULL,
@@ -52,12 +51,12 @@ CREATE TABLE [ErrorLogging].[FPDSduplicates](
 	[divisionname] [nvarchar](150) NULL,
 	[divisionnumberorofficecode] [varchar](10) NULL,
 	[ccrexception] [varchar](70) NULL,
-	[streetaddress] [varchar](90) NULL,
+	[streetaddress] [varchar](100) NULL,
 	[streetaddress2] [varchar](60) NULL,
 	[streetaddress3] [varchar](55) NULL,
 	[city] [varchar](35) NULL,
 	[zipcode] [varchar](28) NULL,
-	[vendorcountrycode] [varchar](50) NULL,
+	[vendorcountrycode] [nvarchar](50) NULL,
 	[vendor_state_code] [varchar](30) NULL,
 	[vendor_cd] [varchar](22) NULL,
 	[vendorsitecode] [varchar](15) NULL,
@@ -212,8 +211,6 @@ CREATE TABLE [ErrorLogging].[FPDSduplicates](
 	[numberofemployees] [bigint] NULL,
 	[annualrevenue] [decimal](19, 4) NULL,
 	[CSIStransactionID] [int] NOT NULL,
-	[CSISUniqueIndexID] [uniqueidentifier] NULL,
-	[CSISUniqueIndexIdentity] [uniqueidentifier] NOT NULL,
 	[PlaceofPerformanceCity] [varchar](100) NULL,
 	[prime_awardee_executive1] [varchar](100) NULL,
 	[prime_awardee_executive2] [varchar](100) NULL,
@@ -228,7 +225,6 @@ CREATE TABLE [ErrorLogging].[FPDSduplicates](
 	[last_modified_date] [datetime2](7) NULL,
 	[TypeOfBusiness] [varchar](1) NULL,
 	[ContractActionTypeDD350] [varchar](8) NULL,
-	[TypeIndefiniteDeliveryContract] [varchar](1) NULL,
 	[headquartercode] [varchar](13) NULL,
 	[CAGE] [varchar](5) NULL,
 	[ContractNumber] [varchar](15) NULL,
@@ -254,6 +250,24 @@ CREATE TABLE [ErrorLogging].[FPDSduplicates](
 	[alaskan_native_servicing_institution] [bit] NULL,
 	[native_hawaiian_servicing_institution] [bit] NULL,
 	[sba_certified_8a_joint_venture] [bit] NULL,
-	[dot_certified_disadvantage] [bit] NULL
+	[dot_certified_disadvantage] [bit] NULL,
+	[contract_transaction_unique_key] [varchar](74) NULL,
+	[contract_award_unique_key] [varchar](74) NULL,
+	[current_total_value_of_award] [decimal](19, 4) NULL,
+	[potential_total_value_of_award] [decimal](19, 4) NULL,
+	[award_or_idv_flag] [varchar](5) NULL,
+	[inherently_governmental_functions] [varchar](10) NULL,
+	[total_dollars_obligated] [decimal](19, 4) NULL,
+	[solicitation_date] [date] NULL,
+	[treasury_accounts_funding_this_award] [varchar](4000) NULL,
+	[federal_accounts_funding_this_award] [varchar](1000) NULL,
+	[usaspending_permalink] [varchar](150) NULL,
+	[awarding_agency_code] [smallint] NULL,
+	[recipient_county_name] [varchar](25) NULL,
+	[disaster_emergency_fund_codes_for_overall_award] [varchar](500) NULL,
+	[object_classes_funding_this_award] [varchar](1000) NULL,
+	[program_activities_funding_this_award] [varchar](4000) NULL,
+	[obligated_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
+	[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL
 ) ON [PRIMARY]
 GO

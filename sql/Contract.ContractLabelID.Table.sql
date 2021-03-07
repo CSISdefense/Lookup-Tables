@@ -12,6 +12,7 @@ CREATE TABLE [Contract].[ContractLabelID](
 	[IsOfficialPBL] [bit] NULL,
 	[PrimaryProjectID] [int] NULL,
 	[CrisisFunding] [varchar](10) NULL,
+	[IsFPDSerror] [bit] NOT NULL,
  CONSTRAINT [pk_ContractLabelID] PRIMARY KEY CLUSTERED 
 (
 	[ContractLabelID] ASC
@@ -19,6 +20,8 @@ CREATE TABLE [Contract].[ContractLabelID](
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Contract].[ContractLabelID] ADD  CONSTRAINT [DF__ContractL__IsPer__0E6EF216]  DEFAULT ((0)) FOR [IsPerformanceBasedLogistics]
+GO
+ALTER TABLE [Contract].[ContractLabelID] ADD  DEFAULT ((0)) FOR [IsFPDSerror]
 GO
 ALTER TABLE [Contract].[ContractLabelID]  WITH NOCHECK ADD  CONSTRAINT [FK__ContractL__Prima__664BF223] FOREIGN KEY([PrimaryProjectID])
 REFERENCES [Project].[ProjectID] ([ProjectID])

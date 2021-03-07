@@ -43,6 +43,7 @@ CREATE TABLE [Contract].[CSIScontractID](
 	[topContractingOfficeID] [varchar](6) NULL,
 	[topContractingOfficeAmount] [decimal](19, 4) NULL,
 	[IsParentCSIScontractID] [bit] NULL,
+	[IsDuplicate] [bit] NULL,
  CONSTRAINT [pk_CSIScontractID] PRIMARY KEY CLUSTERED 
 (
 	[CSIScontractID] ASC
@@ -52,6 +53,8 @@ GO
 ALTER TABLE [Contract].[CSIScontractID] ADD  CONSTRAINT [DF__CSIScontr__CSISM__49E4BD9F]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
 ALTER TABLE [Contract].[CSIScontractID] ADD  CONSTRAINT [DF__CSIScontr__CSISm__4BCD0611]  DEFAULT (suser_sname()) FOR [CSISmodifiedBy]
+GO
+ALTER TABLE [Contract].[CSIScontractID] ADD  DEFAULT ((0)) FOR [IsDuplicate]
 GO
 ALTER TABLE [Contract].[CSIScontractID]  WITH NOCHECK ADD  CONSTRAINT [contract_CSIScontractID_ContractLabelID] FOREIGN KEY([ContractLabelID])
 REFERENCES [Contract].[ContractLabelID] ([ContractLabelID])

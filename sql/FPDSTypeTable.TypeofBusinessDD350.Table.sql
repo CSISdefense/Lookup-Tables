@@ -12,7 +12,7 @@ CREATE TABLE [FPDSTypeTable].[TypeofBusinessDD350](
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-ALTER TABLE [FPDSTypeTable].[TypeofBusinessDD350]  WITH NOCHECK ADD  CONSTRAINT [FK_TypeofBusinessDD350_Contractingofficerbusinesssizedetermination] FOREIGN KEY([Contractingofficerbusinesssizedetermination])
+ALTER TABLE [FPDSTypeTable].[TypeofBusinessDD350]  WITH NOCHECK ADD  CONSTRAINT [FK_TypeofBusinessDD350_Contractingofficerbusinesssizedetermination] FOREIGN KEY([contractingofficerbusinesssizedetermination])
 REFERENCES [FPDSTypeTable].[contractingofficerbusinesssizedetermination] ([contractingofficerbusinesssizedetermination])
 ON UPDATE CASCADE
 ON DELETE CASCADE

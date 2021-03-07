@@ -6,7 +6,7 @@ CREATE TABLE [Vendor].[VendorName](
 	[vendorname] [nvarchar](150) NOT NULL,
 	[parentid] [nvarchar](255) NULL,
 	[isUSAforwardLocalOrganization] [bit] NULL,
-	[isunknownvendorname] [bit] NULL,
+	[IsUnknownVendorName] [bit] NOT NULL,
 	[CSIScreateddate] [datetime2](7) NOT NULL,
 	[CSISmodifiedDate] [datetime2](7) NOT NULL,
 	[CSISmodifiedBy] [nvarchar](128) NOT NULL,
@@ -17,6 +17,8 @@ CREATE TABLE [Vendor].[VendorName](
 	[vendorname] ASC
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+ALTER TABLE [Vendor].[VendorName] ADD  CONSTRAINT [df_IsUnknownVendorName]  DEFAULT ((0)) FOR [IsUnknownVendorName]
 GO
 ALTER TABLE [Vendor].[VendorName] ADD  CONSTRAINT [DF__VendorNam__CSISc__52C41C63]  DEFAULT (getdate()) FOR [CSIScreateddate]
 GO

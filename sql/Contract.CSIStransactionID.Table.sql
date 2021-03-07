@@ -14,7 +14,6 @@ CREATE TABLE [Contract].[CSIStransactionID](
 	[CSISsourceIDVmodificationID] [int] NULL,
 	[CSISmodifiedBy] [nvarchar](128) NOT NULL,
 	[CSISmodifiedDate] [datetime] NOT NULL,
-	[DuplicateCount] [int] NULL,
 	[last_modified_date] [datetime2](7) NULL,
 	[MaxOfCSISCreatedDate] [datetime] NULL,
 	[fiscal_year] [int] NULL,
@@ -66,11 +65,7 @@ REFERENCES [Contract].[CSISidvmodificationID] ([CSISidvmodificationID])
 GO
 ALTER TABLE [Contract].[CSIStransactionID] CHECK CONSTRAINT [fk_contract_CSIStransactionID_CSISsourceIDVmodificationID]
 GO
-ALTER TABLE [Contract].[CSIStransactionID]  WITH CHECK ADD  CONSTRAINT [chk_contract_csistransactionid_CSISidvModificationID] CHECK  (([fiscal_year]<(2000) OR [fiscal_year] IS NULL OR [CSISidvModificationID] IS NOT NULL))
+ALTER TABLE [Contract].[CSIStransactionID]  WITH CHECK ADD  CONSTRAINT [chk_contract_csistransactionid_idv_not_null] CHECK  (([fiscal_year]<(2000) OR [fiscal_year] IS NULL OR [CSISidvModificationID] IS NOT NULL AND [idvagencyid] IS NOT NULL AND [idvmodificationnumber] IS NOT NULL))
 GO
-ALTER TABLE [Contract].[CSIStransactionID] CHECK CONSTRAINT [chk_contract_csistransactionid_CSISidvModificationID]
-GO
-ALTER TABLE [Contract].[CSIStransactionID]  WITH CHECK ADD  CONSTRAINT [chk_contract_csistransactionid_CSISidvModificationID_idvmodConsistency] CHECK  (([CSISidvmodificationID]=(656978) AND [idvmodificationnumber]='' OR [CSISidvmodificationID] IS NULL AND [idvmodificationnumber] IS NULL OR [idvmodificationnumber]<>'' AND [CSISidvmodificationID]<>(656978)))
-GO
-ALTER TABLE [Contract].[CSIStransactionID] CHECK CONSTRAINT [chk_contract_csistransactionid_CSISidvModificationID_idvmodConsistency]
+ALTER TABLE [Contract].[CSIStransactionID] CHECK CONSTRAINT [chk_contract_csistransactionid_idv_not_null]
 GO
