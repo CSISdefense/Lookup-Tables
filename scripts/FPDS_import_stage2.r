@@ -66,6 +66,23 @@ if(nrow(MergeStage2.df[is.na(MergeStage2.df$CSISvariableType)&is.na(MergeStage2.
             file="Output/Unmatched_NameConversion.csv")
   stop("Update ImportAides/NameList.csv using Output/Unmatched_NameConversion.csv")
 }
+MergeStage2.df$IsDroppedNameField[is.na(MergeStage2.df$IsDroppedNameField)]<-FALSE
+
+#Remove CSISstage2ID, it's entirely for internal purposes
+MergeStage2.df<-MergeStage2.df %>% filter(SourceVariableName!="[CSISstage2id]")
+#Check that all dropped fields correspond with a preserved field
+pair_kept<-left_join(MergeStage2.df %>% filter(IsDroppedNameField==TRUE)%>% select(SourceVariableName,Pair),
+          MergeStage2.df %>% filter(IsDroppedNameField==FALSE) %>% select(SourceVariableName,IsDroppedNameField),
+          by=c("Pair"="SourceVariableName"))
+
+if(any(is.na(pair_kept$IsDroppedNameField))){
+  stop(paste("We drop name field(s) that does not have a corresponding kept code field:\n",
+             paste(pair_kept$SourceVariableName[is.na(pair_kept$IsDroppedNameField)],collapse=", ")))
+}
+rm(pair_kept)
+
+
+
 InsertList<-create_insert(MergeStage2.df,
                          "ErrorLogging",
                          "FPDSstage2",

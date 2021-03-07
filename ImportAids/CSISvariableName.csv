@@ -387,7 +387,7 @@
 [contingency_humanitarian_or_peacekeeping_operation_name],TRUE,[contingencyhumanitarianpeacekeepingoperation]
 [indian_tribe_federally_recognized],,
 [other_minority_owned_business],,
-[contractingofficerbusinesssizedetermination],TRUE,[ContractingOfficerBusinessSizeDeterminationText]
+[contractingofficerbusinesssizedetermination],,[ContractingOfficerBusinessSizeDeterminationText]
 [community_developed_corporation_owned_firm],,
 [labor_surplus_area_firm],,
 [city_local_government],,

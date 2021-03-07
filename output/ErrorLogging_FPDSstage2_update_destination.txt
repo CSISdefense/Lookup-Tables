@@ -121,6 +121,7 @@ UPDATE T SET
 [haobflag]=coalesce(S.[haobflag],T.[haobflag]),
 [naobflag]=coalesce(S.[naobflag],T.[naobflag]),
 [other_minority_owned_business]=coalesce(S.[other_minority_owned_business],T.[other_minority_owned_business]),
+[contractingofficerbusinesssizedetermination]=coalesce(nullif(S.[contractingofficerbusinesssizedetermination],''),T.[contractingofficerbusinesssizedetermination]),
 [emergingsmallbusinessflag]=coalesce(S.[emergingsmallbusinessflag],T.[emergingsmallbusinessflag]),
 [community_developed_corporation_owned_firm]=coalesce(S.[community_developed_corporation_owned_firm],T.[community_developed_corporation_owned_firm]),
 [labor_surplus_area_firm]=coalesce(S.[labor_surplus_area_firm],T.[labor_surplus_area_firm]),
