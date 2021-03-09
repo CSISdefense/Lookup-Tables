@@ -688,7 +688,7 @@ create_insert<-function(MergeTable.df,
   )
   if (FPDS==TRUE)
     InsertList<-c(InsertList,
-                  paste("WHERE NOT EXISTS (SELECT f.f.CSIStransactionID FROM ",TargetSchema,".",TargetTableName,"\n",
+                  paste("WHERE CSIStransactionID NOT in (SELECT CSIStransactionID FROM ",TargetSchema,".",TargetTableName,"\n",
                         "and CSIStransactionID is not NULL",sep="")
     )
   
