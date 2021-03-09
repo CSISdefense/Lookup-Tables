@@ -419,7 +419,7 @@ What.benefits..if.any..can..you..vendors.you.are.familiar.with..provide.the.gove
 In.your.opinion..how.committed.is.the.government.customer.to.long.term.follow.through.with.MOSA..,gov_comit
 In.your.opinion..how.sufficient.is.the.expertise.of.the.government.to.adjudicate.and.manage.MOSA.projects.,In.your.opinion..how.sufficient.is.the.expertise.of.the.government.to.adjudicate.and.manage.MOSA.projects.
 Which.MOSA.project.would.you.consider.yourself.to.be.most.familiar.with.,Which.MOSA.project.would.you.consider.yourself.to.be.most.familiar.with.
-In.the.MOSA.project.you.are.most.familiar.with..how.are.intellectual.property.and.data.rights.distributed.between.the.government.and.the.prime.vendor..,In.the.MOSA.project.you.are.most.familiar.with..how.are.intellectual.property.and.data.rights.distributed.between.the.government.and.the.prime.vendor..
+In.the.MOSA.project.you.are.most.familiar.with..how.are.intellectual.property.and.data.rights.distributed.between.the.government.and.the.prime.vendor..,ip_govdist
 In.the.MOSA.project.you.are.most.familiar.with..how.are.intellectual.property.and.data.rights.distributed.between.the.prime.vendor.and.other.participating.organizations..,ip_otherdist
 How.much.capacity.does.the.government.have.under.this.model.to.tailor.the.intellectual.property.distribution.to.the.goals.of.the.project.,ip_capacity
 What.intellectual.property.and.data.rights.would.you.suggest.the.government.should.request.,What.intellectual.property.and.data.rights.would.you.suggest.the.government.should.request.
@@ -454,9 +454,9 @@ Ease.of.bringing.in.commercial.technology,govbenefits_commercialtech
 Opportunities.to.insert.technology.throughout.a.system’s.lifecycle,govbenefits_techlifecycle
 Access.to.common.digital.interface.for.development,govbenefits_digitalinterface
 Other..please.specify.3,govbenefits_other
-How.does.the.use.of.a.US.government.open.system.approach.change.the.fiscal.appeal.for..your.organization..vendors.most.relevant.to.your.work..to.engage.in.each.of.the.following.phases.of.development.,How.does.the.use.of.a.US.government.open.system.approach.change.the.fiscal.appeal.for..your.organization..vendors.most.relevant.to.your.work..to.engage.in.each.of.the.following.phases.of.development.
-Participating.in.the.procurement.phase,Participating.in.the.procurement.phase
-Participating.in.the.operations.and.maintenance.phase,Participating.in.the.operations.and.maintenance.phase
+How.does.the.use.of.a.US.government.open.system.approach.change.the.fiscal.appeal.for..your.organization..vendors.most.relevant.to.your.work..to.engage.in.each.of.the.following.phases.of.development.,appeal_RD
+Participating.in.the.procurement.phase,appeal_procure
+Participating.in.the.operations.and.maintenance.phase,appeal_OM
 Has.this.model.had.the.opportunity.to.show.outcomes.,outcomes
 In.your.most.recent.MOSA.project..how.has.the.business.model.performed.in.the.following.areas.,perform_cost
 Initial.Development.Schedule,perform_sched

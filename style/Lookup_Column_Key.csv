@@ -680,7 +680,7 @@ What.benefits..if.any..can..you..vendors.you.are.familiar.with..provide.the.gove
 gov_comit,,,,,
 In.your.opinion..how.sufficient.is.the.expertise.of.the.government.to.adjudicate.and.manage.MOSA.projects.,,,,,
 Which.MOSA.project.would.you.consider.yourself.to.be.most.familiar.with.,,,,,
-In.the.MOSA.project.you.are.most.familiar.with..how.are.intellectual.property.and.data.rights.distributed.between.the.government.and.the.prime.vendor..,ip_govdist,,,,
+ip_govdist,ip_govdist,,,,
 ip_otherdist,ip_otherdist,,,,
 ip_capacity,ip_capacity,IP Capacity,,,
 What.intellectual.property.and.data.rights.would.you.suggest.the.government.should.request.,,,,,
@@ -750,3 +750,4 @@ This.is.a.space.for.any.other.comments.you.may.have.on.incentives.to.participate
 changes_done,,,,,
 Are.there.any.important.aspects.of.MOSA.incentives.that.were.not.covered.in.our.questions.,,,,,
 Are.there.any.further.business.models.or.experts.you.recommend.we.study.or.speak.to.,,,,,
+respondents,,Number of Respondents,Share of Respondents,,
