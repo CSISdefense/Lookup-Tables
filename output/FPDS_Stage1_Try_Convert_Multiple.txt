@@ -66,7 +66,6 @@ SELECT
 
 --Check across all bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.
 SELECT
-,max([commercial_item_test_program_code]) as [commercial_item_test_program_code]
 ,max([clinger_cohen_act_planning_code]) as [clinger_cohen_act_planning_code]
 ,max([multi_year_contract_code]) as [multi_year_contract_code]
 ,max([purchase_card_as_payment_method_code]) as [purchase_card_as_payment_method_code]
@@ -157,7 +156,6 @@ SELECT
 ,max([historically_underutilized_business_zone_hubzone_firm]) as [historically_underutilized_business_zone_hubzone_firm]
 ,max([sba_certified_8a_joint_venture]) as [sba_certified_8a_joint_venture]
 FROM (SELECT
-	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([commercial_item_test_program_code])) as [commercial_item_test_program_code]
 	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([clinger_cohen_act_planning_code])) as [clinger_cohen_act_planning_code]
 	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([multi_year_contract_code])) as [multi_year_contract_code]
 	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([purchase_card_as_payment_method_code])) as [purchase_card_as_payment_method_code]
@@ -310,6 +308,7 @@ SELECT
 ,iif([other_than_full_and_open_competition_code]>3,[other_than_full_and_open_competition_code],NULL) as [other_than_full_and_open_competition_code]
 ,iif([commercial_item_acquisition_procedures_code]>1,[commercial_item_acquisition_procedures_code],NULL) as [commercial_item_acquisition_procedures_code]
 ,iif([small_business_competitiveness_demonstration_program]>6,[small_business_competitiveness_demonstration_program],NULL) as [small_business_competitiveness_demonstration_program]
+,iif([commercial_item_test_program_code]>1,[commercial_item_test_program_code],NULL) as [commercial_item_test_program_code]
 ,iif([a76_fair_act_action_code]>3,[a76_fair_act_action_code],NULL) as [a76_fair_act_action_code]
 ,iif([fed_biz_opps_code]>1,[fed_biz_opps_code],NULL) as [fed_biz_opps_code]
 ,iif([local_area_set_aside_code]>4,[local_area_set_aside_code],NULL) as [local_area_set_aside_code]
@@ -351,7 +350,7 @@ SELECT
 ,iif([usaspending_permalink]>150,[usaspending_permalink],NULL) as [usaspending_permalink]
 ,iif([disaster_emergency_fund_codes_for_overall_award]>500,[disaster_emergency_fund_codes_for_overall_award],NULL) as [disaster_emergency_fund_codes_for_overall_award]
 ,iif([object_classes_funding_this_award]>1000,[object_classes_funding_this_award],NULL) as [object_classes_funding_this_award]
-,iif([recipient_county_name]>25,[recipient_county_name],NULL) as [recipient_county_name] 
+,iif([recipient_county_name]>30,[recipient_county_name],NULL) as [recipient_county_name] 
 FROM (SELECT
  	,max(len([award_id_piid])) as [award_id_piid]
 	,max(len([modification_number])) as [modification_number]
@@ -412,6 +411,7 @@ FROM (SELECT
 	,max(len([other_than_full_and_open_competition_code])) as [other_than_full_and_open_competition_code]
 	,max(len([commercial_item_acquisition_procedures_code])) as [commercial_item_acquisition_procedures_code]
 	,max(len([small_business_competitiveness_demonstration_program])) as [small_business_competitiveness_demonstration_program]
+	,max(len([commercial_item_test_program_code])) as [commercial_item_test_program_code]
 	,max(len([a76_fair_act_action_code])) as [a76_fair_act_action_code]
 	,max(len([fed_biz_opps_code])) as [fed_biz_opps_code]
 	,max(len([local_area_set_aside_code])) as [local_area_set_aside_code]

@@ -584,10 +584,11 @@ NULLIF([small_business_competitiveness_demonstration_program],'') IS NOT NULL) O
 
 SELECT DISTINCT [commercial_item_test_program_code],
 len([commercial_item_test_program_code]) as Length,
-'[bit]' as DestinationType
+'[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([commercial_item_test_program_code]))) IS NULL AND
-NULLIF([commercial_item_test_program_code],'') IS NOT NULL)
+WHERE (Try_Convert([varchar](1), [commercial_item_test_program_code]) IS NULL AND
+NULLIF([commercial_item_test_program_code],'') IS NOT NULL) OR
+ len([commercial_item_test_program_code]) > 1
 
 SELECT DISTINCT [a76_fair_act_action_code],
 len([a76_fair_act_action_code]) as Length,
@@ -1647,9 +1648,9 @@ NULLIF([object_classes_funding_this_award],'') IS NOT NULL) OR
 
 SELECT DISTINCT [recipient_county_name],
 len([recipient_county_name]) as Length,
-'[varchar](25)' as DestinationType
+'[varchar](30)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([varchar](25), [recipient_county_name]) IS NULL AND
+WHERE (Try_Convert([varchar](30), [recipient_county_name]) IS NULL AND
 NULLIF([recipient_county_name],'') IS NOT NULL) OR
- len([recipient_county_name]) > 25
+ len([recipient_county_name]) > 30
 

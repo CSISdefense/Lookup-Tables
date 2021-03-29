@@ -75,7 +75,7 @@ UPDATE T SET
 [numberofoffersreceived]=coalesce(S.[numberofoffersreceived],T.[numberofoffersreceived]),
 [commercialitemacquisitionprocedures]=coalesce(nullif(S.[commercialitemacquisitionprocedures],''),T.[commercialitemacquisitionprocedures]),
 [smallbusinesscompetitivenessdemonstrationprogram]=coalesce(nullif(S.[smallbusinesscompetitivenessdemonstrationprogram],''),T.[smallbusinesscompetitivenessdemonstrationprogram]),
-[commercialitemtestprogram]=coalesce(S.[commercialitemtestprogram],T.[commercialitemtestprogram]),
+[commercialitemtestprogram]=coalesce(nullif(S.[commercialitemtestprogram],''),T.[commercialitemtestprogram]),
 [a76action]=coalesce(nullif(S.[a76action],''),T.[a76action]),
 [fedbizopps]=coalesce(nullif(S.[fedbizopps],''),T.[fedbizopps]),
 [localareasetaside]=coalesce(nullif(S.[localareasetaside],''),T.[localareasetaside]),
