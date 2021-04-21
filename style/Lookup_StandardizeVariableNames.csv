@@ -150,6 +150,7 @@ BA#,BudgetActivity
 BA.#,BudgetActivity
 Budget.Activity,BudgetActivity
 BA.Title,BudgetActivityTitle
+BATitle,BudgetActivityTitle
 Budget.Activity.Title,BudgetActivityTitle
 Budget.Activity.Short.Title,BudgetActivityTitle
 BSA#,BudgetSubActivity
@@ -157,6 +158,7 @@ BSA.#,BudgetSubActivity
 Budget.Sub.Activity,BudgetSubActivity
 BSA.Title,BudgetSubActivityTitle
 Budget.Sub.Activity.Title,BudgetSubActivityTitle
+BudgetSubActivityTitle,BudgetSubActivityTitle
 Budget.Sub.Activity..BSA..Title,BudgetSubActivityTitle
 BSA,BudgetSubActivity
 BSAtitle,BudgetSubActivityTitle
@@ -173,6 +175,7 @@ Line.Item,LineItem
 LI,LineItem
 Line.Item.Title,LineItemTitle
 LI.Title,LineItemTitle
+LITitle,LineItemTitle
 Construction.Project,ConstructionProject
 Construction.Project.Title,ConstructionProjectTitle
 Cost.Type,CostType
@@ -209,6 +212,7 @@ Line.Number,LineNumber
 PE,ProgramElement
 PE#,ProgramElement
 PE.Title,ProgramElementTitle
+PETitle,ProgramElementTitle
 PE...BLI,ProgramElement
 Program.Element.Title,ProgramElementTitle
 Program.Element...Budget.Line.Item..BLI..Title,ProgramElementTitle
