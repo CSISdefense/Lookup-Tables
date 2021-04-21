@@ -400,7 +400,7 @@ Convert([bigint], Convert(real,nullif([number_of_offers_received],''))),
 Convert([varchar](1), [commercial_item_acquisition_procedures_code]),
 [commercial_item_acquisition_procedures],
 Convert([varchar](6), [small_business_competitiveness_demonstration_program]),
-Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([commercial_item_test_program_code]))),
+Convert([varchar](1), [commercial_item_test_program_code]),
 [commercial_item_test_program],
 Convert([varchar](3), [a76_fair_act_action_code]),
 [a76_fair_act_action],
@@ -573,5 +573,5 @@ Convert([decimal](19, 4), Convert(real,nullif([outlayed_amount_funded_by_COVID19
 Convert([decimal](19, 4), Convert(real,nullif([obligated_amount_funded_by_COVID19_supplementals_for_overall_award],''))),
 Convert([varchar](1000), [object_classes_funding_this_award]),
 [program_activities_funding_this_award],
-Convert([varchar](25), [recipient_county_name])
+Convert([varchar](30), [recipient_county_name])
 FROM ErrorLogging.FPDSstage1

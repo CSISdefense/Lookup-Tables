@@ -17,7 +17,7 @@ CREATE TABLE [Contract].[CSIStransactionID](
 	[last_modified_date] [datetime2](7) NULL,
 	[MaxOfCSISCreatedDate] [datetime] NULL,
 	[fiscal_year] [int] NULL,
-	[contractingofficeagencyid] [varchar](4) NOT NULL,
+	[contractingofficeagencyid] [varchar](4) NULL,
 	[IsInContractFPDS] [bit] NULL,
 	[idvagencyid] [varchar](4) NULL,
 	[AgencyID] [varchar](4) NULL,

@@ -90,9 +90,9 @@ CREATE TABLE [Contract].[FPDS](
 	[countryoforigin] [varchar](3) NULL,
 	[placeofmanufacture] [varchar](1) NULL,
 	[manufacturingorganizationtype] [varchar](1) NULL,
-	[agencyid] [varchar](4) NULL,
+	[agencyid] [varchar](4) NOT NULL,
 	[piid] [varchar](50) NULL,
-	[modnumber] [varchar](25) NULL,
+	[modnumber] [varchar](25) NOT NULL,
 	[transactionnumber] [bigint] NULL,
 	[fiscal_year] [smallint] NULL,
 	[idvagencyid] [varchar](4) NULL,
@@ -103,7 +103,7 @@ CREATE TABLE [Contract].[FPDS](
 	[reasonnotcompeted] [varchar](3) NULL,
 	[numberofoffersreceived] [bigint] NULL,
 	[commercialitemacquisitionprocedures] [varchar](1) NULL,
-	[commercialitemtestprogram] [bit] NULL,
+	[commercialitemtestprogram] [varchar](1) NULL,
 	[smallbusinesscompetitivenessdemonstrationprogram] [varchar](6) NULL,
 	[a76action] [varchar](3) NULL,
 	[solicitationprocedures] [varchar](5) NULL,
@@ -211,7 +211,7 @@ CREATE TABLE [Contract].[FPDS](
 	[numberofactions] [bigint] NULL,
 	[numberofemployees] [bigint] NULL,
 	[annualrevenue] [decimal](19, 4) NULL,
-	[CSIStransactionID] [int] NOT NULL,
+	[CSIStransactionID] [int] NULL,
 	[PlaceofPerformanceCity] [varchar](100) NULL,
 	[prime_awardee_executive1] [varchar](100) NULL,
 	[prime_awardee_executive2] [varchar](100) NULL,
@@ -264,7 +264,7 @@ CREATE TABLE [Contract].[FPDS](
 	[federal_accounts_funding_this_award] [varchar](1000) NULL,
 	[usaspending_permalink] [varchar](150) NULL,
 	[awarding_agency_code] [smallint] NULL,
-	[recipient_county_name] [varchar](25) NULL,
+	[recipient_county_name] [varchar](30) NULL,
 	[disaster_emergency_fund_codes_for_overall_award] [varchar](500) NULL,
 	[object_classes_funding_this_award] [varchar](1000) NULL,
 	[program_activities_funding_this_award] [varchar](4000) NULL,
@@ -275,6 +275,9 @@ GO
 ALTER TABLE [Contract].[FPDS] ADD  CONSTRAINT [DF_FPDS_CSISCreatedDate]  DEFAULT (getdate()) FOR [CSISCreatedDate]
 GO
 ALTER TABLE [Contract].[FPDS] ADD  CONSTRAINT [DF_FPDS_CSISModifiedDate]  DEFAULT (getdate()) FOR [CSISModifiedDate]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD FOREIGN KEY([awarding_agency_code])
+REFERENCES [agency].[awarding_agency_code] ([awarding_agency_code])
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD FOREIGN KEY([awarding_agency_code])
 REFERENCES [agency].[awarding_agency_code] ([awarding_agency_code])
@@ -593,4 +596,8 @@ ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [pk_FPDS_contracting
 REFERENCES [Office].[ContractingOfficeCode] ([ContractingOfficeCode])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [pk_FPDS_contractingOfficeCode]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [chk_PIID_ContractNumber] CHECK  (([PIID] IS NOT NULL OR [ContractNumber] IS NOT NULL))
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [chk_PIID_ContractNumber]
 GO

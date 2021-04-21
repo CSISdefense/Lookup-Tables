@@ -455,5 +455,5 @@ Convert([datetime], [CSIScreatedDate]),
 [obligated_amount_funded_by_COVID19_supplementals_for_overall_award],
 [outlayed_amount_funded_by_COVID19_supplementals_for_overall_award]
 FROM ErrorLogging.FPDSstage2
-WHERE NOT EXISTS (SELECT f.f.CSIStransactionID FROM Contract.FPDS
+WHERE CSIStransactionID NOT in (SELECT CSIStransactionID FROM Contract.FPDS
 and CSIStransactionID is not NULL
