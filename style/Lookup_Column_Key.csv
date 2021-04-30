@@ -49,6 +49,8 @@ VendorSize_Intl,Vendors,Vendor Size and Nationality,,,FALSE
 Vendor.Size.sum,Vendors,Vendor Size,,,FALSE
 Shiny.VendorSize,Vendors,Vendor Size,,,FALSE
 RoughUniqueEntitySize,Vendors,Vendor Size,,,FALSE
+entrant,entrant,Entrant Status,,,FALSE
+entrant_2016T,entrant,Entrant Status,,,FALSE
 comparison.dollar.type.detail,Dollar Type,,,,FALSE
 comparison.dollar.type.sum,Dollar Type,,,,FALSE
 Contract.Size.detail,Contract Size,Contract Size,,,FALSE
