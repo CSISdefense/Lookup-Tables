@@ -754,6 +754,7 @@ likert5,Most major components use open interfaces,Most major\ncomponents use\nop
 likert5,Modularity is default with rare exceptions,Modularity is\ndefault with\nrare exceptions,5,"DIIG Secondary, Navy",#1d2d5c,,,,,,
 likert5,This type of contract makes MOSA much less appealing,Much less appealing,1,"DIIG Primary, Blue",#0054A4,,,,,,
 likert5,This type of contract makes MOSA a little less appealing,A little less appealing,2,"DIIG Primary, Air Force",#72a0c1,,,,,,
+likert5,This type of contract does not change MOSA's appeal,No change in appeal,3,"DIIG Primary, National Guard",#0e99d6,,,,,,
 likert5,This type of contract does not change MOSA’s appeal,No change in appeal,3,"DIIG Primary, National Guard",#0e99d6,,,,,,
 likert5,This type of contract makes MOSA a little more appealing,A little more appealing,4,"DIIG Secondary, Marine",#999999,,,,,,
 likert5,This type of contract makes MOSA much more appealing,Much more appealing,5,"DIIG Secondary, Navy",#1d2d5c,,,,,,
