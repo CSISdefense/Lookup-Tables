@@ -1,5 +1,6 @@
 ﻿column,coloration.key,title,share.title,period.title,is.colon.split
 Customer,Agencies,Customer,,,FALSE
+ContractingCustomer,Agencies,Customer,,,FALSE
 Customer.detail,Agencies,Customer,,,FALSE
 Customer.manual.subtitles,Agencies,Customer,,,FALSE
 Customer.sum,Agencies,Customer,,,FALSE
@@ -580,6 +581,9 @@ cl_def3_HHI_lag1,,"Measure of industrial concentration in the defense industrial
 cl_def6_HHI_lag1,,"Measure of industrial concentration in the defense industrial base, detailed industry HHI",,,FALSE
 Office,,The top contracting office of each contract,,,FALSE
 NAICS,,The top North American Industrial Classification Code of each contract,,,FALSE
+NASbioEconomy,BioEconomy,,,,
+biobased,BioEconomy,,,,
+NASbioEconomypt,BioEconomy,,,,
 cl_def6_obl_lag1,,"Annually sums of total defense obligations by NAICS subsector and detailed industry, logged and then rescaled",,,FALSE
 cl_def3_ratio_lag1,,"Ratio of total defense obligations to revenues in the same NAICS category for U.S. economy as a whole, subsector",,,FALSE
 cl_def6_ratio_lag1,,"Ratio of total defense obligations to revenues in the same NAICS category for U.S. economy as a whole, detailed industrial",,,FALSE
