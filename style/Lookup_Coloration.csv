@@ -326,6 +326,8 @@ BioEconomy,Other enzymes,Other enzymes,10,Olive Green,#9BBB59,,,,default grey,#5
 BioEconomy,Biorefining (food),Biorefining (food),11,dark blue,#4572A7,,,,default grey,#554449,
 BioEconomy,NAICS Partial Code,NAICS Partial Code,11,"DIIG Additional, Pale Gray",#bcbcbc,,,,default grey,#554449,
 BioEconomy,Other NAICS Code,Other NAICS Code,11,dark blue,#4572A7,,,,default grey,#554449,
+BioEconomy,Biobased,Biobased,1,"DIIG Primary, Green",#4c9361,,,,default grey,#554449,
+BioEconomy,Not Biobased,Not Biobased,2,"DIIG Secondary, Marine",#999999,,,,default grey,#554449,
 ,,,,,,,,,,,
 ,,,,,,,,,,,
 Agencies,Defense,Defense,1,Olive Green,#9BBB59,,,,default grey,#554449,
