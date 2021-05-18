@@ -247,7 +247,7 @@ principalnaicscode,,,,,TRUE
 informationtechnologycommercialitemcategory,,,,,FALSE
 gfe_gfp,,,,,TRUE
 useofepadesignatedproducts,,,,,TRUE
-recoveredmaterialclauses,,,,,TRUE
+recoveredmaterialclauses,RecoveredMaterials,,,,TRUE
 seatransportation,,,,,TRUE
 contractbundling,,,,,TRUE
 consolidatedcontract,,,,,TRUE
@@ -584,7 +584,6 @@ NAICS,,The top North American Industrial Classification Code of each contract,,,
 NASbioEconomy,BioEconomy,,,,
 NASbioEconomypt,BioEconomy,,,,
 biobased,RecoveredMaterials,,,,
-recoveredmaterialclauses,RecoveredMaterials,,,,
 cl_def6_obl_lag1,,"Annually sums of total defense obligations by NAICS subsector and detailed industry, logged and then rescaled",,,FALSE
 cl_def3_ratio_lag1,,"Ratio of total defense obligations to revenues in the same NAICS category for U.S. economy as a whole, subsector",,,FALSE
 cl_def6_ratio_lag1,,"Ratio of total defense obligations to revenues in the same NAICS category for U.S. economy as a whole, detailed industrial",,,FALSE
