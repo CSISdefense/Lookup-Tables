@@ -1,11 +1,11 @@
 Vehicle.detail,Vehicle.sum
-Basic Ordering Agreement (BOA),BOA
-Blanket Purchase Agreement (BPA),BPA
-BPA CALL,BPA
+Basic Ordering Agreement (BOA),Other IDV
+Blanket Purchase Agreement (BPA),Other IDV
+BPA CALL,Other IDV
 DEFINITIVE CONTRACT,Definitive
 DELIVERY ORDER,Unlbd. IDV
-Federal Supply Schedule (FSS),FSS
-Governmentwide Acquisition Contract (GWAC),GWAC
+Federal Supply Schedule (FSS),Other IDV
+Governmentwide Acquisition Contract (GWAC),Other IDV
 MULTIPLE AWARD Indefinite Delivery Contract (IDC),Multi-Awd.
 PURCHASE ORDER,Pur. Order
 SINGLE AWARD Indefinite Delivery Contract (IDC),Single-Awd.
