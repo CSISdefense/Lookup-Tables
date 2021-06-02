@@ -42,6 +42,7 @@ PricingFee,Pricing,Pricing Mechanism,,,FALSE
 PricingUCA,Pricing,Pricing Mechanism,,,FALSE
 PricingUCA.sum,Pricing,Pricing Mechanism,,,FALSE
 Indicator,Europe,,,,FALSE
+Vehicle.AwardTask,Vehicles,Award or Task Order,,,FALSE
 Vehicle.detail,Vehicles,Contract Vehicle,,,FALSE
 Vehicle.sum,Vehicles,Contract Vehicle,,,FALSE
 Vendor.Size.detail,Vendors,Vendor Size,,,FALSE
