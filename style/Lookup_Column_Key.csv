@@ -5,6 +5,8 @@ Customer.detail,Agencies,Customer,,,FALSE
 Customer.manual.subtitles,Agencies,Customer,,,FALSE
 Customer.sum,Agencies,Customer,,,FALSE
 Customer.FMS,Agencies,Customer,,,FALSE
+BioTechCustomer,Agencies,Customer,,,FALSE
+EnzymeCustomer,Agencies,Customer,,,FALSE
 Agency,Agencies,Agency,,,FALSE
 Is.Defense,Agencies,Defense or Civilian,,,FALSE
 SubFunder.Detail,Agencies,Funding Component,,,FALSE
