@@ -898,7 +898,7 @@ survey_key,govbenefits_multiplestages,Competition at\nMultiple Stages,10,"DIIG S
 survey_key,govbenefits_similarparts,Use Similar Parts\nAcross Systems,11,"DIIG Secondary, Navy",#1d2d5c,,,,,,
 survey_key,govbenefits_techlifecycle,Inserting Technology\nOver Lifecycle,12,"DIIG Secondary, Coast Guard",#596FB5,,,,,,
 survey_key,govbenefits_anyother,Other,13,"DIIG Secondary, Purplish Blue",#9eadd8,,,,,,
-survey_key,govbenefits_anyother,Other,13,"DIIG Secondary, Purplish Blue",#9eadd8,,,,,,
+survey_key,govbenefits_other,Other,13,"DIIG Secondary, Purplish Blue",#9eadd8,,,,,,
 survey_key,mosa_fixedprice_text,Fixed Price,6,"DIIG Primary, Blue",#0054A4,,,,,,
 survey_key,mosa_fixedprice,,6,"DIIG Primary, Blue",#0054A4,,,,,,
 survey_key,mosa_ota_text,OTA,3,"DIIG Primary, Blue",#0054A4,,,,,,
