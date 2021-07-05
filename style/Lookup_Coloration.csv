@@ -819,7 +819,7 @@ likert5,MOSA model has been a neutral factor,No Effect,3,"DIIG Additional, Pale 
 likert5,MOSA model has moderately helped performance in this area,Moderately\nhelped,4,"DIIG Primary, Air Force",#72a0c1,,,,,,
 likert5,MOSA model has significantly helped performance in this area,Significantly\nhelped,5,"DIIG Primary,Blue",#0054A4,,,,,,
 ,,,,,,,,,,,
-likert5,Much less likely to participate,Much less\n likely,1,"DIIG Primary, Red",#BB4243,,,,,,
+likert5,Much less likely to participate,Much less\nlikely,1,"DIIG Primary, Red",#BB4243,,,,,,
 likert5,A little less likely to participate,A little\nless likely,2,"DIIG Additional, Sea Pink",#d37d7d,,,,,,
 likert5,Neither more or less likely to participate,Neither more\nor less,3,"DIIG Additional, Pale Gray",#bcbcbc,,,,,,
 likert5,A little more likely to participate,A little\nmore likely,4,"DIIG Primary, Air Force",#72a0c1,,,,,,
