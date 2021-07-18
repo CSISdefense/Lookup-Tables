@@ -445,7 +445,7 @@ In.the.MOSA.project.you.are.most.familiar.with..how.long.on.average.did.it.take.
 In.the.MOSA.project.you.are.most.familiar.with..how.is.cost.risk.distributed.between.the.vendor.and.the.government..,contract_costrisk
 Please.specify.the.contracting.mechanism,Please.specify.the.contracting.mechanism
 In.the.MOSA.project.you.are.most.familiar.with.what.vehicle.is.employed.,contract_vehicle
-Other..please.specify..1,contract_other
+Other..please.specify.1,contract_other
 How.would.the.MOSA.project.you.are.most.familiar.with.interact.with.each.of.these.acquisition.characteristics.,mosa_fixedprice
 How.would.MOSA.interact.with.each.of.these.acquisition.characteristics.,mosa_fixedprice
 OTA,mosa_ota
@@ -456,7 +456,7 @@ Employs.Software.Licensing,mosa_license
 Multi.vendor.contracts,mosa_multivendor
 This.is.a.space.for.any.other.comments.on.acquisition.approach.,This.is.a.space.for.any.other.comments.on.acquisition.approach.
 In.the.MOSA.project.you.are.most.familiar.with..what.was.the.primary.source..if.any..innovation.have.you.observed.as.a.result.of.this.new.way.of.doing.business.,innovation
-Other..please.specify..2,innovation_other
+Other..please.specify..1,innovation_other
 Can.you.please.explain.why.MOSA.did.not.lead.to.any.significant.changes.to.innovation.in.this.project.,Can.you.please.explain.why.MOSA.did.not.lead.to.any.significant.changes.to.innovation.in.this.project.
 In.the.MOSA.project.you.are.most.familiar.with..how.long.does.it.take..or.do.you.expect.it.to.take..to.for..your.organization.vendors.most.relevant.to.your.work..to.achieve.a.positive.return.on.investment.,roi
 What..in.your.opinion.what..if.any..are.the.most.likely.benefits.of.widespread.US.government.adoption.of.MOSA.to.your.company.,govbenefits_streamlinedaq
@@ -466,7 +466,7 @@ Ability.to.compete.at.multiple.stages.of.a.contract,govbenefits_multiplestages
 Ease.of.bringing.in.commercial.technology,govbenefits_commercialtech
 Opportunities.to.insert.technology.throughout.a.system’s.lifecycle,govbenefits_techlifecycle
 Access.to.common.digital.interface.for.development,govbenefits_digitalinterface
-Other..please.specify.3,govbenefits_other
+Other..please.specify..2,govbenefits_other
 How.does.the.use.of.a.US.government.open.system.approach.change.the.fiscal.appeal.for..your.organization..vendors.most.relevant.to.your.work..to.engage.in.each.of.the.following.phases.of.development.,appeal_RD
 Participating.in.the.procurement.phase,appeal_procure
 Participating.in.the.operations.and.maintenance.phase,appeal_OM
