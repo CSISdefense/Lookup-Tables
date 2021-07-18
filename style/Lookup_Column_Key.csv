@@ -5,6 +5,8 @@ Customer.detail,Agencies,Customer,,,FALSE
 Customer.manual.subtitles,Agencies,Customer,,,FALSE
 Customer.sum,Agencies,Customer,,,FALSE
 Customer.FMS,Agencies,Customer,,,FALSE
+BioTechCustomer,Agencies,Customer,,,FALSE
+EnzymeCustomer,Agencies,Customer,,,FALSE
 Agency,Agencies,Agency,,,FALSE
 Is.Defense,Agencies,Defense or Civilian,,,FALSE
 SubFunder.Detail,Agencies,Funding Component,,,FALSE
@@ -42,6 +44,7 @@ PricingFee,Pricing,Pricing Mechanism,,,FALSE
 PricingUCA,Pricing,Pricing Mechanism,,,FALSE
 PricingUCA.sum,Pricing,Pricing Mechanism,,,FALSE
 Indicator,Europe,,,,FALSE
+Vehicle.AwardTask,Vehicles,Award or Task Order,,,FALSE
 Vehicle.detail,Vehicles,Contract Vehicle,,,FALSE
 Vehicle.sum,Vehicles,Contract Vehicle,,,FALSE
 Vendor.Size.detail,Vendors,Vendor Size,,,FALSE
@@ -753,14 +756,14 @@ perform_quality,,,,,
 perform_newvendor,,,,,
 perform_comtech,,,,,
 perform_vendprocess,,,,,
-perform_mosa,likert4,,,,
-perform_cost_text,likert4,,,,
-perform_sched_text,likert4,,,,
-perform_speed_text,likert4,,,,
-perform_quality_text,likert4,,,,
-perform_newvendor_text,likert4,,,,
-perform_comtech_text,likert4,,,,
-perform_vendprocess_text,likert4,,,,
+perform_mosa,likert5,,,,
+perform_cost_text,likert5,,,,
+perform_sched_text,likert5,,,,
+perform_speed_text,likert5,,,,
+perform_quality_text,likert5,,,,
+perform_newvendor_text,likert5,,,,
+perform_comtech_text,likert5,,,,
+perform_vendprocess_text,likert5,,,,
 What.features.or.incentives.in.this.MOSA.project.led.it.to.significantly..help.harm..performance.on.the.above.features..cost.schedule.quality.new.vendors..commercial.technology.,,,,,
 imp,likert5,,,,
 imp_standards_text,likert5,,,,

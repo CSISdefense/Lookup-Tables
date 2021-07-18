@@ -1,0 +1,12 @@
+Vehicle.detail,Vehicle.sum,Vehicle.AwardTask
+Basic Ordering Agreement (BOA),Other IDV,Task Order
+Blanket Purchase Agreement (BPA),Other IDV,Task Order
+BPA CALL,Other IDV,Task Order
+DEFINITIVE CONTRACT,Definitive,Award
+DELIVERY ORDER,Unlbd. IDV,Task Order
+Federal Supply Schedule (FSS),Other IDV,Task Order
+Governmentwide Acquisition Contract (GWAC),Other IDV,Task Order
+MULTIPLE AWARD Indefinite Delivery Contract (IDC),Multi-Awd.,Task Order
+PURCHASE ORDER,Pur. Order,Award
+SINGLE AWARD Indefinite Delivery Contract (IDC),Single-Awd.,Task Order
+Unlabeled Indefinite Delivery Contract (IDC),Unlbd. IDV,Task Order
