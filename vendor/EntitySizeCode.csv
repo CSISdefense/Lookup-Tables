@@ -1,8 +1,8 @@
-﻿EntitySizeCode,EntitySizeText
-B,Big Five
-J,Large: Big 5 JV
-L,Large Vendor
-M,Medium Vendor
-N,Sometimes Small Vendor
-S,Always Small Vendor
-U,Unlabeled Vendor
+﻿EntitySizeCode,EntitySizeText,SmallText
+B,Big Five,Other Than Small
+J,Large: Big 5 JV,Other Than Small
+L,Large Vendor,Other Than Small
+M,Medium Vendor,Other Than Small
+N,Sometimes Small Vendor,Sometimes Small Vendor
+S,Always Small Vendor,Always Small Vendor
+U,Unlabeled Vendor,Unlabeled Vendor
