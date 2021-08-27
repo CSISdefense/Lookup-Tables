@@ -1025,7 +1025,7 @@ PlatformPortfolio,Ships & Submarines,Ships &\nSubmarines,2,"DIIG Secondary, Navy
 PlatformPortfolio,Maritime,Maritime,2,"DIIG Secondary, Navy",#1d2d5c,,,,default grey,#554449,
 PlatformPortfolio,Cross-Platform,Cross-Platform,3,"DIIG Secondary, Mallard",#3D4936,,,,default grey,#554449,
 PlatformPortfolio,Land Vehicles,Land Vehicles,3,"DIIG Primary, Green",#4c9361,,,,default grey,#554449,
-PlatformPortfolio,Land,Land,3,"DIIG Primary, Green",#4c9361,,,,default grey,#554449,
+PlatformPortfolio,Ground,Ground,3,"DIIG Primary, Green",#4c9361,,,,default grey,#554449,
 PlatformPortfolio,Space Systems,Space Systems,4,"DIIG Primary, Blue",#0054A4,,,,default grey,#554449,
 PlatformPortfolio,Missile and Space Systems,Missile &\nSpace Systems,4,,#8064A8,,,,default grey,#554449,
 PlatformPortfolio,Missile Defense,Air & Missile\nDefense,5,Thistle,#D8BFD7,,,,default grey,#554449,
