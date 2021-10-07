@@ -24,6 +24,7 @@ ContractingAgencyID,Contracting.Agency.ID
 SumOfContractObligatedAmount,ContractObligatedAmount
 ParentOrPartnerName,ContractorDisplayName
 customer,Customer
+Contractingcustomer,ContractingCustomer
 DEPLOYMENT,Deployment
 fiscal.year,Fiscal.Year
 Fiscal_Year,Fiscal.Year
