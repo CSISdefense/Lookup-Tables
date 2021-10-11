@@ -1,4 +1,5 @@
 ﻿column,coloration.key,title,share.title,period.title,is.colon.split
+Funder,Agencies,Funder,,,FALSE
 Customer,Agencies,Customer,,,FALSE
 ContractingCustomer,Agencies,Customer,,,FALSE
 Customer.detail,Agencies,Customer,,,FALSE
@@ -36,6 +37,7 @@ No.Competition.sum,Competition,Extent of Competition,,,FALSE
 CompOffr,Competition,How many offers a contract received(No Competition/1 offer/2 offer/3-4 offer/5+ offers),,,FALSE
 NoCompOffr,Competition,How many offers a contract received(No Competition/1 offer/2 offer/3-4 offer/5+ offers),,,FALSE
 Competition.effective.only,Competition,Extent of Competition,,,FALSE
+Commercial,Commercial,Commercial,,,FALSE
 Pricing.Mechanism.detail,Pricing,Pricing Mechanism,,,FALSE
 Pricing.Mechanism.sum,Pricing,Pricing Mechanism,,,FALSE
 Base,Pricing,Pricing Mechanism,,,FALSE
@@ -47,6 +49,7 @@ Indicator,Europe,,,,FALSE
 Vehicle.AwardTask,Vehicles,Award or Task Order,,,FALSE
 Vehicle.detail,Vehicles,Contract Vehicle,,,FALSE
 Vehicle.sum,Vehicles,Contract Vehicle,,,FALSE
+Vehicle.sum7,Vehicles,Contract Vehicle,,,FALSE
 Vendor.Size.detail,Vendors,Vendor Size,,,FALSE
 VendorSize,Vendors,Vendor Size,,,FALSE
 VendorSize_Intl,Vendors,Vendor Size and Nationality,,,FALSE
