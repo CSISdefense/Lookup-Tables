@@ -322,6 +322,7 @@ Contracting Agency Name,AgencyIDtext
 Contracting Agency ID,Contracting.Agency.ID
 Product or Service Code,ProductOrServiceCode
 Product or Service Description,ProductOrServiceCodeText
+platformportfolio,PlatformPortfolio
 IDV Type,idv_type_code
 IDV Multiple Or Single Award IDV,idv_multipleorsingleawardidc
 Award or IDV Type,contractactiontype
