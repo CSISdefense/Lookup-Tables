@@ -11,6 +11,7 @@ EnzymeCustomer,Agencies,Customer,,,FALSE
 Agency,Agencies,Agency,,,FALSE
 Is.Defense,Agencies,Defense or Civilian,,,FALSE
 SubFunder.Detail,Agencies,Funding Component,,,FALSE
+ContractingSubCustomer,Agencies,Component,,,FALSE
 SubCustomer,Agencies,Component,,,FALSE
 SubCustomer.detail,Agencies,Component,,,FALSE
 SubCustomer.sum,Agencies,Component,,,FALSE
@@ -22,6 +23,7 @@ DoDcomp,Agencies,DoD Component,,,FALSE
 DefenseOrganization,Agencies,Defense Organization,,,FALSE
 ServicesCategory.detail,Area,Services Area,,,FALSE
 ServicesCategory.sum,Area,Services Area,,,FALSE
+DISAprodserv.sum,Area,Product or Service Area,,,FALSE
 RnDCategory.detail,Area,R&D Area,,,FALSE
 ProductsCategory.detail,Area,Products Area,,,FALSE
 ProductOrServiceArea,Area,Product or Service Area,,,FALSE
