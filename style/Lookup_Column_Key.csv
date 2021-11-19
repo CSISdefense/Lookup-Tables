@@ -13,7 +13,6 @@ Is.Defense,Agencies,Defense or Civilian,,,FALSE
 SubFunder.Detail,Agencies,Funding Component,,,FALSE
 ContractingSubCustomer,Agencies,Component,,,FALSE
 SubCustomer,Agencies,Component,,,FALSE
-SubCustomer.JPO,Agencies,Component,,,FALSE
 SubCustomer.detail,Agencies,Component,,,FALSE
 SubCustomer.sum,Agencies,Component,,,FALSE
 SubCustomer.OTA,Agencies,Component,,,FALSE
