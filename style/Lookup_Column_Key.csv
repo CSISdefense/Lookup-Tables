@@ -13,8 +13,10 @@ Is.Defense,Agencies,Defense or Civilian,,,FALSE
 SubFunder.Detail,Agencies,Funding Component,,,FALSE
 ContractingSubCustomer,Agencies,Component,,,FALSE
 SubCustomer,Agencies,Component,,,FALSE
+SubCustomer.JPO,Agencies,Component,,,FALSE
 SubCustomer.detail,Agencies,Component,,,FALSE
 SubCustomer.sum,Agencies,Component,,,FALSE
+SubCustomer.OTA,Agencies,Component,,,FALSE
 SubCustomer.FMS,Agencies,Component,,,FALSE
 SubCustomer.component,Agencies,Component,,,FALSE
 SubCustomer.platform,Agencies,Component,,,FALSE
@@ -536,6 +538,7 @@ Fund_Type,,,,,FALSE
 Fund_Type_Description,,,,,FALSE
 Period,Period,Period,,,FALSE
 EntitySizeText,Vendors,Vendor Count,,,FALSE
+EntitySmall,Vendors,Vendor Count,,,FALSE
 EntitySizeText.sum,Vendors,Vendor Count,,,FALSE
 EntitySizeText.detail,Vendors,Vendor Count,,,FALSE
 AnyEntityUSplaceOfPerformance,Binary,,,,FALSE
