@@ -282,6 +282,8 @@ Area,Information & Communication\nTechnology Services,Information & Communicatio
 Area,Equipment-Related Services,Equipment-Related Services,4,"DIIG Additional, Sea Pink",#d37d7d,,,,default grey,#554449,
 Area,ERS,ERS,4,"DIIG Additional, Sea Pink",#d37d7d,,,,default grey,#554449,
 Area,FRS&C,FRS&C,5,"DIIG Additional, Yellow",#eec260,,,,default grey,#554449,
+Area,FRS,FRS,5,"DIIG Additional, Yellow",#eec260,,,,default grey,#554449,
+Area,Construction,Construction,6,"DIIG Additional, Tangelo",#e58846,,,,default grey,#554449,
 Area,MED,MED,7,"DIIG Secondary, Amaranth",#7c131b,,,,default grey,#554449,
 Area,Other Services,Other Services,8,"DIIG secondary, pale blue",#b2e1ea,,,,default grey,#554449,
 Area,Other Services and R&D,Other Services and R&D,9,Bright Purple,#9900CC,,,,default grey,#554449,
