@@ -1,7 +1,10 @@
+/****** Object:  Table [ErrorLogging].[FPDSdeleted]    Script Date: 11/26/2021 5:06:35 PM ******/
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
+
 CREATE TABLE [ErrorLogging].[FPDSdeleted](
 	[unique_transaction_id] [varchar](36) NULL,
 	[transaction_status] [varchar](6) NULL,
@@ -271,15 +274,22 @@ CREATE TABLE [ErrorLogging].[FPDSdeleted](
 	[program_activities_funding_this_award] [varchar](4000) NULL,
 	[obligated_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
-	[IsMissingFromUpdate] [bit] NOT NULL
+	[IsMissingFromUpdate] [bit] NOT NULL,
+	[dod_acquisition_program_description] [varchar](255) NULL
 ) ON [PRIMARY]
 GO
+
 ALTER TABLE [ErrorLogging].[FPDSdeleted] ADD  CONSTRAINT [df_CSISmodifiedDate]  DEFAULT (getdate()) FOR [CSISModifiedDate]
 GO
+
 ALTER TABLE [ErrorLogging].[FPDSdeleted] ADD  DEFAULT ((1)) FOR [IsMissingFromUpdate]
 GO
+
 ALTER TABLE [ErrorLogging].[FPDSdeleted]  WITH CHECK ADD  CONSTRAINT [fk_errorlogging_fpdsduplicates_csistransctionid] FOREIGN KEY([CSIStransactionID])
 REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
 GO
+
 ALTER TABLE [ErrorLogging].[FPDSdeleted] CHECK CONSTRAINT [fk_errorlogging_fpdsduplicates_csistransctionid]
 GO
+
+
