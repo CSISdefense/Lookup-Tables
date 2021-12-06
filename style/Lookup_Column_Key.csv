@@ -13,13 +13,13 @@ Is.Defense,Agencies,Defense or Civilian,,,FALSE
 SubFunder.Detail,Agencies,Funding Component,,,FALSE
 ContractingSubCustomer,Agencies,Component,,,FALSE
 SubCustomer,Agencies,Component,,,FALSE
-SubCustomer.JPO,Agencies,Component,,,FALSE
 SubCustomer.detail,Agencies,Component,,,FALSE
 SubCustomer.sum,Agencies,Component,,,FALSE
 SubCustomer.OTA,Agencies,Component,,,FALSE
 SubCustomer.FMS,Agencies,Component,,,FALSE
 SubCustomer.component,Agencies,Component,,,FALSE
 SubCustomer.platform,Agencies,Component,,,FALSE
+SubCustomer.JPO,Agencies,Component,,,FALSE
 MilDep,Agencies,Military Department,,,FALSE
 DoDcomp,Agencies,DoD Component,,,FALSE
 DefenseOrganization,Agencies,Defense Organization,,,FALSE
@@ -34,6 +34,7 @@ SupplyServiceERS,Area,"Supply, Equipment-Related Service, Other Services",,,FALS
 ProductServiceOrRnDarea,Area,"Product, Service, or R&D Area",,,FALSE
 ProductServiceOrRnDarea.sum,Area,"Product, Service, or R&D",,,FALSE
 ProductOrServiceArea.DLA,Area,Product or Service Area,,,FALSE
+CrisisProductOrServiceArea,Area,Product or Service Area,,,FALSE
 Competition.detail,Competition,Extent of Competition,,,FALSE
 Competition.multisum,Competition,Extent of Competition,,,FALSE
 Competition.sum,Competition,Extent of Competition,,,FALSE
