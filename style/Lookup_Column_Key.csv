@@ -105,6 +105,7 @@ DefOrEqu,Aggregate,,,,FALSE
 MetricName,Aggregate,,,,FALSE
 OCOlabelDetail,Crisis,,,,FALSE
 NIAcontradictions,Crisis,,,,FALSE
+IsFMSplaceIntl,International,Foreign Place of Performance and FMS,,,FALSE
 PlaceIsForeign,International,Foreign Place of Performance,,,FALSE
 OriginIsForeign,International,Foreign Origin,,,FALSE
 VendorIsForeign,International,Foreign Vendor,,,FALSE
