@@ -32,6 +32,7 @@ ProductOrServiceArea,Area,Product or Service Area,,,FALSE
 ProductOrService,Area,Product or Service,,,FALSE
 SupplyServiceERS,Area,"Supply, Equipment-Related Service, Other Services",,,FALSE
 ProductServiceOrRnDarea,Area,"Product, Service, or R&D Area",,,FALSE
+ProductServiceOrRnDarea.covid,Area,"Product, Service, or R&D",,,FALSE
 ProductServiceOrRnDarea.sum,Area,"Product, Service, or R&D",,,FALSE
 ProductOrServiceArea.DLA,Area,Product or Service Area,,,FALSE
 CrisisProductOrServiceArea,Area,Product or Service Area,,,FALSE
