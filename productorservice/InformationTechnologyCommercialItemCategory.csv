@@ -1,9 +1,16 @@
-informationtechnologycommercialitemcategory,Commercial,ITcategory
-Unlabeled,Unlabeled,Unlabeled
-A: COMMERCIALLY AVAILABLE,Commercial,IT Item
-B: OTHER COMMERCIAL ITEM,Commercial,IT Item
-C: NON-DEVELOPMENTAL ITEM,Non-Developmental,IT Item
-D: NON-COMMERCIAL ITEM,Non-Commercial,IT Item
-E: COMMERCIAL SERVICE,Commercial,IT Service
-F: NON-COMMERCIAL SERVICE,Non-Commercial,IT Service
-Z: NOT IT PRODUCTS OR SERVICES,Not IT,Not IT
+informationtechnologycommercialitemcategory,informationtechnologycommercialitemcategoryText,Commercial,ITcategory
+Unlabeled,,Unlabeled,Unlabeled
+A: COMMERCIALLY AVAILABLE,COMMERCIAL SERVICE,Commercial,IT Item
+B: OTHER COMMERCIAL ITEM,COMMERCIALLY AVAILABLE,Commercial,IT Item
+C: NON-DEVELOPMENTAL ITEM,NON-COMMERCIAL ITEM,Non-Developmental,IT Item
+D: NON-COMMERCIAL ITEM,NON-COMMERCIAL SERVICE,Non-Commercial,IT Item
+E: COMMERCIAL SERVICE,NON-DEVELOPMENTAL ITEM,Commercial,IT Service
+F: NON-COMMERCIAL SERVICE,NOT IT PRODUCTS OR SERVICES,Non-Commercial,IT Service
+Z: NOT IT PRODUCTS OR SERVICES,OTHER COMMERCIAL ITEM,Not IT,Not IT
+A,COMMERCIAL SERVICE,Commercial,IT Item
+B,COMMERCIALLY AVAILABLE,Commercial,IT Item
+C,NON-COMMERCIAL ITEM,Non-Developmental,IT Item
+D,NON-COMMERCIAL SERVICE,Non-Commercial,IT Item
+E,NON-DEVELOPMENTAL ITEM,Commercial,IT Service
+F,NOT IT PRODUCTS OR SERVICES,Non-Commercial,IT Service
+Z,OTHER COMMERCIAL ITEM,Not IT,Not IT
