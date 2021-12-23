@@ -53,6 +53,7 @@ PricingUCA,Pricing,Pricing Mechanism,,,FALSE
 PricingUCA.sum,Pricing,Pricing Mechanism,,,FALSE
 Indicator,Europe,,,,FALSE
 Vehicle.AwardTask,Vehicles,Award or Task Order,,,FALSE
+Vehicle,Vehicles,Contract Vehicle,,,FALSE
 Vehicle.detail,Vehicles,Contract Vehicle,,,FALSE
 Vehicle.sum,Vehicles,Contract Vehicle,,,FALSE
 Vehicle.sum7,Vehicles,Contract Vehicle,,,FALSE
