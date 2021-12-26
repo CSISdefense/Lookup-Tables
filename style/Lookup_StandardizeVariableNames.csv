@@ -42,8 +42,8 @@ StateCode,PoPstateCode
 FundingMechanismClassification,PricingMechanism
 TypeofContractPricingtext,PricingMechanism
 TypeOfContractPricing,PricingMechanismCode
-Pricing.Mechanism,
-Pricing.Mechanism.Code,
+Pricing.Mechanism,PricingMechanism
+Pricing.Mechanism.Code,PricingMechanismCode
 Simple,SimpleArea
 ProductorServiceArea,ProductOrServiceArea
 ProductsCategory,ProductsCategory
