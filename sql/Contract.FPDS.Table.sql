@@ -1,10 +1,7 @@
-/****** Object:  Table [Contract].[FPDS]    Script Date: 11/26/2021 5:04:25 PM ******/
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
 CREATE TABLE [Contract].[FPDS](
 	[unique_transaction_id] [varchar](36) NULL,
 	[transaction_status] [varchar](6) NULL,
@@ -273,476 +270,347 @@ CREATE TABLE [Contract].[FPDS](
 	[program_activities_funding_this_award] [varchar](4000) NULL,
 	[obligated_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
-	[dod_acquisition_program_description] [varchar](255) NULL
+	[dod_acquisition_program_description] [varchar](255) NULL,
+	[recipient_uei] [varchar](12) NULL,
+	[recipient_parent_uei] [varchar](12) NULL
 ) ON [PRIMARY]
 GO
-
 ALTER TABLE [Contract].[FPDS] ADD  CONSTRAINT [DF_FPDS_CSISCreatedDate]  DEFAULT (getdate()) FOR [CSISCreatedDate]
 GO
-
 ALTER TABLE [Contract].[FPDS] ADD  CONSTRAINT [DF_FPDS_CSISModifiedDate]  DEFAULT (getdate()) FOR [CSISModifiedDate]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD FOREIGN KEY([awarding_agency_code])
 REFERENCES [agency].[awarding_agency_code] ([awarding_agency_code])
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD FOREIGN KEY([awarding_agency_code])
 REFERENCES [agency].[awarding_agency_code] ([awarding_agency_code])
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_contract_transaction_unique_key] FOREIGN KEY([contract_transaction_unique_key])
 REFERENCES [Contract].[contract_transaction_unique_key] ([contract_transaction_unique_key])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_contract_transaction_unique_key]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_award_type_code] FOREIGN KEY([award_type_code])
 REFERENCES [FPDSTypeTable].[award_type_code] ([award_type_code])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_award_type_code]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_contractactiontype] FOREIGN KEY([contractactiontype])
 REFERENCES [FPDSTypeTable].[ContractActionType] ([contractactiontype])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_contractactiontype]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_ContractingOfficeCodeHistory] FOREIGN KEY([fiscal_year], [contractingofficeid])
 REFERENCES [Office].[ContractingOfficeCodeHistory] ([fiscal_year], [ContractingOfficeCode])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_ContractingOfficeCodeHistory]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_csistransactionid] FOREIGN KEY([CSIStransactionID])
 REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_csistransactionid]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_idv_type_code] FOREIGN KEY([idv_type_code])
 REFERENCES [FPDSTypeTable].[idv_type_code] ([idv_type_code])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_idv_type_code]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [fk_contract_fpds_LetterContract] FOREIGN KEY([lettercontract])
 REFERENCES [FPDSTypeTable].[lettercontract] ([LetterContract])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_LetterContract]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_majorprogramcode] FOREIGN KEY([majorprogramcode])
 REFERENCES [Contract].[MajorProgramCode] ([majorprogramcode])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_majorprogramcode]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [fk_contract_fpds_Mod_Agency] FOREIGN KEY([mod_agency])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_Mod_Agency]
 GO
-
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_parent_award_single_or_multiple_code] FOREIGN KEY([parent_award_single_or_multiple_code])
+REFERENCES [FPDSTypeTable].[multipleorsingleawardidc] ([multipleorsingleawardidc])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_parent_award_single_or_multiple_code]
+GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_parent_award_type_code] FOREIGN KEY([parent_award_type_code])
 REFERENCES [FPDSTypeTable].[idv_type_code] ([idv_type_code])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_parent_award_type_code]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_rec_flag] FOREIGN KEY([rec_flag])
 REFERENCES [budget].[rec_flag] ([rec_flag])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_rec_flag]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_typeofcontractpricing] FOREIGN KEY([typeofcontractpricing])
 REFERENCES [FPDSTypeTable].[typeofcontractpricing] ([TypeOfContractPricing])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_typeofcontractpricing]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS__headquartercode] FOREIGN KEY([headquartercode])
 REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS__headquartercode]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_agencyid] FOREIGN KEY([agencyid])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_agencyid]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_claimantprogramcode] FOREIGN KEY([claimantprogramcode])
 REFERENCES [FPDSTypeTable].[ClaimantProgramCode] ([ClaimantProgramCode])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_claimantprogramcode]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_commercialitemacquisitionprocedures] FOREIGN KEY([commercialitemacquisitionprocedures])
 REFERENCES [FPDSTypeTable].[CommercialItemAcquisitionProcedures] ([CommercialItemAcquisitionProcedures])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_commercialitemacquisitionprocedures]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_contingencyhumanitarianpeacekeepingoperation] FOREIGN KEY([contingencyhumanitarianpeacekeepingoperation])
 REFERENCES [Assistance].[ContingencyHumanitarianPeacekeepingOperation] ([ContingencyHumanitarianPeacekeepingOperation])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_contingencyhumanitarianpeacekeepingoperation]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_contractbundling] FOREIGN KEY([contractbundling])
 REFERENCES [FPDSTypeTable].[contractbundling] ([contractbundling])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_contractbundling]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_contractfinancing] FOREIGN KEY([contractfinancing])
 REFERENCES [FPDSTypeTable].[contractfinancing] ([contractfinancing])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_contractfinancing]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_contractingofficeagencyid] FOREIGN KEY([contractingofficeagencyid])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_contractingofficeagencyid]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [fk_FPDS_contractingOfficeCode] FOREIGN KEY([fundingrequestingofficeid])
 REFERENCES [Office].[ContractingOfficeCode] ([ContractingOfficeCode])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_FPDS_contractingOfficeCode]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_contractingofficeid] FOREIGN KEY([contractingofficeid])
 REFERENCES [Office].[ContractingOfficeCode] ([ContractingOfficeCode])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_contractingofficeid]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_contractingofficerbusinesssizedetermination] FOREIGN KEY([contractingofficerbusinesssizedetermination])
 REFERENCES [FPDSTypeTable].[contractingofficerbusinesssizedetermination] ([contractingofficerbusinesssizedetermination])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_contractingofficerbusinesssizedetermination]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_costorpricingdata] FOREIGN KEY([costorpricingdata])
 REFERENCES [FPDSTypeTable].[costorpricingdata] ([costorpricingdata])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_costorpricingdata]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_countryoforigin] FOREIGN KEY([countryoforigin])
 REFERENCES [FPDSTypeTable].[Country3LetterCode] ([Country3LetterCode])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_countryoforigin]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_davisbaconact] FOREIGN KEY([davisbaconact])
 REFERENCES [FPDSTypeTable].[davisbaconact] ([davisbaconact])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_davisbaconact]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_divisionname] FOREIGN KEY([divisionname])
 REFERENCES [Vendor].[VendorName] ([vendorname])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_divisionname]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_dunsnumber] FOREIGN KEY([dunsnumber])
 REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_dunsnumber]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [fk_FPDS_Dunsnumber_Fiscal_Year] FOREIGN KEY([dunsnumber], [fiscal_year])
 REFERENCES [Contractor].[DunsnumberToParentContractorHistory] ([DUNSnumber], [FiscalYear])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_FPDS_Dunsnumber_Fiscal_Year]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_evaluatedpreference] FOREIGN KEY([evaluatedpreference])
 REFERENCES [FPDSTypeTable].[evaluatedpreference] ([evaluatedpreference])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_evaluatedpreference]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_extentcompeted] FOREIGN KEY([extentcompeted])
 REFERENCES [FPDSTypeTable].[extentcompeted] ([extentcompeted])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_extentcompeted]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_fundingrequestingagencyid] FOREIGN KEY([fundingrequestingagencyid])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_fundingrequestingagencyid]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_gfe_gfp] FOREIGN KEY([gfe_gfp_code])
 REFERENCES [FPDSTypeTable].[gfe_gfp] ([gfe_gfp])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_gfe_gfp]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_idvagencyid] FOREIGN KEY([idvagencyid])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_idvagencyid]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_interagencycontractingauthority] FOREIGN KEY([interagencycontractingauthority])
 REFERENCES [FPDSTypeTable].[interagencycontractingauthority] ([interagencycontractingauthority])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_interagencycontractingauthority]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_maj_agency_cat] FOREIGN KEY([maj_agency_cat])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_maj_agency_cat]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_maj_fund_agency_cat] FOREIGN KEY([maj_fund_agency_cat])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_maj_fund_agency_cat]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_manufacturingorganizationtype] FOREIGN KEY([manufacturingorganizationtype])
 REFERENCES [FPDSTypeTable].[manufacturingorganizationtype] ([manufacturingorganizationtype])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_manufacturingorganizationtype]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_mod_agency] FOREIGN KEY([mod_agency])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_mod_agency]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_multipleorsingleawardidc] FOREIGN KEY([multipleorsingleawardidc])
 REFERENCES [FPDSTypeTable].[multipleorsingleawardidc] ([multipleorsingleawardidc])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_multipleorsingleawardidc]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_nationalinterestactioncode] FOREIGN KEY([nationalinterestactioncode])
 REFERENCES [Assistance].[NationalInterestActionCode] ([NationalInterestActionCode])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_nationalinterestactioncode]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_parentdunsnumber] FOREIGN KEY([parentdunsnumber])
 REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_parentdunsnumber]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_placeofmanufacture] FOREIGN KEY([placeofmanufacture])
 REFERENCES [FPDSTypeTable].[PlaceOfManufacture] ([PlaceOfManufacture])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_placeofmanufacture]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_placeofperformancecountrycode] FOREIGN KEY([placeofperformancecountrycode])
 REFERENCES [FPDSTypeTable].[Country3LetterCode] ([Country3LetterCode])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_placeofperformancecountrycode]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_pop_state_code] FOREIGN KEY([pop_state_code])
 REFERENCES [FPDSTypeTable].[statecode] ([statecode])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_pop_state_code]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_principalnaicscode] FOREIGN KEY([principalnaicscode])
 REFERENCES [FPDSTypeTable].[PrincipalNaicsCode] ([principalnaicscode])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_principalnaicscode]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_productorservicecode] FOREIGN KEY([productorservicecode])
 REFERENCES [FPDSTypeTable].[ProductOrServiceCode] ([ProductOrServiceCode])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_productorservicecode]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_reasonformodification] FOREIGN KEY([reasonformodification])
 REFERENCES [FPDSTypeTable].[reasonformodification] ([reasonformodification])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_reasonformodification]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_reasonnotcompeted] FOREIGN KEY([reasonnotcompeted])
 REFERENCES [FPDSTypeTable].[reasonnotcompeted] ([reasonnotcompeted])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_reasonnotcompeted]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_recoveredmaterialclauses] FOREIGN KEY([recoveredmaterialclauses])
 REFERENCES [FPDSTypeTable].[recoveredmaterialclauses] ([recoveredmaterialclauses])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_recoveredmaterialclauses]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_seatransportation] FOREIGN KEY([seatransportation])
 REFERENCES [FPDSTypeTable].[seatransportation] ([seatransportation])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_seatransportation]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_servicecontractact] FOREIGN KEY([servicecontractact])
 REFERENCES [FPDSTypeTable].[servicecontractact] ([servicecontractact])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_servicecontractact]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_solicitationprocedures] FOREIGN KEY([solicitationprocedures])
 REFERENCES [FPDSTypeTable].[solicitationprocedures] ([solicitationprocedures])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_solicitationprocedures]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_statecode] FOREIGN KEY([statecode])
 REFERENCES [FPDSTypeTable].[statecode] ([statecode])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_statecode]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_statutoryexceptiontofairopportunity] FOREIGN KEY([statutoryexceptiontofairopportunity])
 REFERENCES [FPDSTypeTable].[statutoryexceptiontofairopportunity] ([statutoryexceptiontofairopportunity])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_statutoryexceptiontofairopportunity]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_subcontractplan] FOREIGN KEY([subcontractplan])
 REFERENCES [FPDSTypeTable].[subcontractplan] ([subcontractplan])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_subcontractplan]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_systemequipmentcode] FOREIGN KEY([systemequipmentcode])
 REFERENCES [Project].[SystemEquipmentCode] ([systemequipmentcode])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_systemequipmentcode]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_typeofsetaside] FOREIGN KEY([typeofsetaside])
 REFERENCES [FPDSTypeTable].[typeofsetaside] ([typeofsetaside])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_typeofsetaside]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_useofepadesignatedproducts] FOREIGN KEY([useofepadesignatedproducts])
 REFERENCES [FPDSTypeTable].[useofepadesignatedproducts] ([useofepadesignatedproducts])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_useofepadesignatedproducts]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_fpds_vendorcountrycode] FOREIGN KEY([vendorcountrycode])
 REFERENCES [FPDSTypeTable].[vendorcountrycode] ([vendorcountrycode])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_fpds_vendorcountrycode]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_vendordoingasbusinessname] FOREIGN KEY([vendordoingasbusinessname])
 REFERENCES [Vendor].[VendorName] ([vendorname])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_vendordoingasbusinessname]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [fk_FPDS_vendorlegalorganizationname] FOREIGN KEY([vendorlegalorganizationname])
 REFERENCES [Vendor].[VendorName] ([vendorname])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_FPDS_vendorlegalorganizationname]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [fk_FPDS_VendorName] FOREIGN KEY([vendorname])
 REFERENCES [Vendor].[VendorName] ([vendorname])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_FPDS_VendorName]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_walshhealyact] FOREIGN KEY([walshhealyact])
 REFERENCES [FPDSTypeTable].[walshhealyact] ([walshhealyact])
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_walshhealyact]
 GO
-
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [chk_PIID_ContractNumber] CHECK  (([PIID] IS NOT NULL OR [ContractNumber] IS NOT NULL))
 GO
-
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [chk_PIID_ContractNumber]
 GO
-
-

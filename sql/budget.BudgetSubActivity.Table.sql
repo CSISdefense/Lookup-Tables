@@ -23,7 +23,7 @@ GO
 ALTER TABLE [budget].[BudgetSubActivity] CHECK CONSTRAINT [FK__BSA__DefenseOrga__118B55E3]
 GO
 ALTER TABLE [budget].[BudgetSubActivity]  WITH NOCHECK ADD  CONSTRAINT [FK__BSA__Procurement__16500B00] FOREIGN KEY([ProcurementCategory])
-REFERENCES [Project].[ProcurementCategory] ([ProcurementCategory])
+REFERENCES [Project].[DBAcategory] ([DBAcategory])
 GO
 ALTER TABLE [budget].[BudgetSubActivity] CHECK CONSTRAINT [FK__BSA__Procurement__16500B00]
 GO

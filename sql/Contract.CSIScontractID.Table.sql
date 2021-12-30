@@ -44,6 +44,7 @@ CREATE TABLE [Contract].[CSIScontractID](
 	[topContractingOfficeAmount] [decimal](19, 4) NULL,
 	[IsParentCSIScontractID] [bit] NULL,
 	[IsDuplicate] [bit] NULL,
+	[IsAbove2018constant10ThousandThreshold] [bit] NULL,
  CONSTRAINT [pk_CSIScontractID] PRIMARY KEY CLUSTERED 
 (
 	[CSIScontractID] ASC

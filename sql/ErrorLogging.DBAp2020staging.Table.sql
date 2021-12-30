@@ -11,7 +11,7 @@ CREATE TABLE [ErrorLogging].[DBAp2020staging](
 	[BudgetSubActivityTitle] [varchar](75) NULL,
 	[LineItem] [varchar](13) NULL,
 	[LineItemTitle] [varchar](301) NULL,
-	[ProcurementCategory] [varchar](31) NULL,
+	[DBAcategory] [varchar](31) NULL,
 	[CostType] [varchar](1) NULL,
 	[CostTypeTitle] [varchar](50) NULL,
 	[ID] [smallint] NULL,
@@ -24,6 +24,7 @@ CREATE TABLE [ErrorLogging].[DBAp2020staging](
 	[AccountDSI] [varchar](5) NULL,
 	[DefenseOrganization] [varchar](5) NULL,
 	[MainAccountName] [varchar](56) NULL,
-	[Service] [varchar](12) NULL
+	[Service] [varchar](12) NULL,
+	[DBAsubCategory] [varchar](50) NULL
 ) ON [PRIMARY]
 GO

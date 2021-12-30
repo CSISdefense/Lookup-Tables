@@ -20,6 +20,7 @@ CREATE TABLE [Vendor].[StandardizedVendorNameHistory](
 	[IsEntityAbove2016constantOneMillionThreshold] [bit] NULL,
 	[AnyEntityForeignPlaceOfPerformance] [bit] NULL,
 	[EntitySizeCode] [varchar](1) NULL,
+	[IsEntityAbove2018constant10ThousandThreshold] [bit] NULL,
  CONSTRAINT [StandardizedVendorName_Fiscal_Year] UNIQUE NONCLUSTERED 
 (
 	[StandardizedVendorName] ASC,

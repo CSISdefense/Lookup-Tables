@@ -9,8 +9,9 @@ CREATE TABLE [Project].[LineItem](
 	[LineItem] [varchar](13) NOT NULL,
 	[LineItemTitle] [varchar](301) NULL,
 	[DefenseOrganization] [varchar](5) NULL,
-	[ProcurementCategory] [varchar](31) NULL,
+	[DBAcategory] [varchar](31) NULL,
 	[IsLineItemAlsoLineNumber] [bit] NULL,
+	[DBAsubcategory] [varchar](50) NULL,
  CONSTRAINT [pk_Project_LineItem] PRIMARY KEY CLUSTERED 
 (
 	[AccountDSI] ASC,
@@ -25,8 +26,8 @@ REFERENCES [agency].[DefenseOrganization] ([DefenseOrganization])
 GO
 ALTER TABLE [Project].[LineItem] CHECK CONSTRAINT [FK__LineItem__Defens__13739E55]
 GO
-ALTER TABLE [Project].[LineItem]  WITH NOCHECK ADD  CONSTRAINT [FK__LineItem__Procur__18385372] FOREIGN KEY([ProcurementCategory])
-REFERENCES [Project].[ProcurementCategory] ([ProcurementCategory])
+ALTER TABLE [Project].[LineItem]  WITH NOCHECK ADD  CONSTRAINT [FK__LineItem__Procur__18385372] FOREIGN KEY([DBAcategory])
+REFERENCES [Project].[DBAcategory] ([DBAcategory])
 GO
 ALTER TABLE [Project].[LineItem] CHECK CONSTRAINT [FK__LineItem__Procur__18385372]
 GO

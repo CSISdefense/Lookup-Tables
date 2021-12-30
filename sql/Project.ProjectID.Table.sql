@@ -4,7 +4,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [Project].[ProjectID](
 	[ProjectID] [int] IDENTITY(1,1) NOT NULL,
-	[ProjectName] [varchar](35) NULL,
+	[ProjectName] [varchar](100) NULL,
 	[ProjectPrettyName] [nvarchar](255) NULL,
 	[ProjectAbbreviation] [varchar](4) NULL,
 	[IsJointDevelopmentCaseStudy] [bit] NULL,
@@ -29,6 +29,7 @@ CREATE TABLE [Project].[ProjectID](
 	[ParentProjectID] [int] NULL,
 	[IDAID] [int] NULL,
 	[IsUnidentified] [bit] NULL,
+	[IncludesMOSA] [bit] NULL,
  CONSTRAINT [PK__ProjectI__761ABED0B116866B] PRIMARY KEY CLUSTERED 
 (
 	[ProjectID] ASC
@@ -61,4 +62,8 @@ ALTER TABLE [Project].[ProjectID]  WITH NOCHECK ADD  CONSTRAINT [FK__ProjectID__
 REFERENCES [ProductOrServiceCode].[PlatformPortfolio] ([PlatformPortfolio])
 GO
 ALTER TABLE [Project].[ProjectID] CHECK CONSTRAINT [FK__ProjectID__TopPl__67800D7E]
+GO
+ALTER TABLE [Project].[ProjectID]  WITH CHECK ADD  CONSTRAINT [chk_identified_platform] CHECK  ((NOT ([IsUnidentified]=(1) AND [platformportfolio] IS NOT NULL)))
+GO
+ALTER TABLE [Project].[ProjectID] CHECK CONSTRAINT [chk_identified_platform]
 GO
