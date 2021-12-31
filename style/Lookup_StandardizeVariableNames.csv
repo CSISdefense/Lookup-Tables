@@ -51,6 +51,7 @@ ProductsCategory,ProductsCategory
 ServiceCategory,ServicesCategory
 Services.Category,ServicesCategory
 ServicesCategory,ServicesCategory
+ProductServiceOrRnDarea.sum,SimpleArea
 simplearea,SimpleArea
 Sub_Customer,SubCustomer
 SubCustomerSum,SubCustomer

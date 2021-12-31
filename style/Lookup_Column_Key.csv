@@ -34,6 +34,7 @@ SupplyServiceERS,Area,"Supply, Equipment-Related Service, Other Services",,,FALS
 ProductServiceOrRnDarea,Area,"Product, Service, or R&D Area",,,FALSE
 ProductServiceOrRnDarea.covid,Area,"Product, Service, or R&D",,,FALSE
 ProductServiceOrRnDarea.sum,Area,"Product, Service, or R&D",,,FALSE
+SimpleArea,Area,"Product, Service, or R&D",,,FALSE
 ProductOrServiceArea.DLA,Area,Product or Service Area,,,FALSE
 CrisisProductOrServiceArea,Area,Product or Service Area,,,FALSE
 Competition.detail,Competition,Extent of Competition,,,FALSE
