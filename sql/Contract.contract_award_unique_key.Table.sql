@@ -16,6 +16,9 @@ CREATE TABLE [Contract].[contract_award_unique_key](
 	[IsDerived] [bit] NULL,
 	[IsFPDSerror] [bit] NOT NULL,
 	[numberofoffersreceived] [bigint] NULL,
+	[idv_type_code] [varchar](1) NULL,
+	[typeofidc] [varchar](41) NULL,
+	[parent_award_single_or_multiple_code] [varchar](1) NULL,
  CONSTRAINT [pk_contract_award_unique_key] PRIMARY KEY CLUSTERED 
 (
 	[contract_award_unique_key] ASC
@@ -28,6 +31,12 @@ ALTER TABLE [Contract].[contract_award_unique_key] ADD  DEFAULT ((0)) FOR [IsFPD
 GO
 ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD FOREIGN KEY([CSISidvpiidID])
 REFERENCES [Contract].[CSISidvpiidID] ([CSISidvpiidID])
+GO
+ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD FOREIGN KEY([idv_type_code])
+REFERENCES [FPDSTypeTable].[idv_type_code] ([idv_type_code])
+GO
+ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD FOREIGN KEY([parent_award_single_or_multiple_code])
+REFERENCES [FPDSTypeTable].[multipleorsingleawardidc] ([multipleorsingleawardidc])
 GO
 ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD FOREIGN KEY([parent_contract_award_unique_key])
 REFERENCES [Contract].[contract_award_unique_key] ([contract_award_unique_key])

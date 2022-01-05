@@ -2,7 +2,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [ErrorLogging].[dbaR2staging](
+CREATE TABLE [ErrorLogging].[dbaR2stagingResidual](
 	[PByear] [smallint] NULL,
 	[MainAccountCode] [smallint] NULL,
 	[MainAccountName] [varchar](86) NULL,

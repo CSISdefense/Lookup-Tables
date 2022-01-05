@@ -293,7 +293,9 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[object_classes_funding_this_award] [varchar](1000) NULL,
 	[program_activities_funding_this_award] [varchar](4000) NULL,
 	[obligated_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
-	[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL
+	[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
+	[recipient_uei] [varchar](12) NULL,
+	[recipient_parent_uei] [varchar](12) NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FPDSstage2] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__7193879D]  DEFAULT (getdate()) FOR [CSISmodifiedDate]

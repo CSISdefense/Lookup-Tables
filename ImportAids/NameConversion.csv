@@ -777,3 +777,5 @@ SourceVariableName,CSISvariableName,IsDuplicate
 [outlayed_amount_funded_by_covid19_supplementals_for_overall_award],[outlayed_amount_funded_by_covid19_supplementals_for_overall_award],
 [csistiebreakerid],[csistiebreakerid],
 [ismissingfromupdate],[ismissingfromupdate],
+[recipient_uei],[recipient_uei],
+[recipient_parent_uei],[recipient_parent_uei],

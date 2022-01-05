@@ -72,7 +72,7 @@ GO
 ALTER TABLE [Project].[DBAp2020semiclean] CHECK CONSTRAINT [fk_Project_dbaP2020semiclean_LineItemHistory]
 GO
 ALTER TABLE [Project].[DBAp2020semiclean]  WITH CHECK ADD  CONSTRAINT [fk_project_DBAp2020semiclean_ProcurementCategory] FOREIGN KEY([ProcurementCategory])
-REFERENCES [Project].[ProcurementCategory] ([ProcurementCategory])
+REFERENCES [Project].[DBAcategory] ([DBAcategory])
 GO
 ALTER TABLE [Project].[DBAp2020semiclean] CHECK CONSTRAINT [fk_project_DBAp2020semiclean_ProcurementCategory]
 GO

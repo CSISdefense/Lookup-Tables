@@ -14,9 +14,12 @@ Action_Obligation.2016,Action_Obligation_2016
 Action_Obligation.2017,Action_Obligation_2017
 obligatedamount_OMB20_GDP18,Action_Obligation_OMB20_GDP18
 Action_Obligation.OMB20_GDP18,Action_Obligation_OMB20_GDP18
-SumOfnumberOfActions,Number.Of.Actions
-SingleYearObligatedAmount,Contract.Size
-SizeOfSumOfObligatedAmount,Contract.Size
+SumOfnumberOfActions,NumberOfActions
+Number.Of.Actions,NumberOfActions
+NumberOfActions,NumberOfActions
+SingleYearObligatedAmount,ContractSize
+SizeOfSumOfObligatedAmount,ContractSize
+Contract.Size,ContractSize
 Base.and.All.Options.Value,ContractBaseAndAllOptionsValue
 Sumofbaseandalloptionsvalue,ContractBaseAndAllOptionsValue
 SumOfbaseandexercisedoptionsvalue,ContractBaseAndExercisedOptionsValue
@@ -27,8 +30,8 @@ ParentOrPartnerName,ContractorDisplayName
 customer,Customer
 Contractingcustomer,ContractingCustomer
 DEPLOYMENT,Deployment
-fiscal.year,Fiscal.Year
-Fiscal_Year,Fiscal.Year
+fiscal.year,Fiscal_Year
+Fiscal_Year,Fiscal_Year
 SumofGBKdisbursements,GBKdisbursements
 SumofGBKObligations,GBKObligations
 Majorcommandid,MajorCommandID
@@ -37,15 +40,18 @@ SumofOutlay,OutlayOffsetAccount
 SumofOutlayOffsetAccount,OutlayOffsetAccount
 PoPStateCode,PoPstateCode
 StateCode,PoPstateCode
-FundingMechanismClassification,Pricing.Mechanism
-TypeofContractPricingtext,Pricing.Mechanism
-TypeOfContractPricing,Pricing.Mechanism.Code
+FundingMechanismClassification,PricingMechanism
+TypeofContractPricingtext,PricingMechanism
+TypeOfContractPricing,PricingMechanismCode
+Pricing.Mechanism,PricingMechanism
+Pricing.Mechanism.Code,PricingMechanismCode
 Simple,SimpleArea
 ProductorServiceArea,ProductOrServiceArea
 ProductsCategory,ProductsCategory
 ServiceCategory,ServicesCategory
 Services.Category,ServicesCategory
 ServicesCategory,ServicesCategory
+ProductServiceOrRnDarea.sum,SimpleArea
 simplearea,SimpleArea
 Sub_Customer,SubCustomer
 SubCustomerSum,SubCustomer
@@ -67,13 +73,14 @@ SumOfUnmodifiedobligatedAmount,UnmodifiedContractObligatedAmount
 UnmodifiedContractBaseAndAllOptionsValue.OMB20_GDP18,UnmodifiedCeiling_OMB20_GDP18
 UnmodifiedContractBaseAndAllOptionsValue_OMB20_GDP18,UnmodifiedCeiling_OMB20_GDP18
 VehicleClassification,Vehicle
-Size,Vendor.Size
-VendorSize,Vendor.Size
+Size,VendorSize
+VendorSize,VendorSize
+Vendor.Size,VendorSize
 AnnualSimpleBucketVendorRank,VendorRank
 AnnualSubCustomerVendorRank,VendorRank
 ContractAnnualCustomerVendorRank,VendorRank
 subcustomer,SubCustomer
-ï..fiscal_year,Fiscal.Year
+ï..fiscal_year,Fiscal_Year
 pCEffNot Effective Comp.,pNoEffComp
 pCEffEffective Comp.,pEffComp
 pPlatElectronics and Communications ,pPlatEnC

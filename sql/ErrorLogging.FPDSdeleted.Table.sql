@@ -1,10 +1,7 @@
-/****** Object:  Table [ErrorLogging].[FPDSdeleted]    Script Date: 11/26/2021 5:06:35 PM ******/
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
 CREATE TABLE [ErrorLogging].[FPDSdeleted](
 	[unique_transaction_id] [varchar](36) NULL,
 	[transaction_status] [varchar](6) NULL,
@@ -55,12 +52,12 @@ CREATE TABLE [ErrorLogging].[FPDSdeleted](
 	[divisionname] [nvarchar](150) NULL,
 	[divisionnumberorofficecode] [varchar](10) NULL,
 	[ccrexception] [varchar](70) NULL,
-	[streetaddress] [varchar](90) NULL,
+	[streetaddress] [varchar](100) NULL,
 	[streetaddress2] [varchar](60) NULL,
 	[streetaddress3] [varchar](55) NULL,
 	[city] [varchar](35) NULL,
 	[zipcode] [varchar](28) NULL,
-	[vendorcountrycode] [varchar](50) NULL,
+	[vendorcountrycode] [nvarchar](50) NULL,
 	[vendor_state_code] [varchar](30) NULL,
 	[vendor_cd] [varchar](22) NULL,
 	[vendorsitecode] [varchar](15) NULL,
@@ -106,7 +103,7 @@ CREATE TABLE [ErrorLogging].[FPDSdeleted](
 	[reasonnotcompeted] [varchar](3) NULL,
 	[numberofoffersreceived] [bigint] NULL,
 	[commercialitemacquisitionprocedures] [varchar](1) NULL,
-	[commercialitemtestprogram] [bit] NULL,
+	[commercialitemtestprogram] [varchar](1) NULL,
 	[smallbusinesscompetitivenessdemonstrationprogram] [varchar](6) NULL,
 	[a76action] [varchar](3) NULL,
 	[solicitationprocedures] [varchar](5) NULL,
@@ -268,7 +265,7 @@ CREATE TABLE [ErrorLogging].[FPDSdeleted](
 	[federal_accounts_funding_this_award] [varchar](1000) NULL,
 	[usaspending_permalink] [varchar](150) NULL,
 	[awarding_agency_code] [smallint] NULL,
-	[recipient_county_name] [varchar](25) NULL,
+	[recipient_county_name] [varchar](30) NULL,
 	[disaster_emergency_fund_codes_for_overall_award] [varchar](500) NULL,
 	[object_classes_funding_this_award] [varchar](1000) NULL,
 	[program_activities_funding_this_award] [varchar](4000) NULL,
@@ -278,18 +275,12 @@ CREATE TABLE [ErrorLogging].[FPDSdeleted](
 	[dod_acquisition_program_description] [varchar](255) NULL
 ) ON [PRIMARY]
 GO
-
 ALTER TABLE [ErrorLogging].[FPDSdeleted] ADD  CONSTRAINT [df_CSISmodifiedDate]  DEFAULT (getdate()) FOR [CSISModifiedDate]
 GO
-
 ALTER TABLE [ErrorLogging].[FPDSdeleted] ADD  DEFAULT ((1)) FOR [IsMissingFromUpdate]
 GO
-
 ALTER TABLE [ErrorLogging].[FPDSdeleted]  WITH CHECK ADD  CONSTRAINT [fk_errorlogging_fpdsduplicates_csistransctionid] FOREIGN KEY([CSIStransactionID])
 REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
 GO
-
 ALTER TABLE [ErrorLogging].[FPDSdeleted] CHECK CONSTRAINT [fk_errorlogging_fpdsduplicates_csistransctionid]
 GO
-
-

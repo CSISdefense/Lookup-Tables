@@ -237,3 +237,5 @@
 [outlayed_amount_funded_by_covid19_supplementals_for_overall_award]
 [csistiebreakerid]
 [ismissingfromupdate]
+[recipient_uei]
+[recipient_parent_uei]

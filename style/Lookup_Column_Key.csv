@@ -34,6 +34,7 @@ SupplyServiceERS,Area,"Supply, Equipment-Related Service, Other Services",,,FALS
 ProductServiceOrRnDarea,Area,"Product, Service, or R&D Area",,,FALSE
 ProductServiceOrRnDarea.covid,Area,"Product, Service, or R&D",,,FALSE
 ProductServiceOrRnDarea.sum,Area,"Product, Service, or R&D",,,FALSE
+SimpleArea,Area,"Product, Service, or R&D",,,FALSE
 ProductOrServiceArea.DLA,Area,Product or Service Area,,,FALSE
 CrisisProductOrServiceArea,Area,Product or Service Area,,,FALSE
 Competition.detail,Competition,Extent of Competition,,,FALSE
@@ -46,13 +47,16 @@ Competition.effective.only,Competition,Extent of Competition,,,FALSE
 Commercial,Commercial,Commercial,,,FALSE
 Pricing.Mechanism.detail,Pricing,Pricing Mechanism,,,FALSE
 Pricing.Mechanism.sum,Pricing,Pricing Mechanism,,,FALSE
+PricingMechanism,Pricing,Pricing Mechanism,,,FALSE
 Base,Pricing,Pricing Mechanism,,,FALSE
 Fee,Pricing,Pricing Mechanism Fee Type,,,FALSE
 PricingFee,Pricing,Pricing Mechanism,,,FALSE
 PricingUCA,Pricing,Pricing Mechanism,,,FALSE
 PricingUCA.sum,Pricing,Pricing Mechanism,,,FALSE
 Indicator,Europe,,,,FALSE
+Authority,Authority,Contract or OTA,,,FALSE
 Vehicle.AwardTask,Vehicles,Award or Task Order,,,FALSE
+Vehicle,Vehicles,Contract Vehicle,,,FALSE
 Vehicle.detail,Vehicles,Contract Vehicle,,,FALSE
 Vehicle.sum,Vehicles,Contract Vehicle,,,FALSE
 Vehicle.sum7,Vehicles,Contract Vehicle,,,FALSE
@@ -66,6 +70,7 @@ entrant,entrant,Entrant Status,,,FALSE
 entrant_2016T,entrant,Entrant Status,,,FALSE
 comparison.dollar.type.detail,Dollar Type,,,,FALSE
 comparison.dollar.type.sum,Dollar Type,,,,FALSE
+ContractSize,Contract Size,Contract Size,,,FALSE
 Contract.Size.detail,Contract Size,Contract Size,,,FALSE
 Contract.Size.sum,Contract Size,Contract Size,,,FALSE
 Ceil,Contract Size,Contract Ceiling,,,FALSE
