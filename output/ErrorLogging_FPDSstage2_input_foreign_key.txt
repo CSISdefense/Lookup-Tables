@@ -628,6 +628,26 @@ On pk.idv_type_code=fk.[parent_award_type_code]
 WHERE nullif(pk.idv_type_name,'') is NULL AND
 nullif(fk.parent_award_type_name,'') is NOT NULL
 
+-- Insert new [parent_award_single_or_multiple_code] into FPDSTypeTable.multipleorsingleawardidc
+INSERT INTO FPDSTypeTable.multipleorsingleawardidc
+(multipleorsingleawardidc,multipleorsingleawardidcText)
+SELECT fk.[parent_award_single_or_multiple_code]
+,max(fk.parent_award_single_or_multiple_name) as multipleorsingleawardidcText
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.multipleorsingleawardidc as pk
+On pk.multipleorsingleawardidc=fk.[parent_award_single_or_multiple_code]
+WHERE pk.multipleorsingleawardidc is NULL
+GROUP BY fk.[parent_award_single_or_multiple_code]
+
+-- Update multipleorsingleawardidcText using parent_award_single_or_multiple_name where there is a blank in FPDSTypeTable.multipleorsingleawardidc
+UPDATE pk
+SET multipleorsingleawardidcText=fk.parent_award_single_or_multiple_name
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.multipleorsingleawardidc as pk
+On pk.multipleorsingleawardidc=fk.[parent_award_single_or_multiple_code]
+WHERE nullif(pk.multipleorsingleawardidcText,'') is NULL AND
+nullif(fk.parent_award_single_or_multiple_name,'') is NOT NULL
+
 -- Insert new [majorprogramcode] into Contract.MajorProgramCode
 INSERT INTO Contract.MajorProgramCode
 (majorprogramcode)
