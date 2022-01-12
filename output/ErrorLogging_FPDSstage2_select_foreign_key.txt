@@ -846,6 +846,33 @@ HAVING max(iif(fk.parent_award_type_name=pk.idv_type_name or
 ORDER BY fk.[parent_award_type_code]
 
 
+--List new [parent_award_single_or_multiple_code] and updated parent_award_single_or_multiple_name for insertion into FPDSTypeTable.multipleorsingleawardidc
+SELECT fk.[parent_award_single_or_multiple_code],
+max(iif(fk.parent_award_single_or_multiple_name=pk.multipleorsingleawardidcText or
+	fk.parent_award_single_or_multiple_name='' or
+	charindex('('+fk.parent_award_single_or_multiple_name+')',pk.multipleorsingleawardidcText )>0,
+	NULL,fk.parent_award_single_or_multiple_name)) as MaxOfNewFKparent_award_single_or_multiple_name,
+count(distinct iif(fk.parent_award_single_or_multiple_name=pk.multipleorsingleawardidcText or
+	fk.parent_award_single_or_multiple_name='' or
+	charindex('('+fk.parent_award_single_or_multiple_name+')',pk.multipleorsingleawardidcText )>0,
+	NULL,fk.parent_award_single_or_multiple_name)) as unmatched_name_count,
+pk.multipleorsingleawardidcText as PKmultipleorsingleawardidcText,
+max(iif(fk.parent_award_single_or_multiple_name=pk.multipleorsingleawardidcText or
+	fk.parent_award_single_or_multiple_name='' or
+	charindex('('+fk.parent_award_single_or_multiple_name+')',pk.multipleorsingleawardidcText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.multipleorsingleawardidc' as PrimaryKeyTable
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.multipleorsingleawardidc as pk
+On pk.multipleorsingleawardidc=fk.[parent_award_single_or_multiple_code]
+GROUP BY fk.[parent_award_single_or_multiple_code], pk.multipleorsingleawardidcText
+HAVING max(iif(fk.parent_award_single_or_multiple_name=pk.multipleorsingleawardidcText or
+	fk.parent_award_single_or_multiple_name='' or
+	charindex('('+fk.parent_award_single_or_multiple_name+')',pk.multipleorsingleawardidcText )>0,
+	0,1))=1
+ORDER BY fk.[parent_award_single_or_multiple_code]
+
+
 --List new [majorprogramcode] for insertion into Contract.MajorProgramCode
 SELECT fk.[majorprogramcode],
 'Contract.MajorProgramCode' as PrimaryKeyTable
