@@ -272,7 +272,9 @@ CREATE TABLE [ErrorLogging].[FPDSdeleted](
 	[obligated_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[IsMissingFromUpdate] [bit] NOT NULL,
-	[dod_acquisition_program_description] [varchar](255) NULL
+	[dod_acquisition_program_description] [varchar](255) NULL,
+	[recipient_uei] [varchar](12) NULL,
+	[recipient_parent_uei] [varchar](12) NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FPDSdeleted] ADD  CONSTRAINT [df_CSISmodifiedDate]  DEFAULT (getdate()) FOR [CSISModifiedDate]

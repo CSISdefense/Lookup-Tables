@@ -55,7 +55,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[placeofperformancecountrycode] [varchar](3) NULL,
 	[primary_place_of_performance_country_name] [varchar](255) NULL,
 	[PlaceofPerformanceCity] [varchar](100) NULL,
-	[primary_place_of_performance_county_name] [varchar](22) NULL,
+	[primary_place_of_performance_county_name] [varchar](26) NULL,
 	[pop_state_code] [varchar](2) NULL,
 	[primary_place_of_performance_state_name] [varchar](255) NULL,
 	[placeofperformancezipcode] [varchar](10) NULL,

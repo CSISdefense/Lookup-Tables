@@ -24,6 +24,8 @@ CREATE TABLE [Contract].[CSIStransactionID](
 	[IsNew6Dup] [bit] NULL,
 	[IsInCTU] [bit] NULL,
 	[IsInFPDSdeleted] [bit] NOT NULL,
+	[IsOddBlankIDVagencyID] [bit] NOT NULL,
+	[IsOddBlankIDVPIID] [bit] NOT NULL,
  CONSTRAINT [pk_CSIStransactionID] PRIMARY KEY CLUSTERED 
 (
 	[CSIStransactionID] ASC
@@ -37,6 +39,10 @@ GO
 ALTER TABLE [Contract].[CSIStransactionID] ADD  DEFAULT ((0)) FOR [IsNew6Dup]
 GO
 ALTER TABLE [Contract].[CSIStransactionID] ADD  DEFAULT ((0)) FOR [IsInFPDSdeleted]
+GO
+ALTER TABLE [Contract].[CSIStransactionID] ADD  DEFAULT ((0)) FOR [IsOddBlankIDVagencyID]
+GO
+ALTER TABLE [Contract].[CSIStransactionID] ADD  DEFAULT ((0)) FOR [IsOddBlankIDVPIID]
 GO
 ALTER TABLE [Contract].[CSIStransactionID]  WITH CHECK ADD FOREIGN KEY([AgencyID])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
