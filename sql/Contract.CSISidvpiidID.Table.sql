@@ -16,6 +16,7 @@ CREATE TABLE [Contract].[CSISidvpiidID](
 	[CSISmodifiedDate] [datetime] NOT NULL,
 	[idv_type_code] [varchar](1) NULL,
 	[ParentCSIScontractID] [int] NULL,
+	[NumberOfOffersReceived] [bigint] NULL,
  CONSTRAINT [pk_CSISidvpiidID] PRIMARY KEY CLUSTERED 
 (
 	[CSISidvpiidID] ASC

@@ -1654,3 +1654,19 @@ WHERE (Try_Convert([varchar](30), [recipient_county_name]) IS NULL AND
 NULLIF([recipient_county_name],'') IS NOT NULL) OR
  len([recipient_county_name]) > 30
 
+SELECT DISTINCT [recipient_uei],
+len([recipient_uei]) as Length,
+'[varchar](12)' as DestinationType
+FROM Errorlogging.FPDSstage1
+WHERE (Try_Convert([varchar](12), [recipient_uei]) IS NULL AND
+NULLIF([recipient_uei],'') IS NOT NULL) OR
+ len([recipient_uei]) > 12
+
+SELECT DISTINCT [recipient_parent_uei],
+len([recipient_parent_uei]) as Length,
+'[varchar](12)' as DestinationType
+FROM Errorlogging.FPDSstage1
+WHERE (Try_Convert([varchar](12), [recipient_parent_uei]) IS NULL AND
+NULLIF([recipient_parent_uei],'') IS NOT NULL) OR
+ len([recipient_parent_uei]) > 12
+

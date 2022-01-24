@@ -3,7 +3,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[ProductOrServiceCodes](
-	[ProductOrServiceCode] [varchar](255) NULL,
+	[ProductOrServiceCode] [varchar](4) NULL,
 	[ProductOrServiceCodeText] [varchar](255) NULL,
 	[ServicesCategory] [varchar](255) NULL,
 	[ProductOrServiceCode1L] [varchar](255) NULL,
@@ -31,9 +31,15 @@ CREATE TABLE [dbo].[ProductOrServiceCodes](
 	[CanadaSector] [varchar](255) NULL,
 	[OCOcrisisScore] [varchar](255) NULL,
 	[VAPortfolio] [varchar](255) NULL,
-	[NewPlatformPortfolio] [varchar](255) NULL,
 	[OCOcrisisPercent] [varchar](255) NULL,
 	[CrisisPercent] [varchar](255) NULL,
-	[CrisisProductOrServiceArea] [varchar](255) NULL
+	[CrisisProductOrServiceArea] [varchar](255) NULL,
+	[IsRnDdefenseSystem] [varchar](255) NULL,
+	[Level1_Code] [varchar](255) NULL,
+	[Level1_Category] [varchar](255) NULL,
+	[Level2_Code] [varchar](255) NULL,
+	[Level2_Category] [varchar](255) NULL,
+	[GreenEnergy] [varchar](255) NULL,
+	[BioRelated] [varchar](255) NULL
 ) ON [PRIMARY]
 GO

@@ -284,12 +284,14 @@ CREATE TABLE [ErrorLogging].[FPDSstage1](
 	[highly_compensated_officer_5_amount] [varchar](255) NULL,
 	[usaspending_permalink] [varchar](500) NULL,
 	[action_date_fiscal_year] [varchar](255) NULL,
-	[disaster_emergency_fund_codes_for_overall_award] [varchar](255) NULL,
+	[disaster_emergency_fund_codes_for_overall_award] [varchar](4000) NULL,
 	[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] [varchar](255) NULL,
 	[obligated_amount_funded_by_COVID19_supplementals_for_overall_award] [varchar](255) NULL,
 	[object_classes_funding_this_award] [varchar](4000) NULL,
 	[program_activities_funding_this_award] [varchar](4000) NULL,
-	[recipient_county_name] [varchar](255) NULL
+	[recipient_county_name] [varchar](255) NULL,
+	[recipient_uei] [varchar](255) NULL,
+	[recipient_parent_uei] [varchar](255) NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FPDSstage1] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__6FAB3F2B]  DEFAULT (getdate()) FOR [CSISmodifiedDate]

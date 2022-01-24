@@ -19,6 +19,7 @@ CREATE TABLE [FPDSTypeTable].[AgencyID](
 	[SubCustomerSum] [varchar](50) NULL,
 	[IsDefense] [bit] NULL,
 	[PlatformPortfolio] [varchar](30) NULL,
+	[IsSuspectedAwarding_Agency_Code] [bit] NOT NULL,
  CONSTRAINT [PK_agencyid] PRIMARY KEY CLUSTERED 
 (
 	[AgencyID] ASC
@@ -28,6 +29,8 @@ GO
 ALTER TABLE [FPDSTypeTable].[AgencyID] ADD  CONSTRAINT [DF__AgencyID__IsUnkn__0B087586]  DEFAULT ((0)) FOR [IsUnknownAgencyID]
 GO
 ALTER TABLE [FPDSTypeTable].[AgencyID] ADD  CONSTRAINT [DF__AgencyID__IsExce__4EBE8155]  DEFAULT ((0)) FOR [IsExceptionToContradictionTest]
+GO
+ALTER TABLE [FPDSTypeTable].[AgencyID] ADD  DEFAULT ((0)) FOR [IsSuspectedAwarding_Agency_Code]
 GO
 ALTER TABLE [FPDSTypeTable].[AgencyID]  WITH NOCHECK ADD  CONSTRAINT [FK_Agencyid_Customer] FOREIGN KEY([Customer])
 REFERENCES [agency].[Customer] ([Customer])

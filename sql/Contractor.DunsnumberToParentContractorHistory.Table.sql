@@ -37,6 +37,7 @@ CREATE TABLE [Contractor].[DunsnumberToParentContractorHistory](
 	[AnyEntityForeignPlaceOfPerformance] [bit] NULL,
 	[ChildCount] [int] NULL,
 	[IsPresent] [bit] NULL,
+	[IsEntityAbove2018constant10ThousandThreshold] [bit] NULL,
  CONSTRAINT [pk_DunsnumberToParentContractorHistory_DunsNumber_FiscalYear] PRIMARY KEY CLUSTERED 
 (
 	[DUNSnumber] ASC,

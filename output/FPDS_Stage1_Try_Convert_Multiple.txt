@@ -350,7 +350,9 @@ SELECT
 ,iif([usaspending_permalink]>150,[usaspending_permalink],NULL) as [usaspending_permalink]
 ,iif([disaster_emergency_fund_codes_for_overall_award]>500,[disaster_emergency_fund_codes_for_overall_award],NULL) as [disaster_emergency_fund_codes_for_overall_award]
 ,iif([object_classes_funding_this_award]>1000,[object_classes_funding_this_award],NULL) as [object_classes_funding_this_award]
-,iif([recipient_county_name]>30,[recipient_county_name],NULL) as [recipient_county_name] 
+,iif([recipient_county_name]>30,[recipient_county_name],NULL) as [recipient_county_name]
+,iif([recipient_uei]>12,[recipient_uei],NULL) as [recipient_uei]
+,iif([recipient_parent_uei]>12,[recipient_parent_uei],NULL) as [recipient_parent_uei] 
 FROM (SELECT
  	,max(len([award_id_piid])) as [award_id_piid]
 	,max(len([modification_number])) as [modification_number]
@@ -453,6 +455,8 @@ FROM (SELECT
 	,max(len([usaspending_permalink])) as [usaspending_permalink]
 	,max(len([disaster_emergency_fund_codes_for_overall_award])) as [disaster_emergency_fund_codes_for_overall_award]
 	,max(len([object_classes_funding_this_award])) as [object_classes_funding_this_award]
-	,max(len([recipient_county_name])) as [recipient_county_name] 
+	,max(len([recipient_county_name])) as [recipient_county_name]
+	,max(len([recipient_uei])) as [recipient_uei]
+	,max(len([recipient_parent_uei])) as [recipient_parent_uei] 
 	FROM  Errorlogging . FPDSstage1 ) as ml
 

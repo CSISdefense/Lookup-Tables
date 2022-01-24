@@ -709,6 +709,7 @@ convert_field_to_foreign_key<-function(FKschema,
                                    suppress_select=FALSE,
                                    suppress_alter=FALSE,
                                    suppress_insert=FALSE,
+                                   suppress_update=TRUE,
                                    allow_name_mismatch=TRUE){
   
   
@@ -801,45 +802,45 @@ convert_field_to_foreign_key<-function(FKschema,
   
   
   if(suppress_select==FALSE){
-  
-  iifFKname<-paste("iif(fk.",FKname,"=pk.",PKname," or\n",
-                   "\tfk.",FKname,"='' or\n",
-                   "\tcharindex('('+fk.",FKname,"+')',pk.",PKname," )>0,\n",
-                   sep="")
-  
-  #Select all of the unmached values in the foreign key table
-  Output<-rbind(
-    Output,paste(
-      "--List new ",FKcolumn, 
-      #** Select List
-      ifelse(!is.null(FKname),paste(" and updated",FKname),""),
-      " for insertion into ",PKschema,".",PKtable,"\n",
-      "SELECT fk.",FKcolumn,",\n",
-      # "len(fk.",FKcolumn,") as length,\n", Don't need it for this one
-      #**If there's a name to go with the code
-      ifelse(!is.null(FKname),
-             paste("max(",iifFKname,
-                   "\tNULL,fk.",FKname,")) as MaxOfNewFK",FKname,",\n",
-                   "count(distinct ",iifFKname,
-                   "\tNULL,fk.",FKname,")) as unmatched_name_count,\n",
-                   "pk.",PKname," as PK",PKname,",\n",
-                   "max(",iifFKname,
-                   "\t1,0)) as any_name_match,\n",sep=""),""),
-      "'",PKschema,".",PKtable,"' as PrimaryKeyTable\n",
-      #** Tables and Joins
-      "FROM ",FKschema,".",FKtable," as fk\n",
-      "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
-      "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
-      #If no FKname, a simple WHERE
-      ifelse(!is.null(FKname),"",paste("WHERE pk.",PKcolumn," is NULL\n",sep="")),
-      #If a FKname exists, check if it has changed
-      "GROUP BY fk.",FKcolumn,
-      ifelse(!is.null(FKname),paste(", pk.",PKname,"\n",
-                                    "HAVING max(",iifFKname,
-                                    "\t0,1))=1",sep=""),""),
-      "\nORDER BY fk.",FKcolumn,"\n\n",
-      sep="")
-  )
+    
+    iifFKname<-paste("iif(fk.",FKname,"=pk.",PKname," or\n",
+                     "\tfk.",FKname,"='' or\n",
+                     "\tcharindex('('+fk.",FKname,"+')',pk.",PKname," )>0,\n",
+                     sep="")
+    
+    #Select all of the unmached values in the foreign key table
+    Output<-rbind(
+      Output,paste(
+        "--List new ",FKcolumn, 
+        #** Select List
+        ifelse(!is.null(FKname),paste(" and updated",FKname),""),
+        " for insertion into ",PKschema,".",PKtable,"\n",
+        "SELECT fk.",FKcolumn,",\n",
+        # "len(fk.",FKcolumn,") as length,\n", Don't need it for this one
+        #**If there's a name to go with the code
+        ifelse(!is.null(FKname),
+               paste("max(",iifFKname,
+                     "\tNULL,fk.",FKname,")) as MaxOfNewFK",FKname,",\n",
+                     "count(distinct ",iifFKname,
+                     "\tNULL,fk.",FKname,")) as unmatched_name_count,\n",
+                     "pk.",PKname," as PK",PKname,",\n",
+                     "max(",iifFKname,
+                     "\t1,0)) as any_name_match,\n",sep=""),""),
+        "'",PKschema,".",PKtable,"' as PrimaryKeyTable\n",
+        #** Tables and Joins
+        "FROM ",FKschema,".",FKtable," as fk\n",
+        "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
+        "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
+        #If no FKname, a simple WHERE
+        ifelse(!is.null(FKname),"",paste("WHERE pk.",PKcolumn," is NULL\n",sep="")),
+        #If a FKname exists, check if it has changed
+        "GROUP BY fk.",FKcolumn,
+        ifelse(!is.null(FKname),paste(", pk.",PKname,"\n",
+                                      "HAVING max(",iifFKname,
+                                      "\t0,1))=1",sep=""),""),
+        "\nORDER BY fk.",FKcolumn,"\n\n",
+        sep="")
+    )
   }
   
   if(suppress_insert==FALSE)  
@@ -860,6 +861,23 @@ convert_field_to_foreign_key<-function(FKschema,
     )
   
   
+  if(suppress_update==FALSE){
+    #Insert unmatched values into the primary key table
+    Output<-rbind(Output,
+                  ifelse(is.null(FKname),"",
+                         paste("-- Update ",PKname," using ",FKname," where there is a blank in ",PKschema,".",PKtable,"\n",
+                               "UPDATE pk\n",
+                               "SET ",PKname,"=fk.",FKname,"\n",
+                        "FROM ",FKschema,".",FKtable," as fk\n",
+                        "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
+                        "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
+                        "WHERE nullif(pk.",PKname,",'') is NULL AND\n",
+                        "nullif(fk.",FKname,",'') is NOT NULL\n",
+                        sep="")
+                        )
+    )
+  }
+ 
   if(suppress_alter==FALSE)    
     Output<-rbind(Output,
                   paste("ALTER TABLE ",FKschema,".",FKtable,"\n",
@@ -941,6 +959,7 @@ create_foreign_key_assigments<-function(Schema,
                               suppress_select=FALSE,
                               suppress_alter=FALSE,
                               suppress_insert=FALSE,
+                              suppress_update=TRUE,
                               skip_list=NULL){
   table_file<-file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))
   if (file.exists(file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))))
@@ -976,7 +995,8 @@ create_foreign_key_assigments<-function(Schema,
                                                    PKname=MergeTable.df$PKcolumnText[i],
                                                    suppress_select=suppress_select,
                                                    suppress_alter=suppress_alter,
-                                                   suppress_insert=suppress_insert)
+                                                   suppress_insert=suppress_insert,
+                                                   suppress_update=suppress_update)
     )
   }
   

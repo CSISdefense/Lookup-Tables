@@ -17,7 +17,13 @@ CREATE TABLE [Economic].[Deflators](
 	[Unknown2017] [float] NULL,
 	[OMB19_19] [float] NULL,
 	[GDPdeflator2014] [float] NULL,
+	[OMB20_GDP12] [decimal](19, 8) NULL,
 	[OMB20_GDP18] [decimal](19, 8) NULL,
+	[OMB20_GDP20] [decimal](19, 8) NULL,
+	[OMB22_GDP12] [decimal](19, 8) NULL,
+	[OMB22_GDP20] [decimal](19, 8) NULL,
+	[OMB22_Def12] [decimal](19, 8) NULL,
+	[OMB22_Def20] [decimal](19, 8) NULL,
  CONSTRAINT [pk_Economic_Deflators_Fiscal_Years] PRIMARY KEY CLUSTERED 
 (
 	[Fiscal_Year] ASC

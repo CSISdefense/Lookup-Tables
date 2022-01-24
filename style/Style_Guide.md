@@ -11,10 +11,10 @@ Style guides don’t just tell you which naming convention to use, and even then
 
 
 ##Other Style Guides
-•	Bioconductor’s coding standards http://wiki.fhcrc.org/bioc/Coding_ Standards 
+•	Bioconductor’s coding standards http://wiki.fhcrc.org/bioc/Coding_Standards 
 •	Hadley Wickham’s style guide http://stat405.had.co.nz/r-style.html  or http://adv-r.had.co.nz/Style.html
-•	Google’s R style guide http://google-styleguide.googlecode.com/ svn/trunk/google-r-style.html
-•	Colin Gillespie’s R style guide http://csgillespie.wordpress.com/2010/ 11/23/r-style-guide/
+•	Google’s R style guide http://google-styleguide.googlecode.com/svn/trunk/google-r-style.html
+•	Colin Gillespie’s R style guide http://csgillespie.wordpress.com/2010/11/23/r-style-guide/
 •	4D Pie Charts https://4dpiecharts.com/r-code-style-guide/ 
 
 I also found 2012 research about what standards are commonly used by Cran R programs but that’s less important than the question of what do we commonly use. I have zero interest in creating our own style guide from scratch or mixing and matching. Let’s use an existing one that we may choose to expand.
@@ -29,11 +29,16 @@ Greg
 
 p.s. For SQL column names, I’m largely committed to UpperCamelCase, although we’re not perfectly consistent with that (see fiscal_year). However, column names are different than variable names and it’s easy enough to convert over. As a complication, FPDS uses underscore_seperated and we don’t because of initial style advice received when I was first changed for SQL server, so I don’t think the SQL side of thing has any easy answers. Also, today I’m just concerned with R coding style as I want to get it right in the csis360 pacakage.
 
+Idea:
+Follow fpds and hadley in use of _ when that is part of the original FPDS variable name.
+Camelcase for original variables.
+_ when adding a veriant.
+
 
 
 So, we started this awhile ago. Our basic approach was to do a combination of Google and Hadley’s (which is largely based on Google’s) style guide. 
 
-That does seem like a fine answer to me, but I’ll note that Hadley’s standard is to use underscores “_”. Google’s is to use periods.
+That does seem like a fine answer to me, but I’ll note that Hadley’s standard is to use underscores “_”. Googles is to use periods.
  
 I think the reason Hadley isn’t using them is something to do with S3 objects which we aren’t presently using.
  

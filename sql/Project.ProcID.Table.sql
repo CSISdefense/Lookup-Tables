@@ -32,12 +32,12 @@ GO
 ALTER TABLE [Project].[ProcID] ADD  CONSTRAINT [DF__ProcID__IsHarris__5FBEF025]  DEFAULT ((0)) FOR [IsHarrisonID]
 GO
 ALTER TABLE [Project].[ProcID]  WITH NOCHECK ADD  CONSTRAINT [FK__ProcID__Category__149CCCB8] FOREIGN KEY([Category])
-REFERENCES [Project].[ProcurementCategory] ([ProcurementCategory])
+REFERENCES [Project].[DBAcategory] ([DBAcategory])
 GO
 ALTER TABLE [Project].[ProcID] CHECK CONSTRAINT [FK__ProcID__Category__149CCCB8]
 GO
 ALTER TABLE [Project].[ProcID]  WITH NOCHECK ADD  CONSTRAINT [FK__ProcID__Procurem__1A209BE4] FOREIGN KEY([ProcurementCategory])
-REFERENCES [Project].[ProcurementCategory] ([ProcurementCategory])
+REFERENCES [Project].[DBAcategory] ([DBAcategory])
 GO
 ALTER TABLE [Project].[ProcID] CHECK CONSTRAINT [FK__ProcID__Procurem__1A209BE4]
 GO

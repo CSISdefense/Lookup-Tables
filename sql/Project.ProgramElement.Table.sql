@@ -7,6 +7,8 @@ CREATE TABLE [Project].[ProgramElement](
 	[ProgramElementTitle] [varchar](150) NULL,
 	[DefenseServiceIdentifier] [varchar](3) NULL,
 	[ProgramElementNumber] [int] NULL,
+	[DBAcategory] [varchar](31) NULL,
+	[DBAsubCategory] [varchar](50) NULL,
  CONSTRAINT [pk_PrimaryElement] PRIMARY KEY CLUSTERED 
 (
 	[ProgramElement] ASC

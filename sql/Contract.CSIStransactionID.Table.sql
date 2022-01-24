@@ -22,6 +22,10 @@ CREATE TABLE [Contract].[CSIStransactionID](
 	[idvagencyid] [varchar](4) NULL,
 	[AgencyID] [varchar](4) NULL,
 	[IsNew6Dup] [bit] NULL,
+	[IsInCTU] [bit] NULL,
+	[IsInFPDSdeleted] [bit] NOT NULL,
+	[IsOddBlankIDVagencyID] [bit] NOT NULL,
+	[IsOddBlankIDVPIID] [bit] NOT NULL,
  CONSTRAINT [pk_CSIStransactionID] PRIMARY KEY CLUSTERED 
 (
 	[CSIStransactionID] ASC
@@ -33,6 +37,12 @@ GO
 ALTER TABLE [Contract].[CSIStransactionID] ADD  CONSTRAINT [DF__CSIStrans__CSISm__4EA972BC]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
 ALTER TABLE [Contract].[CSIStransactionID] ADD  DEFAULT ((0)) FOR [IsNew6Dup]
+GO
+ALTER TABLE [Contract].[CSIStransactionID] ADD  DEFAULT ((0)) FOR [IsInFPDSdeleted]
+GO
+ALTER TABLE [Contract].[CSIStransactionID] ADD  DEFAULT ((0)) FOR [IsOddBlankIDVagencyID]
+GO
+ALTER TABLE [Contract].[CSIStransactionID] ADD  DEFAULT ((0)) FOR [IsOddBlankIDVPIID]
 GO
 ALTER TABLE [Contract].[CSIStransactionID]  WITH CHECK ADD FOREIGN KEY([AgencyID])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
@@ -64,8 +74,4 @@ ALTER TABLE [Contract].[CSIStransactionID]  WITH NOCHECK ADD  CONSTRAINT [fk_con
 REFERENCES [Contract].[CSISidvmodificationID] ([CSISidvmodificationID])
 GO
 ALTER TABLE [Contract].[CSIStransactionID] CHECK CONSTRAINT [fk_contract_CSIStransactionID_CSISsourceIDVmodificationID]
-GO
-ALTER TABLE [Contract].[CSIStransactionID]  WITH CHECK ADD  CONSTRAINT [chk_contract_csistransactionid_idv_not_null] CHECK  (([fiscal_year]<(2000) OR [fiscal_year] IS NULL OR [CSISidvModificationID] IS NOT NULL AND [idvagencyid] IS NOT NULL AND [idvmodificationnumber] IS NOT NULL))
-GO
-ALTER TABLE [Contract].[CSIStransactionID] CHECK CONSTRAINT [chk_contract_csistransactionid_idv_not_null]
 GO

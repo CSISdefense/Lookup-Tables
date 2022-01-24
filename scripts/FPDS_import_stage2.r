@@ -43,6 +43,7 @@ input_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                                      dir="sql",
                                                      suppress_select = TRUE,
                                                     suppress_alter = TRUE,
+                                                    suppress_update= FALSE,
                                                     skip_list = skip_list)
 write(input_missing_code,
       file=file.path("Output","ErrorLogging_FPDSstage2_input_foreign_key.txt"),  

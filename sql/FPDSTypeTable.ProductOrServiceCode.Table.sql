@@ -35,11 +35,12 @@ CREATE TABLE [FPDSTypeTable].[ProductOrServiceCode](
 	[CrisisPercent] [decimal](19, 4) NULL,
 	[CrisisProductOrServiceArea] [varchar](28) NULL,
 	[IsRnDdefenseSystem] [bit] NULL,
-	[Level1_Code] [decimal](4, 2) NULL,
+	[Level1_Code] [decimal](4, 0) NULL,
 	[Level1_Category] [varchar](75) NULL,
 	[Level2_Code] [decimal](4, 2) NULL,
 	[Level2_Category] [varchar](75) NULL,
 	[GreenEnergy] [varchar](20) NULL,
+	[BioRelated] [varchar](25) NULL,
  CONSTRAINT [PK_ProductOrServiceCode] PRIMARY KEY CLUSTERED 
 (
 	[ProductOrServiceCode] ASC

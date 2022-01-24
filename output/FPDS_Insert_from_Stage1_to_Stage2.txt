@@ -285,7 +285,9 @@ INSERT INTO ErrorLogging.FPDSstage2
 [obligated_amount_funded_by_COVID19_supplementals_for_overall_award],
 [object_classes_funding_this_award],
 [program_activities_funding_this_award],
-[recipient_county_name]
+[recipient_county_name],
+[recipient_uei],
+[recipient_parent_uei]
 )
  SELECT 
 [gfe_gfp],
@@ -573,5 +575,7 @@ Convert([decimal](19, 4), Convert(real,nullif([outlayed_amount_funded_by_COVID19
 Convert([decimal](19, 4), Convert(real,nullif([obligated_amount_funded_by_COVID19_supplementals_for_overall_award],''))),
 Convert([varchar](1000), [object_classes_funding_this_award]),
 [program_activities_funding_this_award],
-Convert([varchar](30), [recipient_county_name])
+Convert([varchar](30), [recipient_county_name]),
+Convert([varchar](12), [recipient_uei]),
+Convert([varchar](12), [recipient_parent_uei])
 FROM ErrorLogging.FPDSstage1

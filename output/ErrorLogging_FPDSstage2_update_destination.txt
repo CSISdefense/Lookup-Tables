@@ -222,7 +222,9 @@ UPDATE T SET
 [object_classes_funding_this_award]=coalesce(nullif(S.[object_classes_funding_this_award],''),T.[object_classes_funding_this_award]),
 [program_activities_funding_this_award]=coalesce(nullif(S.[program_activities_funding_this_award],''),T.[program_activities_funding_this_award]),
 [obligated_amount_funded_by_COVID19_supplementals_for_overall_award]=coalesce(S.[obligated_amount_funded_by_COVID19_supplementals_for_overall_award],T.[obligated_amount_funded_by_COVID19_supplementals_for_overall_award]),
-[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award]=coalesce(S.[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award],T.[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award])
+[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award]=coalesce(S.[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award],T.[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award]),
+[recipient_uei]=coalesce(nullif(S.[recipient_uei],''),T.[recipient_uei]),
+[recipient_parent_uei]=coalesce(nullif(S.[recipient_parent_uei],''),T.[recipient_parent_uei])
 FROM Contract.FPDS as T
 INNER Join ErrorLogging.FPDSstage2 as S
 ON s.CSIStransactionID=t.CSIStransactionID

@@ -7,7 +7,7 @@ CREATE TABLE [Project].[SystemEquipmentCode](
 	[systemequipmentcode] [varchar](4) NOT NULL,
 	[systemequipmentcodeText] [nvarchar](255) NULL,
 	[IsIdentifiedSystemEquipment] [bit] NOT NULL,
- CONSTRAINT [PK_systemequipmentcode NO PK] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [PK_systemequipmentcode] PRIMARY KEY CLUSTERED 
 (
 	[systemequipmentcode] ASC
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]

@@ -7,6 +7,7 @@ CREATE TABLE [Assistance].[NationalInterestActionCode](
 	[national_interest_action_name] [nvarchar](255) NULL,
 	[IsHurricane] [bit] NULL,
 	[CrisisFunding] [varchar](10) NULL,
+	[IsDisease] [bit] NULL,
  CONSTRAINT [PK_nationalinterestactioncode NO PK] PRIMARY KEY CLUSTERED 
 (
 	[NationalInterestActionCode] ASC

@@ -10,7 +10,8 @@ CREATE TABLE [Vendor].[ParentIDHistory](
 	[IsEntityAbove2016constantReportingThreshold] [bit] NULL,
 	[AnyEntityUSplaceOfPerformance] [bit] NULL,
 	[IsEntityAbove2016constantOneMillionThreshold] [bit] NULL,
-	[AnyEntityForeignPlaceOfPerformance] [bit] NULL
+	[AnyEntityForeignPlaceOfPerformance] [bit] NULL,
+	[IsEntityAbove2018constant10ThousandThreshold] [bit] NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Vendor].[ParentIDHistory]  WITH NOCHECK ADD  CONSTRAINT [FK__ParentIDH__Entit__48076225] FOREIGN KEY([EntitySizeCode])
