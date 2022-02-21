@@ -336,7 +336,6 @@ IDV Multiple Or Single Award IDV,idv_multipleorsingleawardidc
 Award or IDV Type,contractactiontype
 Multiple or Single Award IDV,multipleorsingleawardidc
 Type of Contract,Pricing_Mechanism_Code
-Pricing.Mechanism.Code,Pricing_Mechanism_Code
 Action Obligation,Action_Obligation
 contractingofficeagencyid,Contracting_Agency_ID
 Index,Index
@@ -352,7 +351,6 @@ IsDuplicateUTI,IsDuplicateUTI
 PSC Code,ProductOrServiceCode
 PSC Description,ProductOrServiceCodeText
 Contracting.Agency.ID,Contracting_Agency_ID
-Contracting Department ID,Contracting_Department_ID
 Funding Agency ID,Funding_Agency_ID
 placeofmanufacture,PlaceOfManufacture
 placeofmanufactureText,PlaceOfManufactureText
@@ -364,15 +362,12 @@ Place of Performance County,Place_of_Performance_County
 Date Signed,Date_Signed
 Extent Competed,Extent_Competed
 Fair Opportunity Limited Sources,Fair_Opportunity_Limited_Sources
-Type of Contract,Type_of_Contract
 Description of Requirement,Description_of_Requirement
 Vendor Name,Vendor_Name
 PIID,PIID
 Referenced IDV PIID,Referenced_IDV_PIID
 Vendor DUNS,Vendor_DUNS
 Action.Obligation,Action_Obligation
-Contracting Department Name,Contracting_Department_Name
-Contracting Agency Name,Contracting_Agency_Name
 Funding Department ID,Funding_Department_ID
 Funding Department Name,Funding_Department_Name
 Funding Agency Name,Funding_Agency_Name
@@ -389,7 +384,6 @@ Total Base and All Options Value,Total_Base_and_All_Options_Value
 Prime Contractor Hours Invoiced,Prime_Contractor_Hours_Invoiced
 Prime Contractor Full Time Equivalent Employees  FTEs,Prime_Contractor_Full_Time_Equivalent_Employees_FTEs
 PSC,PSC_Code
-PSC Description,PSC_Description
 Contract Invoiced Amount,Contract_Invoiced_Amount
 Number of Contractor FTEs,Number_of_Contract_FTEs
 CFTE Rate,CFTE_Rate
@@ -421,6 +415,7 @@ Electric.Power,EP_list
 Other.Products,otherprod_list
 Other.Services,otherserv_list
 Other.R.D,otherrd_list
+other_list,other_list
 Are.you.or.your.organization.considering.being.a.vendor.for.a.Modular.Open.System.Approach..MOSA..project..including.direct.and.indirect.relationships.as.well.as.advising.those.making.that.decision..,Are.you.or.your.organization.considering.being.a.vendor.for.a.Modular.Open.System.Approach..MOSA..project..including.direct.and.indirect.relationships.as.well.as.advising.those.making.that.decision..
 Which.of.the.following.best.characterizes.the.role.of..your.current.organization.vendors.most.relevant.to.your.work..in.the.acquisition.process.,role
 Which.of.the.following.best.characterizes.the.role.of.vendors.most.relevant.to.your.work.in.the.acquisition.process.,role
@@ -434,12 +429,14 @@ If.you.were.offered.the.chance.to.work.on.a.project.that.was.MOSA..as.compared.t
 How.do.you.define.MOSA...In.1.3.sentences.,How.do.you.define.MOSA...In.1.3.sentences.
 What.benefits..if.any..can..you..vendors.you.are.familiar.with..provide.the.government.under.a.MOSA.approach.that.you.cannot.under.conventional.approaches.,What.benefits..if.any..can..you..vendors.you.are.familiar.with..provide.the.government.under.a.MOSA.approach.that.you.cannot.under.conventional.approaches.
 In.your.opinion..how.committed.is.the.government.customer.to.long.term.follow.through.with.MOSA..,gov_comit
+In.your.opinion..how.committed.is.the.government.customer.to.long.term.follow.through.with.MOSA.,gov_comit
 In.your.opinion..how.committed.is.the.government.to.long.term.follow.through.with.MOSA.,gov_comit
 In.your.opinion..how.sufficient.is.the.expertise.of.the.government.to.adjudicate.and.manage.MOSA.projects.,gov_capable
 Which.MOSA.project.would.you.consider.yourself.to.be.most.familiar.with.,Which.MOSA.project.would.you.consider.yourself.to.be.most.familiar.with.
 In.the.MOSA.project.you.are.most.familiar.with..how.are.intellectual.property.and.data.rights.distributed.between.the.government.and.the.prime.vendor..,ip_govdist
 In.the.MOSA.project.you.are.most.familiar.with..how.are.intellectual.property.and.data.rights.distributed.between.the.prime.vendor.and.other.participating.organizations..,ip_otherdist
 How.much.capacity.does.the.government.have.under.this.model.to.tailor.the.intellectual.property.distribution.to.the.goals.of.the.project.,ip_capacity
+In.MOSA.projects.you.are.most.familiar.with.how.much.capacity.does.the.government.have.to.tailor.the.intellectual.property.distribution.to.the.goals.of.the.project.,ip_capacity
 What.intellectual.property.and.data.rights.would.you.suggest.the.government.should.request.,What.intellectual.property.and.data.rights.would.you.suggest.the.government.should.request.
 Do.current.US.government.standards.and.interface.requirements.enable..your.company.companies.you.study..to.protect.its.IP.while.still.enabling.a.MOSA.infrastructure.,ip_protected
 Do.current.US.government.standards.and.interface.requirements.enable.companies.to.protect.its.IP.while.still.enabling.a.MOSA.infrastructure.,ip_protected
@@ -457,6 +454,7 @@ Please.specify.the.contracting.mechanism,Please.specify.the.contracting.mechanis
 In.the.MOSA.project.you.are.most.familiar.with.what.vehicle.is.employed.,contract_vehicle
 Other..please.specify.1,contract_other
 How.would.the.MOSA.project.you.are.most.familiar.with.interact.with.each.of.these.acquisition.characteristics.,mosa_fixedprice
+How.does.MOSA.interact.with.each.of.these.acquisition.characteristics.,mosa_fixedprice
 How.would.MOSA.interact.with.each.of.these.acquisition.characteristics.,mosa_fixedprice
 OTA,mosa_ota
 Indefinite.Delivery.Indefinite.Quantity.vehicle,mosa_indef
@@ -464,6 +462,7 @@ Speedy.Contract.award,mosa_speedy
 Longer.duration.contract,mosa_longer
 Employs.Software.Licensing,mosa_license
 Multi.vendor.contracts,mosa_multivendor
+Royalties.or.similar.licensing.arrangements,mosa_royalties
 This.is.a.space.for.any.other.comments.on.acquisition.approach.,This.is.a.space.for.any.other.comments.on.acquisition.approach.
 In.the.MOSA.project.you.are.most.familiar.with..what.was.the.primary.source..if.any..innovation.have.you.observed.as.a.result.of.this.new.way.of.doing.business.,innovation
 Other..please.specify..1,innovation_other
@@ -477,6 +476,7 @@ Ease.of.bringing.in.commercial.technology,govbenefits_commercialtech
 Opportunities.to.insert.technology.throughout.a.system’s.lifecycle,govbenefits_techlifecycle
 Access.to.common.digital.interface.for.development,govbenefits_digitalinterface
 Other..please.specify..2,govbenefits_other
+govbenefits_other,govbenefits_other
 How.does.the.use.of.a.US.government.open.system.approach.change.the.fiscal.appeal.for..your.organization..vendors.most.relevant.to.your.work..to.engage.in.each.of.the.following.phases.of.development.,appeal_RD
 Participating.in.the.procurement.phase,appeal_procure
 Participating.in.the.operations.and.maintenance.phase,appeal_OM
@@ -515,3 +515,10 @@ This.is.a.space.for.any.other.comments.you.may.have.on.incentives.to.participate
 How.much.does.your.company.s.current.business.model.already.fit.with.MOSA.,changes_done
 Are.there.any.important.aspects.of.MOSA.incentives.that.were.not.covered.in.our.questions.,Are.there.any.important.aspects.of.MOSA.incentives.that.were.not.covered.in.our.questions.
 Are.there.any.further.business.models.or.experts.you.recommend.we.study.or.speak.to.,Are.there.any.further.business.models.or.experts.you.recommend.we.study.or.speak.to.
+Did.participate.in.a.previous.2021.round.of.this.survey.,
+How.familiar.are.you.with.PEO.Aviation.MOSA.implementation.approach.,
+Does.your.company.employ.open.system.approaches.within.the.company.,
+Where.do.you.see.differences.between.how.your.company.employs.MOSA.and.how.PEO.Aviation.operates.,
+Do.you.recommend.any.considerations.for.the.government.in.choosing.whether.to.apply.a.licensing.or.royalty.approach.versus.more.traditional.intellectual.property.approaches.,
+What.forms.of.contracting.are.best.suited..if.any..to.provide.ongoing.competition.for.modules.,
+What..if.any..are.the.most.likely.challenges.of.widespread.US.government.adoption.of.MOSA.to.your.company.,
