@@ -875,7 +875,7 @@ likert5,A little more likely to participate,A little\nmore likely,4,"DIIG Primar
 likert5,Much more likely to participate,Much more\nlikely,5,"DIIG Primary,Blue",#0054A4,,,,,,
 likert5,Very unimportant,Very\nunimportant,1,"DIIG Primary, Red",#BB4243,,,,,,
 likert5,Somewhat unimportant,Somewhat\nunimportant,2,"DIIG Additional, Sea Pink",#d37d7d,,,,,,
-likert5,Neither important nor unimportant,Neither important\nnor unimportant,3,"DIIG Additional, Pale Gray",#bcbcbc,,,,,,
+likert5,Neither important nor unimportant,Neither import.\nnor unimport.,3,"DIIG Additional, Pale Gray",#bcbcbc,,,,,,
 likert5,Somewhat important,Somewhat\nimportant,4,"DIIG Primary, Air Force",#72a0c1,,,,,,
 likert5,Very important,Very\nimportant,5,"DIIG Secondary, Navy",#1d2d5c,,,,,,
 likert5,The company has made limited to no investments and structural choices to orient towards participating in MOSA projects,No Changes,1,"DIIG Secondary, Tangelo",#e58846,,,,,,
