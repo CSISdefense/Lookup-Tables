@@ -24,7 +24,7 @@ NewConstraintTableType.df<-merge_source_and_csis_name_tables(Stage1TableType.df,
 
 #Create a list of variables to be copied into a query to create the stage 2 database.
 #This already exists Errorlogging.ErrorLogging_FPDSstage2
-#We should probably convert this to check for any existing misisng columns and then 
+#We should probably convert this to check for any existing missing columns and then 
 #to add them.
 Create_Constraint_List<-paste(NewConstraintTableType.df$CSISvariableName,
                               NewConstraintTableType.df$CSISvariableType,
