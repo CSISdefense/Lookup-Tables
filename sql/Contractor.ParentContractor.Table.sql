@@ -44,7 +44,7 @@ CREATE TABLE [Contractor].[ParentContractor](
 	[CSISmodifiedBy] [nvarchar](128) NULL,
 	[overrideparentdunsnumber] [bit] NULL,
 	[parentheadquarterscountrycode] [nvarchar](3) NULL,
-	[isforeign] [bit] NULL,
+	[IsForeign] [bit] NULL,
 	[isinternationalNGO] [bit] NULL,
 	[isenterprise] [bit] NULL,
 	[ismultilateral] [bit] NULL,
