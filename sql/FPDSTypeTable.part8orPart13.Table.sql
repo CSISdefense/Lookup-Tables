@@ -1,8 +1,0 @@
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [FPDSTypeTable].[part8orPart13](
-	[part8orPart13] [varchar](50) NULL
-) ON [PRIMARY]
-GO

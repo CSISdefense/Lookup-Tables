@@ -1,9 +1,0 @@
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [Economic].[defOMB2020](
-	[Fiscal_Year] [smallint] NULL,
-	[OMB_FY2020_GDP2012] [varchar](50) NULL
-) ON [PRIMARY]
-GO
