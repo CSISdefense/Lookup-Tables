@@ -51,7 +51,7 @@ CREATE TABLE [Contract].[FPDS](
 	[vendordoingasbusinessname] [nvarchar](150) NULL,
 	[divisionname] [nvarchar](150) NULL,
 	[divisionnumberorofficecode] [varchar](10) NULL,
-	[ccrexception] [varchar](70) NULL,
+	[ccrexception] [varchar](71) NULL,
 	[streetaddress] [varchar](100) NULL,
 	[streetaddress2] [varchar](60) NULL,
 	[streetaddress3] [varchar](55) NULL,
@@ -252,8 +252,8 @@ CREATE TABLE [Contract].[FPDS](
 	[native_hawaiian_servicing_institution] [bit] NULL,
 	[sba_certified_8a_joint_venture] [bit] NULL,
 	[dot_certified_disadvantage] [bit] NULL,
-	[contract_transaction_unique_key] [varchar](74) NULL,
-	[contract_award_unique_key] [varchar](74) NULL,
+	[contract_transaction_unique_key] [varchar](154) NULL,
+	[contract_award_unique_key] [varchar](120) NULL,
 	[current_total_value_of_award] [decimal](19, 4) NULL,
 	[potential_total_value_of_award] [decimal](19, 4) NULL,
 	[award_or_idv_flag] [varchar](5) NULL,
@@ -295,6 +295,16 @@ REFERENCES [FPDSTypeTable].[award_type_code] ([award_type_code])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_award_type_code]
 GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_CommercialItemTestProgram] FOREIGN KEY([commercialitemtestprogram])
+REFERENCES [FPDSTypeTable].[commercialitemtestprogram] ([CommercialItemTestProgram])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_CommercialItemTestProgram]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_FPDS_contract_award_unique_key] FOREIGN KEY([contract_award_unique_key])
+REFERENCES [Contract].[contract_award_unique_key] ([contract_award_unique_key])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_FPDS_contract_award_unique_key]
+GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_contractactiontype] FOREIGN KEY([contractactiontype])
 REFERENCES [FPDSTypeTable].[ContractActionType] ([contractactiontype])
 GO
@@ -314,6 +324,11 @@ ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_idv_
 REFERENCES [FPDSTypeTable].[idv_type_code] ([idv_type_code])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_idv_type_code]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_informationtechnologycommercialitemcategory] FOREIGN KEY([informationtechnologycommercialitemcategory])
+REFERENCES [FPDSTypeTable].[informationtechnologycommercialitemcategory] ([informationtechnologycommercialitemcategory])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_informationtechnologycommercialitemcategory]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [fk_contract_fpds_LetterContract] FOREIGN KEY([lettercontract])
 REFERENCES [FPDSTypeTable].[lettercontract] ([LetterContract])

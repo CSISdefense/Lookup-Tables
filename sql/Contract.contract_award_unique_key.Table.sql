@@ -3,7 +3,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [Contract].[contract_award_unique_key](
-	[contract_award_unique_key] [varchar](74) NOT NULL,
+	[contract_award_unique_key] [varchar](120) NOT NULL,
 	[AgencyID] [varchar](4) NOT NULL,
 	[awarding_agency_code] [smallint] NULL,
 	[award_id_piid] [varchar](50) NOT NULL,
@@ -12,13 +12,14 @@ CREATE TABLE [Contract].[contract_award_unique_key](
 	[award_or_idv_flag] [varchar](5) NOT NULL,
 	[CSIScontractID] [int] NULL,
 	[CSISidvpiidID] [int] NULL,
-	[parent_contract_award_unique_key] [varchar](74) NULL,
+	[parent_contract_award_unique_key] [varchar](120) NULL,
 	[IsDerived] [bit] NULL,
 	[IsFPDSerror] [bit] NOT NULL,
 	[numberofoffersreceived] [bigint] NULL,
 	[idv_type_code] [varchar](1) NULL,
 	[typeofidc] [varchar](41) NULL,
 	[parent_award_single_or_multiple_code] [varchar](1) NULL,
+	[IsAwardIDVdup] [bit] NULL,
  CONSTRAINT [pk_contract_award_unique_key] PRIMARY KEY CLUSTERED 
 (
 	[contract_award_unique_key] ASC
@@ -29,6 +30,11 @@ ALTER TABLE [Contract].[contract_award_unique_key] ADD  DEFAULT ((0)) FOR [IsDer
 GO
 ALTER TABLE [Contract].[contract_award_unique_key] ADD  DEFAULT ((0)) FOR [IsFPDSerror]
 GO
+ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD  CONSTRAINT [contract_contract_award_unique_key_parent_contract_award_unique_key] FOREIGN KEY([parent_contract_award_unique_key])
+REFERENCES [Contract].[contract_award_unique_key] ([contract_award_unique_key])
+GO
+ALTER TABLE [Contract].[contract_award_unique_key] CHECK CONSTRAINT [contract_contract_award_unique_key_parent_contract_award_unique_key]
+GO
 ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD FOREIGN KEY([CSISidvpiidID])
 REFERENCES [Contract].[CSISidvpiidID] ([CSISidvpiidID])
 GO
@@ -38,15 +44,12 @@ GO
 ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD FOREIGN KEY([parent_award_single_or_multiple_code])
 REFERENCES [FPDSTypeTable].[multipleorsingleawardidc] ([multipleorsingleawardidc])
 GO
-ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD FOREIGN KEY([parent_contract_award_unique_key])
-REFERENCES [Contract].[contract_award_unique_key] ([contract_award_unique_key])
-GO
 ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD  CONSTRAINT [fk_contract_award_unique_key_CSIScontractID] FOREIGN KEY([CSIScontractID])
 REFERENCES [Contract].[CSIScontractID] ([CSIScontractID])
 GO
 ALTER TABLE [Contract].[contract_award_unique_key] CHECK CONSTRAINT [fk_contract_award_unique_key_CSIScontractID]
 GO
-ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD  CONSTRAINT [chk_contract_contract_award_unique_key_concatenation] CHECK  (((((((('CONT_'+case when [award_or_idv_flag]='AWARD' then 'AWD' else 'IDV' end)+'_')+[award_id_piid])+'_')+[agencyID])+case when [award_or_idv_flag]='AWARD' then (('_'+coalesce(nullif([parent_award_id_piid],''),'-NONE-'))+'_')+coalesce(nullif([parent_award_agency_id],''),'-NONE-') else '' end)=[contract_award_unique_key]))
+ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD  CONSTRAINT [chk_contract_contract_award_unique_key_concatenation] CHECK  (((((((('CONT_'+case when [award_or_idv_flag]='AWARD' then 'AWD' else 'IDV' end)+'_')+coalesce(nullif([award_id_piid],''),'-NONE-'))+'_')+[agencyID])+case when [award_or_idv_flag]='AWARD' then (('_'+coalesce(nullif([parent_award_id_piid],''),'-NONE-'))+'_')+coalesce(nullif([parent_award_agency_id],''),'-NONE-') else '' end)=[contract_award_unique_key]))
 GO
 ALTER TABLE [Contract].[contract_award_unique_key] CHECK CONSTRAINT [chk_contract_contract_award_unique_key_concatenation]
 GO

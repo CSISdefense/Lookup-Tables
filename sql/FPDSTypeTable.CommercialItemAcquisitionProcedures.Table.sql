@@ -7,6 +7,7 @@ CREATE TABLE [FPDSTypeTable].[CommercialItemAcquisitionProcedures](
 	[CommercialItemAcquisitionProcedures] [varchar](1) NOT NULL,
 	[CommercialItemAcquisitionProceduresText] [nvarchar](255) NULL,
 	[IsCommercial] [bit] NULL,
+	[IsCommercialSimilar] [bit] NULL,
  CONSTRAINT [PK_commercialitemacquisitionprocedures No PK] PRIMARY KEY CLUSTERED 
 (
 	[CommercialItemAcquisitionProcedures] ASC

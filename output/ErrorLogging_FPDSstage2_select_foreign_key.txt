@@ -468,6 +468,33 @@ HAVING max(iif(fk.domestic_or_foreign_entity_name=pk.manufacturingorganizationty
 ORDER BY fk.[manufacturingorganizationtype]
 
 
+--List new [informationtechnologycommercialitemcategory] and updated information_technology_commercial_item_category_name for insertion into FPDSTypeTable.informationtechnologycommercialitemcategory
+SELECT fk.[informationtechnologycommercialitemcategory],
+max(iif(fk.information_technology_commercial_item_category_name=pk.informationtechnologycommercialitemcategoryText or
+	fk.information_technology_commercial_item_category_name='' or
+	charindex('('+fk.information_technology_commercial_item_category_name+')',pk.informationtechnologycommercialitemcategoryText )>0,
+	NULL,fk.information_technology_commercial_item_category_name)) as MaxOfNewFKinformation_technology_commercial_item_category_name,
+count(distinct iif(fk.information_technology_commercial_item_category_name=pk.informationtechnologycommercialitemcategoryText or
+	fk.information_technology_commercial_item_category_name='' or
+	charindex('('+fk.information_technology_commercial_item_category_name+')',pk.informationtechnologycommercialitemcategoryText )>0,
+	NULL,fk.information_technology_commercial_item_category_name)) as unmatched_name_count,
+pk.informationtechnologycommercialitemcategoryText as PKinformationtechnologycommercialitemcategoryText,
+max(iif(fk.information_technology_commercial_item_category_name=pk.informationtechnologycommercialitemcategoryText or
+	fk.information_technology_commercial_item_category_name='' or
+	charindex('('+fk.information_technology_commercial_item_category_name+')',pk.informationtechnologycommercialitemcategoryText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.informationtechnologycommercialitemcategory' as PrimaryKeyTable
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.informationtechnologycommercialitemcategory as pk
+On pk.informationtechnologycommercialitemcategory=fk.[informationtechnologycommercialitemcategory]
+GROUP BY fk.[informationtechnologycommercialitemcategory], pk.informationtechnologycommercialitemcategoryText
+HAVING max(iif(fk.information_technology_commercial_item_category_name=pk.informationtechnologycommercialitemcategoryText or
+	fk.information_technology_commercial_item_category_name='' or
+	charindex('('+fk.information_technology_commercial_item_category_name+')',pk.informationtechnologycommercialitemcategoryText )>0,
+	0,1))=1
+ORDER BY fk.[informationtechnologycommercialitemcategory]
+
+
 --List new [useofepadesignatedproducts] and updated epa_designated_product_name for insertion into FPDSTypeTable.useofepadesignatedproducts
 SELECT fk.[useofepadesignatedproducts],
 max(iif(fk.epa_designated_product_name=pk.useofepadesignatedproductsText or

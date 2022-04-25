@@ -348,6 +348,26 @@ On pk.manufacturingorganizationtype=fk.[manufacturingorganizationtype]
 WHERE nullif(pk.manufacturingorganizationtypeText,'') is NULL AND
 nullif(fk.domestic_or_foreign_entity_name,'') is NOT NULL
 
+-- Insert new [informationtechnologycommercialitemcategory] into FPDSTypeTable.informationtechnologycommercialitemcategory
+INSERT INTO FPDSTypeTable.informationtechnologycommercialitemcategory
+(informationtechnologycommercialitemcategory,informationtechnologycommercialitemcategoryText)
+SELECT fk.[informationtechnologycommercialitemcategory]
+,max(fk.information_technology_commercial_item_category_name) as informationtechnologycommercialitemcategoryText
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.informationtechnologycommercialitemcategory as pk
+On pk.informationtechnologycommercialitemcategory=fk.[informationtechnologycommercialitemcategory]
+WHERE pk.informationtechnologycommercialitemcategory is NULL
+GROUP BY fk.[informationtechnologycommercialitemcategory]
+
+-- Update informationtechnologycommercialitemcategoryText using information_technology_commercial_item_category_name where there is a blank in FPDSTypeTable.informationtechnologycommercialitemcategory
+UPDATE pk
+SET informationtechnologycommercialitemcategoryText=fk.information_technology_commercial_item_category_name
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.informationtechnologycommercialitemcategory as pk
+On pk.informationtechnologycommercialitemcategory=fk.[informationtechnologycommercialitemcategory]
+WHERE nullif(pk.informationtechnologycommercialitemcategoryText,'') is NULL AND
+nullif(fk.information_technology_commercial_item_category_name,'') is NOT NULL
+
 -- Insert new [useofepadesignatedproducts] into FPDSTypeTable.useofepadesignatedproducts
 INSERT INTO FPDSTypeTable.useofepadesignatedproducts
 (useofepadesignatedproducts,useofepadesignatedproductsText)
