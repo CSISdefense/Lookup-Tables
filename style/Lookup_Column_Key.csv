@@ -155,21 +155,22 @@ isUndefinitizedAction,UCA,,,,FALSE
 isUCA,UCA,,,,FALSE
 UCA,UCA,,,,FALSE
 Reachback,Reachback,,,,FALSE
-Action.Obligation,,Action Obligation (Current?),Share Contract $,,FALSE
-Action.Obligation.Current,,Action Obligation (Current $s),Share Contract $,,FALSE
-Action.Obligation.2016,,Constant 2016 $,Share Contract $,,FALSE
-Action.Obligation.2017,,Constant 2017 $,Share Contract $,,FALSE
-Action.Obligation.OMB.2019,,Constant 2019 $,Share Contract $,,FALSE
-Obligation.2017,,Obligations (2017 $),Share Contract $,,FALSE
-Action_Obligation,,Action Obligation (Current?),Share Contract $,,FALSE
-Action_Obligation_Current,,Action Obligation (Current $s),Share Contract $,,FALSE
-Action_Obligation_Then_Year,,Action Obligation (Current $s),Share Contract $,,FALSE
-Action_Obligation_2016,,Constant 2016 $,Share Contract $,,FALSE
-Action_Obligation_2017,,Constant 2017 $,Share Contract $,,FALSE
-Action_Obligation_OMB_2019,,Constant 2019 $,Share Contract $,,FALSE
-Action_Obligation_OMB20_GDP18,,Constant 2021 $,Share Contract $,,FALSE
-Action_Obligation_OMB23_GDP21,,Constant 2018 $,Share Contract $,,FALSE
-Obligation_2017,,Obligations (2017 $),Share Contract $,,FALSE
+Action.Obligation,,Obligations (Current $s?),Share Contract $,,FALSE
+Action.Obligation.Current,,Obligations (Current $s),Share Contract $,,FALSE
+Action_Obligation,,Obligations (Current $s?),Share Contract $,,FALSE
+Action_Obligation_Current,,Obligations (Current $s),Share Contract $,,FALSE
+Action_Obligation_Then_Year,,Obligations (Current $s),Share Contract $,,FALSE
+Action_Obligation_2016,,Obligations (Constant 2016 $s),Share Contract $,,FALSE
+Action.Obligation.2016,,Obligations (Constant 2016 $s),Share Contract $,,FALSE
+Obligation.2017,,Obligations (Constant 2017 $s),Share Contract $,,FALSE
+Obligation_2017,,Obligations (Constant 2017 $s),Share Contract $,,FALSE
+Action_Obligation_2017,,Obligations (Constant 2017 $s),Share Contract $,,FALSE
+Action.Obligation.2017,,Obligations (Constant 2017 $s),Share Contract $,,FALSE
+Action_Obligation_OMB20_GDP18,,Obligations (Constant 2018 $s),Share Contract $,,FALSE
+Action.Obligation.OMB.2019,,Obligations (Constant 2019 $s),Share Contract $,,FALSE
+Action_Obligation_OMB_2019,,Obligations (Constant 2019 $s),Share Contract $,,FALSE
+Action_Obligation_OMB20_GDP20,,Obligations (Constant 2020 $s),Share Contract $,,FALSE
+Action_Obligation_OMB23_GDP21,,Obligations (Constant 2021 $s),Share Contract $,,FALSE
 SourceFiscalYear,,Fiscal Year,,,FALSE
 FiscalYear,,Fiscal Year,,,FALSE
 Fiscal.Year,,Fiscal Year,,,FALSE
