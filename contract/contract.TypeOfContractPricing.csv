@@ -3,14 +3,14 @@
 *,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
 0,Unused type,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
 1,Order Dependent (IDV only),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
-2,Combination (two or more),Combination or Other,Combination or Other,NULL,NULL,1,1,NULL,NULL,NULL,NULL,NULL,Combination,Combination or Other,Combination or Other
-3,Other (none of the above),Combination or Other,Combination or Other,0,0,NULL,1,0,0,0,0,1,Other,Combination or Other,Combination or Other
-A,Fixed Price Redetermination,Fixed-Price,Other FP,0,1,NULL,1,0,0,0,0,1,Other,Other FP,Other FP
-B,Fixed Price Level of Effort,Cost-Based,T&M/LH/FPLOE,1,0,NULL,1,0,0,0,0,1,Other,T&M/LH/FPLOE,T&M/LH/FPLOE
+2,Combination (two or more),Combination or Other,Combination or Other,NULL,NULL,1,1,NULL,NULL,NULL,NULL,NULL,Combination,Combination or Other,All Other
+3,Other (none of the above),Combination or Other,Combination or Other,0,0,NULL,1,0,0,0,0,1,Other,Combination or Other,All Other
+A,Fixed Price Redetermination,Fixed-Price,Other FP,0,1,NULL,1,0,0,0,0,1,Other,Other FP,All Other
+B,Fixed Price Level of Effort,Cost-Based,T&M/LH/FPLOE,1,0,NULL,1,0,0,0,0,1,Other,T&M/LH/FPLOE,All Other
 J,Firm Fixed Price,Fixed-Price,FFP,0,1,NULL,1,1,0,0,0,0,Firm-Fixed-Price / No Fee,FFP,FFP
 K,Fixed Price with Economic Price Adjustment,Fixed-Price,Other FP,0,1,NULL,1,0,0,0,0,1,Other,Other FP,FP-Econ. Price Adj.
 L,Fixed Price Incentive,Fixed-Price,Other FP,0,1,NULL,1,0,0,0,1,0,Incentive,Incentive,FP-Incentive
-M,Fixed Price Award Fee,Fixed-Price,Other FP,0,1,NULL,1,0,0,1,0,0,Award,Other FP,Other FP
+M,Fixed Price Award Fee,Fixed-Price,Other FP,0,1,NULL,1,0,0,1,0,0,Award,Other FP,All Other
 NO,Not Reported,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
 O,Unused type,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
 P,Unused type,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
@@ -20,5 +20,5 @@ T,Cost Sharing,Cost-Based,Cost-Based,1,0,NULL,1,0,0,0,1,0,Incentive,Incentive,Co
 U,Cost Plus Fixed Fee,Cost-Based,Cost-Based,1,0,NULL,1,0,1,0,0,0,Fixed Fee,Other CB,Cost-Based
 V,Cost Plus Incentive,Cost-Based,Cost-Based,1,0,NULL,1,0,0,0,1,0,Incentive,Incentive,Cost-Based
 X,Unused type,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL
-Y,Time and Materials,Cost-Based,T&M/LH/FPLOE,1,0,NULL,1,0,0,0,0,1,Other,T&M/LH/FPLOE,T&M/LH/FPLOE
-Z,Labor Hours,Cost-Based,T&M/LH/FPLOE,1,0,NULL,1,0,0,0,0,1,Other,T&M/LH/FPLOE,T&M/LH/FPLOE
+Y,Time and Materials,Cost-Based,T&M/LH/FPLOE,1,0,NULL,1,0,0,0,0,1,Other,T&M/LH/FPLOE,All Other
+Z,Labor Hours,Cost-Based,T&M/LH/FPLOE,1,0,NULL,1,0,0,0,0,1,Other,T&M/LH/FPLOE,All Other
