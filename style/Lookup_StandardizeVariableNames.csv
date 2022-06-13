@@ -1,6 +1,8 @@
 Original,Replacement
 SumOfobligatedAmount,Action_Obligation
 ObligatedAmount,Action_Obligation
+Dollars Obligated,Action_Obligation
+DollarsObligated,Action_Obligation
 obligatedamount_Then_Year,Action_Obligation_Then_Year
 Action.Obligation.Current,Action_Obligation_Then_Year
 Action.Obligation.Then.Year,Action_Obligation_Then_Year
@@ -42,9 +44,10 @@ PoPStateCode,PoPstateCode
 StateCode,PoPstateCode
 FundingMechanismClassification,PricingMechanism
 TypeofContractPricingtext,PricingMechanism
-TypeOfContractPricing,PricingMechanismCode
+Type Of Contract Pricing,TypeOfContractPricing
+TypeOfContractPricing,TypeOfContractPricing
 Pricing.Mechanism,PricingMechanism
-Pricing.Mechanism.Code,PricingMechanismCode
+Pricing.Mechanism.Code,TypeOfContractPricing
 Simple,SimpleArea
 ProductorServiceArea,ProductOrServiceArea
 ProductsCategory,ProductsCategory
