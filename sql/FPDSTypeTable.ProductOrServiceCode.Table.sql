@@ -42,6 +42,7 @@ CREATE TABLE [FPDSTypeTable].[ProductOrServiceCode](
 	[GreenEnergy] [varchar](20) NULL,
 	[BioRelated] [varchar](25) NULL,
 	[IsPossibleC2] [bit] NULL,
+	[IsRemotelyOperated] [bit] NULL,
  CONSTRAINT [PK_ProductOrServiceCode] PRIMARY KEY CLUSTERED 
 (
 	[ProductOrServiceCode] ASC
