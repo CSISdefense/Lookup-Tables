@@ -1,8 +1,8 @@
-﻿EntitySizeCode,EntitySizeText,EntitySmall,SomeSmall
-B,Big Five,Other Than Small,FALSE
-J,Large: Big 5 JV,Other Than Small,FALSE
-L,Large Vendor,Other Than Small,FALSE
-M,Medium Vendor,Other Than Small,FALSE
-N,Sometimes Small Vendor,Sometimes Small Vendor,TRUE
-S,Always Small Vendor,Always Small Vendor,TRUE
-U,Unlabeled Vendor,Unlabeled Vendor,NULL
+﻿EntitySizeCode,EntitySizeText,EntitySmall,EntitySizeSum,SomeSmall
+B,Big Five,Other Than Small,Large,FALSE
+J,Large: Big 5 JV,Other Than Small,Large,FALSE
+L,Large Vendor,Other Than Small,Large,FALSE
+M,Medium Vendor,Other Than Small,Medium,FALSE
+N,Sometimes Small Vendor,Sometimes Small Vendor,Sometimes Small Vendor,TRUE
+S,Always Small Vendor,Always Small Vendor,Always Small Vendor,TRUE
+U,Unlabeled Vendor,Unlabeled Vendor,Unlabeled Vendor,NULL
