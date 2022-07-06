@@ -299,8 +299,8 @@ REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
 ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded] CHECK CONSTRAINT [fk_FPDSgovManuallyAdded_contractingofficeagencyid]
 GO
-ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded]  WITH NOCHECK ADD  CONSTRAINT [fk_FPDSgovManuallyAdded_contractingofficeid] FOREIGN KEY([contractingofficeid])
-REFERENCES [Office].[ContractingOfficeCode] ([ContractingOfficeCode])
+ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded]  WITH NOCHECK ADD  CONSTRAINT [fk_FPDSgovManuallyAdded_contractingofficeid] FOREIGN KEY([contractingofficeagencyid], [contractingofficeid])
+REFERENCES [Office].[OfficeID] ([AgencyID], [OfficeID])
 GO
 ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded] CHECK CONSTRAINT [fk_FPDSgovManuallyAdded_contractingofficeid]
 GO
@@ -509,8 +509,8 @@ REFERENCES [FPDSTypeTable].[walshhealyact] ([walshhealyact])
 GO
 ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded] CHECK CONSTRAINT [fk_FPDSgovManuallyAdded_walshhealyact]
 GO
-ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded]  WITH NOCHECK ADD  CONSTRAINT [pk_FPDS_contractingOfficeCode] FOREIGN KEY([fundingrequestingofficeid])
-REFERENCES [Office].[ContractingOfficeCode] ([ContractingOfficeCode])
+ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded]  WITH NOCHECK ADD  CONSTRAINT [pk_FPDS_OfficeID] FOREIGN KEY([fundingrequestingagencyid], [fundingrequestingofficeid])
+REFERENCES [Office].[OfficeID] ([AgencyID], [OfficeID])
 GO
-ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded] CHECK CONSTRAINT [pk_FPDS_contractingOfficeCode]
+ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded] CHECK CONSTRAINT [pk_FPDS_OfficeID]
 GO

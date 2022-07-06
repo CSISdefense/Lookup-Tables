@@ -310,15 +310,20 @@ REFERENCES [FPDSTypeTable].[ContractActionType] ([contractactiontype])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_contractactiontype]
 GO
-ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_ContractingOfficeCodeHistory] FOREIGN KEY([fiscal_year], [contractingofficeid])
-REFERENCES [Office].[ContractingOfficeCodeHistory] ([fiscal_year], [ContractingOfficeCode])
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_ContractingOfficeIDhistory] FOREIGN KEY([fiscal_year], [contractingofficeagencyid], [contractingofficeid])
+REFERENCES [Office].[OfficeIDhistory] ([fiscal_year], [AgencyID], [OfficeID])
 GO
-ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_ContractingOfficeCodeHistory]
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_ContractingOfficeIDhistory]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_csistransactionid] FOREIGN KEY([CSIStransactionID])
 REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_csistransactionid]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_FundingOfficeIDhistory] FOREIGN KEY([fiscal_year], [fundingrequestingagencyid], [fundingrequestingofficeid])
+REFERENCES [Office].[OfficeIDhistory] ([fiscal_year], [AgencyID], [OfficeID])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_FundingOfficeIDhistory]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_idv_type_code] FOREIGN KEY([idv_type_code])
 REFERENCES [FPDSTypeTable].[idv_type_code] ([idv_type_code])
@@ -405,13 +410,8 @@ REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_contractingofficeagencyid]
 GO
-ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [fk_FPDS_contractingOfficeCode] FOREIGN KEY([fundingrequestingofficeid])
-REFERENCES [Office].[ContractingOfficeCode] ([ContractingOfficeCode])
-GO
-ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_FPDS_contractingOfficeCode]
-GO
-ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_contractingofficeid] FOREIGN KEY([contractingofficeid])
-REFERENCES [Office].[ContractingOfficeCode] ([ContractingOfficeCode])
+ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_contractingofficeid] FOREIGN KEY([contractingofficeagencyid], [contractingofficeid])
+REFERENCES [Office].[OfficeID] ([AgencyID], [OfficeID])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_contractingofficeid]
 GO
@@ -509,6 +509,11 @@ ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_nationalint
 REFERENCES [Assistance].[NationalInterestActionCode] ([NationalInterestActionCode])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_nationalinterestactioncode]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [fk_FPDS_OfficeID] FOREIGN KEY([fundingrequestingagencyid], [fundingrequestingofficeid])
+REFERENCES [Office].[OfficeID] ([AgencyID], [OfficeID])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_FPDS_OfficeID]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_parentdunsnumber] FOREIGN KEY([parentdunsnumber])
 REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])
