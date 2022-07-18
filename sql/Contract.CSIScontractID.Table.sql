@@ -67,10 +67,10 @@ REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
 ALTER TABLE [Contract].[CSIScontractID] CHECK CONSTRAINT [FK__CSIScontr__Contr__2AD6269A]
 GO
-ALTER TABLE [Contract].[CSIScontractID]  WITH NOCHECK ADD  CONSTRAINT [FK__CSIScontr__Contr__2CBE6F0C] FOREIGN KEY([ContractingOfficeID])
-REFERENCES [Office].[ContractingOfficeCode] ([ContractingOfficeCode])
+ALTER TABLE [Contract].[CSIScontractID]  WITH NOCHECK ADD  CONSTRAINT [FK__CSIScontr__ContractingOfficeID] FOREIGN KEY([ContractingAgencyID], [ContractingOfficeID])
+REFERENCES [Office].[OfficeID] ([AgencyID], [OfficeID])
 GO
-ALTER TABLE [Contract].[CSIScontractID] CHECK CONSTRAINT [FK__CSIScontr__Contr__2CBE6F0C]
+ALTER TABLE [Contract].[CSIScontractID] CHECK CONSTRAINT [FK__CSIScontr__ContractingOfficeID]
 GO
 ALTER TABLE [Contract].[CSIScontractID]  WITH NOCHECK ADD  CONSTRAINT [FK__CSIScontr__exten__345F90D4] FOREIGN KEY([ExtentCompeted])
 REFERENCES [FPDSTypeTable].[extentcompeted] ([extentcompeted])
@@ -82,10 +82,10 @@ REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
 ALTER TABLE [Contract].[CSIScontractID] CHECK CONSTRAINT [FK__CSIScontr__Fundi__2F9ADBB7]
 GO
-ALTER TABLE [Contract].[CSIScontractID]  WITH NOCHECK ADD  CONSTRAINT [FK__CSIScontr__Fundi__308EFFF0] FOREIGN KEY([FundingOfficeID])
-REFERENCES [Office].[ContractingOfficeCode] ([ContractingOfficeCode])
+ALTER TABLE [Contract].[CSIScontractID]  WITH NOCHECK ADD  CONSTRAINT [FK__CSIScontr__FundingOfficeID] FOREIGN KEY([FundingAgencyID], [FundingOfficeID])
+REFERENCES [Office].[OfficeID] ([AgencyID], [OfficeID])
 GO
-ALTER TABLE [Contract].[CSIScontractID] CHECK CONSTRAINT [FK__CSIScontr__Fundi__308EFFF0]
+ALTER TABLE [Contract].[CSIScontractID] CHECK CONSTRAINT [FK__CSIScontr__FundingOfficeID]
 GO
 ALTER TABLE [Contract].[CSIScontractID]  WITH NOCHECK ADD  CONSTRAINT [FK__CSIScontr__Major__2EA6B77E] FOREIGN KEY([MajorCommandID])
 REFERENCES [Office].[MajorCommandID] ([MajorCommandID])

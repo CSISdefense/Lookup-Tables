@@ -169,8 +169,8 @@ REFERENCES [Project].[SystemEquipmentCode] ([systemequipmentcode])
 GO
 ALTER TABLE [Contract].[DD350] CHECK CONSTRAINT [FK_contract_DD350_WeaponSystemCode]
 GO
-ALTER TABLE [Contract].[DD350]  WITH NOCHECK ADD  CONSTRAINT [pk_contract_DD350_contractingOfficeCode] FOREIGN KEY([ContractingOfficeCode])
-REFERENCES [Office].[ContractingOfficeCode] ([ContractingOfficeCode])
+ALTER TABLE [Contract].[DD350]  WITH NOCHECK ADD  CONSTRAINT [pk_contract_DD350_OfficeID] FOREIGN KEY([ContractingAgencyId], [ContractingOfficeCode])
+REFERENCES [Office].[OfficeID] ([AgencyID], [OfficeID])
 GO
-ALTER TABLE [Contract].[DD350] CHECK CONSTRAINT [pk_contract_DD350_contractingOfficeCode]
+ALTER TABLE [Contract].[DD350] CHECK CONSTRAINT [pk_contract_DD350_OfficeID]
 GO

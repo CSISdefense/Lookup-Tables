@@ -4,7 +4,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [Office].[MajorCommandID](
 	[MajorCommandCode] [varchar](24) NOT NULL,
-	[ContractingOfficeCode] [varchar](6) NULL,
+	[OfficeID] [varchar](6) NULL,
 	[AgencyID] [varchar](4) NULL,
 	[MajorCommandName] [varchar](100) NULL,
 	[StartFiscal_Year] [smallint] NULL,
@@ -23,13 +23,13 @@ REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
 ALTER TABLE [Office].[MajorCommandID] CHECK CONSTRAINT [FK__MajorComm__Agenc__7291CD77]
 GO
-ALTER TABLE [Office].[MajorCommandID]  WITH NOCHECK ADD  CONSTRAINT [FK__MajorComm__Contr__70A98505] FOREIGN KEY([ContractingOfficeCode])
-REFERENCES [Office].[ContractingOfficeCode] ([ContractingOfficeCode])
-GO
-ALTER TABLE [Office].[MajorCommandID] CHECK CONSTRAINT [FK__MajorComm__Contr__70A98505]
-GO
 ALTER TABLE [Office].[MajorCommandID]  WITH NOCHECK ADD  CONSTRAINT [FK__MajorComm__Depar__7385F1B0] FOREIGN KEY([DepartmentID])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
 ALTER TABLE [Office].[MajorCommandID] CHECK CONSTRAINT [FK__MajorComm__Depar__7385F1B0]
+GO
+ALTER TABLE [Office].[MajorCommandID]  WITH NOCHECK ADD  CONSTRAINT [FK__MajorComm__OfficeID] FOREIGN KEY([AgencyID], [OfficeID])
+REFERENCES [Office].[OfficeID] ([AgencyID], [OfficeID])
+GO
+ALTER TABLE [Office].[MajorCommandID] CHECK CONSTRAINT [FK__MajorComm__OfficeID]
 GO
