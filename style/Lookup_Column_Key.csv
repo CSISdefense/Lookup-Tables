@@ -549,6 +549,7 @@ Fund_Type,,,,,FALSE
 Fund_Type_Description,,,,,FALSE
 Period,Period,Period,,,FALSE
 EntitySizeText,Vendors,Vendor Count,,,FALSE
+EntitySizeText.GA,Vendors,Vendor Count,,,FALSE
 EntitySmall,Vendors,Vendor Count,,,FALSE
 EntitySizeText.sum,Vendors,Vendor Count,,,FALSE
 EntitySizeText.detail,Vendors,Vendor Count,,,FALSE
