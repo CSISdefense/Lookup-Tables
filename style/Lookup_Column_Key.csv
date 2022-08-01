@@ -83,6 +83,7 @@ PlatformPortfolio.sum,PlatformPortfolio,Platform Portfolio,,,FALSE
 PlatformPortfolio.AnD,PlatformPortfolio,Platform Portfolio,,,FALSE
 PlatformPortfolio.USITC,PlatformPortfolio,Platform Portfolio,,,FALSE
 PlatformPortfolio.DSCA,PlatformPortfolio,Platform Portfolio,,,FALSE
+PlatformPortfolioUAV,PlatformPortfolio,Platform Portfolio,,,FALSE
 Domain,PlatformPortfolio,Domain,,,FALSE
 Europe,Europe,,,,FALSE
 Country,Europe,,,,FALSE
@@ -549,6 +550,7 @@ Fund_Type,,,,,FALSE
 Fund_Type_Description,,,,,FALSE
 Period,Period,Period,,,FALSE
 EntitySizeText,Vendors,Vendor Count,,,FALSE
+EntitySizeText.GA,Vendors,Vendor Count,,,FALSE
 EntitySmall,Vendors,Vendor Count,,,FALSE
 EntitySizeText.sum,Vendors,Vendor Count,,,FALSE
 EntitySizeText.detail,Vendors,Vendor Count,,,FALSE
@@ -632,10 +634,11 @@ foreign_funding_override_sum,FMS,Foreign  Funding,,,
 Vendor.Size,Vendors,Vendor Size,,,
 Action.Obligation.Then.Year,,Action Obligation (Current $s),Share Contract $,,
 Number.Of.Actions,,Number of Actions,Share of Actions,,
-BuyerName,,Buyer,,,
-BuyerPlace,Country,Location of Buyer,,,
-Seller,Country,Seller Country,,,
-SellerSource,Country,Seller Country,,,
+BuyerName,,Importer,,,
+BuyerPlace,Country,Location of Importer,,,
+Seller,Country,Exporter,,,
+SellerSource,Country,Exporter,,,
+SellerUAS,CountryUAS,Importer,,,
 USAID.region,Region,Region,,,
 StateRegion,Region,Region,,,
 PlaceStateRegion,Region,Region,,,
