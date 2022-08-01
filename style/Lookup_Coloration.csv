@@ -1090,8 +1090,6 @@ PlatformPortfolio,Unarmed UAS,Unarmed UAS,1.25,"DIIG Secondary, Coast Guard",#59
 PlatformPortfolio,Armed UAS,Armed UAS,1.5,"DIIG Secondary, Marine Corps",#999999,,,,default grey,#554449,
 PlatformPortfolio,UAV,UAV,1.5,"DIIG Secondary, Marine Corps",#999999,,,,default grey,#554449,
 PlatformPortfolio,UAS,UAS,1.5,"DIIG Secondary, Marine Corps",#999999,,,,default grey,#554449,
-PlatformPortfolio,Armed UAS,Armed UAS,1.5,"DIIG Secondary, Marine Corps",#999999,,,,default grey,#554449,
-PlatformPortfolio,Unarmed UAS,Unarmed UAS,1.5,"DIIG Secondary, Marine Corps",#999999,,,,default grey,#554449,
 PlatformPortfolio,Remotely Crewed,Remotely Crewed,1.5,"DIIG Secondary, Marine Corps",#999999,,,,default grey,#554449,
 PlatformPortfolio,Remotely Operated,Remotely Crewed,1.5,"DIIG Secondary, Marine Corps",#999999,,,,default grey,#554449,
 PlatformPortfolio,Loitering Munition,Loitering Munition,1.75,"DIIG Additional, Yellow",#eec260,,,,default grey,#554449,
