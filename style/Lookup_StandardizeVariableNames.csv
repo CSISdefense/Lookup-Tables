@@ -525,3 +525,104 @@ Where.do.you.see.differences.between.how.your.company.employs.MOSA.and.how.PEO.A
 Do.you.recommend.any.considerations.for.the.government.in.choosing.whether.to.apply.a.licensing.or.royalty.approach.versus.more.traditional.intellectual.property.approaches.,Do.you.recommend.any.considerations.for.the.government.in.choosing.whether.to.apply.a.licensing.or.royalty.approach.versus.more.traditional.intellectual.property.approaches.
 What.forms.of.contracting.are.best.suited..if.any..to.provide.ongoing.competition.for.modules.,What.forms.of.contracting.are.best.suited..if.any..to.provide.ongoing.competition.for.modules.
 What..if.any..are.the.most.likely.challenges.of.widespread.US.government.adoption.of.MOSA.to.your.company.,What..if.any..are.the.most.likely.challenges.of.widespread.US.government.adoption.of.MOSA.to.your.company.
+Evaluated Preference,EvaluatedPreference
+Extent Competed Code,ExtentCompetedCode
+Extent Competed Description,ExtentCompetedDescription
+Non-traditional Government Contractor Participation Code,Non-traditionalGovernmentContractorParticipationCode
+Non-traditional Government Contractor Participation Description,Non-traditionalGovernmentContractorParticipationDescription
+Solicitation Procedures,SolicitationProcedures
+Type Of Agreement,TypeOfAgreement
+Completion Date,CompletionDate
+Date_Signed,Date_Signed
+Estimated Ultimate Completion Date,EstimatedUltimateCompletionDate
+Period of Performance Start Date,PeriodofPerformanceStartDate
+Modification Number,ModificationNumber
+PIID Agency ID,PIIDAgencyID
+Referenced IDV Agency ID,ReferencedIDVAgencyID
+Referenced IDV Mod Number,ReferencedIDVModNumber
+Referenced_IDV_PIID,Referenced_IDV_PIID
+Inherently Governmental Description,InherentlyGovernmentalDescription
+Inherently Governmental Function,InherentlyGovernmentalFunction
+Treasury Account Symbol Agency Identifier,TreasuryAccountSymbolAgencyIdentifier
+Treasury Account Symbol Initiative,TreasuryAccountSymbolInitiative
+Treasury Account Symbol Main Account Code,TreasuryAccountSymbolMainAccountCode
+Treasury Account Symbol Sub Account Code,TreasuryAccountSymbolSubAccountCode
+DepartmentID,DepartmentID
+DepartmentIDtext,DepartmentIDtext
+Contracting Office ID,ContractingOfficeID
+Contracting Office Name,ContractingOfficeName
+Contracting Office Region,ContractingOfficeRegion
+Major Command Code,MajorCommandCode
+Major Command ID,MajorCommandID
+Major Command Name,MajorCommandName
+Organization ID,OrganizationID
+Parent Macom Code,ParentMacomCode
+Sub Command 1 Code,SubCommand1Code
+Sub Command 1 ID,SubCommand1ID
+Sub Command 1 Name,SubCommand1Name
+Sub Command 2 Code,SubCommand2Code
+Sub Command 2 ID,SubCommand2ID
+Sub Command 2 Name,SubCommand2Name
+Sub Command 3 Code,SubCommand3Code
+Sub Command 3 ID,SubCommand3ID
+Sub Command 3 Name,SubCommand3Name
+Sub Command 4 Code,SubCommand4Code
+Sub Command 4 ID,SubCommand4ID
+Sub Command 4 Name,SubCommand4Name
+Funding_Agency_ID,Funding_Agency_ID
+Funding_Agency_Name,Funding_Agency_Name
+Funding_Department_ID,Funding_Department_ID
+Funding_Department_Name,Funding_Department_Name
+Funding Office ID,FundingOfficeID
+Funding Office Name,FundingOfficeName
+Granular,Granular
+Congressional District - Place of Performance,CongressionalDistrict-PlaceofPerformance
+Place_of_Performance_Zip_Code,Place_of_Performance_Zip_Code
+Principal Place of Performance City Name,PrincipalPlaceofPerformanceCityName
+Principal Place of Performance Country Code,PrincipalPlaceofPerformanceCountryCode
+Principal Place of Performance Country Name,PrincipalPlaceofPerformanceCountryName
+Principal Place of Performance County Code,PrincipalPlaceofPerformanceCountyCode
+Principal Place of Performance County Name,PrincipalPlaceofPerformanceCountyName
+Principal Place of Performance Location Code,PrincipalPlaceofPerformanceLocationCode
+Principal Place of Performance Location Name,PrincipalPlaceofPerformanceLocationName
+Principal Place of Performance State Code,PrincipalPlaceofPerformanceStateCode
+Description_of_Requirement,Description_of_Requirement
+ProductOrServiceCode,ProductOrServiceCode
+Approved By,ApprovedBy
+Approved Date,ApprovedDate
+contractactiontype,contractactiontype
+Closed By,ClosedBy
+Closed Status,ClosedStatus
+Closed Status Date,ClosedStatusDate
+Created Via,CreatedVia
+Last Modified By,LastModifiedBy
+Last Modified Date,LastModifiedDate
+Prepared By,PreparedBy
+Prepared Date,PreparedDate
+Reason For Modification Code,ReasonForModificationCode
+Reason For Modification Description,ReasonForModificationDescription
+CAGE Code,CAGECode
+Contractor Name,ContractorName
+Country of Incorporation,CountryofIncorporation
+Doing Business As Name,DoingBusinessAsName
+Legal Business Name,LegalBusinessName
+Ultimate Parent Legal Business Name,UltimateParentLegalBusinessName
+BLANK2 (DEPRECATED),BLANK2(DEPRECATED)
+Ultimate Parent Unique Entity ID,UltimateParentUniqueEntityID
+BLANK1 (DEPRECATED),BLANK1(DEPRECATED)
+Unique Entity ID,UniqueEntityID
+Vendor Address City,VendorAddressCity
+Vendor Address Country,VendorAddressCountry
+Vendor Address Line 1,VendorAddressLine1
+Vendor Address Line 2,VendorAddressLine2
+Vendor Address Line 3,VendorAddressLine3
+Vendor Address State,VendorAddressState
+Vendor Address Zip Code,VendorAddressZipCode
+Vendor Congressional District,VendorCongressionalDistrict
+Vendor Phone Number,VendorPhoneNumber
+Base and All Options Value (Total Contract Value),BaseandAllOptionsValue(TotalContractValue)
+Base and Exercised Options Value,BaseandExercisedOptionsValue
+Action_Obligation_Then_Year,Action_Obligation_Then_Year
+Non Government Dollars,NonGovernmentDollars
+Number of Actions,NumberofActions
+Number of Records,NumberofRecords
