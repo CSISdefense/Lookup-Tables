@@ -121,6 +121,7 @@ BRB: BARBADOS,BRB,BRB
 British Indian Ocean Territory,IOT,IOT
 BRITISH INDIAN OCEAN TERRITORY [UNITED KINGDOM],IOT,IOT
 BRITISH VIRGIN ISLANDS [UNITED KINGDOM],VGB,VGB
+British Virgin Islands,VGB,VGB
 BRN,BRN,BRN
 BRN: BRUNEI DARUSSALAM,BRN,BRN
 BRUNEI,BRN,BRN
@@ -187,6 +188,7 @@ Cocos (Keeling) Islands,NULL,CCK
 Cocos Is,NULL,CCK
 COD,COD,COD
 "COD: CONGO, DEMOCRATIC REPUBLIC OF THE",COD,COD
+"Congo, Dem. Rep.",COD,COD
 COG,COG,COG
 COG: CONGO,COG,COG
 COK: COOK ISLANDS,COK,COK
@@ -271,6 +273,7 @@ Ecuador-intl Narc,NULL,NULL
 EGY,EGY,EGY
 EGY: EGYPT,EGY,EGY
 EGYPT,EGY,EGY
+"Egypt, Arab Rep.",EGY,EGY
 EL SALVADOR,SLV,SLV
 ELSALVADOR,SLV,SLV
 Eq Guinea,GNQ,GNQ
@@ -298,6 +301,7 @@ Falkland Islands (Malvinas),FLK,FLK
 Faroe Islands,FRO,FRO
 FAROE ISLANDS [DENMARK],FRO,FRO
 Federated States of Micronesia,FSM,FSM
+"Micronesia, Fed. Sts.",FSM,FSM
 FIJI,FJI,FJI
 FIN,FIN,FIN
 FIN: FINLAND,FIN,FIN
@@ -383,6 +387,7 @@ Heard & McDn Is,NULL,HMD
 Heard Island and McDonald Islands,NULL,HMD
 HKG,HKG,HKG
 HKG: HONG KONG,HKG,HKG
+"Hong Kong SAR, China",HKG,HKG
 HND,HND,HND
 HND: HONDURAS,HND,HND
 Holy See (Vatican City State),NULL,VAT
@@ -410,6 +415,7 @@ Internat Org,NULL,?IO
 International Narcotics Control and  Law Enforcement (INCLE),NULL,^IN
 International Organizations,NULL,?IO
 IRAN,IRN,IRN
+"Iran, Islamic Rep.",IRN,IRN
 "Iran, Islamic Republic of",IRN,IRN
 IRAQ,IRQ,IRQ
 Iraq-Saudi Arb,NULL,^QS
@@ -458,8 +464,10 @@ KOR,KOR,KOR
 "KOR: KOREA, REPUBLIC OF",KOR,KOR
 Korea (seoul),KOR,KOR
 "Korea, Democratic People's Republic of",PRK,PRK
+"Korea, Dem. People's Rep.",PRK,PRK
 "Korea, North",PRK,PRK
 "Korea, Republic of",KOR,KOR
+"Korea, Rep.",KOR,KOR
 KOSOVO,*KS,*KS
 KUWAIT,KWT,KWT
 KWT,KWT,KWT
@@ -467,6 +475,7 @@ KWT: KUWAIT,KWT,KWT
 Kyrgyz Republic,KGZ,KGZ
 KYRGYZSTAN,KGZ,KGZ
 LAO,LAO,LAO
+Lao PDR,LAO,LAO
 Lao People's Democratic Republic,LAO,LAO
 LAO: LAO PEOPLE'S DEMOCRATIC REPUBLIC,LAO,LAO
 LAOS,LAO,LAO
@@ -496,6 +505,7 @@ LUXEMBOURG,LUX,LUX
 LVA,LVA,LVA
 LVA: LATVIA,LVA,LVA
 Macao,MAC,MAC
+"Macao SAR, China",MAC,MAC
 MACAU,MAC,MAC
 MACEDONIA,MKD,MKD
 Macedonia (fyrom),MKD,MKD
@@ -686,6 +696,7 @@ Republic of Katanga,LKA,*KA
 Republic of Montenegro,MNE,MNE
 Republic Of Serbia,SRB,SRB
 Republic of the Congo,COG,COG
+"Congo, Rep.",COG,COG
 Republic of Congo,COG,COG
 Republic of Vietnam,NULL,*SV
 Reunion,NULL,REU
@@ -705,6 +716,7 @@ Saint Barthélemy,NULL,BLM
 SAINT KITTS AND NEVIS,KNA,KNA
 SAINT LUCIA,LCA,LCA
 Saint Martin (French part),NULL,MAF
+St. Martin (French part),NULL,MAF
 Saint Pierre and Miquelon,SPM,SPM
 SAINT PIERRE AND MIQUELON [FRANCE],SPM,SPM
 Saint Vincent and Grenadines,VCT,VCT
@@ -864,6 +876,7 @@ TUNISIA,TUN,TUN
 TUR,TUR,TUR
 TUR: TURKEY,TUR,TUR
 TURKEY,TUR,TUR
+Turkiye,TUR,TUR
 TURKMENISTAN,TKM,TKM
 Turks & Caic Is,TCA,TCA
 Turks and Caicos Islands,TCA,TCA
@@ -910,6 +923,7 @@ VEN,VEN,VEN
 VEN: VENEZUELA (BOLIVARIAN REPUBLIC OF),VEN,VEN
 VENEZUELA,VEN,VEN
 "Venezuela, Bolivarian Republic of",VEN,VEN
+"Venezuela, RB",VEN,VEN
 VGB,VGB,VGB
 VGB: VIRGIN ISLANDS (BRITISH),VGB,VGB
 Viet Nam,VNM,VNM
@@ -917,6 +931,7 @@ VIETNAM,VNM,VNM
 "Vietnam, South",NULL,*SV
 VIR,VIR,VIR
 VIR: VIRGIN ISLANDS (U.S.),VIR,VIR
+Virgin Islands (U.S.),VIR,VIR
 VIRGIN ISLANDS [UNITED STATES],VIR,VIR
 "Virgin Islands, British",VGB,VGB
 "Virgin Islands, U.S.",VIR,VIR
@@ -942,6 +957,7 @@ XKS,XKS,NULL
 XWB,XWB,NULL
 YEM,YEM,YEM
 YEM: YEMEN,YEM,YEM
+"Yemen, Rep.",YEM,YEM
 YEMEN,YEM,YEM
 Yemen (Aden),NULL,*SY
 Yemen Arab Republic,YEM,YEM

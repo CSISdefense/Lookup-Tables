@@ -464,7 +464,7 @@ create_try_converts<-function(data,
                        "\n",sep="")
   else ConvertList<-NULL
   
-  #Create an alter to fix that, if not supressed by user
+  #Create an alter to fix that, if not suppressed by user
   if(IncludeAlters)
     ConvertList<-rbind(ConvertList,
                        paste("ALTER TABLE ",Schema,".",TableName,"\n",
@@ -808,7 +808,7 @@ convert_field_to_foreign_key<-function(FKschema,
                      "\tcharindex('('+fk.",FKname,"+')',pk.",PKname," )>0,\n",
                      sep="")
     
-    #Select all of the unmached values in the foreign key table
+    #Select all of the unmatched values in the foreign key table
     Output<-rbind(
       Output,paste(
         "--List new ",FKcolumn, 
@@ -985,19 +985,28 @@ create_foreign_key_assigments<-function(Schema,
   ForeignKeyList<-''
   for(i in 1:nrow(MergeTable.df)){
     if(toupper(MergeTable.df$SourceVariableName[i]) %in% toupper(skip_list)) next
-    ForeignKeyList<-rbind(ForeignKeyList,
-                          convert_field_to_foreign_key(Schema,TableName,MergeTable.df$SourceVariableName[i],
-                                                   MergeTable.df,
-                                                   MergeTable.df$PKSchemaName[i],
-                                                   MergeTable.df$PKTableName[i],
-                                                   MergeTable.df$PKColumnCode[i],
-                                                   FKname=MergeTable.df$Pair[i],
-                                                   PKname=MergeTable.df$PKcolumnText[i],
-                                                   suppress_select=suppress_select,
-                                                   suppress_alter=suppress_alter,
-                                                   suppress_insert=suppress_insert,
-                                                   suppress_update=suppress_update)
-    )
+    output<-convert_field_to_foreign_key(Schema,TableName,MergeTable.df$SourceVariableName[i],
+                                         MergeTable.df,
+                                         MergeTable.df$PKSchemaName[i],
+                                         MergeTable.df$PKTableName[i],
+                                         MergeTable.df$PKColumnCode[i],
+                                         FKname=MergeTable.df$Pair[i],
+                                         PKname=MergeTable.df$PKcolumnText[i],
+                                         suppress_select=suppress_select,
+                                         suppress_alter=suppress_alter,
+                                         suppress_insert=suppress_insert,
+                                         suppress_update=suppress_update)
+    if(!is.null(ncol(output))){
+      singlecol<-output[,1]
+      if(ncol(output)>1)
+        for(i in 2:ncol(output))
+          singlecol<-c(singlecol,output[,i])
+      output<-singlecol
+    }
+    ForeignKeyList<-c(ForeignKeyList,
+                         output
+                          )
+    
   }
   
     ForeignKeyList[ForeignKeyList!=""]
@@ -1013,7 +1022,7 @@ match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate
   TargetTableType.df<-read_create_table(paste(TargetSchema,".",TargetTable,sep=""),dir=dir)
   MergeTable.df<-merge_source_and_csis_name_tables(NewTableType.df,TargetTableType.df)
   TryConvertList<-create_try_converts(MergeTable.df,NewSchema,NewTable)
-  if(TryConvertList!=0){
+  if(length(TryConvertList)!=0){
     write(TryConvertList,
         paste("Output//",NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","try_convert.txt",sep=""), 
         append=FALSE)
