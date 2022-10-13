@@ -35,6 +35,7 @@ SupplyServiceERS,Area,"Supply, Equipment-Related Service, Other Services",,,FALS
 ProductServiceOrRnDarea,Area,"Product, Service, or R&D Area",,,FALSE
 ProductServiceOrRnDarea.covid,Area,"Product, Service, or R&D",,,FALSE
 ProductServiceOrRnDarea.sum,Area,"Product, Service, or R&D",,,FALSE
+SimpleArea.AETP,Area,"Product, Service, or R&D",,,FALSE
 SimpleArea.fuels,Area,"Product, Service, R&D, or Fuels",,,FALSE
 SimpleArea,Area,"Product, Service, or R&D",,,FALSE
 ProductOrServiceArea.DLA,Area,Product or Service Area,,,FALSE
