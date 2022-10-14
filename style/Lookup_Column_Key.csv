@@ -21,6 +21,7 @@ SubCustomer.FMS,Agencies,Component,,,FALSE
 SubCustomer.component,Agencies,Component,,,FALSE
 SubCustomer.platform,Agencies,Component,,,FALSE
 SubCustomer.JPO,Agencies,Component,,,FALSE
+SubCustomer.engines,Agencies,Component,,,FALSE
 MilDep,Agencies,Military Department,,,FALSE
 DoDcomp,Agencies,DoD Component,,,FALSE
 DefenseOrganization,Agencies,Defense Organization,,,FALSE

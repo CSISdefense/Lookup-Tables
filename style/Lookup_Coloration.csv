@@ -412,7 +412,7 @@ Agencies,"""Other Non-Defense Agencies""
 ,,,,,,,,,,,
 Agencies,VA,VA,7,"DIIG Additional, Sea Pink",#d37d7d,,,,default grey,#554449,
 Agencies,Army,Army,1,"DIIG Primary, Army",#32602F,,,,default grey,#554449,
-Agencies,F-35 JPO,F-35 JPO,1,"DIIG Secondary, Marine",#999999,,,,default grey,#554449,
+Agencies,F-35 JPO,F-35 MDAP,1,"DIIG Secondary, Marine",#999999,,,,default grey,#554449,
 Agencies,F-35 Joint Program Office,F-35 Joint\nProgram Office,1,"DIIG Secondary, Marine",#999999,,,,default grey,#554449,
 Agencies,Navy,Navy,2,"DIIG Secondary, Navy",#1d2d5c,,,,default grey,#554449,
 Agencies,AF,Air Force,3,"DIIG Primary, Air Force",#72a0c1,,,,default grey,#554449,
