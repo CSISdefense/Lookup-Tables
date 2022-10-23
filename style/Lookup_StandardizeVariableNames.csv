@@ -561,6 +561,7 @@ Treasury Account Symbol Sub Account Code,TreasuryAccountSymbolSubAccountCode
 DepartmentID,DepartmentID
 DepartmentIDtext,DepartmentIDtext
 Contracting Office ID,ContractingOfficeID
+ContractingOfficeID,ContractingOfficeID
 Contracting Office Name,ContractingOfficeName
 Contracting Office Region,ContractingOfficeRegion
 Major Command Code,MajorCommandCode
