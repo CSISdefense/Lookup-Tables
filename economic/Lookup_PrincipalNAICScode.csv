@@ -276,675 +276,676 @@
 238910,Site Preparation Contractors,23,238,2389,NULL,NULL
 23899,All Other Specialty Trade Contractors,23,238,2389,NULL,NULL
 238990,All Other Specialty Trade Contractors,23,238,2389,NULL,NULL
-311,Food Manufacturing,31,311,NULL,NULL,NULL
-3111,Animal Food Manufacturing,31,311,3111,NULL,NULL
-311111,Dog and Cat Food Manufacturing,31,311,3111,NULL,NULL
-311119,Other Animal Food Manufacturing,31,311,3111,NULL,NULL
-3112,Grain and Oilseed Milling,31,311,3112,NULL,NULL
-311211,Flour Milling,31,311,3112,NULL,NULL
-311212,Rice Milling,31,311,3112,NULL,NULL
-311213,Malt Manufacturing,31,311,3112,NULL,NULL
-311221,Wet Corn Milling,31,311,3112,NULL,NULL
-311222,Soybean Processing,31,311,3112,NULL,NULL
-311223,Other Oilseed Processing,31,311,3112,NULL,NULL
-311224,Soybean and Other Oilseed Processing,31,311,3112,NULL,NULL
-311225,Fats and Oils Refining and Blending,31,311,3112,NULL,NULL
-311230,Breakfast Cereal Manufacturing,31,311,3112,NULL,NULL
-3113,Sugar and Confectionery Product Manufacturing,31,311,3113,NULL,NULL
-311311,Sugarcane Mills,31,311,3113,NULL,NULL
-311312,Cane Sugar Refining,31,311,3113,NULL,NULL
-311313,Beet Sugar Manufacturing,31,311,3113,NULL,NULL
-311314,Cane Sugar Manufacturing,31,311,3113,NULL,NULL
-311320,Chocolate and Confectionery Manufacturing From Cacao Beans,31,311,3113,NULL,NULL
-311330,Confectionery Manufacturing From Purchased Chocolate,31,311,3113,NULL,NULL
-311340,Nonchocolate Confectionery Manufacturing,31,311,3113,NULL,NULL
-311351,Chocolate and Confectionery Manufacturing from Cacao Beans,31,311,3113,NULL,NULL
-311352,Confectionery Manufacturing from Purchased Chocolate,31,311,3113,NULL,NULL
-3114,Fruit and Vegetable Preserving and Specialty Food Manufacturing,31,311,3114,NULL,NULL
-311411,"Frozen Fruit, Juice, and Vegetable Manufacturing",31,311,3114,NULL,NULL
-311412,Frozen Specialty Food Manufacturing,31,311,3114,NULL,NULL
-311421,Fruit and Vegetable Canning,31,311,3114,NULL,NULL
-311422,Specialty Canning,31,311,3114,NULL,NULL
-311423,Dried and Dehydrated Food Manufacturing,31,311,3114,NULL,NULL
-3115,Dairy Product Manufacturing,31,311,3115,NULL,NULL
-311511,Fluid Milk Manufacturing,31,311,3115,NULL,NULL
-311512,Creamery Butter Manufacturing,31,311,3115,NULL,NULL
-311513,Cheese Manufacturing,31,311,3115,NULL,NULL
-311514,"Dry, Condensed, and Evaporated Dairy Product Manufacturing",31,311,3115,NULL,NULL
-311520,Ice Cream and Frozen Dessert Manufacturing,31,311,3115,NULL,NULL
-3116,Animal Slaughtering and Processing,31,311,3116,NULL,NULL
-31161,Animal Slaughtering and Processing,31,311,3116,NULL,NULL
-311611,Animal (except Poultry) Slaughtering,31,311,3116,NULL,NULL
-311612,Meat Processed from Carcasses,31,311,3116,NULL,NULL
-311613,Rendering and Meat Byproduct Processing,31,311,3116,NULL,NULL
-311615,Poultry Processing,31,311,3116,NULL,NULL
-3117,Seafood Product Preparation and Packaging,31,311,3117,NULL,NULL
-311710,Seafood Product Preparation and Packaging,31,311,3117,NULL,NULL
-311711,Seafood Canning,31,311,3117,NULL,NULL
-311712,Fresh and Frozen Seafood Processing,31,311,3117,NULL,NULL
-3118,Bakeries and Tortilla Manufacturing,31,311,3118,NULL,NULL
-31181,Bread and Bakery Product Manufacturing,31,311,3118,NULL,NULL
-311811,Retail Bakeries,31,311,3118,NULL,NULL
-311812,Commercial Bakeries,31,311,3118,NULL,NULL
-311813,"Frozen Cakes, Pies, and Other Pastries Manufacturing",31,311,3118,NULL,NULL
-311821,Cookie and Cracker Manufacturing,31,311,3118,NULL,NULL
-311822,Flour Mixes and Dough Manufacturing From Purchased Flour,31,311,3118,NULL,NULL
-311823,Dry Pasta Manufacturing,31,311,3118,NULL,NULL
-311824,"Dry Pasta, Dough, and Flour Mixes Manufacturing from Purchased Flour",31,311,3118,NULL,NULL
-311830,Tortilla Manufacturing,31,311,3118,NULL,NULL
-3119,Other Food Manufacturing,31,311,3119,NULL,NULL
-311911,Roasted Nuts and Peanut Butter Manufacturing,31,311,3119,NULL,NULL
-311919,Other Snack Food Manufacturing,31,311,3119,NULL,NULL
-311920,Coffee and Tea Manufacturing,31,311,3119,NULL,NULL
-311930,Flavoring Syrup and Concentrate Manufacturing,31,311,3119,NULL,NULL
-311941,"Mayonnaise, Dressing, and Other Prepared Sauce Manufacturing",31,311,3119,NULL,NULL
-311942,Spice and Extract Manufacturing,31,311,3119,NULL,NULL
-311991,Perishable Prepared Food Manufacturing,31,311,3119,NULL,NULL
-311999,All Other Miscellaneous Food Manufacturing,31,311,3119,NULL,NULL
-312,Beverage and Tobacco Product Manufacturing,31,312,NULL,NULL,NULL
-3121,Beverage Manufacturing,31,312,3121,NULL,NULL
-312111,Soft Drink Manufacturing,31,312,3121,NULL,NULL
-312112,Bottled Water Manufacturing,31,312,3121,NULL,NULL
-312113,Ice Manufacturing,31,312,3121,NULL,NULL
-312120,Breweries,31,312,3121,NULL,NULL
-312130,Wineries,31,312,3121,NULL,NULL
-312140,Distilleries,31,312,3121,NULL,NULL
-3122,Tobacco Manufacturing,31,312,3122,NULL,NULL
-312210,Tobacco Stemming and Redrying,31,312,3122,NULL,NULL
-312221,Cigarette Manufacturing,31,312,3122,NULL,NULL
-312229,Other Tobacco Product Manufacturing,31,312,3122,NULL,NULL
-312230,Tobacco Manufacturing,31,312,3122,NULL,NULL
-313,Textile Mills,31,313,NULL,NULL,NULL
-3131,"Fiber, Yarn, and Thread Mills",31,313,3131,NULL,NULL
-313110,"Fiber, Yarn, and Thread Mills",31,313,3131,NULL,NULL
-313111,Yarn Spinning Mills,31,313,3131,NULL,NULL
-313112,"Yarn Texturizing, Throwing, and Twisting Mills",31,313,3131,NULL,NULL
-313113,Thread Mills,31,313,3131,NULL,NULL
-3132,Fabric Mills,31,313,3132,NULL,NULL
-313210,Broadwoven Fabric Mills,31,313,3132,NULL,NULL
-313220,Narrow Fabric Mills and Schiffli Machine Embroidery,31,313,3132,NULL,NULL
-313221,Narrow Fabric Mills,31,313,3132,NULL,NULL
-313222,Schiffli Machine Embroidery,31,313,3132,NULL,NULL
-313230,Nonwoven Fabric Mills,31,313,3132,NULL,NULL
-313240,Knit Fabric Mills,31,313,3132,NULL,NULL
-313241,Weft Knit Fabric Mills,31,313,3132,NULL,NULL
-313249,Other Knit Fabric and Lace Mills,31,313,3132,NULL,NULL
-3133,Textile and Fabric Finishing and Fabric Coating Mills,31,313,3133,NULL,NULL
-313310,Textile and Fabric Finishing Mills,31,313,3133,NULL,NULL
-313311,Broadwoven Fabric Finishing Mills,31,313,3133,NULL,NULL
-313312,Textile and Fabric Finishing (Except Broadwoven Fabric) Mills,31,313,3133,NULL,NULL
-313320,Fabric Coating Mills,31,313,3133,NULL,NULL
-314,Textile Product Mills,31,314,NULL,NULL,NULL
-3141,Textile Furnishings Mills,31,314,3141,NULL,NULL
-314110,Carpet and Rug Mills,31,314,3141,NULL,NULL
-314120,Curtain and Linen Mills,31,314,3141,NULL,NULL
-314121,Curtain and Drapery Mills,31,314,3141,NULL,NULL
-314129,Other Household Textile Product Mills,31,314,3141,NULL,NULL
-3149,Other Textile Product Mills,31,314,3149,NULL,NULL
-314910,Textile Bag and Canvas Mills,31,314,3149,NULL,NULL
-314911,Textile Bag Mills,31,314,3149,NULL,NULL
-314912,Canvas and Related Product Mills,31,314,3149,NULL,NULL
-31499,All Other Textile Product Mills,31,314,3149,NULL,NULL
-314991,"Rope, Cordage, and Twine Mills",31,314,3149,NULL,NULL
-314992,Tire Cord and Tire Fabric Mills,31,314,3149,NULL,NULL
-314994,"Rope, Cordage, Twine, Tire Cord, and Tire Fabric Mills",31,314,3149,NULL,NULL
-314999,All Other Miscellaneous Textile Product Mills,31,314,3149,NULL,NULL
-315,Apparel Manufacturing,31,315,NULL,NULL,NULL
-3151,Apparel Knitting Mills,31,315,3151,NULL,NULL
-315110,Hosiery and Sock Mills,31,315,3151,NULL,NULL
-315111,Sheer Hosiery Mills,31,315,3151,NULL,NULL
-315119,Other Hosiery and Sock Mills,31,315,3151,NULL,NULL
-315190,Other Apparel Knitting Mills,31,315,3151,NULL,NULL
-315191,Outerwear Knitting Mills,31,315,3151,NULL,NULL
-315192,Underwear and Nightwear Knitting Mills,31,315,3151,NULL,NULL
-3152,Cut and Sew Apparel Manufacturing,31,315,3152,NULL,NULL
-315210,Cut and Sew Apparel Contractors,31,315,3152,NULL,NULL
-315211,Men'S and Boys' Cut and Sew Apparel Contractors,31,315,3152,NULL,NULL
-315212,"Women'S, Girls', and Infants' Cut and Sew Apparel Contractors",31,315,3152,NULL,NULL
-315220,Men's and Boys' Cut and Sew Apparel Manufacturing,31,315,3152,NULL,NULL
-315221,Men'S and Boys' Cut and Sew Underwear and Nightwear Manufacturing,31,315,3152,NULL,NULL
-315222,"Men'S and Boys' Cut and Sew Suit, Coat, and Overcoat Manufacturing",31,315,3152,NULL,NULL
-315223,Men'S and Boys' Cut and Sew Shirt (Except Work Shirt) Manufacturing,31,315,3152,NULL,NULL
-315224,"Men'S and Boys' Cut and Sew Trouser, Slack, and Jean Manufacturing",31,315,3152,NULL,NULL
-315225,Men'S and Boys' Cut and Sew Work Clothing Manufacturing,31,315,3152,NULL,NULL
-315228,Men'S and Boys' Cut and Sew Other Outerwear Manufacturing,31,315,3152,NULL,NULL
-315231,"Women'S and Girls' Cut and Sew Lingerie, Loungewear, and Nightwear Manufacturing",31,315,3152,NULL,NULL
-315232,Women'S and Girls' Cut and Sew Blouse and Shirt Manufacturing,31,315,3152,NULL,NULL
-315233,Women'S and Girls' Cut and Sew Dress Manufacturing,31,315,3152,NULL,NULL
-315234,"Women'S and Girls' Cut and Sew Suit, Coat, Tailored Jacket, and Skirt Manufacturing",31,315,3152,NULL,NULL
-315239,Women'S and Girls' Cut and Sew Other Outerwear Manufacturing,31,315,3152,NULL,NULL
-315240,"Women's, Girls', and Infants' Cut and Sew Apparel Manufacturing",31,315,3152,NULL,NULL
-315280,Other Cut and Sew Apparel Manufacturing,31,315,3152,NULL,NULL
-315291,Infants' Cut and Sew Apparel Manufacturing,31,315,3152,NULL,NULL
-315292,Fur and Leather Apparel Manufacturing,31,315,3152,NULL,NULL
-315299,All Other Cut and Sew Apparel Manufacturing,31,315,3152,NULL,NULL
-3159,Apparel Accessories and Other Apparel Manufacturing,31,315,3159,NULL,NULL
-315990,Apparel Accessories and Other Apparel Manufacturing,31,315,3159,NULL,NULL
-315991,"Hat, Cap, and Millinery Manufacturing",31,315,3159,NULL,NULL
-315992,Glove and Mitten Manufacturing,31,315,3159,NULL,NULL
-315993,Men'S and Boys' Neckwear Manufacturing,31,315,3159,NULL,NULL
-315999,Other Apparel Accessories and Other Apparel Manufacturing,31,315,3159,NULL,NULL
-316,Leather and Allied Product Manufacturing,31,316,NULL,NULL,NULL
-3161,Leather and Hide Tanning and Finishing,31,316,3161,NULL,NULL
-316110,Leather and Hide Tanning and Finishing,31,316,3161,NULL,NULL
-3162,Footwear Manufacturing,31,316,3162,NULL,NULL
-316210,Footwear Manufacturing,31,316,3162,NULL,NULL
-316211,Rubber and Plastics Footwear Manufacturing,31,316,3162,NULL,NULL
-316212,House Slipper Manufacturing,31,316,3162,NULL,NULL
-316213,Men'S Footwear (Except Athletic) Manufacturing,31,316,3162,NULL,NULL
-316214,Women'S Footwear (Except Athletic) Manufacturing,31,316,3162,NULL,NULL
-316219,Other Footwear Manufacturing,31,316,3162,NULL,NULL
-3169,Other Leather and Allied Product Manufacturing,31,316,3169,NULL,NULL
-316991,Luggage Manufacturing,31,316,3169,NULL,NULL
-316992,Women's Handbag and Purse Manufacturing,31,316,3169,NULL,NULL
-316993,Personal Leather Good (Except Women'S Handbag and Purse) Manufacturing,31,316,3169,NULL,NULL
-316998,All Other Leather Good and Allied Product Manufacturing,31,316,3169,NULL,NULL
-316999,All Other Leather Good Manufacturing,31,316,3169,NULL,NULL
-321,Wood Product Manufacturing,32,321,NULL,NULL,NULL
-3211,Sawmills and Wood Preservation,32,321,3211,NULL,NULL
-321113,Sawmills,32,321,3211,NULL,NULL
-321114,Wood Preservation,32,321,3211,NULL,NULL
-3212,"Veneer, Plywood, and Engineered Wood Product Manufacturing",32,321,3212,NULL,NULL
-321211,Hardwood Veneer and Plywood Manufacturing,32,321,3212,NULL,NULL
-321212,Softwood Veneer and Plywood Manufacturing,32,321,3212,NULL,NULL
-321213,Engineered Wood Member (except Truss) Manufacturing,32,321,3212,NULL,NULL
-321214,Truss Manufacturing,32,321,3212,NULL,NULL
-321219,Reconstituted Wood Product Manufacturing,32,321,3212,NULL,NULL
-3219,Other Wood Product Manufacturing,32,321,3219,NULL,NULL
-321911,Wood Window and Door Manufacturing,32,321,3219,NULL,NULL
-321912,"Cut Stock, Resawing Lumber, and Planing",32,321,3219,NULL,NULL
-321918,Other Millwork (including Flooring),32,321,3219,NULL,NULL
-321920,Wood Container and Pallet Manufacturing,32,321,3219,NULL,NULL
-321991,Manufactured Home (Mobile Home) Manufacturing,32,321,3219,NULL,NULL
-321992,Prefabricated Wood Building Manufacturing,32,321,3219,NULL,NULL
-321999,All Other Miscellaneous Wood Product Manufacturing,32,321,3219,NULL,NULL
-322,Paper Manufacturing,32,322,NULL,NULL,NULL
-3221,"Pulp, Paper, and Paperboard Mills",32,322,3221,NULL,NULL
-322110,Pulp Mills,32,322,3221,NULL,NULL
-322121,Paper (except Newsprint) Mills,32,322,3221,NULL,NULL
-322122,Newsprint Mills,32,322,3221,NULL,NULL
-322130,Paperboard Mills,32,322,3221,NULL,NULL
-3222,Converted Paper Product Manufacturing,32,322,3222,NULL,NULL
-322211,Corrugated and Solid Fiber Box Manufacturing,32,322,3222,NULL,NULL
-322212,Folding Paperboard Box Manufacturing,32,322,3222,NULL,NULL
-322213,Setup Paperboard Box Manufacturing,32,322,3222,NULL,NULL
-322214,"Fiber Can, Tube, Drum, and Similar Products Manufacturing",32,322,3222,NULL,NULL
-322215,Nonfolding Sanitary Food Container Manufacturing,32,322,3222,NULL,NULL
-322219,Other Paperboard Container Manufacturing,32,322,3222,NULL,NULL
-322220,Paper Bag and Coated and Treated Paper Manufacturing,32,322,3222,NULL,NULL
-322221,Coated and Laminated Packaging Paper and Plastics Film Manufacturing,32,322,3222,NULL,NULL
-322222,Coated and Laminated Paper Manufacturing,32,322,3222,NULL,NULL
-322223,"Plastics, Foil, and Coated Paper Bag Manufacturing",32,322,3222,NULL,NULL
-322224,Uncoated Paper and Multiwall Bag Manufacturing,32,322,3222,NULL,NULL
-322225,Laminated Aluminum Foil Manufacturing For Flexible Packaging Uses,32,322,3222,NULL,NULL
-322226,Surface-Coated Paperboard Manufacturing,32,322,3222,NULL,NULL
-322230,Stationery Product Manufacturing,32,322,3222,NULL,NULL
-322231,Die-Cut Paper and Paperboard Office Supplies Manufacturing,32,322,3222,NULL,NULL
-322232,Envelope Manufacturing,32,322,3222,NULL,NULL
-322233,"Stationery, Tablet, and Related Product Manufacturing",32,322,3222,NULL,NULL
-322291,Sanitary Paper Product Manufacturing,32,322,3222,NULL,NULL
-322299,All Other Converted Paper Product Manufacturing,32,322,3222,NULL,NULL
-323,Printing and Related Support Activities,32,323,NULL,NULL,NULL
-3231,Printing and Related Support Activities,32,323,3231,NULL,NULL
-323110,Commercial Lithographic Printing,32,323,3231,NULL,NULL
-323111,Commercial Printing (except Screen and Books),32,323,3231,NULL,NULL
-323112,Commercial Flexographic Printing,32,323,3231,NULL,NULL
-323113,Commercial Screen Printing,32,323,3231,NULL,NULL
-323114,Quick Printing,32,323,3231,NULL,NULL
-323115,Digital Printing,32,323,3231,NULL,NULL
-323116,Manifold Business Forms Printing,32,323,3231,NULL,NULL
-323117,Books Printing,32,323,3231,NULL,NULL
-323118,"Blankbook, Looseleaf Binders, and Devices Manufacturing",32,323,3231,NULL,NULL
-323119,Other Commercial Printing,32,323,3231,NULL,NULL
-323120,Support Activities for Printing,32,323,3231,NULL,NULL
-323121,Tradebinding and Related Work,32,323,3231,NULL,NULL
-323122,Prepress Services,32,323,3231,NULL,NULL
-324,Petroleum and Coal Products Manufacturing,32,324,NULL,324 Petroleum & Coal Products Manufacturing,324 Petroleum & Coal Products Manufacturing
-3241,Petroleum and Coal Products Manufacturing,32,324,3241,NULL,NULL
-324110,Petroleum Refineries,32,324,3241,324110 Petroleum Refineries,324110 Petroleum Refineries
-324121,Asphalt Paving Mixture and Block Manufacturing,32,324,3241,NULL,NULL
-324122,Asphalt Shingle and Coating Materials Manufacturing,32,324,3241,NULL,NULL
-324191,Petroleum Lubricating Oil and Grease Manufacturing,32,324,3241,NULL,NULL
-324199,All Other Petroleum and Coal Products Manufacturing,32,324,3241,NULL,NULL
-325,Chemical Manufacturing,32,325,NULL,NULL,NULL
-3251,Basic Chemical Manufacturing,32,325,3251,NULL,NULL
-325110,Petrochemical Manufacturing,32,325,3251,325110 Petrochemical Manufacturing,325110 Petrochemical Manufacturing
-325120,Industrial Gas Manufacturing,32,325,3251,NULL,NULL
-325130,Synthetic Dye and Pigment Manufacturing,32,325,3251,NULL,NULL
-325131,Inorganic Dye and Pigment Manufacturing,32,325,3251,NULL,NULL
-325132,Synthetic Organic Dye and Pigment Manufacturing,32,325,3251,NULL,NULL
-325180,Other Basic Inorganic Chemical Manufacturing,32,325,3251,NULL,NULL
-325181,Alkalies and Chlorine Manufacturing,32,325,3251,NULL,NULL
-325182,Carbon Black Manufacturing,32,325,3251,NULL,NULL
-325188,All Other Basic Inorganic Chemical Manufacturing,32,325,3251,NULL,NULL
-325191,Gum and Wood Chemical Manufacturing,32,325,3251,NULL,NULL
-325192,Cyclic Crude and Intermediate Manufacturing,32,325,3251,NULL,NULL
-325193,Ethyl Alcohol Manufacturing,32,325,3251,NULL,NULL
-325194,"Cyclic Crude, Intermediate, and Gum and Wood Chemical Manufacturing",32,325,3251,NULL,NULL
-325199,All Other Basic Organic Chemical Manufacturing,32,325,3251,NULL,NULL
-3252,"Resin, Synthetic Rubber, and Artificial Synthetic Fibers and Filaments Manufacturing",32,325,3252,NULL,NULL
-325211,Plastics Material and Resin Manufacturing,32,325,3252,NULL,NULL
-325212,Synthetic Rubber Manufacturing,32,325,3252,NULL,NULL
-325220,Artificial and Synthetic Fibers and Filaments Manufacturing,32,325,3252,NULL,NULL
-325221,Cellulosic Organic Fiber Manufacturing,32,325,3252,NULL,NULL
-325222,Noncellulosic Organic Fiber Manufacturing,32,325,3252,NULL,NULL
-3253,"Pesticide, Fertilizer, and Other Agricultural Chemical Manufacturing",32,325,3253,NULL,NULL
-325311,Nitrogenous Fertilizer Manufacturing,32,325,3253,NULL,NULL
-325312,Phosphatic Fertilizer Manufacturing,32,325,3253,NULL,NULL
-325314,Fertilizer (Mixing Only) Manufacturing,32,325,3253,NULL,NULL
-32532,Pesticide and Other Agricultural Chemical Manufacturing,32,325,3253,NULL,NULL
-325320,Pesticide and Other Agricultural Chemical Manufacturing,32,325,3253,NULL,NULL
-3254,Pharmaceutical and Medicine Manufacturing,32,325,3254,NULL,NULL
-325411,Medicinal and Botanical Manufacturing,32,325,3254,NULL,NULL
-325412,Pharmaceutical Preparation Manufacturing,32,325,3254,NULL,NULL
-325413,In-Vitro Diagnostic Substance Manufacturing,32,325,3254,NULL,NULL
-325414,Biological Product (except Diagnostic) Manufacturing,32,325,3254,NULL,NULL
-3255,"Paint, Coating, and Adhesive Manufacturing",32,325,3255,NULL,NULL
-325510,Paint and Coating Manufacturing,32,325,3255,NULL,NULL
-325520,Adhesive Manufacturing,32,325,3255,NULL,NULL
-3256,"Soap, Cleaning Compound, and Toilet Preparation Manufacturing",32,325,3256,NULL,NULL
-325611,Soap and Other Detergent Manufacturing,32,325,3256,NULL,NULL
-325612,Polish and Other Sanitation Good Manufacturing,32,325,3256,NULL,NULL
-325613,Surface Active Agent Manufacturing,32,325,3256,NULL,NULL
-325620,Toilet Preparation Manufacturing,32,325,3256,NULL,NULL
-3259,Other Chemical Product and Preparation Manufacturing,32,325,3259,NULL,NULL
-325910,Printing Ink Manufacturing,32,325,3259,NULL,NULL
-325920,Explosives Manufacturing,32,325,3259,NULL,NULL
-325991,Custom Compounding of Purchased Resins,32,325,3259,NULL,NULL
-325992,"Photographic Film, Paper, Plate, and Chemical Manufacturing",32,325,3259,NULL,NULL
-325998,All Other Miscellaneous Chemical Product and Preparation Manufacturing,32,325,3259,NULL,NULL
-326,Plastics and Rubber Products Manufacturing,32,326,NULL,NULL,NULL
-3261,Plastics Product Manufacturing,32,326,3261,NULL,NULL
-326111,Plastics Bag and Pouch Manufacturing,32,326,3261,NULL,NULL
-326112,Plastics Packaging Film and Sheet (including Laminated) Manufacturing,32,326,3261,NULL,NULL
-326113,Unlaminated Plastics Film and Sheet (except Packaging) Manufacturing,32,326,3261,NULL,NULL
-326121,Unlaminated Plastics Profile Shape Manufacturing,32,326,3261,NULL,NULL
-326122,Plastics Pipe and Pipe Fitting Manufacturing,32,326,3261,NULL,NULL
-326130,"Laminated Plastics Plate, Sheet (except Packaging), and Shape Manufacturing",32,326,3261,NULL,NULL
-326140,Polystyrene Foam Product Manufacturing,32,326,3261,NULL,NULL
-326150,Urethane and Other Foam Product (except Polystyrene) Manufacturing,32,326,3261,NULL,NULL
-326160,Plastics Bottle Manufacturing,32,326,3261,NULL,NULL
-326191,Plastics Plumbing Fixture Manufacturing,32,326,3261,NULL,NULL
-326192,Resilient Floor Covering Manufacturing,32,326,3261,NULL,NULL
-326199,All Other Plastics Product Manufacturing,32,326,3261,NULL,NULL
-3262,Rubber Product Manufacturing,32,326,3262,NULL,NULL
-326211,Tire Manufacturing (except Retreading),32,326,3262,NULL,NULL
-326212,Tire Retreading,32,326,3262,NULL,NULL
-326220,Rubber and Plastics Hoses and Belting Manufacturing,32,326,3262,NULL,NULL
-326291,Rubber Product Manufacturing for Mechanical Use,32,326,3262,NULL,NULL
-326299,All Other Rubber Product Manufacturing,32,326,3262,NULL,NULL
-327,Nonmetallic Mineral Product Manufacturing,32,327,NULL,NULL,NULL
-3271,Clay Product and Refractory Manufacturing,32,327,3271,NULL,NULL
-327110,"Pottery, Ceramics, and Plumbing Fixture Manufacturing",32,327,3271,NULL,NULL
-327111,Vitreous China Plumbing Fixture and China and Earthenware Bathroom Accessories Manufacturing,32,327,3271,NULL,NULL
-327112,"Vitreous China, Fine Earthenware, and Other Pottery Product Manufacturing",32,327,3271,NULL,NULL
-327113,Porcelain Electrical Supply Manufacturing,32,327,3271,NULL,NULL
-327120,Clay Building Material and Refractories Manufacturing,32,327,3271,NULL,NULL
-327121,Brick and Structural Clay Tile Manufacturing,32,327,3271,NULL,NULL
-327122,Ceramic Wall and Floor Tile Manufacturing,32,327,3271,NULL,NULL
-327123,Other Structural Clay Product Manufacturing,32,327,3271,NULL,NULL
-327124,Clay Refractory Manufacturing,32,327,3271,NULL,NULL
-327125,Nonclay Refractory Manufacturing,32,327,3271,NULL,NULL
-3272,Glass and Glass Product Manufacturing,32,327,3272,NULL,NULL
-327211,Flat Glass Manufacturing,32,327,3272,NULL,NULL
-327212,Other Pressed and Blown Glass and Glassware Manufacturing,32,327,3272,NULL,NULL
-327213,Glass Container Manufacturing,32,327,3272,NULL,NULL
-327215,Glass Product Manufacturing Made of Purchased Glass,32,327,3272,NULL,NULL
-3273,Cement and Concrete Product Manufacturing,32,327,3273,NULL,NULL
-327310,Cement Manufacturing,32,327,3273,NULL,NULL
-327320,Ready-Mix Concrete Manufacturing,32,327,3273,NULL,NULL
-327331,Concrete Block and Brick Manufacturing,32,327,3273,NULL,NULL
-327332,Concrete Pipe Manufacturing,32,327,3273,NULL,NULL
-32739,Other Concrete Product Manufacturing,32,327,3273,NULL,NULL
-327390,Other Concrete Product Manufacturing,32,327,3273,NULL,NULL
-3274,Lime and Gypsum Product Manufacturing,32,327,3274,NULL,NULL
-327410,Lime Manufacturing,32,327,3274,NULL,NULL
-327420,Gypsum Product Manufacturing,32,327,3274,NULL,NULL
-3279,Other Nonmetallic Mineral Product Manufacturing,32,327,3279,NULL,NULL
-327910,Abrasive Product Manufacturing,32,327,3279,NULL,NULL
-327991,Cut Stone and Stone Product Manufacturing,32,327,3279,NULL,NULL
-327992,Ground or Treated Mineral and Earth Manufacturing,32,327,3279,NULL,NULL
-327993,Mineral Wool Manufacturing,32,327,3279,NULL,NULL
-327999,All Other Miscellaneous Nonmetallic Mineral Product Manufacturing,32,327,3279,NULL,NULL
-331,Primary Metal Manufacturing,33,331,NULL,NULL,NULL
-3311,Iron and Steel Mills and Ferroalloy Manufacturing,33,331,3311,NULL,NULL
-331110,Iron and Steel Mills and Ferroalloy Manufacturing,33,331,3311,NULL,NULL
-331111,Iron and Steel Mills,33,331,3311,NULL,NULL
-331112,Electrometallurgical Ferroalloy Product Manufacturing,33,331,3311,NULL,NULL
-3312,Steel Product Manufacturing from Purchased Steel,33,331,3312,NULL,NULL
-33121,Iron and Steel Pipe and Tube Manufacturing from Purchased Steel,33,331,3312,NULL,NULL
-331210,Iron and Steel Pipe and Tube Manufacturing from Purchased Steel,33,331,3312,NULL,NULL
-331221,Rolled Steel Shape Manufacturing,33,331,3312,NULL,NULL
-331222,Steel Wire Drawing,33,331,3312,NULL,NULL
-3313,Alumina and Aluminum Production and Processing,33,331,3313,NULL,NULL
-331311,Alumina Refining,33,331,3313,NULL,NULL
-331312,Primary Aluminum Production,33,331,3313,NULL,NULL
-331313,Alumina Refining and Primary Aluminum Production,33,331,3313,NULL,NULL
-331314,Secondary Smelting and Alloying of Aluminum,33,331,3313,NULL,NULL
-331315,"Aluminum Sheet, Plate, and Foil Manufacturing",33,331,3313,NULL,NULL
-331316,Aluminum Extruded Product Manufacturing,33,331,3313,NULL,NULL
-331318,"Other Aluminum Rolling, Drawing, and Extruding",33,331,3313,NULL,NULL
-331319,Other Aluminum Rolling and Drawing,33,331,3313,NULL,NULL
-3314,Nonferrous Metal (except Aluminum) Production and Processing,33,331,3314,NULL,NULL
-331410,Nonferrous Metal (except Aluminum) Smelting and Refining,33,331,3314,NULL,NULL
-331411,Primary Smelting and Refining Of Copper,33,331,3314,NULL,NULL
-331419,Primary Smelting and Refining Of Nonferrous Metal (Except Copper and Aluminum),33,331,3314,NULL,NULL
-331420,"Copper Rolling, Drawing, Extruding, and Alloying",33,331,3314,NULL,NULL
-331421,"Copper Rolling, Drawing, and Extruding",33,331,3314,NULL,NULL
-331422,Copper Wire (Except Mechanical) Drawing,33,331,3314,NULL,NULL
-331423,"Secondary Smelting, Refining, and Alloying Of Copper",33,331,3314,NULL,NULL
-331491,"Nonferrous Metal (except Copper and Aluminum) Rolling, Drawing, and Extruding",33,331,3314,NULL,NULL
-331492,"Secondary Smelting, Refining, and Alloying of Nonferrous Metal (except Copper and Aluminum)",33,331,3314,NULL,NULL
-3315,Foundries,33,331,3315,NULL,NULL
-331511,Iron Foundries,33,331,3315,NULL,NULL
-331512,Steel Investment Foundries,33,331,3315,NULL,NULL
-331513,Steel Foundries (except Investment),33,331,3315,NULL,NULL
-331521,Aluminum Die-Casting Foundries,33,331,3315,NULL,NULL
-331522,Nonferrous (Except Aluminum) Die-Casting Foundries,33,331,3315,NULL,NULL
-331523,Nonferrous Metal Die-Casting Foundries,33,331,3315,NULL,NULL
-331524,Aluminum Foundries (except Die-Casting),33,331,3315,NULL,NULL
-331525,Copper Foundries (Except Die-Casting),33,331,3315,NULL,NULL
-331528,Other Nonferrous Foundries (Except Die-Casting),33,331,3315,NULL,NULL
-331529,Other Nonferrous Metal Foundries (except Die-Casting),33,331,3315,NULL,NULL
-332,Fabricated Metal Product Manufacturing,33,332,NULL,NULL,NULL
-3321,Forging and Stamping,33,332,3321,NULL,NULL
-332111,Iron and Steel Forging,33,332,3321,NULL,NULL
-332112,Nonferrous Forging,33,332,3321,NULL,NULL
-332114,Custom Roll Forming,33,332,3321,NULL,NULL
-332115,Crown and Closure Manufacturing,33,332,3321,NULL,NULL
-332116,Metal Stamping,33,332,3321,NULL,NULL
-332117,Powder Metallurgy Part Manufacturing,33,332,3321,NULL,NULL
-332119,"Metal Crown, Closure, and Other Metal Stamping (except Automotive)",33,332,3321,NULL,NULL
-3322,Cutlery and Handtool Manufacturing,33,332,3322,NULL,NULL
-332211,Cutlery and Flatware (Except Precious) Manufacturing,33,332,3322,NULL,NULL
-332212,Hand and Edge Tool Manufacturing,33,332,3322,NULL,NULL
-332213,Saw Blade and Handsaw Manufacturing,33,332,3322,NULL,NULL
-332214,"Kitchen Utensil, Pot, and Pan Manufacturing",33,332,3322,NULL,NULL
-332215,"Metal Kitchen Cookware, Utensil, Cutlery, and Flatware (except Precious) Manufacturing",33,332,3322,NULL,NULL
-332216,Saw Blade and Handtool Manufacturing,33,332,3322,NULL,NULL
-3323,Architectural and Structural Metals Manufacturing,33,332,3323,NULL,NULL
-332311,Prefabricated Metal Building and Component Manufacturing,33,332,3323,NULL,NULL
-332312,Fabricated Structural Metal Manufacturing,33,332,3323,NULL,NULL
-332313,Plate Work Manufacturing,33,332,3323,NULL,NULL
-332321,Metal Window and Door Manufacturing,33,332,3323,NULL,NULL
-332322,Sheet Metal Work Manufacturing,33,332,3323,NULL,NULL
-332323,Ornamental and Architectural Metal Work Manufacturing,33,332,3323,NULL,NULL
-3324,"Boiler, Tank, and Shipping Container Manufacturing",33,332,3324,NULL,NULL
-332410,Power Boiler and Heat Exchanger Manufacturing,33,332,3324,NULL,NULL
-33242,Metal Tank (Heavy Gauge) Manufacturing,33,332,3324,NULL,NULL
-332420,Metal Tank (Heavy Gauge) Manufacturing,33,332,3324,NULL,NULL
-332431,Metal Can Manufacturing,33,332,3324,NULL,NULL
-332439,Other Metal Container Manufacturing,33,332,3324,NULL,NULL
-3325,Hardware Manufacturing,33,332,3325,NULL,NULL
-33251,Hardware Manufacturing,33,332,3325,NULL,NULL
-332510,Hardware Manufacturing,33,332,3325,NULL,NULL
-3326,Spring and Wire Product Manufacturing,33,332,3326,NULL,NULL
-332611,Spring (Heavy Gauge) Manufacturing,33,332,3326,NULL,NULL
-332612,Spring (Light Gauge) Manufacturing,33,332,3326,NULL,NULL
-332613,Spring Manufacturing,33,332,3326,NULL,NULL
-332618,Other Fabricated Wire Product Manufacturing,33,332,3326,NULL,NULL
-3327,"Machine Shops; Turned Product; and Screw, Nut, and Bolt Manufacturing",33,332,3327,NULL,NULL
-33271,Machine Shops,33,332,3327,NULL,NULL
-332710,Machine Shops,33,332,3327,NULL,NULL
-332721,Precision Turned Product Manufacturing,33,332,3327,NULL,NULL
-332722,"Bolt, Nut, Screw, Rivet, and Washer Manufacturing",33,332,3327,NULL,NULL
-3328,"Coating, Engraving, Heat Treating, and Allied Activities",33,332,3328,NULL,NULL
-332811,Metal Heat Treating,33,332,3328,NULL,NULL
-332812,"Metal Coating, Engraving (except Jewelry and Silverware), and Allied Services to Manufacturers",33,332,3328,NULL,NULL
-332813,"Electroplating, Plating, Polishing, Anodizing, and Coloring",33,332,3328,NULL,NULL
-3329,Other Fabricated Metal Product Manufacturing,33,332,3329,NULL,NULL
-332911,Industrial Valve Manufacturing,33,332,3329,NULL,NULL
-332912,Fluid Power Valve and Hose Fitting Manufacturing,33,332,3329,NULL,NULL
-332913,Plumbing Fixture Fitting and Trim Manufacturing,33,332,3329,NULL,NULL
-332919,Other Metal Valve and Pipe Fitting Manufacturing,33,332,3329,NULL,NULL
-332991,Ball and Roller Bearing Manufacturing,33,332,3329,NULL,NULL
-332992,Small Arms Ammunition Manufacturing,33,332,3329,NULL,NULL
-332993,Ammunition (except Small Arms) Manufacturing,33,332,3329,NULL,NULL
-332994,"Small Arms, Ordnance, and Ordnance Accessories Manufacturing",33,332,3329,NULL,NULL
-332995,Other Ordnance and Accessories Manufacturing,33,332,3329,NULL,NULL
-332996,Fabricated Pipe and Pipe Fitting Manufacturing,33,332,3329,NULL,NULL
-332997,Industrial Pattern Manufacturing,33,332,3329,NULL,NULL
-332998,Enameled Iron and Metal Sanitary Ware Manufacturing,33,332,3329,NULL,NULL
-332999,All Other Miscellaneous Fabricated Metal Product Manufacturing,33,332,3329,NULL,NULL
-333,Machinery Manufacturing,33,333,NULL,NULL,NULL
-3331,"Agriculture, Construction, and Mining Machinery Manufacturing",33,333,3331,NULL,NULL
-333111,Farm Machinery and Equipment Manufacturing,33,333,3331,NULL,NULL
-333112,Lawn and Garden Tractor and Home Lawn and Garden Equipment Manufacturing,33,333,3331,NULL,NULL
-33312,Construction Machinery Manufacturing,33,333,3331,NULL,NULL
-333120,Construction Machinery Manufacturing,33,333,3331,NULL,NULL
-333131,Mining Machinery and Equipment Manufacturing,33,333,3331,NULL,NULL
-333132,Oil and Gas Field Machinery and Equipment Manufacturing,33,333,3331,NULL,NULL
-3332,Industrial Machinery Manufacturing,33,333,3332,NULL,NULL
-333210,Sawmill and Woodworking Machinery Manufacturing,33,333,3332,NULL,NULL
-333220,Plastics and Rubber Industry Machinery Manufacturing,33,333,3332,NULL,NULL
-333241,Food Product Machinery Manufacturing,33,333,3332,NULL,NULL
-333242,Semiconductor Machinery Manufacturing,33,333,3332,NULL,NULL
-333243,"Sawmill, Woodworking, and Paper Machinery Manufacturing",33,333,3332,NULL,NULL
-333244,Printing Machinery and Equipment Manufacturing,33,333,3332,NULL,NULL
-333249,Other Industrial Machinery Manufacturing,33,333,3332,NULL,NULL
-333291,Paper Industry Machinery Manufacturing,33,333,3332,NULL,NULL
-333292,Textile Machinery Manufacturing,33,333,3332,NULL,NULL
-333293,Printing Machinery and Equipment Manufacturing,33,333,3332,NULL,NULL
-333294,Food Product Machinery Manufacturing,33,333,3332,NULL,NULL
-333295,Semiconductor Machinery Manufacturing,33,333,3332,NULL,NULL
-333298,All Other Industrial Machinery Manufacturing,33,333,3332,NULL,NULL
-3333,Commercial and Service Industry Machinery Manufacturing,33,333,3333,NULL,NULL
-333311,Automatic Vending Machine Manufacturing,33,333,3333,NULL,NULL
-333312,"Commercial Laundry, Drycleaning, and Pressing Machine Manufacturing",33,333,3333,NULL,NULL
-333313,Office Machinery Manufacturing,33,333,3333,NULL,NULL
-333314,Optical Instrument and Lens Manufacturing,33,333,3333,NULL,NULL
-333315,Photographic and Photocopying Equipment Manufacturing,33,333,3333,NULL,NULL
-333316,Photographic and Photocopying Equipment Manufacturing,33,333,3333,NULL,NULL
-333318,Other Commercial and Service Industry Machinery Manufacturing,33,333,3333,NULL,NULL
-333319,Other Commercial and Service Industry Machinery Manufacturing,33,333,3333,NULL,NULL
-3334,"Ventilation, Heating, Air-Conditioning, and Commercial Refrigeration Equipment Manufacturing",33,333,3334,NULL,NULL
-333411,Air Purification Equipment Manufacturing,33,333,3334,NULL,NULL
-333412,Industrial and Commercial Fan and Blower Manufacturing,33,333,3334,NULL,NULL
-333413,Industrial and Commercial Fan and Blower and Air Purification Equipment Manufacturing,33,333,3334,NULL,NULL
-333414,Heating Equipment (except Warm Air Furnaces) Manufacturing,33,333,3334,NULL,NULL
-333415,Air-Conditioning and Warm Air Heating Equipment and Commercial and Industrial Refrigeration Equipment,33,333,3334,NULL,NULL
-333420,Null,33,333,3334,NULL,NULL
-3335,Metalworking Machinery Manufacturing,33,333,3335,NULL,NULL
-333511,Industrial Mold Manufacturing,33,333,3335,NULL,NULL
-333512,Machine Tool (Metal Cutting Types) Manufacturing,33,333,3335,NULL,NULL
-333513,Machine Tool (Metal Forming Types) Manufacturing,33,333,3335,NULL,NULL
-333514,"Special Die and Tool, Die Set, Jig, and Fixture Manufacturing",33,333,3335,NULL,NULL
-333515,Cutting Tool and Machine Tool Accessory Manufacturing,33,333,3335,NULL,NULL
-333516,Rolling Mill Machinery and Equipment Manufacturing,33,333,3335,NULL,NULL
-333517,Machine Tool Manufacturing,33,333,3335,NULL,NULL
-333518,Other Metalworking Machinery Manufacturing,33,333,3335,NULL,NULL
-333519,Rolling Mill and Other Metalworking Machinery Manufacturing,33,333,3335,NULL,NULL
-3336,"Engine, Turbine, and Power Transmission Equipment Manufacturing",33,333,3336,NULL,NULL
-333611,Turbine and Turbine Generator Set Units Manufacturing,33,333,3336,NULL,NULL
-333612,"Speed Changer, Industrial High-Speed Drive, and Gear Manufacturing",33,333,3336,NULL,NULL
-333613,Mechanical Power Transmission Equipment Manufacturing,33,333,3336,NULL,NULL
-333618,Other Engine Equipment Manufacturing,33,333,3336,NULL,NULL
-3339,Other General Purpose Machinery Manufacturing,33,333,3339,NULL,NULL
-333911,Pump and Pumping Equipment Manufacturing,33,333,3339,NULL,NULL
-333912,Air and Gas Compressor Manufacturing,33,333,3339,NULL,NULL
-333913,Measuring and Dispensing Pump Manufacturing,33,333,3339,NULL,NULL
+31-33,Manufacturing,31-33,NULL,NULL,NULL,NULL
+311,Food Manufacturing,31-33,311,NULL,NULL,NULL
+3111,Animal Food Manufacturing,31-33,311,3111,NULL,NULL
+311111,Dog and Cat Food Manufacturing,31-33,311,3111,NULL,NULL
+311119,Other Animal Food Manufacturing,31-33,311,3111,NULL,NULL
+3112,Grain and Oilseed Milling,31-33,311,3112,NULL,NULL
+311211,Flour Milling,31-33,311,3112,NULL,NULL
+311212,Rice Milling,31-33,311,3112,NULL,NULL
+311213,Malt Manufacturing,31-33,311,3112,NULL,NULL
+311221,Wet Corn Milling,31-33,311,3112,NULL,NULL
+311222,Soybean Processing,31-33,311,3112,NULL,NULL
+311223,Other Oilseed Processing,31-33,311,3112,NULL,NULL
+311224,Soybean and Other Oilseed Processing,31-33,311,3112,NULL,NULL
+311225,Fats and Oils Refining and Blending,31-33,311,3112,NULL,NULL
+311230,Breakfast Cereal Manufacturing,31-33,311,3112,NULL,NULL
+3113,Sugar and Confectionery Product Manufacturing,31-33,311,3113,NULL,NULL
+311311,Sugarcane Mills,31-33,311,3113,NULL,NULL
+311312,Cane Sugar Refining,31-33,311,3113,NULL,NULL
+311313,Beet Sugar Manufacturing,31-33,311,3113,NULL,NULL
+311314,Cane Sugar Manufacturing,31-33,311,3113,NULL,NULL
+311320,Chocolate and Confectionery Manufacturing From Cacao Beans,31-33,311,3113,NULL,NULL
+311330,Confectionery Manufacturing From Purchased Chocolate,31-33,311,3113,NULL,NULL
+311340,Nonchocolate Confectionery Manufacturing,31-33,311,3113,NULL,NULL
+311351,Chocolate and Confectionery Manufacturing from Cacao Beans,31-33,311,3113,NULL,NULL
+311352,Confectionery Manufacturing from Purchased Chocolate,31-33,311,3113,NULL,NULL
+3114,Fruit and Vegetable Preserving and Specialty Food Manufacturing,31-33,311,3114,NULL,NULL
+311411,"Frozen Fruit, Juice, and Vegetable Manufacturing",31-33,311,3114,NULL,NULL
+311412,Frozen Specialty Food Manufacturing,31-33,311,3114,NULL,NULL
+311421,Fruit and Vegetable Canning,31-33,311,3114,NULL,NULL
+311422,Specialty Canning,31-33,311,3114,NULL,NULL
+311423,Dried and Dehydrated Food Manufacturing,31-33,311,3114,NULL,NULL
+3115,Dairy Product Manufacturing,31-33,311,3115,NULL,NULL
+311511,Fluid Milk Manufacturing,31-33,311,3115,NULL,NULL
+311512,Creamery Butter Manufacturing,31-33,311,3115,NULL,NULL
+311513,Cheese Manufacturing,31-33,311,3115,NULL,NULL
+311514,"Dry, Condensed, and Evaporated Dairy Product Manufacturing",31-33,311,3115,NULL,NULL
+311520,Ice Cream and Frozen Dessert Manufacturing,31-33,311,3115,NULL,NULL
+3116,Animal Slaughtering and Processing,31-33,311,3116,NULL,NULL
+31161,Animal Slaughtering and Processing,31-33,311,3116,NULL,NULL
+311611,Animal (except Poultry) Slaughtering,31-33,311,3116,NULL,NULL
+311612,Meat Processed from Carcasses,31-33,311,3116,NULL,NULL
+311613,Rendering and Meat Byproduct Processing,31-33,311,3116,NULL,NULL
+311615,Poultry Processing,31-33,311,3116,NULL,NULL
+3117,Seafood Product Preparation and Packaging,31-33,311,3117,NULL,NULL
+311710,Seafood Product Preparation and Packaging,31-33,311,3117,NULL,NULL
+311711,Seafood Canning,31-33,311,3117,NULL,NULL
+311712,Fresh and Frozen Seafood Processing,31-33,311,3117,NULL,NULL
+3118,Bakeries and Tortilla Manufacturing,31-33,311,3118,NULL,NULL
+31181,Bread and Bakery Product Manufacturing,31-33,311,3118,NULL,NULL
+311811,Retail Bakeries,31-33,311,3118,NULL,NULL
+311812,Commercial Bakeries,31-33,311,3118,NULL,NULL
+311813,"Frozen Cakes, Pies, and Other Pastries Manufacturing",31-33,311,3118,NULL,NULL
+311821,Cookie and Cracker Manufacturing,31-33,311,3118,NULL,NULL
+311822,Flour Mixes and Dough Manufacturing From Purchased Flour,31-33,311,3118,NULL,NULL
+311823,Dry Pasta Manufacturing,31-33,311,3118,NULL,NULL
+311824,"Dry Pasta, Dough, and Flour Mixes Manufacturing from Purchased Flour",31-33,311,3118,NULL,NULL
+311830,Tortilla Manufacturing,31-33,311,3118,NULL,NULL
+3119,Other Food Manufacturing,31-33,311,3119,NULL,NULL
+311911,Roasted Nuts and Peanut Butter Manufacturing,31-33,311,3119,NULL,NULL
+311919,Other Snack Food Manufacturing,31-33,311,3119,NULL,NULL
+311920,Coffee and Tea Manufacturing,31-33,311,3119,NULL,NULL
+311930,Flavoring Syrup and Concentrate Manufacturing,31-33,311,3119,NULL,NULL
+311941,"Mayonnaise, Dressing, and Other Prepared Sauce Manufacturing",31-33,311,3119,NULL,NULL
+311942,Spice and Extract Manufacturing,31-33,311,3119,NULL,NULL
+311991,Perishable Prepared Food Manufacturing,31-33,311,3119,NULL,NULL
+311999,All Other Miscellaneous Food Manufacturing,31-33,311,3119,NULL,NULL
+312,Beverage and Tobacco Product Manufacturing,31-33,312,NULL,NULL,NULL
+3121,Beverage Manufacturing,31-33,312,3121,NULL,NULL
+312111,Soft Drink Manufacturing,31-33,312,3121,NULL,NULL
+312112,Bottled Water Manufacturing,31-33,312,3121,NULL,NULL
+312113,Ice Manufacturing,31-33,312,3121,NULL,NULL
+312120,Breweries,31-33,312,3121,NULL,NULL
+312130,Wineries,31-33,312,3121,NULL,NULL
+312140,Distilleries,31-33,312,3121,NULL,NULL
+3122,Tobacco Manufacturing,31-33,312,3122,NULL,NULL
+312210,Tobacco Stemming and Redrying,31-33,312,3122,NULL,NULL
+312221,Cigarette Manufacturing,31-33,312,3122,NULL,NULL
+312229,Other Tobacco Product Manufacturing,31-33,312,3122,NULL,NULL
+312230,Tobacco Manufacturing,31-33,312,3122,NULL,NULL
+313,Textile Mills,31-33,313,NULL,NULL,NULL
+3131,"Fiber, Yarn, and Thread Mills",31-33,313,3131,NULL,NULL
+313110,"Fiber, Yarn, and Thread Mills",31-33,313,3131,NULL,NULL
+313111,Yarn Spinning Mills,31-33,313,3131,NULL,NULL
+313112,"Yarn Texturizing, Throwing, and Twisting Mills",31-33,313,3131,NULL,NULL
+313113,Thread Mills,31-33,313,3131,NULL,NULL
+3132,Fabric Mills,31-33,313,3132,NULL,NULL
+313210,Broadwoven Fabric Mills,31-33,313,3132,NULL,NULL
+313220,Narrow Fabric Mills and Schiffli Machine Embroidery,31-33,313,3132,NULL,NULL
+313221,Narrow Fabric Mills,31-33,313,3132,NULL,NULL
+313222,Schiffli Machine Embroidery,31-33,313,3132,NULL,NULL
+313230,Nonwoven Fabric Mills,31-33,313,3132,NULL,NULL
+313240,Knit Fabric Mills,31-33,313,3132,NULL,NULL
+313241,Weft Knit Fabric Mills,31-33,313,3132,NULL,NULL
+313249,Other Knit Fabric and Lace Mills,31-33,313,3132,NULL,NULL
+3133,Textile and Fabric Finishing and Fabric Coating Mills,31-33,313,3133,NULL,NULL
+313310,Textile and Fabric Finishing Mills,31-33,313,3133,NULL,NULL
+313311,Broadwoven Fabric Finishing Mills,31-33,313,3133,NULL,NULL
+313312,Textile and Fabric Finishing (Except Broadwoven Fabric) Mills,31-33,313,3133,NULL,NULL
+313320,Fabric Coating Mills,31-33,313,3133,NULL,NULL
+314,Textile Product Mills,31-33,314,NULL,NULL,NULL
+3141,Textile Furnishings Mills,31-33,314,3141,NULL,NULL
+314110,Carpet and Rug Mills,31-33,314,3141,NULL,NULL
+314120,Curtain and Linen Mills,31-33,314,3141,NULL,NULL
+314121,Curtain and Drapery Mills,31-33,314,3141,NULL,NULL
+314129,Other Household Textile Product Mills,31-33,314,3141,NULL,NULL
+3149,Other Textile Product Mills,31-33,314,3149,NULL,NULL
+314910,Textile Bag and Canvas Mills,31-33,314,3149,NULL,NULL
+314911,Textile Bag Mills,31-33,314,3149,NULL,NULL
+314912,Canvas and Related Product Mills,31-33,314,3149,NULL,NULL
+31499,All Other Textile Product Mills,31-33,314,3149,NULL,NULL
+314991,"Rope, Cordage, and Twine Mills",31-33,314,3149,NULL,NULL
+314992,Tire Cord and Tire Fabric Mills,31-33,314,3149,NULL,NULL
+314994,"Rope, Cordage, Twine, Tire Cord, and Tire Fabric Mills",31-33,314,3149,NULL,NULL
+314999,All Other Miscellaneous Textile Product Mills,31-33,314,3149,NULL,NULL
+315,Apparel Manufacturing,31-33,315,NULL,NULL,NULL
+3151,Apparel Knitting Mills,31-33,315,3151,NULL,NULL
+315110,Hosiery and Sock Mills,31-33,315,3151,NULL,NULL
+315111,Sheer Hosiery Mills,31-33,315,3151,NULL,NULL
+315119,Other Hosiery and Sock Mills,31-33,315,3151,NULL,NULL
+315190,Other Apparel Knitting Mills,31-33,315,3151,NULL,NULL
+315191,Outerwear Knitting Mills,31-33,315,3151,NULL,NULL
+315192,Underwear and Nightwear Knitting Mills,31-33,315,3151,NULL,NULL
+3152,Cut and Sew Apparel Manufacturing,31-33,315,3152,NULL,NULL
+315210,Cut and Sew Apparel Contractors,31-33,315,3152,NULL,NULL
+315211,Men'S and Boys' Cut and Sew Apparel Contractors,31-33,315,3152,NULL,NULL
+315212,"Women'S, Girls', and Infants' Cut and Sew Apparel Contractors",31-33,315,3152,NULL,NULL
+315220,Men's and Boys' Cut and Sew Apparel Manufacturing,31-33,315,3152,NULL,NULL
+315221,Men'S and Boys' Cut and Sew Underwear and Nightwear Manufacturing,31-33,315,3152,NULL,NULL
+315222,"Men'S and Boys' Cut and Sew Suit, Coat, and Overcoat Manufacturing",31-33,315,3152,NULL,NULL
+315223,Men'S and Boys' Cut and Sew Shirt (Except Work Shirt) Manufacturing,31-33,315,3152,NULL,NULL
+315224,"Men'S and Boys' Cut and Sew Trouser, Slack, and Jean Manufacturing",31-33,315,3152,NULL,NULL
+315225,Men'S and Boys' Cut and Sew Work Clothing Manufacturing,31-33,315,3152,NULL,NULL
+315228,Men'S and Boys' Cut and Sew Other Outerwear Manufacturing,31-33,315,3152,NULL,NULL
+315231,"Women'S and Girls' Cut and Sew Lingerie, Loungewear, and Nightwear Manufacturing",31-33,315,3152,NULL,NULL
+315232,Women'S and Girls' Cut and Sew Blouse and Shirt Manufacturing,31-33,315,3152,NULL,NULL
+315233,Women'S and Girls' Cut and Sew Dress Manufacturing,31-33,315,3152,NULL,NULL
+315234,"Women'S and Girls' Cut and Sew Suit, Coat, Tailored Jacket, and Skirt Manufacturing",31-33,315,3152,NULL,NULL
+315239,Women'S and Girls' Cut and Sew Other Outerwear Manufacturing,31-33,315,3152,NULL,NULL
+315240,"Women's, Girls', and Infants' Cut and Sew Apparel Manufacturing",31-33,315,3152,NULL,NULL
+315280,Other Cut and Sew Apparel Manufacturing,31-33,315,3152,NULL,NULL
+315291,Infants' Cut and Sew Apparel Manufacturing,31-33,315,3152,NULL,NULL
+315292,Fur and Leather Apparel Manufacturing,31-33,315,3152,NULL,NULL
+315299,All Other Cut and Sew Apparel Manufacturing,31-33,315,3152,NULL,NULL
+3159,Apparel Accessories and Other Apparel Manufacturing,31-33,315,3159,NULL,NULL
+315990,Apparel Accessories and Other Apparel Manufacturing,31-33,315,3159,NULL,NULL
+315991,"Hat, Cap, and Millinery Manufacturing",31-33,315,3159,NULL,NULL
+315992,Glove and Mitten Manufacturing,31-33,315,3159,NULL,NULL
+315993,Men'S and Boys' Neckwear Manufacturing,31-33,315,3159,NULL,NULL
+315999,Other Apparel Accessories and Other Apparel Manufacturing,31-33,315,3159,NULL,NULL
+316,Leather and Allied Product Manufacturing,31-33,316,NULL,NULL,NULL
+3161,Leather and Hide Tanning and Finishing,31-33,316,3161,NULL,NULL
+316110,Leather and Hide Tanning and Finishing,31-33,316,3161,NULL,NULL
+3162,Footwear Manufacturing,31-33,316,3162,NULL,NULL
+316210,Footwear Manufacturing,31-33,316,3162,NULL,NULL
+316211,Rubber and Plastics Footwear Manufacturing,31-33,316,3162,NULL,NULL
+316212,House Slipper Manufacturing,31-33,316,3162,NULL,NULL
+316213,Men'S Footwear (Except Athletic) Manufacturing,31-33,316,3162,NULL,NULL
+316214,Women'S Footwear (Except Athletic) Manufacturing,31-33,316,3162,NULL,NULL
+316219,Other Footwear Manufacturing,31-33,316,3162,NULL,NULL
+3169,Other Leather and Allied Product Manufacturing,31-33,316,3169,NULL,NULL
+316991,Luggage Manufacturing,31-33,316,3169,NULL,NULL
+316992,Women's Handbag and Purse Manufacturing,31-33,316,3169,NULL,NULL
+316993,Personal Leather Good (Except Women'S Handbag and Purse) Manufacturing,31-33,316,3169,NULL,NULL
+316998,All Other Leather Good and Allied Product Manufacturing,31-33,316,3169,NULL,NULL
+316999,All Other Leather Good Manufacturing,31-33,316,3169,NULL,NULL
+321,Wood Product Manufacturing,31-33,321,NULL,NULL,NULL
+3211,Sawmills and Wood Preservation,31-33,321,3211,NULL,NULL
+321113,Sawmills,31-33,321,3211,NULL,NULL
+321114,Wood Preservation,31-33,321,3211,NULL,NULL
+3212,"Veneer, Plywood, and Engineered Wood Product Manufacturing",31-33,321,3212,NULL,NULL
+321211,Hardwood Veneer and Plywood Manufacturing,31-33,321,3212,NULL,NULL
+321212,Softwood Veneer and Plywood Manufacturing,31-33,321,3212,NULL,NULL
+321213,Engineered Wood Member (except Truss) Manufacturing,31-33,321,3212,NULL,NULL
+321214,Truss Manufacturing,31-33,321,3212,NULL,NULL
+321219,Reconstituted Wood Product Manufacturing,31-33,321,3212,NULL,NULL
+3219,Other Wood Product Manufacturing,31-33,321,3219,NULL,NULL
+321911,Wood Window and Door Manufacturing,31-33,321,3219,NULL,NULL
+321912,"Cut Stock, Resawing Lumber, and Planing",31-33,321,3219,NULL,NULL
+321918,Other Millwork (including Flooring),31-33,321,3219,NULL,NULL
+321920,Wood Container and Pallet Manufacturing,31-33,321,3219,NULL,NULL
+321991,Manufactured Home (Mobile Home) Manufacturing,31-33,321,3219,NULL,NULL
+321992,Prefabricated Wood Building Manufacturing,31-33,321,3219,NULL,NULL
+321999,All Other Miscellaneous Wood Product Manufacturing,31-33,321,3219,NULL,NULL
+322,Paper Manufacturing,31-33,322,NULL,NULL,NULL
+3221,"Pulp, Paper, and Paperboard Mills",31-33,322,3221,NULL,NULL
+322110,Pulp Mills,31-33,322,3221,NULL,NULL
+322121,Paper (except Newsprint) Mills,31-33,322,3221,NULL,NULL
+322122,Newsprint Mills,31-33,322,3221,NULL,NULL
+322130,Paperboard Mills,31-33,322,3221,NULL,NULL
+3222,Converted Paper Product Manufacturing,31-33,322,3222,NULL,NULL
+322211,Corrugated and Solid Fiber Box Manufacturing,31-33,322,3222,NULL,NULL
+322212,Folding Paperboard Box Manufacturing,31-33,322,3222,NULL,NULL
+322213,Setup Paperboard Box Manufacturing,31-33,322,3222,NULL,NULL
+322214,"Fiber Can, Tube, Drum, and Similar Products Manufacturing",31-33,322,3222,NULL,NULL
+322215,Nonfolding Sanitary Food Container Manufacturing,31-33,322,3222,NULL,NULL
+322219,Other Paperboard Container Manufacturing,31-33,322,3222,NULL,NULL
+322220,Paper Bag and Coated and Treated Paper Manufacturing,31-33,322,3222,NULL,NULL
+322221,Coated and Laminated Packaging Paper and Plastics Film Manufacturing,31-33,322,3222,NULL,NULL
+322222,Coated and Laminated Paper Manufacturing,31-33,322,3222,NULL,NULL
+322223,"Plastics, Foil, and Coated Paper Bag Manufacturing",31-33,322,3222,NULL,NULL
+322224,Uncoated Paper and Multiwall Bag Manufacturing,31-33,322,3222,NULL,NULL
+322225,Laminated Aluminum Foil Manufacturing For Flexible Packaging Uses,31-33,322,3222,NULL,NULL
+322226,Surface-Coated Paperboard Manufacturing,31-33,322,3222,NULL,NULL
+322230,Stationery Product Manufacturing,31-33,322,3222,NULL,NULL
+322231,Die-Cut Paper and Paperboard Office Supplies Manufacturing,31-33,322,3222,NULL,NULL
+322232,Envelope Manufacturing,31-33,322,3222,NULL,NULL
+322233,"Stationery, Tablet, and Related Product Manufacturing",31-33,322,3222,NULL,NULL
+322291,Sanitary Paper Product Manufacturing,31-33,322,3222,NULL,NULL
+322299,All Other Converted Paper Product Manufacturing,31-33,322,3222,NULL,NULL
+323,Printing and Related Support Activities,31-33,323,NULL,NULL,NULL
+3231,Printing and Related Support Activities,31-33,323,3231,NULL,NULL
+323110,Commercial Lithographic Printing,31-33,323,3231,NULL,NULL
+323111,Commercial Printing (except Screen and Books),31-33,323,3231,NULL,NULL
+323112,Commercial Flexographic Printing,31-33,323,3231,NULL,NULL
+323113,Commercial Screen Printing,31-33,323,3231,NULL,NULL
+323114,Quick Printing,31-33,323,3231,NULL,NULL
+323115,Digital Printing,31-33,323,3231,NULL,NULL
+323116,Manifold Business Forms Printing,31-33,323,3231,NULL,NULL
+323117,Books Printing,31-33,323,3231,NULL,NULL
+323118,"Blankbook, Looseleaf Binders, and Devices Manufacturing",31-33,323,3231,NULL,NULL
+323119,Other Commercial Printing,31-33,323,3231,NULL,NULL
+323120,Support Activities for Printing,31-33,323,3231,NULL,NULL
+323121,Tradebinding and Related Work,31-33,323,3231,NULL,NULL
+323122,Prepress Services,31-33,323,3231,NULL,NULL
+324,Petroleum and Coal Products Manufacturing,31-33,324,NULL,324 Petroleum & Coal Products Manufacturing,324 Petroleum & Coal Products Manufacturing
+3241,Petroleum and Coal Products Manufacturing,31-33,324,3241,NULL,NULL
+324110,Petroleum Refineries,31-33,324,3241,324110 Petroleum Refineries,324110 Petroleum Refineries
+324121,Asphalt Paving Mixture and Block Manufacturing,31-33,324,3241,NULL,NULL
+324122,Asphalt Shingle and Coating Materials Manufacturing,31-33,324,3241,NULL,NULL
+324191,Petroleum Lubricating Oil and Grease Manufacturing,31-33,324,3241,NULL,NULL
+324199,All Other Petroleum and Coal Products Manufacturing,31-33,324,3241,NULL,NULL
+325,Chemical Manufacturing,31-33,325,NULL,NULL,NULL
+3251,Basic Chemical Manufacturing,31-33,325,3251,NULL,NULL
+325110,Petrochemical Manufacturing,31-33,325,3251,325110 Petrochemical Manufacturing,325110 Petrochemical Manufacturing
+325120,Industrial Gas Manufacturing,31-33,325,3251,NULL,NULL
+325130,Synthetic Dye and Pigment Manufacturing,31-33,325,3251,NULL,NULL
+325131,Inorganic Dye and Pigment Manufacturing,31-33,325,3251,NULL,NULL
+325132,Synthetic Organic Dye and Pigment Manufacturing,31-33,325,3251,NULL,NULL
+325180,Other Basic Inorganic Chemical Manufacturing,31-33,325,3251,NULL,NULL
+325181,Alkalies and Chlorine Manufacturing,31-33,325,3251,NULL,NULL
+325182,Carbon Black Manufacturing,31-33,325,3251,NULL,NULL
+325188,All Other Basic Inorganic Chemical Manufacturing,31-33,325,3251,NULL,NULL
+325191,Gum and Wood Chemical Manufacturing,31-33,325,3251,NULL,NULL
+325192,Cyclic Crude and Intermediate Manufacturing,31-33,325,3251,NULL,NULL
+325193,Ethyl Alcohol Manufacturing,31-33,325,3251,NULL,NULL
+325194,"Cyclic Crude, Intermediate, and Gum and Wood Chemical Manufacturing",31-33,325,3251,NULL,NULL
+325199,All Other Basic Organic Chemical Manufacturing,31-33,325,3251,NULL,NULL
+3252,"Resin, Synthetic Rubber, and Artificial Synthetic Fibers and Filaments Manufacturing",31-33,325,3252,NULL,NULL
+325211,Plastics Material and Resin Manufacturing,31-33,325,3252,NULL,NULL
+325212,Synthetic Rubber Manufacturing,31-33,325,3252,NULL,NULL
+325220,Artificial and Synthetic Fibers and Filaments Manufacturing,31-33,325,3252,NULL,NULL
+325221,Cellulosic Organic Fiber Manufacturing,31-33,325,3252,NULL,NULL
+325222,Noncellulosic Organic Fiber Manufacturing,31-33,325,3252,NULL,NULL
+3253,"Pesticide, Fertilizer, and Other Agricultural Chemical Manufacturing",31-33,325,3253,NULL,NULL
+325311,Nitrogenous Fertilizer Manufacturing,31-33,325,3253,NULL,NULL
+325312,Phosphatic Fertilizer Manufacturing,31-33,325,3253,NULL,NULL
+325314,Fertilizer (Mixing Only) Manufacturing,31-33,325,3253,NULL,NULL
+32532,Pesticide and Other Agricultural Chemical Manufacturing,31-33,325,3253,NULL,NULL
+325320,Pesticide and Other Agricultural Chemical Manufacturing,31-33,325,3253,NULL,NULL
+3254,Pharmaceutical and Medicine Manufacturing,31-33,325,3254,NULL,NULL
+325411,Medicinal and Botanical Manufacturing,31-33,325,3254,NULL,NULL
+325412,Pharmaceutical Preparation Manufacturing,31-33,325,3254,NULL,NULL
+325413,In-Vitro Diagnostic Substance Manufacturing,31-33,325,3254,NULL,NULL
+325414,Biological Product (except Diagnostic) Manufacturing,31-33,325,3254,NULL,NULL
+3255,"Paint, Coating, and Adhesive Manufacturing",31-33,325,3255,NULL,NULL
+325510,Paint and Coating Manufacturing,31-33,325,3255,NULL,NULL
+325520,Adhesive Manufacturing,31-33,325,3255,NULL,NULL
+3256,"Soap, Cleaning Compound, and Toilet Preparation Manufacturing",31-33,325,3256,NULL,NULL
+325611,Soap and Other Detergent Manufacturing,31-33,325,3256,NULL,NULL
+325612,Polish and Other Sanitation Good Manufacturing,31-33,325,3256,NULL,NULL
+325613,Surface Active Agent Manufacturing,31-33,325,3256,NULL,NULL
+325620,Toilet Preparation Manufacturing,31-33,325,3256,NULL,NULL
+3259,Other Chemical Product and Preparation Manufacturing,31-33,325,3259,NULL,NULL
+325910,Printing Ink Manufacturing,31-33,325,3259,NULL,NULL
+325920,Explosives Manufacturing,31-33,325,3259,NULL,NULL
+325991,Custom Compounding of Purchased Resins,31-33,325,3259,NULL,NULL
+325992,"Photographic Film, Paper, Plate, and Chemical Manufacturing",31-33,325,3259,NULL,NULL
+325998,All Other Miscellaneous Chemical Product and Preparation Manufacturing,31-33,325,3259,NULL,NULL
+326,Plastics and Rubber Products Manufacturing,31-33,326,NULL,NULL,NULL
+3261,Plastics Product Manufacturing,31-33,326,3261,NULL,NULL
+326111,Plastics Bag and Pouch Manufacturing,31-33,326,3261,NULL,NULL
+326112,Plastics Packaging Film and Sheet (including Laminated) Manufacturing,31-33,326,3261,NULL,NULL
+326113,Unlaminated Plastics Film and Sheet (except Packaging) Manufacturing,31-33,326,3261,NULL,NULL
+326121,Unlaminated Plastics Profile Shape Manufacturing,31-33,326,3261,NULL,NULL
+326122,Plastics Pipe and Pipe Fitting Manufacturing,31-33,326,3261,NULL,NULL
+326130,"Laminated Plastics Plate, Sheet (except Packaging), and Shape Manufacturing",31-33,326,3261,NULL,NULL
+326140,Polystyrene Foam Product Manufacturing,31-33,326,3261,NULL,NULL
+326150,Urethane and Other Foam Product (except Polystyrene) Manufacturing,31-33,326,3261,NULL,NULL
+326160,Plastics Bottle Manufacturing,31-33,326,3261,NULL,NULL
+326191,Plastics Plumbing Fixture Manufacturing,31-33,326,3261,NULL,NULL
+326192,Resilient Floor Covering Manufacturing,31-33,326,3261,NULL,NULL
+326199,All Other Plastics Product Manufacturing,31-33,326,3261,NULL,NULL
+3262,Rubber Product Manufacturing,31-33,326,3262,NULL,NULL
+326211,Tire Manufacturing (except Retreading),31-33,326,3262,NULL,NULL
+326212,Tire Retreading,31-33,326,3262,NULL,NULL
+326220,Rubber and Plastics Hoses and Belting Manufacturing,31-33,326,3262,NULL,NULL
+326291,Rubber Product Manufacturing for Mechanical Use,31-33,326,3262,NULL,NULL
+326299,All Other Rubber Product Manufacturing,31-33,326,3262,NULL,NULL
+327,Nonmetallic Mineral Product Manufacturing,31-33,327,NULL,NULL,NULL
+3271,Clay Product and Refractory Manufacturing,31-33,327,3271,NULL,NULL
+327110,"Pottery, Ceramics, and Plumbing Fixture Manufacturing",31-33,327,3271,NULL,NULL
+327111,Vitreous China Plumbing Fixture and China and Earthenware Bathroom Accessories Manufacturing,31-33,327,3271,NULL,NULL
+327112,"Vitreous China, Fine Earthenware, and Other Pottery Product Manufacturing",31-33,327,3271,NULL,NULL
+327113,Porcelain Electrical Supply Manufacturing,31-33,327,3271,NULL,NULL
+327120,Clay Building Material and Refractories Manufacturing,31-33,327,3271,NULL,NULL
+327121,Brick and Structural Clay Tile Manufacturing,31-33,327,3271,NULL,NULL
+327122,Ceramic Wall and Floor Tile Manufacturing,31-33,327,3271,NULL,NULL
+327123,Other Structural Clay Product Manufacturing,31-33,327,3271,NULL,NULL
+327124,Clay Refractory Manufacturing,31-33,327,3271,NULL,NULL
+327125,Nonclay Refractory Manufacturing,31-33,327,3271,NULL,NULL
+3272,Glass and Glass Product Manufacturing,31-33,327,3272,NULL,NULL
+327211,Flat Glass Manufacturing,31-33,327,3272,NULL,NULL
+327212,Other Pressed and Blown Glass and Glassware Manufacturing,31-33,327,3272,NULL,NULL
+327213,Glass Container Manufacturing,31-33,327,3272,NULL,NULL
+327215,Glass Product Manufacturing Made of Purchased Glass,31-33,327,3272,NULL,NULL
+3273,Cement and Concrete Product Manufacturing,31-33,327,3273,NULL,NULL
+327310,Cement Manufacturing,31-33,327,3273,NULL,NULL
+327320,Ready-Mix Concrete Manufacturing,31-33,327,3273,NULL,NULL
+327331,Concrete Block and Brick Manufacturing,31-33,327,3273,NULL,NULL
+327332,Concrete Pipe Manufacturing,31-33,327,3273,NULL,NULL
+32739,Other Concrete Product Manufacturing,31-33,327,3273,NULL,NULL
+327390,Other Concrete Product Manufacturing,31-33,327,3273,NULL,NULL
+3274,Lime and Gypsum Product Manufacturing,31-33,327,3274,NULL,NULL
+327410,Lime Manufacturing,31-33,327,3274,NULL,NULL
+327420,Gypsum Product Manufacturing,31-33,327,3274,NULL,NULL
+3279,Other Nonmetallic Mineral Product Manufacturing,31-33,327,3279,NULL,NULL
+327910,Abrasive Product Manufacturing,31-33,327,3279,NULL,NULL
+327991,Cut Stone and Stone Product Manufacturing,31-33,327,3279,NULL,NULL
+327992,Ground or Treated Mineral and Earth Manufacturing,31-33,327,3279,NULL,NULL
+327993,Mineral Wool Manufacturing,31-33,327,3279,NULL,NULL
+327999,All Other Miscellaneous Nonmetallic Mineral Product Manufacturing,31-33,327,3279,NULL,NULL
+331,Primary Metal Manufacturing,31-33,331,NULL,NULL,NULL
+3311,Iron and Steel Mills and Ferroalloy Manufacturing,31-33,331,3311,NULL,NULL
+331110,Iron and Steel Mills and Ferroalloy Manufacturing,31-33,331,3311,NULL,NULL
+331111,Iron and Steel Mills,31-33,331,3311,NULL,NULL
+331112,Electrometallurgical Ferroalloy Product Manufacturing,31-33,331,3311,NULL,NULL
+3312,Steel Product Manufacturing from Purchased Steel,31-33,331,3312,NULL,NULL
+33121,Iron and Steel Pipe and Tube Manufacturing from Purchased Steel,31-33,331,3312,NULL,NULL
+331210,Iron and Steel Pipe and Tube Manufacturing from Purchased Steel,31-33,331,3312,NULL,NULL
+331221,Rolled Steel Shape Manufacturing,31-33,331,3312,NULL,NULL
+331222,Steel Wire Drawing,31-33,331,3312,NULL,NULL
+3313,Alumina and Aluminum Production and Processing,31-33,331,3313,NULL,NULL
+331311,Alumina Refining,31-33,331,3313,NULL,NULL
+331312,Primary Aluminum Production,31-33,331,3313,NULL,NULL
+331313,Alumina Refining and Primary Aluminum Production,31-33,331,3313,NULL,NULL
+331314,Secondary Smelting and Alloying of Aluminum,31-33,331,3313,NULL,NULL
+331315,"Aluminum Sheet, Plate, and Foil Manufacturing",31-33,331,3313,NULL,NULL
+331316,Aluminum Extruded Product Manufacturing,31-33,331,3313,NULL,NULL
+331318,"Other Aluminum Rolling, Drawing, and Extruding",31-33,331,3313,NULL,NULL
+331319,Other Aluminum Rolling and Drawing,31-33,331,3313,NULL,NULL
+3314,Nonferrous Metal (except Aluminum) Production and Processing,31-33,331,3314,NULL,NULL
+331410,Nonferrous Metal (except Aluminum) Smelting and Refining,31-33,331,3314,NULL,NULL
+331411,Primary Smelting and Refining Of Copper,31-33,331,3314,NULL,NULL
+331419,Primary Smelting and Refining Of Nonferrous Metal (Except Copper and Aluminum),31-33,331,3314,NULL,NULL
+331420,"Copper Rolling, Drawing, Extruding, and Alloying",31-33,331,3314,NULL,NULL
+331421,"Copper Rolling, Drawing, and Extruding",31-33,331,3314,NULL,NULL
+331422,Copper Wire (Except Mechanical) Drawing,31-33,331,3314,NULL,NULL
+331423,"Secondary Smelting, Refining, and Alloying Of Copper",31-33,331,3314,NULL,NULL
+331491,"Nonferrous Metal (except Copper and Aluminum) Rolling, Drawing, and Extruding",31-33,331,3314,NULL,NULL
+331492,"Secondary Smelting, Refining, and Alloying of Nonferrous Metal (except Copper and Aluminum)",31-33,331,3314,NULL,NULL
+3315,Foundries,31-33,331,3315,NULL,NULL
+331511,Iron Foundries,31-33,331,3315,NULL,NULL
+331512,Steel Investment Foundries,31-33,331,3315,NULL,NULL
+331513,Steel Foundries (except Investment),31-33,331,3315,NULL,NULL
+331521,Aluminum Die-Casting Foundries,31-33,331,3315,NULL,NULL
+331522,Nonferrous (Except Aluminum) Die-Casting Foundries,31-33,331,3315,NULL,NULL
+331523,Nonferrous Metal Die-Casting Foundries,31-33,331,3315,NULL,NULL
+331524,Aluminum Foundries (except Die-Casting),31-33,331,3315,NULL,NULL
+331525,Copper Foundries (Except Die-Casting),31-33,331,3315,NULL,NULL
+331528,Other Nonferrous Foundries (Except Die-Casting),31-33,331,3315,NULL,NULL
+331529,Other Nonferrous Metal Foundries (except Die-Casting),31-33,331,3315,NULL,NULL
+332,Fabricated Metal Product Manufacturing,31-33,332,NULL,NULL,NULL
+3321,Forging and Stamping,31-33,332,3321,NULL,NULL
+332111,Iron and Steel Forging,31-33,332,3321,NULL,NULL
+332112,Nonferrous Forging,31-33,332,3321,NULL,NULL
+332114,Custom Roll Forming,31-33,332,3321,NULL,NULL
+332115,Crown and Closure Manufacturing,31-33,332,3321,NULL,NULL
+332116,Metal Stamping,31-33,332,3321,NULL,NULL
+332117,Powder Metallurgy Part Manufacturing,31-33,332,3321,NULL,NULL
+332119,"Metal Crown, Closure, and Other Metal Stamping (except Automotive)",31-33,332,3321,NULL,NULL
+3322,Cutlery and Handtool Manufacturing,31-33,332,3322,NULL,NULL
+332211,Cutlery and Flatware (Except Precious) Manufacturing,31-33,332,3322,NULL,NULL
+332212,Hand and Edge Tool Manufacturing,31-33,332,3322,NULL,NULL
+332213,Saw Blade and Handsaw Manufacturing,31-33,332,3322,NULL,NULL
+332214,"Kitchen Utensil, Pot, and Pan Manufacturing",31-33,332,3322,NULL,NULL
+332215,"Metal Kitchen Cookware, Utensil, Cutlery, and Flatware (except Precious) Manufacturing",31-33,332,3322,NULL,NULL
+332216,Saw Blade and Handtool Manufacturing,31-33,332,3322,NULL,NULL
+3323,Architectural and Structural Metals Manufacturing,31-33,332,3323,NULL,NULL
+332311,Prefabricated Metal Building and Component Manufacturing,31-33,332,3323,NULL,NULL
+332312,Fabricated Structural Metal Manufacturing,31-33,332,3323,NULL,NULL
+332313,Plate Work Manufacturing,31-33,332,3323,NULL,NULL
+332321,Metal Window and Door Manufacturing,31-33,332,3323,NULL,NULL
+332322,Sheet Metal Work Manufacturing,31-33,332,3323,NULL,NULL
+332323,Ornamental and Architectural Metal Work Manufacturing,31-33,332,3323,NULL,NULL
+3324,"Boiler, Tank, and Shipping Container Manufacturing",31-33,332,3324,NULL,NULL
+332410,Power Boiler and Heat Exchanger Manufacturing,31-33,332,3324,NULL,NULL
+33242,Metal Tank (Heavy Gauge) Manufacturing,31-33,332,3324,NULL,NULL
+332420,Metal Tank (Heavy Gauge) Manufacturing,31-33,332,3324,NULL,NULL
+332431,Metal Can Manufacturing,31-33,332,3324,NULL,NULL
+332439,Other Metal Container Manufacturing,31-33,332,3324,NULL,NULL
+3325,Hardware Manufacturing,31-33,332,3325,NULL,NULL
+33251,Hardware Manufacturing,31-33,332,3325,NULL,NULL
+332510,Hardware Manufacturing,31-33,332,3325,NULL,NULL
+3326,Spring and Wire Product Manufacturing,31-33,332,3326,NULL,NULL
+332611,Spring (Heavy Gauge) Manufacturing,31-33,332,3326,NULL,NULL
+332612,Spring (Light Gauge) Manufacturing,31-33,332,3326,NULL,NULL
+332613,Spring Manufacturing,31-33,332,3326,NULL,NULL
+332618,Other Fabricated Wire Product Manufacturing,31-33,332,3326,NULL,NULL
+3327,"Machine Shops; Turned Product; and Screw, Nut, and Bolt Manufacturing",31-33,332,3327,NULL,NULL
+33271,Machine Shops,31-33,332,3327,NULL,NULL
+332710,Machine Shops,31-33,332,3327,NULL,NULL
+332721,Precision Turned Product Manufacturing,31-33,332,3327,NULL,NULL
+332722,"Bolt, Nut, Screw, Rivet, and Washer Manufacturing",31-33,332,3327,NULL,NULL
+3328,"Coating, Engraving, Heat Treating, and Allied Activities",31-33,332,3328,NULL,NULL
+332811,Metal Heat Treating,31-33,332,3328,NULL,NULL
+332812,"Metal Coating, Engraving (except Jewelry and Silverware), and Allied Services to Manufacturers",31-33,332,3328,NULL,NULL
+332813,"Electroplating, Plating, Polishing, Anodizing, and Coloring",31-33,332,3328,NULL,NULL
+3329,Other Fabricated Metal Product Manufacturing,31-33,332,3329,NULL,NULL
+332911,Industrial Valve Manufacturing,31-33,332,3329,NULL,NULL
+332912,Fluid Power Valve and Hose Fitting Manufacturing,31-33,332,3329,NULL,NULL
+332913,Plumbing Fixture Fitting and Trim Manufacturing,31-33,332,3329,NULL,NULL
+332919,Other Metal Valve and Pipe Fitting Manufacturing,31-33,332,3329,NULL,NULL
+332991,Ball and Roller Bearing Manufacturing,31-33,332,3329,NULL,NULL
+332992,Small Arms Ammunition Manufacturing,31-33,332,3329,NULL,NULL
+332993,Ammunition (except Small Arms) Manufacturing,31-33,332,3329,NULL,NULL
+332994,"Small Arms, Ordnance, and Ordnance Accessories Manufacturing",31-33,332,3329,NULL,NULL
+332995,Other Ordnance and Accessories Manufacturing,31-33,332,3329,NULL,NULL
+332996,Fabricated Pipe and Pipe Fitting Manufacturing,31-33,332,3329,NULL,NULL
+332997,Industrial Pattern Manufacturing,31-33,332,3329,NULL,NULL
+332998,Enameled Iron and Metal Sanitary Ware Manufacturing,31-33,332,3329,NULL,NULL
+332999,All Other Miscellaneous Fabricated Metal Product Manufacturing,31-33,332,3329,NULL,NULL
+333,Machinery Manufacturing,31-33,333,NULL,NULL,NULL
+3331,"Agriculture, Construction, and Mining Machinery Manufacturing",31-33,333,3331,NULL,NULL
+333111,Farm Machinery and Equipment Manufacturing,31-33,333,3331,NULL,NULL
+333112,Lawn and Garden Tractor and Home Lawn and Garden Equipment Manufacturing,31-33,333,3331,NULL,NULL
+33312,Construction Machinery Manufacturing,31-33,333,3331,NULL,NULL
+333120,Construction Machinery Manufacturing,31-33,333,3331,NULL,NULL
+333131,Mining Machinery and Equipment Manufacturing,31-33,333,3331,NULL,NULL
+333132,Oil and Gas Field Machinery and Equipment Manufacturing,31-33,333,3331,NULL,NULL
+3332,Industrial Machinery Manufacturing,31-33,333,3332,NULL,NULL
+333210,Sawmill and Woodworking Machinery Manufacturing,31-33,333,3332,NULL,NULL
+333220,Plastics and Rubber Industry Machinery Manufacturing,31-33,333,3332,NULL,NULL
+333241,Food Product Machinery Manufacturing,31-33,333,3332,NULL,NULL
+333242,Semiconductor Machinery Manufacturing,31-33,333,3332,NULL,NULL
+333243,"Sawmill, Woodworking, and Paper Machinery Manufacturing",31-33,333,3332,NULL,NULL
+333244,Printing Machinery and Equipment Manufacturing,31-33,333,3332,NULL,NULL
+333249,Other Industrial Machinery Manufacturing,31-33,333,3332,NULL,NULL
+333291,Paper Industry Machinery Manufacturing,31-33,333,3332,NULL,NULL
+333292,Textile Machinery Manufacturing,31-33,333,3332,NULL,NULL
+333293,Printing Machinery and Equipment Manufacturing,31-33,333,3332,NULL,NULL
+333294,Food Product Machinery Manufacturing,31-33,333,3332,NULL,NULL
+333295,Semiconductor Machinery Manufacturing,31-33,333,3332,NULL,NULL
+333298,All Other Industrial Machinery Manufacturing,31-33,333,3332,NULL,NULL
+3333,Commercial and Service Industry Machinery Manufacturing,31-33,333,3333,NULL,NULL
+333311,Automatic Vending Machine Manufacturing,31-33,333,3333,NULL,NULL
+333312,"Commercial Laundry, Drycleaning, and Pressing Machine Manufacturing",31-33,333,3333,NULL,NULL
+333313,Office Machinery Manufacturing,31-33,333,3333,NULL,NULL
+333314,Optical Instrument and Lens Manufacturing,31-33,333,3333,NULL,NULL
+333315,Photographic and Photocopying Equipment Manufacturing,31-33,333,3333,NULL,NULL
+333316,Photographic and Photocopying Equipment Manufacturing,31-33,333,3333,NULL,NULL
+333318,Other Commercial and Service Industry Machinery Manufacturing,31-33,333,3333,NULL,NULL
+333319,Other Commercial and Service Industry Machinery Manufacturing,31-33,333,3333,NULL,NULL
+3334,"Ventilation, Heating, Air-Conditioning, and Commercial Refrigeration Equipment Manufacturing",31-33,333,3334,NULL,NULL
+333411,Air Purification Equipment Manufacturing,31-33,333,3334,NULL,NULL
+333412,Industrial and Commercial Fan and Blower Manufacturing,31-33,333,3334,NULL,NULL
+333413,Industrial and Commercial Fan and Blower and Air Purification Equipment Manufacturing,31-33,333,3334,NULL,NULL
+333414,Heating Equipment (except Warm Air Furnaces) Manufacturing,31-33,333,3334,NULL,NULL
+333415,Air-Conditioning and Warm Air Heating Equipment and Commercial and Industrial Refrigeration Equipment,31-33,333,3334,NULL,NULL
+333420,Null,31-33,333,3334,NULL,NULL
+3335,Metalworking Machinery Manufacturing,31-33,333,3335,NULL,NULL
+333511,Industrial Mold Manufacturing,31-33,333,3335,NULL,NULL
+333512,Machine Tool (Metal Cutting Types) Manufacturing,31-33,333,3335,NULL,NULL
+333513,Machine Tool (Metal Forming Types) Manufacturing,31-33,333,3335,NULL,NULL
+333514,"Special Die and Tool, Die Set, Jig, and Fixture Manufacturing",31-33,333,3335,NULL,NULL
+333515,Cutting Tool and Machine Tool Accessory Manufacturing,31-33,333,3335,NULL,NULL
+333516,Rolling Mill Machinery and Equipment Manufacturing,31-33,333,3335,NULL,NULL
+333517,Machine Tool Manufacturing,31-33,333,3335,NULL,NULL
+333518,Other Metalworking Machinery Manufacturing,31-33,333,3335,NULL,NULL
+333519,Rolling Mill and Other Metalworking Machinery Manufacturing,31-33,333,3335,NULL,NULL
+3336,"Engine, Turbine, and Power Transmission Equipment Manufacturing",31-33,333,3336,NULL,NULL
+333611,Turbine and Turbine Generator Set Units Manufacturing,31-33,333,3336,NULL,NULL
+333612,"Speed Changer, Industrial High-Speed Drive, and Gear Manufacturing",31-33,333,3336,NULL,NULL
+333613,Mechanical Power Transmission Equipment Manufacturing,31-33,333,3336,NULL,NULL
+333618,Other Engine Equipment Manufacturing,31-33,333,3336,NULL,NULL
+3339,Other General Purpose Machinery Manufacturing,31-33,333,3339,NULL,NULL
+333911,Pump and Pumping Equipment Manufacturing,31-33,333,3339,NULL,NULL
+333912,Air and Gas Compressor Manufacturing,31-33,333,3339,NULL,NULL
+333913,Measuring and Dispensing Pump Manufacturing,31-33,333,3339,NULL,NULL
 333914,Null,NULL,NULL,NULL,NULL,NULL
-333921,Elevator and Moving Stairway Manufacturing,33,333,3339,NULL,NULL
-333922,Conveyor and Conveying Equipment Manufacturing,33,333,3339,NULL,NULL
-333923,"Overhead Traveling Crane, Hoist, and Monorail System Manufacturing",33,333,3339,NULL,NULL
-333924,"Industrial Truck, Tractor, Trailer, and Stacker Machinery Manufacturing",33,333,3339,NULL,NULL
-333991,Power-Driven Handtool Manufacturing,33,333,3339,NULL,NULL
-333992,Welding and Soldering Equipment Manufacturing,33,333,3339,NULL,NULL
-333993,Packaging Machinery Manufacturing,33,333,3339,NULL,NULL
-333994,Industrial Process Furnace and Oven Manufacturing,33,333,3339,NULL,NULL
-333995,Fluid Power Cylinder and Actuator Manufacturing,33,333,3339,NULL,NULL
-333996,Fluid Power Pump and Motor Manufacturing,33,333,3339,NULL,NULL
-333997,"Scale and Balance Manufacturing (2007), Scale and Balance (Except Laboratory) Manufacturing (2002)",33,333,3339,NULL,NULL
-333999,All Other Miscellaneous General Purpose Machinery Manufacturing,33,333,3339,NULL,NULL
-334,Computer and Electronic Product Manufacturing,33,334,NULL,334 Computer & Electronic Product Manufacturing,334 Computer & Electronic Product Manufacturing
-3341,Computer and Peripheral Equipment Manufacturing,33,334,3341,NULL,NULL
-33411,Computer and Peripheral Equipment Manufacturing,33,334,3341,NULL,NULL
-334111,Electronic Computer Manufacturing,33,334,3341,NULL,NULL
-334112,Computer Storage Device Manufacturing,33,334,3341,NULL,NULL
-334113,Computer Terminal Manufacturing,33,334,3341,NULL,NULL
-334118,Computer Terminal and Other Computer Peripheral Equipment Manufacturing,33,334,3341,NULL,NULL
-334119,Other Computer Peripheral Equipment Manufacturing,33,334,3341,NULL,NULL
-3342,Communications Equipment Manufacturing,33,334,3342,NULL,NULL
-33421,Telephone Apparatus Manufacturing,33,334,3342,NULL,NULL
-334210,Telephone Apparatus Manufacturing,33,334,3342,NULL,NULL
-33422,Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing,33,334,3342,NULL,NULL
-334220,Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing,33,334,3342,NULL,NULL
-33429,Other Communications Equipment Manufacturing,33,334,3342,NULL,NULL
-334290,Other Communications Equipment Manufacturing,33,334,3342,NULL,NULL
-3343,Audio and Video Equipment Manufacturing,33,334,3343,NULL,NULL
-33431,Audio and Video Equipment Manufacturing,33,334,3343,NULL,NULL
-334310,Audio and Video Equipment Manufacturing,33,334,3343,NULL,NULL
-3344,Semiconductor and Other Electronic Component Manufacturing,33,334,3344,NULL,NULL
-334411,Electron Tube Manufacturing,33,334,3344,NULL,NULL
-334412,Bare Printed Circuit Board Manufacturing,33,334,3344,NULL,NULL
-334413,Semiconductor and Related Device Manufacturing,33,334,3344,NULL,NULL
-334414,Electronic Capacitor Manufacturing,33,334,3344,NULL,NULL
-334415,Electronic Resistor Manufacturing,33,334,3344,NULL,NULL
-334416,"Capacitor, Resistor, Coil, Transformer, and Other Inductor Manufacturing",33,334,3344,NULL,NULL
-334417,Electronic Connector Manufacturing,33,334,3344,NULL,NULL
-334418,Printed Circuit Assembly (Electronic Assembly) Manufacturing,33,334,3344,NULL,NULL
-334419,Other Electronic Component Manufacturing,33,334,3344,NULL,NULL
-3345,"Navigational, Measuring, Electromedical, and Control Instruments Manufacturing",33,334,3345,NULL,NULL
-334510,Electromedical and Electrotherapeutic Apparatus Manufacturing,33,334,3345,NULL,NULL
-334511,"Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",33,334,3345,334511 Aero. & Nautical System & Instr. Manufacturing,"334511 Sensor, Aeronautical, and Nautical System & Instrument Manufacturing"
-334512,"Automatic Environmental Control Manufacturing for Residential, Commercial, and Appliance Use",33,334,3345,NULL,NULL
-334513,"Instruments and Related Products Manufacturing for Measuring, Displaying, and Controlling Industrial Process Variables",33,334,3345,NULL,NULL
-334514,Totalizing Fluid Meter and Counting Device Manufacturing,33,334,3345,NULL,NULL
-334515,Instrument Manufacturing for Measuring and Testing Electricity and Electrical Signals,33,334,3345,NULL,NULL
-334516,Analytical Laboratory Instrument Manufacturing,33,334,3345,NULL,NULL
-334517,Irradiation Apparatus Manufacturing,33,334,3345,NULL,NULL
-334518,"Watch, Clock, and Part Manufacturing",33,334,3345,NULL,NULL
-334519,Other Measuring and Controlling Device Manufacturing,33,334,3345,NULL,NULL
-3346,Manufacturing and Reproducing Magnetic and Optical Media,33,334,3346,NULL,NULL
-334611,Software Reproducing,33,334,3346,NULL,NULL
-334612,"Prerecorded Compact Disc (Except Software), Tape, and Record Reproducing",33,334,3346,NULL,NULL
-334613,Blank Magnetic and Optical Recording Media Manufacturing,33,334,3346,NULL,NULL
-334614,"Software and Other Prerecorded Compact Disc, Tape, and Record Reproducing",33,334,3346,NULL,NULL
-335,"Electrical Equipment, Appliance, and Component Manufacturing",33,335,NULL,NULL,NULL
-3351,Electric Lighting Equipment Manufacturing,33,335,3351,NULL,NULL
-335110,Electric Lamp Bulb and Part Manufacturing,33,335,3351,NULL,NULL
-335121,Residential Electric Lighting Fixture Manufacturing,33,335,3351,NULL,NULL
-335122,"Commercial, Industrial, and Institutional Electric Lighting Fixture Manufacturing",33,335,3351,NULL,NULL
-335129,Other Lighting Equipment Manufacturing,33,335,3351,NULL,NULL
-3352,Household Appliance Manufacturing,33,335,3352,NULL,NULL
-335210,Small Electrical Appliance Manufacturing,33,335,3352,NULL,NULL
-335211,Electric Housewares and Household Fan Manufacturing,33,335,3352,NULL,NULL
-335212,Household Vacuum Cleaner Manufacturing,33,335,3352,NULL,NULL
+333921,Elevator and Moving Stairway Manufacturing,31-33,333,3339,NULL,NULL
+333922,Conveyor and Conveying Equipment Manufacturing,31-33,333,3339,NULL,NULL
+333923,"Overhead Traveling Crane, Hoist, and Monorail System Manufacturing",31-33,333,3339,NULL,NULL
+333924,"Industrial Truck, Tractor, Trailer, and Stacker Machinery Manufacturing",31-33,333,3339,NULL,NULL
+333991,Power-Driven Handtool Manufacturing,31-33,333,3339,NULL,NULL
+333992,Welding and Soldering Equipment Manufacturing,31-33,333,3339,NULL,NULL
+333993,Packaging Machinery Manufacturing,31-33,333,3339,NULL,NULL
+333994,Industrial Process Furnace and Oven Manufacturing,31-33,333,3339,NULL,NULL
+333995,Fluid Power Cylinder and Actuator Manufacturing,31-33,333,3339,NULL,NULL
+333996,Fluid Power Pump and Motor Manufacturing,31-33,333,3339,NULL,NULL
+333997,"Scale and Balance Manufacturing (2007), Scale and Balance (Except Laboratory) Manufacturing (2002)",31-33,333,3339,NULL,NULL
+333999,All Other Miscellaneous General Purpose Machinery Manufacturing,31-33,333,3339,NULL,NULL
+334,Computer and Electronic Product Manufacturing,31-33,334,NULL,334 Computer & Electronic Product Manufacturing,334 Computer & Electronic Product Manufacturing
+3341,Computer and Peripheral Equipment Manufacturing,31-33,334,3341,NULL,NULL
+33411,Computer and Peripheral Equipment Manufacturing,31-33,334,3341,NULL,NULL
+334111,Electronic Computer Manufacturing,31-33,334,3341,NULL,NULL
+334112,Computer Storage Device Manufacturing,31-33,334,3341,NULL,NULL
+334113,Computer Terminal Manufacturing,31-33,334,3341,NULL,NULL
+334118,Computer Terminal and Other Computer Peripheral Equipment Manufacturing,31-33,334,3341,NULL,NULL
+334119,Other Computer Peripheral Equipment Manufacturing,31-33,334,3341,NULL,NULL
+3342,Communications Equipment Manufacturing,31-33,334,3342,NULL,NULL
+33421,Telephone Apparatus Manufacturing,31-33,334,3342,NULL,NULL
+334210,Telephone Apparatus Manufacturing,31-33,334,3342,NULL,NULL
+33422,Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing,31-33,334,3342,NULL,NULL
+334220,Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing,31-33,334,3342,NULL,NULL
+33429,Other Communications Equipment Manufacturing,31-33,334,3342,NULL,NULL
+334290,Other Communications Equipment Manufacturing,31-33,334,3342,NULL,NULL
+3343,Audio and Video Equipment Manufacturing,31-33,334,3343,NULL,NULL
+33431,Audio and Video Equipment Manufacturing,31-33,334,3343,NULL,NULL
+334310,Audio and Video Equipment Manufacturing,31-33,334,3343,NULL,NULL
+3344,Semiconductor and Other Electronic Component Manufacturing,31-33,334,3344,NULL,NULL
+334411,Electron Tube Manufacturing,31-33,334,3344,NULL,NULL
+334412,Bare Printed Circuit Board Manufacturing,31-33,334,3344,NULL,NULL
+334413,Semiconductor and Related Device Manufacturing,31-33,334,3344,NULL,NULL
+334414,Electronic Capacitor Manufacturing,31-33,334,3344,NULL,NULL
+334415,Electronic Resistor Manufacturing,31-33,334,3344,NULL,NULL
+334416,"Capacitor, Resistor, Coil, Transformer, and Other Inductor Manufacturing",31-33,334,3344,NULL,NULL
+334417,Electronic Connector Manufacturing,31-33,334,3344,NULL,NULL
+334418,Printed Circuit Assembly (Electronic Assembly) Manufacturing,31-33,334,3344,NULL,NULL
+334419,Other Electronic Component Manufacturing,31-33,334,3344,NULL,NULL
+3345,"Navigational, Measuring, Electromedical, and Control Instruments Manufacturing",31-33,334,3345,NULL,NULL
+334510,Electromedical and Electrotherapeutic Apparatus Manufacturing,31-33,334,3345,NULL,NULL
+334511,"Search, Detection, Navigation, Guidance, Aeronautical, and Nautical System and Instrument Manufacturing",31-33,334,3345,334511 Aero. & Nautical System & Instr. Manufacturing,"334511 Sensor, Aeronautical, and Nautical System & Instrument Manufacturing"
+334512,"Automatic Environmental Control Manufacturing for Residential, Commercial, and Appliance Use",31-33,334,3345,NULL,NULL
+334513,"Instruments and Related Products Manufacturing for Measuring, Displaying, and Controlling Industrial Process Variables",31-33,334,3345,NULL,NULL
+334514,Totalizing Fluid Meter and Counting Device Manufacturing,31-33,334,3345,NULL,NULL
+334515,Instrument Manufacturing for Measuring and Testing Electricity and Electrical Signals,31-33,334,3345,NULL,NULL
+334516,Analytical Laboratory Instrument Manufacturing,31-33,334,3345,NULL,NULL
+334517,Irradiation Apparatus Manufacturing,31-33,334,3345,NULL,NULL
+334518,"Watch, Clock, and Part Manufacturing",31-33,334,3345,NULL,NULL
+334519,Other Measuring and Controlling Device Manufacturing,31-33,334,3345,NULL,NULL
+3346,Manufacturing and Reproducing Magnetic and Optical Media,31-33,334,3346,NULL,NULL
+334611,Software Reproducing,31-33,334,3346,NULL,NULL
+334612,"Prerecorded Compact Disc (Except Software), Tape, and Record Reproducing",31-33,334,3346,NULL,NULL
+334613,Blank Magnetic and Optical Recording Media Manufacturing,31-33,334,3346,NULL,NULL
+334614,"Software and Other Prerecorded Compact Disc, Tape, and Record Reproducing",31-33,334,3346,NULL,NULL
+335,"Electrical Equipment, Appliance, and Component Manufacturing",31-33,335,NULL,NULL,NULL
+3351,Electric Lighting Equipment Manufacturing,31-33,335,3351,NULL,NULL
+335110,Electric Lamp Bulb and Part Manufacturing,31-33,335,3351,NULL,NULL
+335121,Residential Electric Lighting Fixture Manufacturing,31-33,335,3351,NULL,NULL
+335122,"Commercial, Industrial, and Institutional Electric Lighting Fixture Manufacturing",31-33,335,3351,NULL,NULL
+335129,Other Lighting Equipment Manufacturing,31-33,335,3351,NULL,NULL
+3352,Household Appliance Manufacturing,31-33,335,3352,NULL,NULL
+335210,Small Electrical Appliance Manufacturing,31-33,335,3352,NULL,NULL
+335211,Electric Housewares and Household Fan Manufacturing,31-33,335,3352,NULL,NULL
+335212,Household Vacuum Cleaner Manufacturing,31-33,335,3352,NULL,NULL
 335220,Null,NULL,NULL,NULL,NULL,NULL
-335221,Household Cooking Appliance Manufacturing,33,335,3352,NULL,NULL
-335222,Household Refrigerator and Home Freezer Manufacturing,33,335,3352,NULL,NULL
-335224,Household Laundry Equipment Manufacturing,33,335,3352,NULL,NULL
-335228,Other Major Household Appliance Manufacturing,33,335,3352,NULL,NULL
-3353,Electrical Equipment Manufacturing,33,335,3353,NULL,NULL
-33531,Electrical Equipment Manufacturing,33,335,3353,NULL,NULL
-335311,"Power, Distribution, and Specialty Transformer Manufacturing",33,335,3353,NULL,NULL
-335312,Motor and Generator Manufacturing,33,335,3353,NULL,NULL
-335313,Switchgear and Switchboard Apparatus Manufacturing,33,335,3353,NULL,NULL
-335314,Relay and Industrial Control Manufacturing,33,335,3353,NULL,NULL
-3359,Other Electrical Equipment and Component Manufacturing,33,335,3359,NULL,NULL
-335911,Storage Battery Manufacturing,33,335,3359,NULL,NULL
-335912,Primary Battery Manufacturing,33,335,3359,NULL,NULL
-335921,Fiber Optic Cable Manufacturing,33,335,3359,NULL,NULL
-335929,Other Communication and Energy Wire Manufacturing,33,335,3359,NULL,NULL
-335931,Current-Carrying Wiring Device Manufacturing,33,335,3359,NULL,NULL
-335932,Noncurrent-Carrying Wiring Device Manufacturing,33,335,3359,NULL,NULL
-335991,Carbon and Graphite Product Manufacturing,33,335,3359,NULL,NULL
-335999,All Other Miscellaneous Electrical Equipment and Component Manufacturing,33,335,3359,NULL,NULL
-336,Transportation Equipment Manufacturing,33,336,NULL,336 Transportation Equipment Manufacturing,336 Transportation Equipment Manufacturing
-3361,Motor Vehicle Manufacturing,33,336,3361,NULL,NULL
-33611,Automobile and Light Duty Motor Vehicle Manufacturing,33,336,3361,NULL,NULL
-336111,Automobile Manufacturing,33,336,3361,NULL,NULL
-336112,Light Truck and Utility Vehicle Manufacturing,33,336,3361,NULL,NULL
-33612,Heavy Duty Truck Manufacturing,33,336,3361,NULL,NULL
-336120,Heavy Duty Truck Manufacturing,33,336,3361,NULL,NULL
-3362,Motor Vehicle Body and Trailer Manufacturing,33,336,3362,NULL,NULL
-33621,Motor Vehicle Body and Trailer Manufacturing,33,336,3362,NULL,NULL
-336211,Motor Vehicle Body Manufacturing,33,336,3362,NULL,NULL
-336212,Truck Trailer Manufacturing,33,336,3362,NULL,NULL
-336213,Motor Home Manufacturing,33,336,3362,NULL,NULL
-336214,Travel Trailer and Camper Manufacturing,33,336,3362,NULL,NULL
-3363,Motor Vehicle Parts Manufacturing,33,336,3363,NULL,NULL
-336310,Motor Vehicle Gasoline Engine and Engine Parts Manufacturing,33,336,3363,NULL,NULL
-336311,"Carburetor, Piston, Piston Ring, and Valve Manufacturing",33,336,3363,NULL,NULL
-336312,Gasoline Engine and Engine Parts Manufacturing,33,336,3363,NULL,NULL
-336320,Motor Vehicle Electrical and Electronic Equipment Manufacturing,33,336,3363,NULL,NULL
-336321,Vehicular Lighting Equipment Manufacturing,33,336,3363,NULL,NULL
-336322,Other Motor Vehicle Electrical and Electronic Equipment Manufacturing,33,336,3363,NULL,NULL
-336330,Motor Vehicle Steering and Suspension Components (except Spring) Manufacturing,33,336,3363,NULL,NULL
-336340,Motor Vehicle Brake System Manufacturing,33,336,3363,NULL,NULL
-336350,Motor Vehicle Transmission and Power Train Parts Manufacturing,33,336,3363,NULL,NULL
-336360,Motor Vehicle Seating and Interior Trim Manufacturing,33,336,3363,NULL,NULL
-336370,Motor Vehicle Metal Stamping,33,336,3363,NULL,NULL
-336390,Other Motor Vehicle Parts Manufacturing,33,336,3363,NULL,NULL
-336391,Motor Vehicle Air-Conditioning Manufacturing,33,336,3363,NULL,NULL
-336399,All Other Motor Vehicle Parts Manufacturing,33,336,3363,NULL,NULL
-3364,Aerospace Product and Parts Manufacturing,33,336,3364,NULL,NULL
-336411,Aircraft Manufacturing,33,336,3364,336411 Aircraft Manufacturing,336411 Aircraft Manufacturing
-336412,Aircraft Engine and Engine Parts Manufacturing,33,336,3364,NULL,NULL
-336413,Other Aircraft Parts and Auxiliary Equipment Manufacturing,33,336,3364,336413 Other Aircraft Parts Equip. Manuf.,336413 Other Aircraft Parts Equipment Manufacturing
-336414,Guided Missile and Space Vehicle Manufacturing,33,336,3364,NULL,NULL
-336415,Guided Missile and Space Vehicle Propulsion Unit and Propulsion Unit Parts Manufacturing,33,336,3364,NULL,NULL
-336419,Other Guided Missile and Space Vehicle Parts and Auxiliary Equipment Manufacturing,33,336,3364,NULL,NULL
-3365,Railroad Rolling Stock Manufacturing,33,336,3365,NULL,NULL
-33651,Railroad Rolling Stock Manufacturing,33,336,3365,NULL,NULL
-336510,Railroad Rolling Stock Manufacturing,33,336,3365,NULL,NULL
-3366,Ship and Boat Building,33,336,3366,NULL,NULL
-336611,Ship Building and Repairing,33,336,3366,NULL,NULL
-336612,Boat Building,33,336,3366,NULL,NULL
-3369,Other Transportation Equipment Manufacturing,33,336,3369,NULL,NULL
-336991,"Motorcycle, Bicycle, and Parts Manufacturing",33,336,3369,NULL,NULL
-336992,"Military Armored Vehicle, Tank, and Tank Component Manufacturing",33,336,3369,336992 Mil. Armored Veh. & Component Manufacturing,336992 Military Armored Vehicle & Component Manufacturing
-336999,All Other Transportation Equipment Manufacturing,33,336,3369,NULL,NULL
-337,Furniture and Related Product Manufacturing,33,337,NULL,NULL,NULL
-3371,Household and Institutional Furniture and Kitchen Cabinet Manufacturing,33,337,3371,NULL,NULL
-337110,Wood Kitchen Cabinet and Countertop Manufacturing,33,337,3371,NULL,NULL
-337121,Upholstered Household Furniture Manufacturing,33,337,3371,NULL,NULL
-337122,Nonupholstered Wood Household Furniture Manufacturing,33,337,3371,NULL,NULL
-337124,Metal Household Furniture Manufacturing,33,337,3371,NULL,NULL
-337125,Household Furniture (except Wood and Metal) Manufacturing,33,337,3371,NULL,NULL
-337127,Institutional Furniture Manufacturing,33,337,3371,NULL,NULL
-337129,"Wood Television, Radio, and Sewing Machine Cabinet Manufacturing",33,337,3371,NULL,NULL
-3372,Office Furniture (including Fixtures) Manufacturing,33,337,3372,NULL,NULL
-337211,Wood Office Furniture Manufacturing,33,337,3372,NULL,NULL
-337212,Custom Architectural Woodwork and Millwork Manufacturing,33,337,3372,NULL,NULL
-337214,Office Furniture (except Wood) Manufacturing,33,337,3372,NULL,NULL
-337215,"Showcase, Partition, Shelving, and Locker Manufacturing",33,337,3372,NULL,NULL
-3379,Other Furniture Related Product Manufacturing,33,337,3379,NULL,NULL
-337910,Mattress Manufacturing,33,337,3379,NULL,NULL
-337920,Blind and Shade Manufacturing,33,337,3379,NULL,NULL
-339,Miscellaneous Manufacturing,33,339,NULL,NULL,NULL
-3391,Medical Equipment and Supplies Manufacturing,33,339,3391,NULL,NULL
-33911,Medical Equipment and Supplies Manufacturing,33,339,3391,NULL,NULL
-339111,Laboratory Apparatus and Furniture Manufacturing,33,339,3391,NULL,NULL
-339112,Surgical and Medical Instrument Manufacturing,33,339,3391,NULL,NULL
-339113,Surgical Appliance and Supplies Manufacturing,33,339,3391,NULL,NULL
-339114,Dental Equipment and Supplies Manufacturing,33,339,3391,NULL,NULL
-339115,Ophthalmic Goods Manufacturing,33,339,3391,NULL,NULL
-339116,Dental Laboratories,33,339,3391,NULL,NULL
-3399,Other Miscellaneous Manufacturing,33,339,3399,NULL,NULL
-339910,Jewelry and Silverware Manufacturing,33,339,3399,NULL,NULL
-339911,Jewelry (Except Costume) Manufacturing,33,339,3399,NULL,NULL
-339912,Silverware and Hollowware Manufacturing,33,339,3399,NULL,NULL
-339913,Jewelers' Material and Lapidary Work Manufacturing,33,339,3399,NULL,NULL
-339914,Costume Jewelry and Novelty Manufacturing,33,339,3399,NULL,NULL
-339920,Sporting and Athletic Goods Manufacturing,33,339,3399,NULL,NULL
-339930,"Doll, Toy, and Game Manufacturing",33,339,3399,NULL,NULL
-339931,Doll and Stuffed Toy Manufacturing,33,339,3399,NULL,NULL
-339932,"Game, Toy, and Children'S Vehicle Manufacturing",33,339,3399,NULL,NULL
-33994,Office Supplies (except Paper) Manufacturing,33,339,3399,NULL,NULL
-339940,Office Supplies (except Paper) Manufacturing,33,339,3399,NULL,NULL
-339941,Pen and Mechanical Pencil Manufacturing,33,339,3399,NULL,NULL
-339942,Lead Pencil and Art Good Manufacturing,33,339,3399,NULL,NULL
-339943,Marking Device Manufacturing,33,339,3399,NULL,NULL
-339944,Carbon Paper and Inked Ribbon Manufacturing,33,339,3399,NULL,NULL
-339950,Sign Manufacturing,33,339,3399,NULL,NULL
-33999,All Other Miscellaneous Manufacturing,33,339,3399,NULL,NULL
-339991,"Gasket, Packing, and Sealing Device Manufacturing",33,339,3399,NULL,NULL
-339992,Musical Instrument Manufacturing,33,339,3399,NULL,NULL
-339993,"Fastener, Button, Needle, and Pin Manufacturing",33,339,3399,NULL,NULL
-339994,"Broom, Brush, and Mop Manufacturing",33,339,3399,NULL,NULL
-339995,Burial Casket Manufacturing,33,339,3399,NULL,NULL
-339999,All Other Miscellaneous Manufacturing,33,339,3399,NULL,NULL
+335221,Household Cooking Appliance Manufacturing,31-33,335,3352,NULL,NULL
+335222,Household Refrigerator and Home Freezer Manufacturing,31-33,335,3352,NULL,NULL
+335224,Household Laundry Equipment Manufacturing,31-33,335,3352,NULL,NULL
+335228,Other Major Household Appliance Manufacturing,31-33,335,3352,NULL,NULL
+3353,Electrical Equipment Manufacturing,31-33,335,3353,NULL,NULL
+33531,Electrical Equipment Manufacturing,31-33,335,3353,NULL,NULL
+335311,"Power, Distribution, and Specialty Transformer Manufacturing",31-33,335,3353,NULL,NULL
+335312,Motor and Generator Manufacturing,31-33,335,3353,NULL,NULL
+335313,Switchgear and Switchboard Apparatus Manufacturing,31-33,335,3353,NULL,NULL
+335314,Relay and Industrial Control Manufacturing,31-33,335,3353,NULL,NULL
+3359,Other Electrical Equipment and Component Manufacturing,31-33,335,3359,NULL,NULL
+335911,Storage Battery Manufacturing,31-33,335,3359,NULL,NULL
+335912,Primary Battery Manufacturing,31-33,335,3359,NULL,NULL
+335921,Fiber Optic Cable Manufacturing,31-33,335,3359,NULL,NULL
+335929,Other Communication and Energy Wire Manufacturing,31-33,335,3359,NULL,NULL
+335931,Current-Carrying Wiring Device Manufacturing,31-33,335,3359,NULL,NULL
+335932,Noncurrent-Carrying Wiring Device Manufacturing,31-33,335,3359,NULL,NULL
+335991,Carbon and Graphite Product Manufacturing,31-33,335,3359,NULL,NULL
+335999,All Other Miscellaneous Electrical Equipment and Component Manufacturing,31-33,335,3359,NULL,NULL
+336,Transportation Equipment Manufacturing,31-33,336,NULL,336 Transportation Equipment Manufacturing,336 Transportation Equipment Manufacturing
+3361,Motor Vehicle Manufacturing,31-33,336,3361,NULL,NULL
+33611,Automobile and Light Duty Motor Vehicle Manufacturing,31-33,336,3361,NULL,NULL
+336111,Automobile Manufacturing,31-33,336,3361,NULL,NULL
+336112,Light Truck and Utility Vehicle Manufacturing,31-33,336,3361,NULL,NULL
+33612,Heavy Duty Truck Manufacturing,31-33,336,3361,NULL,NULL
+336120,Heavy Duty Truck Manufacturing,31-33,336,3361,NULL,NULL
+3362,Motor Vehicle Body and Trailer Manufacturing,31-33,336,3362,NULL,NULL
+33621,Motor Vehicle Body and Trailer Manufacturing,31-33,336,3362,NULL,NULL
+336211,Motor Vehicle Body Manufacturing,31-33,336,3362,NULL,NULL
+336212,Truck Trailer Manufacturing,31-33,336,3362,NULL,NULL
+336213,Motor Home Manufacturing,31-33,336,3362,NULL,NULL
+336214,Travel Trailer and Camper Manufacturing,31-33,336,3362,NULL,NULL
+3363,Motor Vehicle Parts Manufacturing,31-33,336,3363,NULL,NULL
+336310,Motor Vehicle Gasoline Engine and Engine Parts Manufacturing,31-33,336,3363,NULL,NULL
+336311,"Carburetor, Piston, Piston Ring, and Valve Manufacturing",31-33,336,3363,NULL,NULL
+336312,Gasoline Engine and Engine Parts Manufacturing,31-33,336,3363,NULL,NULL
+336320,Motor Vehicle Electrical and Electronic Equipment Manufacturing,31-33,336,3363,NULL,NULL
+336321,Vehicular Lighting Equipment Manufacturing,31-33,336,3363,NULL,NULL
+336322,Other Motor Vehicle Electrical and Electronic Equipment Manufacturing,31-33,336,3363,NULL,NULL
+336330,Motor Vehicle Steering and Suspension Components (except Spring) Manufacturing,31-33,336,3363,NULL,NULL
+336340,Motor Vehicle Brake System Manufacturing,31-33,336,3363,NULL,NULL
+336350,Motor Vehicle Transmission and Power Train Parts Manufacturing,31-33,336,3363,NULL,NULL
+336360,Motor Vehicle Seating and Interior Trim Manufacturing,31-33,336,3363,NULL,NULL
+336370,Motor Vehicle Metal Stamping,31-33,336,3363,NULL,NULL
+336390,Other Motor Vehicle Parts Manufacturing,31-33,336,3363,NULL,NULL
+336391,Motor Vehicle Air-Conditioning Manufacturing,31-33,336,3363,NULL,NULL
+336399,All Other Motor Vehicle Parts Manufacturing,31-33,336,3363,NULL,NULL
+3364,Aerospace Product and Parts Manufacturing,31-33,336,3364,NULL,NULL
+336411,Aircraft Manufacturing,31-33,336,3364,336411 Aircraft Manufacturing,336411 Aircraft Manufacturing
+336412,Aircraft Engine and Engine Parts Manufacturing,31-33,336,3364,NULL,NULL
+336413,Other Aircraft Parts and Auxiliary Equipment Manufacturing,31-33,336,3364,336413 Other Aircraft Parts Equip. Manuf.,336413 Other Aircraft Parts Equipment Manufacturing
+336414,Guided Missile and Space Vehicle Manufacturing,31-33,336,3364,NULL,NULL
+336415,Guided Missile and Space Vehicle Propulsion Unit and Propulsion Unit Parts Manufacturing,31-33,336,3364,NULL,NULL
+336419,Other Guided Missile and Space Vehicle Parts and Auxiliary Equipment Manufacturing,31-33,336,3364,NULL,NULL
+3365,Railroad Rolling Stock Manufacturing,31-33,336,3365,NULL,NULL
+33651,Railroad Rolling Stock Manufacturing,31-33,336,3365,NULL,NULL
+336510,Railroad Rolling Stock Manufacturing,31-33,336,3365,NULL,NULL
+3366,Ship and Boat Building,31-33,336,3366,NULL,NULL
+336611,Ship Building and Repairing,31-33,336,3366,NULL,NULL
+336612,Boat Building,31-33,336,3366,NULL,NULL
+3369,Other Transportation Equipment Manufacturing,31-33,336,3369,NULL,NULL
+336991,"Motorcycle, Bicycle, and Parts Manufacturing",31-33,336,3369,NULL,NULL
+336992,"Military Armored Vehicle, Tank, and Tank Component Manufacturing",31-33,336,3369,336992 Mil. Armored Veh. & Component Manufacturing,336992 Military Armored Vehicle & Component Manufacturing
+336999,All Other Transportation Equipment Manufacturing,31-33,336,3369,NULL,NULL
+337,Furniture and Related Product Manufacturing,31-33,337,NULL,NULL,NULL
+3371,Household and Institutional Furniture and Kitchen Cabinet Manufacturing,31-33,337,3371,NULL,NULL
+337110,Wood Kitchen Cabinet and Countertop Manufacturing,31-33,337,3371,NULL,NULL
+337121,Upholstered Household Furniture Manufacturing,31-33,337,3371,NULL,NULL
+337122,Nonupholstered Wood Household Furniture Manufacturing,31-33,337,3371,NULL,NULL
+337124,Metal Household Furniture Manufacturing,31-33,337,3371,NULL,NULL
+337125,Household Furniture (except Wood and Metal) Manufacturing,31-33,337,3371,NULL,NULL
+337127,Institutional Furniture Manufacturing,31-33,337,3371,NULL,NULL
+337129,"Wood Television, Radio, and Sewing Machine Cabinet Manufacturing",31-33,337,3371,NULL,NULL
+3372,Office Furniture (including Fixtures) Manufacturing,31-33,337,3372,NULL,NULL
+337211,Wood Office Furniture Manufacturing,31-33,337,3372,NULL,NULL
+337212,Custom Architectural Woodwork and Millwork Manufacturing,31-33,337,3372,NULL,NULL
+337214,Office Furniture (except Wood) Manufacturing,31-33,337,3372,NULL,NULL
+337215,"Showcase, Partition, Shelving, and Locker Manufacturing",31-33,337,3372,NULL,NULL
+3379,Other Furniture Related Product Manufacturing,31-33,337,3379,NULL,NULL
+337910,Mattress Manufacturing,31-33,337,3379,NULL,NULL
+337920,Blind and Shade Manufacturing,31-33,337,3379,NULL,NULL
+339,Miscellaneous Manufacturing,31-33,339,NULL,NULL,NULL
+3391,Medical Equipment and Supplies Manufacturing,31-33,339,3391,NULL,NULL
+33911,Medical Equipment and Supplies Manufacturing,31-33,339,3391,NULL,NULL
+339111,Laboratory Apparatus and Furniture Manufacturing,31-33,339,3391,NULL,NULL
+339112,Surgical and Medical Instrument Manufacturing,31-33,339,3391,NULL,NULL
+339113,Surgical Appliance and Supplies Manufacturing,31-33,339,3391,NULL,NULL
+339114,Dental Equipment and Supplies Manufacturing,31-33,339,3391,NULL,NULL
+339115,Ophthalmic Goods Manufacturing,31-33,339,3391,NULL,NULL
+339116,Dental Laboratories,31-33,339,3391,NULL,NULL
+3399,Other Miscellaneous Manufacturing,31-33,339,3399,NULL,NULL
+339910,Jewelry and Silverware Manufacturing,31-33,339,3399,NULL,NULL
+339911,Jewelry (Except Costume) Manufacturing,31-33,339,3399,NULL,NULL
+339912,Silverware and Hollowware Manufacturing,31-33,339,3399,NULL,NULL
+339913,Jewelers' Material and Lapidary Work Manufacturing,31-33,339,3399,NULL,NULL
+339914,Costume Jewelry and Novelty Manufacturing,31-33,339,3399,NULL,NULL
+339920,Sporting and Athletic Goods Manufacturing,31-33,339,3399,NULL,NULL
+339930,"Doll, Toy, and Game Manufacturing",31-33,339,3399,NULL,NULL
+339931,Doll and Stuffed Toy Manufacturing,31-33,339,3399,NULL,NULL
+339932,"Game, Toy, and Children'S Vehicle Manufacturing",31-33,339,3399,NULL,NULL
+33994,Office Supplies (except Paper) Manufacturing,31-33,339,3399,NULL,NULL
+339940,Office Supplies (except Paper) Manufacturing,31-33,339,3399,NULL,NULL
+339941,Pen and Mechanical Pencil Manufacturing,31-33,339,3399,NULL,NULL
+339942,Lead Pencil and Art Good Manufacturing,31-33,339,3399,NULL,NULL
+339943,Marking Device Manufacturing,31-33,339,3399,NULL,NULL
+339944,Carbon Paper and Inked Ribbon Manufacturing,31-33,339,3399,NULL,NULL
+339950,Sign Manufacturing,31-33,339,3399,NULL,NULL
+33999,All Other Miscellaneous Manufacturing,31-33,339,3399,NULL,NULL
+339991,"Gasket, Packing, and Sealing Device Manufacturing",31-33,339,3399,NULL,NULL
+339992,Musical Instrument Manufacturing,31-33,339,3399,NULL,NULL
+339993,"Fastener, Button, Needle, and Pin Manufacturing",31-33,339,3399,NULL,NULL
+339994,"Broom, Brush, and Mop Manufacturing",31-33,339,3399,NULL,NULL
+339995,Burial Casket Manufacturing,31-33,339,3399,NULL,NULL
+339999,All Other Miscellaneous Manufacturing,31-33,339,3399,NULL,NULL
 42,Wholesale Trade,42,NULL,NULL,NULL,NULL
 421,NULL,42,421,NULL,NULL,NULL
 421110,Automobile and Other Motor Vehicle Wholesalers,42,421,4211,NULL,NULL
@@ -1131,242 +1132,243 @@
 42511,Business to Business Electronic Markets,42,425,4251,NULL,NULL
 425110,Business to Business Electronic Markets,42,425,4251,NULL,NULL
 425120,Wholesale Trade Agents and Brokers,42,425,4251,NULL,NULL
-441,Motor Vehicle and Parts Dealers,44,441,NULL,NULL,NULL
-4411,Automobile Dealers,44,441,4411,NULL,NULL
-441110,New Car Dealers,44,441,4411,NULL,NULL
-441120,Used Car Dealers,44,441,4411,NULL,NULL
-4412,Other Motor Vehicle Dealers,44,441,4412,NULL,NULL
-44121,Recreational Vehicle Dealers,44,441,4412,NULL,NULL
-441210,Recreational Vehicle Dealers,44,441,4412,NULL,NULL
-44122,"Motorcycle, Boat, and Other Motor Vehicle Dealers",44,441,4412,NULL,NULL
-441221,Motorcycle Dealers,44,441,4412,NULL,NULL
-441222,Boat Dealers,44,441,4412,NULL,NULL
-441228,"Motorcycle, ATV, and All Other Motor Vehicle Dealers",44,441,4412,NULL,NULL
-441229,All Other Motor Vehicle Dealers,44,441,4412,NULL,NULL
-4413,"Automotive Parts, Accessories, and Tire Stores",44,441,4413,NULL,NULL
-44131,Automotive Parts and Accessories Stores,44,441,4413,NULL,NULL
-441310,Automotive Parts and Accessories Stores,44,441,4413,NULL,NULL
-441320,Tire Dealers,44,441,4413,NULL,NULL
-442,Furniture and Home Furnishings Stores,44,442,NULL,NULL,NULL
-4421,Furniture Stores,44,442,4421,NULL,NULL
-442110,Furniture Stores,44,442,4421,NULL,NULL
-4422,Home Furnishings Stores,44,442,4422,NULL,NULL
-44221,Floor Covering Stores,44,442,4422,NULL,NULL
-442210,Floor Covering Stores,44,442,4422,NULL,NULL
-442291,Window Treatment Stores,44,442,4422,NULL,NULL
-442299,All Other Home Furnishings Stores,44,442,4422,NULL,NULL
-443,Electronics and Appliance Stores,44,443,NULL,NULL,NULL
-4431,Electronics and Appliance Stores,44,443,4431,NULL,NULL
-443111,Household Appliance Stores,44,443,4431,NULL,NULL
-443112,"Radio, Television, and Other Electronics Stores",44,443,4431,NULL,NULL
-44312,Computer and Software Stores,44,443,4431,NULL,NULL
-443120,Computer and Software Stores,44,443,4431,NULL,NULL
-44313,Camera and Photographic Supplies Stores,44,443,4431,NULL,NULL
-443130,Camera and Photographic Supplies Stores,44,443,4431,NULL,NULL
-443141,Household Appliance Stores,44,443,4431,NULL,NULL
-443142,Electronics Stores,44,443,4431,NULL,NULL
-444,Building Material and Garden Equipment and Supplies Dealers,44,444,NULL,NULL,NULL
-4441,Building Material and Supplies Dealers,44,444,4441,NULL,NULL
-444110,Home Centers,44,444,4441,NULL,NULL
-444120,Paint and Wallpaper Stores,44,444,4441,NULL,NULL
-444130,Hardware Stores,44,444,4441,NULL,NULL
-444190,Other Building Material Dealers,44,444,4441,NULL,NULL
-4442,Lawn and Garden Equipment and Supplies Stores,44,444,4442,NULL,NULL
-444210,Outdoor Power Equipment Stores,44,444,4442,NULL,NULL
-444220,"Nursery, Garden Center, and Farm Supply Stores",44,444,4442,NULL,NULL
-445,Food and Beverage Stores,44,445,NULL,NULL,NULL
-4451,Grocery Stores,44,445,4451,NULL,NULL
-445110,Supermarkets and Other Grocery (except Convenience) Stores,44,445,4451,NULL,NULL
-445120,Convenience Stores,44,445,4451,NULL,NULL
-4452,Specialty Food Stores,44,445,4452,NULL,NULL
-445210,Meat Markets,44,445,4452,NULL,NULL
-445220,Fish and Seafood Markets,44,445,4452,NULL,NULL
-445230,Fruit and Vegetable Markets,44,445,4452,NULL,NULL
-445291,Baked Goods Stores,44,445,4452,NULL,NULL
-445292,Confectionery and Nut Stores,44,445,4452,NULL,NULL
-445299,All Other Specialty Food Stores,44,445,4452,NULL,NULL
-4453,"Beer, Wine, and Liquor Stores",44,445,4453,NULL,NULL
-445310,"Beer, Wine, and Liquor Stores",44,445,4453,NULL,NULL
-446,Health and Personal Care Stores,44,446,NULL,NULL,NULL
-4461,Health and Personal Care Stores,44,446,4461,NULL,NULL
-446110,Pharmacies and Drug Stores,44,446,4461,NULL,NULL
-446120,"Cosmetics, Beauty Supplies, and Perfume Stores",44,446,4461,NULL,NULL
-446130,Optical Goods Stores,44,446,4461,NULL,NULL
-446191,Food (Health) Supplement Stores,44,446,4461,NULL,NULL
-446199,All Other Health and Personal Care Stores,44,446,4461,NULL,NULL
-447,Gasoline Stations,44,447,NULL,NULL,NULL
-4471,Gasoline Stations,44,447,4471,NULL,NULL
-44711,Gasoline Stations with Convenience Stores,44,447,4471,NULL,NULL
-447110,Gasoline Stations with Convenience Stores,44,447,4471,NULL,NULL
-447190,Other Gasoline Stations,44,447,4471,NULL,NULL
-448,Clothing and Clothing Accessories Stores,44,448,NULL,NULL,NULL
-4481,Clothing Stores,44,448,4481,NULL,NULL
-448110,Men's Clothing Stores,44,448,4481,NULL,NULL
-448120,Women's Clothing Stores,44,448,4481,NULL,NULL
-448130,Children's and Infants' Clothing Stores,44,448,4481,NULL,NULL
-448140,Family Clothing Stores,44,448,4481,NULL,NULL
-448150,Clothing Accessories Stores,44,448,4481,NULL,NULL
-448190,Other Clothing Stores,44,448,4481,NULL,NULL
-4482,Shoe Stores,44,448,4482,NULL,NULL
-448210,Shoe Stores,44,448,4482,NULL,NULL
-4483,"Jewelry, Luggage, and Leather Goods Stores",44,448,4483,NULL,NULL
-448310,Jewelry Stores,44,448,4483,NULL,NULL
-448320,Luggage and Leather Goods Stores,44,448,4483,NULL,NULL
-451,"Sporting Goods, Hobby, Musical Instrument, and Book Stores",45,451,NULL,NULL,NULL
-4511,"Sporting Goods, Hobby, and Musical Instrument Stores",45,451,4511,NULL,NULL
-451110,Sporting Goods Stores,45,451,4511,NULL,NULL
-451120,"Hobby, Toy, and Game Stores",45,451,4511,NULL,NULL
-451130,"Sewing, Needlework, and Piece Goods Stores",45,451,4511,NULL,NULL
-451140,Musical Instrument and Supplies Stores,45,451,4511,NULL,NULL
-4512,Book Stores and News Dealers,45,451,4512,NULL,NULL
-451211,Book Stores,45,451,4512,NULL,NULL
-451212,News Dealers and Newsstands,45,451,4512,NULL,NULL
-451220,"Prerecorded Tape, Compact Disc, and Record Stores",45,451,4512,NULL,NULL
-452,General Merchandise Stores,45,452,NULL,NULL,NULL
-4521,Department Stores,45,452,4521,NULL,NULL
-452110,Department Stores,45,452,4521,NULL,NULL
-452111,Department Stores (except Discount Department Stores),45,452,4521,NULL,NULL
-452112,Discount Department Stores,45,452,4521,NULL,NULL
+44-45,Retail Trade,44-45,NULL,NULL,NULL,NULL
+441,Motor Vehicle and Parts Dealers,44-45,441,NULL,NULL,NULL
+4411,Automobile Dealers,44-45,441,4411,NULL,NULL
+441110,New Car Dealers,44-45,441,4411,NULL,NULL
+441120,Used Car Dealers,44-45,441,4411,NULL,NULL
+4412,Other Motor Vehicle Dealers,44-45,441,4412,NULL,NULL
+44121,Recreational Vehicle Dealers,44-45,441,4412,NULL,NULL
+441210,Recreational Vehicle Dealers,44-45,441,4412,NULL,NULL
+44122,"Motorcycle, Boat, and Other Motor Vehicle Dealers",44-45,441,4412,NULL,NULL
+441221,Motorcycle Dealers,44-45,441,4412,NULL,NULL
+441222,Boat Dealers,44-45,441,4412,NULL,NULL
+441228,"Motorcycle, ATV, and All Other Motor Vehicle Dealers",44-45,441,4412,NULL,NULL
+441229,All Other Motor Vehicle Dealers,44-45,441,4412,NULL,NULL
+4413,"Automotive Parts, Accessories, and Tire Stores",44-45,441,4413,NULL,NULL
+44131,Automotive Parts and Accessories Stores,44-45,441,4413,NULL,NULL
+441310,Automotive Parts and Accessories Stores,44-45,441,4413,NULL,NULL
+441320,Tire Dealers,44-45,441,4413,NULL,NULL
+442,Furniture and Home Furnishings Stores,44-45,442,NULL,NULL,NULL
+4421,Furniture Stores,44-45,442,4421,NULL,NULL
+442110,Furniture Stores,44-45,442,4421,NULL,NULL
+4422,Home Furnishings Stores,44-45,442,4422,NULL,NULL
+44221,Floor Covering Stores,44-45,442,4422,NULL,NULL
+442210,Floor Covering Stores,44-45,442,4422,NULL,NULL
+442291,Window Treatment Stores,44-45,442,4422,NULL,NULL
+442299,All Other Home Furnishings Stores,44-45,442,4422,NULL,NULL
+443,Electronics and Appliance Stores,44-45,443,NULL,NULL,NULL
+4431,Electronics and Appliance Stores,44-45,443,4431,NULL,NULL
+443111,Household Appliance Stores,44-45,443,4431,NULL,NULL
+443112,"Radio, Television, and Other Electronics Stores",44-45,443,4431,NULL,NULL
+44312,Computer and Software Stores,44-45,443,4431,NULL,NULL
+443120,Computer and Software Stores,44-45,443,4431,NULL,NULL
+44313,Camera and Photographic Supplies Stores,44-45,443,4431,NULL,NULL
+443130,Camera and Photographic Supplies Stores,44-45,443,4431,NULL,NULL
+443141,Household Appliance Stores,44-45,443,4431,NULL,NULL
+443142,Electronics Stores,44-45,443,4431,NULL,NULL
+444,Building Material and Garden Equipment and Supplies Dealers,44-45,444,NULL,NULL,NULL
+4441,Building Material and Supplies Dealers,44-45,444,4441,NULL,NULL
+444110,Home Centers,44-45,444,4441,NULL,NULL
+444120,Paint and Wallpaper Stores,44-45,444,4441,NULL,NULL
+444130,Hardware Stores,44-45,444,4441,NULL,NULL
+444190,Other Building Material Dealers,44-45,444,4441,NULL,NULL
+4442,Lawn and Garden Equipment and Supplies Stores,44-45,444,4442,NULL,NULL
+444210,Outdoor Power Equipment Stores,44-45,444,4442,NULL,NULL
+444220,"Nursery, Garden Center, and Farm Supply Stores",44-45,444,4442,NULL,NULL
+445,Food and Beverage Stores,44-45,445,NULL,NULL,NULL
+4451,Grocery Stores,44-45,445,4451,NULL,NULL
+445110,Supermarkets and Other Grocery (except Convenience) Stores,44-45,445,4451,NULL,NULL
+445120,Convenience Stores,44-45,445,4451,NULL,NULL
+4452,Specialty Food Stores,44-45,445,4452,NULL,NULL
+445210,Meat Markets,44-45,445,4452,NULL,NULL
+445220,Fish and Seafood Markets,44-45,445,4452,NULL,NULL
+445230,Fruit and Vegetable Markets,44-45,445,4452,NULL,NULL
+445291,Baked Goods Stores,44-45,445,4452,NULL,NULL
+445292,Confectionery and Nut Stores,44-45,445,4452,NULL,NULL
+445299,All Other Specialty Food Stores,44-45,445,4452,NULL,NULL
+4453,"Beer, Wine, and Liquor Stores",44-45,445,4453,NULL,NULL
+445310,"Beer, Wine, and Liquor Stores",44-45,445,4453,NULL,NULL
+446,Health and Personal Care Stores,44-45,446,NULL,NULL,NULL
+4461,Health and Personal Care Stores,44-45,446,4461,NULL,NULL
+446110,Pharmacies and Drug Stores,44-45,446,4461,NULL,NULL
+446120,"Cosmetics, Beauty Supplies, and Perfume Stores",44-45,446,4461,NULL,NULL
+446130,Optical Goods Stores,44-45,446,4461,NULL,NULL
+446191,Food (Health) Supplement Stores,44-45,446,4461,NULL,NULL
+446199,All Other Health and Personal Care Stores,44-45,446,4461,NULL,NULL
+447,Gasoline Stations,44-45,447,NULL,NULL,NULL
+4471,Gasoline Stations,44-45,447,4471,NULL,NULL
+44711,Gasoline Stations with Convenience Stores,44-45,447,4471,NULL,NULL
+447110,Gasoline Stations with Convenience Stores,44-45,447,4471,NULL,NULL
+447190,Other Gasoline Stations,44-45,447,4471,NULL,NULL
+448,Clothing and Clothing Accessories Stores,44-45,448,NULL,NULL,NULL
+4481,Clothing Stores,44-45,448,4481,NULL,NULL
+448110,Men's Clothing Stores,44-45,448,4481,NULL,NULL
+448120,Women's Clothing Stores,44-45,448,4481,NULL,NULL
+448130,Children's and Infants' Clothing Stores,44-45,448,4481,NULL,NULL
+448140,Family Clothing Stores,44-45,448,4481,NULL,NULL
+448150,Clothing Accessories Stores,44-45,448,4481,NULL,NULL
+448190,Other Clothing Stores,44-45,448,4481,NULL,NULL
+4482,Shoe Stores,44-45,448,4482,NULL,NULL
+448210,Shoe Stores,44-45,448,4482,NULL,NULL
+4483,"Jewelry, Luggage, and Leather Goods Stores",44-45,448,4483,NULL,NULL
+448310,Jewelry Stores,44-45,448,4483,NULL,NULL
+448320,Luggage and Leather Goods Stores,44-45,448,4483,NULL,NULL
+451,"Sporting Goods, Hobby, Musical Instrument, and Book Stores",44-45,451,NULL,NULL,NULL
+4511,"Sporting Goods, Hobby, and Musical Instrument Stores",44-45,451,4511,NULL,NULL
+451110,Sporting Goods Stores,44-45,451,4511,NULL,NULL
+451120,"Hobby, Toy, and Game Stores",44-45,451,4511,NULL,NULL
+451130,"Sewing, Needlework, and Piece Goods Stores",44-45,451,4511,NULL,NULL
+451140,Musical Instrument and Supplies Stores,44-45,451,4511,NULL,NULL
+4512,Book Stores and News Dealers,44-45,451,4512,NULL,NULL
+451211,Book Stores,44-45,451,4512,NULL,NULL
+451212,News Dealers and Newsstands,44-45,451,4512,NULL,NULL
+451220,"Prerecorded Tape, Compact Disc, and Record Stores",44-45,451,4512,NULL,NULL
+452,General Merchandise Stores,44-45,452,NULL,NULL,NULL
+4521,Department Stores,44-45,452,4521,NULL,NULL
+452110,Department Stores,44-45,452,4521,NULL,NULL
+452111,Department Stores (except Discount Department Stores),44-45,452,4521,NULL,NULL
+452112,Discount Department Stores,44-45,452,4521,NULL,NULL
 452311,Null,NULL,NULL,NULL,NULL,NULL
-4529,Other General Merchandise Stores,45,452,4529,NULL,NULL
-452910,Warehouse Clubs and Supercenters,45,452,4529,NULL,NULL
-452990,All Other General Merchandise Stores,45,452,4529,NULL,NULL
-453,Miscellaneous Store Retailers,45,453,NULL,NULL,NULL
-4531,Florists,45,453,4531,NULL,NULL
-453110,Florists,45,453,4531,NULL,NULL
-4532,"Office Supplies, Stationery, and Gift Stores",45,453,4532,NULL,NULL
-45321,Office Supplies and Stationery Stores,45,453,4532,NULL,NULL
-453210,Office Supplies and Stationery Stores,45,453,4532,NULL,NULL
-453220,"Gift, Novelty, and Souvenir Stores",45,453,4532,NULL,NULL
-4533,Used Merchandise Stores,45,453,4533,NULL,NULL
-453310,Used Merchandise Stores,45,453,4533,NULL,NULL
-4539,Other Miscellaneous Store Retailers,45,453,4539,NULL,NULL
-453910,Pet and Pet Supplies Stores,45,453,4539,NULL,NULL
-453920,Art Dealers,45,453,4539,NULL,NULL
-45393,Manufactured (Mobile) Home Dealers,45,453,4539,NULL,NULL
-453930,Manufactured (Mobile) Home Dealers,45,453,4539,NULL,NULL
-453991,Tobacco Stores,45,453,4539,NULL,NULL
-453998,All Other Miscellaneous Store Retailers (except Tobacco Stores),45,453,4539,NULL,NULL
-454,Nonstore Retailers,45,454,NULL,NULL,NULL
-4541,Electronic Shopping and Mail-Order Houses,45,454,4541,NULL,NULL
-454110,Electronic Shopping and Mail-Order Houses,45,454,4541,NULL,NULL
-454111,Electronic Shopping,45,454,4541,NULL,NULL
-454112,Electronic Auctions,45,454,4541,NULL,NULL
-454113,Mail-Order Houses,45,454,4541,NULL,NULL
-4542,Vending Machine Operators,45,454,4542,NULL,NULL
-454210,Vending Machine Operators,45,454,4542,NULL,NULL
-4543,Direct Selling Establishments,45,454,4543,NULL,NULL
-454310,Fuel Dealers,45,454,4543,NULL,NULL
-454311,Heating Oil Dealers,45,454,4543,NULL,NULL
-454312,Liquefied Petroleum Gas (Bottled Gas) Dealers,45,454,4543,NULL,NULL
-454319,Other Fuel Dealers,45,454,4543,NULL,NULL
-45439,Other Direct Selling Establishments,45,454,4543,NULL,NULL
-454390,Other Direct Selling Establishments,45,454,4543,NULL,NULL
-481,Air Transportation,48,481,NULL,NULL,NULL
-4811,Scheduled Air Transportation,48,481,4811,NULL,NULL
-481111,Scheduled Passenger Air Transportation,48,481,4811,NULL,NULL
-481112,Scheduled Freight Air Transportation,48,481,4811,NULL,NULL
-4812,Nonscheduled Air Transportation,48,481,4812,NULL,NULL
-481211,Nonscheduled Chartered Passenger Air Transportation,48,481,4812,NULL,NULL
-481212,Nonscheduled Chartered Freight Air Transportation,48,481,4812,NULL,NULL
-481219,Other Nonscheduled Air Transportation,48,481,4812,NULL,NULL
-482,Rail Transportation,48,482,NULL,NULL,NULL
-4821,Rail Transportation,48,482,4821,NULL,NULL
-48211,Rail Transportation,48,482,4821,NULL,NULL
-482111,Line-Haul Railroads,48,482,4821,NULL,NULL
-482112,Short Line Railroads,48,482,4821,NULL,NULL
-483,Water Transportation,48,483,NULL,NULL,NULL
-4831,"Deep Sea, Coastal, and Great Lakes Water Transportation",48,483,4831,NULL,NULL
-483111,Deep Sea Freight Transportation,48,483,4831,NULL,NULL
-483112,Deep Sea Passenger Transportation,48,483,4831,NULL,NULL
-483113,Coastal and Great Lakes Freight Transportation,48,483,4831,NULL,NULL
-483114,Coastal and Great Lakes Passenger Transportation,48,483,4831,NULL,NULL
-4832,Inland Water Transportation,48,483,4832,NULL,NULL
-483211,Inland Water Freight Transportation,48,483,4832,NULL,NULL
-483212,Inland Water Passenger Transportation,48,483,4832,NULL,NULL
-484,Truck Transportation,48,484,NULL,NULL,NULL
-4841,General Freight Trucking,48,484,4841,NULL,NULL
-484110,"General Freight Trucking, Local",48,484,4841,NULL,NULL
-484121,"General Freight Trucking, Long-Distance, Truckload",48,484,4841,NULL,NULL
-484122,"General Freight Trucking, Long-Distance, Less Than Truckload",48,484,4841,NULL,NULL
-4842,Specialized Freight Trucking,48,484,4842,NULL,NULL
-48421,Used Household and Office Goods Moving,48,484,4842,NULL,NULL
-484210,Used Household and Office Goods Moving,48,484,4842,NULL,NULL
-484220,"Specialized Freight (except Used Goods) Trucking, Local",48,484,4842,NULL,NULL
-48423,"Specialized Freight (except Used Goods) Trucking, Long-Distance",48,484,4842,NULL,NULL
-484230,"Specialized Freight (except Used Goods) Trucking, Long-Distance",48,484,4842,NULL,NULL
-485,Transit and Ground Passenger Transportation,48,485,NULL,NULL,NULL
-4851,Urban Transit Systems,48,485,4851,NULL,NULL
-485111,Mixed Mode Transit Systems,48,485,4851,NULL,NULL
-485112,Commuter Rail Systems,48,485,4851,NULL,NULL
-485113,Bus and Other Motor Vehicle Transit Systems,48,485,4851,NULL,NULL
-485119,Other Urban Transit Systems,48,485,4851,NULL,NULL
-4852,Interurban and Rural Bus Transportation,48,485,4852,NULL,NULL
-485210,Interurban and Rural Bus Transportation,48,485,4852,NULL,NULL
-4853,Taxi and Limousine Service,48,485,4853,NULL,NULL
-485310,Taxi Service,48,485,4853,NULL,NULL
-485320,Limousine Service,48,485,4853,NULL,NULL
-4854,School and Employee Bus Transportation,48,485,4854,NULL,NULL
-485410,School and Employee Bus Transportation,48,485,4854,NULL,NULL
-4855,Charter Bus Industry,48,485,4855,NULL,NULL
-48551,Charter Bus Industry,48,485,4855,NULL,NULL
-485510,Charter Bus Industry,48,485,4855,NULL,NULL
-4859,Other Transit and Ground Passenger Transportation,48,485,4859,NULL,NULL
-485991,Special Needs Transportation,48,485,4859,NULL,NULL
-485999,All Other Transit and Ground Passenger Transportation,48,485,4859,NULL,NULL
-486,Pipeline Transportation,48,486,NULL,NULL,NULL
-4861,Pipeline Transportation of Crude Oil,48,486,4861,NULL,NULL
-486110,Pipeline Transportation of Crude Oil,48,486,4861,NULL,NULL
-4862,Pipeline Transportation of Natural Gas,48,486,4862,NULL,NULL
-486210,Pipeline Transportation of Natural Gas,48,486,4862,NULL,NULL
-4869,Other Pipeline Transportation,48,486,4869,NULL,NULL
-486910,Pipeline Transportation of Refined Petroleum Products,48,486,4869,NULL,NULL
-486990,All Other Pipeline Transportation,48,486,4869,NULL,NULL
-487,Scenic and Sightseeing Transportation,48,487,NULL,NULL,NULL
-4871,"Scenic and Sightseeing Transportation, Land",48,487,4871,NULL,NULL
-487110,"Scenic and Sightseeing Transportation, Land",48,487,4871,NULL,NULL
-4872,"Scenic and Sightseeing Transportation, Water",48,487,4872,NULL,NULL
-487210,"Scenic and Sightseeing Transportation, Water",48,487,4872,NULL,NULL
-4879,"Scenic and Sightseeing Transportation, Other",48,487,4879,NULL,NULL
-487990,"Scenic and Sightseeing Transportation, Other",48,487,4879,NULL,NULL
-488,Support Activities for Transportation,48,488,NULL,NULL,NULL
-4881,Support Activities for Air Transportation,48,488,4881,NULL,NULL
-488111,Air Traffic Control,48,488,4881,NULL,NULL
-488119,Other Airport Operations,48,488,4881,NULL,NULL
-488190,Other Support Activities for Air Transportation,48,488,4881,NULL,NULL
-4882,Support Activities for Rail Transportation,48,488,4882,NULL,NULL
-488210,Support Activities for Rail Transportation,48,488,4882,NULL,NULL
-4883,Support Activities for Water Transportation,48,488,4883,NULL,NULL
-488310,Port and Harbor Operations,48,488,4883,NULL,NULL
-488320,Marine Cargo Handling,48,488,4883,NULL,NULL
-488330,Navigational Services to Shipping,48,488,4883,NULL,NULL
-488390,Other Support Activities for Water Transportation,48,488,4883,NULL,NULL
-4884,Support Activities for Road Transportation,48,488,4884,NULL,NULL
-488410,Motor Vehicle Towing,48,488,4884,NULL,NULL
-48849,Other Support Activities for Road Transportation,48,488,4884,NULL,NULL
-488490,Other Support Activities for Road Transportation,48,488,4884,NULL,NULL
-4885,Freight Transportation Arrangement,48,488,4885,NULL,NULL
-488510,Freight Transportation Arrangement,48,488,4885,NULL,NULL
-4889,Other Support Activities for Transportation,48,488,4889,NULL,NULL
-48899,Other Support Activities for Transportation,48,488,4889,NULL,NULL
-488991,Packing and Crating,48,488,4889,NULL,NULL
-488999,All Other Support Activities for Transportation,48,488,4889,NULL,NULL
-491,Postal Service,49,491,NULL,NULL,NULL
-4911,Postal Service,49,491,4911,NULL,NULL
-491110,Postal Service,49,491,4911,NULL,NULL
-492,Couriers and Messengers,49,492,NULL,NULL,NULL
-4921,Couriers and Express Delivery Services,49,492,4921,NULL,NULL
-49211,Couriers and Express Delivery Services,49,492,4921,NULL,NULL
-492110,Couriers and Express Delivery Services,49,492,4921,NULL,NULL
-4922,Local Messengers and Local Delivery,49,492,4922,NULL,NULL
-492210,Local Messengers and Local Delivery,49,492,4922,NULL,NULL
-493,Warehousing and Storage,49,493,NULL,NULL,NULL
-4931,Warehousing and Storage,49,493,4931,NULL,NULL
-49311,General Warehousing and Storage,49,493,4931,NULL,NULL
-493110,General Warehousing and Storage,49,493,4931,NULL,NULL
-493120,Refrigerated Warehousing and Storage,49,493,4931,NULL,NULL
-493130,Farm Product Warehousing and Storage,49,493,4931,NULL,NULL
-493190,Other Warehousing and Storage,49,493,4931,NULL,NULL
+4529,Other General Merchandise Stores,44-45,452,4529,NULL,NULL
+452910,Warehouse Clubs and Supercenters,44-45,452,4529,NULL,NULL
+452990,All Other General Merchandise Stores,44-45,452,4529,NULL,NULL
+453,Miscellaneous Store Retailers,44-45,453,NULL,NULL,NULL
+4531,Florists,44-45,453,4531,NULL,NULL
+453110,Florists,44-45,453,4531,NULL,NULL
+4532,"Office Supplies, Stationery, and Gift Stores",44-45,453,4532,NULL,NULL
+45321,Office Supplies and Stationery Stores,44-45,453,4532,NULL,NULL
+453210,Office Supplies and Stationery Stores,44-45,453,4532,NULL,NULL
+453220,"Gift, Novelty, and Souvenir Stores",44-45,453,4532,NULL,NULL
+4533,Used Merchandise Stores,44-45,453,4533,NULL,NULL
+453310,Used Merchandise Stores,44-45,453,4533,NULL,NULL
+4539,Other Miscellaneous Store Retailers,44-45,453,4539,NULL,NULL
+453910,Pet and Pet Supplies Stores,44-45,453,4539,NULL,NULL
+453920,Art Dealers,44-45,453,4539,NULL,NULL
+45393,Manufactured (Mobile) Home Dealers,44-45,453,4539,NULL,NULL
+453930,Manufactured (Mobile) Home Dealers,44-45,453,4539,NULL,NULL
+453991,Tobacco Stores,44-45,453,4539,NULL,NULL
+453998,All Other Miscellaneous Store Retailers (except Tobacco Stores),44-45,453,4539,NULL,NULL
+454,Nonstore Retailers,44-45,454,NULL,NULL,NULL
+4541,Electronic Shopping and Mail-Order Houses,44-45,454,4541,NULL,NULL
+454110,Electronic Shopping and Mail-Order Houses,44-45,454,4541,NULL,NULL
+454111,Electronic Shopping,44-45,454,4541,NULL,NULL
+454112,Electronic Auctions,44-45,454,4541,NULL,NULL
+454113,Mail-Order Houses,44-45,454,4541,NULL,NULL
+4542,Vending Machine Operators,44-45,454,4542,NULL,NULL
+454210,Vending Machine Operators,44-45,454,4542,NULL,NULL
+4543,Direct Selling Establishments,44-45,454,4543,NULL,NULL
+454310,Fuel Dealers,44-45,454,4543,NULL,NULL
+454311,Heating Oil Dealers,44-45,454,4543,NULL,NULL
+454312,Liquefied Petroleum Gas (Bottled Gas) Dealers,44-45,454,4543,NULL,NULL
+454319,Other Fuel Dealers,44-45,454,4543,NULL,NULL
+45439,Other Direct Selling Establishments,44-45,454,4543,NULL,NULL
+454390,Other Direct Selling Establishments,44-45,454,4543,NULL,NULL
+481,Air Transportation,48-49,481,NULL,NULL,NULL
+4811,Scheduled Air Transportation,48-49,481,4811,NULL,NULL
+481111,Scheduled Passenger Air Transportation,48-49,481,4811,NULL,NULL
+481112,Scheduled Freight Air Transportation,48-49,481,4811,NULL,NULL
+4812,Nonscheduled Air Transportation,48-49,481,4812,NULL,NULL
+481211,Nonscheduled Chartered Passenger Air Transportation,48-49,481,4812,NULL,NULL
+481212,Nonscheduled Chartered Freight Air Transportation,48-49,481,4812,NULL,NULL
+481219,Other Nonscheduled Air Transportation,48-49,481,4812,NULL,NULL
+482,Rail Transportation,48-49,482,NULL,NULL,NULL
+4821,Rail Transportation,48-49,482,4821,NULL,NULL
+48211,Rail Transportation,48-49,482,4821,NULL,NULL
+482111,Line-Haul Railroads,48-49,482,4821,NULL,NULL
+482112,Short Line Railroads,48-49,482,4821,NULL,NULL
+483,Water Transportation,48-49,483,NULL,NULL,NULL
+4831,"Deep Sea, Coastal, and Great Lakes Water Transportation",48-49,483,4831,NULL,NULL
+483111,Deep Sea Freight Transportation,48-49,483,4831,NULL,NULL
+483112,Deep Sea Passenger Transportation,48-49,483,4831,NULL,NULL
+483113,Coastal and Great Lakes Freight Transportation,48-49,483,4831,NULL,NULL
+483114,Coastal and Great Lakes Passenger Transportation,48-49,483,4831,NULL,NULL
+4832,Inland Water Transportation,48-49,483,4832,NULL,NULL
+483211,Inland Water Freight Transportation,48-49,483,4832,NULL,NULL
+483212,Inland Water Passenger Transportation,48-49,483,4832,NULL,NULL
+484,Truck Transportation,48-49,484,NULL,NULL,NULL
+4841,General Freight Trucking,48-49,484,4841,NULL,NULL
+484110,"General Freight Trucking, Local",48-49,484,4841,NULL,NULL
+484121,"General Freight Trucking, Long-Distance, Truckload",48-49,484,4841,NULL,NULL
+484122,"General Freight Trucking, Long-Distance, Less Than Truckload",48-49,484,4841,NULL,NULL
+4842,Specialized Freight Trucking,48-49,484,4842,NULL,NULL
+48421,Used Household and Office Goods Moving,48-49,484,4842,NULL,NULL
+484210,Used Household and Office Goods Moving,48-49,484,4842,NULL,NULL
+484220,"Specialized Freight (except Used Goods) Trucking, Local",48-49,484,4842,NULL,NULL
+48423,"Specialized Freight (except Used Goods) Trucking, Long-Distance",48-49,484,4842,NULL,NULL
+484230,"Specialized Freight (except Used Goods) Trucking, Long-Distance",48-49,484,4842,NULL,NULL
+485,Transit and Ground Passenger Transportation,48-49,485,NULL,NULL,NULL
+4851,Urban Transit Systems,48-49,485,4851,NULL,NULL
+485111,Mixed Mode Transit Systems,48-49,485,4851,NULL,NULL
+485112,Commuter Rail Systems,48-49,485,4851,NULL,NULL
+485113,Bus and Other Motor Vehicle Transit Systems,48-49,485,4851,NULL,NULL
+485119,Other Urban Transit Systems,48-49,485,4851,NULL,NULL
+4852,Interurban and Rural Bus Transportation,48-49,485,4852,NULL,NULL
+485210,Interurban and Rural Bus Transportation,48-49,485,4852,NULL,NULL
+4853,Taxi and Limousine Service,48-49,485,4853,NULL,NULL
+485310,Taxi Service,48-49,485,4853,NULL,NULL
+485320,Limousine Service,48-49,485,4853,NULL,NULL
+4854,School and Employee Bus Transportation,48-49,485,4854,NULL,NULL
+485410,School and Employee Bus Transportation,48-49,485,4854,NULL,NULL
+4855,Charter Bus Industry,48-49,485,4855,NULL,NULL
+48551,Charter Bus Industry,48-49,485,4855,NULL,NULL
+485510,Charter Bus Industry,48-49,485,4855,NULL,NULL
+4859,Other Transit and Ground Passenger Transportation,48-49,485,4859,NULL,NULL
+485991,Special Needs Transportation,48-49,485,4859,NULL,NULL
+485999,All Other Transit and Ground Passenger Transportation,48-49,485,4859,NULL,NULL
+486,Pipeline Transportation,48-49,486,NULL,NULL,NULL
+4861,Pipeline Transportation of Crude Oil,48-49,486,4861,NULL,NULL
+486110,Pipeline Transportation of Crude Oil,48-49,486,4861,NULL,NULL
+4862,Pipeline Transportation of Natural Gas,48-49,486,4862,NULL,NULL
+486210,Pipeline Transportation of Natural Gas,48-49,486,4862,NULL,NULL
+4869,Other Pipeline Transportation,48-49,486,4869,NULL,NULL
+486910,Pipeline Transportation of Refined Petroleum Products,48-49,486,4869,NULL,NULL
+486990,All Other Pipeline Transportation,48-49,486,4869,NULL,NULL
+487,Scenic and Sightseeing Transportation,48-49,487,NULL,NULL,NULL
+4871,"Scenic and Sightseeing Transportation, Land",48-49,487,4871,NULL,NULL
+487110,"Scenic and Sightseeing Transportation, Land",48-49,487,4871,NULL,NULL
+4872,"Scenic and Sightseeing Transportation, Water",48-49,487,4872,NULL,NULL
+487210,"Scenic and Sightseeing Transportation, Water",48-49,487,4872,NULL,NULL
+4879,"Scenic and Sightseeing Transportation, Other",48-49,487,4879,NULL,NULL
+487990,"Scenic and Sightseeing Transportation, Other",48-49,487,4879,NULL,NULL
+488,Support Activities for Transportation,48-49,488,NULL,NULL,NULL
+4881,Support Activities for Air Transportation,48-49,488,4881,NULL,NULL
+488111,Air Traffic Control,48-49,488,4881,NULL,NULL
+488119,Other Airport Operations,48-49,488,4881,NULL,NULL
+488190,Other Support Activities for Air Transportation,48-49,488,4881,NULL,NULL
+4882,Support Activities for Rail Transportation,48-49,488,4882,NULL,NULL
+488210,Support Activities for Rail Transportation,48-49,488,4882,NULL,NULL
+4883,Support Activities for Water Transportation,48-49,488,4883,NULL,NULL
+488310,Port and Harbor Operations,48-49,488,4883,NULL,NULL
+488320,Marine Cargo Handling,48-49,488,4883,NULL,NULL
+488330,Navigational Services to Shipping,48-49,488,4883,NULL,NULL
+488390,Other Support Activities for Water Transportation,48-49,488,4883,NULL,NULL
+4884,Support Activities for Road Transportation,48-49,488,4884,NULL,NULL
+488410,Motor Vehicle Towing,48-49,488,4884,NULL,NULL
+48849,Other Support Activities for Road Transportation,48-49,488,4884,NULL,NULL
+488490,Other Support Activities for Road Transportation,48-49,488,4884,NULL,NULL
+4885,Freight Transportation Arrangement,48-49,488,4885,NULL,NULL
+488510,Freight Transportation Arrangement,48-49,488,4885,NULL,NULL
+4889,Other Support Activities for Transportation,48-49,488,4889,NULL,NULL
+48899,Other Support Activities for Transportation,48-49,488,4889,NULL,NULL
+488991,Packing and Crating,48-49,488,4889,NULL,NULL
+488999,All Other Support Activities for Transportation,48-49,488,4889,NULL,NULL
+491,Postal Service,48-49,491,NULL,NULL,NULL
+4911,Postal Service,48-49,491,4911,NULL,NULL
+491110,Postal Service,48-49,491,4911,NULL,NULL
+492,Couriers and Messengers,48-49,492,NULL,NULL,NULL
+4921,Couriers and Express Delivery Services,48-49,492,4921,NULL,NULL
+49211,Couriers and Express Delivery Services,48-49,492,4921,NULL,NULL
+492110,Couriers and Express Delivery Services,48-49,492,4921,NULL,NULL
+4922,Local Messengers and Local Delivery,48-49,492,4922,NULL,NULL
+492210,Local Messengers and Local Delivery,48-49,492,4922,NULL,NULL
+493,Warehousing and Storage,48-49,493,NULL,NULL,NULL
+4931,Warehousing and Storage,48-49,493,4931,NULL,NULL
+49311,General Warehousing and Storage,48-49,493,4931,NULL,NULL
+493110,General Warehousing and Storage,48-49,493,4931,NULL,NULL
+493120,Refrigerated Warehousing and Storage,48-49,493,4931,NULL,NULL
+493130,Farm Product Warehousing and Storage,48-49,493,4931,NULL,NULL
+493190,Other Warehousing and Storage,48-49,493,4931,NULL,NULL
 51,Information,51,NULL,NULL,NULL,NULL
 511,Publishing Industries (except Internet),51,511,NULL,NULL,NULL
 5111,"Newspaper, Periodical, Book, and Directory Publishers",51,511,5111,NULL,NULL
@@ -2076,163 +2078,163 @@ UNK   ,Unknown                                                     ,NULL,NULL,NU
 23839,Other Building Finishing Contractors,23,238,2383,NULL,NULL
 23891,Site Preparation Contractors,23,238,2389,NULL,NULL
 31-33,Manufacturing,NULL,NULL,NULL,NULL,NULL
-31111,Animal Food Manufacturing,31,311,3111,NULL,NULL
-31121,Flour Milling and Malt Manufacturing,31,311,3112,NULL,NULL
-31122,Starch and Vegetable Fats and Oils Manufacturing,31,311,3112,NULL,NULL
-31123,Breakfast Cereal Manufacturing,31,311,3112,NULL,NULL
-31131,Sugar Manufacturing,31,311,3113,NULL,NULL
-31134,Nonchocolate Confectionery Manufacturing,31,311,3113,NULL,NULL
-31135,Chocolate and Confectionery Manufacturing,31,311,3113,NULL,NULL
-31141,Frozen Food Manufacturing,31,311,3114,NULL,NULL
-31142,"Fruit and Vegetable Canning, Pickling, and Drying",31,311,3114,NULL,NULL
-31151,Dairy Product (except Frozen) Manufacturing,31,311,3115,NULL,NULL
-31152,Ice Cream and Frozen Dessert Manufacturing,31,311,3115,NULL,NULL
-31171,Seafood Product Preparation and Packaging,31,311,3117,NULL,NULL
-31182,"Cookie, Cracker, and Pasta Manufacturing",31,311,3118,NULL,NULL
-31183,Tortilla Manufacturing,31,311,3118,NULL,NULL
-31191,Snack Food Manufacturing,31,311,3119,NULL,NULL
-31192,Coffee and Tea Manufacturing,31,311,3119,NULL,NULL
-31193,Flavoring Syrup and Concentrate Manufacturing,31,311,3119,NULL,NULL
-31194,Seasoning and Dressing Manufacturing,31,311,3119,NULL,NULL
-31199,All Other Food Manufacturing,31,311,3119,NULL,NULL
-31211,Soft Drink and Ice Manufacturing,31,312,3121,NULL,NULL
-31212,Breweries,31,312,3121,NULL,NULL
-31213,Wineries,31,312,3121,NULL,NULL
-31214,Distilleries,31,312,3121,NULL,NULL
-31223,Tobacco Manufacturing,31,312,3122,NULL,NULL
-31311,"Fiber, Yarn, and Thread Mills",31,313,3131,NULL,NULL
-31321,Broadwoven Fabric Mills,31,313,3132,NULL,NULL
-31322,Narrow Fabric Mills and Schiffli Machine Embroidery,31,313,3132,NULL,NULL
-31323,Nonwoven Fabric Mills,31,313,3132,NULL,NULL
-31324,Knit Fabric Mills,31,313,3132,NULL,NULL
-31331,Textile and Fabric Finishing Mills,31,313,3133,NULL,NULL
-31332,Fabric Coating Mills,31,313,3133,NULL,NULL
-31411,Carpet and Rug Mills,31,314,3141,NULL,NULL
-31412,Curtain and Linen Mills,31,314,3141,NULL,NULL
-31491,Textile Bag and Canvas Mills,31,314,3149,NULL,NULL
-31511,Hosiery and Sock Mills,31,315,3151,NULL,NULL
-31519,Other Apparel Knitting Mills,31,315,3151,NULL,NULL
-31521,Cut and Sew Apparel Contractors,31,315,3152,NULL,NULL
-31522,MenÆs and BoysÆ Cut and Sew Apparel Manufacturing,31,315,3152,NULL,NULL
-31524,"WomenÆs, GirlsÆ, and InfantsÆ Cut and Sew Apparel Manufacturing",31,315,3152,NULL,NULL
-31528,Other Cut and Sew Apparel Manufacturing,31,315,3152,NULL,NULL
-31599,Apparel Accessories and Other Apparel Manufacturing,31,315,3159,NULL,NULL
-31611,Leather and Hide Tanning and Finishing,31,316,3161,NULL,NULL
-31621,Footwear Manufacturing,31,316,3162,NULL,NULL
-31699,Other Leather and Allied Product Manufacturing,31,316,3169,NULL,NULL
-32111,Sawmills and Wood Preservation,32,321,3211,NULL,NULL
-32121,"Veneer, Plywood, and Engineered Wood Product Manufacturing",32,321,3212,NULL,NULL
-32191,Millwork,32,321,3219,NULL,NULL
-32192,Wood Container and Pallet Manufacturing,32,321,3219,NULL,NULL
-32199,All Other Wood Product Manufacturing,32,321,3219,NULL,NULL
-32211,Pulp Mills,32,322,3221,NULL,NULL
-32212,Paper Mills,32,322,3221,NULL,NULL
-32213,Paperboard Mills,32,322,3221,NULL,NULL
-32221,Paperboard Container Manufacturing,32,322,3222,NULL,NULL
-32222,Paper Bag and Coated and Treated Paper Manufacturing,32,322,3222,NULL,NULL
-32223,Stationery Product Manufacturing,32,322,3222,NULL,NULL
-32229,Other Converted Paper Product Manufacturing,32,322,3222,NULL,NULL
-32311,Printing,32,323,3231,NULL,NULL
-32312,Support Activities for Printing,32,323,3231,NULL,NULL
-32411,Petroleum Refineries,32,324,3241,NULL,NULL
-32412,"Asphalt Paving, Roofing, and Saturated Materials Manufacturing",32,324,3241,NULL,NULL
-32419,Other Petroleum and Coal Products Manufacturing,32,324,3241,NULL,NULL
-32511,Petrochemical Manufacturing,32,325,3251,NULL,NULL
-32512,Industrial Gas Manufacturing,32,325,3251,NULL,NULL
-32513,Synthetic Dye and Pigment Manufacturing,32,325,3251,NULL,NULL
-32518,Other Basic Inorganic Chemical Manufacturing,32,325,3251,NULL,NULL
-32519,Other Basic Organic Chemical Manufacturing,32,325,3251,NULL,NULL
-32521,Resin and Synthetic Rubber Manufacturing,32,325,3252,NULL,NULL
-32522,Artificial and Synthetic Fibers and Filaments Manufacturing,32,325,3252,NULL,NULL
-32531,Fertilizer Manufacturing,32,325,3253,NULL,NULL
-32541,Pharmaceutical and Medicine Manufacturing,32,325,3254,NULL,NULL
-32551,Paint and Coating Manufacturing,32,325,3255,NULL,NULL
-32552,Adhesive Manufacturing,32,325,3255,NULL,NULL
-32561,Soap and Cleaning Compound Manufacturing,32,325,3256,NULL,NULL
-32562,Toilet Preparation Manufacturing,32,325,3256,NULL,NULL
-32591,Printing Ink Manufacturing,32,325,3259,NULL,NULL
-32592,Explosives Manufacturing,32,325,3259,NULL,NULL
-32599,All Other Chemical Product and Preparation Manufacturing,32,325,3259,NULL,NULL
-32611,Plastics Packaging Materials and Unlaminated Film and Sheet Manufacturing,32,326,3261,NULL,NULL
-32612,"Plastics Pipe, Pipe Fitting, and Unlaminated Profile Shape Manufacturing",32,326,3261,NULL,NULL
-32613,"Laminated Plastics Plate, Sheet (except Packaging), and Shape Manufacturing",32,326,3261,NULL,NULL
-32614,Polystyrene Foam Product Manufacturing,32,326,3261,NULL,NULL
-32615,Urethane and Other Foam Product (except Polystyrene) Manufacturing,32,326,3261,NULL,NULL
-32616,Plastics Bottle Manufacturing,32,326,3261,NULL,NULL
-32619,Other Plastics Product Manufacturing,32,326,3261,NULL,NULL
-32621,Tire Manufacturing,32,326,3262,NULL,NULL
-32622,Rubber and Plastics Hoses and Belting Manufacturing,32,326,3262,NULL,NULL
-32629,Other Rubber Product Manufacturing,32,326,3262,NULL,NULL
-32711,"Pottery, Ceramics, and Plumbing Fixture Manufacturing",32,327,3271,NULL,NULL
-32712,Clay Building Material and Refractories Manufacturing,32,327,3271,NULL,NULL
-32721,Glass and Glass Product Manufacturing,32,327,3272,NULL,NULL
-32731,Cement Manufacturing,32,327,3273,NULL,NULL
-32732,Ready-Mix Concrete Manufacturing,32,327,3273,NULL,NULL
-32733,"Concrete Pipe, Brick, and Block Manufacturing",32,327,3273,NULL,NULL
-32741,Lime Manufacturing,32,327,3274,NULL,NULL
-32742,Gypsum Product Manufacturing,32,327,3274,NULL,NULL
-32791,Abrasive Product Manufacturing,32,327,3279,NULL,NULL
-32799,All Other Nonmetallic Mineral Product Manufacturing,32,327,3279,NULL,NULL
-33111,Iron and Steel Mills and Ferroalloy Manufacturing,33,331,3311,NULL,NULL
-33122,Rolling and Drawing of Purchased Steel,33,331,3312,NULL,NULL
-33131,Alumina and Aluminum Production and Processing,33,331,3313,NULL,NULL
-33141,Nonferrous Metal (except Aluminum) Smelting and Refining,33,331,3314,NULL,NULL
-33142,"Copper Rolling, Drawing, Extruding, and Alloying",33,331,3314,NULL,NULL
-33149,"Nonferrous Metal (except Copper and Aluminum) Rolling, Drawing, Extruding, and Alloying",33,331,3314,NULL,NULL
-33151,Ferrous Metal Foundries,33,331,3315,NULL,NULL
-33152,Nonferrous Metal Foundries,33,331,3315,NULL,NULL
-33211,Forging and Stamping,33,332,3321,NULL,NULL
-33221,Cutlery and Handtool Manufacturing,33,332,3322,NULL,NULL
-33231,Plate Work and Fabricated Structural Product Manufacturing,33,332,3323,NULL,NULL
-33232,Ornamental and Architectural Metal Products Manufacturing,33,332,3323,NULL,NULL
-33241,Power Boiler and Heat Exchanger Manufacturing,33,332,3324,NULL,NULL
-33243,"Metal Can, Box, and Other Metal Container (Light Gauge) Manufacturing",33,332,3324,NULL,NULL
-33261,Spring and Wire Product Manufacturing,33,332,3326,NULL,NULL
-33272,"Turned Product and Screw, Nut, and Bolt Manufacturing",33,332,3327,NULL,NULL
-33281,"Coating, Engraving, Heat Treating, and Allied Activities",33,332,3328,NULL,NULL
-33291,Metal Valve Manufacturing,33,332,3329,NULL,NULL
-33299,All Other Fabricated Metal Product Manufacturing,33,332,3329,NULL,NULL
-33311,Agricultural Implement Manufacturing,33,333,3331,NULL,NULL
-33313,Mining and Oil and Gas Field Machinery Manufacturing,33,333,3331,NULL,NULL
-33324,Industrial Machinery Manufacturing,33,333,3332,NULL,NULL
-33331,Commercial and Service Industry Machinery Manufacturing,33,333,3333,NULL,NULL
-33341,"Ventilation, Heating, Air-Conditioning, and Commercial Refrigeration Equipment Manufacturing",33,333,3334,NULL,NULL
-33351,Metalworking Machinery Manufacturing,33,333,3335,NULL,NULL
-33361,"Engine, Turbine, and Power Transmission Equipment Manufacturing",33,333,3336,NULL,NULL
-33391,Pump and Compressor Manufacturing,33,333,3339,NULL,NULL
-33392,Material Handling Equipment Manufacturing,33,333,3339,NULL,NULL
-33399,All Other General Purpose Machinery Manufacturing,33,333,3339,NULL,NULL
-33441,Semiconductor and Other Electronic Component Manufacturing,33,334,3344,NULL,NULL
-33451,"Navigational, Measuring, Electromedical, and Control Instruments Manufacturing",33,334,3345,NULL,NULL
-33461,Manufacturing and Reproducing Magnetic and Optical Media,33,334,3346,NULL,NULL
-33511,Electric Lamp Bulb and Part Manufacturing,33,335,3351,NULL,NULL
-33512,Lighting Fixture Manufacturing,33,335,3351,NULL,NULL
-33521,Small Electrical Appliance Manufacturing,33,335,3352,NULL,NULL
-33522,Major Appliance Manufacturing,33,335,3352,NULL,NULL
-33591,Battery Manufacturing,33,335,3359,NULL,NULL
-33592,Communication and Energy Wire and Cable Manufacturing,33,335,3359,NULL,NULL
-33593,Wiring Device Manufacturing,33,335,3359,NULL,NULL
-33599,All Other Electrical Equipment and Component Manufacturing,33,335,3359,NULL,NULL
-33631,Motor Vehicle Gasoline Engine and Engine Parts Manufacturing,33,336,3363,NULL,NULL
-33632,Motor Vehicle Electrical and Electronic Equipment Manufacturing,33,336,3363,NULL,NULL
-33633,Motor Vehicle Steering and Suspension Components (except Spring) Manufacturing,33,336,3363,NULL,NULL
-33634,Motor Vehicle Brake System Manufacturing,33,336,3363,NULL,NULL
-33635,Motor Vehicle Transmission and Power Train Parts Manufacturing,33,336,3363,NULL,NULL
-33636,Motor Vehicle Seating and Interior Trim Manufacturing,33,336,3363,NULL,NULL
-33637,Motor Vehicle Metal Stamping,33,336,3363,NULL,NULL
-33639,Other Motor Vehicle Parts Manufacturing,33,336,3363,NULL,NULL
-33641,Aerospace Product and Parts Manufacturing,33,336,3364,NULL,NULL
-33661,Ship and Boat Building,33,336,3366,NULL,NULL
-33699,Other Transportation Equipment Manufacturing,33,336,3369,NULL,NULL
-33711,Wood Kitchen Cabinet and Countertop Manufacturing,33,337,3371,NULL,NULL
-33712,Household and Institutional Furniture Manufacturing,33,337,3371,NULL,NULL
-33721,Office Furniture (including Fixtures) Manufacturing,33,337,3372,NULL,NULL
-33791,Mattress Manufacturing,33,337,3379,NULL,NULL
-33792,Blind and Shade Manufacturing,33,337,3379,NULL,NULL
-33991,Jewelry and Silverware Manufacturing,33,339,3399,NULL,NULL
-33992,Sporting and Athletic Goods Manufacturing,33,339,3399,NULL,NULL
-33993,"Doll, Toy, and Game Manufacturing",33,339,3399,NULL,NULL
-33995,Sign Manufacturing,33,339,3399,NULL,NULL
+31111,Animal Food Manufacturing,31-33,311,3111,NULL,NULL
+31121,Flour Milling and Malt Manufacturing,31-33,311,3112,NULL,NULL
+31122,Starch and Vegetable Fats and Oils Manufacturing,31-33,311,3112,NULL,NULL
+31123,Breakfast Cereal Manufacturing,31-33,311,3112,NULL,NULL
+31131,Sugar Manufacturing,31-33,311,3113,NULL,NULL
+31134,Nonchocolate Confectionery Manufacturing,31-33,311,3113,NULL,NULL
+31135,Chocolate and Confectionery Manufacturing,31-33,311,3113,NULL,NULL
+31141,Frozen Food Manufacturing,31-33,311,3114,NULL,NULL
+31142,"Fruit and Vegetable Canning, Pickling, and Drying",31-33,311,3114,NULL,NULL
+31151,Dairy Product (except Frozen) Manufacturing,31-33,311,3115,NULL,NULL
+31152,Ice Cream and Frozen Dessert Manufacturing,31-33,311,3115,NULL,NULL
+31171,Seafood Product Preparation and Packaging,31-33,311,3117,NULL,NULL
+31182,"Cookie, Cracker, and Pasta Manufacturing",31-33,311,3118,NULL,NULL
+31183,Tortilla Manufacturing,31-33,311,3118,NULL,NULL
+31191,Snack Food Manufacturing,31-33,311,3119,NULL,NULL
+31192,Coffee and Tea Manufacturing,31-33,311,3119,NULL,NULL
+31193,Flavoring Syrup and Concentrate Manufacturing,31-33,311,3119,NULL,NULL
+31194,Seasoning and Dressing Manufacturing,31-33,311,3119,NULL,NULL
+31199,All Other Food Manufacturing,31-33,311,3119,NULL,NULL
+31211,Soft Drink and Ice Manufacturing,31-33,312,3121,NULL,NULL
+31212,Breweries,31-33,312,3121,NULL,NULL
+31213,Wineries,31-33,312,3121,NULL,NULL
+31214,Distilleries,31-33,312,3121,NULL,NULL
+31223,Tobacco Manufacturing,31-33,312,3122,NULL,NULL
+31311,"Fiber, Yarn, and Thread Mills",31-33,313,3131,NULL,NULL
+31321,Broadwoven Fabric Mills,31-33,313,3132,NULL,NULL
+31322,Narrow Fabric Mills and Schiffli Machine Embroidery,31-33,313,3132,NULL,NULL
+31323,Nonwoven Fabric Mills,31-33,313,3132,NULL,NULL
+31324,Knit Fabric Mills,31-33,313,3132,NULL,NULL
+31331,Textile and Fabric Finishing Mills,31-33,313,3133,NULL,NULL
+31332,Fabric Coating Mills,31-33,313,3133,NULL,NULL
+31411,Carpet and Rug Mills,31-33,314,3141,NULL,NULL
+31412,Curtain and Linen Mills,31-33,314,3141,NULL,NULL
+31491,Textile Bag and Canvas Mills,31-33,314,3149,NULL,NULL
+31511,Hosiery and Sock Mills,31-33,315,3151,NULL,NULL
+31519,Other Apparel Knitting Mills,31-33,315,3151,NULL,NULL
+31521,Cut and Sew Apparel Contractors,31-33,315,3152,NULL,NULL
+31522,MenÆs and BoysÆ Cut and Sew Apparel Manufacturing,31-33,315,3152,NULL,NULL
+31524,"WomenÆs, GirlsÆ, and InfantsÆ Cut and Sew Apparel Manufacturing",31-33,315,3152,NULL,NULL
+31528,Other Cut and Sew Apparel Manufacturing,31-33,315,3152,NULL,NULL
+31599,Apparel Accessories and Other Apparel Manufacturing,31-33,315,3159,NULL,NULL
+31611,Leather and Hide Tanning and Finishing,31-33,316,3161,NULL,NULL
+31621,Footwear Manufacturing,31-33,316,3162,NULL,NULL
+31699,Other Leather and Allied Product Manufacturing,31-33,316,3169,NULL,NULL
+32111,Sawmills and Wood Preservation,31-33,321,3211,NULL,NULL
+32121,"Veneer, Plywood, and Engineered Wood Product Manufacturing",31-33,321,3212,NULL,NULL
+32191,Millwork,31-33,321,3219,NULL,NULL
+32192,Wood Container and Pallet Manufacturing,31-33,321,3219,NULL,NULL
+32199,All Other Wood Product Manufacturing,31-33,321,3219,NULL,NULL
+32211,Pulp Mills,31-33,322,3221,NULL,NULL
+32212,Paper Mills,31-33,322,3221,NULL,NULL
+32213,Paperboard Mills,31-33,322,3221,NULL,NULL
+32221,Paperboard Container Manufacturing,31-33,322,3222,NULL,NULL
+32222,Paper Bag and Coated and Treated Paper Manufacturing,31-33,322,3222,NULL,NULL
+32223,Stationery Product Manufacturing,31-33,322,3222,NULL,NULL
+32229,Other Converted Paper Product Manufacturing,31-33,322,3222,NULL,NULL
+32311,Printing,31-33,323,3231,NULL,NULL
+32312,Support Activities for Printing,31-33,323,3231,NULL,NULL
+32411,Petroleum Refineries,31-33,324,3241,NULL,NULL
+32412,"Asphalt Paving, Roofing, and Saturated Materials Manufacturing",31-33,324,3241,NULL,NULL
+32419,Other Petroleum and Coal Products Manufacturing,31-33,324,3241,NULL,NULL
+32511,Petrochemical Manufacturing,31-33,325,3251,NULL,NULL
+32512,Industrial Gas Manufacturing,31-33,325,3251,NULL,NULL
+32513,Synthetic Dye and Pigment Manufacturing,31-33,325,3251,NULL,NULL
+32518,Other Basic Inorganic Chemical Manufacturing,31-33,325,3251,NULL,NULL
+32519,Other Basic Organic Chemical Manufacturing,31-33,325,3251,NULL,NULL
+32521,Resin and Synthetic Rubber Manufacturing,31-33,325,3252,NULL,NULL
+32522,Artificial and Synthetic Fibers and Filaments Manufacturing,31-33,325,3252,NULL,NULL
+32531,Fertilizer Manufacturing,31-33,325,3253,NULL,NULL
+32541,Pharmaceutical and Medicine Manufacturing,31-33,325,3254,NULL,NULL
+32551,Paint and Coating Manufacturing,31-33,325,3255,NULL,NULL
+32552,Adhesive Manufacturing,31-33,325,3255,NULL,NULL
+32561,Soap and Cleaning Compound Manufacturing,31-33,325,3256,NULL,NULL
+32562,Toilet Preparation Manufacturing,31-33,325,3256,NULL,NULL
+32591,Printing Ink Manufacturing,31-33,325,3259,NULL,NULL
+32592,Explosives Manufacturing,31-33,325,3259,NULL,NULL
+32599,All Other Chemical Product and Preparation Manufacturing,31-33,325,3259,NULL,NULL
+32611,Plastics Packaging Materials and Unlaminated Film and Sheet Manufacturing,31-33,326,3261,NULL,NULL
+32612,"Plastics Pipe, Pipe Fitting, and Unlaminated Profile Shape Manufacturing",31-33,326,3261,NULL,NULL
+32613,"Laminated Plastics Plate, Sheet (except Packaging), and Shape Manufacturing",31-33,326,3261,NULL,NULL
+32614,Polystyrene Foam Product Manufacturing,31-33,326,3261,NULL,NULL
+32615,Urethane and Other Foam Product (except Polystyrene) Manufacturing,31-33,326,3261,NULL,NULL
+32616,Plastics Bottle Manufacturing,31-33,326,3261,NULL,NULL
+32619,Other Plastics Product Manufacturing,31-33,326,3261,NULL,NULL
+32621,Tire Manufacturing,31-33,326,3262,NULL,NULL
+32622,Rubber and Plastics Hoses and Belting Manufacturing,31-33,326,3262,NULL,NULL
+32629,Other Rubber Product Manufacturing,31-33,326,3262,NULL,NULL
+32711,"Pottery, Ceramics, and Plumbing Fixture Manufacturing",31-33,327,3271,NULL,NULL
+32712,Clay Building Material and Refractories Manufacturing,31-33,327,3271,NULL,NULL
+32721,Glass and Glass Product Manufacturing,31-33,327,3272,NULL,NULL
+32731,Cement Manufacturing,31-33,327,3273,NULL,NULL
+32732,Ready-Mix Concrete Manufacturing,31-33,327,3273,NULL,NULL
+32733,"Concrete Pipe, Brick, and Block Manufacturing",31-33,327,3273,NULL,NULL
+32741,Lime Manufacturing,31-33,327,3274,NULL,NULL
+32742,Gypsum Product Manufacturing,31-33,327,3274,NULL,NULL
+32791,Abrasive Product Manufacturing,31-33,327,3279,NULL,NULL
+32799,All Other Nonmetallic Mineral Product Manufacturing,31-33,327,3279,NULL,NULL
+33111,Iron and Steel Mills and Ferroalloy Manufacturing,31-33,331,3311,NULL,NULL
+33122,Rolling and Drawing of Purchased Steel,31-33,331,3312,NULL,NULL
+33131,Alumina and Aluminum Production and Processing,31-33,331,3313,NULL,NULL
+33141,Nonferrous Metal (except Aluminum) Smelting and Refining,31-33,331,3314,NULL,NULL
+33142,"Copper Rolling, Drawing, Extruding, and Alloying",31-33,331,3314,NULL,NULL
+33149,"Nonferrous Metal (except Copper and Aluminum) Rolling, Drawing, Extruding, and Alloying",31-33,331,3314,NULL,NULL
+33151,Ferrous Metal Foundries,31-33,331,3315,NULL,NULL
+33152,Nonferrous Metal Foundries,31-33,331,3315,NULL,NULL
+33211,Forging and Stamping,31-33,332,3321,NULL,NULL
+33221,Cutlery and Handtool Manufacturing,31-33,332,3322,NULL,NULL
+33231,Plate Work and Fabricated Structural Product Manufacturing,31-33,332,3323,NULL,NULL
+33232,Ornamental and Architectural Metal Products Manufacturing,31-33,332,3323,NULL,NULL
+33241,Power Boiler and Heat Exchanger Manufacturing,31-33,332,3324,NULL,NULL
+33243,"Metal Can, Box, and Other Metal Container (Light Gauge) Manufacturing",31-33,332,3324,NULL,NULL
+33261,Spring and Wire Product Manufacturing,31-33,332,3326,NULL,NULL
+33272,"Turned Product and Screw, Nut, and Bolt Manufacturing",31-33,332,3327,NULL,NULL
+33281,"Coating, Engraving, Heat Treating, and Allied Activities",31-33,332,3328,NULL,NULL
+33291,Metal Valve Manufacturing,31-33,332,3329,NULL,NULL
+33299,All Other Fabricated Metal Product Manufacturing,31-33,332,3329,NULL,NULL
+33311,Agricultural Implement Manufacturing,31-33,333,3331,NULL,NULL
+33313,Mining and Oil and Gas Field Machinery Manufacturing,31-33,333,3331,NULL,NULL
+33324,Industrial Machinery Manufacturing,31-33,333,3332,NULL,NULL
+33331,Commercial and Service Industry Machinery Manufacturing,31-33,333,3333,NULL,NULL
+33341,"Ventilation, Heating, Air-Conditioning, and Commercial Refrigeration Equipment Manufacturing",31-33,333,3334,NULL,NULL
+33351,Metalworking Machinery Manufacturing,31-33,333,3335,NULL,NULL
+33361,"Engine, Turbine, and Power Transmission Equipment Manufacturing",31-33,333,3336,NULL,NULL
+33391,Pump and Compressor Manufacturing,31-33,333,3339,NULL,NULL
+33392,Material Handling Equipment Manufacturing,31-33,333,3339,NULL,NULL
+33399,All Other General Purpose Machinery Manufacturing,31-33,333,3339,NULL,NULL
+33441,Semiconductor and Other Electronic Component Manufacturing,31-33,334,3344,NULL,NULL
+33451,"Navigational, Measuring, Electromedical, and Control Instruments Manufacturing",31-33,334,3345,NULL,NULL
+33461,Manufacturing and Reproducing Magnetic and Optical Media,31-33,334,3346,NULL,NULL
+33511,Electric Lamp Bulb and Part Manufacturing,31-33,335,3351,NULL,NULL
+33512,Lighting Fixture Manufacturing,31-33,335,3351,NULL,NULL
+33521,Small Electrical Appliance Manufacturing,31-33,335,3352,NULL,NULL
+33522,Major Appliance Manufacturing,31-33,335,3352,NULL,NULL
+33591,Battery Manufacturing,31-33,335,3359,NULL,NULL
+33592,Communication and Energy Wire and Cable Manufacturing,31-33,335,3359,NULL,NULL
+33593,Wiring Device Manufacturing,31-33,335,3359,NULL,NULL
+33599,All Other Electrical Equipment and Component Manufacturing,31-33,335,3359,NULL,NULL
+33631,Motor Vehicle Gasoline Engine and Engine Parts Manufacturing,31-33,336,3363,NULL,NULL
+33632,Motor Vehicle Electrical and Electronic Equipment Manufacturing,31-33,336,3363,NULL,NULL
+33633,Motor Vehicle Steering and Suspension Components (except Spring) Manufacturing,31-33,336,3363,NULL,NULL
+33634,Motor Vehicle Brake System Manufacturing,31-33,336,3363,NULL,NULL
+33635,Motor Vehicle Transmission and Power Train Parts Manufacturing,31-33,336,3363,NULL,NULL
+33636,Motor Vehicle Seating and Interior Trim Manufacturing,31-33,336,3363,NULL,NULL
+33637,Motor Vehicle Metal Stamping,31-33,336,3363,NULL,NULL
+33639,Other Motor Vehicle Parts Manufacturing,31-33,336,3363,NULL,NULL
+33641,Aerospace Product and Parts Manufacturing,31-33,336,3364,NULL,NULL
+33661,Ship and Boat Building,31-33,336,3366,NULL,NULL
+33699,Other Transportation Equipment Manufacturing,31-33,336,3369,NULL,NULL
+33711,Wood Kitchen Cabinet and Countertop Manufacturing,31-33,337,3371,NULL,NULL
+33712,Household and Institutional Furniture Manufacturing,31-33,337,3371,NULL,NULL
+33721,Office Furniture (including Fixtures) Manufacturing,31-33,337,3372,NULL,NULL
+33791,Mattress Manufacturing,31-33,337,3379,NULL,NULL
+33792,Blind and Shade Manufacturing,31-33,337,3379,NULL,NULL
+33991,Jewelry and Silverware Manufacturing,31-33,339,3399,NULL,NULL
+33992,Sporting and Athletic Goods Manufacturing,31-33,339,3399,NULL,NULL
+33993,"Doll, Toy, and Game Manufacturing",31-33,339,3399,NULL,NULL
+33995,Sign Manufacturing,31-33,339,3399,NULL,NULL
 42311,Automobile and Other Motor Vehicle Merchant Wholesalers,42,423,4231,NULL,NULL
 42312,Motor Vehicle Supplies and New Parts Merchant Wholesalers,42,423,4231,NULL,NULL
 42313,Tire and Tube Merchant Wholesalers,42,423,4231,NULL,NULL
@@ -2301,90 +2303,90 @@ UNK   ,Unknown                                                     ,NULL,NULL,NU
 42499,Other Miscellaneous Nondurable Goods Merchant Wholesalers,42,424,4249,NULL,NULL
 42512,Wholesale Trade Agents and Brokers,42,425,4251,NULL,NULL
 44-45,Retail Trade,NULL,NULL,NULL,NULL,NULL
-44111,New Car Dealers,44,441,4411,NULL,NULL
-44112,Used Car Dealers,44,441,4411,NULL,NULL
-44132,Tire Dealers,44,441,4413,NULL,NULL
-44211,Furniture Stores,44,442,4421,NULL,NULL
-44229,Other Home Furnishings Stores,44,442,4422,NULL,NULL
-44314,Electronics and Appliance Stores,44,443,4431,NULL,NULL
-44411,Home Centers,44,444,4441,NULL,NULL
-44412,Paint and Wallpaper Stores,44,444,4441,NULL,NULL
-44413,Hardware Stores,44,444,4441,NULL,NULL
-44419,Other Building Material Dealers,44,444,4441,NULL,NULL
-44421,Outdoor Power Equipment Stores,44,444,4442,NULL,NULL
-44422,"Nursery, Garden Center, and Farm Supply Stores",44,444,4442,NULL,NULL
-44511,Supermarkets and Other Grocery (except Convenience) Stores,44,445,4451,NULL,NULL
-44512,Convenience Stores,44,445,4451,NULL,NULL
-44521,Meat Markets,44,445,4452,NULL,NULL
-44522,Fish and Seafood Markets,44,445,4452,NULL,NULL
-44523,Fruit and Vegetable Markets,44,445,4452,NULL,NULL
-44529,Other Specialty Food Stores,44,445,4452,NULL,NULL
-44531,"Beer, Wine, and Liquor Stores",44,445,4453,NULL,NULL
-44611,Pharmacies and Drug Stores,44,446,4461,NULL,NULL
-44612,"Cosmetics, Beauty Supplies, and Perfume Stores",44,446,4461,NULL,NULL
-44613,Optical Goods Stores,44,446,4461,NULL,NULL
-44619,Other Health and Personal Care Stores,44,446,4461,NULL,NULL
-44719,Other Gasoline Stations,44,447,4471,NULL,NULL
-44811,Men's Clothing Stores,44,448,4481,NULL,NULL
-44812,Women's Clothing Stores,44,448,4481,NULL,NULL
-44813,Children's and Infants' Clothing Stores,44,448,4481,NULL,NULL
-44814,Family Clothing Stores,44,448,4481,NULL,NULL
-44815,Clothing Accessories Stores,44,448,4481,NULL,NULL
-44819,Other Clothing Stores,44,448,4481,NULL,NULL
-44821,Shoe Stores,44,448,4482,NULL,NULL
-44831,Jewelry Stores,44,448,4483,NULL,NULL
-44832,Luggage and Leather Goods Stores,44,448,4483,NULL,NULL
-45111,Sporting Goods Stores,45,451,4511,NULL,NULL
-45112,"Hobby, Toy, and Game Stores",45,451,4511,NULL,NULL
-45113,"Sewing, Needlework, and Piece Goods Stores",45,451,4511,NULL,NULL
-45114,Musical Instrument and Supplies Stores,45,451,4511,NULL,NULL
-45121,Book Stores and News Dealers,45,451,4512,NULL,NULL
-45211,Department Stores,45,452,4521,NULL,NULL
-45291,Warehouse Clubs and Supercenters,45,452,4529,NULL,NULL
-45299,All Other General Merchandise Stores,45,452,4529,NULL,NULL
-45311,Florists,45,453,4531,NULL,NULL
-45322,"Gift, Novelty, and Souvenir Stores",45,453,4532,NULL,NULL
-45331,Used Merchandise Stores,45,453,4533,NULL,NULL
-45391,Pet and Pet Supplies Stores,45,453,4539,NULL,NULL
-45392,Art Dealers,45,453,4539,NULL,NULL
-45399,All Other Miscellaneous Store Retailers,45,453,4539,NULL,NULL
-45411,Electronic Shopping and Mail-Order Houses,45,454,4541,NULL,NULL
-45421,Vending Machine Operators,45,454,4542,NULL,NULL
-45431,Fuel Dealers,45,454,4543,NULL,NULL
+44111,New Car Dealers,44-45,441,4411,NULL,NULL
+44112,Used Car Dealers,44-45,441,4411,NULL,NULL
+44132,Tire Dealers,44-45,441,4413,NULL,NULL
+44211,Furniture Stores,44-45,442,4421,NULL,NULL
+44229,Other Home Furnishings Stores,44-45,442,4422,NULL,NULL
+44314,Electronics and Appliance Stores,44-45,443,4431,NULL,NULL
+44411,Home Centers,44-45,444,4441,NULL,NULL
+44412,Paint and Wallpaper Stores,44-45,444,4441,NULL,NULL
+44413,Hardware Stores,44-45,444,4441,NULL,NULL
+44419,Other Building Material Dealers,44-45,444,4441,NULL,NULL
+44421,Outdoor Power Equipment Stores,44-45,444,4442,NULL,NULL
+44422,"Nursery, Garden Center, and Farm Supply Stores",44-45,444,4442,NULL,NULL
+44511,Supermarkets and Other Grocery (except Convenience) Stores,44-45,445,4451,NULL,NULL
+44512,Convenience Stores,44-45,445,4451,NULL,NULL
+44521,Meat Markets,44-45,445,4452,NULL,NULL
+44522,Fish and Seafood Markets,44-45,445,4452,NULL,NULL
+44523,Fruit and Vegetable Markets,44-45,445,4452,NULL,NULL
+44529,Other Specialty Food Stores,44-45,445,4452,NULL,NULL
+44531,"Beer, Wine, and Liquor Stores",44-45,445,4453,NULL,NULL
+44611,Pharmacies and Drug Stores,44-45,446,4461,NULL,NULL
+44612,"Cosmetics, Beauty Supplies, and Perfume Stores",44-45,446,4461,NULL,NULL
+44613,Optical Goods Stores,44-45,446,4461,NULL,NULL
+44619,Other Health and Personal Care Stores,44-45,446,4461,NULL,NULL
+44719,Other Gasoline Stations,44-45,447,4471,NULL,NULL
+44811,Men's Clothing Stores,44-45,448,4481,NULL,NULL
+44812,Women's Clothing Stores,44-45,448,4481,NULL,NULL
+44813,Children's and Infants' Clothing Stores,44-45,448,4481,NULL,NULL
+44814,Family Clothing Stores,44-45,448,4481,NULL,NULL
+44815,Clothing Accessories Stores,44-45,448,4481,NULL,NULL
+44819,Other Clothing Stores,44-45,448,4481,NULL,NULL
+44821,Shoe Stores,44-45,448,4482,NULL,NULL
+44831,Jewelry Stores,44-45,448,4483,NULL,NULL
+44832,Luggage and Leather Goods Stores,44-45,448,4483,NULL,NULL
+45111,Sporting Goods Stores,44-45,451,4511,NULL,NULL
+45112,"Hobby, Toy, and Game Stores",44-45,451,4511,NULL,NULL
+45113,"Sewing, Needlework, and Piece Goods Stores",44-45,451,4511,NULL,NULL
+45114,Musical Instrument and Supplies Stores,44-45,451,4511,NULL,NULL
+45121,Book Stores and News Dealers,44-45,451,4512,NULL,NULL
+45211,Department Stores,44-45,452,4521,NULL,NULL
+45291,Warehouse Clubs and Supercenters,44-45,452,4529,NULL,NULL
+45299,All Other General Merchandise Stores,44-45,452,4529,NULL,NULL
+45311,Florists,44-45,453,4531,NULL,NULL
+45322,"Gift, Novelty, and Souvenir Stores",44-45,453,4532,NULL,NULL
+45331,Used Merchandise Stores,44-45,453,4533,NULL,NULL
+45391,Pet and Pet Supplies Stores,44-45,453,4539,NULL,NULL
+45392,Art Dealers,44-45,453,4539,NULL,NULL
+45399,All Other Miscellaneous Store Retailers,44-45,453,4539,NULL,NULL
+45411,Electronic Shopping and Mail-Order Houses,44-45,454,4541,NULL,NULL
+45421,Vending Machine Operators,44-45,454,4542,NULL,NULL
+45431,Fuel Dealers,44-45,454,4543,NULL,NULL
 48-49,Transportation and Warehousing,NULL,NULL,NULL,NULL,NULL
-48111,Scheduled Air Transportation,48,481,4811,NULL,NULL
-48121,Nonscheduled Air Transportation,48,481,4812,NULL,NULL
-48311,"Deep Sea, Coastal, and Great Lakes Water Transportation",48,483,4831,NULL,NULL
-48321,Inland Water Transportation,48,483,4832,NULL,NULL
-48411,"General Freight Trucking, Local",48,484,4841,NULL,NULL
-48412,"General Freight Trucking, Long-Distance",48,484,4841,NULL,NULL
-48422,"Specialized Freight (except Used Goods) Trucking, Local",48,484,4842,NULL,NULL
-48511,Urban Transit Systems,48,485,4851,NULL,NULL
-48521,Interurban and Rural Bus Transportation,48,485,4852,NULL,NULL
-48531,Taxi Service,48,485,4853,NULL,NULL
-48532,Limousine Service,48,485,4853,NULL,NULL
-48541,School and Employee Bus Transportation,48,485,4854,NULL,NULL
-48599,Other Transit and Ground Passenger Transportation,48,485,4859,NULL,NULL
-48611,Pipeline Transportation of Crude Oil,48,486,4861,NULL,NULL
-48621,Pipeline Transportation of Natural Gas,48,486,4862,NULL,NULL
-48691,Pipeline Transportation of Refined Petroleum Products,48,486,4869,NULL,NULL
-48699,All Other Pipeline Transportation,48,486,4869,NULL,NULL
-48711,"Scenic and Sightseeing Transportation, Land",48,487,4871,NULL,NULL
-48721,"Scenic and Sightseeing Transportation, Water",48,487,4872,NULL,NULL
-48799,"Scenic and Sightseeing Transportation, Other",48,487,4879,NULL,NULL
-48811,Airport Operations,48,488,4881,NULL,NULL
-48819,Other Support Activities for Air Transportation,48,488,4881,NULL,NULL
-48821,Support Activities for Rail Transportation,48,488,4882,NULL,NULL
-48831,Port and Harbor Operations,48,488,4883,NULL,NULL
-48832,Marine Cargo Handling,48,488,4883,NULL,NULL
-48833,Navigational Services to Shipping,48,488,4883,NULL,NULL
-48839,Other Support Activities for Water Transportation,48,488,4883,NULL,NULL
-48841,Motor Vehicle Towing,48,488,4884,NULL,NULL
-48851,Freight Transportation Arrangement,48,488,4885,NULL,NULL
-49221,Local Messengers and Local Delivery,49,492,4922,NULL,NULL
-49312,Refrigerated Warehousing and Storage,49,493,4931,NULL,NULL
-49313,Farm Product Warehousing and Storage,49,493,4931,NULL,NULL
-49319,Other Warehousing and Storage,49,493,4931,NULL,NULL
+48111,Scheduled Air Transportation,48-49,481,4811,NULL,NULL
+48121,Nonscheduled Air Transportation,48-49,481,4812,NULL,NULL
+48311,"Deep Sea, Coastal, and Great Lakes Water Transportation",48-49,483,4831,NULL,NULL
+48321,Inland Water Transportation,48-49,483,4832,NULL,NULL
+48411,"General Freight Trucking, Local",48-49,484,4841,NULL,NULL
+48412,"General Freight Trucking, Long-Distance",48-49,484,4841,NULL,NULL
+48422,"Specialized Freight (except Used Goods) Trucking, Local",48-49,484,4842,NULL,NULL
+48511,Urban Transit Systems,48-49,485,4851,NULL,NULL
+48521,Interurban and Rural Bus Transportation,48-49,485,4852,NULL,NULL
+48531,Taxi Service,48-49,485,4853,NULL,NULL
+48532,Limousine Service,48-49,485,4853,NULL,NULL
+48541,School and Employee Bus Transportation,48-49,485,4854,NULL,NULL
+48599,Other Transit and Ground Passenger Transportation,48-49,485,4859,NULL,NULL
+48611,Pipeline Transportation of Crude Oil,48-49,486,4861,NULL,NULL
+48621,Pipeline Transportation of Natural Gas,48-49,486,4862,NULL,NULL
+48691,Pipeline Transportation of Refined Petroleum Products,48-49,486,4869,NULL,NULL
+48699,All Other Pipeline Transportation,48-49,486,4869,NULL,NULL
+48711,"Scenic and Sightseeing Transportation, Land",48-49,487,4871,NULL,NULL
+48721,"Scenic and Sightseeing Transportation, Water",48-49,487,4872,NULL,NULL
+48799,"Scenic and Sightseeing Transportation, Other",48-49,487,4879,NULL,NULL
+48811,Airport Operations,48-49,488,4881,NULL,NULL
+48819,Other Support Activities for Air Transportation,48-49,488,4881,NULL,NULL
+48821,Support Activities for Rail Transportation,48-49,488,4882,NULL,NULL
+48831,Port and Harbor Operations,48-49,488,4883,NULL,NULL
+48832,Marine Cargo Handling,48-49,488,4883,NULL,NULL
+48833,Navigational Services to Shipping,48-49,488,4883,NULL,NULL
+48839,Other Support Activities for Water Transportation,48-49,488,4883,NULL,NULL
+48841,Motor Vehicle Towing,48-49,488,4884,NULL,NULL
+48851,Freight Transportation Arrangement,48-49,488,4885,NULL,NULL
+49221,Local Messengers and Local Delivery,48-49,492,4922,NULL,NULL
+49312,Refrigerated Warehousing and Storage,48-49,493,4931,NULL,NULL
+49313,Farm Product Warehousing and Storage,48-49,493,4931,NULL,NULL
+49319,Other Warehousing and Storage,48-49,493,4931,NULL,NULL
 51111,Newspaper Publishers,51,511,5111,NULL,NULL
 51112,Periodical Publishers,51,511,5111,NULL,NULL
 51114,Directory and Mailing List Publishers,51,511,5111,NULL,NULL
@@ -2547,10 +2549,10 @@ UNK   ,Unknown                                                     ,NULL,NULL,NU
 81394,Political Organizations,81,813,8139,NULL,NULL
 81399,"Other Similar Organizations (except Business, Professional, Labor, and Political Organizations)",81,813,8139,NULL,NULL
 99,Industries not classified,99,NULL,NULL,NULL,NULL
-31,Manufacturing,31,NULL,NULL,NULL,NULL
-32,Manufacturing,32,NULL,NULL,NULL,NULL
-33,Manufacturing,33,NULL,NULL,NULL,NULL
-44,Retail Trade,44,NULL,NULL,NULL,NULL
-45,Retail Trade,45,NULL,NULL,NULL,NULL
-48,Transportation and Warehousing,48,NULL,NULL,NULL,NULL
-49,Transportation and Warehousing,49,NULL,NULL,NULL,NULL
+31-33,Manufacturing,31-33,NULL,NULL,NULL,NULL
+31-33,Manufacturing,31-33,NULL,NULL,NULL,NULL
+31-33,Manufacturing,31-33,NULL,NULL,NULL,NULL
+44-45,Retail Trade,44-45,NULL,NULL,NULL,NULL
+44-45,Retail Trade,44-45,NULL,NULL,NULL,NULL
+48-49,Transportation and Warehousing,48-49,NULL,NULL,NULL,NULL
+48-49,Transportation and Warehousing,48-49,NULL,NULL,NULL,NULL
