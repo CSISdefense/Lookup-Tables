@@ -2549,10 +2549,10 @@ UNK   ,Unknown                                                     ,NULL,NULL,NU
 81394,Political Organizations,81,813,8139,NULL,NULL
 81399,"Other Similar Organizations (except Business, Professional, Labor, and Political Organizations)",81,813,8139,NULL,NULL
 99,Industries not classified,99,NULL,NULL,NULL,NULL
-31-33,Manufacturing,31-33,NULL,NULL,NULL,NULL
-31-33,Manufacturing,31-33,NULL,NULL,NULL,NULL
-31-33,Manufacturing,31-33,NULL,NULL,NULL,NULL
-44-45,Retail Trade,44-45,NULL,NULL,NULL,NULL
-44-45,Retail Trade,44-45,NULL,NULL,NULL,NULL
-48-49,Transportation and Warehousing,48-49,NULL,NULL,NULL,NULL
-48-49,Transportation and Warehousing,48-49,NULL,NULL,NULL,NULL
+31,Manufacturing,31-33,NULL,NULL,NULL,NULL
+32,Manufacturing,31-33,NULL,NULL,NULL,NULL
+33,Manufacturing,31-33,NULL,NULL,NULL,NULL
+44,Retail Trade,44-45,NULL,NULL,NULL,NULL
+45,Retail Trade,44-45,NULL,NULL,NULL,NULL
+48,Transportation and Warehousing,48-49,NULL,NULL,NULL,NULL
+49,Transportation and Warehousing,48-49,NULL,NULL,NULL,NULL
