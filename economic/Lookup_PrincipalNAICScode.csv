@@ -1132,7 +1132,6 @@
 42511,Business to Business Electronic Markets,42,425,4251,NULL,NULL
 425110,Business to Business Electronic Markets,42,425,4251,NULL,NULL
 425120,Wholesale Trade Agents and Brokers,42,425,4251,NULL,NULL
-44-45,Retail Trade,44-45,NULL,NULL,NULL,NULL
 441,Motor Vehicle and Parts Dealers,44-45,441,NULL,NULL,NULL
 4411,Automobile Dealers,44-45,441,4411,NULL,NULL
 441110,New Car Dealers,44-45,441,4411,NULL,NULL
@@ -2077,7 +2076,6 @@ UNK   ,Unknown                                                     ,NULL,NULL,NU
 23834,Tile and Terrazzo Contractors,23,238,2383,NULL,NULL
 23839,Other Building Finishing Contractors,23,238,2383,NULL,NULL
 23891,Site Preparation Contractors,23,238,2389,NULL,NULL
-31-33,Manufacturing,NULL,NULL,NULL,NULL,NULL
 31111,Animal Food Manufacturing,31-33,311,3111,NULL,NULL
 31121,Flour Milling and Malt Manufacturing,31-33,311,3112,NULL,NULL
 31122,Starch and Vegetable Fats and Oils Manufacturing,31-33,311,3112,NULL,NULL
