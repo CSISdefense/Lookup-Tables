@@ -74,6 +74,7 @@ Shiny.VendorSize,Vendors,Vendor Size,,,FALSE
 RoughUniqueEntitySize,Vendors,Vendor Size,,,FALSE
 entrant,entrant,Entrant Status,,,FALSE
 entrant_2016T,entrant,Entrant Status,,,FALSE
+entrant_2018T,entrant,Entrant Status,,,FALSE
 comparison.dollar.type.detail,Dollar Type,,,,FALSE
 comparison.dollar.type.sum,Dollar Type,,,,FALSE
 ContractSize,Contract Size,Contract Size,,,FALSE
