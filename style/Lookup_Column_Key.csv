@@ -155,6 +155,9 @@ SAMexception.sum,Crisis,,,,FALSE
 SAMcrisisFunding,Crisis,,,,FALSE
 qToDefinitize,Duration,,,,FALSE
 UnmodifiedUltimateDurationCategory,Duration,,,,FALSE
+UnmodifiedUltimateDurationIsYear,Duration,,,,FALSE
+CurrentDurationCategory,Duration,,,,FALSE
+CurrentDurationIsYear,Duration,,,,FALSE
 Dur,Duration,,,,FALSE
 ActualDur,Duration,,,,FALSE
 qDuration,Duration,,,,FALSE
