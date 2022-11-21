@@ -58,9 +58,13 @@ PricingMechanism,Pricing,Pricing Mechanism,,,FALSE
 Base,Pricing,Pricing Mechanism,,,FALSE
 Fee,Pricing,Pricing Mechanism Fee Type,,,FALSE
 PricingFee,Pricing,Pricing Mechanism,,,FALSE
+PricingUCA.1year,Pricing,Pricing Mechanism,,,FALSE
 PricingUCA,Pricing,Pricing Mechanism,,,FALSE
 PricingUCA.sum,Pricing,Pricing Mechanism,,,FALSE
 PricingInflation,Pricing,Pricing Mechanism,,,FALSE
+PricingInflation.UCA,Pricing,Pricing Mechanism,,,FALSE
+PricingInflation.1year,Pricing,Pricing Mechanism,,,FALSE
+PricingInflation.1yearUCA,Pricing,Pricing Mechanism,,,FALSE
 Indicator,Europe,,,,FALSE
 Authority,Authority,Contract or OTA,,,FALSE
 Vehicle.AwardTask,Vehicles,Award or Task Order,,,FALSE
@@ -76,6 +80,7 @@ Shiny.VendorSize,Vendors,Vendor Size,,,FALSE
 RoughUniqueEntitySize,Vendors,Vendor Size,,,FALSE
 entrant,entrant,Entrant Status,,,FALSE
 entrant_2016T,entrant,Entrant Status,,,FALSE
+entrant_2018T,entrant,Entrant Status,,,FALSE
 comparison.dollar.type.detail,Dollar Type,,,,FALSE
 comparison.dollar.type.sum,Dollar Type,,,,FALSE
 ContractSize,Contract Size,Contract Size,,,FALSE
@@ -156,6 +161,9 @@ SAMexception.sum,Crisis,,,,FALSE
 SAMcrisisFunding,Crisis,,,,FALSE
 qToDefinitize,Duration,,,,FALSE
 UnmodifiedUltimateDurationCategory,Duration,,,,FALSE
+UnmodifiedUltimateDurationIsYear,Duration,,,,FALSE
+CurrentDurationCategory,Duration,,,,FALSE
+CurrentDurationIsYear,Duration,,,,FALSE
 Dur,Duration,,,,FALSE
 ActualDur,Duration,,,,FALSE
 qDuration,Duration,,,,FALSE

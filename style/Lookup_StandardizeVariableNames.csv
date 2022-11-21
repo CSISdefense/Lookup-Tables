@@ -638,3 +638,5 @@ Action_Obligation_Then_Year,Action_Obligation_Then_Year
 Non Government Dollars,NonGovernmentDollars
 Number of Actions,NumberofActions
 Number of Records,NumberofRecords
+Performing.Activity...Location,Contractor.or.Government.Performing.Activity
+Contract.Method...Type,Contract.Method.Type.or.Funding.Vehicle
