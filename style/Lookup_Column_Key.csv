@@ -9,6 +9,7 @@ Customer.FMS,Agencies,Customer,,,FALSE
 BioTechCustomer,Agencies,Customer,,,FALSE
 EnzymeCustomer,Agencies,Customer,,,FALSE
 Agency,Agencies,Agency,,,FALSE
+Organization,Agencies,Organization,,,FALSE
 Is.Defense,Agencies,Defense or Civilian,,,FALSE
 SubFunder.Detail,Agencies,Funding Component,,,FALSE
 ContractingSubCustomer,Agencies,Component,,,FALSE
@@ -34,6 +35,7 @@ ProductOrServiceArea,Area,Product or Service Area,,,FALSE
 ProductOrService,Area,Product or Service,,,FALSE
 SupplyServiceERS,Area,"Supply, Equipment-Related Service, Other Services",,,FALSE
 ProductServiceOrRnDarea,Area,"Product, Service, or R&D Area",,,FALSE
+ProductServiceOrRnDarea.project,Area,"Product, Service, or R&D Area",,,FALSE
 ProductServiceOrRnDarea.covid,Area,"Product, Service, or R&D",,,FALSE
 ProductServiceOrRnDarea.sum,Area,"Product, Service, or R&D",,,FALSE
 SimpleArea.AETP,Area,"Product, Service, or R&D",,,FALSE
