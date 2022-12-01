@@ -113,12 +113,12 @@ hts10,hts_description,USITC.Tier,PlatformPortfolio.USITC,PlatformPortfolio.Ordna
 9305.90.3010,"PARTS AND ACCESSORIES OF GUNS, HOWITZERS.AND MORTARS WITH A BORE DIAMETER OF 30-MM (118 CALIBER) OR LESS OF HEADING 9301",Parts and Accessories,Ordnance and Missiles,Artillery,Ordnance and Missiles,NA,NA,Arms,"377,548,357.00",1989,2001
 9305.90.3030,"PART AND ACCESSORIES OF HEADING 9301, NESOI",Parts and Accessories,Ordnance and Missiles,Cross-Category Parts and Accessories,Ordnance and Missiles,NA,NA,Dual,1810384101,1989,2001
 9305.90.4000,PARTS AND ACCESSORIES OF HEADING 9303 OTHER THAN SHOTGUNS OR RIFLES,Parts and Accessories,Ordnance and Missiles,Cross-Category Parts and Accessories,Ordnance and Missiles,NA,NA,Dual,4782382,1989,2001
-9305.90.5500,"PART AND ACCESSORIES OF ARTICLES OF HEADINGS 9301 TO 9304, NESOI",Parts and Accessories,Ordnance and Missiles,Cross-Category Parts,Ordnance and Missiles,NA,NA,Dual,464888333,1989,2001
-9305.91.1000,PARTS AND ACCESSORIES FOR MILITARY RIFLES OF HEADING 9301,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"419,131,031.00",2002,2019
-9305.91.2000,PARTS AND ACCESSORIES FOR MILITARY SHOTGUNS OF HEADING 9301,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"17,321,283.00",2002,2019
-9305.91.3010,PARTS AND ACCESSORIES OF MILITARY ARTILLERY WEAPONS OF 9301.10,Parts and Accessories,Ordnance and Missiles,Artillery,Ordnance and Missiles,NA,NA,Arms,"940,486,141.00",2002,2019
-9305.91.3030,"PARTS  AND ACCESSORIES OF MILITARY WEAPONS OF  HEADING 9301, NESOI",Parts and Accessories,Ordnance and Missiles,Cross-Category Parts and Accessories,Ordnance and Missiles,NA,NA,Arms,"4,290,095,820.00",2002,2019
-9305.99.4000,PARTS AND ACCESSORIES OF HEADING 9303 OTHER THAN SHOTGUNS OR RIFLES,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"121,982,747.00",2002,2019
+9305.90.5500,"PART AND ACCESSORIES OF ARTICLES OF HEADINGS 9301 TO 9304, NESOI",Parts and Accessories,Ordnance and Missiles,Cross-Category Parts and Accessories,Ordnance and Missiles,NA,NA,Dual,464888333,1989,2001
+9305.91.1000,PARTS AND ACCESSORIES FOR MILITARY RIFLES OF HEADING 9301,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Mil,"419,131,031.00",2002,2019
+9305.91.2000,PARTS AND ACCESSORIES FOR MILITARY SHOTGUNS OF HEADING 9301,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Mil,"17,321,283.00",2002,2019
+9305.91.3010,PARTS AND ACCESSORIES OF MILITARY ARTILLERY WEAPONS OF 9301.10,Parts and Accessories,Ordnance and Missiles,Artillery,Ordnance and Missiles,NA,NA,Mil,"940,486,141.00",2002,2019
+9305.91.3030,"PARTS  AND ACCESSORIES OF MILITARY WEAPONS OF  HEADING 9301, NESOI",Parts and Accessories,Ordnance and Missiles,Cross-Category Parts and Accessories,Ordnance and Missiles,NA,NA,Mil,"4,290,095,820.00",2002,2019
+9305.99.4000,PARTS AND ACCESSORIES OF HEADING 9303 OTHER THAN SHOTGUNS OR RIFLES,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Mil,"121,982,747.00",2002,2019
 9305.99.6600,"PART AND ACCESSORIES OF ARTICLES OF HEADINGS 9301 TO 9304, NESOI",Parts and Accessories,Ordnance and Missiles,Cross-Category Parts and Accessories,Ordnance and Missiles,NA,NA,Dual,417209885,2002,2019
 9306.10.0000,CARTRIDGES FOR RIVETING OR SIMILAR TOOLS OR FOR CAPTIVE-BOLT HUMANE KILLERS AND PARTS THEREOF,Munitions,Ordnance and Missiles,Ammunition,Ordnance and Missiles,NA,NA,Dual,193218473,1989,2006
 9306.21.0000,SHOTGUN CARTRIDGES AND PARTS THEREOF,Munitions,Ordnance and Missiles,Ammunition,Ordnance and Missiles,NA,NA,Dual,645042976,1989,2019
