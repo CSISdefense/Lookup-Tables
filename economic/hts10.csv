@@ -109,11 +109,15 @@ hts10,hts_description,USITC.Tier,PlatformPortfolio.USITC,PlatformPortfolio.Ordna
 9302.00.0090,"PISTOLS, OTHER THAN THOSE OF HEADING 9303 OR 9304, EXCEPT SEMIAUTOMATIC",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9303.10.0000,MUZZLE-LOADING FIREARMS,Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9303.20.0010,"SHOTGUNS FOR SPORTING, HUNTING OR TARGET-SHOOTING",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
+9303.20.0020,NEW: Autoloading; Indent: 3,Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9303.20.0030,"SHOTGUNS, PUMP ACTION, NESOI",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9303.20.0035,"SHOTGUNS, NESOI",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
+9303.20.0040,NEW: Over and under; Indent: 3,Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
+9303.20.0065,NEW: Other; Indent: 3,Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9303.20.0080,COMBINATION SHOTGUN-RIFLES,Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9303.30.3020,"CENTERFIRE SPORTING, HUNTING OR TARGET-SHOOTING RIFLES, VALUED OVER $25 BUT NOT OVER $50 EACH",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9303.30.3030,"RIMFIRE SPORTING, HUNTING, OR TARGET-SHOOTING RIFLES VALUED OVER $25 BUT NOT OVER $50 EACH",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
+9303.30.4010,NEW: Telescopic sights imported with rifles; Indent: 3,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9303.30.4020,"CENTERFIRE HUNTING OR TARGET-SHOOTING RIFLES, VALUED OVER $25 BUT NOT OVER $50 EACH",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9303.30.4020,"CENTERFIRE SPORTING, HUNTING OR TARGET-SHOOTING RIFLES, VALUED OVER $25 BUT NOT OVER $50 EACH",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9303.30.4030,"RIMFIRE HUNTING OR TARGET-SHOOTING RIFLES, VALUED OVER $25 BUT NOT OVER $50 EACH",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
@@ -123,6 +127,7 @@ hts10,hts_description,USITC.Tier,PlatformPortfolio.USITC,PlatformPortfolio.Ordna
 9303.30.7017,"RIFLES, CENTERFIRE BOLT ACTION, NESOI",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9303.30.7025,"RIFLES, CENTERFIRE, NESOI",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9303.30.7030,"RIMFIRE SPORTING, HUNTING OR TARGET-SHOOTING RIFLES, NESOI",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
+9303.30.8005,NEW: Telescopic sights imported with rifles; Indent: 3,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9303.30.8010,"RIFLES, CENTERFIRE AUTOLOADING",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9303.30.8012,"RIFLES, SINGLE SHOT CENTERFIRE BOLT ACTION",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9303.30.8017,"RIFLES, CENTERFIRE BOLT ACTION, NESOI",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
@@ -132,10 +137,25 @@ hts10,hts_description,USITC.Tier,PlatformPortfolio.USITC,PlatformPortfolio.Ordna
 9303.90.4000,PISTOLS AND REVOLVERS DESIGNED TO FIRE ONLY BLANK CARTRIDGES OR BLANK AMMUNITION,Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9303.90.8000,"FIREARMS AND SIMILAR DEVICES WHICH OPERATE BY THE FIRING OF AN EXPLOSIVE CHARGE, NESOI",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9304.00.0000,"OTHER ARMS (FOR EX SPRING, AIR OR GAS GUNS AND PISTOLS, TRUNCHEONS), EXCLUDING THOSE OF HEADING 9307",Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
+9304.00.2000,NEW: Rifles; Indent: 2,Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
+9304.00.4000,NEW: Other; Indent: 2,Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
+9304.00.6000,NEW: Other; Indent: 1,Systems and Ordnance,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,,,
 9305.10.0000,PARTS AND ACCESSORIES OF REVOLVERS OR PISTOLS OF HEADINGS 9301 TO 9304,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,146213373,1989,2004
 9305.10.0010,FRAMES AND RECEIVERS OF REVOLVERS OR PISTOLS OF HEADINGS 9301 TO 9304,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"39,301,479.00",2005,2019
 9305.10.0090,"PARTS AND ACCESSORIES OF REVOLVERS OR PISTOLS OF HEADINGS 9301 TO 9304, EXCEPT FRAMES AND RECEIVERS",Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"197,064,429.00",2005,2019
+9305.10.2010,NEW: Frames and receivers; Indent: 3,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"197,064,429.00",2005,2019
+9305.10.2080,NEW: Other; Indent: 3,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"197,064,429.00",2005,2019
+9305.10.4000,NEW: Of revolvers or pistols designed to fire only blank cartridges or blank ammunition; Indent: 3,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"197,064,429.00",2005,2019
+9305.10.6000,NEW: Of muzzle-loading revolvers and pistols; Indent: 3,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"197,064,429.00",2005,2019
+9305.10.8000,NEW: Other; Indent: 3,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"197,064,429.00",2005,2019
+9305.20.0500,NEW: Rifle stocks; Indent: 2,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"197,064,429.00",2005,2019
 9305.20.1000,SHOTGUN BARRELS OF HEADING 9303,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,9589948,2012,2019
+9305.20.8004,NEW: Of muzzle-loading shotguns; Indent: 4,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"197,064,429.00",2005,2019
+9305.20.8008,NEW: Other; Indent: 4,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"197,064,429.00",2005,2019
+9305.20.8020,NEW: Other parts of muzzle-loading shotguns or rifles; Indent: 3,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"197,064,429.00",2005,2019
+9305.20.8031,NEW: Stocks; Indent: 5,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"197,064,429.00",2005,2019
+9305.20.8033,NEW: Other; Indent: 5,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"197,064,429.00",2005,2019
+9305.20.8060,NEW: Of rifles; Indent: 4,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"197,064,429.00",2005,2019
 9305.20.9000,PARTS AND ACCESSORIES OF SHOTGUNS OR RIFLES OR HEADING 9303 EXCEPT SHOTGUN BARRELS,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,431011514,2012,2019
 9305.21.0000,SHOTGUN BARRELS OF HEADING 9303,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,35869072,1989,2011
 9305.29.0000,PARTS AND ACCESSORIES OF SHOTGUNS OR RIFLES OR HEADING 9303 EXCEPT SHOTGUN BARRELS,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,546880211,1989,2011
@@ -150,6 +170,9 @@ hts10,hts_description,USITC.Tier,PlatformPortfolio.USITC,PlatformPortfolio.Ordna
 9305.91.3010,PARTS AND ACCESSORIES OF MILITARY ARTILLERY WEAPONS OF 9301.10,Parts and Accessories,Ordnance and Missiles,Artillery,Ordnance and Missiles,NA,NA,Arms,"940,486,141.00",2002,2019
 9305.91.3030,"PARTS  AND ACCESSORIES OF MILITARY WEAPONS OF  HEADING 9301, NESOI",Parts and Accessories,Ordnance and Missiles,Cross-Category Parts and Accessories,Ordnance and Missiles,NA,NA,Arms,"4,290,095,820.00",2002,2019
 9305.99.4000,PARTS AND ACCESSORIES OF HEADING 9303 OTHER THAN SHOTGUNS OR RIFLES,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"121,982,747.00",2002,2019
+9305.99.5010,NEW: Parts and accessories of paintball markers; Indent: 4,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"121,982,747.00",2002,2019
+9305.99.5050,NEW: Other; Indent: 4,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"121,982,747.00",2002,2019
+9305.99.6000,NEW: Other; Indent: 3,Parts and Accessories,Ordnance and Missiles,Other Small Arms,Ordnance and Missiles,NA,NA,Arms,"121,982,747.00",2002,2019
 9305.99.6600,"PART AND ACCESSORIES OF ARTICLES OF HEADINGS 9301 TO 9304, NESOI",Parts and Accessories,Ordnance and Missiles,Cross-Category Parts and Accessories,Ordnance and Missiles,NA,NA,Arms,417209885,2002,2019
 9306.10.0000,CARTRIDGES FOR RIVETING OR SIMILAR TOOLS OR FOR CAPTIVE-BOLT HUMANE KILLERS AND PARTS THEREOF,Munitions,Ordnance and Missiles,Ammunition,Ordnance and Missiles,NA,NA,Dual,193218473,1989,2006
 9306.21.0000,SHOTGUN CARTRIDGES AND PARTS THEREOF,Munitions,Ordnance and Missiles,Ammunition,Ordnance and Missiles,NA,NA,Arms,645042976,1989,2019
@@ -170,6 +193,8 @@ hts10,hts_description,USITC.Tier,PlatformPortfolio.USITC,PlatformPortfolio.Ordna
 9306.30.8000,"PARTS OF CARTRIDGES, NESOI",Munitions,Ordnance and Missiles,Ammunition,Ordnance and Missiles,NA,NA,Arms,2134771003,1989,2019
 9306.90.0020,GUIDED MISSLES,Systems and Ordnance,Ordnance and Missiles,Missiles,Ordnance and Missiles,NA,NA,Arms,"23,089,903,776.00",1989,2019
 9306.90.0040,"BOMBS, GRENADES, TORPEDOS, MINES, AND SIMILAR MUNITIONS OF WAR, AND OTHER AMMUNITION AND PROJECTILES",Systems and Ordnance,Ordnance and Missiles,Other Munitions,Ordnance and Missiles,NA,NA,Arms,"7,062,085,027.00",1989,2019
+9306.90.0041,NEW: Paintballs; Indent: 3,Munitions,Ordnance and Missiles,Ammunition,Ordnance and Missiles,NA,NA,Arms,2134771003,1989,2019
+9306.90.0050,NEW: Other; Indent: 3,Munitions,Ordnance and Missiles,Ammunition,Ordnance and Missiles,NA,NA,Arms,2134771003,1989,2019
 9306.90.0060,PARTS FOR GUIDED MISSILES,Parts and Accessories,Ordnance and Missiles,Missiles,Ordnance and Missiles,NA,NA,Arms,"22,402,578,600.00",1989,2019
 9306.90.0080,"PARTS FOR BOMBS, GRENADES, TORPEDOS, MINES, AND SIMILAR MUNITIONS OF WAR",Parts and Accessories,Ordnance and Missiles,Other Munitions,Ordnance and Missiles,NA,NA,Arms,"7,967,843,868.00",1989,2019
 9307.00.0000,"SWORDS, CUTLASSES, BAYONETS, LANCES AND SIMILAR ARMS AND PARTS THEREOF AND SCABBARDS AND SHEATHS THEREFOR",Systems and Ordnance,Other Products,Other Products,Other Products,NA,NA,Arms,79941211,1989,2019
