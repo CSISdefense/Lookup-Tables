@@ -28,6 +28,17 @@ NULLIF([lastdatetoorder],'') IS NOT NULL)
 ALTER TABLE Errorlogging.FPDSstage2
 ALTER COLUMN [lastdatetoorder] [date]
 
+SELECT DISTINCT [ccrexception],
+len([ccrexception]) as Length,
+'[varchar](71)' as DestinationType
+FROM Errorlogging.FPDSstage2
+WHERE (Try_Convert([varchar](71), [ccrexception]) IS NULL AND
+NULLIF([ccrexception],'') IS NOT NULL) OR
+ len([ccrexception]) > 71
+
+ALTER TABLE Errorlogging.FPDSstage2
+ALTER COLUMN [ccrexception] [varchar](71)
+
 SELECT DISTINCT [CSISmodifiedDate],
 len([CSISmodifiedDate]) as Length,
 '[datetime]' as DestinationType
@@ -61,4 +72,11 @@ SELECT
 	,max(iif(Try_Convert([datetime], [CSIScreatedDate]) is null and
 		nullif([CSIScreatedDate],'') is not null,1,0)) as [CSIScreatedDate]
 	FROM Errorlogging.FPDSstage2
+
+--Varchar to varchar group check. Note you have to remove an extraneous comma from the first item. 
+SELECT
+ ,iif([ccrexception]>71,[ccrexception],NULL) as [ccrexception] 
+FROM (SELECT
+ 	,max(len([ccrexception])) as [ccrexception] 
+	FROM  Errorlogging . FPDSstage2 ) as ml
 

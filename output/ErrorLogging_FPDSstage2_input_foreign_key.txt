@@ -78,25 +78,25 @@ On pk.AgencyID=fk.[fundingrequestingagencyid]
 WHERE nullif(pk.AgencyIDtext,'') is NULL AND
 nullif(fk.funding_sub_agency_name,'') is NOT NULL
 
--- Insert new [fundingrequestingofficeid] into Office.ContractingOfficeCode
-INSERT INTO Office.ContractingOfficeCode
-(ContractingOfficeCode,ContractingOfficeName)
-SELECT fk.[fundingrequestingofficeid]
-,max(fk.funding_office_name) as ContractingOfficeName
+-- Insert new [fundedbyforeignentity] into budget.FundedByForeignEntity
+INSERT INTO budget.FundedByForeignEntity
+(fundedbyforeignentity,foreign_funding_description)
+SELECT fk.[fundedbyforeignentity]
+,max(fk.foreign_funding_description) as foreign_funding_description
 FROM ErrorLogging.FPDSstage2 as fk
-LEFT OUTER JOIN Office.ContractingOfficeCode as pk
-On pk.ContractingOfficeCode=fk.[fundingrequestingofficeid]
-WHERE pk.ContractingOfficeCode is NULL
-GROUP BY fk.[fundingrequestingofficeid]
+LEFT OUTER JOIN budget.FundedByForeignEntity as pk
+On pk.fundedbyforeignentity=fk.[fundedbyforeignentity]
+WHERE pk.fundedbyforeignentity is NULL
+GROUP BY fk.[fundedbyforeignentity]
 
--- Update ContractingOfficeName using funding_office_name where there is a blank in Office.ContractingOfficeCode
+-- Update foreign_funding_description using foreign_funding_description where there is a blank in budget.FundedByForeignEntity
 UPDATE pk
-SET ContractingOfficeName=fk.funding_office_name
+SET foreign_funding_description=fk.foreign_funding_description
 FROM ErrorLogging.FPDSstage2 as fk
-LEFT OUTER JOIN Office.ContractingOfficeCode as pk
-On pk.ContractingOfficeCode=fk.[fundingrequestingofficeid]
-WHERE nullif(pk.ContractingOfficeName,'') is NULL AND
-nullif(fk.funding_office_name,'') is NOT NULL
+LEFT OUTER JOIN budget.FundedByForeignEntity as pk
+On pk.fundedbyforeignentity=fk.[fundedbyforeignentity]
+WHERE nullif(pk.foreign_funding_description,'') is NULL AND
+nullif(fk.foreign_funding_description,'') is NOT NULL
 
 -- Insert new [vendordoingasbusinessname] into Vendor.VendorName
 INSERT INTO Vendor.VendorName

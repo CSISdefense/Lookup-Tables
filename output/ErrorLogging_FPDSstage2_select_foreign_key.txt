@@ -106,31 +106,31 @@ HAVING max(iif(fk.funding_sub_agency_name=pk.AgencyIDtext or
 ORDER BY fk.[fundingrequestingagencyid]
 
 
---List new [fundingrequestingofficeid] and updated funding_office_name for insertion into Office.ContractingOfficeCode
-SELECT fk.[fundingrequestingofficeid],
-max(iif(fk.funding_office_name=pk.ContractingOfficeName or
-	fk.funding_office_name='' or
-	charindex('('+fk.funding_office_name+')',pk.ContractingOfficeName )>0,
-	NULL,fk.funding_office_name)) as MaxOfNewFKfunding_office_name,
-count(distinct iif(fk.funding_office_name=pk.ContractingOfficeName or
-	fk.funding_office_name='' or
-	charindex('('+fk.funding_office_name+')',pk.ContractingOfficeName )>0,
-	NULL,fk.funding_office_name)) as unmatched_name_count,
-pk.ContractingOfficeName as PKContractingOfficeName,
-max(iif(fk.funding_office_name=pk.ContractingOfficeName or
-	fk.funding_office_name='' or
-	charindex('('+fk.funding_office_name+')',pk.ContractingOfficeName )>0,
+--List new [fundedbyforeignentity] and updated foreign_funding_description for insertion into budget.FundedByForeignEntity
+SELECT fk.[fundedbyforeignentity],
+max(iif(fk.foreign_funding_description=pk.foreign_funding_description or
+	fk.foreign_funding_description='' or
+	charindex('('+fk.foreign_funding_description+')',pk.foreign_funding_description )>0,
+	NULL,fk.foreign_funding_description)) as MaxOfNewFKforeign_funding_description,
+count(distinct iif(fk.foreign_funding_description=pk.foreign_funding_description or
+	fk.foreign_funding_description='' or
+	charindex('('+fk.foreign_funding_description+')',pk.foreign_funding_description )>0,
+	NULL,fk.foreign_funding_description)) as unmatched_name_count,
+pk.foreign_funding_description as PKforeign_funding_description,
+max(iif(fk.foreign_funding_description=pk.foreign_funding_description or
+	fk.foreign_funding_description='' or
+	charindex('('+fk.foreign_funding_description+')',pk.foreign_funding_description )>0,
 	1,0)) as any_name_match,
-'Office.ContractingOfficeCode' as PrimaryKeyTable
+'budget.FundedByForeignEntity' as PrimaryKeyTable
 FROM ErrorLogging.FPDSstage2 as fk
-LEFT OUTER JOIN Office.ContractingOfficeCode as pk
-On pk.ContractingOfficeCode=fk.[fundingrequestingofficeid]
-GROUP BY fk.[fundingrequestingofficeid], pk.ContractingOfficeName
-HAVING max(iif(fk.funding_office_name=pk.ContractingOfficeName or
-	fk.funding_office_name='' or
-	charindex('('+fk.funding_office_name+')',pk.ContractingOfficeName )>0,
+LEFT OUTER JOIN budget.FundedByForeignEntity as pk
+On pk.fundedbyforeignentity=fk.[fundedbyforeignentity]
+GROUP BY fk.[fundedbyforeignentity], pk.foreign_funding_description
+HAVING max(iif(fk.foreign_funding_description=pk.foreign_funding_description or
+	fk.foreign_funding_description='' or
+	charindex('('+fk.foreign_funding_description+')',pk.foreign_funding_description )>0,
 	0,1))=1
-ORDER BY fk.[fundingrequestingofficeid]
+ORDER BY fk.[fundedbyforeignentity]
 
 
 --List new [vendordoingasbusinessname] for insertion into Vendor.VendorName
