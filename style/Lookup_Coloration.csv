@@ -3562,6 +3562,7 @@ CountryUAS,Turkey (Bayraktar-2/Karayel),Turkey (Bayraktar-2/Karayel),7,"DIIG Add
 CountryUAS,UAE,UAE,8,"DIIG Primary, Army",#32602F,,,,default grey,#554449,
 CountryUAS,Other UAE,Other UAE,8,"DIIG Primary, Army",#32602F,,,,default grey,#554449,
 CountryUAS,UAE (Yabhon United-40/Yabhon Flash-20),UAE (Yabhon United-40/Yabhon Flash-20),8,"DIIG Primary, Army",#eec260,,,,default grey,#554449,
+CountryUAS,UAE (Yabhon United-40 & Flash-20),UAE (Yabhon United-40 & Flash-20),8,"DIIG Primary, Army",#eec260,,,,default grey,#554449,
 CountryUAS,United States,United States,9,"DIIG Secondary, Navy",#1d2d5c,,,,default grey,#554449,
 CountryUAS,Other United States,Other United States,9,"DIIG Secondary, Navy",#1d2d5c,,,,default grey,#554449,
 CountryUAS,United States (MQ-9 Reaper),United States (MQ-9 Reaper),9,"DIIG Secondary, Navy",#32602F,,,,default grey,#554449,
