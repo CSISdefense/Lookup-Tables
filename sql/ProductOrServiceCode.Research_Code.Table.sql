@@ -1,0 +1,13 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [ProductOrServiceCode].[Research_Code](
+	[Research_Code] [varchar](3) NOT NULL,
+	[Research_Name] [varchar](255) NULL,
+ CONSTRAINT [pk_ProductOrServiceCode_Research_Code] PRIMARY KEY CLUSTERED 
+(
+	[Research_Code] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO

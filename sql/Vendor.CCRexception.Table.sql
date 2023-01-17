@@ -1,0 +1,13 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Vendor].[CCRexception](
+	[CCRexception] [varchar](1) NOT NULL,
+	[sam_exception_description] [varchar](71) NULL,
+ CONSTRAINT [pk_Vendor_CCRexception] PRIMARY KEY CLUSTERED 
+(
+	[CCRexception] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO

@@ -3,7 +3,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [budget].[FundedByForeignEntity](
-	[fundedbyforeignentity] [varchar](1) NOT NULL,
+	[fundedbyforeignentity] [varchar](21) NOT NULL,
 	[foreign_funding_description] [varchar](50) NULL,
 	[IsFMS] [bit] NULL,
  CONSTRAINT [pk_FundedByForeignEntity] PRIMARY KEY CLUSTERED 
