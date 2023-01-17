@@ -30,14 +30,14 @@ ALTER COLUMN [lastdatetoorder] [date]
 
 SELECT DISTINCT [ccrexception],
 len([ccrexception]) as Length,
-'[varchar](71)' as DestinationType
+'[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSstage2
-WHERE (Try_Convert([varchar](71), [ccrexception]) IS NULL AND
+WHERE (Try_Convert([varchar](1), [ccrexception]) IS NULL AND
 NULLIF([ccrexception],'') IS NOT NULL) OR
- len([ccrexception]) > 71
+ len([ccrexception]) > 1
 
 ALTER TABLE Errorlogging.FPDSstage2
-ALTER COLUMN [ccrexception] [varchar](71)
+ALTER COLUMN [ccrexception] [varchar](1)
 
 SELECT DISTINCT [CSISmodifiedDate],
 len([CSISmodifiedDate]) as Length,
@@ -75,7 +75,7 @@ SELECT
 
 --Varchar to varchar group check. Note you have to remove an extraneous comma from the first item. 
 SELECT
- ,iif([ccrexception]>71,[ccrexception],NULL) as [ccrexception] 
+ ,iif([ccrexception]>1,[ccrexception],NULL) as [ccrexception] 
 FROM (SELECT
  	,max(len([ccrexception])) as [ccrexception] 
 	FROM  Errorlogging . FPDSstage2 ) as ml

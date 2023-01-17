@@ -576,11 +576,10 @@ NULLIF([commercial_item_acquisition_procedures_code],'') IS NOT NULL) OR
 
 SELECT DISTINCT [small_business_competitiveness_demonstration_program],
 len([small_business_competitiveness_demonstration_program]) as Length,
-'[varchar](6)' as DestinationType
+'[bit]' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([varchar](6), [small_business_competitiveness_demonstration_program]) IS NULL AND
-NULLIF([small_business_competitiveness_demonstration_program],'') IS NOT NULL) OR
- len([small_business_competitiveness_demonstration_program]) > 6
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([small_business_competitiveness_demonstration_program]))) IS NULL AND
+NULLIF([small_business_competitiveness_demonstration_program],'') IS NOT NULL)
 
 SELECT DISTINCT [commercial_item_test_program_code],
 len([commercial_item_test_program_code]) as Length,
@@ -592,11 +591,10 @@ NULLIF([commercial_item_test_program_code],'') IS NOT NULL) OR
 
 SELECT DISTINCT [a76_fair_act_action_code],
 len([a76_fair_act_action_code]) as Length,
-'[varchar](3)' as DestinationType
+'[bit]' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([varchar](3), [a76_fair_act_action_code]) IS NULL AND
-NULLIF([a76_fair_act_action_code],'') IS NOT NULL) OR
- len([a76_fair_act_action_code]) > 3
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([a76_fair_act_action_code]))) IS NULL AND
+NULLIF([a76_fair_act_action_code],'') IS NOT NULL)
 
 SELECT DISTINCT [fed_biz_opps_code],
 len([fed_biz_opps_code]) as Length,
