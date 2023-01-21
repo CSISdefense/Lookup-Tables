@@ -43,10 +43,8 @@ USA	UNITED STATES OF AMERICA	1	USA	UNITED STATES	1	FPDSTypeTable.vendorcountryco
 VCT	SAINT VINCENT AND THE GRENADINES	1	NULL	NULL	0	FPDSTypeTable.vendorcountrycode	FPDSTypeTable.Country3LetterCode
 VGB	VIRGIN ISLANDS, BRITISH	2	VGB	BRITISH VIRGIN ISLANDS [UNITED KINGDOM]	0	FPDSTypeTable.vendorcountrycode	FPDSTypeTable.Country3LetterCode
 ZZZ	NONDISTRIBUTED	1	NULL	NULL	0	FPDSTypeTable.vendorcountrycode	FPDSTypeTable.Country3LetterCode
-
-
-
 Warning: Null value is eliminated by an aggregate or other SET operation.
+
 systemequipmentcode	MaxOfNewFKdod_acquisition_program_description	unmatched_name_count	PKAgencyIDtext	any_name_match	PrimaryKeyTable
 101	H-1 UPGRADES	1	H-1 UPGRADE 	1	Project.SystemEquipmentCode
 121	EPS	1	APS 	0	Project.SystemEquipmentCode
@@ -107,10 +105,8 @@ N16	BEC INC 1	1	BIOMETRICS	0	Project.SystemEquipmentCode
 N26	KMI INC 2	1	KMI	1	Project.SystemEquipmentCode
 N87	DEAMS	1	DEAMS INC 1	1	Project.SystemEquipmentCode
 ZBL	PERFORMANCE BASED LOGISTICS(PBL)	1	PERFORMANCE BASED LOGISTICS (PBL)	1	Project.SystemEquipmentCode
-
-
-
 Warning: Null value is eliminated by an aggregate or other SET operation.
+
 idvagencyid	MaxOfNewFKparent_award_agency_name	unmatched_name_count	PKAgencyIDtext	any_name_match	PrimaryKeyTable
 1200	DEPARTMENT OF AGRICULTURE	1	AGRICULTURE, DEPARTMENT OF	1	FPDSTypeTable.AgencyID
 1204	OFFICE OF THE INSPECTOR GENERAL	1	OFFICE OF INSPECTOR GENERAL	1	FPDSTypeTable.AgencyID
@@ -159,10 +155,8 @@ idvagencyid	MaxOfNewFKparent_award_agency_name	unmatched_name_count	PKAgencyIDte
 9100	DEPARTMENT OF EDUCATION	1	EDUCATION, DEPARTMENT OF	1	FPDSTypeTable.AgencyID
 9568	UNITED STATES AGENCY FOR GLOBAL MEDIA, BBG	1	BROADCASTING BOARD OF GOVERNORS	1	FPDSTypeTable.AgencyID
 9700	DEPT OF DEFENSE	1	DEPARTMENT OF DEFENSE	1	FPDSTypeTable.AgencyID
-
-
-
 Warning: Null value is eliminated by an aggregate or other SET operation.
+
 contractingofficeagencyid	MaxOfNewFKawarding_sub_agency_name	unmatched_name_count	PKAgencyIDtext	any_name_match	PrimaryKeyTable
 1205	USDA, DEPARTMENTAL ADMINISTRATION	1	USDA, OFFICE OF THE CHIEF FINANCIAL OFFICER	0	FPDSTypeTable.AgencyID
 12B0	USDA, ASSISTANT SECRETARY FOR ADMINISTRATION	1	USDA, ASSISTANT SECRETARY FOR DEPARTMENTAL MANAGEMENT	1	FPDSTypeTable.AgencyID
@@ -191,10 +185,8 @@ contractingofficeagencyid	MaxOfNewFKawarding_sub_agency_name	unmatched_name_coun
 9700	DEPT OF DEFENSE	1	DEPARTMENT OF DEFENSE	0	FPDSTypeTable.AgencyID
 97AV	DEFENSE COUNTERINTELLIGENCE AND SECURITY AGENCY	1	DEFENSE SECURITY SERVICE	0	FPDSTypeTable.AgencyID
 97F1	DEFENSE MEDIA CENTER (DMC)	1	DEFENSE MEDIA ACTIVITY (DMA)	1	FPDSTypeTable.AgencyID
-
-
-
 Warning: Null value is eliminated by an aggregate or other SET operation.
+
 maj_fund_agency_cat	MaxOfNewFKfunding_agency_name	unmatched_name_count	PKAgencyIDtext	any_name_match	PrimaryKeyTable
 004	GOVERNMENT PUBLISHING OFFICE (GPO)	1	UNITED STATES GOVERNMENT PUBLISHING OFFICE (GPO)	1	FPDSTypeTable.AgencyID
 1100	EXECUTIVE OFFICE OF THE PRESIDENT (EOP)	1	EXECUTIVE OFFICE OF THE PRESIDENT	0	FPDSTypeTable.AgencyID
@@ -214,8 +206,6 @@ maj_fund_agency_cat	MaxOfNewFKfunding_agency_name	unmatched_name_count	PKAgencyI
 514	U.S. AGENCY FOR GLOBAL MEDIA (USAGM)	1	BROADCASTING BOARD OF GOVERNORS (BBG)	1	FPDSTypeTable.AgencyID
 9553	CSOSA (CSOSA)	1	COURT SERVICES AND OFFENDER SUPERVISION AGENCY (CSOSA)	1	FPDSTypeTable.AgencyID
 Warning: Null value is eliminated by an aggregate or other SET operation.
-
-
 
 fundingrequestingagencyid	MaxOfNewFKfunding_sub_agency_name	unmatched_name_count	PKAgencyIDtext	any_name_match	PrimaryKeyTable
 0400	UNITED STATES GOVERNMENT PUBLISHING OFFICE	1	GOVERNMENT PRINTING OFFICE	0	FPDSTypeTable.AgencyID
@@ -284,20 +274,13 @@ fundingrequestingagencyid	MaxOfNewFKfunding_sub_agency_name	unmatched_name_count
 9700	DEPT OF DEFENSE	1	DEPARTMENT OF DEFENSE	0	FPDSTypeTable.AgencyID
 97AV	DEFENSE COUNTERINTELLIGENCE AND SECURITY AGENCY	1	DEFENSE SECURITY SERVICE	0	FPDSTypeTable.AgencyID
 97F6	OFFICE OF LOCAL DEFENSE COMMUNITY COOPERATION	1	OFFICE OF ECONOMIC ADJUSTMENT	0	FPDSTypeTable.AgencyID
-
-
-
 Warning: Null value is eliminated by an aggregate or other SET operation.
+
 fundedbyforeignentity	MaxOfNewFKforeign_funding_description	unmatched_name_count	PKforeign_funding_description	any_name_match	PrimaryKeyTable
 	NOT APPLICABLE	2	NULL	1	budget.FundedByForeignEntity
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
-Warning: Null value is eliminated by an aggregate or other SET operation.
 vendordoingasbusinessname	PrimaryKeyTable
-
-
 
 placeofperformancecountrycode	MaxOfNewFKprimary_place_of_performance_country_name	unmatched_name_count	PKCountry3LetterCodeText	any_name_match	PrimaryKeyTable
 ABW	ARUBA	1	ARUBA [NETHERLANDS]	0	FPDSTypeTable.Country3LetterCode
@@ -352,10 +335,8 @@ VEN	VENEZUELA (BOLIVARIAN REPUBLIC OF)	1	VENEZUELA	1	FPDSTypeTable.Country3Lette
 VGB	VIRGIN ISLANDS, BRITISH	2	BRITISH VIRGIN ISLANDS [UNITED KINGDOM]	0	FPDSTypeTable.Country3LetterCode
 VNM	VIET NAM	1	VIETNAM	1	FPDSTypeTable.Country3LetterCode
 WLF	WALLIS AND FUTUNA	1	WALLIS AND FUTUNA [FRANCE]	0	FPDSTypeTable.Country3LetterCode
-
-
-
 Warning: Null value is eliminated by an aggregate or other SET operation.
+
 pop_state_code	MaxOfNewFKprimary_place_of_performance_state_name	unmatched_name_count	PKstatecodeText	any_name_match	PrimaryKeyTable
 	WISCONSIN	38		1	FPDSTypeTable.statecode
 08	COLORADO	1		0	FPDSTypeTable.statecode
@@ -423,8 +404,6 @@ WV	WYOMING	15	WEST VIRGINIA	1	FPDSTypeTable.statecode
 WY	SOUTH DAKOTA	6	WYOMING	1	FPDSTypeTable.statecode
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 award_type_code	MaxOfNewFKaward_type_name	unmatched_name_count	PKaward_type_name	any_name_match	PrimaryKeyTable
 A	BPA	1	BPA CALL	1	FPDSTypeTable.award_type_code
 B	PO	1	PURCHASE ORDER	1	FPDSTypeTable.award_type_code
@@ -432,12 +411,8 @@ C	DO	1	DELIVERY ORDER	1	FPDSTypeTable.award_type_code
 D	DCA	1	DEFINITIVE CONTRACT	1	FPDSTypeTable.award_type_code
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 idv_type_code	MaxOfNewFKidv_type_name	unmatched_name_count	PKidv_type_name	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
-
-
 
 typeofcontractpricing	MaxOfNewFKtype_of_contract_pricing_name	unmatched_name_count	PKTypeOfContractPricingText	any_name_match	PrimaryKeyTable
 1	ORDER DEPENDENT (IDV ALLOWS PRICING ARRANGEMENT TO BE DETERMINED SEPARATELY FOR EACH ORDER)	1	Order Dependent (IDV only)	1	FPDSTypeTable.typeofcontractpricing
@@ -447,8 +422,6 @@ J	FIXED PRICE	1	Firm Fixed Price	1	FPDSTypeTable.typeofcontractpricing
 V	COST PLUS INCENTIVE FEE	1	Cost Plus Incentive	1	FPDSTypeTable.typeofcontractpricing
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 reasonformodification	MaxOfNewFKaction_type_name	unmatched_name_count	PKreasonformodificationText	any_name_match	PrimaryKeyTable
 A	ADDITIONAL WORK (NEW AGREEMENT,FAR PART 6 APPLI	2	ADDITIONAL WORK (NEW AGREEMENT,FAR PART 6 APPLIES)	1	FPDSTypeTable.reasonformodification
 P	REREPRESENTATION OF NON-NOVATED MERGER/ACQUISIT	1	REREPRESENTATION OF NON-NOVATED MERGER/ACQUISITION	1	FPDSTypeTable.reasonformodification
@@ -456,8 +429,6 @@ V	UNIQUE ENTITY ID OR LEGAL BUSINESS NAME CHANGE - NON-NOVATION	1	VENDOR DUNS CH
 W	ENTITY ADDRESS CHANGE	1	VENDOR ADDRESS CHANGE	0	FPDSTypeTable.reasonformodification
 Y	ADD SUBCONTRACTING PLAN	1	Add Subcontract Plan	0	FPDSTypeTable.reasonformodification
 Warning: Null value is eliminated by an aggregate or other SET operation.
-
-
 
 productorservicecode	MaxOfNewFKproduct_or_service_code_description	unmatched_name_count	PKProductOrServiceCodeText	any_name_match	PrimaryKeyTable
 1005	GUNS, THROUGH 30MM	1	GUNS, THROUGH 30 MM	1	FPDSTypeTable.ProductOrServiceCode
@@ -2218,19 +2189,13 @@ W095	LEASE-RENT OF METAL BARS & SHEETS	1	LEASE OR RENTAL OF EQUIPMENT- METAL BAR
 W099	LEASE-RENT OF MISC EQ	1	LEASE OR RENTAL OF EQUIPMENT- MISCELLANEOUS	1	FPDSTypeTable.ProductOrServiceCode
 X1NC	LEASE/RENTAL OF POLLUTION ABATEMENT AND CONTROL FACILITIES	1	X1NC LEASE/RENTAL OF POLLUTION ABATEMENT AND CONTROL FACILITIES	0	FPDSTypeTable.ProductOrServiceCode
 Z217	DREDGING,INCL. DUSTPAN AND SEA-GOING HOPPERS	1	MAINTENANCE OF DREDGING FACILITIES	0	FPDSTypeTable.ProductOrServiceCode
-
-
-
 Warning: Null value is eliminated by an aggregate or other SET operation.
+
 contractbundling	MaxOfNewFKcontract_bundling_name	unmatched_name_count	PKcontractbundlingText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 claimantprogramcode	MaxOfNewFKdod_claimant_program_description	unmatched_name_count	PKClaimantProgramCodeText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
-
-
 
 principalnaicscode	MaxOfNewFKnaics_description	unmatched_name_count	PKprincipalnaicscodeText	any_name_match	PrimaryKeyTable
 112519	OTHER AQUACULTURE	1	Other Aquaculture (2007), Other Animal Aquaculture (2002)	1	FPDSTypeTable.PrincipalNaicsCode
@@ -2249,30 +2214,20 @@ principalnaicscode	MaxOfNewFKnaics_description	unmatched_name_count	PKprincipaln
 541612	HUMAN RESOURCES CONSULTING SERVICES	1	Human Resources Consulting Services (2007), Human Resources and Executive Search Consulting Services (2002)	1	FPDSTypeTable.PrincipalNaicsCode
 561330	PROFESSIONAL EMPLOYER ORGANIZATIONS (FORMERLY EMPLOYEE LEASING SERVICES)	1	Professional Employer Organizations	1	FPDSTypeTable.PrincipalNaicsCode
 721310	ROOMING AND BOARDING HOUSES, DORMITORIES, AND WORKERS' CAMPS	1	Rooming and Boarding Houses	1	FPDSTypeTable.PrincipalNaicsCode
-
-
-
 Warning: Null value is eliminated by an aggregate or other SET operation.
+
 recoveredmaterialclauses	MaxOfNewFKrecovered_materials_sustainability_name	unmatched_name_count	PKrecoveredmaterialclausesText	any_name_match	PrimaryKeyTable
 C	NO CLAUSES INCLUDED AND NO SUSTAINABILITY INCLU	1	NO CLAUSES INCLUDED AND NO SUSTAINABILITY INCLUDED	1	FPDSTypeTable.recoveredmaterialclauses
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 manufacturingorganizationtype	MaxOfNewFKdomestic_or_foreign_entity_name	unmatched_name_count	PKmanufacturingorganizationtypeText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
-
-
 
 informationtechnologycommercialitemcategory	MaxOfNewFKinformation_technology_commercial_item_category_name	unmatched_name_count	PKinformationtechnologycommercialitemcategoryText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 useofepadesignatedproducts	MaxOfNewFKepa_designated_product_name	unmatched_name_count	PKuseofepadesignatedproductsText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
-
-
 
 countryoforigin	MaxOfNewFKcountry_of_product_or_service_origin_name	unmatched_name_count	PKCountry3LetterCodeText	any_name_match	PrimaryKeyTable
 ABW	ARUBA	1	ARUBA [NETHERLANDS]	1	FPDSTypeTable.Country3LetterCode
@@ -2316,10 +2271,8 @@ SXM	SINT MAARTEN	1	Sint Maarten (Dutch part)	0	FPDSTypeTable.Country3LetterCode
 TCA	TURKS AND CAICOS ISLANDS	1	TURKS AND CAICOS ISLANDS [UNITED KINGDOM]	1	FPDSTypeTable.Country3LetterCode
 VGB	VIRGIN ISLANDS, BRITISH	1	BRITISH VIRGIN ISLANDS [UNITED KINGDOM]	1	FPDSTypeTable.Country3LetterCode
 VIR	VIRGIN ISLANDS, U.S.	1	VIRGIN ISLANDS [UNITED STATES]	1	FPDSTypeTable.Country3LetterCode
-
-
-
 Warning: Null value is eliminated by an aggregate or other SET operation.
+
 placeofmanufacture	MaxOfNewFKplace_of_manufacture_name	unmatched_name_count	PKPlaceOfManufactureText	any_name_match	PrimaryKeyTable
 A	PERFORMED OR MANUFACTURED IN US, BUT SERVICES P	1	PERFORMED OR MANUFACTURED IN US, BUT SERVICES PERFORMED BY A FOREIGN CONCERN OR MORE THAN 50% FOREIGN CONTENT	1	FPDSTypeTable.PlaceOfManufacture
 E	MFG OUTSIDE U.S. - USE OUTSIDE THE UNITED STATE	1	MFG OUTSIDE U.S. - USE OUTSIDE THE UNITED STATES	1	FPDSTypeTable.PlaceOfManufacture
@@ -2328,30 +2281,20 @@ I	MFG OUTSIDE U.S. - PUBLIC INTEREST DETERMINATIO	1	MFG OUTSIDE U.S. - PUBLIC IN
 L	MFG OUTSIDE U.S. - QUALIFYING COUNTRY (DOD ONLY	1	MFG OUTSIDE U.S. - QUALIFYING COUNTRY (DOD ONLY)	1	FPDSTypeTable.PlaceOfManufacture
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 subcontractplan	MaxOfNewFKsubcontracting_plan_name	unmatched_name_count	PKsubcontractplanText	any_name_match	PrimaryKeyTable
 A	PLAN NOT INCLUDED - NO SUBCONTRACTING POSSIBILI	1	PLAN NOT INCLUDED - NO SUBCONTRACTING POSSIBILITIES 	1	FPDSTypeTable.subcontractplan
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 solicitationprocedures	MaxOfNewFKsolicitation_procedures_name	unmatched_name_count	PKsolicitationproceduresText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
-
-
 
 typeofsetaside	MaxOfNewFKtype_of_set_aside_name	unmatched_name_count	PKtypeofsetasideText	any_name_match	PrimaryKeyTable
 HS3	8(A) WITH HUBZONE PREFERENCE	1	8(A) WITH HUB ZONE PREFERENCE	1	FPDSTypeTable.typeofsetaside
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 evaluatedpreference	MaxOfNewFKevaluated_preference_name	unmatched_name_count	PKevaluatedpreferenceText	any_name_match	PrimaryKeyTable
 SPS	SDB PREFERENTIAL CONSIDERATION PARTIAL SB SET	1	SDB PREFERENTIAL CONSIDERATION PARTIAL SB SET ASIDE	1	FPDSTypeTable.evaluatedpreference
 Warning: Null value is eliminated by an aggregate or other SET operation.
-
-
 
 reasonnotcompeted	MaxOfNewFKother_than_full_and_open_competition_name	unmatched_name_count	PKreasonnotcompetedText	any_name_match	PrimaryKeyTable
 BND	BRAND NAME DESCRIPTION (FAR 6.302-1(C))	1	BRAND NAME DESCRIPTION 	1	FPDSTypeTable.reasonnotcompeted
@@ -2373,83 +2316,51 @@ URG	URGENCY (FAR 6.302-2)	1	URGENCY 	1	FPDSTypeTable.reasonnotcompeted
 UT	UTILITIES (FAR 6.302-1(B)(3))	1	UTILITIES FAR 41.2	1	FPDSTypeTable.reasonnotcompeted
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 commercialitemacquisitionprocedures	MaxOfNewFKcommercial_item_acquisition_procedures_name	unmatched_name_count	PKCommercialItemAcquisitionProceduresText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
-
-
 
 walshhealyact	MaxOfNewFKwalsh_healey_act_name	unmatched_name_count	PKwalshhealyactText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 servicecontractact	MaxOfNewFKservice_contract_act_name	unmatched_name_count	PKservicecontractactText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
-
-
 
 davisbaconact	MaxOfNewFKdavis_bacon_act_name	unmatched_name_count	PKdavisbaconactText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 interagencycontractingauthority	MaxOfNewFKinteragency_contracting_authority_name	unmatched_name_count	PKinteragencycontractingauthorityText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
-
-
 
 parent_award_type_code	MaxOfNewFKparent_award_type_name	unmatched_name_count	PKidv_type_name	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 parent_award_single_or_multiple_code	MaxOfNewFKparent_award_single_or_multiple_name	unmatched_name_count	PKmultipleorsingleawardidcText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 majorprogramcode	PrimaryKeyTable
-
-
 
 nationalinterestactioncode	MaxOfNewFKnational_interest_action_name	unmatched_name_count	PKNational_Interest_Action_Name	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 costorpricingdata	MaxOfNewFKcost_or_pricing_data_name	unmatched_name_count	PKcostorpricingdataText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
-
-
 
 gfe_gfp_code	MaxOfNewFKgfe_gfp_name	unmatched_name_count	PKgfe_gfpText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 seatransportation	MaxOfNewFKsea_transportation_name	unmatched_name_count	PKseatransportationText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
-
-
 
 lettercontract	MaxOfNewFKundefinitized_action_name	unmatched_name_count	PKUndefinitizedActionText	any_name_match	PrimaryKeyTable
 N	N	1	No	1	FPDSTypeTable.lettercontract
 Y	Y	1	Letter Contract	1	FPDSTypeTable.lettercontract
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 contingencyhumanitarianpeacekeepingoperation	MaxOfNewFKcontingency_humanitarian_or_peacekeeping_operation_name	unmatched_name_count	PKcontingencyhumanitarianpeacekeepingoperationText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
-
-
 contractingofficerbusinesssizedetermination	MaxOfNewFKContractingOfficerBusinessSizeDeterminationText	unmatched_name_count	PKContractingOfficerBusinessSizeDeterminationText	any_name_match	PrimaryKeyTable
 Warning: Null value is eliminated by an aggregate or other SET operation.
-
-
 
 awarding_agency_code	MaxOfNewFKawarding_agency_name	unmatched_name_count	PKawarding_agency_name	any_name_match	PrimaryKeyTable
 514	U.S. AGENCY FOR GLOBAL MEDIA (USAGM)	1	BROADCASTING BOARD OF GOVERNORS (BBG)	1	agency.awarding_agency_code
@@ -2462,4 +2373,4 @@ awarding_agency_code	MaxOfNewFKawarding_agency_name	unmatched_name_count	PKaward
 Warning: Null value is eliminated by an aggregate or other SET operation.
 
 
-
+Completion time: 2023-01-20T12:29:12.5676298-05:00
