@@ -10,7 +10,7 @@ COD	CONGO (KINSHASA)	1	COD	"CONGO,DEMOCRATIC REPUBLIC OF THE (KINSHASA)"	0	FPDST
 COG	CONGO (BRAZZAVILLE)	1	COG	"CONGO,REPUBLIC OF THE (BRAZZAVILLE)"	0	FPDSTypeTable.vendorcountrycode	FPDSTypeTable.Country3LetterCode
 CPV	CABO VERDE	1	CPV	CAPE VERDE	0	FPDSTypeTable.vendorcountrycode	FPDSTypeTable.Country3LetterCode
 CUB	CUBA	1	NULL	NULL	0	FPDSTypeTable.vendorcountrycode	FPDSTypeTable.Country3LetterCode
-CUW	CURACAO	1	CUW	Curaï¿½ao	0	FPDSTypeTable.vendorcountrycode	FPDSTypeTable.Country3LetterCode
+CUW	CURACAO	1	CUW	Curaçao	0	FPDSTypeTable.vendorcountrycode	FPDSTypeTable.Country3LetterCode
 CYM	CAYMAN ISLANDS	1	NULL	NULL	0	FPDSTypeTable.vendorcountrycode	FPDSTypeTable.Country3LetterCode
 ERI	ERITREA	1	NULL	NULL	0	FPDSTypeTable.vendorcountrycode	FPDSTypeTable.Country3LetterCode
 FLK	FALKLAND ISLANDS (ISLAS MALVINAS)	1	NULL	NULL	0	FPDSTypeTable.vendorcountrycode	FPDSTypeTable.Country3LetterCode
@@ -298,7 +298,7 @@ COD	"CONGO, DEMOCRATIC REPUBLIC OF THE"	2	"CONGO,DEMOCRATIC REPUBLIC OF THE (KIN
 COG	CONGO (BRAZZAVILLE)	2	"CONGO,REPUBLIC OF THE (BRAZZAVILLE)"	0	FPDSTypeTable.Country3LetterCode		
 COK	COOK ISLANDS	1	COOK ISLANDS [NEW ZEALAND]	0	FPDSTypeTable.Country3LetterCode		
 CPV	CABO VERDE	1	CAPE VERDE	0	FPDSTypeTable.Country3LetterCode		
-CUW	CURACAO	1	Curaï¿½ao	0	FPDSTypeTable.Country3LetterCode		
+CUW	CURACAO	1	Curaçao	0	FPDSTypeTable.Country3LetterCode		
 CXR	CHRISTMAS ISLAND	1	CHRISTMAS ISLAND [AUSTRALIA]	0	FPDSTypeTable.Country3LetterCode		
 CYM	CAYMAN ISLANDS	1	CAYMAN ISLANDS [UNITED KINGDOM]	0	FPDSTypeTable.Country3LetterCode		
 ESH	WESTERN SAHARA *	2	WESTERN SAHARA [UNDETERMINED]	0	FPDSTypeTable.Country3LetterCode		
@@ -2246,7 +2246,7 @@ COD	CONGO (KINSHASA)	1	"CONGO,DEMOCRATIC REPUBLIC OF THE (KINSHASA)"	1	FPDSTypeT
 COG	CONGO (BRAZZAVILLE)	1	"CONGO,REPUBLIC OF THE (BRAZZAVILLE)"	1	FPDSTypeTable.Country3LetterCode		
 COK	COOK ISLANDS	1	COOK ISLANDS [NEW ZEALAND]	1	FPDSTypeTable.Country3LetterCode		
 CPV	CABO VERDE	1	CAPE VERDE	1	FPDSTypeTable.Country3LetterCode		
-CUW	CURACAO	1	Curaï¿½ao	0	FPDSTypeTable.Country3LetterCode		
+CUW	CURACAO	1	Curaçao	0	FPDSTypeTable.Country3LetterCode		
 CXR	CHRISTMAS ISLAND	1	CHRISTMAS ISLAND [AUSTRALIA]	1	FPDSTypeTable.Country3LetterCode		
 CYM	CAYMAN ISLANDS	1	CAYMAN ISLANDS [UNITED KINGDOM]	1	FPDSTypeTable.Country3LetterCode		
 ESH	WESTERN SAHARA	1	WESTERN SAHARA [UNDETERMINED]	1	FPDSTypeTable.Country3LetterCode		
@@ -2410,6 +2410,3 @@ awarding_agency_code	MaxOfNewFKawarding_agency_name	unmatched_name_count	PKaward
 3302	NATIONAL GALLERY OF ART (NGA)	1	NATIONAL GALLERY OF ART (SI)	1	agency.awarding_agency_code		
 9553	CSOSA (CSOSA)	1	COURT SERVICES AND OFFENDER SUPERVISION AGENCY (CSOSA)	1	agency.awarding_agency_code		
 Warning: Null value is eliminated by an aggregate or other SET operation.							
-
-
-Completion time: 2023-01-20T12:29:12.5676298-05:00

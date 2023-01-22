@@ -906,55 +906,63 @@ get_ForeignKeyList<-function(){
 }
 
 
-get_CSISvariableNameToPrimaryKey<-function(){
- 
-  
+get_CSISvariableNameToPrimaryKey<-function(DestinationSchema,
+                                           DestinationTable){
+
+
   lookup.CSISvariableNameToPrimaryKey<-get_ForeignKeyList()
-  
+  lookup.CSISvariableNameToPrimaryKey<-lookup.CSISvariableNameToPrimaryKey %>%
+    filter(FKSchema==DestinationSchema,
+           FKTableName==DestinationTable)
+    
+
   lookup.CSISvariableNameToPrimaryKey$FKColumnNameUp<-toupper(lookup.CSISvariableNameToPrimaryKey$FKColumnName)
- 
-  
-   
+
+
+
   #Starting by dropping cases in which case a primary key is a foreign key for a different table.
-  #E.g. MailingElectionDate->ElectionDate. In this case, we want MailingElectionDate to match up to the higher level in the 
+  #E.g. MailingElectionDate->ElectionDate. In this case, we want MailingElectionDate to match up to the higher level in the
   #heirarchy, Election.MailingElectionDate. We don't need them to match with the base, Eletion.ElectionDate because everything
   #in Election.MailingElectionDate already is a component of the subsequent table, thanks to the existing foreign key.
   lookup.CSISvariableNameToPrimaryKey<- lookup.CSISvariableNameToPrimaryKey %>%
     dplyr::filter(toupper(FKTableName)!=toupper(FKColumnName))
-  
+
   #Filter out multi-key primary keys, this function isn't smart enough to handle them
   lookup.CSISvariableNameToPrimaryKey<- lookup.CSISvariableNameToPrimaryKey %>%
     dplyr::filter(PKcolumnCount==1)
-  
+
   #First consolidate down to only CSISvariable names and keys, using upper to handle case sensitivity
-  lookup.CSISvariableNameToPrimaryKey <- lookup.CSISvariableNameToPrimaryKey %>% remove_bom() %>%
-    dplyr::rename(CSISvariableName= FKColumnName) %>% 
+  lookup.CSISvariableNameToPrimaryKey <- lookup.CSISvariableNameToPrimaryKey %>% #remove_bom() %>%
+    dplyr::rename(SourceVariableName= FKColumnName) %>%
     dplyr::group_by(FKColumnNameUp,PKSchemaName,PKTableName,PKColumnCode,PKcolumnCount,PKcolumnText) %>%
-    dplyr::summarise(CSISvariableName=max(CSISvariableName)) %>%
-    dplyr::group_by(CSISvariableName) %>%
-    dplyr::select(-FKColumnNameUp) 
-  
+    dplyr::summarise(SourceVariableName=max(SourceVariableName)) %>%
+    dplyr::group_by(SourceVariableName) %>%
+    dplyr::select(-FKColumnNameUp)
+
   #Handle those cases with multiple primary keys (typically these involves heirarchical pks that appear across multiple tables)
   #The core one should share a name with the column name (with a few exceptions, like contractor.parentcontractor)
   lookup.CSISvariableNameToPrimaryKey <- lookup.CSISvariableNameToPrimaryKey %>%
-    dplyr::mutate(RepeatCount=length(CSISvariableName),
+    dplyr::mutate(RepeatCount=length(SourceVariableName),
                   AnyExact=max(ifelse(toupper(PKTableName)==toupper(PKColumnCode),1,0))) %>%
     dplyr::filter(AnyExact==0 | RepeatCount==1 | toupper(PKTableName)==toupper(PKColumnCode)) %>%
-    dplyr::mutate(RepeatCount=length(CSISvariableName))
-  
-  
+    dplyr::mutate(RepeatCount=length(SourceVariableName))
+
+
   if(max(lookup.CSISvariableNameToPrimaryKey$RepeatCount>1)){
     print(lookup.CSISvariableNameToPrimaryKey%>% dplyr::filter(RepeatCount>1))
-    warning("Repeated CSISvariableName")
+    warning("Repeated SourceVariableName")
     lookup.CSISvariableNameToPrimaryKey<-  lookup.CSISvariableNameToPrimaryKey %>% dplyr::filter(RepeatCount==1 | toupper(PKTableName)==toupper(PKColumnCode))
   }
-  lookup.CSISvariableNameToPrimaryKey$CSISvariableName<-paste("[",lookup.CSISvariableNameToPrimaryKey$CSISvariableName,"]",sep="")
-  
+  lookup.CSISvariableNameToPrimaryKey$SourceVariableName<-paste("[",lookup.CSISvariableNameToPrimaryKey$SourceVariableName,"]",sep="")
+  lookup.CSISvariableNameToPrimaryKey<-translate_name(lookup.CSISvariableNameToPrimaryKey)%>%group_by()%>%
+    select(-SourceVariableName,-IsDuplicate,-Pair)
   lookup.CSISvariableNameToPrimaryKey
 }
 
 create_foreign_key_assigments<-function(Schema,
                               TableName,
+                              DestinationSchema,
+                              DestinationTable,
                               dir="SQL",
                               suppress_select=FALSE,
                               suppress_alter=FALSE,
@@ -972,7 +980,8 @@ create_foreign_key_assigments<-function(Schema,
   MergeTable.df<-translate_name(MergeTable.df)
   
   #Limit it to just cases where the variable type is changing
-  lookup.CSISvariableNameToPrimaryKey<-get_CSISvariableNameToPrimaryKey()
+  lookup.CSISvariableNameToPrimaryKey<-get_CSISvariableNameToPrimaryKey(DestinationSchema,
+                                                                        DestinationTable)
   
   
   MergeTable.df<-left_join(MergeTable.df,lookup.CSISvariableNameToPrimaryKey,

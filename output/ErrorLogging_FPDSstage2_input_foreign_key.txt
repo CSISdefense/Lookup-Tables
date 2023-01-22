@@ -18,6 +18,16 @@ On pk.AgencyID=fk.[idvagencyid]
 WHERE nullif(pk.AgencyIDtext,'') is NULL AND
 nullif(fk.parent_award_agency_name,'') is NOT NULL
 
+-- Insert new [agencyid] into FPDSTypeTable.AgencyID
+INSERT INTO FPDSTypeTable.AgencyID
+(AgencyID)
+SELECT fk.[agencyid]
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[agencyid]
+WHERE pk.AgencyID is NULL
+GROUP BY fk.[agencyid]
+
 -- Insert new [contractingofficeagencyid] into FPDSTypeTable.AgencyID
 INSERT INTO FPDSTypeTable.AgencyID
 (AgencyID,AgencyIDtext)
@@ -97,6 +107,26 @@ LEFT OUTER JOIN budget.FundedByForeignEntity as pk
 On pk.fundedbyforeignentity=fk.[fundedbyforeignentity]
 WHERE nullif(pk.foreign_funding_description,'') is NULL AND
 nullif(fk.foreign_funding_description,'') is NOT NULL
+
+-- Insert new [ccrexception] into Vendor.CCRexception
+INSERT INTO Vendor.CCRexception
+(CCRexception,sam_exception_description)
+SELECT fk.[ccrexception]
+,max(fk.sam_exception_description) as sam_exception_description
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Vendor.CCRexception as pk
+On pk.CCRexception=fk.[ccrexception]
+WHERE pk.CCRexception is NULL
+GROUP BY fk.[ccrexception]
+
+-- Update sam_exception_description using sam_exception_description where there is a blank in Vendor.CCRexception
+UPDATE pk
+SET sam_exception_description=fk.sam_exception_description
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Vendor.CCRexception as pk
+On pk.CCRexception=fk.[ccrexception]
+WHERE nullif(pk.sam_exception_description,'') is NULL AND
+nullif(fk.sam_exception_description,'') is NOT NULL
 
 -- Insert new [vendordoingasbusinessname] into Vendor.VendorName
 INSERT INTO Vendor.VendorName
@@ -187,6 +217,26 @@ LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
 On pk.idv_type_code=fk.[idv_type_code]
 WHERE nullif(pk.idv_type_name,'') is NULL AND
 nullif(fk.idv_type_name,'') is NOT NULL
+
+-- Insert new [multipleorsingleawardidc] into FPDSTypeTable.multipleorsingleawardidc
+INSERT INTO FPDSTypeTable.multipleorsingleawardidc
+(multipleorsingleawardidc,multipleorsingleawardidcText)
+SELECT fk.[multipleorsingleawardidc]
+,max(fk.multiple_or_single_award_idv_name) as multipleorsingleawardidcText
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.multipleorsingleawardidc as pk
+On pk.multipleorsingleawardidc=fk.[multipleorsingleawardidc]
+WHERE pk.multipleorsingleawardidc is NULL
+GROUP BY fk.[multipleorsingleawardidc]
+
+-- Update multipleorsingleawardidcText using multiple_or_single_award_idv_name where there is a blank in FPDSTypeTable.multipleorsingleawardidc
+UPDATE pk
+SET multipleorsingleawardidcText=fk.multiple_or_single_award_idv_name
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.multipleorsingleawardidc as pk
+On pk.multipleorsingleawardidc=fk.[multipleorsingleawardidc]
+WHERE nullif(pk.multipleorsingleawardidcText,'') is NULL AND
+nullif(fk.multiple_or_single_award_idv_name,'') is NOT NULL
 
 -- Insert new [typeofidc] into FPDSTypeTable.TypeOfIDC
 INSERT INTO FPDSTypeTable.TypeOfIDC
@@ -368,6 +418,26 @@ On pk.manufacturingorganizationtype=fk.[manufacturingorganizationtype]
 WHERE nullif(pk.manufacturingorganizationtypeText,'') is NULL AND
 nullif(fk.domestic_or_foreign_entity_name,'') is NOT NULL
 
+-- Insert new [systemequipmentcode] into Project.SystemEquipmentCode
+INSERT INTO Project.SystemEquipmentCode
+(systemequipmentcode,systemequipmentcodeText)
+SELECT fk.[systemequipmentcode]
+,max(fk.dod_acquisition_program_description) as systemequipmentcodeText
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Project.SystemEquipmentCode as pk
+On pk.systemequipmentcode=fk.[systemequipmentcode]
+WHERE pk.systemequipmentcode is NULL
+GROUP BY fk.[systemequipmentcode]
+
+-- Update systemequipmentcodeText using dod_acquisition_program_description where there is a blank in Project.SystemEquipmentCode
+UPDATE pk
+SET systemequipmentcodeText=fk.dod_acquisition_program_description
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Project.SystemEquipmentCode as pk
+On pk.systemequipmentcode=fk.[systemequipmentcode]
+WHERE nullif(pk.systemequipmentcodeText,'') is NULL AND
+nullif(fk.dod_acquisition_program_description,'') is NOT NULL
+
 -- Insert new [informationtechnologycommercialitemcategory] into FPDSTypeTable.informationtechnologycommercialitemcategory
 INSERT INTO FPDSTypeTable.informationtechnologycommercialitemcategory
 (informationtechnologycommercialitemcategory,informationtechnologycommercialitemcategoryText)
@@ -468,6 +538,26 @@ On pk.subcontractplan=fk.[subcontractplan]
 WHERE nullif(pk.subcontractplanText,'') is NULL AND
 nullif(fk.subcontracting_plan_name,'') is NOT NULL
 
+-- Insert new [extentcompeted] into FPDSTypeTable.extentcompeted
+INSERT INTO FPDSTypeTable.extentcompeted
+(extentcompeted,extentcompetedText)
+SELECT fk.[extentcompeted]
+,max(fk.extent_competed_name) as extentcompetedText
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.extentcompeted as pk
+On pk.extentcompeted=fk.[extentcompeted]
+WHERE pk.extentcompeted is NULL
+GROUP BY fk.[extentcompeted]
+
+-- Update extentcompetedText using extent_competed_name where there is a blank in FPDSTypeTable.extentcompeted
+UPDATE pk
+SET extentcompetedText=fk.extent_competed_name
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.extentcompeted as pk
+On pk.extentcompeted=fk.[extentcompeted]
+WHERE nullif(pk.extentcompetedText,'') is NULL AND
+nullif(fk.extent_competed_name,'') is NOT NULL
+
 -- Insert new [solicitationprocedures] into FPDSTypeTable.solicitationprocedures
 INSERT INTO FPDSTypeTable.solicitationprocedures
 (solicitationprocedures,solicitationproceduresText)
@@ -547,6 +637,26 @@ LEFT OUTER JOIN ProductOrServiceCode.Research_Code as pk
 On pk.Research_Code=fk.[research_code]
 WHERE nullif(pk.Research_Name,'') is NULL AND
 nullif(fk.research_name,'') is NOT NULL
+
+-- Insert new [statutoryexceptiontofairopportunity] into FPDSTypeTable.statutoryexceptiontofairopportunity
+INSERT INTO FPDSTypeTable.statutoryexceptiontofairopportunity
+(statutoryexceptiontofairopportunity,statutoryexceptiontofairopportunityText)
+SELECT fk.[statutoryexceptiontofairopportunity]
+,max(fk.fair_opportunity_limited_sources_name) as statutoryexceptiontofairopportunityText
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.statutoryexceptiontofairopportunity as pk
+On pk.statutoryexceptiontofairopportunity=fk.[statutoryexceptiontofairopportunity]
+WHERE pk.statutoryexceptiontofairopportunity is NULL
+GROUP BY fk.[statutoryexceptiontofairopportunity]
+
+-- Update statutoryexceptiontofairopportunityText using fair_opportunity_limited_sources_name where there is a blank in FPDSTypeTable.statutoryexceptiontofairopportunity
+UPDATE pk
+SET statutoryexceptiontofairopportunityText=fk.fair_opportunity_limited_sources_name
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.statutoryexceptiontofairopportunity as pk
+On pk.statutoryexceptiontofairopportunity=fk.[statutoryexceptiontofairopportunity]
+WHERE nullif(pk.statutoryexceptiontofairopportunityText,'') is NULL AND
+nullif(fk.fair_opportunity_limited_sources_name,'') is NOT NULL
 
 -- Insert new [reasonnotcompeted] into FPDSTypeTable.reasonnotcompeted
 INSERT INTO FPDSTypeTable.reasonnotcompeted
@@ -938,6 +1048,26 @@ On pk.performancebasedservicecontract=fk.[performancebasedservicecontract]
 WHERE nullif(pk.performancebasedservicecontractText,'') is NULL AND
 nullif(fk.performance_based_service_acquisition_name,'') is NOT NULL
 
+-- Insert new [contractfinancing] into FPDSTypeTable.contractfinancing
+INSERT INTO FPDSTypeTable.contractfinancing
+(contractfinancing,contractfinancingText)
+SELECT fk.[contractfinancing]
+,max(fk.contract_financing_name) as contractfinancingText
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.contractfinancing as pk
+On pk.contractfinancing=fk.[contractfinancing]
+WHERE pk.contractfinancing is NULL
+GROUP BY fk.[contractfinancing]
+
+-- Update contractfinancingText using contract_financing_name where there is a blank in FPDSTypeTable.contractfinancing
+UPDATE pk
+SET contractfinancingText=fk.contract_financing_name
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.contractfinancing as pk
+On pk.contractfinancing=fk.[contractfinancing]
+WHERE nullif(pk.contractfinancingText,'') is NULL AND
+nullif(fk.contract_financing_name,'') is NOT NULL
+
 -- Insert new [contingencyhumanitarianpeacekeepingoperation] into Assistance.ContingencyHumanitarianPeacekeepingOperation
 INSERT INTO Assistance.ContingencyHumanitarianPeacekeepingOperation
 (ContingencyHumanitarianPeacekeepingOperation,contingencyhumanitarianpeacekeepingoperationText)
@@ -1047,14 +1177,4 @@ LEFT OUTER JOIN agency.awarding_agency_code as pk
 On pk.awarding_agency_code=fk.[awarding_agency_code]
 WHERE nullif(pk.awarding_agency_name,'') is NULL AND
 nullif(fk.awarding_agency_name,'') is NOT NULL
-
--- Insert new [recipient_uei] into Vendor.recipient_uei
-INSERT INTO Vendor.recipient_uei
-(recipient_uei)
-SELECT fk.[recipient_uei]
-FROM ErrorLogging.FPDSstage2 as fk
-LEFT OUTER JOIN Vendor.recipient_uei as pk
-On pk.recipient_uei=fk.[recipient_uei]
-WHERE pk.recipient_uei is NULL
-GROUP BY fk.[recipient_uei]
 
