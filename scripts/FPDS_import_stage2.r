@@ -30,7 +30,8 @@ skip_list<-c("[contract_award_unique_key]",
              "[parentdunsnumber]",
              "[vendorname]",
              "[recipient_uei]",
-             "[recipient_parent_uei]") #Handled via chain insert manually written
+             "[recipient_parent_uei]",
+             "[pop_state_code]") #Handled via chain insert manually written
 
 # debug(get_CSISvariableNameToPrimaryKey)
 select_missing_code <- create_foreign_key_assigments("ErrorLogging",
@@ -45,6 +46,14 @@ write(select_missing_code,
       file=file.path("Output","ErrorLogging_FPDSstage2_select_foreign_key.txt"), 
       append=FALSE)  
 
+skip_list<-c("[contract_award_unique_key]",
+             "[CSIStransactionID]",
+             "[vendorcountrycode]",
+             "[dunsnumber]",
+             "[parentdunsnumber]",
+             "[vendorname]",
+             "[recipient_uei]",
+             "[recipient_parent_uei]") #Handled via chain insert manually written
 
 input_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                                      "FPDSstage2",
