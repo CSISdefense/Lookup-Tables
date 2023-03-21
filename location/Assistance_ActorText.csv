@@ -7,6 +7,7 @@ Amal (Lebanon)*,NULL,LBN,TRUE
 ANC (South Africa)*,NULL,ZAF,TRUE
 Angola,99,AGO,FALSE
 Anti-Castro rebels (Cuba)*,NULL,CUB,TRUE
+Antigua and Barbuda,NULL,ATG,FALSE
 Argentina,26,ARG,FALSE
 Armas (Guatemala)*,NULL,GTM,TRUE
 Armenia,NULL,ARM,FALSE
@@ -237,6 +238,7 @@ Lesotho,104,LSO,FALSE
 LF (Lebanon)*,NULL,LBN,TRUE
 Liberia,79,LBR,FALSE
 Libya,111,LBY,FALSE
+Libya HoR*,NULL,LBY,TRUE
 Libya GNC,NULL,LBY,TRUE
 Libya HoR,NULL,LBY,TRUE
 Lithuania,NULL,LTU,FALSE
@@ -244,6 +246,7 @@ LRA (Uganda)*,NULL,UGA,TRUE
 LTTE (Sri Lanka)*,NULL,LKA,TRUE
 Luxembourg,NULL,LUX,FALSE
 Macedonia (FYROM),NULL,MKD,FALSE
+North Macedonia,NULL,MKD,FALSE
 Madagascar,106,MDG,FALSE
 Malawi,3912,MWI,FALSE
 Malaysia,152,MYS,FALSE
@@ -355,6 +358,7 @@ Tonga,NULL,TON,FALSE
 Trinidad and Tobago,8,TTO,FALSE
 Tunisia,110,TUN,FALSE
 Turkey,115,TUR,FALSE
+Turkiye,115,TUR,FALSE
 Turkmenistan,NULL,TKM,FALSE
 Tuvalu,NULL,TUV,FALSE
 UAE,NULL,ARE,FALSE
