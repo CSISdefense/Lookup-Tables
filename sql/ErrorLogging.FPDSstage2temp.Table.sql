@@ -2,7 +2,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [ErrorLogging].[FPDSstage2](
+CREATE TABLE [ErrorLogging].[FPDSstage2temp](
 	[gfe_gfp_name] [varchar](255) NULL,
 	[research_name] [varchar](255) NULL,
 	[last_modified_date] [datetime2](7) NULL,
@@ -42,8 +42,8 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[parentdunsnumber] [varchar](13) NULL,
 	[vendorcountrycode] [nvarchar](50) NULL,
 	[recipient_country_name] [varchar](255) NULL,
-	[streetaddress] [varchar](115) NULL,
-	[streetaddress2] [varchar](64) NULL,
+	[streetaddress] [varchar](100) NULL,
+	[streetaddress2] [varchar](60) NULL,
 	[streetaddress3] [varchar](55) NULL,
 	[city] [varchar](35) NULL,
 	[vendor_state_code] [varchar](30) NULL,
@@ -291,35 +291,11 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[recipient_county_name] [varchar](30) NULL,
 	[disaster_emergency_fund_codes_for_overall_award] [varchar](500) NULL,
 	[object_classes_funding_this_award] [varchar](1000) NULL,
-	[program_activities_funding_this_award] [varchar](5000) NULL,
+	[program_activities_funding_this_award] [varchar](4000) NULL,
 	[obligated_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[recipient_uei] [varchar](12) NULL,
 	[recipient_parent_uei] [varchar](12) NULL,
 	[prime_award_base_transaction_description] [varchar](4008) NULL
 ) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_errorlogging_fpdsbetaviolatesconstraint_sixUTI] ON [ErrorLogging].[FPDSstage2]
-(
-	[piid] ASC,
-	[idvpiid] ASC,
-	[modnumber] ASC,
-	[idvmodificationnumber] ASC,
-	[contractingofficeagencyid] ASC,
-	[transactionnumber] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-CREATE NONCLUSTERED INDEX [ix_FPDSbetaViolatesConstraint_CSIStransactionID] ON [ErrorLogging].[FPDSstage2]
-(
-	[CSIStransactionID] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-ALTER TABLE [ErrorLogging].[FPDSstage2] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__7193879D]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
-GO
-ALTER TABLE [ErrorLogging].[FPDSstage2] ADD  CONSTRAINT [DF__FPDSbetaV__CSISc__7287ABD6]  DEFAULT (getdate()) FOR [CSIScreatedDate]
-GO
-ALTER TABLE [ErrorLogging].[FPDSstage2]  WITH CHECK ADD FOREIGN KEY([CSIStransactionID])
-REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
 GO

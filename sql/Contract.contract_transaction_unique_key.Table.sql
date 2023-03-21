@@ -20,6 +20,13 @@ CREATE TABLE [Contract].[contract_transaction_unique_key](
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+CREATE UNIQUE NONCLUSTERED INDEX [idx_contract_transaction_unique_key_CSIStransactionID] ON [Contract].[contract_transaction_unique_key]
+(
+	[CSIStransactionID] ASC
+)
+WHERE ([CSIStransactionID] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
 ALTER TABLE [Contract].[contract_transaction_unique_key] ADD  DEFAULT ((0)) FOR [IsParentCTU]
 GO
 ALTER TABLE [Contract].[contract_transaction_unique_key]  WITH CHECK ADD FOREIGN KEY([CSISidvmodificationID])

@@ -91,6 +91,25 @@ CREATE TABLE [Contract].[DD350](
 	[CSIStransactionID] [int] NOT NULL
 ) ON [PRIMARY]
 GO
+CREATE UNIQUE NONCLUSTERED INDEX [idx_contract_dd350_csistranscationID] ON [Contract].[DD350]
+(
+	[CSIStransactionID] ASC
+)
+WHERE ([CSIStransactionID] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [idx_contract_FPDS_contractnumber_modificationordernumber_ContractingAgencyId_transactionnumber] ON [Contract].[DD350]
+(
+	[ContractNumber] ASC,
+	[ModificationOrderNumber] ASC,
+	[TransactionNumberCSISadded] ASC,
+	[ContractingAgencyId] ASC
+)
+WHERE ([ContractNumber] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
 ALTER TABLE [Contract].[DD350]  WITH NOCHECK ADD  CONSTRAINT [fk__contract_dd350_reasonnotcompeted] FOREIGN KEY([reasonnotcompeted])
 REFERENCES [FPDSTypeTable].[reasonnotcompeted] ([reasonnotcompeted])
 GO

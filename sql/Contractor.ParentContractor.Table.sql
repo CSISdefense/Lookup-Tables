@@ -71,6 +71,15 @@ CREATE TABLE [Contractor].[ParentContractor](
 )WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [u_contractor_parentcontractor_abbreviation] ON [Contractor].[ParentContractor]
+(
+	[Abbreviation] ASC
+)
+WHERE ([Abbreviation] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
 ALTER TABLE [Contractor].[ParentContractor] ADD  CONSTRAINT [DF_contractor_parentcontractor_DIIGindex]  DEFAULT ((0)) FOR [DIIGIndex]
 GO
 ALTER TABLE [Contractor].[ParentContractor] ADD  CONSTRAINT [DF_contractor_parentcontractor_subsidiary]  DEFAULT ((0)) FOR [Subsidiary]
