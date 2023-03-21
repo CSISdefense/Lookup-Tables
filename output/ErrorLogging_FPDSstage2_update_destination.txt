@@ -224,7 +224,8 @@ UPDATE T SET
 [obligated_amount_funded_by_COVID19_supplementals_for_overall_award]=coalesce(S.[obligated_amount_funded_by_COVID19_supplementals_for_overall_award],T.[obligated_amount_funded_by_COVID19_supplementals_for_overall_award]),
 [outlayed_amount_funded_by_COVID19_supplementals_for_overall_award]=coalesce(S.[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award],T.[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award]),
 [recipient_uei]=coalesce(nullif(S.[recipient_uei],''),T.[recipient_uei]),
-[recipient_parent_uei]=coalesce(nullif(S.[recipient_parent_uei],''),T.[recipient_parent_uei])
+[recipient_parent_uei]=coalesce(nullif(S.[recipient_parent_uei],''),T.[recipient_parent_uei]),
+[prime_award_base_transaction_description]=coalesce(nullif(S.[prime_award_base_transaction_description],''),T.[prime_award_base_transaction_description])
 FROM Contract.FPDS as T
 INNER Join ErrorLogging.FPDSstage2 as S
 ON s.CSIStransactionID=t.CSIStransactionID

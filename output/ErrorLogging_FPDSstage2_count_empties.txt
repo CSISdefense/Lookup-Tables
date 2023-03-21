@@ -291,6 +291,7 @@ sum(iif(nullif([program_activities_funding_this_award],'') is null,1,0)) as [pro
 sum(iif([obligated_amount_funded_by_COVID19_supplementals_for_overall_award] is null,1,0)) as [obligated_amount_funded_by_COVID19_supplementals_for_overall_award],
 sum(iif([outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] is null,1,0)) as [outlayed_amount_funded_by_COVID19_supplementals_for_overall_award],
 sum(iif(nullif([recipient_uei],'') is null,1,0)) as [recipient_uei],
-sum(iif(nullif([recipient_parent_uei],'') is null,1,0)) as [recipient_parent_uei]
+sum(iif(nullif([recipient_parent_uei],'') is null,1,0)) as [recipient_parent_uei],
+sum(iif(nullif([prime_award_base_transaction_description],'') is null,1,0)) as [prime_award_base_transaction_description]
 FROM ErrorLogging.FPDSstage2
 
