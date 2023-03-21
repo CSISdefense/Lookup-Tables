@@ -8,6 +8,6 @@ CREATE TABLE [ProductOrServiceCode].[inherently_governmental_functions](
  CONSTRAINT [pk_ProductOrServiceCode_inherently_governmental_functions] PRIMARY KEY CLUSTERED 
 (
 	[inherently_governmental_functions] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
