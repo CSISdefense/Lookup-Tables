@@ -38,11 +38,13 @@ CREATE TABLE [Contractor].[DunsnumberToParentContractorHistory](
 	[ChildCount] [int] NULL,
 	[IsPresent] [bit] NULL,
 	[IsEntityAbove2018constant10ThousandThreshold] [bit] NULL,
+	[recipient_uei] [varchar](12) NULL,
+	[recipient_parent_uei] [varchar](12) NULL,
  CONSTRAINT [pk_DunsnumberToParentContractorHistory_DunsNumber_FiscalYear] PRIMARY KEY CLUSTERED 
 (
 	[DUNSnumber] ASC,
 	[FiscalYear] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory] ADD  CONSTRAINT [DF_DunsnumberToParentContractorHistory_TooHard]  DEFAULT ((0)) FOR [TooHard]
@@ -58,6 +60,12 @@ ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory]  WITH NOCHECK ADD
 REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])
 GO
 ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory] CHECK CONSTRAINT [FK__Dunsnumbe__Headq__7AF2094E]
+GO
+ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory]  WITH CHECK ADD FOREIGN KEY([recipient_uei])
+REFERENCES [Vendor].[recipient_uei] ([recipient_uei])
+GO
+ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory]  WITH CHECK ADD FOREIGN KEY([recipient_parent_uei])
+REFERENCES [Vendor].[recipient_uei] ([recipient_uei])
 GO
 ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory]  WITH NOCHECK ADD  CONSTRAINT [FK_DunsnumberToParentContractor_Dunsnumber] FOREIGN KEY([DUNSnumber])
 REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])

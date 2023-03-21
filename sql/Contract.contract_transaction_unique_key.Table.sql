@@ -17,7 +17,7 @@ CREATE TABLE [Contract].[contract_transaction_unique_key](
  CONSTRAINT [pk_contract_transaction_unique_key] PRIMARY KEY CLUSTERED 
 (
 	[contract_transaction_unique_key] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Contract].[contract_transaction_unique_key] ADD  DEFAULT ((0)) FOR [IsParentCTU]

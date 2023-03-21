@@ -1,0 +1,12 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Contract].[award_or_idv_flag](
+	[award_or_idv_flag] [varchar](5) NOT NULL,
+ CONSTRAINT [pk_contract_award_or_idv_flag] PRIMARY KEY CLUSTERED 
+(
+	[award_or_idv_flag] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO

@@ -22,10 +22,12 @@ CREATE TABLE [Contractor].[Dunsnumber](
 	[ParentDUNSnumberFirstFiscalYear] [smallint] NULL,
 	[HeadquarterCodeFirstFiscalYear] [smallint] NULL,
 	[EntityID] [int] NULL,
+	[recipient_uei] [varchar](12) NULL,
+	[recipient_parent_uei] [varchar](12) NULL,
  CONSTRAINT [PK_Dunsnumber] PRIMARY KEY CLUSTERED 
 (
 	[DUNSnumber] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Contractor].[Dunsnumber] ADD  CONSTRAINT [dunsnumber_CSISmodifiedDate_getdate]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
@@ -44,8 +46,14 @@ REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])
 GO
 ALTER TABLE [Contractor].[Dunsnumber] CHECK CONSTRAINT [FK__Dunsnumbe__Headq__79FDE515]
 GO
+ALTER TABLE [Contractor].[Dunsnumber]  WITH CHECK ADD FOREIGN KEY([recipient_parent_uei])
+REFERENCES [Vendor].[recipient_uei] ([recipient_uei])
+GO
 ALTER TABLE [Contractor].[Dunsnumber]  WITH NOCHECK ADD  CONSTRAINT [FK__Dunsnumbe__Paren__7909C0DC] FOREIGN KEY([ParentDUNSnumber])
 REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])
 GO
 ALTER TABLE [Contractor].[Dunsnumber] CHECK CONSTRAINT [FK__Dunsnumbe__Paren__7909C0DC]
+GO
+ALTER TABLE [Contractor].[Dunsnumber]  WITH CHECK ADD FOREIGN KEY([recipient_uei])
+REFERENCES [Vendor].[recipient_uei] ([recipient_uei])
 GO

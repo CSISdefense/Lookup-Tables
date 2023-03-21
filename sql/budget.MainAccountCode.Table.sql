@@ -48,11 +48,12 @@ CREATE TABLE [budget].[MainAccountCode](
 	[IsMultiImplementingAgency] [bit] NULL,
 	[FPDSandFAADSaccountTitle] [varchar](255) NULL,
 	[IsFMS] [bit] NULL,
+	[ColorOfMoney] [varchar](7) NULL,
  CONSTRAINT [pk_mainaccountCode_TreasuryAgencyCode] PRIMARY KEY CLUSTERED 
 (
 	[TreasuryAgencyCode] ASC,
 	[MainAccountCode] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [budget].[MainAccountCode] ADD  CONSTRAINT [DF__MainAccou__CSISc__343F9543]  DEFAULT (getdate()) FOR [CSIScreatedDate]
@@ -83,6 +84,11 @@ ALTER TABLE [budget].[MainAccountCode]  WITH NOCHECK ADD  CONSTRAINT [fk_MainAcc
 REFERENCES [agency].[BureauCode] ([OMBagencyCode], [BureauCode])
 GO
 ALTER TABLE [budget].[MainAccountCode] CHECK CONSTRAINT [fk_MainAccountCode_BureauCode]
+GO
+ALTER TABLE [budget].[MainAccountCode]  WITH CHECK ADD  CONSTRAINT [fk_MainAccountCode_ColorOfMoney] FOREIGN KEY([ColorOfMoney])
+REFERENCES [budget].[ColorOfMoney] ([ColorOfMoney])
+GO
+ALTER TABLE [budget].[MainAccountCode] CHECK CONSTRAINT [fk_MainAccountCode_ColorOfMoney]
 GO
 ALTER TABLE [budget].[MainAccountCode]  WITH NOCHECK ADD  CONSTRAINT [fk_MainAccountCode_FundingAgencyID] FOREIGN KEY([FundingAgencyID])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])

@@ -42,8 +42,8 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[parentdunsnumber] [varchar](13) NULL,
 	[vendorcountrycode] [nvarchar](50) NULL,
 	[recipient_country_name] [varchar](255) NULL,
-	[streetaddress] [varchar](100) NULL,
-	[streetaddress2] [varchar](60) NULL,
+	[streetaddress] [varchar](115) NULL,
+	[streetaddress2] [varchar](64) NULL,
 	[streetaddress3] [varchar](55) NULL,
 	[city] [varchar](35) NULL,
 	[vendor_state_code] [varchar](30) NULL,
@@ -116,10 +116,10 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[numberofoffersreceived] [bigint] NULL,
 	[commercialitemacquisitionprocedures] [varchar](1) NULL,
 	[commercial_item_acquisition_procedures_name] [varchar](255) NULL,
-	[smallbusinesscompetitivenessdemonstrationprogram] [varchar](6) NULL,
+	[smallbusinesscompetitivenessdemonstrationprogram] [bit] NULL,
 	[commercialitemtestprogram] [varchar](1) NULL,
 	[commercial_item_test_program_name] [varchar](255) NULL,
-	[a76action] [varchar](3) NULL,
+	[a76action] [bit] NULL,
 	[a76_fair_act_action_name] [varchar](255) NULL,
 	[fedbizopps] [varchar](1) NULL,
 	[fed_biz_opps_name] [varchar](255) NULL,
@@ -295,7 +295,8 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[obligated_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[recipient_uei] [varchar](12) NULL,
-	[recipient_parent_uei] [varchar](12) NULL
+	[recipient_parent_uei] [varchar](12) NULL,
+	[prime_award_base_transaction_description] [varchar](4008) NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FPDSstage2] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__7193879D]  DEFAULT (getdate()) FOR [CSISmodifiedDate]

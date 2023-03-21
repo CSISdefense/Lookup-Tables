@@ -26,7 +26,7 @@ CREATE TABLE [Project].[ProgramElementHistory](
 	[DefenseOrganization] ASC,
 	[BudgetActivity] ASC,
 	[ProgramElement] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Project].[ProgramElementHistory] ADD  CONSTRAINT [project_ProgramElementHistory_CSIScreateddate_getdate]  DEFAULT (getdate()) FOR [CSIScreateddate]

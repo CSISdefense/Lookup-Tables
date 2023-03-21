@@ -3,6 +3,11 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [FPDSTypeTable].[fedbizopps](
-	[Unseperated] [varchar](255) NULL
+	[fedbizopps] [varchar](1) NOT NULL,
+	[fed_biz_opps_name] [varchar](255) NULL,
+ CONSTRAINT [pk_FPDStypetable_fedbizopps] PRIMARY KEY CLUSTERED 
+(
+	[fedbizopps] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO

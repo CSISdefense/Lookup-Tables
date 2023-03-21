@@ -51,9 +51,9 @@ CREATE TABLE [Contract].[FPDS](
 	[vendordoingasbusinessname] [nvarchar](150) NULL,
 	[divisionname] [nvarchar](150) NULL,
 	[divisionnumberorofficecode] [varchar](10) NULL,
-	[ccrexception] [varchar](71) NULL,
-	[streetaddress] [varchar](100) NULL,
-	[streetaddress2] [varchar](60) NULL,
+	[ccrexception] [varchar](1) NULL,
+	[streetaddress] [varchar](115) NULL,
+	[streetaddress2] [varchar](64) NULL,
 	[streetaddress3] [varchar](55) NULL,
 	[city] [varchar](35) NULL,
 	[zipcode] [varchar](28) NULL,
@@ -104,8 +104,8 @@ CREATE TABLE [Contract].[FPDS](
 	[numberofoffersreceived] [bigint] NULL,
 	[commercialitemacquisitionprocedures] [varchar](1) NULL,
 	[commercialitemtestprogram] [varchar](1) NULL,
-	[smallbusinesscompetitivenessdemonstrationprogram] [varchar](6) NULL,
-	[a76action] [varchar](3) NULL,
+	[smallbusinesscompetitivenessdemonstrationprogram] [bit] NULL,
+	[a76action] [bit] NULL,
 	[solicitationprocedures] [varchar](5) NULL,
 	[typeofsetaside] [varchar](10) NULL,
 	[localareasetaside] [varchar](4) NULL,
@@ -272,7 +272,8 @@ CREATE TABLE [Contract].[FPDS](
 	[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[dod_acquisition_program_description] [varchar](255) NULL,
 	[recipient_uei] [varchar](12) NULL,
-	[recipient_parent_uei] [varchar](12) NULL
+	[recipient_parent_uei] [varchar](12) NULL,
+	[prime_award_base_transaction_description] [varchar](4008) NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Contract].[FPDS] ADD  CONSTRAINT [DF_FPDS_CSISCreatedDate]  DEFAULT (getdate()) FOR [CSISCreatedDate]
@@ -299,6 +300,11 @@ ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_Comm
 REFERENCES [FPDSTypeTable].[commercialitemtestprogram] ([CommercialItemTestProgram])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_CommercialItemTestProgram]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_consolidatedcontract] FOREIGN KEY([consolidatedcontract])
+REFERENCES [Contract].[consolidatedcontract] ([consolidatedcontract])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_consolidatedcontract]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_FPDS_contract_award_unique_key] FOREIGN KEY([contract_award_unique_key])
 REFERENCES [Contract].[contract_award_unique_key] ([contract_award_unique_key])
@@ -360,10 +366,40 @@ REFERENCES [FPDSTypeTable].[idv_type_code] ([idv_type_code])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_parent_award_type_code]
 GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_progsourceagency] FOREIGN KEY([progsourceagency], [progsourceaccount], [progsourcesubacct])
+REFERENCES [budget].[progsource] ([progsourceagency], [progsourceaccount], [progsourcesubacct])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_progsourceagency]
+GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_rec_flag] FOREIGN KEY([rec_flag])
 REFERENCES [budget].[rec_flag] ([rec_flag])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_rec_flag]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_recipient_parent_uei] FOREIGN KEY([recipient_parent_uei])
+REFERENCES [Vendor].[recipient_uei] ([recipient_uei])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_recipient_parent_uei]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_recipient_parent_UEIhistory] FOREIGN KEY([recipient_parent_uei], [fiscal_year])
+REFERENCES [Vendor].[Recipient_UEIhistory] ([recipient_uei], [Fiscal_Year])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_recipient_parent_UEIhistory]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_recipient_uei] FOREIGN KEY([recipient_uei])
+REFERENCES [Vendor].[recipient_uei] ([recipient_uei])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_recipient_uei]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_recipient_UEIhistory] FOREIGN KEY([recipient_uei], [fiscal_year])
+REFERENCES [Vendor].[Recipient_UEIhistory] ([recipient_uei], [Fiscal_Year])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_recipient_UEIhistory]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_TypeOfBusiness] FOREIGN KEY([TypeOfBusiness])
+REFERENCES [FPDSTypeTable].[TypeofBusinessDD350] ([TypeOfBusiness])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_TypeOfBusiness]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_typeofcontractpricing] FOREIGN KEY([typeofcontractpricing])
 REFERENCES [FPDSTypeTable].[typeofcontractpricing] ([TypeOfContractPricing])
@@ -380,6 +416,11 @@ REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_agencyid]
 GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_fpds_budget_FundedByForeignEntity] FOREIGN KEY([fundedbyforeignentity])
+REFERENCES [budget].[FundedByForeignEntity] ([fundedbyforeignentity])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_fpds_budget_FundedByForeignEntity]
+GO
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_claimantprogramcode] FOREIGN KEY([claimantprogramcode])
 REFERENCES [FPDSTypeTable].[ClaimantProgramCode] ([ClaimantProgramCode])
 GO
@@ -394,6 +435,16 @@ ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_contingency
 REFERENCES [Assistance].[ContingencyHumanitarianPeacekeepingOperation] ([ContingencyHumanitarianPeacekeepingOperation])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_contingencyhumanitarianpeacekeepingoperation]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_fpds_Contract_award_or_idv_flag] FOREIGN KEY([award_or_idv_flag])
+REFERENCES [Contract].[award_or_idv_flag] ([award_or_idv_flag])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_fpds_Contract_award_or_idv_flag]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_fpds_Contract_Contract_Award_Unique_Key] FOREIGN KEY([contract_award_unique_key])
+REFERENCES [Contract].[contract_award_unique_key] ([contract_award_unique_key])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_fpds_Contract_Contract_Award_Unique_Key]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_contractbundling] FOREIGN KEY([contractbundling])
 REFERENCES [FPDSTypeTable].[contractbundling] ([contractbundling])
@@ -460,6 +511,26 @@ REFERENCES [FPDSTypeTable].[extentcompeted] ([extentcompeted])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_extentcompeted]
 GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_fpds_FPDStypetable_CostAccountingStandardsClause] FOREIGN KEY([costaccountingstandardsclause])
+REFERENCES [FPDSTypeTable].[CostAccountingStandardsClause] ([CostAccountingStandardsClause])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_fpds_FPDStypetable_CostAccountingStandardsClause]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_fpds_FPDStypetable_fedbizopps] FOREIGN KEY([fedbizopps])
+REFERENCES [FPDSTypeTable].[fedbizopps] ([fedbizopps])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_fpds_FPDStypetable_fedbizopps]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_fpds_FPDStypetable_PerformanceBasedServiceContract] FOREIGN KEY([performancebasedservicecontract])
+REFERENCES [FPDSTypeTable].[PerformanceBasedServiceContract] ([performancebasedservicecontract])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_fpds_FPDStypetable_PerformanceBasedServiceContract]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_fpds_fpdstypetable_typeofidc] FOREIGN KEY([typeofidc])
+REFERENCES [FPDSTypeTable].[TypeOfIDC] ([typeofIDC])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_fpds_fpdstypetable_typeofidc]
+GO
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_fundingrequestingagencyid] FOREIGN KEY([fundingrequestingagencyid])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
@@ -479,6 +550,11 @@ ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_interagency
 REFERENCES [FPDSTypeTable].[interagencycontractingauthority] ([interagencycontractingauthority])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_interagencycontractingauthority]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_fpds_Location_localareasetaside] FOREIGN KEY([localareasetaside])
+REFERENCES [Location].[localareasetaside] ([localareasetaside])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_fpds_Location_localareasetaside]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_maj_agency_cat] FOREIGN KEY([maj_agency_cat])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
@@ -545,6 +621,16 @@ REFERENCES [FPDSTypeTable].[ProductOrServiceCode] ([ProductOrServiceCode])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_productorservicecode]
 GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_fpds_ProductOrServiceCode_inherently_governmental_functions] FOREIGN KEY([inherently_governmental_functions])
+REFERENCES [ProductOrServiceCode].[inherently_governmental_functions] ([inherently_governmental_functions])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_fpds_ProductOrServiceCode_inherently_governmental_functions]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_fpds_ProductOrServiceCode_Research_Code] FOREIGN KEY([research_code])
+REFERENCES [ProductOrServiceCode].[Research_Code] ([Research_Code])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_fpds_ProductOrServiceCode_Research_Code]
+GO
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_reasonformodification] FOREIGN KEY([reasonformodification])
 REFERENCES [FPDSTypeTable].[reasonformodification] ([reasonformodification])
 GO
@@ -604,6 +690,16 @@ ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_useofepades
 REFERENCES [FPDSTypeTable].[useofepadesignatedproducts] ([useofepadesignatedproducts])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_useofepadesignatedproducts]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_fpds_Vendor_CCRexception] FOREIGN KEY([ccrexception])
+REFERENCES [Vendor].[CCRexception] ([CCRexception])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_fpds_Vendor_CCRexception]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_fpds_Vendor_OrganizationalType] FOREIGN KEY([organizationaltype])
+REFERENCES [Vendor].[OrganizationalType] ([OrganizationalType])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_fpds_Vendor_OrganizationalType]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_fpds_vendorcountrycode] FOREIGN KEY([vendorcountrycode])
 REFERENCES [FPDSTypeTable].[vendorcountrycode] ([vendorcountrycode])
