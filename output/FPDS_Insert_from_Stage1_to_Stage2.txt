@@ -287,7 +287,8 @@ INSERT INTO ErrorLogging.FPDSstage2
 [program_activities_funding_this_award],
 [recipient_county_name],
 [recipient_uei],
-[recipient_parent_uei]
+[recipient_parent_uei],
+[prime_award_base_transaction_description]
 )
  SELECT 
 [gfe_gfp],
@@ -329,8 +330,8 @@ Convert([varchar](150), [recipient_parent_name]),
 Convert([varchar](13), [recipient_parent_duns]),
 Convert([nvarchar](50), [recipient_country_code]),
 [recipient_country_name],
-Convert([varchar](100), [recipient_address_line_1]),
-Convert([varchar](60), [recipient_address_line_2]),
+Convert([varchar](115), [recipient_address_line_1]),
+Convert([varchar](64), [recipient_address_line_2]),
 Convert([varchar](35), [recipient_city_name]),
 Convert([varchar](30), [recipient_state_code]),
 [recipient_state_name],
@@ -577,5 +578,6 @@ Convert([varchar](1000), [object_classes_funding_this_award]),
 [program_activities_funding_this_award],
 Convert([varchar](30), [recipient_county_name]),
 Convert([varchar](12), [recipient_uei]),
-Convert([varchar](12), [recipient_parent_uei])
+Convert([varchar](12), [recipient_parent_uei]),
+[prime_award_base_transaction_description]
 FROM ErrorLogging.FPDSstage1

@@ -218,19 +218,19 @@ NULLIF([recipient_country_code],'') IS NOT NULL)
 
 SELECT DISTINCT [recipient_address_line_1],
 len([recipient_address_line_1]) as Length,
-'[varchar](100)' as DestinationType
+'[varchar](115)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([varchar](100), [recipient_address_line_1]) IS NULL AND
+WHERE (Try_Convert([varchar](115), [recipient_address_line_1]) IS NULL AND
 NULLIF([recipient_address_line_1],'') IS NOT NULL) OR
- len([recipient_address_line_1]) > 100
+ len([recipient_address_line_1]) > 115
 
 SELECT DISTINCT [recipient_address_line_2],
 len([recipient_address_line_2]) as Length,
-'[varchar](60)' as DestinationType
+'[varchar](64)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([varchar](60), [recipient_address_line_2]) IS NULL AND
+WHERE (Try_Convert([varchar](64), [recipient_address_line_2]) IS NULL AND
 NULLIF([recipient_address_line_2],'') IS NOT NULL) OR
- len([recipient_address_line_2]) > 60
+ len([recipient_address_line_2]) > 64
 
 SELECT DISTINCT [recipient_city_name],
 len([recipient_city_name]) as Length,
