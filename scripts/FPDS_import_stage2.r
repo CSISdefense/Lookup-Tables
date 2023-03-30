@@ -23,15 +23,18 @@ write(TryConvertList,"Output\\Stage2TryConvertList.txt")
 #Create Foreign Key Assignments
 # undebug(get_CSISvariableNameToPrimaryKey)
 # debug(create_foreign_key_assigments)
+# Skip list for select
 skip_list<-c("[contract_award_unique_key]",
              "[CSIStransactionID]",
              "[vendorcountrycode]",
              "[dunsnumber]",
              "[parentdunsnumber]",
              "[vendorname]",
+             "[vendordoingasbusinessname]",
+             "[mod_parent]", #Some day we'll foreign key this one ut also skip it for select. 
              "[recipient_uei]",
-             "[recipient_parent_uei]",
-             "[pop_state_code]") #Handled via chain insert manually written
+             "[recipient_parent_uei]"
+             ) #Handled via chain insert manually written
 
 # debug(get_CSISvariableNameToPrimaryKey)
 select_missing_code <- create_foreign_key_assigments("ErrorLogging",
@@ -51,7 +54,6 @@ skip_list<-c("[contract_award_unique_key]",
              "[vendorcountrycode]",
              "[dunsnumber]",
              "[parentdunsnumber]",
-             "[vendorname]",
              "[recipient_uei]",
              "[recipient_parent_uei]") #Handled via chain insert manually written
 

@@ -128,6 +128,16 @@ On pk.CCRexception=fk.[ccrexception]
 WHERE nullif(pk.sam_exception_description,'') is NULL AND
 nullif(fk.sam_exception_description,'') is NOT NULL
 
+-- Insert new [vendorname] into Vendor.VendorName
+INSERT INTO Vendor.VendorName
+(vendorname)
+SELECT fk.[vendorname]
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[vendorname]
+WHERE pk.vendorname is NULL
+GROUP BY fk.[vendorname]
+
 -- Insert new [vendordoingasbusinessname] into Vendor.VendorName
 INSERT INTO Vendor.VendorName
 (vendorname)
