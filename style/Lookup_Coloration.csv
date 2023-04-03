@@ -3561,7 +3561,7 @@ CountryUAS,Israel (Heron),Israel (Heron),4,"DIIG Primary, National Guard",#1d2d5
 CountryUAS,Israel (Hermes-450),Israel (Hermes-450),4,"DIIG Primary, National Guard",#0054A4,,,,default grey,#554449,
 CountryUAS,Israel (Other UAS),Israel (Other UAS),4,"DIIG Primary, National Guard",#72a0c1,,,,default grey,#554449,
 CountryUAS,Israel (Loitering Munition),Israel (Loitering Munitions),4,"DIIG Primary, National Guard",#0e99d6,,,,default grey,#554449,
-CountryUAS,Poland,Poland,5,"DIIG Additional, Sea Pink",#72a0c1,,,,default grey,#554449,
+CountryUAS,Poland,Poland,5,"DIIG Additional, Sea Pink",#d37d7d,,,,default grey,#554449,
 CountryUAS,Russia,Russia,6,"DIIG Primary, Air Force",#72a0c1,,,,default grey,#554449,
 CountryUAS,Turkey,Turkey,7,"DIIG Additional, Amaranth",#7c131b,,,,default grey,#554449,
 CountryUAS,Other Turkey,Other Turkey,7,"DIIG Additional, Amaranth",#7c131b,,,,default grey,#554449,
