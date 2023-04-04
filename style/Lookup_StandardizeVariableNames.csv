@@ -640,3 +640,15 @@ Number of Actions,NumberofActions
 Number of Records,NumberofRecords
 Performing.Activity...Location,Contractor.or.Government.Performing.Activity
 Contract.Method...Type,Contract.Method.Type.or.Funding.Vehicle
+Total Defence Expenditure                                       ,DefExp
+Total Defence Expenditure as % of GDP                           ,pDefExpGDP
+Total Defence Expenditure as % of Government Expenditure        ,pDefExpGov
+Total Defence Expenditure per capita                            ,pcapDefExp
+Defence Investment                                              ,DefInv
+Defence Equipment Procurement Expenditure                       ,
+Defence R&D Expenditure                                         ,DefRnD
+Defence R&T Expenditure                                         ,DefRnT
+Collaborative Defence Equipment Procurement Expenditure         ,CollabProc
+European Collaborative Defence Equipment Procurement Expenditure,EurCollabProc
+Collaborative Defence R&T Expenditure                           ,CollabRnD
+European Collaborative Defence R&T Expenditure      ,EurCollabRnT
