@@ -171,17 +171,6 @@ HAVING max(iif(fk.sam_exception_description=pk.sam_exception_description or
 ORDER BY fk.[ccrexception]
 
 
---List new [vendordoingasbusinessname] for insertion into Vendor.VendorName
-SELECT fk.[vendordoingasbusinessname],
-'Vendor.VendorName' as PrimaryKeyTable
-FROM ErrorLogging.FPDSstage2 as fk
-LEFT OUTER JOIN Vendor.VendorName as pk
-On pk.vendorname=fk.[vendordoingasbusinessname]
-WHERE pk.vendorname is NULL
-GROUP BY fk.[vendordoingasbusinessname]
-ORDER BY fk.[vendordoingasbusinessname]
-
-
 --List new [placeofperformancecountrycode] and updated primary_place_of_performance_country_name for insertion into FPDSTypeTable.Country3LetterCode
 SELECT fk.[placeofperformancecountrycode],
 max(iif(fk.primary_place_of_performance_country_name=pk.Country3LetterCodeText or
@@ -207,6 +196,33 @@ HAVING max(iif(fk.primary_place_of_performance_country_name=pk.Country3LetterCod
 	charindex('('+fk.primary_place_of_performance_country_name+')',pk.Country3LetterCodeText )>0,
 	0,1))=1
 ORDER BY fk.[placeofperformancecountrycode]
+
+
+--List new [pop_state_code] and updated primary_place_of_performance_state_name for insertion into FPDSTypeTable.statecode
+SELECT fk.[pop_state_code],
+max(iif(fk.primary_place_of_performance_state_name=pk.statecodeText or
+	fk.primary_place_of_performance_state_name='' or
+	charindex('('+fk.primary_place_of_performance_state_name+')',pk.statecodeText )>0,
+	NULL,fk.primary_place_of_performance_state_name)) as MaxOfNewFKprimary_place_of_performance_state_name,
+count(distinct iif(fk.primary_place_of_performance_state_name=pk.statecodeText or
+	fk.primary_place_of_performance_state_name='' or
+	charindex('('+fk.primary_place_of_performance_state_name+')',pk.statecodeText )>0,
+	NULL,fk.primary_place_of_performance_state_name)) as unmatched_name_count,
+pk.statecodeText as PKstatecodeText,
+max(iif(fk.primary_place_of_performance_state_name=pk.statecodeText or
+	fk.primary_place_of_performance_state_name='' or
+	charindex('('+fk.primary_place_of_performance_state_name+')',pk.statecodeText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.statecode' as PrimaryKeyTable
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN FPDSTypeTable.statecode as pk
+On pk.statecode=fk.[pop_state_code]
+GROUP BY fk.[pop_state_code], pk.statecodeText
+HAVING max(iif(fk.primary_place_of_performance_state_name=pk.statecodeText or
+	fk.primary_place_of_performance_state_name='' or
+	charindex('('+fk.primary_place_of_performance_state_name+')',pk.statecodeText )>0,
+	0,1))=1
+ORDER BY fk.[pop_state_code]
 
 
 --List new [award_type_code] and updated award_type_name for insertion into FPDSTypeTable.award_type_code
