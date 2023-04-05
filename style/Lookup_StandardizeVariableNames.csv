@@ -647,7 +647,9 @@ Total Defence Expenditure per capita                            ,pcapDefExp
 Defence Investment                                              ,DefInv
 Defence Equipment Procurement Expenditure                       ,DefProc
 Defence R&D Expenditure                                         ,DefRnD
+Defence Research and Development (R&D) Expenditure,DefRnD
 Defence R&T Expenditure                                         ,DefRnT
+Defence Research and Technology (R&T) Expenditure (subset of R&D),DefRnT
 Collaborative Defence Equipment Procurement Expenditure         ,CollabProc
 European Collaborative Defence Equipment Procurement Expenditure,EurCollabProc
 Collaborative Defence R&T Expenditure                           ,CollabRnD
