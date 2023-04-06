@@ -641,16 +641,29 @@ Number of Records,NumberofRecords
 Performing.Activity...Location,Contractor.or.Government.Performing.Activity
 Contract.Method...Type,Contract.Method.Type.or.Funding.Vehicle
 Total Defence Expenditure                                       ,DefExp
+Total Defence Expenditure (A+B+C+D+E),DefExp
 Total Defence Expenditure as % of GDP                           ,pDefExpGDP
+Defence Expenditure as % of GDP,pDefExpGDP
 Total Defence Expenditure as % of Government Expenditure        ,pDefExpGov
+Defence Expenditure as % of Government Spending,pDefExpGov
 Total Defence Expenditure per capita                            ,pcapDefExp
+Defence Expenditure per capita,pcapDefExp
 Defence Investment                                              ,DefInv
+C. Defence Investment,DefInv
+A. Personnel Expenditure,DefPers
+B. Infrastructure / Construction Expenditure,DefCon
+D. Operation & Maintenance (O&M) Expenditure,DefOnM
+E. Other Expenditure,DefOth
 Defence Equipment Procurement Expenditure                       ,DefProc
 Defence R&D Expenditure                                         ,DefRnD
 Defence Research and Development (R&D) Expenditure,DefRnD
 Defence R&T Expenditure                                         ,DefRnT
 Defence Research and Technology (R&T) Expenditure (subset of R&D),DefRnT
+Defence R&T Expenditure (subset of R&D),DefRnT
 Collaborative Defence Equipment Procurement Expenditure         ,CollabProc
+Collaborative Defence Procurement Expenditure,CollabProc
+European Collaborative Defence Procurement,EurCollabProc
 European Collaborative Defence Equipment Procurement Expenditure,EurCollabProc
 Collaborative Defence R&T Expenditure                           ,CollabRnD
+European Collaborative Defence R&T,EurCollabRnT
 European Collaborative Defence R&T Expenditure      ,EurCollabRnT
