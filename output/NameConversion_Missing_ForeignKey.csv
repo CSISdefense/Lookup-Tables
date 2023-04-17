@@ -1,0 +1,2 @@
+"","SourceVariableName","SourceVariableType","SourceNullable","IsDuplicate","IsDroppedNameField","Pair","CSISvariableName","CSISvariableType","CSISnullable","ConstraintName","ConstraintType","FKSchema","FKTableName","ColumnDataType","ColumnLength","PKSchemaName","PKTableName","PKColumnCode","PKcolumnCount","PKcolumnText"
+"1","[recipient_state_name]","[varchar](255)","NULL",NA,TRUE,"vendorstatecode",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

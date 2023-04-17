@@ -88,6 +88,33 @@ if(nrow(MergeStage2.df[is.na(MergeStage2.df$CSISvariableType)&is.na(MergeStage2.
             file="Output/Unmatched_NameConversion.csv")
   stop("Update ImportAides/NameList.csv using Output/Unmatched_NameConversion.csv")
 }
+DroppedField<-MergeStage2.df %>% filter(IsDroppedNameField)
+fklist<-read.csv("ImportAids//ErrorLogging_ForeignKeyList.csv") %>% 
+  filter(FKSchema=="Contract" & FKTableName=="FPDS")
+DroppedField$Pair<-gsub("[[:punct:]]","",DroppedField$Pair) #https://stackoverflow.com/questions/32041265/how-to-escape-closed-bracket-in-regex-in-r
+DroppedFieldFK<-left_join(DroppedField,fklist,by=c("Pair"="FKColumnName")) %>%filter(is.na(ConstraintName))
+#Drop bit fields now being checked for in Select
+DroppedFieldFK<-DroppedFieldFK  %>% filter(!Pair %in% c("a76action", "clingercohenact", "multiyearcontract", "purchasecardaspaymentmethod"))
+#CSISstage2id is just for internal checks
+DroppedFieldFK<-DroppedFieldFK  %>% filter(SourceVariableType != "[int] IDENTITY(1,1)")
+#Misaligned names I manually checked
+DroppedFieldFK<-DroppedFieldFK  %>% filter(!Pair %in% c(
+  "gfegfpcode",                      "researchcode",                    "awardingagencycode",
+   "majfundagencycat",                "popstatecode",               #"vendorstatecode",
+   "awardtypecode",                   "idvtypecode","parentawardtypecode",
+   "parentawardsingleormultiplecode", "inherentlygovernmentalfunctions"))
+#2023-04-17 I manually checked. This is certainly a kludge.
+if(nrow(DroppedFieldFK>1)){
+  write.csv(DroppedFieldFK,
+            file="Output/NameConversion_Missing_ForeignKey.csv")
+  stop("Missing a foreign key assignment for a code / dropped name field combination")
+}
+rm(DroppedField,DroppedFieldFK,fklist)
+
+#Most are misaligned names 
+#a76action, clingercohenact, multiyearcontract, purchasecardaspaymentmethod are bits
+
+
 MergeStage2.df$IsDroppedNameField[is.na(MergeStage2.df$IsDroppedNameField)]<-FALSE
 
 #Remove CSISstage2ID, it's entirely for internal purposes
