@@ -148,6 +148,26 @@ On pk.vendorname=fk.[vendordoingasbusinessname]
 WHERE pk.vendorname is NULL
 GROUP BY fk.[vendordoingasbusinessname]
 
+-- Insert new [vendor_state_code] into Location.recipient_state_code
+INSERT INTO Location.recipient_state_code
+(recipient_state_code,recipient_state_name)
+SELECT fk.[vendor_state_code]
+,max(fk.recipient_state_name) as recipient_state_name
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Location.recipient_state_code as pk
+On pk.recipient_state_code=fk.[vendor_state_code]
+WHERE pk.recipient_state_code is NULL
+GROUP BY fk.[vendor_state_code]
+
+-- Update recipient_state_name using recipient_state_name where there is a blank in Location.recipient_state_code
+UPDATE pk
+SET recipient_state_name=fk.recipient_state_name
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Location.recipient_state_code as pk
+On pk.recipient_state_code=fk.[vendor_state_code]
+WHERE nullif(pk.recipient_state_name,'') is NULL AND
+nullif(fk.recipient_state_name,'') is NOT NULL
+
 -- Insert new [placeofperformancecountrycode] into FPDSTypeTable.Country3LetterCode
 INSERT INTO FPDSTypeTable.Country3LetterCode
 (Country3LetterCode,Country3LetterCodeText)

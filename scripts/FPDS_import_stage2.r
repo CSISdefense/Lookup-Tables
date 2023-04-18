@@ -100,7 +100,7 @@ DroppedFieldFK<-DroppedFieldFK  %>% filter(SourceVariableType != "[int] IDENTITY
 #Misaligned names I manually checked
 DroppedFieldFK<-DroppedFieldFK  %>% filter(!Pair %in% c(
   "gfegfpcode",                      "researchcode",                    "awardingagencycode",
-   "majfundagencycat",                "popstatecode",               #"vendorstatecode",
+   "majfundagencycat",                "popstatecode",               "vendorstatecode",
    "awardtypecode",                   "idvtypecode","parentawardtypecode",
    "parentawardsingleormultiplecode", "inherentlygovernmentalfunctions"))
 #2023-04-17 I manually checked. This is certainly a kludge.

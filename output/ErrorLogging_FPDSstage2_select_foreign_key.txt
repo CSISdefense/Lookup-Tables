@@ -171,6 +171,33 @@ HAVING max(iif(fk.sam_exception_description=pk.sam_exception_description or
 ORDER BY fk.[ccrexception]
 
 
+--List new [vendor_state_code] and updated recipient_state_name for insertion into Location.recipient_state_code
+SELECT fk.[vendor_state_code],
+max(iif(fk.recipient_state_name=pk.recipient_state_name or
+	fk.recipient_state_name='' or
+	charindex('('+fk.recipient_state_name+')',pk.recipient_state_name )>0,
+	NULL,fk.recipient_state_name)) as MaxOfNewFKrecipient_state_name,
+count(distinct iif(fk.recipient_state_name=pk.recipient_state_name or
+	fk.recipient_state_name='' or
+	charindex('('+fk.recipient_state_name+')',pk.recipient_state_name )>0,
+	NULL,fk.recipient_state_name)) as unmatched_name_count,
+pk.recipient_state_name as PKrecipient_state_name,
+max(iif(fk.recipient_state_name=pk.recipient_state_name or
+	fk.recipient_state_name='' or
+	charindex('('+fk.recipient_state_name+')',pk.recipient_state_name )>0,
+	1,0)) as any_name_match,
+'Location.recipient_state_code' as PrimaryKeyTable
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Location.recipient_state_code as pk
+On pk.recipient_state_code=fk.[vendor_state_code]
+GROUP BY fk.[vendor_state_code], pk.recipient_state_name
+HAVING max(iif(fk.recipient_state_name=pk.recipient_state_name or
+	fk.recipient_state_name='' or
+	charindex('('+fk.recipient_state_name+')',pk.recipient_state_name )>0,
+	0,1))=1
+ORDER BY fk.[vendor_state_code]
+
+
 --List new [placeofperformancecountrycode] and updated primary_place_of_performance_country_name for insertion into FPDSTypeTable.Country3LetterCode
 SELECT fk.[placeofperformancecountrycode],
 max(iif(fk.primary_place_of_performance_country_name=pk.Country3LetterCodeText or
