@@ -18,7 +18,7 @@ CREATE TABLE [Project].[ProgramElementBudgetActivityToRDTEidHistory](
 	[BudgetActivity] ASC,
 	[StartSourceFiscalYear] ASC,
 	[EndSourceFiscalYear] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [Project].[ProgramElementBudgetActivityToRDTEidHistory] ADD  CONSTRAINT [DF__ProgramEl__CSISm__7D4F530C]  DEFAULT (suser_sname()) FOR [CSISmodifiedBy]

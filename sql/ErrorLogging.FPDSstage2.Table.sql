@@ -46,8 +46,8 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[streetaddress2] [varchar](64) NULL,
 	[streetaddress3] [varchar](55) NULL,
 	[city] [varchar](35) NULL,
-	[vendor_state_code] [varchar](30) NULL,
-	[recipient_state_name] [varchar](255) NULL,
+	[vendor_state_code] [varchar](35) NULL,
+	[recipient_state_name] [varchar](35) NULL,
 	[zipcode] [varchar](28) NULL,
 	[vendor_cd] [varchar](22) NULL,
 	[phoneno] [varchar](20) NULL,
@@ -296,7 +296,11 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[recipient_uei] [varchar](12) NULL,
 	[recipient_parent_uei] [varchar](12) NULL,
-	[prime_award_base_transaction_description] [varchar](4008) NULL
+	[prime_award_base_transaction_description] [varchar](4008) NULL,
+	[obligated_amount_funded_by_IIJA_supplementals_for_overall_award] [decimal](19, 4) NULL,
+	[outlayed_amount_funded_by_IIJA_supplementals_for_overall_award] [decimal](19, 4) NULL,
+	[recipient_name_raw] [varchar](255) NULL,
+	[recipient_parent_name_raw] [varchar](255) NULL
 ) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON

@@ -23,20 +23,8 @@ CREATE TABLE [Contract].[contract_award_unique_key](
  CONSTRAINT [pk_contract_award_unique_key] PRIMARY KEY CLUSTERED 
 (
 	[contract_award_unique_key] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE UNIQUE NONCLUSTERED INDEX [idx_contract_award_unique_key_CSIScontractID_AgencyID_parent_award_agency_id_IsFPDSerror] ON [Contract].[contract_award_unique_key]
-(
-	[CSIScontractID] ASC,
-	[AgencyID] ASC,
-	[parent_award_agency_id] ASC,
-	[IsFPDSerror] ASC
-)
-WHERE ([CSIScontractID] IS NOT NULL)
-WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
 ALTER TABLE [Contract].[contract_award_unique_key] ADD  DEFAULT ((0)) FOR [IsDerived]
 GO

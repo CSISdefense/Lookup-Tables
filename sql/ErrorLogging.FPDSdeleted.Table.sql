@@ -52,8 +52,8 @@ CREATE TABLE [ErrorLogging].[FPDSdeleted](
 	[divisionname] [nvarchar](150) NULL,
 	[divisionnumberorofficecode] [varchar](10) NULL,
 	[ccrexception] [varchar](70) NULL,
-	[streetaddress] [varchar](100) NULL,
-	[streetaddress2] [varchar](60) NULL,
+	[streetaddress] [varchar](115) NULL,
+	[streetaddress2] [varchar](64) NULL,
 	[streetaddress3] [varchar](55) NULL,
 	[city] [varchar](35) NULL,
 	[zipcode] [varchar](28) NULL,
@@ -274,7 +274,12 @@ CREATE TABLE [ErrorLogging].[FPDSdeleted](
 	[IsMissingFromUpdate] [bit] NOT NULL,
 	[dod_acquisition_program_description] [varchar](255) NULL,
 	[recipient_uei] [varchar](12) NULL,
-	[recipient_parent_uei] [varchar](12) NULL
+	[recipient_parent_uei] [varchar](12) NULL,
+	[prime_award_base_transaction_description] [varchar](4008) NULL,
+	[obligated_amount_funded_by_IIJA_supplementals_for_overall_award] [decimal](19, 4) NULL,
+	[outlayed_amount_funded_by_IIJA_supplementals_for_overall_award] [decimal](19, 4) NULL,
+	[recipient_name_raw] [varchar](255) NULL,
+	[recipient_parent_name_raw] [varchar](255) NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FPDSdeleted] ADD  CONSTRAINT [df_CSISmodifiedDate]  DEFAULT (getdate()) FOR [CSISModifiedDate]

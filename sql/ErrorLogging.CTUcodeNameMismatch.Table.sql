@@ -14,10 +14,14 @@ CREATE TABLE [ErrorLogging].[CTUcodeNameMismatch](
 	[primary_place_of_performance_state_name] [varchar](255) NULL,
 	[vendor_state_code] [varchar](30) NULL,
 	[recipient_state_name] [varchar](255) NULL,
+	[typeofidc] [varchar](41) NULL,
+	[type_of_idc_name] [varchar](255) NULL,
+	[performancebasedservicecontract] [varchar](38) NULL,
+	[performance_based_service_acquisition_name] [varchar](255) NULL,
  CONSTRAINT [pk_ErrorLogging_CTUcodeNameMismatch] PRIMARY KEY CLUSTERED 
 (
 	[contract_transaction_unique_key] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[CTUcodeNameMismatch]  WITH CHECK ADD FOREIGN KEY([CCRexception])

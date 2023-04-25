@@ -17,7 +17,7 @@ CREATE TABLE [Contract].[contract_transaction_unique_key](
  CONSTRAINT [pk_contract_transaction_unique_key] PRIMARY KEY CLUSTERED 
 (
 	[contract_transaction_unique_key] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
 CREATE UNIQUE NONCLUSTERED INDEX [idx_contract_transaction_unique_key_CSIStransactionID] ON [Contract].[contract_transaction_unique_key]

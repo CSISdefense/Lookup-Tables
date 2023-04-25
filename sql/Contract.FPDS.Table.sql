@@ -58,7 +58,7 @@ CREATE TABLE [Contract].[FPDS](
 	[city] [varchar](35) NULL,
 	[zipcode] [varchar](28) NULL,
 	[vendorcountrycode] [nvarchar](50) NULL,
-	[vendor_state_code] [varchar](30) NULL,
+	[vendor_state_code] [varchar](35) NULL,
 	[vendor_cd] [varchar](22) NULL,
 	[vendorsitecode] [varchar](15) NULL,
 	[vendoralternatesitecode] [varchar](20) NULL,
@@ -273,7 +273,11 @@ CREATE TABLE [Contract].[FPDS](
 	[dod_acquisition_program_description] [varchar](255) NULL,
 	[recipient_uei] [varchar](12) NULL,
 	[recipient_parent_uei] [varchar](12) NULL,
-	[prime_award_base_transaction_description] [varchar](4008) NULL
+	[prime_award_base_transaction_description] [varchar](4008) NULL,
+	[obligated_amount_funded_by_IIJA_supplementals_for_overall_award] [decimal](19, 4) NULL,
+	[outlayed_amount_funded_by_IIJA_supplementals_for_overall_award] [decimal](19, 4) NULL,
+	[recipient_name_raw] [varchar](255) NULL,
+	[recipient_parent_name_raw] [varchar](255) NULL
 ) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
@@ -283,6 +287,20 @@ CREATE NONCLUSTERED INDEX [Contract_FPDS_systemequipmentcode_fiscal_year] ON [Co
 	[systemequipmentcode] ASC
 )
 INCLUDE([fiscal_year]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_contract_FPDS_agencyID_PIID_IDVpiid_idvagencyid_IDVpiid_modnumber_transactionnumber] ON [Contract].[FPDS]
+(
+	[agencyid] ASC,
+	[piid] ASC,
+	[idvagencyid] ASC,
+	[idvpiid] ASC,
+	[modnumber] ASC,
+	[transactionnumber] ASC
+)
+WHERE ([PIID] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
 GO
@@ -356,20 +374,6 @@ CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_ParentDunsnumber_Fiscal_Year] ON [Co
 GO
 SET ANSI_PADDING ON
 GO
-CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_FPDS_PIID_IDVPIID_AgencyID_IDVagencyID_ModNumber_TransNumber] ON [Contract].[FPDS]
-(
-	[piid] ASC,
-	[idvpiid] ASC,
-	[agencyid] ASC,
-	[idvagencyid] ASC,
-	[modnumber] ASC,
-	[transactionnumber] ASC
-)
-WHERE ([PIID] IS NOT NULL)
-WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
 CREATE NONCLUSTERED INDEX [ix_contract_fpds_recipient_uei_otherID] ON [Contract].[FPDS]
 (
 	[recipient_uei] ASC
@@ -416,20 +420,10 @@ REFERENCES [FPDSTypeTable].[ContractActionType] ([contractactiontype])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_contractactiontype]
 GO
-ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_ContractingOfficeIDhistory] FOREIGN KEY([fiscal_year], [contractingofficeagencyid], [contractingofficeid])
-REFERENCES [Office].[OfficeIDhistory] ([fiscal_year], [AgencyID], [OfficeID])
-GO
-ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_ContractingOfficeIDhistory]
-GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_csistransactionid] FOREIGN KEY([CSIStransactionID])
 REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_csistransactionid]
-GO
-ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_FundingOfficeIDhistory] FOREIGN KEY([fiscal_year], [fundingrequestingagencyid], [fundingrequestingofficeid])
-REFERENCES [Office].[OfficeIDhistory] ([fiscal_year], [AgencyID], [OfficeID])
-GO
-ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_FundingOfficeIDhistory]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_idv_type_code] FOREIGN KEY([idv_type_code])
 REFERENCES [FPDSTypeTable].[idv_type_code] ([idv_type_code])
@@ -506,10 +500,10 @@ REFERENCES [FPDSTypeTable].[typeofcontractpricing] ([TypeOfContractPricing])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_typeofcontractpricing]
 GO
-ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS__headquartercode] FOREIGN KEY([headquartercode])
-REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_vendor_state_code] FOREIGN KEY([vendor_state_code])
+REFERENCES [Location].[recipient_state_code] ([recipient_state_code])
 GO
-ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS__headquartercode]
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_vendor_state_code]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_agencyid] FOREIGN KEY([agencyid])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
@@ -640,6 +634,11 @@ ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_gfe_gfp] FO
 REFERENCES [FPDSTypeTable].[gfe_gfp] ([gfe_gfp])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_gfe_gfp]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_headquartercode] FOREIGN KEY([headquartercode])
+REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [FK_FPDS_headquartercode]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH NOCHECK ADD  CONSTRAINT [FK_FPDS_idvagencyid] FOREIGN KEY([idvagencyid])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
