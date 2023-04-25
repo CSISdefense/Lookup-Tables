@@ -112,6 +112,8 @@ translate_name<-function(TargetTable.df,test_only=FALSE){
   if(!"SourceVariableName" %in% colnames(TargetTable.df)){
     colnames(TargetTable.df)[1]<-"SourceVariableName" 
   }
+  if(any(lookup.NameConversion$CSISvariableName==""))
+    stop("Missing CSISvariableName in NameConversion.csv")
 
   TargetTable.df$OriginalSourceVariableName<-TargetTable.df$SourceVariableName
   TargetTable.df$SourceVariableName<-tolower(TargetTable.df$SourceVariableName)

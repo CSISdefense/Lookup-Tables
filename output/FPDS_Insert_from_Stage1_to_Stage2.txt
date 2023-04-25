@@ -288,7 +288,11 @@ INSERT INTO ErrorLogging.FPDSstage2
 [recipient_county_name],
 [recipient_uei],
 [recipient_parent_uei],
-[prime_award_base_transaction_description]
+[prime_award_base_transaction_description],
+[obligated_amount_funded_by_IIJA_supplementals_for_overall_award],
+[outlayed_amount_funded_by_IIJA_supplementals_for_overall_award],
+[recipient_name_raw],
+[recipient_parent_name_raw]
 )
  SELECT 
 [gfe_gfp],
@@ -333,8 +337,8 @@ Convert([nvarchar](50), [recipient_country_code]),
 Convert([varchar](115), [recipient_address_line_1]),
 Convert([varchar](64), [recipient_address_line_2]),
 Convert([varchar](35), [recipient_city_name]),
-Convert([varchar](30), [recipient_state_code]),
-[recipient_state_name],
+Convert([varchar](35), [recipient_state_code]),
+Convert([varchar](35), [recipient_state_name]),
 Convert([varchar](28), [recipient_zip_4_code]),
 Convert([varchar](22), [recipient_congressional_district]),
 Convert([varchar](20), [recipient_phone_number]),
@@ -579,5 +583,9 @@ Convert([varchar](1000), [object_classes_funding_this_award]),
 Convert([varchar](30), [recipient_county_name]),
 Convert([varchar](12), [recipient_uei]),
 Convert([varchar](12), [recipient_parent_uei]),
-[prime_award_base_transaction_description]
+[prime_award_base_transaction_description],
+Convert([decimal](19, 4), Convert(real,nullif([obligated_amount_funded_by_IIJA_supplementals_for_overall_award],''))),
+Convert([decimal](19, 4), Convert(real,nullif([outlayed_amount_funded_by_IIJA_supplementals_for_overall_award],''))),
+[recipient_name_raw],
+[recipient_parent_name_raw]
 FROM ErrorLogging.FPDSstage1

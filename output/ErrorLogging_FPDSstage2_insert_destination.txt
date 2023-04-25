@@ -228,7 +228,11 @@ INSERT INTO Contract.FPDS
 [outlayed_amount_funded_by_COVID19_supplementals_for_overall_award],
 [recipient_uei],
 [recipient_parent_uei],
-[prime_award_base_transaction_description]
+[prime_award_base_transaction_description],
+[obligated_amount_funded_by_IIJA_supplementals_for_overall_award],
+[outlayed_amount_funded_by_IIJA_supplementals_for_overall_award],
+[recipient_name_raw],
+[recipient_parent_name_raw]
 )
  SELECT 
 [last_modified_date],
@@ -459,7 +463,11 @@ Convert([datetime], [CSIScreatedDate]),
 [outlayed_amount_funded_by_COVID19_supplementals_for_overall_award],
 [recipient_uei],
 [recipient_parent_uei],
-[prime_award_base_transaction_description]
+[prime_award_base_transaction_description],
+[obligated_amount_funded_by_IIJA_supplementals_for_overall_award],
+[outlayed_amount_funded_by_IIJA_supplementals_for_overall_award],
+[recipient_name_raw],
+[recipient_parent_name_raw]
 FROM ErrorLogging.FPDSstage2
 WHERE CSIStransactionID NOT in (SELECT CSIStransactionID FROM Contract.FPDS
 and CSIStransactionID is not NULL

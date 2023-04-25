@@ -242,11 +242,19 @@ NULLIF([recipient_city_name],'') IS NOT NULL) OR
 
 SELECT DISTINCT [recipient_state_code],
 len([recipient_state_code]) as Length,
-'[varchar](30)' as DestinationType
+'[varchar](35)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([varchar](30), [recipient_state_code]) IS NULL AND
+WHERE (Try_Convert([varchar](35), [recipient_state_code]) IS NULL AND
 NULLIF([recipient_state_code],'') IS NOT NULL) OR
- len([recipient_state_code]) > 30
+ len([recipient_state_code]) > 35
+
+SELECT DISTINCT [recipient_state_name],
+len([recipient_state_name]) as Length,
+'[varchar](35)' as DestinationType
+FROM Errorlogging.FPDSstage1
+WHERE (Try_Convert([varchar](35), [recipient_state_name]) IS NULL AND
+NULLIF([recipient_state_name],'') IS NOT NULL) OR
+ len([recipient_state_name]) > 35
 
 SELECT DISTINCT [recipient_zip_4_code],
 len([recipient_zip_4_code]) as Length,
@@ -1667,4 +1675,18 @@ FROM Errorlogging.FPDSstage1
 WHERE (Try_Convert([varchar](12), [recipient_parent_uei]) IS NULL AND
 NULLIF([recipient_parent_uei],'') IS NOT NULL) OR
  len([recipient_parent_uei]) > 12
+
+SELECT DISTINCT [obligated_amount_funded_by_IIJA_supplementals_for_overall_award],
+len([obligated_amount_funded_by_IIJA_supplementals_for_overall_award]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSstage1
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([obligated_amount_funded_by_IIJA_supplementals_for_overall_award],''))) IS NULL AND
+NULLIF([obligated_amount_funded_by_IIJA_supplementals_for_overall_award],'') IS NOT NULL)
+
+SELECT DISTINCT [outlayed_amount_funded_by_IIJA_supplementals_for_overall_award],
+len([outlayed_amount_funded_by_IIJA_supplementals_for_overall_award]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSstage1
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([outlayed_amount_funded_by_IIJA_supplementals_for_overall_award],''))) IS NULL AND
+NULLIF([outlayed_amount_funded_by_IIJA_supplementals_for_overall_award],'') IS NOT NULL)
 

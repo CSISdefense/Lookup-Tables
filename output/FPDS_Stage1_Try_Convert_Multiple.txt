@@ -62,6 +62,10 @@ SELECT
 		nullif([outlayed_amount_funded_by_COVID19_supplementals_for_overall_award],'') is not null,1,0)) as [outlayed_amount_funded_by_COVID19_supplementals_for_overall_award]
 	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([obligated_amount_funded_by_COVID19_supplementals_for_overall_award],''))) is null and
 		nullif([obligated_amount_funded_by_COVID19_supplementals_for_overall_award],'') is not null,1,0)) as [obligated_amount_funded_by_COVID19_supplementals_for_overall_award]
+	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([obligated_amount_funded_by_IIJA_supplementals_for_overall_award],''))) is null and
+		nullif([obligated_amount_funded_by_IIJA_supplementals_for_overall_award],'') is not null,1,0)) as [obligated_amount_funded_by_IIJA_supplementals_for_overall_award]
+	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([outlayed_amount_funded_by_IIJA_supplementals_for_overall_award],''))) is null and
+		nullif([outlayed_amount_funded_by_IIJA_supplementals_for_overall_award],'') is not null,1,0)) as [outlayed_amount_funded_by_IIJA_supplementals_for_overall_award]
 	FROM Errorlogging.FPDSstage1
 
 --Check across all bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.
@@ -271,7 +275,8 @@ SELECT
 ,iif([recipient_address_line_1]>115,[recipient_address_line_1],NULL) as [recipient_address_line_1]
 ,iif([recipient_address_line_2]>64,[recipient_address_line_2],NULL) as [recipient_address_line_2]
 ,iif([recipient_city_name]>35,[recipient_city_name],NULL) as [recipient_city_name]
-,iif([recipient_state_code]>30,[recipient_state_code],NULL) as [recipient_state_code]
+,iif([recipient_state_code]>35,[recipient_state_code],NULL) as [recipient_state_code]
+,iif([recipient_state_name]>35,[recipient_state_name],NULL) as [recipient_state_name]
 ,iif([recipient_zip_4_code]>28,[recipient_zip_4_code],NULL) as [recipient_zip_4_code]
 ,iif([recipient_congressional_district]>22,[recipient_congressional_district],NULL) as [recipient_congressional_district]
 ,iif([recipient_phone_number]>20,[recipient_phone_number],NULL) as [recipient_phone_number]
@@ -375,6 +380,7 @@ FROM (SELECT
 	,max(len([recipient_address_line_2])) as [recipient_address_line_2]
 	,max(len([recipient_city_name])) as [recipient_city_name]
 	,max(len([recipient_state_code])) as [recipient_state_code]
+	,max(len([recipient_state_name])) as [recipient_state_name]
 	,max(len([recipient_zip_4_code])) as [recipient_zip_4_code]
 	,max(len([recipient_congressional_district])) as [recipient_congressional_district]
 	,max(len([recipient_phone_number])) as [recipient_phone_number]
