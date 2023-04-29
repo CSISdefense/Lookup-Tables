@@ -54,7 +54,6 @@ Competition.effective.only,Competition,Extent of Competition,,,FALSE
 Commercial,Commercial,Commercial,,,FALSE
 Pricing.Mechanism.detail,Pricing,Pricing Mechanism,,,FALSE
 Pricing.Mechanism.sum,Pricing,Pricing Mechanism,,,FALSE
-PricingMechanism,Pricing,Pricing Mechanism,,,FALSE
 Base,Pricing,Pricing Mechanism,,,FALSE
 Fee,Pricing,Pricing Mechanism Fee Type,,,FALSE
 PricingFee,Pricing,Pricing Mechanism,,,FALSE
