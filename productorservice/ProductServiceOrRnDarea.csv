@@ -1,0 +1,32 @@
+ProductServiceOrRnDarea,ProductOrServiceArea,ServicesCategory.detail,ServicesCategory.sum,ProductsCategory.detail,ProductOrServiceArea.DLA,ProductOrServicesCategory.Graph,ProductServiceOrRnDarea.sum,SupplyServiceFRC,SupplyServiceERS,RnDCategory.detail
+PAMS,PAMS,PAMS,Services (Non-R&D),Services,PAMS,TRUE,Services (Non-R&D),Other Services,Other Services,Services (Non-R&D)
+R&D,R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Services (Non-R&D)
+ERS,ERS,ERS,Services (Non-R&D),Services (Non-R&D),Other Services,TRUE,Services (Non-R&D),Other Services,Equipment-Related Services,Services (Non-R&D)
+FRS&C,FRS&C,FRS&C,Services (Non-R&D),Services (Non-R&D),FRS&C,TRUE,Services (Non-R&D),FRS&C,Other Services,Services (Non-R&D)
+ICT,ICT,ICT,Services (Non-R&D),Services (Non-R&D),ICT,TRUE,Services (Non-R&D),Other Services,Other Services,Services (Non-R&D)
+MED,MED,MED,Services (Non-R&D),Services (Non-R&D),Other Services,TRUE,Services (Non-R&D),Other Services,Other Services,Services (Non-R&D)
+Other,Other,Products,Products (All),Other,Other Products,TRUE,Products (All),Supplies,Supplies,Products (All)
+Unlabeled,Unlabeled,Unlabeled,Unlabeled,Unlabeled,Unlabeled,FALSE,Unlabeled,Unlabeled,Unlabeled,Unlabeled
+Products,Products,Products,Products (All),Products (All),Products,TRUE,Products (All),Supplies,Supplies,Products (All)
+Fuels,Fuels,Fuels,Products (All),Fuels,Fuels,TRUE,Products (All),Supplies,Supplies,Products (All)
+NULL,NULL,Unlabeled,Unlabeled,Unlabeled,NULL,FALSE,Unlabeled,Unlabeled,Unlabeled,Unlabeled
+Fuel,Fuel,Fuels,Products (All),Fuels,Fuels,TRUE,Products (All),Supplies,Supplies,Products (All)
+All Services,All Services,All Services,All Services,All Services,All Services,TRUE,All Services,Other Services,Other Services,All Services
+Services (Non-R&D),Services (Non-R&D),Services (Non-R&D),Services (Non-R&D),Services (Non-R&D),Services (Non-R&D),TRUE,Services (Non-R&D),Other Services,Other Services,Services (Non-R&D)
+Services,Services,Services (Non-R&D),Services (Non-R&D),Services (Non-R&D),Services,TRUE,Services (Non-R&D),Other Services,Other Services,Services (Non-R&D)
+Ships,Ships,Products,Products (All),Ships,Other Platform/Weap.,TRUE,Products (All),Supplies,Supplies,Products (All)
+Missiles & Space,Missiles & Space,Products,Products (All),Missiles & Space,Other Platform/Weap.,TRUE,Products (All),Supplies,Supplies,Products (All)
+Launchers & Munitions,Launchers & Munitions,Products,Products (All),Launchers & Munitions,Other Platform/Weap.,TRUE,Products (All),Supplies,Supplies,Products (All)
+Ground Vehicles,Ground Vehicles,Products,Products (All),Ground Vehicles,Ground Vehicles,TRUE,Products (All),Supplies,Supplies,Products (All)
+Engines & Power Plants,Engines & Power Plants,Products,Products (All),Engines & Power Plants,Engines & Power Pl.,TRUE,Products (All),Supplies,Supplies,Products (All)
+Electronics & Communications,Electronics & Communications,Products,Products (All),Electronics & Communications,Electronics & Comm.,TRUE,Products (All),Supplies,Supplies,Products (All)
+Clothing & Subsistence,Clothing & Subsistence,Products,Products (All),Clothing & Subsistence,Clothing & Sub.,TRUE,Products (All),Supplies,Supplies,Products (All)
+Aircraft,Aircraft,Products,Products (All),Aircraft,Aircraft,TRUE,Products (All),Supplies,Supplies,Products (All)
+Basic Research (6.1),R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Basic Research (6.1)
+Applied Research (6.2),R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Applied Research (6.2)
+Advanced Technology Development (6.3),R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Advanced Technology Development (6.3)
+Advanced Component Development & Prototypes (6.4),R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Advanced Component Development & Prototypes (6.4)
+System Development & Demonstration (6.5),R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,System Development & Demonstration (6.5)
+Operational Systems Development (6.7),R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Operational Systems Development (6.7)
+Operation of Government R&D Facilities,R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Operation of Government R&D Facilities
+Uncategorized R&D,R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Uncategorized R&D

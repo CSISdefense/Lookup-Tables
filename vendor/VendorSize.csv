@@ -1,0 +1,22 @@
+VendorSize,VendorSize.detail,VendorSize.sum,Shiny.VendorSize
+Large,Large,Large,Large
+Large (Big 6),Large (Big 5),Large (Big 5),Big Five
+Large: Big 6,Large (Big 5),Large (Big 5),Big Five
+Large: Big 6 JV,Large (Big 5),Large (Big 5),Big Five
+Medium (<1B),Medium (<1B),Medium,Medium
+Medium (>1B),Medium (>1B),Medium,Medium
+Medium <1B,Medium (<1B),Medium,Medium
+Medium >1B,Medium (>1B),Medium,Medium
+Small,Small,Small,Small
+Unlabeled,Unlabeled,Unlabeled,Unlabeled
+Large (Small Subsidiary),Large,Large,Large
+Large: Big 6 (Small Subsidiary),Large (Big 5),Large (Big 5),Big Five
+Medium >1B (Small Subsidiary),Medium (>1B),Medium,Medium
+Large: Big 6 JV (Small Subsidiary),Large (Big 5),Large (Big 5),Big Five
+Large: Pre-Big 6,Large (Pre-Big 5),Large (Pre-Big 5),Big Five
+Large: Big 5,Large (Big 5),Large (Big 5),Big Five
+Large: Pre-Big 5,Large (Big 5),Large (Big 5),Big Five
+Large: Big 5 JV,Large (Big 5),Large (Big 5),Big Five
+Always Small,Always Small,Small,Always Small
+Sometimes Small,Sometimes Small,Medium,Sometimes Small
+No Prime Business Size Determination Available,,Unlabeled,No Prime Records
