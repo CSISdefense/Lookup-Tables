@@ -1,6 +1,7 @@
 CompetitionClassification,ClassifyNumberOfOffers,Competition.detail,Competition.sum,Competition.Graph,Competition.effective.only,Competition.multisum,No.Competition.sum,No.Competition.Offer,CompOffr
 Competition with single offer,One Offer,1 Offer,1 Offer,TRUE,Not Effective Comp.,1 Offer,1 Offer,1 Offer,1 Offer
 Competition with single offer (Overrode blank Fair Opportunity),One Offer,1 Offer,1 Offer,TRUE,Not Effective Comp.,1 Offer,1 Offer,1 Offer,1 Offer
+Competition with single offer (Overrode blank Extent Competed),One Offer,1 Offer,1 Offer,TRUE,Not Effective Comp.,1 Offer,1 Offer,1 Offer,1 Offer
 Full Competition (Multiple Offers),100+ Offers,5+ Offers,3+ Offers,TRUE,Effective Comp.,2+ Offers,2+ Offers,5+ Offers,5+ Offers
 Full Competition (Multiple Offers),10-24 Offers,5+ Offers,3+ Offers,TRUE,Effective Comp.,2+ Offers,2+ Offers,5+ Offers,5+ Offers
 Full Competition (Multiple Offers),25-99 Offers,5+ Offers,3+ Offers,TRUE,Effective Comp.,2+ Offers,2+ Offers,5+ Offers,5+ Offers
