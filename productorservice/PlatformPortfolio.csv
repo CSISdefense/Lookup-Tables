@@ -1,0 +1,20 @@
+PlatformPortfolio,PlatformPortfolio.sum,PlatformPortfolio.AnD,Platform.page,Platform.Labeled
+Aircraft and Drones,Aircraft and Drones,Aircraft and Drones,Major Weapons,TRUE
+Ships & Submarines,Ships & Submarines,Ships & Submarines,Major Weapons,TRUE
+Land Vehicles,Land Vehicles,Land Vehicles,Major Weapons,TRUE
+Missile and Space Systems,Missile and Space Systems,Missile and Space Systems,Major Weapons,TRUE
+Weapons and Ammunition,Weapons and Ammunition,Weapons and Ammunition,Major Weapons,TRUE
+Other Products,Other,Other Products,Other Systems,TRUE
+Electronics and Communications,Electronics and Communications,Electronics and Communications,Other Systems,TRUE
+Facilities and Construction,Facilities and Construction,Facilities and Construction,Other Systems,TRUE
+Other Services,Other,Other Services,Other Systems,TRUE
+Other R&D and Knowledge Based,Other,Other R&D and Knowledge Based,Other Systems,TRUE
+Unlabeled,Unlabeled,Unlabeled,Other Systems,FALSE
+Aircraft,Aircraft and Drones,Aircraft and Drones,Major Weapons,TRUE
+Unmanned,Aircraft and Drones,Aircraft and Drones,Major Weapons,TRUE
+NULL,Unlabeled,Unlabeled,Other Systems,TRUE
+"Electronics, Comms, & Sensors","Electronics, Comms, & Sensors","Electronics, Comms, & Sensors",Other Systems,TRUE
+Ordnance and Missiles,Ordnance and Missiles,Ordnance and Missiles,Major Weapons,TRUE
+Space Systems,Space Systems,Space Systems,Major Weapons,TRUE
+Missile Defense,Air & Missile Defense,Air & Missile Defense,Major Weapons,TRUE
+Air & Missile Defense,Air & Missile Defense,Air & Missile Defense,Major Weapons,TRUE
