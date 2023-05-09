@@ -1,0 +1,46 @@
+geo,ISOalpha3,CountryName,SubRegion
+AL,ALB,Albania,Other Europe
+AT,AUT,Austria,Rest of EU27
+BE,BEL,Belgium,Rest of EU27
+BG,BGR,Bulgaria,Central and Eastern
+BA,BIH,Bosnia & Herzegovina,Other Europe
+CH,CHE,Switzerland,Other Europe
+CY,CYP,Cyprus,Rest of EU27
+CZ,CZE,Czech Republic,Central and Eastern
+DE,DEU,Germany,Germany
+DK,DNK,Denmark,Nordics
+ES,ESP,Spain,Spain
+EE,EST,Estonia,Baltics
+FI,FIN,Finland,Nordics
+FR,FRA,France,France
+HR,HRV,Croatia,Rest of EU27
+HU,HUN,Hungary,Central and Eastern
+IE,IRL,Ireland,Rest of EU27
+IS,ISL,Iceland,Other Europe
+IT,ITA,Italy,Italy
+LT,LTU,Lithuania,Baltics
+LU,LUX,Luxembourg,Rest of EU27
+LV,LVA,Latvia,Baltics
+MK,MKD,North Macedonia,Other Europe
+MT,MLT,Malta,Rest of EU27
+ME,MNE,Montenegro,Other Europe
+NL,NLD,Netherlands,Rest of EU27
+NO,NOR,Norway,Nordics
+PL,POL,Poland,Poland
+PT,PRT,Portugal,Rest of EU27
+RO,ROU,Romania,Central and Eastern
+RS,SRB,Serbia,Other Europe
+SK,SVK,Slovakia,Central and Eastern
+SI,SVN,Slovenia,Central and Eastern
+SE,SWE,Sweden,Nordics
+TR,TUR,Turkey,Turkey
+EA,,,
+EA12,,,
+EA19,,,
+EA20,,,
+EL,GRC,Greece,Rest of EU27
+EU15,,,
+EU27_2020,,,
+EU28,,,
+UK,GBR,United Kingdom,United Kingdom
+XK,,,
