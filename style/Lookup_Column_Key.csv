@@ -1,7 +1,7 @@
 ﻿column,coloration.key,title,share.title,period.title,is.colon.split
 Funder,Agencies,Funder,,,FALSE
 Customer,Agencies,Customer,,,FALSE
-ContractingCustomer,Agencies,Customer,,,FALSE
+ContractingCustomer,Agencies,Customer,,f,FALSE
 Customer.detail,Agencies,Customer,,,FALSE
 Customer.manual.subtitles,Agencies,Customer,,,FALSE
 Customer.sum,Agencies,Customer,,,FALSE
@@ -660,6 +660,8 @@ StateRegion,Region,Region,,,
 PlaceStateRegion,Region,Region,,,
 VendorStateRegion,Region,Region,,,
 OriginStateRegion,Region,Region,,,
+DeclarantStateRegion,Region,Region,,,
+PartnerStateRegion,Region,Region,,,
 Armament.category,PlatformPortfolio,Platform Portfolio,,,
 Armament.category.UAV,PlatformPortfolio,Platform Portfolio,,,
 Armament.category.UAVLM,PlatformPortfolio,Platform Portfolio,,,
