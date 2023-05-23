@@ -334,7 +334,7 @@ South Africa,102,ZAF,FALSE
 South Korea,139,KOR,FALSE
 South Sudan,113,SSD,FALSE
 South Vietnam,151,YEM,FALSE
-South Yemen,124,*SY,FALSE
+South Yemen,124,YMD,FALSE
 Southern rebels (Yemen)*,NULL,YEM,TRUE
 Soviet Union,57,RUS,FALSE
 Spain,35,ESP,FALSE
@@ -383,7 +383,7 @@ Viet Minh (France)*,NULL,VNM,TRUE
 Viet Nam,NULL,VNM,FALSE
 Western Sahara,NULL,ESH,FALSE
 Yemen,NULL,YEM,FALSE
-Yugoslavia,49,^YG,FALSE
+Yugoslavia,49,YUG,FALSE
 Zambia,3986,ZMB,FALSE
 ZAPU (Zimbabwe)*,NULL,ZWE,TRUE
 Zimbabwe,101,ZWE,FALSE
