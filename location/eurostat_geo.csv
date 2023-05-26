@@ -34,13 +34,13 @@ SK,SVK,Slovakia,Central and Eastern
 SI,SVN,Slovenia,Central and Eastern
 SE,SWE,Sweden,Nordics
 TR,TUR,Turkey,Turkey
-EA,,,
-EA12,,,
-EA19,,,
-EA20,,,
+EA,NULL,NULL,NULL
+EA12,NULL,NULL,NULL
+EA19,NULL,NULL,NULL
+EA20,NULL,NULL,NULL
 EL,GRC,Greece,Rest of EU27
-EU15,,,
-EU27_2020,,,
-EU28,,,
+EU15,NULL,NULL,NULL
+EU27_2020,NULL,NULL,NULL
+EU28,NULL,NULL,NULL
 UK,GBR,United Kingdom,United Kingdom
-XK,,,
+XK,NULL,NULL,NULL
