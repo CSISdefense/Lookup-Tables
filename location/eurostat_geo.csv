@@ -1,10 +1,10 @@
 geo,ISOalpha3,CountryName,SubRegion
-AL,ALB,Albania,Other Europe
+AL,ALB,Albania,Other Europe and Territories
 AT,AUT,Austria,Rest of EU27
 BE,BEL,Belgium,Rest of EU27
 BG,BGR,Bulgaria,Central and Eastern
-BA,BIH,Bosnia & Herzegovina,Other Europe
-CH,CHE,Switzerland,Other Europe
+BA,BIH,Bosnia & Herzegovina,Other Europe and Territories
+CH,CHE,Switzerland,Other Europe and Territories
 CY,CYP,Cyprus,Rest of EU27
 CZ,CZE,Czech Republic,Central and Eastern
 DE,DEU,Germany,Germany
@@ -16,20 +16,20 @@ FR,FRA,France,France
 HR,HRV,Croatia,Rest of EU27
 HU,HUN,Hungary,Central and Eastern
 IE,IRL,Ireland,Rest of EU27
-IS,ISL,Iceland,Other Europe
+IS,ISL,Iceland,Other Europe and Territories
 IT,ITA,Italy,Italy
 LT,LTU,Lithuania,Baltics
 LU,LUX,Luxembourg,Rest of EU27
 LV,LVA,Latvia,Baltics
-MK,MKD,North Macedonia,Other Europe
+MK,MKD,North Macedonia,Other Europe and Territories
 MT,MLT,Malta,Rest of EU27
-ME,MNE,Montenegro,Other Europe
+ME,MNE,Montenegro,Other Europe and Territories
 NL,NLD,Netherlands,Rest of EU27
 NO,NOR,Norway,Nordics
 PL,POL,Poland,Poland
 PT,PRT,Portugal,Rest of EU27
 RO,ROU,Romania,Central and Eastern
-RS,SRB,Serbia,Other Europe
+RS,SRB,Serbia,Other Europe and Territories
 SK,SVK,Slovakia,Central and Eastern
 SI,SVN,Slovenia,Central and Eastern
 SE,SWE,Sweden,Nordics
@@ -44,3 +44,28 @@ EU27_2020,NULL,NULL,NULL
 EU28,NULL,NULL,NULL
 UK,GBR,United Kingdom,United Kingdom
 XK,NULL,NULL,NULL
+NULL,VGB,NULL,Other Europe and Territories
+NULL,BMU,NULL,Other Europe and Territories
+NULL,MTQ,NULL,Other Europe and Territories
+NULL,PYF,NULL,Other Europe and Territories
+NULL,MAF,NULL,Other Europe and Territories
+NULL,CYM,NULL,Other Europe and Territories
+NULL,WLF,NULL,Other Europe and Territories
+NULL,GRL,NULL,Other Europe and Territories
+NULL,TCA,NULL,Other Europe and Territories
+NULL,MSR,NULL,Other Europe and Territories
+NULL,MYT,NULL,Other Europe and Territories
+NULL,AIA,NULL,Other Europe and Territories
+NULL,NCL,NULL,Other Europe and Territories
+NULL,PCN,NULL,Other Europe and Territories
+NULL,FRO,NULL,Other Europe and Territories
+NULL,SHN,NULL,Other Europe and Territories
+NULL,ATF,NULL,Other Europe and Territories
+NULL,GIB,NULL,Other Europe and Territories
+NULL,COK,NULL,Other Europe and Territories
+NULL,REU,NULL,Other Europe and Territories
+NULL,IOT,NULL,Other Europe and Territories
+NULL,FLK,NULL,Other Europe and Territories
+NULL,NIU,NULL,Other Europe and Territories
+NULL,SJM,NULL,Other Europe and Territories
+NULL,UKR,NULL,Ukraine
