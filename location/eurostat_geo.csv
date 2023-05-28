@@ -34,16 +34,16 @@ SK,SVK,Slovakia,Central and Eastern
 SI,SVN,Slovenia,Central and Eastern
 SE,SWE,Sweden,Nordics
 TR,TUR,Turkey,Turkey
-EA,NULL,NULL,NULL
-EA12,NULL,NULL,NULL
-EA19,NULL,NULL,NULL
-EA20,NULL,NULL,NULL
+EA,NULL,Euro area,NULL
+EA12,NULL,Euro area - 19 countries,NULL
+EA19,NULL,Euro area - 19 countries,NULL
+EA20,NULL,Euro area - 20 countries,NULL
 EL,GRC,Greece,Greece
-EU15,NULL,NULL,NULL
-EU27_2020,NULL,NULL,NULL
-EU28,NULL,NULL,NULL
+EU15,NULL,Euro area - 15 countries,NULL
+EU27_2020,NULL,EU - 27 countries,NULL
+EU28,NULL,EU - 28 countries,NULL
 UK,GBR,United Kingdom,United Kingdom
-XK,NULL,NULL,NULL
+XK,*KS,Kosovo,NULL
 NULL,VGB,NULL,Other Europe and Territories
 NULL,BMU,NULL,Other Europe and Territories
 NULL,MTQ,NULL,Other Europe and Territories
