@@ -3553,6 +3553,8 @@ Region,World,World,10,"DIIG secondary, pale blue",#b2e1ea,,,,default grey,#55444
 EUrelationship,EU,EU,1,"DIIG Primary, National Guard",#0e99d6,,,,default grey,#554449,
 EUrelationship,Future EU,Future EU,2,"DIIG Primary, National Guard",#0e99d6,,,,default grey,#554449,
 EUrelationship,United States,United States,5,red,#AA4643,,,,default grey,#554449,
+EUrelationship,United States (F-35),United States (F-35),4.5,"DIIG Secondary, Marine",#999999,,,,default grey,#554449,
+EUrelationship,United States (All Other),United States (All Other),5,red,#AA4643,,,,default grey,#554449,
 EUrelationship,NTIB and RDP,NTIB and RDP,6,red,#AA4643,,,,default grey,#554449,
 EUrelationship,Other NATO,Other NATO,4,"DIIG Secondary, Navy",#1d2d5c,,,,default grey,#554449,
 EUrelationship,NATO,NATO,6,"DIIG Secondary, Navy",#1d2d5c,,,,default grey,#554449,
