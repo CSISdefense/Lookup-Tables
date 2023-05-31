@@ -1,4 +1,4 @@
-﻿column,coloration.key,title,share.title,period.title,is.colon.split
+column,coloration.key,title,share.title,period.title,is.colon.split
 Funder,Agencies,Funder,,,FALSE
 Customer,Agencies,Customer,,,FALSE
 ContractingCustomer,Agencies,Customer,,f,FALSE
@@ -662,6 +662,7 @@ VendorStateRegion,Region,Region,,,
 OriginStateRegion,Region,Region,,,
 DeclarantStateRegion,Region,Region,,,
 PartnerStateRegion,Region,Region,,,
+Armament.category.F35,PlatformPortfolio,Platform Portfolio,,,
 Armament.category,PlatformPortfolio,Platform Portfolio,,,
 Armament.category.UAV,PlatformPortfolio,Platform Portfolio,,,
 Armament.category.UAVLM,PlatformPortfolio,Platform Portfolio,,,
@@ -683,6 +684,11 @@ delivery_2012,,Value of Obligations or Deliveries (2012-100),,,
 FMStype,FMS,Broad Category of FMS,,,
 dtDelivYear,,Year of Obligation or Delivery (Calendar or Fiscal Varies by Source),,,
 Mixed Year,,Year of Obligation or Delivery (Calendar or Fiscal Varies by Source),,,
+DeclarantSubRegion,EUregion,EU country or region,,,
+PartnerSubRegion,EUregion,EU country or region,,,
+BuyerSubRegion,EUregion,EU country or region,,,
+SellerSubRegion,EUregion,EU country or region,,,
+SubRegion,EUregion,EU country or region,,,
 DeclarantEUtrade,EUrelationship,EU partner,,,
 PartnerEUtrade,EUrelationship,EU partner,,,
 BuyerEUtrade,EUrelationship,EU partner,,,
