@@ -43,29 +43,29 @@ EU15,NULL,Euro area - 15 countries,Unlabeled
 EU27_2020,NULL,EU - 27 countries,Unlabeled
 EU28,NULL,EU - 28 countries,Unlabeled
 UK,GBR,United Kingdom,United Kingdom
-XK,*KS,Kosovo,European Territories
-NULL,VGB,"Virgin Islands, British",European Territories
-NULL,BMU,Bermuda,European Territories
-NULL,MTQ,Martinique,European Territories
-NULL,PYF,French Polynesia,European Territories
-NULL,MAF,Saint Martin (French part),European Territories
-NULL,CYM,Cayman Islands,European Territories
-NULL,WLF,Wallis and Futuna,European Territories
-NULL,GRL,Greenland,European Territories
-NULL,TCA,Turks and Caicos Islands,European Territories
-NULL,MSR,Montserrat,European Territories
-NULL,MYT,Mayotte,European Territories
-NULL,AIA,Anguilla,European Territories
-NULL,NCL,New Caledonia,European Territories
-NULL,PCN,Pitcairn,European Territories
-NULL,FRO,Faroe Islands,European Territories
-NULL,SHN,"Saint Helena, Ascension and Tristan da Cunha",European Territories
-NULL,ATF,French Southern Territories,European Territories
-NULL,GIB,Gibraltar,European Territories
-NULL,COK,Cook Islands,European Territories
-NULL,REU,Réunion,European Territories
-NULL,IOT,British Indian Ocean Territory,European Territories
-NULL,FLK,Falkland Islands (Malvinas),European Territories
-NULL,NIU,Niue,European Territories
-NULL,SJM,Svalbard and Jan Mayen,European Territories
+XK,*KS,Kosovo,Other Central and Eastern
+NULL,VGB,"Virgin Islands, British",United Kingdom
+NULL,BMU,Bermuda,United Kingdom
+NULL,MTQ,Martinique,France
+NULL,PYF,French Polynesia,France
+NULL,MAF,Saint Martin (French part),France
+NULL,CYM,Cayman Islands,United Kingdom
+NULL,WLF,Wallis and Futuna,France
+NULL,GRL,Greenland,Denmark
+NULL,TCA,Turks and Caicos Islands,United Kingdom
+NULL,MSR,Montserrat,United Kingdom
+NULL,MYT,Mayotte,France
+NULL,AIA,Anguilla,United Kingdom
+NULL,NCL,New Caledonia,France
+NULL,PCN,Pitcairn,United Kingdom
+NULL,FRO,Faroe Islands,Denmark
+NULL,SHN,"Saint Helena, Ascension and Tristan da Cunha",United Kingdom
+NULL,ATF,French Southern Territories,France
+NULL,GIB,Gibraltar,United Kingdom
+NULL,COK,Cook Islands,United Kingdom
+NULL,REU,Réunion,France
+NULL,IOT,British Indian Ocean Territory,United Kingdom
+NULL,FLK,Falkland Islands (Malvinas),United Kingdom
+NULL,NIU,Niue,United Kingdom
+NULL,SJM,Svalbard and Jan Mayen,Norway
 NULL,UKR,Ukraine,Ukraine
