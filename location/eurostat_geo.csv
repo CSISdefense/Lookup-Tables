@@ -51,14 +51,14 @@ NULL,PYF,French Polynesia,France
 NULL,MAF,Saint Martin (French part),France
 NULL,CYM,Cayman Islands,United Kingdom
 NULL,WLF,Wallis and Futuna,France
-NULL,GRL,Greenland,Denmark
+NULL,GRL,Greenland,Nordics
 NULL,TCA,Turks and Caicos Islands,United Kingdom
 NULL,MSR,Montserrat,United Kingdom
 NULL,MYT,Mayotte,France
 NULL,AIA,Anguilla,United Kingdom
 NULL,NCL,New Caledonia,France
 NULL,PCN,Pitcairn,United Kingdom
-NULL,FRO,Faroe Islands,Denmark
+NULL,FRO,Faroe Islands,Nordics
 NULL,SHN,"Saint Helena, Ascension and Tristan da Cunha",United Kingdom
 NULL,ATF,French Southern Territories,France
 NULL,GIB,Gibraltar,United Kingdom
@@ -67,5 +67,5 @@ NULL,REU,Réunion,France
 NULL,IOT,British Indian Ocean Territory,United Kingdom
 NULL,FLK,Falkland Islands (Malvinas),United Kingdom
 NULL,NIU,Niue,United Kingdom
-NULL,SJM,Svalbard and Jan Mayen,Norway
+NULL,SJM,Svalbard and Jan Mayen,Nordics
 NULL,UKR,Ukraine,Ukraine
