@@ -1,37 +1,37 @@
 geo,ISOalpha3,CountryName,SubRegion
-AL,ALB,Albania,Other Europe and Territories
+AL,ALB,Albania,Other Central and Eastern
 AT,AUT,Austria,Rest of EU27
 BE,BEL,Belgium,Rest of EU27
-BG,BGR,Bulgaria,Central and Eastern
-BA,BIH,Bosnia & Herzegovina,Other Europe and Territories
-CH,CHE,Switzerland,Other Europe and Territories
+BG,BGR,Bulgaria,Other Central and Eastern
+BA,BIH,Bosnia & Herzegovina,Other Central and Eastern
+CH,CHE,Switzerland,Switzerland
 CY,CYP,Cyprus,Rest of EU27
-CZ,CZE,Czech Republic,Central and Eastern
+CZ,CZE,Czech Republic,Other Central and Eastern
 DE,DEU,Germany,Germany
 DK,DNK,Denmark,Nordics
 ES,ESP,Spain,Spain
 EE,EST,Estonia,Baltics
 FI,FIN,Finland,Nordics
 FR,FRA,France,France
-HR,HRV,Croatia,Rest of EU27
-HU,HUN,Hungary,Central and Eastern
+HR,HRV,Croatia,Other Central and Eastern
+HU,HUN,Hungary,Other Central and Eastern
 IE,IRL,Ireland,Rest of EU27
-IS,ISL,Iceland,Other Europe and Territories
+IS,ISL,Iceland,Nordics
 IT,ITA,Italy,Italy
 LT,LTU,Lithuania,Baltics
 LU,LUX,Luxembourg,Rest of EU27
 LV,LVA,Latvia,Baltics
-MK,MKD,North Macedonia,Other Europe and Territories
+MK,MKD,North Macedonia,Other Central and Eastern
 MT,MLT,Malta,Rest of EU27
-ME,MNE,Montenegro,Other Europe and Territories
+ME,MNE,Montenegro,Other Central and Eastern
 NL,NLD,Netherlands,Rest of EU27
 NO,NOR,Norway,Nordics
 PL,POL,Poland,Poland
 PT,PRT,Portugal,Rest of EU27
-RO,ROU,Romania,Central and Eastern
-RS,SRB,Serbia,Other Europe and Territories
-SK,SVK,Slovakia,Central and Eastern
-SI,SVN,Slovenia,Central and Eastern
+RO,ROU,Romania,Other Central and Eastern
+RS,SRB,Serbia,Other Central and Eastern
+SK,SVK,Slovakia,Other Central and Eastern
+SI,SVN,Slovenia,Other Central and Eastern
 SE,SWE,Sweden,Nordics
 TR,TUR,Turkey,Turkey
 EA,NULL,Euro area,Unlabeled
@@ -43,29 +43,29 @@ EU15,NULL,Euro area - 15 countries,Unlabeled
 EU27_2020,NULL,EU - 27 countries,Unlabeled
 EU28,NULL,EU - 28 countries,Unlabeled
 UK,GBR,United Kingdom,United Kingdom
-XK,*KS,Kosovo,Other Europe and Territories
-NULL,VGB,NULL,Other Europe and Territories
-NULL,BMU,NULL,Other Europe and Territories
-NULL,MTQ,NULL,Other Europe and Territories
-NULL,PYF,NULL,Other Europe and Territories
-NULL,MAF,NULL,Other Europe and Territories
-NULL,CYM,NULL,Other Europe and Territories
-NULL,WLF,NULL,Other Europe and Territories
-NULL,GRL,NULL,Other Europe and Territories
-NULL,TCA,NULL,Other Europe and Territories
-NULL,MSR,NULL,Other Europe and Territories
-NULL,MYT,NULL,Other Europe and Territories
-NULL,AIA,NULL,Other Europe and Territories
-NULL,NCL,NULL,Other Europe and Territories
-NULL,PCN,NULL,Other Europe and Territories
-NULL,FRO,NULL,Other Europe and Territories
-NULL,SHN,NULL,Other Europe and Territories
-NULL,ATF,NULL,Other Europe and Territories
-NULL,GIB,NULL,Other Europe and Territories
-NULL,COK,NULL,Other Europe and Territories
-NULL,REU,NULL,Other Europe and Territories
-NULL,IOT,NULL,Other Europe and Territories
-NULL,FLK,NULL,Other Europe and Territories
-NULL,NIU,NULL,Other Europe and Territories
-NULL,SJM,NULL,Other Europe and Territories
-NULL,UKR,NULL,Ukraine
+XK,*KS,Kosovo,European Territories
+NULL,VGB,"Virgin Islands, British",European Territories
+NULL,BMU,Bermuda,European Territories
+NULL,MTQ,Martinique,European Territories
+NULL,PYF,French Polynesia,European Territories
+NULL,MAF,Saint Martin (French part),European Territories
+NULL,CYM,Cayman Islands,European Territories
+NULL,WLF,Wallis and Futuna,European Territories
+NULL,GRL,Greenland,European Territories
+NULL,TCA,Turks and Caicos Islands,European Territories
+NULL,MSR,Montserrat,European Territories
+NULL,MYT,Mayotte,European Territories
+NULL,AIA,Anguilla,European Territories
+NULL,NCL,New Caledonia,European Territories
+NULL,PCN,Pitcairn,European Territories
+NULL,FRO,Faroe Islands,European Territories
+NULL,SHN,"Saint Helena, Ascension and Tristan da Cunha",European Territories
+NULL,ATF,French Southern Territories,European Territories
+NULL,GIB,Gibraltar,European Territories
+NULL,COK,Cook Islands,European Territories
+NULL,REU,Réunion,European Territories
+NULL,IOT,British Indian Ocean Territory,European Territories
+NULL,FLK,Falkland Islands (Malvinas),European Territories
+NULL,NIU,Niue,European Territories
+NULL,SJM,Svalbard and Jan Mayen,European Territories
+NULL,UKR,Ukraine,Ukraine
