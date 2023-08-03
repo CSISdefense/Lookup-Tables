@@ -21,8 +21,8 @@ This is the ceiling of the base contract, plus any options exercised to this poi
 This is the ceiling of the entire contract. It could change via a change order or the like. In a contract without options it will be the same as the corresponding Base and Exercised Options Value.  Base and All Options Value will typically be covered in the first transaction for a contract and then only updated if there’s a change order or the like. Total Base and All Options Value covers the entire contract, whether or not the options have been exercised yet.
 
 Taking a random missile contract example from [USAspending.gov](https://www.usaspending.gov/award/CONT_AWD_W31P4Q19C0101_9700_-NONE-_-NONE-0)
-![Spending Bar](USAspending_spend_bar.png)
-![Spending Line](USAspending_spend_line.png)
+![Spending Bar](../images/USAspending_spend_bar.png)
+![Spending Line](../images/USAspending_spend_line.png)
  
 Outlayed amount is new! I was surprised to see it and we’ll see if they start including it in my data. I don’t trust it in its present form because. Finding another example apparently only $29 million has been outlayed on [the main JSF contract](https://www.usaspending.gov/award/CONT_AWD_N0001902C3002_9700_-NONE-_-NONE-) and there’s no way that’s true in the intuitive sense of outlay.
 * 818 million -Obligated amount = Total Dollars Obligated
