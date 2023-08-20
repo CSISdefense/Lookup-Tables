@@ -33,9 +33,12 @@ CREATE TABLE [Location].[CountryCodes](
 	[RioTreaty] [bit] NULL,
 	[FiveEyes] [bit] NULL,
 	[NTIByear] [smallint] NULL,
+	[IsDeprecated] [bit] NOT NULL,
  CONSTRAINT [PK_ISOcountryCode3] PRIMARY KEY CLUSTERED 
 (
 	[alpha-3] ASC
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+ALTER TABLE [Location].[CountryCodes] ADD  DEFAULT ((0)) FOR [IsDeprecated]
 GO

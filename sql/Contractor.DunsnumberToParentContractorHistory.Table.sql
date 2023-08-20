@@ -129,10 +129,16 @@ GO
 ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory] CHECK CONSTRAINT [FK__Dunsnumbe__Headq__7AF2094E]
 GO
 ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory]  WITH CHECK ADD FOREIGN KEY([recipient_uei])
-REFERENCES [Vendor].[recipient_uei] ([recipient_uei])
+REFERENCES [Vendor].[UEI] ([UEI])
 GO
 ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory]  WITH CHECK ADD FOREIGN KEY([recipient_parent_uei])
-REFERENCES [Vendor].[recipient_uei] ([recipient_uei])
+REFERENCES [Vendor].[UEI] ([UEI])
+GO
+ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory]  WITH CHECK ADD FOREIGN KEY([recipient_uei])
+REFERENCES [Vendor].[UEI] ([UEI])
+GO
+ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory]  WITH CHECK ADD FOREIGN KEY([recipient_parent_uei])
+REFERENCES [Vendor].[UEI] ([UEI])
 GO
 ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory]  WITH NOCHECK ADD  CONSTRAINT [FK_DunsnumberToParentContractor_Dunsnumber] FOREIGN KEY([DUNSnumber])
 REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])
