@@ -38,7 +38,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[dunsnumber] [varchar](13) NULL,
 	[vendorname] [nvarchar](150) NULL,
 	[vendordoingasbusinessname] [nvarchar](150) NULL,
-	[mod_parent] [varchar](150) NULL,
+	[mod_parent] [nvarchar](150) NULL,
 	[parentdunsnumber] [varchar](13) NULL,
 	[vendorcountrycode] [nvarchar](50) NULL,
 	[recipient_country_name] [varchar](255) NULL,
@@ -299,8 +299,8 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[prime_award_base_transaction_description] [varchar](4008) NULL,
 	[obligated_amount_funded_by_IIJA_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[outlayed_amount_funded_by_IIJA_supplementals_for_overall_award] [decimal](19, 4) NULL,
-	[recipient_name_raw] [varchar](255) NULL,
-	[recipient_parent_name_raw] [varchar](255) NULL
+	[recipient_name_raw] [nvarchar](150) NULL,
+	[recipient_parent_name_raw] [nvarchar](150) NULL
 ) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON

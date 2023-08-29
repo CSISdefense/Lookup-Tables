@@ -68,7 +68,7 @@ CREATE TABLE [Contract].[FPDS](
 	[faxno] [varchar](30) NULL,
 	[registrationdate] [date] NULL,
 	[renewaldate] [date] NULL,
-	[mod_parent] [varchar](150) NULL,
+	[mod_parent] [nvarchar](150) NULL,
 	[locationcode] [varchar](9) NULL,
 	[statecode] [varchar](2) NULL,
 	[pop_state_code] [varchar](2) NULL,
@@ -276,8 +276,8 @@ CREATE TABLE [Contract].[FPDS](
 	[prime_award_base_transaction_description] [varchar](4008) NULL,
 	[obligated_amount_funded_by_IIJA_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[outlayed_amount_funded_by_IIJA_supplementals_for_overall_award] [decimal](19, 4) NULL,
-	[recipient_name_raw] [varchar](255) NULL,
-	[recipient_parent_name_raw] [varchar](255) NULL
+	[recipient_name_raw] [nvarchar](150) NULL,
+	[recipient_parent_name_raw] [nvarchar](150) NULL
 ) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
@@ -420,10 +420,20 @@ REFERENCES [FPDSTypeTable].[ContractActionType] ([contractactiontype])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_contractactiontype]
 GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_Contracting] FOREIGN KEY([fiscal_year], [contractingofficeagencyid], [contractingofficeid])
+REFERENCES [Office].[OfficeIDhistory] ([fiscal_year], [AgencyID], [OfficeID])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_Contracting]
+GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_csistransactionid] FOREIGN KEY([CSIStransactionID])
 REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_csistransactionid]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_FundingOfficeIDhistory] FOREIGN KEY([fiscal_year], [fundingrequestingagencyid], [fundingrequestingofficeid])
+REFERENCES [Office].[OfficeIDhistory] ([fiscal_year], [AgencyID], [OfficeID])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_FundingOfficeIDhistory]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_idv_type_code] FOREIGN KEY([idv_type_code])
 REFERENCES [FPDSTypeTable].[idv_type_code] ([idv_type_code])
@@ -450,6 +460,11 @@ REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_Mod_Agency]
 GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_mod_parent] FOREIGN KEY([mod_parent])
+REFERENCES [Vendor].[VendorName] ([vendorname])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_mod_parent]
+GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_parent_award_single_or_multiple_code] FOREIGN KEY([parent_award_single_or_multiple_code])
 REFERENCES [FPDSTypeTable].[multipleorsingleawardidc] ([multipleorsingleawardidc])
 GO
@@ -470,23 +485,33 @@ REFERENCES [budget].[rec_flag] ([rec_flag])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_rec_flag]
 GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_recipient_name_raw] FOREIGN KEY([recipient_name_raw])
+REFERENCES [Vendor].[VendorName] ([vendorname])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_recipient_name_raw]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_recipient_parent_name_raw] FOREIGN KEY([recipient_parent_name_raw])
+REFERENCES [Vendor].[VendorName] ([vendorname])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_recipient_parent_name_raw]
+GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_recipient_parent_uei] FOREIGN KEY([recipient_parent_uei])
-REFERENCES [Vendor].[recipient_uei] ([recipient_uei])
+REFERENCES [Vendor].[UEI] ([UEI])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_recipient_parent_uei]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_recipient_parent_UEIhistory] FOREIGN KEY([recipient_parent_uei], [fiscal_year])
-REFERENCES [Vendor].[Recipient_UEIhistory] ([recipient_uei], [Fiscal_Year])
+REFERENCES [Vendor].[UEIhistory] ([UEI], [Fiscal_Year])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_recipient_parent_UEIhistory]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_recipient_uei] FOREIGN KEY([recipient_uei])
-REFERENCES [Vendor].[recipient_uei] ([recipient_uei])
+REFERENCES [Vendor].[UEI] ([UEI])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_recipient_uei]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_recipient_UEIhistory] FOREIGN KEY([recipient_uei], [fiscal_year])
-REFERENCES [Vendor].[Recipient_UEIhistory] ([recipient_uei], [Fiscal_Year])
+REFERENCES [Vendor].[UEIhistory] ([UEI], [Fiscal_Year])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_recipient_UEIhistory]
 GO
