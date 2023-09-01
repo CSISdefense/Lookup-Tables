@@ -3,7 +3,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [ErrorLogging].[FPDSstage1](
-	[gfe_gfp] [varchar](255) NULL,
+	[government_furnished_property] [varchar](255) NULL,
 	[research] [varchar](255) NULL,
 	[last_modified_date] [varchar](255) NULL,
 	[award_id_piid] [varchar](255) NULL,
@@ -69,7 +69,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage1](
 	[type_of_idc] [varchar](255) NULL,
 	[type_of_contract_pricing_code] [varchar](255) NULL,
 	[type_of_contract_pricing] [varchar](255) NULL,
-	[award_description] [varchar](4008) NULL,
+	[transaction_description] [varchar](4008) NULL,
 	[action_type_code] [varchar](255) NULL,
 	[action_type] [varchar](255) NULL,
 	[solicitation_identifier] [varchar](255) NULL,
@@ -112,11 +112,11 @@ CREATE TABLE [ErrorLogging].[FPDSstage1](
 	[other_than_full_and_open_competition_code] [varchar](255) NULL,
 	[other_than_full_and_open_competition] [varchar](255) NULL,
 	[number_of_offers_received] [varchar](255) NULL,
+	[simplified_procedures_for_certain_commercial_items_code] [varchar](255) NULL,
+	[simplified_procedures_for_certain_commercial_items] [varchar](255) NULL,
+	[small_business_competitiveness_demonstration_program] [varchar](255) NULL,
 	[commercial_item_acquisition_procedures_code] [varchar](255) NULL,
 	[commercial_item_acquisition_procedures] [varchar](255) NULL,
-	[small_business_competitiveness_demonstration_program] [varchar](255) NULL,
-	[commercial_item_test_program_code] [varchar](255) NULL,
-	[commercial_item_test_program] [varchar](255) NULL,
 	[a76_fair_act_action_code] [varchar](255) NULL,
 	[a76_fair_act_action] [varchar](255) NULL,
 	[fed_biz_opps_code] [varchar](255) NULL,
@@ -147,7 +147,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage1](
 	[cost_or_pricing_data] [varchar](255) NULL,
 	[cost_accounting_standards_clause_code] [varchar](255) NULL,
 	[cost_accounting_standards_clause] [varchar](255) NULL,
-	[gfe_gfp_code] [varchar](255) NULL,
+	[government_furnished_property_code] [varchar](255) NULL,
 	[sea_transportation_code] [varchar](255) NULL,
 	[sea_transportation] [varchar](255) NULL,
 	[undefinitized_action_code] [varchar](255) NULL,
@@ -164,11 +164,11 @@ CREATE TABLE [ErrorLogging].[FPDSstage1](
 	[purchase_card_as_payment_method] [varchar](255) NULL,
 	[contingency_humanitarian_or_peacekeeping_operation_code] [varchar](255) NULL,
 	[contingency_humanitarian_or_peacekeeping_operation] [varchar](255) NULL,
-	[alaskan_native_owned_corporation_or_firm] [varchar](255) NULL,
+	[alaskan_native_corporation_owned_firm] [varchar](255) NULL,
 	[american_indian_owned_business] [varchar](255) NULL,
 	[indian_tribe_federally_recognized] [varchar](255) NULL,
-	[native_hawaiian_owned_business] [varchar](255) NULL,
-	[tribally_owned_business] [varchar](255) NULL,
+	[native_hawaiian_organization_owned_firm] [varchar](255) NULL,
+	[tribally_owned_firm] [varchar](255) NULL,
 	[veteran_owned_business] [varchar](255) NULL,
 	[service_disabled_veteran_owned_business] [varchar](255) NULL,
 	[woman_owned_business] [varchar](255) NULL,
@@ -218,8 +218,8 @@ CREATE TABLE [ErrorLogging].[FPDSstage1](
 	[veterinary_hospital] [varchar](255) NULL,
 	[hispanic_servicing_institution] [varchar](255) NULL,
 	[receives_contracts] [varchar](255) NULL,
-	[receives_grants] [varchar](255) NULL,
-	[receives_contracts_and_grants] [varchar](255) NULL,
+	[receives_financial_assistance] [varchar](255) NULL,
+	[receives_contracts_and_financial_assistance] [varchar](255) NULL,
 	[airport_authority] [varchar](255) NULL,
 	[council_of_governments] [varchar](255) NULL,
 	[housing_authorities_public_tribal] [varchar](255) NULL,
@@ -229,7 +229,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage1](
 	[transit_authority] [varchar](255) NULL,
 	[subchapter_scorporation] [varchar](255) NULL,
 	[limited_liability_corporation] [varchar](255) NULL,
-	[foreign_owned_and_located] [varchar](255) NULL,
+	[foreign_owned] [varchar](255) NULL,
 	[for_profit_organization] [varchar](255) NULL,
 	[nonprofit_organization] [varchar](255) NULL,
 	[other_not_for_profit_organization] [varchar](255) NULL,
@@ -285,21 +285,35 @@ CREATE TABLE [ErrorLogging].[FPDSstage1](
 	[usaspending_permalink] [varchar](500) NULL,
 	[action_date_fiscal_year] [varchar](255) NULL,
 	[disaster_emergency_fund_codes_for_overall_award] [varchar](4000) NULL,
-	[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] [varchar](255) NULL,
-	[obligated_amount_funded_by_COVID19_supplementals_for_overall_award] [varchar](255) NULL,
+	[outlayed_amount_from_COVID-19_supplementals_for_overall_award] [varchar](255) NULL,
+	[obligated_amount_from_COVID-19_supplementals_for_overall_award] [varchar](255) NULL,
 	[object_classes_funding_this_award] [varchar](4000) NULL,
 	[program_activities_funding_this_award] [varchar](5000) NULL,
 	[recipient_county_name] [varchar](255) NULL,
 	[recipient_uei] [varchar](255) NULL,
 	[recipient_parent_uei] [varchar](255) NULL,
 	[prime_award_base_transaction_description] [varchar](4008) NULL,
-	[obligated_amount_funded_by_IIJA_supplementals_for_overall_award] [varchar](255) NULL,
-	[outlayed_amount_funded_by_IIJA_supplementals_for_overall_award] [varchar](255) NULL,
+	[obligated_amount_from_IIJA_supplemental_for_overall_award] [varchar](255) NULL,
+	[outlayed_amount_from_IIJA_supplemental_for_overall_award] [varchar](255) NULL,
 	[recipient_name_raw] [varchar](255) NULL,
-	[recipient_parent_name_raw] [varchar](255) NULL
+	[recipient_parent_name_raw] [varchar](255) NULL,
+	[prime_award_transaction_recipient_county_fips_code] [varchar](255) NULL,
+	[prime_award_transaction_recipient_state_fips_code] [varchar](255) NULL,
+	[prime_award_transaction_place_of_performance_county_fips_code] [varchar](255) NULL,
+	[prime_award_transaction_place_of_performance_state_fips_code] [varchar](255) NULL,
+	[prime_award_transaction_recipient_cd_original] [varchar](255) NULL,
+	[prime_award_transaction_recipient_cd_current] [varchar](255) NULL,
+	[prime_award_transaction_place_of_performance_cd_original] [varchar](255) NULL,
+	[prime_award_transaction_place_of_performance_cd_current] [varchar](255) NULL,
+	[total_outlayed_amount_for_overall_award] [varchar](255) NULL,
+	[USAspending_file_name] [varchar](255) NULL
 ) ON [PRIMARY]
 GO
+
 ALTER TABLE [ErrorLogging].[FPDSstage1] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__6FAB3F2B]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
+
 ALTER TABLE [ErrorLogging].[FPDSstage1] ADD  CONSTRAINT [DF__FPDSbetaV__CSISc__709F6364]  DEFAULT (getdate()) FOR [CSIScreatedDate]
 GO
+
+
