@@ -103,7 +103,7 @@ CREATE TABLE [Contract].[FPDS](
 	[reasonnotcompeted] [varchar](3) NULL,
 	[numberofoffersreceived] [bigint] NULL,
 	[commercialitemacquisitionprocedures] [varchar](1) NULL,
-	[commercialitemtestprogram] [varchar](1) NULL,
+	[simplified_procedures_for_certain_commercial_items] [varchar](1) NULL,
 	[smallbusinesscompetitivenessdemonstrationprogram] [bit] NULL,
 	[a76action] [bit] NULL,
 	[solicitationprocedures] [varchar](5) NULL,
@@ -300,8 +300,8 @@ REFERENCES [FPDSTypeTable].[award_type_code] ([award_type_code])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_award_type_code]
 GO
-ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_CommercialItemTestProgram] FOREIGN KEY([commercialitemtestprogram])
-REFERENCES [FPDSTypeTable].[commercialitemtestprogram] ([CommercialItemTestProgram])
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_CommercialItemTestProgram] FOREIGN KEY([simplified_procedures_for_certain_commercial_items])
+REFERENCES [FPDSTypeTable].[simplified_procedures_for_certain_commercial_items] ([CommercialItemTestProgram])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_CommercialItemTestProgram]
 GO
