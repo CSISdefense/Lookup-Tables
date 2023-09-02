@@ -30,20 +30,6 @@ CREATE TABLE [Contractor].[Dunsnumber](
 )WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-CREATE NONCLUSTERED INDEX [Contractor_Dunsnumber_IgnoreBeforeYear_ParentDUNSnumber] ON [Contractor].[Dunsnumber]
-(
-	[ignorebeforeyear] ASC
-)
-INCLUDE([ParentDUNSnumber]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_contractor_dunsnumber_ignorebeforeyear_parentdunsnumber] ON [Contractor].[Dunsnumber]
-(
-	[ignorebeforeyear] ASC,
-	[ParentDUNSnumber] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
 ALTER TABLE [Contractor].[Dunsnumber] ADD  CONSTRAINT [dunsnumber_CSISmodifiedDate_getdate]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
 ALTER TABLE [Contractor].[Dunsnumber] ADD  CONSTRAINT [dunsnumber_CSIScreateddate_getdate]  DEFAULT (getdate()) FOR [CSIScreateddate]

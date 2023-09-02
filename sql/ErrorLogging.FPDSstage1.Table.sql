@@ -309,11 +309,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage1](
 	[USAspending_file_name] [varchar](255) NULL
 ) ON [PRIMARY]
 GO
-
 ALTER TABLE [ErrorLogging].[FPDSstage1] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__6FAB3F2B]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
-
 ALTER TABLE [ErrorLogging].[FPDSstage1] ADD  CONSTRAINT [DF__FPDSbetaV__CSISc__709F6364]  DEFAULT (getdate()) FOR [CSIScreatedDate]
 GO
-
-

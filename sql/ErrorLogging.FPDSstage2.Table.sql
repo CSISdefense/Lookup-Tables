@@ -303,23 +303,6 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[recipient_parent_name_raw] [nvarchar](150) NULL
 ) ON [PRIMARY]
 GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_errorlogging_fpdsbetaviolatesconstraint_sixUTI] ON [ErrorLogging].[FPDSstage2]
-(
-	[piid] ASC,
-	[idvpiid] ASC,
-	[modnumber] ASC,
-	[idvmodificationnumber] ASC,
-	[contractingofficeagencyid] ASC,
-	[transactionnumber] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-CREATE NONCLUSTERED INDEX [ix_FPDSbetaViolatesConstraint_CSIStransactionID] ON [ErrorLogging].[FPDSstage2]
-(
-	[CSIStransactionID] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
 ALTER TABLE [ErrorLogging].[FPDSstage2] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__7193879D]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
 ALTER TABLE [ErrorLogging].[FPDSstage2] ADD  CONSTRAINT [DF__FPDSbetaV__CSISc__7287ABD6]  DEFAULT (getdate()) FOR [CSIScreatedDate]
