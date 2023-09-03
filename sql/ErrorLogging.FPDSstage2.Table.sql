@@ -49,7 +49,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[vendor_state_code] [varchar](35) NULL,
 	[recipient_state_name] [varchar](35) NULL,
 	[zipcode] [varchar](28) NULL,
-	[vendor_cd] [varchar](22) NULL,
+	[prime_award_transaction_recipient_cd_current] [varchar](22) NULL,
 	[phoneno] [varchar](20) NULL,
 	[faxno] [varchar](30) NULL,
 	[placeofperformancecountrycode] [varchar](3) NULL,
@@ -59,7 +59,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[pop_state_code] [varchar](2) NULL,
 	[primary_place_of_performance_state_name] [varchar](255) NULL,
 	[placeofperformancezipcode] [varchar](10) NULL,
-	[placeofperformancecongressionaldistrict] [varchar](6) NULL,
+	[prime_award_transaction_place_of_performance_cd_current] [varchar](6) NULL,
 	[locationcode] [varchar](9) NULL,
 	[award_type_code] [varchar](1) NULL,
 	[award_type_name] [varchar](255) NULL,
@@ -71,7 +71,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[type_of_idc_name] [varchar](255) NULL,
 	[typeofcontractpricing] [varchar](2) NULL,
 	[type_of_contract_pricing_name] [varchar](255) NULL,
-	[descriptionofcontractrequirement] [varchar](4035) NULL,
+	[transaction_description] [varchar](4035) NULL,
 	[reasonformodification] [varchar](1) NULL,
 	[action_type_name] [varchar](255) NULL,
 	[solicitationid] [varchar](69) NULL,
@@ -231,7 +231,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[istransitauthority] [bit] NULL,
 	[issubchapterscorporation] [bit] NULL,
 	[islimitedliabilitycorporation] [bit] NULL,
-	[isforeignownedandlocated] [bit] NULL,
+	[foreign_owned] [bit] NULL,
 	[isforprofitorganization] [bit] NULL,
 	[nonprofitorganizationflag] [bit] NULL,
 	[isothernotforprofitorganization] [bit] NULL,
@@ -300,7 +300,15 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[obligated_amount_funded_by_IIJA_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[outlayed_amount_funded_by_IIJA_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[recipient_name_raw] [nvarchar](150) NULL,
-	[recipient_parent_name_raw] [nvarchar](150) NULL
+	[recipient_parent_name_raw] [nvarchar](150) NULL,
+	[prime_award_transaction_recipient_county_fips_code] [int] NULL,
+	[prime_award_transaction_recipient_state_fips_code] [tinyint] NULL,
+	[prime_award_transaction_place_of_performance_county_fips_code] [int] NULL,
+	[prime_award_transaction_place_of_performance_state_fips_code] [tinyint] NULL,
+	[prime_award_transaction_recipient_cd_original] [varchar](5) NULL,
+	[prime_award_transaction_place_of_performance_cd_original] [varchar](5) NULL,
+	[total_outlayed_amount_for_overall_award] [decimal](19, 4) NULL,
+	[USAspending_file_name] [varchar](255) NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FPDSstage2] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__7193879D]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
