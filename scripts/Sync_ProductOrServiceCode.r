@@ -25,14 +25,14 @@ con <- dbConnect(odbc(),
                  PWD =pwd)
 
 
-repoPSC<-read_csv("ProductOrServiceCodes.csv")
+repoPSC<-read_csv("ProductOrServiceCodes.csv",na = "NULL")
 sqlPSC<-dbReadTable(con,  name = SQL('"FPDSTypeTable"."ProductOrServiceCode"'))
 
 newcols<-colnames(sqlPSC)[!colnames(sqlPSC) %in% colnames(repoPSC)]
 newcolsPSC<-sqlPSC[,c(newcols,"ProductOrServiceCode")]
 repoPSC<-left_join(repoPSC, newcolsPSC)
 
-update_col<-function(sql,repo,colname){
+update_col<-function(repo,sql,colname){
   order<-colnames(repo)
   sql<-sql[,c(colname,"ProductOrServiceCode")]
   repo<-repo[,colnames(repo)!=colname]
@@ -40,9 +40,11 @@ update_col<-function(sql,repo,colname){
   repo[,order]
 }
 
+undebug(update_col)
 repoPSC<-update_col(repoPSC,sqlPSC,"IsPossibleSoftwareEngineering")
 
-
-write_csv(repoPSC,file = "ProductOrServiceCodes.csv",na = "NULL")
+summary(factor(sqlPSC$ProductOrServiceCode[sqlPSC$IsPossibleSoftwareEngineering==1]))
+summary(factor(repoPSC$ProductOrServiceCode[repoPSC$IsPossibleSoftwareEngineering==1]))
+write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
 
 # write_csv(sqlPSC,file = "ProductOrServiceCodes.csv")
