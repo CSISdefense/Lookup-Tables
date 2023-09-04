@@ -195,11 +195,10 @@ NULLIF([recipient_doing_business_as_name],'') IS NOT NULL)
 
 SELECT DISTINCT [recipient_parent_name],
 len([recipient_parent_name]) as Length,
-'[varchar](150)' as DestinationType
+'[nvarchar](150)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([varchar](150), [recipient_parent_name]) IS NULL AND
-NULLIF([recipient_parent_name],'') IS NOT NULL) OR
- len([recipient_parent_name]) > 150
+WHERE (Try_Convert([nvarchar](150), [recipient_parent_name]) IS NULL AND
+NULLIF([recipient_parent_name],'') IS NOT NULL)
 
 SELECT DISTINCT [recipient_parent_duns],
 len([recipient_parent_duns]) as Length,
@@ -264,13 +263,13 @@ WHERE (Try_Convert([varchar](28), [recipient_zip_4_code]) IS NULL AND
 NULLIF([recipient_zip_4_code],'') IS NOT NULL) OR
  len([recipient_zip_4_code]) > 28
 
-SELECT DISTINCT [recipient_congressional_district],
-len([recipient_congressional_district]) as Length,
+SELECT DISTINCT [prime_award_transaction_recipient_cd_current],
+len([prime_award_transaction_recipient_cd_current]) as Length,
 '[varchar](22)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([varchar](22), [recipient_congressional_district]) IS NULL AND
-NULLIF([recipient_congressional_district],'') IS NOT NULL) OR
- len([recipient_congressional_district]) > 22
+WHERE (Try_Convert([varchar](22), [prime_award_transaction_recipient_cd_current]) IS NULL AND
+NULLIF([prime_award_transaction_recipient_cd_current],'') IS NOT NULL) OR
+ len([prime_award_transaction_recipient_cd_current]) > 22
 
 SELECT DISTINCT [recipient_phone_number],
 len([recipient_phone_number]) as Length,
@@ -328,13 +327,13 @@ WHERE (Try_Convert([varchar](10), [primary_place_of_performance_zip_4]) IS NULL 
 NULLIF([primary_place_of_performance_zip_4],'') IS NOT NULL) OR
  len([primary_place_of_performance_zip_4]) > 10
 
-SELECT DISTINCT [primary_place_of_performance_congressional_district],
-len([primary_place_of_performance_congressional_district]) as Length,
+SELECT DISTINCT [prime_award_transaction_place_of_performance_cd_current],
+len([prime_award_transaction_place_of_performance_cd_current]) as Length,
 '[varchar](6)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([varchar](6), [primary_place_of_performance_congressional_district]) IS NULL AND
-NULLIF([primary_place_of_performance_congressional_district],'') IS NOT NULL) OR
- len([primary_place_of_performance_congressional_district]) > 6
+WHERE (Try_Convert([varchar](6), [prime_award_transaction_place_of_performance_cd_current]) IS NULL AND
+NULLIF([prime_award_transaction_place_of_performance_cd_current],'') IS NOT NULL) OR
+ len([prime_award_transaction_place_of_performance_cd_current]) > 6
 
 SELECT DISTINCT [award_type_code],
 len([award_type_code]) as Length,
@@ -376,13 +375,13 @@ WHERE (Try_Convert([varchar](2), [type_of_contract_pricing_code]) IS NULL AND
 NULLIF([type_of_contract_pricing_code],'') IS NOT NULL) OR
  len([type_of_contract_pricing_code]) > 2
 
-SELECT DISTINCT [award_description],
-len([award_description]) as Length,
+SELECT DISTINCT [transaction_description],
+len([transaction_description]) as Length,
 '[varchar](4035)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([varchar](4035), [award_description]) IS NULL AND
-NULLIF([award_description],'') IS NOT NULL) OR
- len([award_description]) > 4035
+WHERE (Try_Convert([varchar](4035), [transaction_description]) IS NULL AND
+NULLIF([transaction_description],'') IS NOT NULL) OR
+ len([transaction_description]) > 4035
 
 SELECT DISTINCT [action_type_code],
 len([action_type_code]) as Length,
@@ -574,13 +573,13 @@ FROM Errorlogging.FPDSstage1
 WHERE (Try_Convert([bigint], Try_Convert(real,nullif([number_of_offers_received],''))) IS NULL AND
 NULLIF([number_of_offers_received],'') IS NOT NULL)
 
-SELECT DISTINCT [commercial_item_acquisition_procedures_code],
-len([commercial_item_acquisition_procedures_code]) as Length,
+SELECT DISTINCT [simplified_procedures_for_certain_commercial_items_code],
+len([simplified_procedures_for_certain_commercial_items_code]) as Length,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([varchar](1), [commercial_item_acquisition_procedures_code]) IS NULL AND
-NULLIF([commercial_item_acquisition_procedures_code],'') IS NOT NULL) OR
- len([commercial_item_acquisition_procedures_code]) > 1
+WHERE (Try_Convert([varchar](1), [simplified_procedures_for_certain_commercial_items_code]) IS NULL AND
+NULLIF([simplified_procedures_for_certain_commercial_items_code],'') IS NOT NULL) OR
+ len([simplified_procedures_for_certain_commercial_items_code]) > 1
 
 SELECT DISTINCT [small_business_competitiveness_demonstration_program],
 len([small_business_competitiveness_demonstration_program]) as Length,
@@ -589,13 +588,13 @@ FROM Errorlogging.FPDSstage1
 WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([small_business_competitiveness_demonstration_program]))) IS NULL AND
 NULLIF([small_business_competitiveness_demonstration_program],'') IS NOT NULL)
 
-SELECT DISTINCT [commercial_item_test_program_code],
-len([commercial_item_test_program_code]) as Length,
+SELECT DISTINCT [commercial_item_acquisition_procedures_code],
+len([commercial_item_acquisition_procedures_code]) as Length,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([varchar](1), [commercial_item_test_program_code]) IS NULL AND
-NULLIF([commercial_item_test_program_code],'') IS NOT NULL) OR
- len([commercial_item_test_program_code]) > 1
+WHERE (Try_Convert([varchar](1), [commercial_item_acquisition_procedures_code]) IS NULL AND
+NULLIF([commercial_item_acquisition_procedures_code],'') IS NOT NULL) OR
+ len([commercial_item_acquisition_procedures_code]) > 1
 
 SELECT DISTINCT [a76_fair_act_action_code],
 len([a76_fair_act_action_code]) as Length,
@@ -730,13 +729,13 @@ WHERE (Try_Convert([varchar](1), [cost_accounting_standards_clause_code]) IS NUL
 NULLIF([cost_accounting_standards_clause_code],'') IS NOT NULL) OR
  len([cost_accounting_standards_clause_code]) > 1
 
-SELECT DISTINCT [gfe_gfp_code],
-len([gfe_gfp_code]) as Length,
+SELECT DISTINCT [government_furnished_property_code],
+len([government_furnished_property_code]) as Length,
 '[varchar](1)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([varchar](1), [gfe_gfp_code]) IS NULL AND
-NULLIF([gfe_gfp_code],'') IS NOT NULL) OR
- len([gfe_gfp_code]) > 1
+WHERE (Try_Convert([varchar](1), [government_furnished_property_code]) IS NULL AND
+NULLIF([government_furnished_property_code],'') IS NOT NULL) OR
+ len([government_furnished_property_code]) > 1
 
 SELECT DISTINCT [sea_transportation_code],
 len([sea_transportation_code]) as Length,
@@ -800,12 +799,12 @@ WHERE (Try_Convert([varchar](1), [contingency_humanitarian_or_peacekeeping_opera
 NULLIF([contingency_humanitarian_or_peacekeeping_operation_code],'') IS NOT NULL) OR
  len([contingency_humanitarian_or_peacekeeping_operation_code]) > 1
 
-SELECT DISTINCT [alaskan_native_owned_corporation_or_firm],
-len([alaskan_native_owned_corporation_or_firm]) as Length,
+SELECT DISTINCT [alaskan_native_corporation_owned_firm],
+len([alaskan_native_corporation_owned_firm]) as Length,
 '[bit]' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([alaskan_native_owned_corporation_or_firm]))) IS NULL AND
-NULLIF([alaskan_native_owned_corporation_or_firm],'') IS NOT NULL)
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([alaskan_native_corporation_owned_firm]))) IS NULL AND
+NULLIF([alaskan_native_corporation_owned_firm],'') IS NOT NULL)
 
 SELECT DISTINCT [american_indian_owned_business],
 len([american_indian_owned_business]) as Length,
@@ -821,19 +820,19 @@ FROM Errorlogging.FPDSstage1
 WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([indian_tribe_federally_recognized]))) IS NULL AND
 NULLIF([indian_tribe_federally_recognized],'') IS NOT NULL)
 
-SELECT DISTINCT [native_hawaiian_owned_business],
-len([native_hawaiian_owned_business]) as Length,
+SELECT DISTINCT [native_hawaiian_organization_owned_firm],
+len([native_hawaiian_organization_owned_firm]) as Length,
 '[bit]' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([native_hawaiian_owned_business]))) IS NULL AND
-NULLIF([native_hawaiian_owned_business],'') IS NOT NULL)
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([native_hawaiian_organization_owned_firm]))) IS NULL AND
+NULLIF([native_hawaiian_organization_owned_firm],'') IS NOT NULL)
 
-SELECT DISTINCT [tribally_owned_business],
-len([tribally_owned_business]) as Length,
+SELECT DISTINCT [tribally_owned_firm],
+len([tribally_owned_firm]) as Length,
 '[bit]' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([tribally_owned_business]))) IS NULL AND
-NULLIF([tribally_owned_business],'') IS NOT NULL)
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([tribally_owned_firm]))) IS NULL AND
+NULLIF([tribally_owned_firm],'') IS NOT NULL)
 
 SELECT DISTINCT [veteran_owned_business],
 len([veteran_owned_business]) as Length,
@@ -1172,19 +1171,19 @@ FROM Errorlogging.FPDSstage1
 WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receives_contracts]))) IS NULL AND
 NULLIF([receives_contracts],'') IS NOT NULL)
 
-SELECT DISTINCT [receives_grants],
-len([receives_grants]) as Length,
+SELECT DISTINCT [receives_financial_assistance],
+len([receives_financial_assistance]) as Length,
 '[bit]' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receives_grants]))) IS NULL AND
-NULLIF([receives_grants],'') IS NOT NULL)
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receives_financial_assistance]))) IS NULL AND
+NULLIF([receives_financial_assistance],'') IS NOT NULL)
 
-SELECT DISTINCT [receives_contracts_and_grants],
-len([receives_contracts_and_grants]) as Length,
+SELECT DISTINCT [receives_contracts_and_financial_assistance],
+len([receives_contracts_and_financial_assistance]) as Length,
 '[bit]' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receives_contracts_and_grants]))) IS NULL AND
-NULLIF([receives_contracts_and_grants],'') IS NOT NULL)
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([receives_contracts_and_financial_assistance]))) IS NULL AND
+NULLIF([receives_contracts_and_financial_assistance],'') IS NOT NULL)
 
 SELECT DISTINCT [airport_authority],
 len([airport_authority]) as Length,
@@ -1249,12 +1248,12 @@ FROM Errorlogging.FPDSstage1
 WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([limited_liability_corporation]))) IS NULL AND
 NULLIF([limited_liability_corporation],'') IS NOT NULL)
 
-SELECT DISTINCT [foreign_owned_and_located],
-len([foreign_owned_and_located]) as Length,
+SELECT DISTINCT [foreign_owned],
+len([foreign_owned]) as Length,
 '[bit]' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([foreign_owned_and_located]))) IS NULL AND
-NULLIF([foreign_owned_and_located],'') IS NOT NULL)
+WHERE (Try_Convert([bit], (SELECT ReturnBit from Errorlogging.ConvertYNtoBit([foreign_owned]))) IS NULL AND
+NULLIF([foreign_owned],'') IS NOT NULL)
 
 SELECT DISTINCT [for_profit_organization],
 len([for_profit_organization]) as Length,
@@ -1630,19 +1629,19 @@ WHERE (Try_Convert([varchar](500), [disaster_emergency_fund_codes_for_overall_aw
 NULLIF([disaster_emergency_fund_codes_for_overall_award],'') IS NOT NULL) OR
  len([disaster_emergency_fund_codes_for_overall_award]) > 500
 
-SELECT DISTINCT [outlayed_amount_funded_by_COVID19_supplementals_for_overall_award],
-len([outlayed_amount_funded_by_COVID19_supplementals_for_overall_award]) as Length,
+SELECT DISTINCT [outlayed_amount_from_COVID-19_supplementals_for_overall_award],
+len([outlayed_amount_from_COVID-19_supplementals_for_overall_award]) as Length,
 '[decimal](19, 4)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([outlayed_amount_funded_by_COVID19_supplementals_for_overall_award],''))) IS NULL AND
-NULLIF([outlayed_amount_funded_by_COVID19_supplementals_for_overall_award],'') IS NOT NULL)
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([outlayed_amount_from_COVID-19_supplementals_for_overall_award],''))) IS NULL AND
+NULLIF([outlayed_amount_from_COVID-19_supplementals_for_overall_award],'') IS NOT NULL)
 
-SELECT DISTINCT [obligated_amount_funded_by_COVID19_supplementals_for_overall_award],
-len([obligated_amount_funded_by_COVID19_supplementals_for_overall_award]) as Length,
+SELECT DISTINCT [obligated_amount_from_COVID-19_supplementals_for_overall_award],
+len([obligated_amount_from_COVID-19_supplementals_for_overall_award]) as Length,
 '[decimal](19, 4)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([obligated_amount_funded_by_COVID19_supplementals_for_overall_award],''))) IS NULL AND
-NULLIF([obligated_amount_funded_by_COVID19_supplementals_for_overall_award],'') IS NOT NULL)
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([obligated_amount_from_COVID-19_supplementals_for_overall_award],''))) IS NULL AND
+NULLIF([obligated_amount_from_COVID-19_supplementals_for_overall_award],'') IS NOT NULL)
 
 SELECT DISTINCT [object_classes_funding_this_award],
 len([object_classes_funding_this_award]) as Length,
@@ -1676,17 +1675,82 @@ WHERE (Try_Convert([varchar](12), [recipient_parent_uei]) IS NULL AND
 NULLIF([recipient_parent_uei],'') IS NOT NULL) OR
  len([recipient_parent_uei]) > 12
 
-SELECT DISTINCT [obligated_amount_funded_by_IIJA_supplementals_for_overall_award],
-len([obligated_amount_funded_by_IIJA_supplementals_for_overall_award]) as Length,
+SELECT DISTINCT [obligated_amount_from_IIJA_supplemental_for_overall_award],
+len([obligated_amount_from_IIJA_supplemental_for_overall_award]) as Length,
 '[decimal](19, 4)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([obligated_amount_funded_by_IIJA_supplementals_for_overall_award],''))) IS NULL AND
-NULLIF([obligated_amount_funded_by_IIJA_supplementals_for_overall_award],'') IS NOT NULL)
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([obligated_amount_from_IIJA_supplemental_for_overall_award],''))) IS NULL AND
+NULLIF([obligated_amount_from_IIJA_supplemental_for_overall_award],'') IS NOT NULL)
 
-SELECT DISTINCT [outlayed_amount_funded_by_IIJA_supplementals_for_overall_award],
-len([outlayed_amount_funded_by_IIJA_supplementals_for_overall_award]) as Length,
+SELECT DISTINCT [outlayed_amount_from_IIJA_supplemental_for_overall_award],
+len([outlayed_amount_from_IIJA_supplemental_for_overall_award]) as Length,
 '[decimal](19, 4)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([outlayed_amount_funded_by_IIJA_supplementals_for_overall_award],''))) IS NULL AND
-NULLIF([outlayed_amount_funded_by_IIJA_supplementals_for_overall_award],'') IS NOT NULL)
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([outlayed_amount_from_IIJA_supplemental_for_overall_award],''))) IS NULL AND
+NULLIF([outlayed_amount_from_IIJA_supplemental_for_overall_award],'') IS NOT NULL)
+
+SELECT DISTINCT [recipient_name_raw],
+len([recipient_name_raw]) as Length,
+'[nvarchar](150)' as DestinationType
+FROM Errorlogging.FPDSstage1
+WHERE (Try_Convert([nvarchar](150), [recipient_name_raw]) IS NULL AND
+NULLIF([recipient_name_raw],'') IS NOT NULL)
+
+SELECT DISTINCT [recipient_parent_name_raw],
+len([recipient_parent_name_raw]) as Length,
+'[nvarchar](150)' as DestinationType
+FROM Errorlogging.FPDSstage1
+WHERE (Try_Convert([nvarchar](150), [recipient_parent_name_raw]) IS NULL AND
+NULLIF([recipient_parent_name_raw],'') IS NOT NULL)
+
+SELECT DISTINCT [prime_award_transaction_recipient_county_fips_code],
+len([prime_award_transaction_recipient_county_fips_code]) as Length,
+'[int]' as DestinationType
+FROM Errorlogging.FPDSstage1
+WHERE (Try_Convert([int], [prime_award_transaction_recipient_county_fips_code]) IS NULL AND
+NULLIF([prime_award_transaction_recipient_county_fips_code],'') IS NOT NULL)
+
+SELECT DISTINCT [prime_award_transaction_recipient_state_fips_code],
+len([prime_award_transaction_recipient_state_fips_code]) as Length,
+'[tinyint]' as DestinationType
+FROM Errorlogging.FPDSstage1
+WHERE (Try_Convert([tinyint], [prime_award_transaction_recipient_state_fips_code]) IS NULL AND
+NULLIF([prime_award_transaction_recipient_state_fips_code],'') IS NOT NULL)
+
+SELECT DISTINCT [prime_award_transaction_place_of_performance_county_fips_code],
+len([prime_award_transaction_place_of_performance_county_fips_code]) as Length,
+'[int]' as DestinationType
+FROM Errorlogging.FPDSstage1
+WHERE (Try_Convert([int], [prime_award_transaction_place_of_performance_county_fips_code]) IS NULL AND
+NULLIF([prime_award_transaction_place_of_performance_county_fips_code],'') IS NOT NULL)
+
+SELECT DISTINCT [prime_award_transaction_place_of_performance_state_fips_code],
+len([prime_award_transaction_place_of_performance_state_fips_code]) as Length,
+'[tinyint]' as DestinationType
+FROM Errorlogging.FPDSstage1
+WHERE (Try_Convert([tinyint], [prime_award_transaction_place_of_performance_state_fips_code]) IS NULL AND
+NULLIF([prime_award_transaction_place_of_performance_state_fips_code],'') IS NOT NULL)
+
+SELECT DISTINCT [prime_award_transaction_recipient_cd_original],
+len([prime_award_transaction_recipient_cd_original]) as Length,
+'[varchar](5)' as DestinationType
+FROM Errorlogging.FPDSstage1
+WHERE (Try_Convert([varchar](5), [prime_award_transaction_recipient_cd_original]) IS NULL AND
+NULLIF([prime_award_transaction_recipient_cd_original],'') IS NOT NULL) OR
+ len([prime_award_transaction_recipient_cd_original]) > 5
+
+SELECT DISTINCT [prime_award_transaction_place_of_performance_cd_original],
+len([prime_award_transaction_place_of_performance_cd_original]) as Length,
+'[varchar](5)' as DestinationType
+FROM Errorlogging.FPDSstage1
+WHERE (Try_Convert([varchar](5), [prime_award_transaction_place_of_performance_cd_original]) IS NULL AND
+NULLIF([prime_award_transaction_place_of_performance_cd_original],'') IS NOT NULL) OR
+ len([prime_award_transaction_place_of_performance_cd_original]) > 5
+
+SELECT DISTINCT [total_outlayed_amount_for_overall_award],
+len([total_outlayed_amount_for_overall_award]) as Length,
+'[decimal](19, 4)' as DestinationType
+FROM Errorlogging.FPDSstage1
+WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([total_outlayed_amount_for_overall_award],''))) IS NULL AND
+NULLIF([total_outlayed_amount_for_overall_award],'') IS NOT NULL)
 
