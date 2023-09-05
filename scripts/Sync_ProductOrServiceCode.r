@@ -40,7 +40,13 @@ update_col<-function(repo,sql,colname){
   repo[,order]
 }
 
-undebug(update_col)
+code<-"7435"
+repoPSC$ProductOrServiceArea[repoPSC$ProductOrServiceCode==code]<-'Electronics & Communications'
+repoPSC$ProductsCategory[repoPSC$ProductOrServiceCode==code]<-'Electronics & Communications'
+repoPSC$ProductServiceOrRnDarea[repoPSC$ProductOrServiceCode==code]<-'Electronics & Communications'
+repoPSC$PlatformPortfolio[repoPSC$ProductOrServiceCode==code]<-'Electronics, Comms, & Sensors'
+
+
 repoPSC<-update_col(repoPSC,sqlPSC,"IsPossibleSoftwareEngineering")
 
 summary(factor(sqlPSC$ProductOrServiceCode[sqlPSC$IsPossibleSoftwareEngineering==1]))
