@@ -91,20 +91,13 @@ if(nrow(MergeStage2.df[is.na(MergeStage2.df$CSISvariableType)&is.na(MergeStage2.
 DroppedField<-MergeStage2.df %>% filter(IsDroppedNameField)
 fklist<-read.csv("ImportAids//ErrorLogging_ForeignKeyList.csv") %>% 
   filter(FKSchema=="Contract" & FKTableName=="FPDS")
-DroppedField$Pair<-gsub("[[:punct:]]","",DroppedField$Pair) #https://stackoverflow.com/questions/32041265/how-to-escape-closed-bracket-in-regex-in-r
+DroppedField$Pair<-gsub("[\\],\\[]","",DroppedField$Pair,perl=T) #https://stackoverflow.com/questions/32041265/how-to-escape-closed-bracket-in-regex-in-r
 DroppedFieldFK<-left_join(DroppedField,fklist,by=c("Pair"="FKColumnName")) %>%filter(is.na(ConstraintName))
 DroppedFieldFK<-DroppedFieldFK  %>% filter(!SourceVariableName %in% c("[USAspending_file_name]"))
 #Drop bit fields now being checked for in Select
 DroppedFieldFK<-DroppedFieldFK  %>% filter(!Pair %in% c("a76action", "clingercohenact", "multiyearcontract", "purchasecardaspaymentmethod"))
 #CSISstage2id is just for internal checks
 DroppedFieldFK<-DroppedFieldFK  %>% filter(SourceVariableType != "[int] IDENTITY(1,1)")
-#Misaligned names I manually checked
-DroppedFieldFK<-DroppedFieldFK  %>% filter(!Pair %in% c(
-  "gfegfpcode",                      "researchcode",                    "awardingagencycode",
-   "majfundagencycat",                "popstatecode",               "vendorstatecode",
-   "awardtypecode",                   "idvtypecode","parentawardtypecode",
-   "parentawardsingleormultiplecode", "inherentlygovernmentalfunctions"))
-#2023-04-17 I manually checked. This is certainly a kludge.
 if(nrow(DroppedFieldFK>1)){
   write.csv(DroppedFieldFK,
             file="Output/NameConversion_Missing_ForeignKey.csv")
@@ -119,7 +112,7 @@ rm(DroppedField,DroppedFieldFK,fklist)
 MergeStage2.df$IsDroppedNameField[is.na(MergeStage2.df$IsDroppedNameField)]<-FALSE
 
 #Remove CSISstage2ID, it's entirely for internal purposes
-MergeStage2.df<-MergeStage2.df %>% filter(SourceVariableName!="[CSISstage2id]")
+MergeStage2.df<-MergeStage2.df %>% filter(!SourceVariableName %in% c("[CSISstage2id]","[USAspending_file_name]"))
 #Check that all dropped fields correspond with a preserved field
 pair_kept<-left_join(MergeStage2.df %>% filter(IsDroppedNameField==TRUE)%>% select(SourceVariableName,Pair),
           MergeStage2.df %>% filter(IsDroppedNameField==FALSE) %>% select(SourceVariableName,IsDroppedNameField),
