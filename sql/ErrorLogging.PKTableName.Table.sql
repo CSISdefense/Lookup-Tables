@@ -4,9 +4,9 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [ErrorLogging].[PKTableName](
 	[PKSchemaName] [sysname] NOT NULL,
-	[PKTableName] [varchar](50) NOT NULL,
+	[PKTableName] [varchar](64) NOT NULL,
 	[PKcolumnCount] [int] NULL,
-	[PKcolumnText] [varchar](50) NULL,
+	[PKcolumnText] [varchar](64) NULL,
 	[NoPKColumnText] [bit] NULL,
  CONSTRAINT [pk_PKTableName] PRIMARY KEY CLUSTERED 
 (

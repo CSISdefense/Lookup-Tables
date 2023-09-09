@@ -86,13 +86,14 @@ write(count_list,"Output//ErrorLogging_FPDSstage2_count_empties.txt")
 if(nrow(MergeStage2.df[is.na(MergeStage2.df$CSISvariableType)&is.na(MergeStage2.df$IsDroppedNameField),])>1){
   write.csv(MergeStage2.df[is.na(MergeStage2.df$CSISvariableType)&is.na(MergeStage2.df$IsDroppedNameField),],
             file="Output/Unmatched_NameConversion.csv")
-  stop("Update ImportAides/NameList.csv using Output/Unmatched_NameConversion.csv")
+  stop("Update ImportAids/NameList.csv using Output/Unmatched_NameConversion.csv")
 }
 DroppedField<-MergeStage2.df %>% filter(IsDroppedNameField)
 fklist<-read.csv("ImportAids//ErrorLogging_ForeignKeyList.csv") %>% 
   filter(FKSchema=="Contract" & FKTableName=="FPDS")
 DroppedField$Pair<-gsub("[[:punct:]]","",DroppedField$Pair) #https://stackoverflow.com/questions/32041265/how-to-escape-closed-bracket-in-regex-in-r
 DroppedFieldFK<-left_join(DroppedField,fklist,by=c("Pair"="FKColumnName")) %>%filter(is.na(ConstraintName))
+DroppedFieldFK<-DroppedFieldFK  %>% filter(!SourceVariableName %in% c("[USAspending_file_name]"))
 #Drop bit fields now being checked for in Select
 DroppedFieldFK<-DroppedFieldFK  %>% filter(!Pair %in% c("a76action", "clingercohenact", "multiyearcontract", "purchasecardaspaymentmethod"))
 #CSISstage2id is just for internal checks

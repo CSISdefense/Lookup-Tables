@@ -59,7 +59,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[pop_state_code] [varchar](2) NULL,
 	[primary_place_of_performance_state_name] [varchar](255) NULL,
 	[placeofperformancezipcode] [varchar](10) NULL,
-	[prime_award_transaction_place_of_performance_cd_current] [varchar](6) NULL,
+	[prime_award_transaction_place_of_performance_cd_current] [varchar](22) NULL,
 	[locationcode] [varchar](9) NULL,
 	[award_type_code] [varchar](1) NULL,
 	[award_type_name] [varchar](255) NULL,
@@ -305,8 +305,8 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[prime_award_transaction_recipient_state_fips_code] [tinyint] NULL,
 	[prime_award_transaction_place_of_performance_county_fips_code] [int] NULL,
 	[prime_award_transaction_place_of_performance_state_fips_code] [tinyint] NULL,
-	[prime_award_transaction_recipient_cd_original] [varchar](5) NULL,
-	[prime_award_transaction_place_of_performance_cd_original] [varchar](5) NULL,
+	[prime_award_transaction_recipient_cd_original] [varchar](22) NULL,
+	[prime_award_transaction_place_of_performance_cd_original] [varchar](22) NULL,
 	[total_outlayed_amount_for_overall_award] [decimal](19, 4) NULL,
 	[USAspending_file_name] [varchar](255) NULL
 ) ON [PRIMARY]

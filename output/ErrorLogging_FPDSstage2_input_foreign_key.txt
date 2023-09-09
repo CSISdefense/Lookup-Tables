@@ -148,6 +148,16 @@ On pk.vendorname=fk.[vendordoingasbusinessname]
 WHERE pk.vendorname is NULL
 GROUP BY fk.[vendordoingasbusinessname]
 
+-- Insert new [mod_parent] into Vendor.VendorName
+INSERT INTO Vendor.VendorName
+(vendorname)
+SELECT fk.[mod_parent]
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[mod_parent]
+WHERE pk.vendorname is NULL
+GROUP BY fk.[mod_parent]
+
 -- Insert new [vendor_state_code] into Location.recipient_state_code
 INSERT INTO Location.recipient_state_code
 (recipient_state_code,recipient_state_name)
@@ -728,25 +738,25 @@ On pk.CommercialItemAcquisitionProcedures=fk.[commercialitemacquisitionprocedure
 WHERE nullif(pk.CommercialItemAcquisitionProceduresText,'') is NULL AND
 nullif(fk.commercial_item_acquisition_procedures_name,'') is NOT NULL
 
--- Insert new [commercialitemtestprogram] into FPDSTypeTable.commercialitemtestprogram
-INSERT INTO FPDSTypeTable.commercialitemtestprogram
-(CommercialItemTestProgram,CommercialItemTestProgramText)
-SELECT fk.[commercialitemtestprogram]
-,max(fk.commercial_item_test_program_name) as CommercialItemTestProgramText
+-- Insert new [simplified_procedures_for_certain_commercial_items_code] into FPDSTypeTable.simplified_procedures_for_certain_commercial_items_code
+INSERT INTO FPDSTypeTable.simplified_procedures_for_certain_commercial_items_code
+(simplified_procedures_for_certain_commercial_items_code,simplified_procedures_for_certain_commercial_items)
+SELECT fk.[simplified_procedures_for_certain_commercial_items_code]
+,max(fk.simplified_procedures_for_certain_commercial_items) as simplified_procedures_for_certain_commercial_items
 FROM ErrorLogging.FPDSstage2 as fk
-LEFT OUTER JOIN FPDSTypeTable.commercialitemtestprogram as pk
-On pk.CommercialItemTestProgram=fk.[commercialitemtestprogram]
-WHERE pk.CommercialItemTestProgram is NULL
-GROUP BY fk.[commercialitemtestprogram]
+LEFT OUTER JOIN FPDSTypeTable.simplified_procedures_for_certain_commercial_items_code as pk
+On pk.simplified_procedures_for_certain_commercial_items_code=fk.[simplified_procedures_for_certain_commercial_items_code]
+WHERE pk.simplified_procedures_for_certain_commercial_items_code is NULL
+GROUP BY fk.[simplified_procedures_for_certain_commercial_items_code]
 
--- Update CommercialItemTestProgramText using commercial_item_test_program_name where there is a blank in FPDSTypeTable.commercialitemtestprogram
+-- Update simplified_procedures_for_certain_commercial_items using simplified_procedures_for_certain_commercial_items where there is a blank in FPDSTypeTable.simplified_procedures_for_certain_commercial_items_code
 UPDATE pk
-SET CommercialItemTestProgramText=fk.commercial_item_test_program_name
+SET simplified_procedures_for_certain_commercial_items=fk.simplified_procedures_for_certain_commercial_items
 FROM ErrorLogging.FPDSstage2 as fk
-LEFT OUTER JOIN FPDSTypeTable.commercialitemtestprogram as pk
-On pk.CommercialItemTestProgram=fk.[commercialitemtestprogram]
-WHERE nullif(pk.CommercialItemTestProgramText,'') is NULL AND
-nullif(fk.commercial_item_test_program_name,'') is NOT NULL
+LEFT OUTER JOIN FPDSTypeTable.simplified_procedures_for_certain_commercial_items_code as pk
+On pk.simplified_procedures_for_certain_commercial_items_code=fk.[simplified_procedures_for_certain_commercial_items_code]
+WHERE nullif(pk.simplified_procedures_for_certain_commercial_items,'') is NULL AND
+nullif(fk.simplified_procedures_for_certain_commercial_items,'') is NOT NULL
 
 -- Insert new [fedbizopps] into FPDSTypeTable.fedbizopps
 INSERT INTO FPDSTypeTable.fedbizopps
@@ -1207,4 +1217,84 @@ LEFT OUTER JOIN agency.awarding_agency_code as pk
 On pk.awarding_agency_code=fk.[awarding_agency_code]
 WHERE nullif(pk.awarding_agency_name,'') is NULL AND
 nullif(fk.awarding_agency_name,'') is NOT NULL
+
+-- Insert new [recipient_name_raw] into Vendor.VendorName
+INSERT INTO Vendor.VendorName
+(vendorname)
+SELECT fk.[recipient_name_raw]
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[recipient_name_raw]
+WHERE pk.vendorname is NULL
+GROUP BY fk.[recipient_name_raw]
+
+-- Insert new [recipient_parent_name_raw] into Vendor.VendorName
+INSERT INTO Vendor.VendorName
+(vendorname)
+SELECT fk.[recipient_parent_name_raw]
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[recipient_parent_name_raw]
+WHERE pk.vendorname is NULL
+GROUP BY fk.[recipient_parent_name_raw]
+
+-- Insert new [prime_award_transaction_recipient_county_fips_code] into Location.County_FIPS_Code
+INSERT INTO Location.County_FIPS_Code
+(county_fips_code)
+SELECT fk.[prime_award_transaction_recipient_county_fips_code]
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Location.County_FIPS_Code as pk
+On pk.county_fips_code=fk.[prime_award_transaction_recipient_county_fips_code]
+WHERE pk.county_fips_code is NULL
+GROUP BY fk.[prime_award_transaction_recipient_county_fips_code]
+
+-- Insert new [prime_award_transaction_recipient_state_fips_code] into Location.State_FIPS_Code
+INSERT INTO Location.State_FIPS_Code
+(state_fips_code)
+SELECT fk.[prime_award_transaction_recipient_state_fips_code]
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Location.State_FIPS_Code as pk
+On pk.state_fips_code=fk.[prime_award_transaction_recipient_state_fips_code]
+WHERE pk.state_fips_code is NULL
+GROUP BY fk.[prime_award_transaction_recipient_state_fips_code]
+
+-- Insert new [prime_award_transaction_place_of_performance_county_fips_code] into Location.County_FIPS_Code
+INSERT INTO Location.County_FIPS_Code
+(county_fips_code)
+SELECT fk.[prime_award_transaction_place_of_performance_county_fips_code]
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Location.County_FIPS_Code as pk
+On pk.county_fips_code=fk.[prime_award_transaction_place_of_performance_county_fips_code]
+WHERE pk.county_fips_code is NULL
+GROUP BY fk.[prime_award_transaction_place_of_performance_county_fips_code]
+
+-- Insert new [prime_award_transaction_place_of_performance_state_fips_code] into Location.State_FIPS_Code
+INSERT INTO Location.State_FIPS_Code
+(state_fips_code)
+SELECT fk.[prime_award_transaction_place_of_performance_state_fips_code]
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Location.State_FIPS_Code as pk
+On pk.state_fips_code=fk.[prime_award_transaction_place_of_performance_state_fips_code]
+WHERE pk.state_fips_code is NULL
+GROUP BY fk.[prime_award_transaction_place_of_performance_state_fips_code]
+
+-- Insert new [prime_award_transaction_recipient_cd_original] into Location.Congressional_District
+INSERT INTO Location.Congressional_District
+(congressional_district)
+SELECT fk.[prime_award_transaction_recipient_cd_original]
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Location.Congressional_District as pk
+On pk.congressional_district=fk.[prime_award_transaction_recipient_cd_original]
+WHERE pk.congressional_district is NULL
+GROUP BY fk.[prime_award_transaction_recipient_cd_original]
+
+-- Insert new [prime_award_transaction_place_of_performance_cd_original] into Location.Congressional_District
+INSERT INTO Location.Congressional_District
+(congressional_district)
+SELECT fk.[prime_award_transaction_place_of_performance_cd_original]
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Location.Congressional_District as pk
+On pk.congressional_district=fk.[prime_award_transaction_place_of_performance_cd_original]
+WHERE pk.congressional_district is NULL
+GROUP BY fk.[prime_award_transaction_place_of_performance_cd_original]
 
