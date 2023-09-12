@@ -80,8 +80,6 @@ count_list<-count_empties(Stage2TableType.df,"ErrorLogging","FPDSstage2")
 write(count_list,"Output//ErrorLogging_FPDSstage2_count_empties.txt")
 
 
-
-
 #Transfer from Errorlogging.FPDSstage2 to Contract.FPDS
 if(nrow(MergeStage2.df[is.na(MergeStage2.df$CSISvariableType)&is.na(MergeStage2.df$IsDroppedNameField),])>1){
   write.csv(MergeStage2.df[is.na(MergeStage2.df$CSISvariableType)&is.na(MergeStage2.df$IsDroppedNameField),],
