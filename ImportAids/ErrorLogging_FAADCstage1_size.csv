@@ -36,10 +36,10 @@ funding_sub_agency_code,255
 funding_sub_agency_name,255
 funding_office_code,255
 funding_office_name,255
-treasury_accounts_funding_this_award,313
-federal_accounts_funding_this_award,255
-object_classes_funding_this_award,255
-program_activities_funding_this_award,647
+treasury_accounts_funding_this_award,4000
+federal_accounts_funding_this_award,4000
+object_classes_funding_this_award,4000
+program_activities_funding_this_award,5000
 recipient_uei,255
 recipient_duns,255
 recipient_name,255
@@ -85,8 +85,8 @@ funding_opportunity_number,255
 funding_opportunity_goals_text,255
 assistance_type_code,255
 assistance_type_description,255
-transaction_description,3989
-prime_award_base_transaction_description,3989
+transaction_description,4008
+prime_award_base_transaction_description,4008
 business_funds_indicator_code,255
 business_funds_indicator_description,255
 business_types_code,255
@@ -109,4 +109,4 @@ highly_compensated_officer_5_name,255
 highly_compensated_officer_5_amount,"19,4"
 usaspending_permalink,255
 last_modified_date,#VALUE!
-USAspending_file_name,](255
+USAspending_file_name,255
