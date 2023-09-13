@@ -22,24 +22,6 @@ CREATE TABLE [Contract].[CSISidvmodificationID](
 )WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-SET ANSI_PADDING ON
-GO
-CREATE UNIQUE NONCLUSTERED INDEX [idx_CSISidvPIIDIDidvagencyIDidvmodificationnumber] ON [Contract].[CSISidvmodificationID]
-(
-	[CSISidvpiidID] ASC,
-	[idvagencyid] ASC,
-	[idvmodificationnumber] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE UNIQUE NONCLUSTERED INDEX [idx_IDVpiidIDVidvAgencyIDmodificationnumber] ON [Contract].[CSISidvmodificationID]
-(
-	[idvpiid] ASC,
-	[idvagencyid] ASC,
-	[idvmodificationnumber] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
 ALTER TABLE [Contract].[CSISidvmodificationID] ADD  CONSTRAINT [DF__CSISidvmo__CSISm__4F9D96F5]  DEFAULT (suser_sname()) FOR [CSISmodifiedBy]
 GO
 ALTER TABLE [Contract].[CSISidvmodificationID] ADD  CONSTRAINT [DF__CSISidvmo__CSISm__5091BB2E]  DEFAULT (getdate()) FOR [CSISmodifiedDate]

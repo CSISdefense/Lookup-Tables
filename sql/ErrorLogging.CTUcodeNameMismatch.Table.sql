@@ -12,12 +12,14 @@ CREATE TABLE [ErrorLogging].[CTUcodeNameMismatch](
 	[sam_exception_description] [varchar](71) NULL,
 	[pop_state_code] [varchar](2) NULL,
 	[primary_place_of_performance_state_name] [varchar](255) NULL,
-	[vendor_state_code] [varchar](30) NULL,
-	[recipient_state_name] [varchar](255) NULL,
+	[vendor_state_code] [varchar](35) NULL,
+	[recipient_state_name] [varchar](35) NULL,
 	[typeofidc] [varchar](41) NULL,
 	[type_of_idc_name] [varchar](255) NULL,
 	[performancebasedservicecontract] [varchar](38) NULL,
 	[performance_based_service_acquisition_name] [varchar](255) NULL,
+	[fundedbyforeignentity] [varchar](21) NULL,
+	[foreign_funding_description] [varchar](25) NULL,
  CONSTRAINT [pk_ErrorLogging_CTUcodeNameMismatch] PRIMARY KEY CLUSTERED 
 (
 	[contract_transaction_unique_key] ASC

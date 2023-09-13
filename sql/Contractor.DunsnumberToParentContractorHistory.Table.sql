@@ -47,73 +47,6 @@ CREATE TABLE [Contractor].[DunsnumberToParentContractorHistory](
 )WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [idx_DunsnumberToParentContractor_ParentID] ON [Contractor].[DunsnumberToParentContractorHistory]
-(
-	[ParentID] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [idx_DunsnumberToParentContractorHistory_Dunsnumber] ON [Contractor].[DunsnumberToParentContractorHistory]
-(
-	[DUNSnumber] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [idx_DunsnumberToParentContractorHistory_HeadquarterCode] ON [Contractor].[DunsnumberToParentContractorHistory]
-(
-	[HeadquarterCode] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [idx_DunsnumberToParentContractorHistory_HeadquarterCode_FiscalYear] ON [Contractor].[DunsnumberToParentContractorHistory]
-(
-	[FiscalYear] ASC,
-	[HeadquarterCode] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [idx_DunsnumberToParentContractorHistory_ParentDunsnumber] ON [Contractor].[DunsnumberToParentContractorHistory]
-(
-	[Parentdunsnumber] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [idx_DunsnumberToParentContractorHistory_ParentDunsnumber_FiscalYear] ON [Contractor].[DunsnumberToParentContractorHistory]
-(
-	[FiscalYear] ASC,
-	[Parentdunsnumber] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [idx_StandardizedTopContractor] ON [Contractor].[DunsnumberToParentContractorHistory]
-(
-	[StandardizedTopContractor] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [idx_StandardizedTopContractorFiscalYear] ON [Contractor].[DunsnumberToParentContractorHistory]
-(
-	[FiscalYear] ASC,
-	[StandardizedTopContractor] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [nci_wi_DunsnumberToParentContractorHistory_EDEF12DF8D54971C5265294915E3ED6A] ON [Contractor].[DunsnumberToParentContractorHistory]
-(
-	[ParentID] ASC
-)
-INCLUDE([ObligatedAmount],[Parentdunsnumber],[StandardizedTopContractor]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
 ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory] ADD  CONSTRAINT [DF_DunsnumberToParentContractorHistory_TooHard]  DEFAULT ((0)) FOR [TooHard]
 GO
 ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory] ADD  CONSTRAINT [DF_DunsnumberToParentContractorHistory_NotableSubdivision]  DEFAULT ((0)) FOR [NotableSubdivision]
@@ -129,10 +62,16 @@ GO
 ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory] CHECK CONSTRAINT [FK__Dunsnumbe__Headq__7AF2094E]
 GO
 ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory]  WITH CHECK ADD FOREIGN KEY([recipient_uei])
-REFERENCES [Vendor].[recipient_uei] ([recipient_uei])
+REFERENCES [Vendor].[UEI] ([UEI])
 GO
 ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory]  WITH CHECK ADD FOREIGN KEY([recipient_parent_uei])
-REFERENCES [Vendor].[recipient_uei] ([recipient_uei])
+REFERENCES [Vendor].[UEI] ([UEI])
+GO
+ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory]  WITH CHECK ADD FOREIGN KEY([recipient_uei])
+REFERENCES [Vendor].[UEI] ([UEI])
+GO
+ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory]  WITH CHECK ADD FOREIGN KEY([recipient_parent_uei])
+REFERENCES [Vendor].[UEI] ([UEI])
 GO
 ALTER TABLE [Contractor].[DunsnumberToParentContractorHistory]  WITH NOCHECK ADD  CONSTRAINT [FK_DunsnumberToParentContractor_Dunsnumber] FOREIGN KEY([DUNSnumber])
 REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])

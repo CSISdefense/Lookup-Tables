@@ -47,7 +47,7 @@ if(nrow(missing_column)>0){
 
   
   write(file=file.path("Output","Contract_FPDS_new_column_alter_table.txt"),
-        paste("ALTER TABLE Errorlogging.FPDSstage2\nADD",
+        paste("ALTER TABLE Contract.FPDS\nADD",
               paste(missing_column$SourceVariableName,
                     missing_column$SourceVariableType,
                     missing_column$SourceNullable,",\n",collapse=" ")))

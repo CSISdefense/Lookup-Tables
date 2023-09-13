@@ -29,19 +29,6 @@ CREATE TABLE [Project].[dbaR1semiclean](
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-SET ANSI_PADDING ON
-GO
-CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_dbaR1SemiClean_PByear_ADSI_DefOrg_BA_PE_Proj_BaseOther] ON [Project].[dbaR1semiclean]
-(
-	[PByear] ASC,
-	[AccountDSI] ASC,
-	[DefenseOrganization] ASC,
-	[BudgetActivity] ASC,
-	[ProgramElement] ASC,
-	[ProjectionType] ASC,
-	[BaseOther] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
 ALTER TABLE [Project].[dbaR1semiclean]  WITH CHECK ADD FOREIGN KEY([DefenseOrganization])
 REFERENCES [agency].[DefenseOrganization] ([DefenseOrganization])
 GO

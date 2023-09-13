@@ -954,31 +954,31 @@ HAVING max(iif(fk.commercial_item_acquisition_procedures_name=pk.CommercialItemA
 ORDER BY fk.[commercialitemacquisitionprocedures]
 
 
---List new [commercialitemtestprogram] and updated commercial_item_test_program_name for insertion into FPDSTypeTable.commercialitemtestprogram
-SELECT fk.[commercialitemtestprogram],
-max(iif(fk.commercial_item_test_program_name=pk.CommercialItemTestProgramText or
-	fk.commercial_item_test_program_name='' or
-	charindex('('+fk.commercial_item_test_program_name+')',pk.CommercialItemTestProgramText )>0,
-	NULL,fk.commercial_item_test_program_name)) as MaxOfNewFKcommercial_item_test_program_name,
-count(distinct iif(fk.commercial_item_test_program_name=pk.CommercialItemTestProgramText or
-	fk.commercial_item_test_program_name='' or
-	charindex('('+fk.commercial_item_test_program_name+')',pk.CommercialItemTestProgramText )>0,
-	NULL,fk.commercial_item_test_program_name)) as unmatched_name_count,
-pk.CommercialItemTestProgramText as PKCommercialItemTestProgramText,
-max(iif(fk.commercial_item_test_program_name=pk.CommercialItemTestProgramText or
-	fk.commercial_item_test_program_name='' or
-	charindex('('+fk.commercial_item_test_program_name+')',pk.CommercialItemTestProgramText )>0,
+--List new [simplified_procedures_for_certain_commercial_items_code] and updated simplified_procedures_for_certain_commercial_items for insertion into FPDSTypeTable.simplified_procedures_for_certain_commercial_items_code
+SELECT fk.[simplified_procedures_for_certain_commercial_items_code],
+max(iif(fk.simplified_procedures_for_certain_commercial_items=pk.simplified_procedures_for_certain_commercial_items or
+	fk.simplified_procedures_for_certain_commercial_items='' or
+	charindex('('+fk.simplified_procedures_for_certain_commercial_items+')',pk.simplified_procedures_for_certain_commercial_items )>0,
+	NULL,fk.simplified_procedures_for_certain_commercial_items)) as MaxOfNewFKsimplified_procedures_for_certain_commercial_items,
+count(distinct iif(fk.simplified_procedures_for_certain_commercial_items=pk.simplified_procedures_for_certain_commercial_items or
+	fk.simplified_procedures_for_certain_commercial_items='' or
+	charindex('('+fk.simplified_procedures_for_certain_commercial_items+')',pk.simplified_procedures_for_certain_commercial_items )>0,
+	NULL,fk.simplified_procedures_for_certain_commercial_items)) as unmatched_name_count,
+pk.simplified_procedures_for_certain_commercial_items as PKsimplified_procedures_for_certain_commercial_items,
+max(iif(fk.simplified_procedures_for_certain_commercial_items=pk.simplified_procedures_for_certain_commercial_items or
+	fk.simplified_procedures_for_certain_commercial_items='' or
+	charindex('('+fk.simplified_procedures_for_certain_commercial_items+')',pk.simplified_procedures_for_certain_commercial_items )>0,
 	1,0)) as any_name_match,
-'FPDSTypeTable.commercialitemtestprogram' as PrimaryKeyTable
+'FPDSTypeTable.simplified_procedures_for_certain_commercial_items_code' as PrimaryKeyTable
 FROM ErrorLogging.FPDSstage2 as fk
-LEFT OUTER JOIN FPDSTypeTable.commercialitemtestprogram as pk
-On pk.CommercialItemTestProgram=fk.[commercialitemtestprogram]
-GROUP BY fk.[commercialitemtestprogram], pk.CommercialItemTestProgramText
-HAVING max(iif(fk.commercial_item_test_program_name=pk.CommercialItemTestProgramText or
-	fk.commercial_item_test_program_name='' or
-	charindex('('+fk.commercial_item_test_program_name+')',pk.CommercialItemTestProgramText )>0,
+LEFT OUTER JOIN FPDSTypeTable.simplified_procedures_for_certain_commercial_items_code as pk
+On pk.simplified_procedures_for_certain_commercial_items_code=fk.[simplified_procedures_for_certain_commercial_items_code]
+GROUP BY fk.[simplified_procedures_for_certain_commercial_items_code], pk.simplified_procedures_for_certain_commercial_items
+HAVING max(iif(fk.simplified_procedures_for_certain_commercial_items=pk.simplified_procedures_for_certain_commercial_items or
+	fk.simplified_procedures_for_certain_commercial_items='' or
+	charindex('('+fk.simplified_procedures_for_certain_commercial_items+')',pk.simplified_procedures_for_certain_commercial_items )>0,
 	0,1))=1
-ORDER BY fk.[commercialitemtestprogram]
+ORDER BY fk.[simplified_procedures_for_certain_commercial_items_code]
 
 
 --List new [fedbizopps] and updated fed_biz_opps_name for insertion into FPDSTypeTable.fedbizopps
@@ -1590,5 +1590,93 @@ HAVING max(iif(fk.awarding_agency_name=pk.awarding_agency_name or
 	charindex('('+fk.awarding_agency_name+')',pk.awarding_agency_name )>0,
 	0,1))=1
 ORDER BY fk.[awarding_agency_code]
+
+
+--List new [recipient_name_raw] for insertion into Vendor.VendorName
+SELECT fk.[recipient_name_raw],
+'Vendor.VendorName' as PrimaryKeyTable
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[recipient_name_raw]
+WHERE pk.vendorname is NULL
+GROUP BY fk.[recipient_name_raw]
+ORDER BY fk.[recipient_name_raw]
+
+
+--List new [recipient_parent_name_raw] for insertion into Vendor.VendorName
+SELECT fk.[recipient_parent_name_raw],
+'Vendor.VendorName' as PrimaryKeyTable
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[recipient_parent_name_raw]
+WHERE pk.vendorname is NULL
+GROUP BY fk.[recipient_parent_name_raw]
+ORDER BY fk.[recipient_parent_name_raw]
+
+
+--List new [prime_award_transaction_recipient_county_fips_code] for insertion into Location.County_FIPS_Code
+SELECT fk.[prime_award_transaction_recipient_county_fips_code],
+'Location.County_FIPS_Code' as PrimaryKeyTable
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Location.County_FIPS_Code as pk
+On pk.county_fips_code=fk.[prime_award_transaction_recipient_county_fips_code]
+WHERE pk.county_fips_code is NULL
+GROUP BY fk.[prime_award_transaction_recipient_county_fips_code]
+ORDER BY fk.[prime_award_transaction_recipient_county_fips_code]
+
+
+--List new [prime_award_transaction_recipient_state_fips_code] for insertion into Location.State_FIPS_Code
+SELECT fk.[prime_award_transaction_recipient_state_fips_code],
+'Location.State_FIPS_Code' as PrimaryKeyTable
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Location.State_FIPS_Code as pk
+On pk.state_fips_code=fk.[prime_award_transaction_recipient_state_fips_code]
+WHERE pk.state_fips_code is NULL
+GROUP BY fk.[prime_award_transaction_recipient_state_fips_code]
+ORDER BY fk.[prime_award_transaction_recipient_state_fips_code]
+
+
+--List new [prime_award_transaction_place_of_performance_county_fips_code] for insertion into Location.County_FIPS_Code
+SELECT fk.[prime_award_transaction_place_of_performance_county_fips_code],
+'Location.County_FIPS_Code' as PrimaryKeyTable
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Location.County_FIPS_Code as pk
+On pk.county_fips_code=fk.[prime_award_transaction_place_of_performance_county_fips_code]
+WHERE pk.county_fips_code is NULL
+GROUP BY fk.[prime_award_transaction_place_of_performance_county_fips_code]
+ORDER BY fk.[prime_award_transaction_place_of_performance_county_fips_code]
+
+
+--List new [prime_award_transaction_place_of_performance_state_fips_code] for insertion into Location.State_FIPS_Code
+SELECT fk.[prime_award_transaction_place_of_performance_state_fips_code],
+'Location.State_FIPS_Code' as PrimaryKeyTable
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Location.State_FIPS_Code as pk
+On pk.state_fips_code=fk.[prime_award_transaction_place_of_performance_state_fips_code]
+WHERE pk.state_fips_code is NULL
+GROUP BY fk.[prime_award_transaction_place_of_performance_state_fips_code]
+ORDER BY fk.[prime_award_transaction_place_of_performance_state_fips_code]
+
+
+--List new [prime_award_transaction_recipient_cd_original] for insertion into Location.Congressional_District
+SELECT fk.[prime_award_transaction_recipient_cd_original],
+'Location.Congressional_District' as PrimaryKeyTable
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Location.Congressional_District as pk
+On pk.congressional_district=fk.[prime_award_transaction_recipient_cd_original]
+WHERE pk.congressional_district is NULL
+GROUP BY fk.[prime_award_transaction_recipient_cd_original]
+ORDER BY fk.[prime_award_transaction_recipient_cd_original]
+
+
+--List new [prime_award_transaction_place_of_performance_cd_original] for insertion into Location.Congressional_District
+SELECT fk.[prime_award_transaction_place_of_performance_cd_original],
+'Location.Congressional_District' as PrimaryKeyTable
+FROM ErrorLogging.FPDSstage2 as fk
+LEFT OUTER JOIN Location.Congressional_District as pk
+On pk.congressional_district=fk.[prime_award_transaction_place_of_performance_cd_original]
+WHERE pk.congressional_district is NULL
+GROUP BY fk.[prime_award_transaction_place_of_performance_cd_original]
+ORDER BY fk.[prime_award_transaction_place_of_performance_cd_original]
 
 

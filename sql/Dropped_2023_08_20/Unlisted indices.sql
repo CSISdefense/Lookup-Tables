@@ -1,0 +1,696 @@
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [Assistance_USAIDphoenix_Duns_Num_FY] ON [Assistance].[USAIDphoenix]
+(
+	[DUNS_NUM] ASC,
+	[FY] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+CREATE UNIQUE NONCLUSTERED INDEX [idx_contract_transaction_unique_key_CSIStransactionID] ON [Contract].[contract_transaction_unique_key]
+(
+	[CSIStransactionID] ASC
+)
+WHERE ([CSIStransactionID] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+
+CREATE NONCLUSTERED INDEX [Contract_CSIScontractID_CSISidvpiidID] ON [Contract].[CSIScontractID]
+(
+	[CSISidvpiidID] ASC
+)
+INCLUDE([idvpiid],[piid],[ContractLabelID],[hyphenatedIDVpiid],[IsPerformanceBasedLogistics],[ContractingAgencyID],[ContractingOfficeID],[MajorCommandID],[FundingAgencyID],[FundingOfficeID],[TypeOfContractPricing],[SystemEquipmentCode],[StatutoryExceptionToFairOpportunity],[ExtentCompeted],[MinOfEffectiveDate],[MaxOfEffectiveDate],[CSISsolicitationID],[ContractNumber],[MinOfSignedDate],[LastUltimateCompletionDate],[MaxOfSignedDate],[AnyIdentifiedSystemEquipment],[CSISmodifiedDate],[CSISmodifiedBy],[IsAbove1990constantReportingThreshold],[IsAbove2016constantReportingThreshold],[IsAbove2016constantOneMillionThreshold]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [idx_contract_csiscontractid_ContractNumber] ON [Contract].[CSIScontractID]
+(
+	[ContractNumber] ASC
+)
+WHERE ([ContractNumber] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [idx_contract_IDVpiidPiid] ON [Contract].[CSIScontractID]
+(
+	[idvpiid] ASC,
+	[piid] ASC
+)
+WHERE ([PIID] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_CSIScontractID_ContractingAgencyID_TopContractingOfficeAgencyID] ON [Contract].[CSIScontractID]
+(
+	[ContractingOfficeID] ASC
+)
+INCLUDE([ContractingAgencyID],[topContractingOfficeAgencyID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_CSIScontractID_principalNAICScode] ON [Contract].[CSIScontractID]
+(
+	[principalnaicscode] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_CSIS_ContractID_ContractingAgencyID] ON [Contract].[CSIScontractID]
+(
+	[ContractingAgencyID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_CSIS_ContractID_ProductOrServiceCode] ON [Contract].[CSIScontractID]
+(
+	[ProductOrServiceCode] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [idx_CSISidvPIIDIDidvagencyIDidvmodificationnumber] ON [Contract].[CSISidvmodificationID]
+(
+	[CSISidvpiidID] ASC,
+	[idvagencyid] ASC,
+	[idvmodificationnumber] ASC
+)WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [idx_IDVpiidIDVidvAgencyIDmodificationnumber] ON [Contract].[CSISidvmodificationID]
+(
+	[idvpiid] ASC,
+	[idvagencyid] ASC,
+	[idvmodificationnumber] ASC
+)WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [Contract_CSISidvPIIDID_IDVPIID] ON [Contract].[CSISidvpiidID]
+(
+	[idvpiid] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IX_contract_CSISserviceCensusID] ON [Contract].[CSISserviceCensusID]
+(
+	[CSIScontractID] ASC,
+	[contractingofficeagencyid] ASC,
+	[fiscal_year] ASC,
+	[dunsnumber] ASC,
+	[CSIStieBreaker] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+CREATE NONCLUSTERED INDEX [ix_Contract_CSIStransactionID_CSIScontractID] ON [Contract].[CSIStransactionID]
+(
+	[CSIScontractID] ASC
+)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_CSIStransactionID_CSIScontractID_AgencyID_IDVagencyID_ModNumber_TransNumber] ON [Contract].[CSIStransactionID]
+(
+	[CSIScontractID] ASC,
+	[AgencyID] ASC,
+	[idvagencyid] ASC,
+	[modnumber] ASC,
+	[transactionnumber] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_CSIStransactionID_CSISsourceIDVmodificationID] ON [Contract].[CSIStransactionID]
+(
+	[CSISsourceIDVmodificationID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+CREATE UNIQUE NONCLUSTERED INDEX [idx_contract_dd350_csistranscationID] ON [Contract].[DD350]
+(
+	[CSIStransactionID] ASC
+)
+WHERE ([CSIStransactionID] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [idx_contract_FPDS_contractnumber_modificationordernumber_ContractingAgencyId_transactionnumber] ON [Contract].[DD350]
+(
+	[ContractNumber] ASC,
+	[ModificationOrderNumber] ASC,
+	[TransactionNumberCSISadded] ASC,
+	[ContractingAgencyId] ASC
+)
+WHERE ([ContractNumber] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [Contract_FPDS_systemequipmentcode_fiscal_year] ON [Contract].[FPDS]
+(
+	[systemequipmentcode] ASC
+)
+INCLUDE([fiscal_year]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_contract_FPDS_agencyID_PIID_IDVpiid_idvagencyid_IDVpiid_modnumber_transactionnumber] ON [Contract].[FPDS]
+(
+	[agencyid] ASC,
+	[piid] ASC,
+	[idvagencyid] ASC,
+	[idvpiid] ASC,
+	[modnumber] ASC,
+	[transactionnumber] ASC
+)
+WHERE ([PIID] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_contract_FPDS_contract_transaction_unique_key] ON [Contract].[FPDS]
+(
+	[contract_transaction_unique_key] ASC
+)
+WHERE ([contract_transaction_unique_key] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_ContractingOfficeAgencyID] ON [Contract].[FPDS]
+(
+	[contractingofficeagencyid] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_FPDS_ContractNumber_AgencyID_IDVagencyID_ModNumber_TransNumber] ON [Contract].[FPDS]
+(
+	[ContractNumber] ASC,
+	[agencyid] ASC,
+	[idvagencyid] ASC,
+	[modnumber] ASC,
+	[transactionnumber] ASC
+)
+WHERE ([ContractNumber] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_FPDS_ContractNumber_AgencyID_ModNumber_TransNumber] ON [Contract].[FPDS]
+(
+	[ContractNumber] ASC,
+	[agencyid] ASC,
+	[modnumber] ASC,
+	[transactionnumber] ASC
+)
+WHERE ([ContractNumber] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_contract_FPDS_csistranscationID] ON [Contract].[FPDS]
+(
+	[CSIStransactionID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_Dunsnumber_Fiscal_Year] ON [Contract].[FPDS]
+(
+	[dunsnumber] ASC,
+	[fiscal_year] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_headquartercode_Fiscal_Year] ON [Contract].[FPDS]
+(
+	[headquartercode] ASC,
+	[fiscal_year] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_ParentDunsnumber_Fiscal_Year] ON [Contract].[FPDS]
+(
+	[parentdunsnumber] ASC,
+	[fiscal_year] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_contract_fpds_recipient_uei_otherID] ON [Contract].[FPDS]
+(
+	[recipient_uei] ASC
+)
+INCLUDE([signeddate],[dunsnumber],[parentdunsnumber],[headquartercode],[CAGE],[recipient_parent_uei]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+CREATE NONCLUSTERED INDEX [Contractor_Dunsnumber_IgnoreBeforeYear_ParentDUNSnumber] ON [Contractor].[Dunsnumber]
+(
+	[ignorebeforeyear] ASC
+)
+INCLUDE([ParentDUNSnumber]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_contractor_dunsnumber_ignorebeforeyear_parentdunsnumber] ON [Contractor].[Dunsnumber]
+(
+	[ignorebeforeyear] ASC,
+	[ParentDUNSnumber] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [idx_DunsnumberToParentContractor_ParentID] ON [Contractor].[DunsnumberToParentContractorHistory]
+(
+	[ParentID] ASC
+)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [idx_DunsnumberToParentContractorHistory_Dunsnumber] ON [Contractor].[DunsnumberToParentContractorHistory]
+(
+	[DUNSnumber] ASC
+)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [idx_DunsnumberToParentContractorHistory_HeadquarterCode] ON [Contractor].[DunsnumberToParentContractorHistory]
+(
+	[HeadquarterCode] ASC
+)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [idx_DunsnumberToParentContractorHistory_HeadquarterCode_FiscalYear] ON [Contractor].[DunsnumberToParentContractorHistory]
+(
+	[FiscalYear] ASC,
+	[HeadquarterCode] ASC
+)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [idx_DunsnumberToParentContractorHistory_ParentDunsnumber] ON [Contractor].[DunsnumberToParentContractorHistory]
+(
+	[Parentdunsnumber] ASC
+)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [idx_DunsnumberToParentContractorHistory_ParentDunsnumber_FiscalYear] ON [Contractor].[DunsnumberToParentContractorHistory]
+(
+	[FiscalYear] ASC,
+	[Parentdunsnumber] ASC
+)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [idx_StandardizedTopContractor] ON [Contractor].[DunsnumberToParentContractorHistory]
+(
+	[StandardizedTopContractor] ASC
+)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [idx_StandardizedTopContractorFiscalYear] ON [Contractor].[DunsnumberToParentContractorHistory]
+(
+	[FiscalYear] ASC,
+	[StandardizedTopContractor] ASC
+)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [nci_wi_DunsnumberToParentContractorHistory_EDEF12DF8D54971C5265294915E3ED6A] ON [Contractor].[DunsnumberToParentContractorHistory]
+(
+	[ParentID] ASC
+)
+INCLUDE([ObligatedAmount],[Parentdunsnumber],[StandardizedTopContractor]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [u_contractor_parentcontractor_abbreviation] ON [Contractor].[ParentContractor]
+(
+	[Abbreviation] ASC
+)
+WHERE ([Abbreviation] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_errorlogging_fpdsbetaviolatesconstraint_sixUTI] ON [ErrorLogging].[FPDSstage2]
+(
+	[piid] ASC,
+	[idvpiid] ASC,
+	[modnumber] ASC,
+	[idvmodificationnumber] ASC,
+	[contractingofficeagencyid] ASC,
+	[transactionnumber] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [ix_FPDSbetaViolatesConstraint_CSIStransactionID] ON [ErrorLogging].[FPDSstage2]
+(
+	[CSIStransactionID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_FPDSviolates_Type_Transaction_ID_CSIScreatedDate] ON [ErrorLogging].[LegacyFPDSstage1]
+(
+	[unique_transaction_id] ASC,
+	[CSISCreatedDate] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_FPDSviolatesType_Transaction_ID_Fiscal_Year] ON [ErrorLogging].[LegacyFPDSstage1]
+(
+	[unique_transaction_id] ASC,
+	[fiscal_year] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_FPDSviolatesConstraint_Unique_Transaction_ID_CSIScreatedDate] ON [ErrorLogging].[LegacyFPDSstage2]
+(
+	[unique_transaction_id] ASC,
+	[CSISCreatedDate] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_FPDSviolatesConstraint_Unique_Transaction_ID_Fiscal_Year] ON [ErrorLogging].[LegacyFPDSstage2]
+(
+	[unique_transaction_id] ASC,
+	[fiscal_year] ASC
+)
+WHERE ([Unique_transaction_ID] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_FPDSviolatesConstraint_Unique_Transaction_ID_CSIScreatedDate] ON [ErrorLogging].[LegacyFPDSstage2]
+(
+	[unique_transaction_id] ASC,
+	[CSISCreatedDate] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_FPDSviolatesConstraint_Unique_Transaction_ID_Fiscal_Year] ON [ErrorLogging].[LegacyFPDSstage2]
+(
+	[unique_transaction_id] ASC,
+	[fiscal_year] ASC
+)
+WHERE ([Unique_transaction_ID] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [GrantLoanAssistance_FAADS_Duns_No_Fiscal_Year] ON [GrantLoanAssistance].[FAADS]
+(
+	[duns_no] ASC,
+	[fiscal_year] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+ALTER TABLE [Office].[OfficeID]  WITH CHECK ADD  CONSTRAINT [chk_office_officeid_nonblankagencyid] CHECK  (([Agencyid]<>'' OR [officeid]=''))
+GO
+ALTER TABLE [Office].[OfficeID] CHECK CONSTRAINT [chk_office_officeid_nonblankagencyid]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_dbaP1SemiClean_PByear_ADSI_DefOrg_BA_BSA_LI_Proj_BaseOther] ON [Project].[dbaP1semiclean]
+(
+	[PByear] ASC,
+	[AccountDSI] ASC,
+	[DefenseOrganization] ASC,
+	[BudgetActivity] ASC,
+	[BudgetSubActivity] ASC,
+	[LineItem] ASC,
+	[ProjectionType] ASC,
+	[BaseOther] ASC,
+	[CostType] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_DBAp2020semiclean_PByear_ADSI_DefOrg_BA_BSA_LI_Proj_BaseOther] ON [Project].[DBAp2020semiclean]
+(
+	[PByear] ASC,
+	[AccountDSI] ASC,
+	[DefenseOrganization] ASC,
+	[BudgetActivity] ASC,
+	[BudgetSubActivity] ASC,
+	[LineItem] ASC,
+	[CostTypeTitle] ASC,
+	[ProjectionType] ASC,
+	[BaseOther] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_dbaR1SemiClean_PByear_ADSI_DefOrg_BA_PE_Proj_BaseOther] ON [Project].[dbaR1semiclean]
+(
+	[PByear] ASC,
+	[AccountDSI] ASC,
+	[DefenseOrganization] ASC,
+	[BudgetActivity] ASC,
+	[ProgramElement] ASC,
+	[ProjectionType] ASC,
+	[BaseOther] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_dbaR2SemiClean_PByear_ADSI_DefOrg_BA_PE_Proj_BaseOther] ON [Project].[dbaR2semiclean]
+(
+	[PByear] ASC,
+	[AccountDSI] ASC,
+	[DefenseOrganization] ASC,
+	[BudgetActivity] ASC,
+	[ProgramElement] ASC,
+	[ProjectionType] ASC,
+	[BaseOther] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_LineItemHistory_CSISBudgetLineKeyDBA_PByear_IncludesAdvancedProcurement_Handoff] ON [Project].[LineItemHistory]
+(
+	[CSISBudgetLineKeyDBA] ASC,
+	[PByear] ASC,
+	[IncludesAdvancedProcurement] ASC,
+	[IsHandoff] ASC
+)
+WHERE ([CSISbudgetLineKeyDBA] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_LineItemHistory_CSISBudgetLineKeyDBAp2016_PByear_IncludesAdvancedProcurement_Handoff] ON [Project].[LineItemHistory]
+(
+	[CSISbudgetLineKeyDBAp2016] ASC,
+	[PByear] ASC,
+	[IncludesAdvancedProcurement] ASC,
+	[IsHandoff] ASC
+)
+WHERE ([CSISbudgetLineKeyDBAp2016] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_LineItemHistory_CSISBudgetLineKeyDBAp2020_PByear_IncludesAdvancedProcurement_Handoff] ON [Project].[LineItemHistory]
+(
+	[CSISbudgetLineKeyDBAp2020] ASC,
+	[PByear] ASC,
+	[IncludesAdvancedProcurement] ASC,
+	[IsHandoff] ASC
+)
+WHERE ([CSISbudgetLineKeyDBAp2020] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_LineItemHistory_CSISBudgetLineKeyP1_PByear_IncludesAdvancedProcurement_Handoff] ON [Project].[LineItemHistory]
+(
+	[CSISbudgetLineKeyP1] ASC,
+	[PByear] ASC,
+	[IncludesAdvancedProcurement] ASC,
+	[IsHandoff] ASC
+)
+WHERE ([CSISBudgetLineKeyP1] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_LineItemHistory_CSISBudgetLineKeyP40_PByear_IncludesAdvancedProcurement_Handoff] ON [Project].[LineItemHistory]
+(
+	[CSISbudgetLineKeyP40] ASC,
+	[PByear] ASC,
+	[IncludesAdvancedProcurement] ASC,
+	[IsHandoff] ASC
+)
+WHERE ([CSISBudgetLineKeyP40] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_LineItemHistory_LineItem_BSA_BA_ADSI_PByear_Handoff] ON [Project].[LineItemHistory]
+(
+	[LineItem] ASC,
+	[BudgetSubActivity] ASC,
+	[BudgetActivity] ASC,
+	[AccountDSI] ASC,
+	[PByear] ASC,
+	[IsHandoff] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_ProgramElementHistory_CSISbudgetLineKeyDBAr2016_PByear_Handoff] ON [Project].[ProgramElementHistory]
+(
+	[CSISbudgetLineKeyDBAr2016] ASC,
+	[PByear] ASC,
+	[IsHandoff] ASC
+)
+WHERE ([CSISbudgetLineKeyDBAr2016] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_ProgramElementHistory_CSISbudgetLineKeyDBAr2020_PByear_Handoff] ON [Project].[ProgramElementHistory]
+(
+	[CSISbudgetLineKeyDBAr2020] ASC,
+	[PByear] ASC,
+	[IsHandoff] ASC
+)
+WHERE ([CSISbudgetLineKeyDBAr2020] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_ProgramElementHistory_CSISBudgetLineKeyR1_PByear_Handoff] ON [Project].[ProgramElementHistory]
+(
+	[CSISbudgetLineKeyR1] ASC,
+	[PByear] ASC,
+	[IsHandoff] ASC
+)
+WHERE ([CSISBudgetLineKeyR1] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_ProgramElementHistory_CSISBudgetLineKeyR2_PByear_Handoff] ON [Project].[ProgramElementHistory]
+(
+	[CSISbudgetLineKeyR2] ASC,
+	[PByear] ASC,
+	[IsHandoff] ASC
+)
+WHERE ([CSISBudgetLineKeyR2] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_ProgramElementHistory_ProgramElement_BA_ADSI_PByear_Handoff] ON [Project].[ProgramElementHistory]
+(
+	[ProgramElement] ASC,
+	[BudgetActivity] ASC,
+	[AccountDSI] ASC,
+	[PByear] ASC,
+	[IsHandoff] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_ProjectID_ProjectAbbreviation] ON [Project].[ProjectID]
+(
+	[ProjectAbbreviation] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_ProjectID_ProjectName] ON [Project].[ProjectID]
+(
+	[ProjectName] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_R2SemiClean_PByear_ADSI_DefOrg_BA_PE_Proj_BaseOther] ON [Project].[R2semiclean]
+(
+	[PByear] ASC,
+	[AccountDSI] ASC,
+	[DefenseOrganization] ASC,
+	[BudgetActivity] ASC,
+	[ProgramElement] ASC,
+	[ProjectionType] ASC,
+	[BaseOther] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_vendor_entityID_Dunsnumber] ON [Vendor].[EntityID]
+(
+	[Dunsnumber] ASC
+)
+WHERE ([Dunsnumber] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_vendor_entityID_ParentID] ON [Vendor].[EntityID]
+(
+	[ParentID] ASC
+)
+WHERE ([ParentID] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [UQ_vendor_entityID_VendorName] ON [Vendor].[EntityID]
+(
+	[VendorName] ASC
+)
+WHERE ([VendorName] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [Vendor_VendorName_StandardizeVendorName] ON [Vendor].[VendorName]
+(
+	[standardizedvendorname] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [Vendor_VendorName_StandardizeVendorName] ON [Vendor].[VendorName]
+(
+	[standardizedvendorname] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO

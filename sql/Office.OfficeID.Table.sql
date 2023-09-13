@@ -46,10 +46,6 @@ REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
 ALTER TABLE [Office].[OfficeID] CHECK CONSTRAINT [FK_office_ContractingOfficeCode_departmentid]
 GO
-ALTER TABLE [Office].[OfficeID]  WITH CHECK ADD  CONSTRAINT [chk_office_officeid_nonblankagencyid] CHECK  (([Agencyid]<>'' OR [officeid]=''))
-GO
-ALTER TABLE [Office].[OfficeID] CHECK CONSTRAINT [chk_office_officeid_nonblankagencyid]
-GO
 ALTER TABLE [Office].[OfficeID]  WITH CHECK ADD  CONSTRAINT [ck_Office_ContractingOfficeCode_newline] CHECK  ((NOT [AddressLine1] like ('%'+char((13)))+'%' AND NOT [AddressLine1] like ('%'+char((10)))+'%'))
 GO
 ALTER TABLE [Office].[OfficeID] CHECK CONSTRAINT [ck_Office_ContractingOfficeCode_newline]

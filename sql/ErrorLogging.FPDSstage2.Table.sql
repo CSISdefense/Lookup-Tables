@@ -38,7 +38,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[dunsnumber] [varchar](13) NULL,
 	[vendorname] [nvarchar](150) NULL,
 	[vendordoingasbusinessname] [nvarchar](150) NULL,
-	[mod_parent] [varchar](150) NULL,
+	[mod_parent] [nvarchar](150) NULL,
 	[parentdunsnumber] [varchar](13) NULL,
 	[vendorcountrycode] [nvarchar](50) NULL,
 	[recipient_country_name] [varchar](255) NULL,
@@ -49,7 +49,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[vendor_state_code] [varchar](35) NULL,
 	[recipient_state_name] [varchar](35) NULL,
 	[zipcode] [varchar](28) NULL,
-	[vendor_cd] [varchar](22) NULL,
+	[prime_award_transaction_recipient_cd_current] [varchar](22) NULL,
 	[phoneno] [varchar](20) NULL,
 	[faxno] [varchar](30) NULL,
 	[placeofperformancecountrycode] [varchar](3) NULL,
@@ -59,7 +59,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[pop_state_code] [varchar](2) NULL,
 	[primary_place_of_performance_state_name] [varchar](255) NULL,
 	[placeofperformancezipcode] [varchar](10) NULL,
-	[placeofperformancecongressionaldistrict] [varchar](6) NULL,
+	[prime_award_transaction_place_of_performance_cd_current] [varchar](22) NULL,
 	[locationcode] [varchar](9) NULL,
 	[award_type_code] [varchar](1) NULL,
 	[award_type_name] [varchar](255) NULL,
@@ -71,7 +71,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[type_of_idc_name] [varchar](255) NULL,
 	[typeofcontractpricing] [varchar](2) NULL,
 	[type_of_contract_pricing_name] [varchar](255) NULL,
-	[descriptionofcontractrequirement] [varchar](4035) NULL,
+	[transaction_description] [varchar](4035) NULL,
 	[reasonformodification] [varchar](1) NULL,
 	[action_type_name] [varchar](255) NULL,
 	[solicitationid] [varchar](69) NULL,
@@ -117,8 +117,8 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[commercialitemacquisitionprocedures] [varchar](1) NULL,
 	[commercial_item_acquisition_procedures_name] [varchar](255) NULL,
 	[smallbusinesscompetitivenessdemonstrationprogram] [bit] NULL,
-	[commercialitemtestprogram] [varchar](1) NULL,
-	[commercial_item_test_program_name] [varchar](255) NULL,
+	[simplified_procedures_for_certain_commercial_items_code] [varchar](1) NULL,
+	[simplified_procedures_for_certain_commercial_items] [varchar](255) NULL,
 	[a76action] [bit] NULL,
 	[a76_fair_act_action_name] [varchar](255) NULL,
 	[fedbizopps] [varchar](1) NULL,
@@ -231,7 +231,7 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[istransitauthority] [bit] NULL,
 	[issubchapterscorporation] [bit] NULL,
 	[islimitedliabilitycorporation] [bit] NULL,
-	[isforeignownedandlocated] [bit] NULL,
+	[foreign_owned] [bit] NULL,
 	[isforprofitorganization] [bit] NULL,
 	[nonprofitorganizationflag] [bit] NULL,
 	[isothernotforprofitorganization] [bit] NULL,
@@ -299,26 +299,17 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[prime_award_base_transaction_description] [varchar](4008) NULL,
 	[obligated_amount_funded_by_IIJA_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[outlayed_amount_funded_by_IIJA_supplementals_for_overall_award] [decimal](19, 4) NULL,
-	[recipient_name_raw] [varchar](255) NULL,
-	[recipient_parent_name_raw] [varchar](255) NULL
+	[recipient_name_raw] [nvarchar](150) NULL,
+	[recipient_parent_name_raw] [nvarchar](150) NULL,
+	[prime_award_transaction_recipient_county_fips_code] [int] NULL,
+	[prime_award_transaction_recipient_state_fips_code] [tinyint] NULL,
+	[prime_award_transaction_place_of_performance_county_fips_code] [int] NULL,
+	[prime_award_transaction_place_of_performance_state_fips_code] [tinyint] NULL,
+	[prime_award_transaction_recipient_cd_original] [varchar](22) NULL,
+	[prime_award_transaction_place_of_performance_cd_original] [varchar](22) NULL,
+	[total_outlayed_amount_for_overall_award] [decimal](19, 4) NULL,
+	[USAspending_file_name] [varchar](255) NULL
 ) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_errorlogging_fpdsbetaviolatesconstraint_sixUTI] ON [ErrorLogging].[FPDSstage2]
-(
-	[piid] ASC,
-	[idvpiid] ASC,
-	[modnumber] ASC,
-	[idvmodificationnumber] ASC,
-	[contractingofficeagencyid] ASC,
-	[transactionnumber] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-CREATE NONCLUSTERED INDEX [ix_FPDSbetaViolatesConstraint_CSIStransactionID] ON [ErrorLogging].[FPDSstage2]
-(
-	[CSIStransactionID] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FPDSstage2] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__7193879D]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO

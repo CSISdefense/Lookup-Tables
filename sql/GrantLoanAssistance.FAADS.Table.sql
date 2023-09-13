@@ -77,14 +77,6 @@ CREATE TABLE [GrantLoanAssistance].[FAADS](
 	[principal_place_country_code] [varchar](3) NULL
 ) ON [PRIMARY]
 GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [GrantLoanAssistance_FAADS_Duns_No_Fiscal_Year] ON [GrantLoanAssistance].[FAADS]
-(
-	[duns_no] ASC,
-	[fiscal_year] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
 ALTER TABLE [GrantLoanAssistance].[FAADS] ADD  CONSTRAINT [DF_GrantOrLoan_USAspending_CSISCreatedDate]  DEFAULT (getdate()) FOR [CSISCreatedDate]
 GO
 ALTER TABLE [GrantLoanAssistance].[FAADS] ADD  CONSTRAINT [DF_GrantOrLoan_USASpending_CSISModifiedDate]  DEFAULT (getdate()) FOR [CSISModifiedDate]
