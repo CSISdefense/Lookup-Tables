@@ -79,7 +79,7 @@ primary_place_of_performance_zip_4,varchar,255
 prime_award_transaction_place_of_performance_cd_original,varchar,255
 prime_award_transaction_place_of_performance_cd_current,varchar,255
 primary_place_of_performance_foreign_location,varchar,255
-cfda_number,decimal,
+cfda_number,varchar,255
 cfda_title,varchar,255
 funding_opportunity_number,varchar,255
 funding_opportunity_goals_text,varchar,255
