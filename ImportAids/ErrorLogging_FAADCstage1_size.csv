@@ -82,7 +82,7 @@ primary_place_of_performance_foreign_location,varchar,255
 cfda_number,varchar,255
 cfda_title,varchar,255
 funding_opportunity_number,varchar,255
-funding_opportunity_goals_text,varchar,255
+funding_opportunity_goals_text,varchar,2000
 assistance_type_code,varchar,255
 assistance_type_description,varchar,255
 transaction_description,varchar,4008
