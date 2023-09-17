@@ -15,7 +15,7 @@ face_value_of_loan,decimal,
 original_loan_subsidy_cost,decimal,
 total_face_value_of_loan,decimal,
 total_loan_subsidy_cost,decimal,
-disaster_emergency_fund_codes_for_overall_award,varchar,255
+disaster_emergency_fund_codes_for_overall_award,varchar,4000
 outlayed_amount_from_COVID-19_supplementals_for_overall_award,decimal,
 obligated_amount_from_COVID-19_supplementals_for_overall_award,decimal,
 outlayed_amount_from_IIJA_supplemental_for_overall_award,decimal,
