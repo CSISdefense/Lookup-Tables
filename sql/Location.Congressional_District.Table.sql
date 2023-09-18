@@ -3,7 +3,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [Location].[Congressional_District](
-	[congressional_district] [varchar](5) NOT NULL,
+	[congressional_district] [varchar](22) NOT NULL,
  CONSTRAINT [pk_location_congressional_district] PRIMARY KEY CLUSTERED 
 (
 	[congressional_district] ASC

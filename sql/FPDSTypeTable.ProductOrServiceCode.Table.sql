@@ -25,7 +25,7 @@ CREATE TABLE [FPDSTypeTable].[ProductOrServiceCode](
 	[isRnD1to5] [bit] NULL,
 	[PBLscore] [smallint] NULL,
 	[IsPossibleReclassification] [bit] NULL,
-	[IsPossibleSoftwareEngineering] [bit] NULL,
+	[IsPossibleSoftwareEngineering] [varchar](255) NULL,
 	[RnD_BudgetActivity] [varchar](100) NULL,
 	[ProductServiceOrRnDarea] [varchar](49) NULL,
 	[CanadaSector] [nvarchar](75) NULL,
@@ -43,6 +43,7 @@ CREATE TABLE [FPDSTypeTable].[ProductOrServiceCode](
 	[BioRelated] [varchar](25) NULL,
 	[IsPossibleC2] [bit] NULL,
 	[IsRemotelyOperated] [bit] NULL,
+	[AsAServiceLaborProduct] [varchar](15) NULL,
  CONSTRAINT [PK_ProductOrServiceCode] PRIMARY KEY CLUSTERED 
 (
 	[ProductOrServiceCode] ASC

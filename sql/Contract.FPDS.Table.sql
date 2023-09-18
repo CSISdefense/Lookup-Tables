@@ -74,7 +74,7 @@ CREATE TABLE [Contract].[FPDS](
 	[pop_state_code] [varchar](2) NULL,
 	[placeofperformancecountrycode] [varchar](3) NULL,
 	[placeofperformancezipcode] [varchar](10) NULL,
-	[prime_award_transaction_place_of_performance_cd_current] [varchar](6) NULL,
+	[prime_award_transaction_place_of_performance_cd_current] [varchar](22) NULL,
 	[psc_cat] [varchar](2) NULL,
 	[productorservicecode] [varchar](4) NULL,
 	[systemequipmentcode] [varchar](4) NULL,
@@ -282,8 +282,8 @@ CREATE TABLE [Contract].[FPDS](
 	[prime_award_transaction_recipient_state_fips_code] [tinyint] NULL,
 	[prime_award_transaction_place_of_performance_county_fips_code] [int] NULL,
 	[prime_award_transaction_place_of_performance_state_fips_code] [tinyint] NULL,
-	[prime_award_transaction_recipient_cd_original] [varchar](5) NULL,
-	[prime_award_transaction_place_of_performance_cd_original] [varchar](5) NULL,
+	[prime_award_transaction_recipient_cd_original] [varchar](22) NULL,
+	[prime_award_transaction_place_of_performance_cd_original] [varchar](22) NULL,
 	[total_outlayed_amount_for_overall_award] [decimal](19, 4) NULL
 ) ON [PRIMARY]
 GO
@@ -309,12 +309,6 @@ GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD FOREIGN KEY([prime_award_transaction_place_of_performance_state_fips_code])
 REFERENCES [Location].[State_FIPS_Code] ([state_fips_code])
 GO
-ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD FOREIGN KEY([prime_award_transaction_recipient_cd_original])
-REFERENCES [Location].[Congressional_District] ([congressional_district])
-GO
-ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD FOREIGN KEY([prime_award_transaction_place_of_performance_cd_original])
-REFERENCES [Location].[Congressional_District] ([congressional_district])
-GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_contract_transaction_unique_key] FOREIGN KEY([contract_transaction_unique_key])
 REFERENCES [Contract].[contract_transaction_unique_key] ([contract_transaction_unique_key])
 GO
@@ -326,7 +320,7 @@ GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_award_type_code]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_CommercialItemTestProgram] FOREIGN KEY([simplified_procedures_for_certain_commercial_items_code])
-REFERENCES [FPDSTypeTable].[simplified_procedures_for_certain_commercial_items] ([CommercialItemTestProgram])
+REFERENCES [FPDSTypeTable].[simplified_procedures_for_certain_commercial_items_code] ([simplified_procedures_for_certain_commercial_items_code])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_CommercialItemTestProgram]
 GO
@@ -399,6 +393,16 @@ ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_pare
 REFERENCES [FPDSTypeTable].[idv_type_code] ([idv_type_code])
 GO
 ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_parent_award_type_code]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_prime_award_transaction_place_of_performance_cd_original] FOREIGN KEY([prime_award_transaction_place_of_performance_cd_original])
+REFERENCES [Location].[Congressional_District] ([congressional_district])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_prime_award_transaction_place_of_performance_cd_original]
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_prime_award_transaction_recipient_cd_original] FOREIGN KEY([prime_award_transaction_recipient_cd_original])
+REFERENCES [Location].[Congressional_District] ([congressional_district])
+GO
+ALTER TABLE [Contract].[FPDS] CHECK CONSTRAINT [fk_contract_fpds_prime_award_transaction_recipient_cd_original]
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_fpds_progsourceagency] FOREIGN KEY([progsourceagency], [progsourceaccount], [progsourcesubacct])
 REFERENCES [budget].[progsource] ([progsourceagency], [progsourceaccount], [progsourcesubacct])
