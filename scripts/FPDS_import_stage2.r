@@ -142,3 +142,16 @@ update_list<-create_update_FPDS(MergeStage2.df,
   DateType=101,
   drop_name=TRUE)
 write(update_list,"Output/ErrorLogging_FPDSstage2_update_destination.txt")
+
+
+###### From Stage 2 to Contract.FPDS #########
+#Match up Errorlogging.FPDSstage2 to Contract.FPDS 
+Stage2TableType.df<-read_create_table("ErrorLogging.FPDSstage2.Table.sql",
+                                      dir="SQL")
+Stage2TableType.df<-translate_name(Stage2TableType.df)
+
+DestinationTable.df<-read_create_table("Contract.FPDS.Table.sql",
+                                       dir="SQL")
+translate_name(DestinationTable.df,test_only=TRUE)
+
+MergeStage2.df<-merge_source_and_csis_name_tables(Stage2TableType.df,DestinationTable.df)
