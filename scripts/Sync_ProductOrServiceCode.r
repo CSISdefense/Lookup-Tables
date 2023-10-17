@@ -29,8 +29,10 @@ repoPSC<-read_csv("ProductOrServiceCodes.csv",na = "NULL")
 sqlPSC<-dbReadTable(con,  name = SQL('"FPDSTypeTable"."ProductOrServiceCode"'))
 
 newcols<-colnames(sqlPSC)[!colnames(sqlPSC) %in% colnames(repoPSC)]
-newcolsPSC<-sqlPSC[,c(newcols,"ProductOrServiceCode")]
-repoPSC<-left_join(repoPSC, newcolsPSC)
+if(length(newcols)>0){
+  newcolsPSC<-sqlPSC[,c(newcols,"ProductOrServiceCode")]
+  repoPSC<-left_join(repoPSC, newcolsPSC)
+}
 
 update_col<-function(repo,sql,colname){
   order<-colnames(repo)
