@@ -57,6 +57,7 @@ repoPSC<-update_col(repoPSC,sqlPSC,"ProductOrServiceArea")
 repoPSC<-update_col(repoPSC,sqlPSC,"ServicesCategory")
 repoPSC<-update_col(repoPSC,sqlPSC,"ProductServiceOrRnDarea")
 repoPSC<-update_col(repoPSC,sqlPSC,"RnD_BudgetActivity")
+repoPSC<-update_col(repoPSC,sqlPSC,"CrisisProductOrServiceArea")
 
 repoPSC<-update_col(repoPSC,sqlPSC,"IsPossibleSoftwareEngineering")
 
@@ -64,6 +65,5 @@ summary(factor(sqlPSC$ProductOrServiceCode[sqlPSC$IsPossibleSoftwareEngineering=
 summary(factor(repoPSC$ProductOrServiceCode[repoPSC$IsPossibleSoftwareEngineering==1]))
 write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
 
-ProductOrServiceCode.PSCAtransition
 sqlPSCA<-dbReadTable(con,  name = SQL('"ProductOrServiceCode"."PSCAtransition"'))
 write_csv(sqlPSC,file = file.path("productorservice","PSCAtransition.csv"))
