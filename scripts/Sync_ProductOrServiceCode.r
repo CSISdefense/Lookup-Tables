@@ -66,4 +66,4 @@ summary(factor(repoPSC$ProductOrServiceCode[repoPSC$IsPossibleSoftwareEngineerin
 write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
 
 sqlPSCA<-dbReadTable(con,  name = SQL('"ProductOrServiceCode"."PSCAtransition"'))
-write_csv(sqlPSC,file = file.path("productorservice","PSCAtransition.csv"))
+write_csv(sqlPSCA,file = file.path("productorservice","PSCAtransition.csv"))
