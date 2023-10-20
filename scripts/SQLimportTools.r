@@ -180,7 +180,7 @@ merge_source_and_csis_name_tables<-function(SourceTable.df,
                                  "CSISvariableType",
                                  "CSISnullable")
   CSIStable.df$CSISvariableNameLower<-tolower(as.character(CSIStable.df$CSISvariableName))
-  SourceTable.df<-left_join(SourceTable.df,CSIStable.df, by="CSISvariableNameLower",match="first")
+  SourceTable.df<-left_join(SourceTable.df,CSIStable.df, by="CSISvariableNameLower",multiple="first")
   SourceTable.df<-subset(SourceTable.df,select=-c(CSISvariableNameLower))
   if(drop_unmatched==FALSE){
     SourceTable.df$CSISvariableName[is.na(SourceTable.df$CSISvariableName)]<-

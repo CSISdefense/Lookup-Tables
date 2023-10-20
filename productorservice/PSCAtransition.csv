@@ -1,0 +1,1143 @@
+productorservicecode,fiscal_year_gt_2020,product_or_service_code_description,minofsignedyear,maxofsignedyear,minoflast_modified_year,maxoflast_modified_year,PlatformPortfolio,ProductServiceOrRnDarea,RnD_budgetActivity
+A,FALSE,RESEARCH AND DEVELOPMENT,2004,2004,2005,2005,Other R&D and Knowledge Based,Uncategorized R&D,Uncategorized R&D
+AA10,FALSE,R&D-INSECT & DIS CONT,2004,2004,2004,2004,Other R&D and Knowledge Based,Uncategorized R&D,Uncategorized R&D
+AA11,FALSE,R&D-INSECT & DIS CONT-B RES,2001,2020,2002,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AA11,TRUE,AGRICULTURE R&D SERVICES; AGRICULTURAL RESEARCH AND SERVICES; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AA12,FALSE,R&D-INSECT & DIS CONT-A RES/EXPL DE,2004,2020,2007,2020,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AA12,TRUE,AGRICULTURE R&D SERVICES; AGRICULTURAL RESEARCH AND SERVICES; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AA13,FALSE,R&D-INSECT & DIS CONT-ADV DEV,2003,2009,2007,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AA13,TRUE,AGRICULTURE R&D SERVICES; AGRICULTURAL RESEARCH AND SERVICES; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AA14,FALSE,R&D-INSECT & DIS CONT-ENG DEV,2002,2009,2003,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AA14,TRUE,AGRICULTURE R&D SERVICES; AGRICULTURAL RESEARCH AND SERVICES; R&D ADMINISTRATIVE EXPENSES,2022,2022,2022,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AA15,FALSE,R&D-INSECT & DIS CONT-OPSY DEV,2004,2009,2008,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AA15,TRUE,AGRICULTURE R&D SVCS; AGRICULTURAL RESEARCH & SVCS; R&D FACILITIES & MAJ EQUIP,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AA16,FALSE,R&D-INSECT & DIS CONT-MGMT SUP,2002,2020,2004,2020,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AA17,FALSE,R&D-INSECT & DISEASE CNTL-COMERCLIZ,2004,2009,2004,2018,Other R&D and Knowledge Based,Commercialization,Commercialization
+AA21,FALSE,AGRICULTURE MARKETING (BASIC),2001,2009,2003,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AA21,TRUE,R&D- AGRICULTURE: MARKETING (BASIC RESEARCH),2020,2022,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AA22,FALSE,R&D-AGRI MARKETING-A RES/EXPL DEV,2004,2009,2006,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AA22,TRUE,R&D- AGRICULTURE: MARKETING (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2022,2021,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AA23,FALSE,AGRICULTURE MARKETING (ADVANCED),2001,2009,2003,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AA23,TRUE,R&D- AGRICULTURE: MARKETING (ADVANCED DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AA24,FALSE,R&D- AGRICULTURE: MARKETING (ENGINEERING DEVELOPMENT),2002,2020,2003,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AA25,FALSE,R&D- AGRICULTURE: MARKETING (OPERATIONAL SYSTEMS DEVELOPMENT),2001,2020,2002,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AA26,FALSE,R&D-AGRI MARKETING-MGMT SUP,2004,2009,2006,2020,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AA26,TRUE,R&D- AGRICULTURE: MARKETING (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AA27,FALSE,R&D-AGRI MARKETING-COMERCLIZ,2009,2020,2009,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AA31,FALSE,AGRICULTURE PRODUCTION (BASIC),2001,2009,2004,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AA31,TRUE,R&D- AGRICULTURE: PRODUCTION (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AA32,FALSE,R&D-AGRI PRODUCTION-A RES/EXPL DEV,2002,2020,2003,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AA33,FALSE,R&D- AGRICULTURE: PRODUCTION (ADVANCED DEVELOPMENT),2004,2020,2007,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AA34,FALSE,R&D-AGRI PRODUCTION-ENG DEV,2003,2009,2005,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AA35,FALSE,R&D-AGRI PRODUCTION-OPSY DEV,2003,2004,2009,2009,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AA36,FALSE,R&D-AGRI PRODUCTION-MGMT SUP,2002,2009,2007,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AA36,TRUE,R&D- AGRICULTURE: PRODUCTION (MANAGEMENT/SUPPORT),2020,2023,2021,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AA37,FALSE,R&D-AGRI PRODUCTION-COMERCLIZ,2001,2008,2006,2014,Other R&D and Knowledge Based,Commercialization,Commercialization
+AA45,FALSE,R&D-AQUACUL/HYDROPONICS-OPSY DEV,2003,2003,2009,2009,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AA47,FALSE,RDTE/AQUACULTURE & HYDROPONICS-OP SYSTEM DEVELOP,2003,2008,2005,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AA91,FALSE,OTHER AGRICULTURE (BASIC),2001,2009,2004,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AA91,TRUE,R&D- AGRICULTURE: OTHER (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AA92,FALSE,R&D-OTHER AGRI-A RES/EXPL DEV,2001,2009,2003,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AA92,TRUE,R&D- AGRICULTURE: OTHER (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AA93,FALSE,OTHER AGRICULTURE (ADVANCED),2002,2009,2005,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AA93,TRUE,R&D- AGRICULTURE: OTHER (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AA94,FALSE,R&D- AGRICULTURE: OTHER (ENGINEERING DEVELOPMENT),2003,2020,2005,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AA95,FALSE,OTHER AGRICULTURE (OPERATIONAL),2001,2009,2001,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AA95,TRUE,R&D- AGRICULTURE: OTHER (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2022,2021,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AA96,FALSE,R&D-OTHER AGRI-MGMT SUP,2001,2009,2001,2020,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AA96,TRUE,R&D- AGRICULTURE: OTHER (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AA97,FALSE,R&D-OTHER AGRI-COMERCLIZ,2009,2020,2012,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AB11,FALSE,R&D-CRIME PREVENT & CONT-B RES,2001,2020,2006,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AB11,TRUE,COMMUNITY AND REGIONAL DEVELOPMENT R&D SERVICES; COMMUNITY DEVELOPMENT; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AB12,FALSE,R&D-CRIME PREVENT & CONT-A RES/EXPL,2001,2020,2005,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AB12,TRUE,COMMUNITY AND REGIONAL DEVELOPMENT R&D SERVICES; COMMUNITY DEVELOPMENT; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AB13,FALSE,R&D-CRIME PREVENT & CONT-ADV DEV,2001,2020,2006,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AB13,TRUE,COMMUNITY AND REGIONAL DEVELOPMENT R&D SERVICES; COMMUNITY DEVELOPMENT; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AB14,FALSE,R&D-CRIME PREVENT & CONT-ENG DEV,2001,2009,2006,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AB14,TRUE,COMMUNITY AND REGIONAL DEVELOPMENT R&D SERVICES; COMMUNITY DEVELOPMENT; R&D ADMINISTRATIVE EXPENSES,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AB15,FALSE,R&D-CRIME PREVENT & CONT-OPSY DEV,2002,2020,2006,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AB15,TRUE,COMMUNITY & REGIONAL DEVELOPMENT R&D SVCS; COMMUNITY DEVELOPMENT; R&D FACILITIES & MAJ EQUIP,2023,2023,2023,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AB16,FALSE,R&D-CRIME PREVENT & CONT-MGMT SUP,2005,2009,2010,2010,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AB17,FALSE,R&D-CRIME PREVENT & CONT-COMERCLIZ,2001,2009,2007,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AB21,FALSE,R&D- COMMUNITY SVC/DEVELOP: FIRE PREVENTION/CONTROL (BASIC RESEARCH),2001,2020,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AB21,TRUE,COMMUNITY AND REGIONAL DEVELOPMENT R&D SERVICES; AREA AND REGIONAL DEVELOPMENT; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AB22,FALSE,R&D-FIRE PREVENT & CONT-A RES/EXPL,2001,2020,2003,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AB22,TRUE,COMMUNITY AND REGIONAL DEVELOPMENT R&D SERVICES; AREA AND REGIONAL DEVELOPMENT; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AB23,FALSE,R&D-FIRE PREVENT & CONT-ADV DEV,2002,2020,2003,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AB23,TRUE,COMMUNITY & REGIONAL DEVELOPMENT R&D SVCS; AREA & REGIONAL DEVELOPMENT; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AB24,FALSE,R&D-FIRE PREVENT & CONT-ENG DEV,2003,2020,2007,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AB24,TRUE,COMMUNITY & REGIONAL DEVELOPMENT R&D SVCS; AREA & REGIONAL DEVELOPMENT; R&D ADMINISTRATIVE EXPENSES,2022,2022,2022,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AB25,FALSE,R&D-FIRE PREVENT & CONT-OPSY DEV,2004,2020,2004,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AB25,TRUE,COMMUNITY & REGIONAL DEVELOPMENT R&D SVCS; AREA & REGIONAL DEVELOPMENT; R&D FACILITIES & MAJ EQUIP,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AB26,FALSE,R&D-FIRE PREVENT & CONT-MGMT SUP,2001,2009,2005,2020,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AB26,TRUE,R&D- COMMUNITY SVC/DEVELOP: FIRE PREVENTION/CONTROL (MANAGEMENT/SUPPORT),2020,2022,2020,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AB27,FALSE,R&D-FIRE PREVENT & CONT-COMERCLIZ,2004,2009,2007,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AB31,FALSE,R&D-RURAL SVCS & DEVELOP-B RES,2004,2009,2006,2020,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AB31,TRUE,R&D- COMMUNITY SERVICE/DEVELOPMENT: RURAL (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AB32,FALSE,R&D-RURAL SVCS & DEVELOP-A RES/EXPL,2003,2020,2006,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AB33,FALSE,R&D-RURAL SVCS & DEVELOP-ADV DEV,2001,2020,2004,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AB34,FALSE,R&D-RURAL SVCS & DEVELOP-ENG DEV,2001,2020,2001,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AB36,FALSE,R&D-RURAL SVCS & DEVELOP-MGMT SUP,2002,2009,2004,2020,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AB36,TRUE,R&D- COMMUNITY SERVICE/DEVELOPMENT: RURAL (MANAGEMENT/SUPPORT),2020,2022,2020,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AB37,FALSE,R&D-RURAL SVCS & DEVELOP-COMERCLIZ,2006,2007,2007,2021,Other R&D and Knowledge Based,Commercialization,Commercialization
+AB41,FALSE,R&D-URBAN SVCS & DEVELOP-B RES,2004,2009,2006,2015,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AB41,TRUE,R&D- COMMUNITY SERVICE/DEVELOPMENT: URBAN (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AB42,FALSE,R&D-URBAN SVCS & DEVELOP-A RES/EXPL,2004,2009,2005,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AB43,FALSE,R&D-URBAN SVCS & DEVELOP-ADV DEV,2006,2006,2007,2007,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AB44,FALSE,R&D-URBAN SVCS & DEVELOP-ENG DEV,2007,2009,2008,2009,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AB44,TRUE,R&D- COMMUNITY SERVICE/DEVELOPMENT: URBAN (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AB45,FALSE,R&D-URBAN SVCS & DEVELOP-OPSY DEV,2003,2008,2005,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AB46,FALSE,R&D-URBAN SVCS & DEVELOP-MGMT SUP,2001,2009,2001,2020,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AB47,FALSE,R&D-URBAN SVCS & DEVELOP-COMERCLIZ,2004,2008,2005,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AB91,FALSE,R&D-OTHER SVC & DEVELOP-B RES,2001,2009,2002,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AB91,TRUE,R&D- COMMUNITY SERVICE/DEVELOPMENT: OTHER (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AB92,FALSE,R&D-OTHER SVC & DEVELOP-A RES/EXPL,2001,2009,2002,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AB92,TRUE,R&D- COMMUNITY SERVICE/DEVELOPMENT: OTHER (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AB93,FALSE,R&D-OTHER SVC & DEVELOP-ADV DEV,2001,2020,2003,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AB94,FALSE,R&D-OTHER SVC & DEVELOP-ENG DEV,2001,2009,2002,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AB94,TRUE,R&D- COMMUNITY SERVICE/DEVELOPMENT: OTHER (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AB95,FALSE,R&D-OTHER SVC & DEVELOP-OPSY DEV,2002,2009,2003,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AB95,TRUE,R&D- COMMUNITY SERVICE/DEVELOPMENT: OTHER (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AB96,FALSE,R&D-OTHER SVC & DEVELOP-MGMT SUP,2001,2009,2002,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AB96,TRUE,R&D- COMMUNITY SERVICE/DEVELOPMENT: OTHER (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AB97,FALSE,R&D-OTHER SVC & DEVELOP-COMERCLIZ,2001,2009,2005,2022,Other R&D and Knowledge Based,Commercialization,Commercialization
+AB97,TRUE,R&D- COMMUNITY SERVICE/DEVELOPMENT: OTHER (COMMERCIALIZED),2020,2023,2020,2023,Other R&D and Knowledge Based,Commercialization,Commercialization
+AC11,FALSE,R&D- DEFENSE SYSTEM: AIRCRAFT (BASIC RESEARCH),2001,2020,2001,2022,Aircraft,Basic Research (6.1),Basic Research (6.1)
+AC11,TRUE,NATIONAL DEFENSE R&D SERVICES; DEPARTMENT OF DEFENSE - MILITARY; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AC12,FALSE,R&D-AIRCRAFT-A RES/EXPL DEV,2001,2020,2003,2022,Aircraft,Applied Research (6.2),Applied Research (6.2)
+AC12,TRUE,NATIONAL DEFENSE R&D SERVICES; DEPARTMENT OF DEFENSE - MILITARY; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AC13,FALSE,R&D- DEFENSE SYSTEM: AIRCRAFT (ADVANCED DEVELOPMENT),2001,2020,2001,2022,Aircraft,Advanced Development,Advanced Development
+AC13,TRUE,NATIONAL DEFENSE R&D SERVICES; DEPARTMENT OF DEFENSE - MILITARY; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AC14,FALSE,R&D- DEFENSE SYSTEM: AIRCRAFT (ENGINEERING DEVELOPMENT),2001,2020,2004,2022,Aircraft,Engineering Development,Engineering Development
+AC14,TRUE,NATIONAL DEFENSE R&D SERVICES; DEPARTMENT OF DEFENSE - MILITARY; R&D ADMINISTRATIVE EXPENSES,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AC15,FALSE,R&D- DEFENSE SYSTEM: AIRCRAFT (OPERATIONAL SYSTEMS DEVELOPMENT),2001,2020,2001,2022,Aircraft,Operational Systems Development,Operational Systems Development
+AC15,TRUE,NATIONAL DEFENSE R&D SVCS; DEPARTMENT OF DEFENSE - MILITARY; R&D FACILITIES & MAJ EQUIP,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AC16,FALSE,R&D-AIRCRAFT-MGMT SUP,2001,2009,2006,2022,Aircraft,R&D administrative and operational expenses,R&D administrative and operational expenses
+AC16,TRUE,R&D- DEFENSE SYSTEM: AIRCRAFT (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Aircraft,R&D administrative and operational expenses,R&D administrative and operational expenses
+AC17,FALSE,R&D-AIRCRAFT-COMERCLIZ,2001,2009,2006,2022,Aircraft,Commercialization,Commercialization
+AC17,TRUE,R&D- DEFENSE SYSTEM: AIRCRAFT (COMMERCIALIZED),2020,2023,2020,2023,Aircraft,Commercialization,Commercialization
+AC21,FALSE,R&D-MISSILE & SPACE SYS-B RES,2001,2020,2006,2022,Space Systems,Basic Research (6.1),Basic Research (6.1)
+AC21,TRUE,NATIONAL DEFENSE R&D SERVICES; ATOMIC ENERGY DEFENSE ACTIVITIES; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AC22,FALSE,R&D-MISSILE & SPACE SYS-A RES/EXPL,2001,2020,2006,2022,Space Systems,Applied Research (6.2),Applied Research (6.2)
+AC22,TRUE,NATIONAL DEFENSE R&D SERVICES; ATOMIC ENERGY DEFENSE ACTIVITIES; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AC23,FALSE,R&D-MISSILE & SPACE SYS-ADV DEV,2001,2020,2005,2022,Space Systems,Advanced Development,Advanced Development
+AC23,TRUE,NATIONAL DEFENSE R&D SERVICES; ATOMIC ENERGY DEFENSE ACTIVITIES; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AC24,FALSE,R&D-MISSILE & SPACE SYS-ENG DEV,2001,2020,2004,2022,Space Systems,Engineering Development,Engineering Development
+AC24,TRUE,NATIONAL DEFENSE R&D SERVICES; ATOMIC ENERGY DEFENSE ACTIVITIES; R&D ADMINISTRATIVE EXPENSES,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AC25,FALSE,R&D-MISSILE & SPACE SYS-OPSY DEV,2001,2020,2006,2022,Space Systems,Operational Systems Development,Operational Systems Development
+AC25,TRUE,NATIONAL DEFENSE R&D SVCS; ATOMIC ENERGY DEFENSE ACTIVITIES; R&D FACILITIES & MAJ EQUIP,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AC26,FALSE,R&D-MISSILE & SPACE SYS-MGMT SUP,2001,2009,2006,2022,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AC26,TRUE,R&D- DEFENSE SYSTEM: MISSILE/SPACE SYSTEMS (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AC27,FALSE,R&D-MISSILE & SPACE SYS-COMERCLIZ,2001,2009,2006,2021,Space Systems,Commercialization,Commercialization
+AC27,TRUE,R&D- DEFENSE SYSTEM: MISSILE/SPACE SYSTEMS (COMMERCIALIZED),2020,2023,2020,2023,Space Systems,Commercialization,Commercialization
+AC31,FALSE,R&D- DEFENSE SYSTEM: SHIPS (BASIC RESEARCH),2001,2020,2005,2022,Ships & Submarines,Basic Research (6.1),Basic Research (6.1)
+AC31,TRUE,NATIONAL DEFENSE R&D SERVICES; DEFENSE-RELATED ACTIVITIES; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AC32,FALSE,R&D- DEFENSE SYSTEM: SHIPS (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2001,2020,2006,2022,Ships & Submarines,Applied Research (6.2),Applied Research (6.2)
+AC32,TRUE,NATIONAL DEFENSE R&D SERVICES; DEFENSE-RELATED ACTIVITIES; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AC33,FALSE,R&D- DEFENSE SYSTEM: SHIPS (ADVANCED DEVELOPMENT),2001,2020,2006,2022,Ships & Submarines,Advanced Development,Advanced Development
+AC33,TRUE,NATIONAL DEFENSE R&D SERVICES; DEFENSE-RELATED ACTIVITIES; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AC34,FALSE,R&D- DEFENSE SYSTEM: SHIPS (ENGINEERING DEVELOPMENT),2001,2020,2005,2022,Ships & Submarines,Engineering Development,Engineering Development
+AC34,TRUE,NATIONAL DEFENSE R&D SERVICES; DEFENSE-RELATED ACTIVITIES; R&D ADMINISTRATIVE EXPENSES,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AC35,FALSE,R&D- DEFENSE SYSTEM: SHIPS (OPERATIONAL SYSTEMS DEVELOPMENT),2001,2020,2005,2022,Ships & Submarines,Operational Systems Development,Operational Systems Development
+AC35,TRUE,NATIONAL DEFENSE R&D SVCS; DEFENSE-RELATED ACTIVITIES; R&D FACILITIES & MAJ EQUIP,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AC36,FALSE,DEFENSE SHIPS (MANAGEMENT/SUPPORT),2001,2009,2005,2022,Ships & Submarines,R&D administrative and operational expenses,R&D administrative and operational expenses
+AC36,TRUE,R&D- DEFENSE SYSTEM: SHIPS (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Ships & Submarines,R&D administrative and operational expenses,R&D administrative and operational expenses
+AC37,FALSE,R&D-SHIPS-COMERCLIZ,2001,2009,2005,2021,Ships & Submarines,Commercialization,Commercialization
+AC37,TRUE,R&D- DEFENSE SYSTEM: SHIPS (COMMERCIALIZED),2020,2022,2020,2022,Ships & Submarines,Commercialization,Commercialization
+AC41,FALSE,DEFENSE TANK - AUTOMOTIVE (BASIC),2001,2009,2005,2022,Land Vehicles,Basic Research (6.1),Basic Research (6.1)
+AC41,TRUE,R&D- DEFENSE SYSTEM: TANK/AUTOMOTIVE (BASIC RESEARCH),2020,2023,2020,2023,Land Vehicles,Basic Research (6.1),Basic Research (6.1)
+AC42,FALSE,R&D-TANK - AUTOMOTIVE-A RES/EXPL DE,2001,2009,2006,2021,Land Vehicles,Applied Research (6.2),Applied Research (6.2)
+AC42,TRUE,R&D- DEFENSE SYSTEM: TANK/AUTOMOTIVE (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Land Vehicles,Applied Research (6.2),Applied Research (6.2)
+AC43,FALSE,R&D-TANK - AUTOMOTIVE-ADV DEV,2001,2009,2006,2022,Land Vehicles,Advanced Development,Advanced Development
+AC43,TRUE,R&D- DEFENSE SYSTEM: TANK/AUTOMOTIVE (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Land Vehicles,Advanced Development,Advanced Development
+AC44,FALSE,R&D-TANK - AUTOMOTIVE-ENG DEV,2001,2009,2006,2021,Land Vehicles,Engineering Development,Engineering Development
+AC44,TRUE,R&D- DEFENSE SYSTEM: TANK/AUTOMOTIVE (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Land Vehicles,Engineering Development,Engineering Development
+AC45,FALSE,R&D-TANK - AUTOMOTIVE-OPSY DEV,2001,2009,2004,2021,Land Vehicles,Operational Systems Development,Operational Systems Development
+AC45,TRUE,R&D- DEFENSE SYSTEM: TANK/AUTOMOTIVE (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2022,2020,2022,Land Vehicles,Operational Systems Development,Operational Systems Development
+AC46,FALSE,R&D-TANK - AUTOMOTIVE-MGMT SUP,2001,2009,2006,2022,Land Vehicles,R&D administrative and operational expenses,R&D administrative and operational expenses
+AC47,FALSE,R&D-TANK - AUTOMOTIVE-COMERCLIZ,2001,2009,2006,2022,Land Vehicles,Commercialization,Commercialization
+AC51,FALSE,WEAPONS (BASIC),2001,2009,2004,2022,Ordnance and Missiles,Basic Research (6.1),Basic Research (6.1)
+AC51,TRUE,R&D- DEFENSE SYSTEM: WEAPONS (BASIC RESEARCH),2020,2023,2020,2023,Ordnance and Missiles,Basic Research (6.1),Basic Research (6.1)
+AC52,FALSE,WEAPONS (APPLIED/EXPLORATORY),2001,2009,2002,2022,Ordnance and Missiles,Applied Research (6.2),Applied Research (6.2)
+AC52,TRUE,R&D- DEFENSE SYSTEM: WEAPONS (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Ordnance and Missiles,Applied Research (6.2),Applied Research (6.2)
+AC53,FALSE,WEAPONS (ADVANCED),2001,2009,2004,2022,Ordnance and Missiles,Advanced Development,Advanced Development
+AC53,TRUE,R&D- DEFENSE SYSTEM: WEAPONS (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Ordnance and Missiles,Advanced Development,Advanced Development
+AC54,FALSE,WEAPONS (ENGINEERING),2001,2009,2003,2021,Ordnance and Missiles,Engineering Development,Engineering Development
+AC54,TRUE,R&D- DEFENSE SYSTEM: WEAPONS (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Ordnance and Missiles,Engineering Development,Engineering Development
+AC55,FALSE,WEAPONS (OPERATIONAL),2001,2009,2004,2022,Ordnance and Missiles,Operational Systems Development,Operational Systems Development
+AC55,TRUE,R&D- DEFENSE SYSTEM: WEAPONS (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Ordnance and Missiles,Operational Systems Development,Operational Systems Development
+AC56,FALSE,WEAPONS (MANAGEMENT/SUPPORT),2001,2009,2006,2022,Ordnance and Missiles,R&D administrative and operational expenses,R&D administrative and operational expenses
+AC56,TRUE,R&D- DEFENSE SYSTEM: WEAPONS (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Ordnance and Missiles,R&D administrative and operational expenses,R&D administrative and operational expenses
+AC57,FALSE,R&D-WEAPONS-COMERCLIZ,2001,2009,2006,2022,Ordnance and Missiles,Commercialization,Commercialization
+AC57,TRUE,R&D- DEFENSE SYSTEM: WEAPONS (COMMERCIALIZED),2020,2023,2020,2023,Ordnance and Missiles,Commercialization,Commercialization
+AC61,FALSE,R&D-ELECTRONICS & COMM EQ-B RES,2001,2009,2004,2022,"Electronics, Comms, & Sensors",Basic Research (6.1),Basic Research (6.1)
+AC61,TRUE,R&D- DEFENSE SYSTEM: ELECTRONICS/COMMUNICATION EQUIPMENT (BASIC RESEARCH),2020,2023,2020,2023,"Electronics, Comms, & Sensors",Basic Research (6.1),Basic Research (6.1)
+AC62,FALSE,R&D-ELECTRONICS & COMM EQ-A RES/EXP,2001,2009,2002,2022,"Electronics, Comms, & Sensors",Applied Research (6.2),Applied Research (6.2)
+AC62,TRUE,R&D- DEFENSE SYSTEM: ELECTRONICS/COMMUNICATION EQUIPMENT (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,"Electronics, Comms, & Sensors",Applied Research (6.2),Applied Research (6.2)
+AC63,FALSE,R&D-ELECTRONICS & COMM EQ-ADV DEV,2001,2009,2001,2022,"Electronics, Comms, & Sensors",Advanced Development,Advanced Development
+AC63,TRUE,R&D- DEFENSE SYSTEM: ELECTRONICS/COMMUNICATION EQUIPMENT (ADVANCED DEVELOPMENT),2020,2023,2020,2023,"Electronics, Comms, & Sensors",Advanced Development,Advanced Development
+AC64,FALSE,R&D-ELECTRONICS & COMM EQ-ENG DEV,2001,2009,2002,2022,"Electronics, Comms, & Sensors",Engineering Development,Engineering Development
+AC64,TRUE,R&D- DEFENSE SYSTEM: ELECTRONICS/COMMUNICATION EQUIPMENT (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,"Electronics, Comms, & Sensors",Engineering Development,Engineering Development
+AC65,FALSE,R&D-ELECTRONICS & COMM EQ-OPSY DEV,2001,2009,2002,2022,"Electronics, Comms, & Sensors",Operational Systems Development,Operational Systems Development
+AC65,TRUE,R&D- DEFENSE SYSTEM: ELECTRONICS/COMMUNICATION EQUIPMENT (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,"Electronics, Comms, & Sensors",Operational Systems Development,Operational Systems Development
+AC66,FALSE,R&D-ELECTRONICS & COMM EQ-MGMT SUP,2001,2009,2003,2022,"Electronics, Comms, & Sensors",R&D administrative and operational expenses,R&D administrative and operational expenses
+AC66,TRUE,R&D- DEFENSE SYSTEM: ELECTRONICS/COMMUNICATION EQUIPMENT (MANAGEMENT/SUPPORT),2020,2023,2020,2023,"Electronics, Comms, & Sensors",R&D administrative and operational expenses,R&D administrative and operational expenses
+AC67,FALSE,R&D-ELECTRONICS & COMM EQ-COMERCLIZ,2001,2009,2005,2022,"Electronics, Comms, & Sensors",Commercialization,Commercialization
+AC67,TRUE,R&D- DEFENSE SYSTEM: ELECTRONICS/COMMUNICATION EQUIPMENT (COMMERCIALIZED),2020,2023,2020,2023,"Electronics, Comms, & Sensors",Commercialization,Commercialization
+AC91,FALSE,R&D-MISC HARD GOODS-B RES,2001,2009,2002,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AC91,TRUE,R&D- DEFENSE SYSTEM: MISCELLANEOUS HARD GOODS (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AC92,FALSE,R&D-MISC HARD GOODS-A RES/EXPL DEV,2001,2009,2006,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AC92,TRUE,R&D- DEFENSE SYSTEM: MISCELLANEOUS HARD GOODS (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AC93,FALSE,R&D-MISC HARD GOODS-ADV DEV,2001,2009,2006,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AC93,TRUE,R&D- DEFENSE SYSTEM: MISCELLANEOUS HARD GOODS (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AC94,FALSE,R&D-MISC HARD GOODS-ENG DEV,2001,2009,2003,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AC94,TRUE,R&D- DEFENSE SYSTEM: MISCELLANEOUS HARD GOODS (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AC95,FALSE,R&D-MISC HARD GOODS-OPSY DEV,2001,2009,2006,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AC95,TRUE,R&D- DEFENSE SYSTEM: MISCELLANEOUS HARD GOODS (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AC96,FALSE,R&D-MISC HARD GOODS-MGMT SUP,2001,2009,2006,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AC96,TRUE,R&D- DEFENSE SYSTEM: MISCELLANEOUS HARD GOODS (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AC97,FALSE,R&D-MISC HARD GOODS-COMERCLIZ,2001,2009,2006,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AC97,TRUE,R&D- DEFENSE SYSTEM: MISCELLANEOUS HARD GOODS (COMMERCIALIZED),2020,2023,2020,2023,Other R&D and Knowledge Based,Commercialization,Commercialization
+AD11,FALSE,AMMUNITION (BASIC),2001,2009,2004,2022,Ordnance and Missiles,Basic Research (6.1),Basic Research (6.1)
+AD11,TRUE,R&D- DEFENSE OTHER: AMMUNITION (BASIC RESEARCH),2020,2023,2020,2023,Ordnance and Missiles,Basic Research (6.1),Basic Research (6.1)
+AD12,FALSE,AMMUNITION (APPLIED/EXPLORATORY),2001,2009,2006,2022,Ordnance and Missiles,Applied Research (6.2),Applied Research (6.2)
+AD12,TRUE,R&D- DEFENSE OTHER: AMMUNITION (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2022,2020,2022,Ordnance and Missiles,Applied Research (6.2),Applied Research (6.2)
+AD13,FALSE,AMMUNITION (ADVANCED),2001,2009,2006,2022,Ordnance and Missiles,Advanced Development,Advanced Development
+AD13,TRUE,R&D- DEFENSE OTHER: AMMUNITION (ADVANCED DEVELOPMENT),2020,2023,2021,2023,Ordnance and Missiles,Advanced Development,Advanced Development
+AD14,FALSE,AMMUNITION (ENGINEERING),2001,2009,2006,2021,Ordnance and Missiles,Engineering Development,Engineering Development
+AD14,TRUE,R&D- DEFENSE OTHER: AMMUNITION (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Ordnance and Missiles,Engineering Development,Engineering Development
+AD15,FALSE,AMMUNITION (OPERATIONAL),2001,2009,2005,2020,Ordnance and Missiles,Operational Systems Development,Operational Systems Development
+AD16,FALSE,R&D- DEFENSE OTHER: AMMUNITION (MANAGEMENT/SUPPORT),2001,2020,2006,2021,Ordnance and Missiles,R&D administrative and operational expenses,R&D administrative and operational expenses
+AD17,FALSE,R&D-AMMUNITION-COMERCLIZ,2002,2020,2006,2021,Ordnance and Missiles,Commercialization,Commercialization
+AD20,FALSE,R&D-SVCS,2004,2005,2004,2010,Other R&D and Knowledge Based,Uncategorized R&D,Uncategorized R&D
+AD21,FALSE,SERVICES (BASIC),2001,2009,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AD21,TRUE,R&D- DEFENSE OTHER: SERVICES (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AD22,FALSE,SERVICES (APPLIED/EXPLORATORY),2001,2009,2001,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AD22,TRUE,R&D- DEFENSE OTHER: SERVICES (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AD23,FALSE,SERVICES (ADVANCED),2001,2009,2001,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AD23,TRUE,R&D- DEFENSE OTHER: SERVICES (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AD24,FALSE,SERVICES (ENGINEERING),2001,2009,2002,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AD24,TRUE,R&D- DEFENSE OTHER: SERVICES (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AD25,FALSE,SERVICES (OPERATIONAL),2001,2009,2001,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AD25,TRUE,R&D- DEFENSE OTHER: SERVICES (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AD26,FALSE,SERVICES (MANAGEMENT/SUPPORT),2001,2009,2001,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AD26,TRUE,R&D- DEFENSE OTHER: SERVICES (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AD27,FALSE,R&D-SVCS-COMERCLIZ,2001,2009,2005,2022,Other R&D and Knowledge Based,Commercialization,Commercialization
+AD27,TRUE,R&D- DEFENSE OTHER: SERVICES (COMMERCIALIZED),2020,2023,2020,2023,Other R&D and Knowledge Based,Commercialization,Commercialization
+AD31,FALSE,SUBSISTENCE (BASIC),2001,2009,2004,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AD31,TRUE,R&D- DEFENSE OTHER: SUBSISTENCE (BASIC RESEARCH),2020,2022,2020,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AD32,FALSE,SUBSISTENCE (APPLIED/EXPLORATORY),2001,2009,2001,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AD32,TRUE,R&D- DEFENSE OTHER: SUBSISTENCE (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AD33,FALSE,SUBSISTENCE (ADVANCED),2001,2009,2006,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AD33,TRUE,R&D- DEFENSE OTHER: SUBSISTENCE (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AD34,FALSE,SUBSISTENCE (ENGINEERING),2001,2020,2004,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AD35,FALSE,SUBSISTENCE (OPERATIONAL),2002,2009,2006,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AD35,TRUE,R&D- DEFENSE OTHER: SUBSISTENCE (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AD36,FALSE,SUBSISTENCE (MANAGEMENT/SUPPORT),2001,2020,2004,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AD37,FALSE,R&D-SUBSISTENCE-COMERCLIZ,2002,2009,2009,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AD41,FALSE,"R&D-TEXTILES,CLOTHING,ETC-B RES",2001,2009,2006,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AD41,TRUE,R&D- DEFENSE OTHER: TEXTILES/CLOTHING/EQUIPAGE (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AD42,FALSE,"R&D-TEXTILES,CLOTHING,ETC-A RES/EXP",2001,2009,2006,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AD42,TRUE,R&D- DEFENSE OTHER: TEXTILES/CLOTHING/EQUIPAGE (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AD43,FALSE,"R&D-TEXTILES,CLOTHING,ETC-ADV DEV",2001,2009,2006,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AD43,TRUE,R&D- DEFENSE OTHER: TEXTILES/CLOTHING/EQUIPAGE (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AD44,FALSE,"R&D-TEXTILES,CLOTHING,ETC-ENG DEV",2001,2009,2005,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AD44,TRUE,R&D- DEFENSE OTHER: TEXTILES/CLOTHING/EQUIPAGE (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AD45,FALSE,"R&D-TEXTILES,CLOTHING,ETC-OPSY DEV",2001,2009,2006,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AD45,TRUE,R&D- DEFENSE OTHER: TEXTILES/CLOTHING/EQUIPAGE (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AD46,FALSE,"R&D-TEXTILES,CLOTHING,ETC-MGMT SUP",2005,2009,2009,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AD46,TRUE,R&D- DEFENSE OTHER: TEXTILES/CLOTHING/EQUIPAGE (MANAGEMENT/SUPPORT),2020,2022,2020,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AD47,FALSE,"R&D-TEXTILES,CLOTHING,ETC-COMERCLIZ",2004,2008,2005,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AD47,TRUE,R&D- DEFENSE OTHER: TEXTILES/CLOTHING/EQUIPAGE (COMMERCIALIZED),2020,2022,2020,2022,Other R&D and Knowledge Based,Commercialization,Commercialization
+AD51,FALSE,FUELS AND LUBRICANTS (BASIC),2001,2009,2003,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AD51,TRUE,R&D- DEFENSE OTHER: FUELS/LUBRICANTS (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AD52,FALSE,R&D-FUELS & LUBRICANTS-A RES/EXPL D,2001,2009,2004,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AD52,TRUE,R&D- DEFENSE OTHER: FUELS/LUBRICANTS (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AD53,FALSE,FUELS AND LUBRICANTS (ADVANCED),2001,2009,2003,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AD54,FALSE,R&D- DEFENSE OTHER: FUELS/LUBRICANTS (ENGINEERING DEVELOPMENT),2001,2020,2002,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AD55,FALSE,FUELS AND LUBRICANTS (OPERATIONAL),2001,2009,2005,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AD56,FALSE,R&D-FUELS & LUBRICANTS-MGMT SUP,2001,2007,2004,2019,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AD57,FALSE,R&D-FUELS & LUBRICANTS-COMERCLIZ,2002,2020,2006,2021,Other R&D and Knowledge Based,Commercialization,Commercialization
+AD61,FALSE,CONSTRUCTION (BASIC),2001,2009,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AD61,TRUE,R&D- DEFENSE OTHER: CONSTRUCTION (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AD62,FALSE,CONSTRUCTION (APPLIED/EXPLORATORY),2001,2009,2002,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AD62,TRUE,R&D- DEFENSE OTHER: CONSTRUCTION (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AD63,FALSE,CONSTRUCTION (ADVANCED),2001,2009,2005,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AD64,FALSE,CONSTRUCTION (ENGINEERING),2001,2009,2001,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AD64,TRUE,R&D- DEFENSE OTHER: CONSTRUCTION (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AD65,FALSE,CONSTRUCTION (OPERATIONAL),2001,2009,2003,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AD65,TRUE,R&D- DEFENSE OTHER: CONSTRUCTION (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AD66,FALSE,CONSTRUCTION (MANAGEMENT/SUPPORT),2001,2009,2001,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AD66,TRUE,R&D- DEFENSE OTHER: CONSTRUCTION (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AD67,FALSE,R&D-CONSTRUCT-COMERCLIZ,2002,2020,2006,2022,Other R&D and Knowledge Based,Commercialization,Commercialization
+AD91,FALSE,OTHER DEFENSE (BASIC),2001,2009,2003,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AD91,TRUE,R&D- DEFENSE OTHER: OTHER (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AD92,FALSE,OTHER DEFENSE (APPLIED/EXPLORATORY),2001,2009,2005,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AD92,TRUE,R&D- DEFENSE OTHER: OTHER (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AD93,FALSE,OTHER DEFENSE (ADVANCED),2001,2009,2006,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AD93,TRUE,R&D- DEFENSE OTHER: OTHER (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AD94,FALSE,OTHER DEFENSE (ENGINEERING),2001,2009,2002,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AD94,TRUE,R&D- DEFENSE OTHER: OTHER (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AD95,FALSE,OTHER DEFENSE (OPERATIONAL),2001,2009,2005,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AD95,TRUE,R&D- DEFENSE OTHER: OTHER (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AD96,FALSE,OTHER DEFENSE (MANAGEMENT/SUPPORT),2001,2009,2005,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AD96,TRUE,R&D- DEFENSE OTHER: OTHER (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AD97,FALSE,R&D-OTHER DEFENSE-COMERCLIZ,2001,2009,2005,2022,Other R&D and Knowledge Based,Commercialization,Commercialization
+AD97,TRUE,R&D- DEFENSE OTHER: OTHER (COMMERCIALIZED),2020,2023,2020,2023,Other R&D and Knowledge Based,Commercialization,Commercialization
+AE11,FALSE,R&D-EMPL GROW-PRODUCTIVTY-B RES,2004,2020,2007,2020,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AE12,FALSE,R&D-EMPL GROW-PRODUCTIVTY-A RES/EXP,2008,2009,2009,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AE13,FALSE,R&D-EMPL GROW-PRODUCTIVTY-ADV DEV,2001,2005,2004,2010,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AE14,FALSE,R&D-EMPL GROW-PRODUCTIVTY-ENG DEV,2004,2020,2005,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AE16,FALSE,R&D-EMPL GROW-PRODUCTIVTY-MGMT SUP,2002,2009,2005,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AE16,TRUE,R&D- ECONOMIC GROWTH: EMPLOYMENT GROWTH/PRODUCTIVITY (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AE21,FALSE,R&D-PROD/SERV IMPROVEMENT-B RES,2001,2009,2004,2020,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AE21,TRUE,R&D- ECONOMIC GROWTH: PRODUCT/SERVICE IMPROVEMENT (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AE22,FALSE,R&D-PROD/SERV IMPROVEMENT-A RES/EXP,2001,2009,2002,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AE22,TRUE,R&D- ECONOMIC GROWTH: PRODUCT/SERVICE IMPROVEMENT (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AE23,FALSE,R&D-PROD/SERV IMPROVEMENT-ADV DEV,2001,2009,2004,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AE23,TRUE,R&D- ECONOMIC GROWTH: PRODUCT/SERVICE IMPROVEMENT (ADVANCED DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AE24,FALSE,R&D-PROD/SERV IMPROVEMENT-ENG DEV,2001,2009,2001,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AE24,TRUE,R&D- ECONOMIC GROWTH: PRODUCT/SERVICE IMPROVEMENT (ENGINEERING DEVELOPMENT),2020,2023,2021,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AE25,FALSE,R&D-PROD/SERV IMPROVEMENT-OPSY DEV,2002,2009,2006,2019,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AE25,TRUE,R&D- ECONOMIC GROWTH: PRODUCT/SERVICE IMPROVEMENT (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AE26,FALSE,R&D-PROD/SERV IMPROVEMENT-MGMT SUP,2001,2009,2002,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AE26,TRUE,R&D- ECONOMIC GROWTH: PRODUCT/SERVICE IMPROVEMENT (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AE27,FALSE,R&D-PROD/SERV IMPROVEMENT-COMERCLIZ,2001,2009,2006,2021,Other R&D and Knowledge Based,Commercialization,Commercialization
+AE27,TRUE,R&D- ECONOMIC GROWTH: PRODUCT/SERVICE IMPROVEMENT (COMMERCIALIZED),2020,2023,2020,2023,Other R&D and Knowledge Based,Commercialization,Commercialization
+AE31,FALSE,MANUFACTURING TECHNOLOGY (BASIC),2001,2009,2004,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AE31,TRUE,R&D- ECONOMIC GROWTH: MANUFACTURING TECHNOLOGY (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AE32,FALSE,R&D-MANUFACTURING TECH-A RES/EXPL D,2001,2009,2006,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AE32,TRUE,R&D- ECONOMIC GROWTH: MANUFACTURING TECHNOLOGY (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AE33,FALSE,MANUFACTURING TECHNOLOGY (ADVANCED),2001,2009,2003,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AE33,TRUE,R&D- ECONOMIC GROWTH: MANUFACTURING TECHNOLOGY (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AE34,FALSE,R&D-MANUFACTURING TECH-ENG DEV,2001,2009,2005,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AE34,TRUE,R&D- ECONOMIC GROWTH: MANUFACTURING TECHNOLOGY (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AE35,FALSE,R&D-MANUFACTURING TECH-OPSY DEV,2001,2009,2003,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AE35,TRUE,R&D- ECONOMIC GROWTH: MANUFACTURING TECHNOLOGY (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2022,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AE36,FALSE,R&D-MANUFACTURING TECH-MGMT SUP,2001,2009,2005,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AE37,FALSE,R&D-MANUFACTURING TECH-COMERCLIZ,2002,2009,2006,2021,Other R&D and Knowledge Based,Commercialization,Commercialization
+AE37,TRUE,R&D- ECONOMIC GROWTH: MANUFACTURING TECHNOLOGY (COMMERCIALIZED),2020,2023,2020,2023,Other R&D and Knowledge Based,Commercialization,Commercialization
+AE91,FALSE,R&D-ECON GROW-PRODUCTIVTY-B RES,2005,2020,2007,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AE92,FALSE,R&D-ECON GROW-PRODUCTIVTY-A RES/EXP,2001,2009,2003,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AE92,TRUE,R&D- ECONOMIC GROWTH: OTHER (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AE93,FALSE,R&D-ECON GROW-PRODUCTIVTY-ADV DEV,2003,2009,2008,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AE94,FALSE,R&D-ECON GROW-PRODUCTIVTY-ENG DEV,2005,2008,2008,2019,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AE95,FALSE,R&D-ECON GROW-PRODUCTIVTY-OPSY DEV,2005,2009,2006,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AE96,FALSE,R&D-ECON GROW-PRODUCTIVTY-MGMT SUP,2001,2009,2002,2019,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AE96,TRUE,R&D- ECONOMIC GROWTH: OTHER (MANAGEMENT/SUPPORT),2020,2022,2021,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AE97,FALSE,R&D-ECON GROW-PRODUCTIVTY-COMERCLIZ,2003,2005,2006,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AF11,FALSE,R&D- EDUCATION: EDUCATIONAL (BASIC RESEARCH),2001,2020,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AF11,TRUE,"EDUCATION, TRAINING, EMPLOYMENT, & SOCIAL SVCS R&D SVCS; EDUCATION SVCS R&D; BASIC RESEARCH",2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AF12,FALSE,R&D- EDUCATION: EDUCATIONAL (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2001,2020,2001,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AF12,TRUE,"EDUCATION, TRAINING, EMPLOYMENT, & SOCIAL SVCS R&D SVCS; EDUCATION SVCS R&D; APPLIED RESEARCH",2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AF13,FALSE,R&D- EDUCATION: EDUCATIONAL (ADVANCED DEVELOPMENT),2001,2020,2003,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AF13,TRUE,"EDUCATION, TRAINING, EMPLOYMENT, & SOCIAL SVCS R&D SVCS; EDUC SVCS R&D; EXPERIMENTAL DEVELOPMENT",2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AF14,FALSE,R&D- EDUCATION: EDUCATIONAL (ENGINEERING DEVELOPMENT),2001,2020,2002,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AF14,TRUE,"EDUCATION, TRAINING, EMPLOYMENT, & SOCIAL SVCS R&D SVCS; EDUC SVCS R&D; R&D ADMINISTRATIVE EXPENSES",2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AF15,FALSE,R&D- EDUCATION: EDUCATIONAL (OPERATIONAL SYSTEMS DEVELOPMENT),2001,2020,2001,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AF15,TRUE,"EDUCATION, TRAINING, EMPLOYMENT, & SOCIAL SVCS R&D SVCS; EDUC SVCS R&D; R&D FACILITIES & MAJ EQUIP",2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AF16,FALSE,EDUCATION (MANAGEMENT/SUPPORT),2001,2009,2001,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AF16,TRUE,R&D- EDUCATION: EDUCATIONAL (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AF17,FALSE,R&D-EDUCATIONAL-COMERCLIZ,2004,2009,2005,2021,Other R&D and Knowledge Based,Commercialization,Commercialization
+AF17,TRUE,R&D- EDUCATION: EDUCATIONAL (COMMERCIALIZED),2022,2022,2022,2022,Other R&D and Knowledge Based,Commercialization,Commercialization
+AF21,TRUE,"EDUCATION, TRAINING, EMPLOYMENT, & SOCIAL SVCS R&D SVCS; TRAINING & LABOR R&D; BASIC RESEARCH",2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AF22,TRUE,"EDUCATION, TRAINING, EMPLOYMENT, & SOCIAL SVCS R&D SVCS; TRAINING & LABOR R&D; APPLIED RESEARCH",2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AF23,TRUE,"EDUCATION, TRAINING, EMPLOYMENT, & SOCIAL SVCS R&D; TRAINING & LABOR R&D; EXPERIMENTAL DEVELOPMENT",2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AF24,TRUE,"EDUCATION, TRAINING, EMPLOYMENT, & SOCIAL SVCS R&D SVCS; TRAINING & LABOR R&D; R&D ADMIN EXPENSES",2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AF25,TRUE,"EDUCATION, TRAINING, EMPLOYMENT & SOCIAL SVCS R&D; TRAINING & LABOR R&D; R&D FACILITIES & MAJ EQUIP",2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AF31,TRUE,"EDUCATION, TRAINING, EMPLOYMENT, & SOCIAL SVCS R&D SVCS; SOCIAL SVCS R&D; BASIC RESEARCH",2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AF32,TRUE,"EDUCATION, TRAINING, EMPLOYMENT, & SOCIAL SVCS R&D SVCS; SOCIAL SVCS R&D; APPLIED RESEARCH",2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AF33,TRUE,"EDUCATION, TRAINING, EMPLOYMENT, & SOCIAL SVCS R&D SVCS; SOCIAL SVCS R&D; EXPERIMENTAL DEVELOPMENT",2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AF34,TRUE,"EDUCATION, TRAINING, EMPLOYMENT & SOCIAL SVCS R&D SVCS; SOCIAL SVCS R&D; R&D ADMINISTRATIVE EXPENSES",2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AF35,TRUE,"EDUCATION, TRAINING, EMPLOYMENT & SOCIAL SVCS R&D SVCS; SOCIAL SVCS R&D; R&D FACILITIES & MAJ EQUIP",2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AG10,FALSE,R&D-ENERGY - COAL,2005,2007,2005,2007,Other R&D and Knowledge Based,Uncategorized R&D,Uncategorized R&D
+AG11,FALSE,R&D- ENERGY: COAL (BASIC RESEARCH),2001,2020,2004,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AG11,TRUE,ENERGY R&D SERVICES; ENERGY SUPPLY; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AG12,FALSE,COAL (APPLIED/EXPLORATORY),2001,2009,2001,2020,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AG12,TRUE,ENERGY R&D SERVICES; ENERGY SUPPLY; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AG13,FALSE,COAL (ADVANCED),2001,2009,2004,2012,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AG13,TRUE,ENERGY R&D SERVICES; ENERGY SUPPLY; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AG14,FALSE,R&D- ENERGY: COAL (ENGINEERING DEVELOPMENT),2001,2020,2004,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AG14,TRUE,ENERGY R&D SERVICES; ENERGY SUPPLY; R&D ADMINISTRATIVE EXPENSES,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AG15,FALSE,COAL (OPERATIONAL),2001,2007,2004,2015,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AG15,TRUE,ENERGY R&D SERVICES; ENERGY SUPPLY; EXPENSES FOR R&D FACILITIES AND MAJOR EQUIPMENT,2023,2023,2023,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AG16,FALSE,COAL (MANAGEMENT/SUPPORT),2005,2007,2006,2007,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AG17,FALSE,R&D-ENERGY - COAL-COMERCLIZ,2007,2008,2016,2016,Other R&D and Knowledge Based,Commercialization,Commercialization
+AG21,FALSE,R&D- ENERGY: GAS (BASIC RESEARCH),2001,2020,2004,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AG21,TRUE,ENERGY R&D SERVICES; ENERGY CONSERVATION; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AG22,FALSE,R&D- ENERGY: GAS (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2001,2020,2004,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AG22,TRUE,ENERGY R&D SERVICES; ENERGY CONSERVATION; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AG23,FALSE,GAS (ADVANCED),2001,2009,2001,2019,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AG23,TRUE,ENERGY R&D SERVICES; ENERGY CONSERVATION; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AG24,FALSE,GAS (ENGINEERING),2004,2009,2005,2013,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AG25,FALSE,GAS (OPERATIONAL),2001,2009,2004,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AG25,TRUE,ENERGY R&D SERVICES; ENERGY CONSERVATION; EXPENSES FOR R&D FACILITIES AND MAJOR EQUIPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AG26,FALSE,GAS (MANAGEMENT/SUPPORT),2003,2009,2004,2020,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AG26,TRUE,R&D- ENERGY: GAS (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AG27,FALSE,R&D-ENERGY - GAS-COMERCLIZ,2002,2007,2005,2015,Other R&D and Knowledge Based,Commercialization,Commercialization
+AG31,FALSE,GEOTHERMAL (BASIC),2004,2009,2004,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AG31,TRUE,ENERGY R&D SERVICES; EMERGENCY ENERGY PREPAREDNESS; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AG32,FALSE,GEOTHERMAL (APPLIED/EXPLORATORY),2001,2009,2005,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AG32,TRUE,ENERGY R&D SERVICES; EMERGENCY ENERGY PREPAREDNESS; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AG33,FALSE,GEOTHERMAL (ADVANCED),2006,2007,2019,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AG33,TRUE,ENERGY R&D SERVICES; EMERGENCY ENERGY PREPAREDNESS; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AG34,FALSE,GEOTHERMAL (ENGINEERING),2009,2009,2009,2009,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AG35,FALSE,GEOTHERMAL (OPERATIONAL),2005,2005,2006,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AG35,TRUE,ENERGY R&D SERVICES; EMERGENCY ENERGY PREPAREDNESS; EXPENSES FOR R&D FACILITIES AND MAJOR EQUIPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AG36,FALSE,R&D- ENERGY: GEOTHERMAL (MANAGEMENT/SUPPORT),2020,2020,2021,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AG41,FALSE,WIND ENERGY (BASIC),2006,2020,2009,2020,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AG41,TRUE,"ENERGY R&D SERVICES; ENERGY INFORMATION, POLICY AND REGULATION; BASIC RESEARCH",2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AG42,FALSE,WIND ENERGY (APPLIED/EXPLORATORY),2005,2020,2010,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AG42,TRUE,"ENERGY R&D SERVICES; ENERGY INFORMATION, POLICY AND REGULATION; APPLIED RESEARCH",2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AG44,FALSE,WIND ENERGY (ENGINEERING),2003,2020,2004,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AG44,TRUE,"ENERGY R&D SERVICES; ENERGY INFORMATION, POLICY AND REGULATION; R&D ADMINISTRATIVE EXPENSES",2023,2023,2023,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AG45,TRUE,"ENERGY R&D SVCS; ENERGY INFORMATION, POLICY & REGULATION; R&D FACILITIES & MAJ EQUIP",2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AG46,FALSE,WIND ENERGY (MANAGEMENT/SUPPORT),2008,2020,2010,2020,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AG47,FALSE,R&D-ENERGY - WIND-COMERCLIZ,2001,2020,2006,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AG51,FALSE,NUCLEAR (BASIC),2001,2009,2002,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AG52,FALSE,NUCLEAR (APPLIED/EXPLORATORY),2001,2009,2001,2020,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AG52,TRUE,R&D- ENERGY: NUCLEAR (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AG53,FALSE,NUCLEAR (ADVANCED),2001,2009,2001,2012,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AG53,TRUE,R&D- ENERGY: NUCLEAR (ADVANCED DEVELOPMENT),2023,2023,2023,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AG54,FALSE,NUCLEAR (ENGINEERING),2001,2009,2003,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AG54,TRUE,R&D- ENERGY: NUCLEAR (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AG55,FALSE,NUCLEAR (OPERATIONAL),2001,2009,2001,2012,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AG55,TRUE,R&D- ENERGY: NUCLEAR (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AG56,FALSE,NUCLEAR (MANAGEMENT/SUPPORT),2001,2009,2006,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AG57,FALSE,R&D-ENERGY - NUCLEAR-COMERCLIZ,2005,2009,2006,2012,Other R&D and Knowledge Based,Commercialization,Commercialization
+AG61,FALSE,PETROLEUM (BASIC),2001,2009,2002,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AG61,TRUE,R&D- ENERGY: PETROLEUM (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AG62,FALSE,PETROLEUM (APPLIED/EXPLORATORY),2005,2009,2007,2020,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AG62,TRUE,R&D- ENERGY: PETROLEUM (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AG63,FALSE,PETROLEUM (ADVANCED),2003,2009,2005,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AG64,FALSE,PETROLEUM (ENGINEERING),2004,2009,2005,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AG65,FALSE,R&D- ENERGY: PETROLEUM (OPERATIONAL SYSTEMS DEVELOPMENT),2005,2020,2007,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AG66,FALSE,PETROLEUM (MANAGEMENT/SUPPORT),2003,2009,2004,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AG67,FALSE,R&D-ENERGY - PETROLEUM-COMERCLIZ,2003,2008,2007,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AG71,FALSE,SOLAR/PHOTOVOLTAIC (BASIC),2001,2009,2001,2020,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AG71,TRUE,R&D- ENERGY: SOLAR/PHOTOVOLTAIC (BASIC RESEARCH),2020,2022,2020,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AG72,FALSE,R&D-ENERGY - SOLAR/PHOTOVOLTAIC-A R,2001,2020,2001,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AG73,FALSE,SOLAR/PHOTOVOLTAIC (ADVANCED),2004,2009,2009,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AG74,FALSE,SOLAR/PHOTOVOLTAIC (ENGINEERING),2006,2009,2010,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AG75,FALSE,SOLAR/PHOTOVOLTAIC (OPERATIONAL),2009,2009,2009,2010,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AG76,FALSE,R&D- ENERGY: SOLAR/PHOTOVOLTAIC (MANAGEMENT/SUPPORT),2020,2020,2020,2020,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AG77,FALSE,R&D-ENERGY -SOLAR/PHOTOVOLTAIC-COME,2003,2006,2010,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AG77,TRUE,R&D- ENERGY: SOLAR/PHOTOVOLTAIC (COMMERCIALIZED),2020,2023,2020,2023,Other R&D and Knowledge Based,Commercialization,Commercialization
+AG81,FALSE,R&D- ENERGY: CONSERVATION (BASIC RESEARCH),2001,2020,2003,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AG82,FALSE,R&D-CONSERV OF ENERGY-A RES/EXPL DE,2001,2009,2004,2019,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AG83,FALSE,CONSERVATION OF ENERGY (ADVANCED),2004,2009,2007,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AG83,TRUE,R&D- ENERGY: CONSERVATION (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AG84,FALSE,R&D-CONSERV OF ENERGY-ENG DEV,2005,2009,2006,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AG84,TRUE,R&D- ENERGY: CONSERVATION (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AG85,TRUE,R&D- ENERGY: CONSERVATION (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AG86,FALSE,R&D-CONSERV OF ENERGY-MGMT SUP,2001,2009,2007,2010,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AG86,TRUE,R&D- ENERGY: CONSERVATION (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AG90,FALSE,R&D-OTHER ENERGY,2003,2003,2005,2005,Other R&D and Knowledge Based,Uncategorized R&D,Uncategorized R&D
+AG91,FALSE,OTHER ENERGY (BASIC),2001,2009,2002,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AG91,TRUE,R&D- ENERGY: OTHER (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AG92,FALSE,OTHER ENERGY (APPLIED/EXPLORATORY),2001,2009,2004,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AG92,TRUE,R&D- ENERGY: OTHER (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AG93,FALSE,OTHER ENERGY (ADVANCED),2001,2009,2002,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AG93,TRUE,R&D- ENERGY: OTHER (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AG94,FALSE,R&D- ENERGY: OTHER (ENGINEERING DEVELOPMENT),2001,2020,2002,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AG95,FALSE,OTHER ENERGY (OPERATIONAL),2001,2009,2008,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AG95,TRUE,R&D- ENERGY: OTHER (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AG96,FALSE,R&D- ENERGY: OTHER (MANAGEMENT/SUPPORT),2001,2020,2001,2020,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AG97,FALSE,R&D-OTHER ENERGY-COMERCLIZ,2001,2009,2008,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AH10,FALSE,R&D-POLLUTION CONT/ABATE,2004,2005,2004,2005,Other R&D and Knowledge Based,Uncategorized R&D,Uncategorized R&D
+AH11,FALSE,R&D-POLLUTION CONT/ABATE-B RES,2001,2020,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AH11,TRUE,NATURAL RESOURCES AND ENVIRONMENT R&D SERVICES; WATER RESOURCES; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AH12,FALSE,R&D-POLLUTION CONT/ABATE-A RES/EXPL,2001,2020,2001,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AH12,TRUE,NATURAL RESOURCES AND ENVIRONMENT R&D SERVICES; WATER RESOURCES; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AH13,FALSE,R&D-POLLUTION CONT/ABATE-ADV DEV,2001,2020,2001,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AH13,TRUE,NATURAL RESOURCES AND ENVIRONMENT R&D SERVICES; WATER RESOURCES; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AH14,FALSE,R&D-POLLUTION CONT/ABATE-ENG DEV,2002,2009,2002,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AH14,TRUE,NATURAL RESOURCES AND ENVIRONMENT R&D SERVICES; WATER RESOURCES; R&D ADMINISTRATIVE EXPENSES,2022,2022,2022,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AH15,FALSE,R&D-POLLUTION CONT/ABATE-OPSY DEV,2005,2020,2006,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AH15,TRUE,NATURAL RESOURCES & ENVIRONMENT R&D SVCS; WATER RESOURCES; R&D FACILITIES & MAJ EQUIP,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AH16,FALSE,R&D-POLLUTION CONT/ABATE-MGMT SUP,2003,2020,2004,2020,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AH17,TRUE,R&D- ENVIRONMENTAL PROTECTION: POLLUTION CONTROL/ABATEMENT (COMMERCIALIZED),2020,2022,2020,2022,Other R&D and Knowledge Based,Commercialization,Commercialization
+AH21,FALSE,R&D- ENVIRONMENTAL PROTECTION: AIR POLLUTION (BASIC RESEARCH),2001,2020,2002,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AH21,TRUE,NATURAL RESOURCES AND ENVIRONMENT R&D SERVICES; CONSERVATION AND LAND MANAGEMENT; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AH22,FALSE,R&D- ENVIRONMENTAL PROTECTION: AIR POLLUTION (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2001,2020,2003,2020,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AH22,TRUE,NATURAL RESOURCES AND ENVIRONMENT R&D SERVICES; CONSERVATION AND LAND MANAGEMENT; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AH23,FALSE,AIR POLLUTION (ADVANCED),2002,2009,2003,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AH24,FALSE,AIR POLLUTION (ENGINEERING),2001,2009,2004,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AH24,TRUE,NATURAL RESOURCES & ENVIRONMENT R&D SVCS; CONSERVATION & LAND MGMT; R&D ADMINISTRATIVE EXPENSES,2023,2023,2023,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AH25,FALSE,AIR POLLUTION (OPERATIONAL),2001,2009,2006,2015,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AH26,FALSE,R&D- ENVIRONMENTAL PROTECTION: AIR POLLUTION (MANAGEMENT/SUPPORT),2003,2020,2005,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AH27,FALSE,R&D-AIR POLLUTION-COMERCLIZ,2004,2008,2006,2021,Other R&D and Knowledge Based,Commercialization,Commercialization
+AH31,FALSE,WATER POLLUTION (BASIC),2001,2020,2004,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AH31,TRUE,NATURAL RESOURCES AND ENVIRONMENT R&D SERVICES; RECREATIONAL RESOURCES; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AH32,FALSE,R&D-WATER POLLUTION-A RES/EXPL DEV,2001,2020,2001,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AH32,TRUE,NATURAL RESOURCES AND ENVIRONMENT R&D SERVICES; RECREATIONAL RESOURCES; APPLIED RESEARCH,2022,2022,2022,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AH33,FALSE,WATER POLLUTION (ADVANCED),2001,2020,2003,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AH34,FALSE,WATER POLLUTION (ENGINEERING),2003,2009,2008,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AH34,TRUE,NATURAL RESOURCES AND ENVIRONMENT R&D SERVICES; RECREATIONAL RESOURCES; R&D ADMINISTRATIVE EXPENSES,2022,2022,2022,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AH35,FALSE,WATER POLLUTION (OPERATIONAL),2001,2020,2006,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AH35,TRUE,NATURAL RESOURCES & ENVIRONMENT R&D SVCS; RECREATIONAL RESOURCES; R&D FACILITIES & MAJ EQUIP,2022,2022,2022,2022,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AH36,FALSE,R&D-WATER POLLUTION-MGMT SUP,2003,2009,2004,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AH36,TRUE,R&D- ENVIRONMENTAL PROTECTION: WATER POLLUTION (MANAGEMENT/SUPPORT),2020,2022,2020,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AH37,FALSE,R&D-WATER POLLUTION-COMERCLIZ,2002,2007,2009,2022,Other R&D and Knowledge Based,Commercialization,Commercialization
+AH41,FALSE,R&D- ENVIRONMENTAL PROTECTION: NOISE POLLUTION (BASIC RESEARCH),2003,2020,2006,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AH41,TRUE,NATURAL RESOURCES AND ENVIRONMENT R&D SERVICES; POLLUTION CONTROL AND ABATEMENT; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AH42,FALSE,R&D-NOISE POLLUTION-A RES/EXPL DEV,2002,2020,2006,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AH42,TRUE,NATURAL RESOURCES AND ENVIRONMENT R&D SERVICES; POLLUTION CONTROL AND ABATEMENT; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AH43,FALSE,NOISE POLLUTION (ADVANCED),2001,2005,2005,2007,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AH43,TRUE,NATURAL RESOURCES & ENVIRONMENT R&D SVCS; POLLUTION CONTROL & ABATEMENT; EXPERIMENTAL DEVELOPMENT,2022,2023,2023,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AH44,FALSE,NOISE POLLUTION (ENGINEERING),2004,2005,2018,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AH44,TRUE,NATURAL RESOURCES & ENVIRONMENT R&D SVCS; POLLUTION CONTROL & ABATEMENT; R&D ADMINISTRATIVE EXPENSES,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AH45,FALSE,NOISE POLLUTION (OPERATIONAL),2005,2009,2007,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AH45,TRUE,NATURAL RESOURCES & ENVIRONMENT R&D SVCS; POLLUTION CONTROL & ABATEMENT; R&D FACILITIES & MAJ EQUIP,2023,2023,2023,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AH46,FALSE,R&D-NOISE POLLUTION-MGMT SUP,2002,2002,2009,2009,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AH47,FALSE,R&D-NOISE POLLUTION-COMERCLIZ,2002,2009,2010,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AH51,FALSE,R&D-OTHER POLLUTION-RESEARCH,2004,2005,2004,2005,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AH51,TRUE,NATURAL RESOURCES AND ENVIRONMENT R&D SERVICES; OTHER NATURAL RESOURCES; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AH52,TRUE,NATURAL RESOURCES AND ENVIRONMENT R&D SERVICES; OTHER NATURAL RESOURCES; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AH53,TRUE,NATURAL RESOURCES AND ENVIRONMENT R&D SERVICES; OTHER NATURAL RESOURCES; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AH54,TRUE,NATURAL RESOURCES & ENVIRONMENT R&D SVCS; OTHER NATURAL RESOURCES; R&D ADMINISTRATIVE EXPENSES,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AH55,TRUE,NATURAL RESOURCES & ENVIRONMENT R&D SVCS; OTHER NATURAL RESOURCES; R&D FACILITIES & MAJ EQUIP,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AH57,FALSE,R&D-OTHER POLLUTION-COMERCLIZ,2005,2005,2020,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AH91,FALSE,R&D-OTHER ENVIRONMENT-B RES,2001,2009,2002,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AH91,TRUE,R&D- ENVIRONMENTAL PROTECTION: OTHER (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AH92,FALSE,R&D-OTHER ENVIRONMENT-A RES/EXPL DE,2001,2009,2001,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AH92,TRUE,R&D- ENVIRONMENTAL PROTECTION: OTHER (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AH93,FALSE,R&D-OTHER ENVIRONMENT-ADV DEV,2001,2009,2004,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AH93,TRUE,R&D- ENVIRONMENTAL PROTECTION: OTHER (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AH94,FALSE,R&D-OTHER ENVIRONMENT-ENG DEV,2001,2009,2001,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AH94,TRUE,R&D- ENVIRONMENTAL PROTECTION: OTHER (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AH95,FALSE,R&D-OTHER ENVIRONMENT-OPSY DEV,2001,2009,2005,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AH95,TRUE,R&D- ENVIRONMENTAL PROTECTION: OTHER (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AH96,FALSE,R&D-OTHER ENVIRONMENT-MGMT SUP,2001,2009,2001,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AH96,TRUE,R&D- ENVIRONMENTAL PROTECTION: OTHER (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AH97,FALSE,R&D-OTHER ENVIRONMENT-COMERCLIZ,2001,2020,2006,2022,Other R&D and Knowledge Based,Commercialization,Commercialization
+AJ11,FALSE,R&D- GENERAL SCIENCE/TECHNOLOGY: PHYSICAL SCIENCES (BASIC RESEARCH),2001,2020,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AJ11,TRUE,GENERAL SCIENCE AND TECHNOLOGY R&D SERVICES; GENERAL SCIENCE AND TECHNOLOGY; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AJ12,FALSE,R&D-PHYSICAL SCIENCE-A RES/EXPL DEV,2001,2020,2001,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AJ12,TRUE,GENERAL SCIENCE AND TECHNOLOGY R&D SERVICES; GENERAL SCIENCE AND TECHNOLOGY; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AJ13,FALSE,R&D- GENERAL SCIENCE/TECHNOLOGY: PHYSICAL SCIENCES (ADVANCED DEVELOPMENT),2001,2020,2002,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AJ13,TRUE,GENERAL SCIENCE & TECHNOLOGY R&D SVCS; GENERAL SCIENCE & TECHNOLOGY; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AJ14,FALSE,R&D- GENERAL SCIENCE/TECHNOLOGY: PHYSICAL SCIENCES (ENGINEERING DEVELOPMENT),2001,2020,2002,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AJ14,TRUE,GENERAL SCIENCE & TECHNOLOGY R&D SVCS; GENERAL SCIENCE & TECHNOLOGY; R&D ADMINISTRATIVE EXPENSES,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AJ15,FALSE,R&D- GENERAL SCIENCE/TECHNOLOGY: PHYSICAL SCIENCES (OPERATIONAL SYSTEMS DEVELOPMENT),2001,2020,2001,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AJ15,TRUE,GENERAL SCIENCE & TECHNOLOGY R&D SVCS; GENERAL SCIENCE & TECHNOLOGY; R&D FACILITIES & MAJ EQUIP,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AJ16,FALSE,R&D-PHYSICAL SCIENCE-MGMT SUP,2001,2009,2001,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AJ16,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: PHYSICAL SCIENCES (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AJ17,FALSE,R&D-PHYSICAL SCIENCE-COMERCLIZ,2001,2020,2005,2021,Other R&D and Knowledge Based,Commercialization,Commercialization
+AJ21,FALSE,R&D-MATH & COMPUTER SCI-B RES,2001,2009,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AJ21,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: MATHEMATICAL/COMPUTER SCIENCES (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AJ22,FALSE,R&D-MATH & COMPUTER SCI-A RES/EXPL,2001,2009,2001,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AJ22,TRUE,R&D- GENERAL SCI/TECH: MATHEMATICAL/COMPUTER SCIENCES (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AJ23,FALSE,R&D-MATH & COMPUTER SCI-ADV DEV,2001,2009,2001,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AJ23,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: MATHEMATICAL/COMPUTER SCIENCES (ADVANCED DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AJ24,FALSE,R&D-MATH & COMPUTER SCI-ENG DEV,2001,2009,2004,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AJ24,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: MATHEMATICAL/COMPUTER SCIENCES (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AJ25,FALSE,R&D-MATH & COMPUTER SCI-OPSY DEV,2001,2009,2004,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AJ25,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: MATHEMATICAL/COMPUTER SCIENCES (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AJ26,FALSE,R&D-MATH & COMPUTER SCI-MGMT SUP,2001,2009,2006,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AJ26,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: MATHEMATICAL/COMPUTER SCIENCES (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AJ27,FALSE,"R&D-MATH, COMPUTER SCI - COMERCLIZ",2001,2020,2005,2022,Other R&D and Knowledge Based,Commercialization,Commercialization
+AJ31,FALSE,ENVIRONMENTAL SCIENCES (BASIC),2001,2009,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AJ31,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: ENVIRONMENTAL SCIENCES (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AJ32,FALSE,R&D-ENVIRONMENTAL SCI-A RES/EXPL DE,2001,2009,2001,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AJ32,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: ENVIRONMENTAL SCIENCES (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AJ33,FALSE,ENVIRONMENTAL SCIENCES (ADVANCED),2001,2009,2001,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AJ33,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: ENVIRONMENTAL SCIENCES (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AJ34,FALSE,R&D-ENVIRONMENTAL SCI-ENG DEV,2001,2009,2014,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AJ34,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: ENVIRONMENTAL SCIENCES (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AJ35,FALSE,R&D-ENVIRONMENTAL SCI-OPSY DEV,2001,2009,2004,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AJ35,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: ENVIRONMENTAL SCIENCES (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AJ36,FALSE,R&D-ENVIRONMENTAL SCI-MGMT SUP,2001,2009,2001,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AJ36,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: ENVIRONMENTAL SCIENCES (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AJ41,FALSE,ENGINEERING (BASIC),2001,2009,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AJ41,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: ENGINEERING (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AJ42,FALSE,ENGINEERING (APPLIED/EXPLORATORY),2001,2009,2001,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AJ42,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: ENGINEERING (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AJ43,FALSE,ENGINEERING (ADVANCED),2001,2009,2002,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AJ43,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: ENGINEERING (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AJ44,FALSE,ENGINEERING (ENGINEERING),2001,2009,2001,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AJ44,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: ENGINEERING (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AJ45,FALSE,ENGINEERING (OPERATIONAL),2001,2009,2001,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AJ45,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: ENGINEERING (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AJ46,FALSE,ENGINEERING (MANAGEMENT/SUPPORT),2001,2009,2001,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AJ46,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: ENGINEERING (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AJ47,FALSE,RDTE/ENGINEERING SCI-OPER SY DEV,2001,2009,2006,2021,Other R&D and Knowledge Based,Commercialization,Commercialization
+AJ47,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: ENGINEERING (COMMERCIALIZED),2020,2023,2020,2023,Other R&D and Knowledge Based,Commercialization,Commercialization
+AJ51,FALSE,LIFE SCIENCES (BASIC),2001,2009,2001,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AJ51,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: LIFE SCIENCES (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AJ52,FALSE,LIFE SCIENCES (APPLIED/EXPLORATORY),2001,2009,2002,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AJ52,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: LIFE SCIENCES (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AJ53,FALSE,LIFE SCIENCES (ADVANCED),2003,2009,2004,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AJ53,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: LIFE SCIENCES (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AJ54,FALSE,LIFE SCIENCES (ENGINEERING),2002,2009,2005,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AJ54,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: LIFE SCIENCES (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AJ55,FALSE,LIFE SCIENCES (OPERATIONAL),2003,2009,2006,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AJ55,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: LIFE SCIENCES (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AJ56,FALSE,LIFE SCIENCES (MANAGEMENT/SUPPORT),2002,2009,2005,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AJ56,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: LIFE SCIENCES (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AJ57,FALSE,R&D- GENERAL SCIENCE/TECHNOLOGY: LIFE SCIENCES (COMMERCIALIZED),2020,2020,2020,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AJ57,TRUE,RDTE/LIFE SCIENCES - OPERATIONAL SYSTEM DEVELOP,2001,2023,2006,2023,Other R&D and Knowledge Based,Commercialization,Commercialization
+AJ61,FALSE,PSYCHOLOGICAL SCIENCES (BASIC),2001,2009,2003,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AJ61,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: PSYCHOLOGICAL SCIENCES (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AJ62,FALSE,R&D-PSYCHOLOGICAL SCI-A RES/EXPL DE,2001,2009,2004,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AJ62,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: PSYCHOLOGICAL SCIENCES (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AJ63,FALSE,PSYCHOLOGICAL SCIENCES (ADVANCED),2001,2009,2006,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AJ63,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: PSYCHOLOGICAL SCIENCES (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AJ64,FALSE,R&D-PSYCHOLOGICAL SCI-ENG DEV,2005,2009,2009,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AJ65,FALSE,R&D-PSYCHOLOGICAL SCI-OPSY DEV,2006,2009,2006,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AJ65,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: PSYCHOLOGICAL SCIENCES (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AJ66,FALSE,R&D-PSYCHOLOGICAL SCI-MGMT SUP,2001,2020,2002,2020,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AJ67,FALSE,RDTE/PSYCHOLOGICAL SCIENCES - OPERATIONAL SY DEV,2002,2002,2009,2009,Other R&D and Knowledge Based,Commercialization,Commercialization
+AJ71,FALSE,SOCIAL SCIENCES (BASIC),2001,2009,2004,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AJ71,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: SOCIAL SCIENCES (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AJ72,FALSE,R&D-SOCIAL SCIENCES-A RES/EXPL DEV,2001,2009,2001,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AJ72,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: SOCIAL SCIENCES (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AJ73,FALSE,SOCIAL SCIENCES (ADVANCED),2001,2009,2002,2019,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AJ73,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: SOCIAL SCIENCES (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AJ74,FALSE,SOCIAL SCIENCES (ENGINEERING),2006,2009,2008,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AJ74,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: SOCIAL SCIENCES (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AJ75,FALSE,SOCIAL SCIENCES (OPERATIONAL),2003,2008,2007,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AJ75,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: SOCIAL SCIENCES (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AJ76,FALSE,R&D-SOCIAL SCIENCES-MGMT SUP,2001,2009,2002,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AJ76,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: SOCIAL SCIENCES (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AJ77,FALSE,R&D- GENERAL SCIENCE/TECHNOLOGY: SOCIAL SCIENCES (COMMERCIALIZED),2020,2020,2020,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AJ77,TRUE,RDTE/SOCIAL SCIENCES - OPERATIONAL SYSTEM DEVELOP,2005,2022,2007,2022,Other R&D and Knowledge Based,Commercialization,Commercialization
+AJ91,FALSE,R&D-OTHER SCIENCES-B RES,2001,2009,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AJ91,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: OTHER (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AJ92,FALSE,R&D-OTHER SCIENCES-A RES/EXPL DEV,2001,2009,2002,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AJ92,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: OTHER (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AJ93,FALSE,R&D-OTHER SCIENCES-ADV DEV,2001,2009,2002,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AJ93,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: OTHER (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AJ94,FALSE,R&D-OTHER SCIENCES-ENG DEV,2001,2009,2005,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AJ94,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: OTHER (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AJ95,FALSE,R&D-OTHER SCIENCES-OPSY DEV,2002,2009,2006,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AJ95,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: OTHER (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AJ96,FALSE,R&D-OTHER SCIENCES-MGMT SUP,2001,2009,2002,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AJ96,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: OTHER (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AJ97,FALSE,R&D-OTHER INCOME MAIN-COMERCLIZ,2001,2002,2006,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AJ97,TRUE,R&D- GENERAL SCIENCE/TECHNOLOGY: OTHER (COMMERCIALIZED),2020,2023,2020,2023,Other R&D and Knowledge Based,Commercialization,Commercialization
+AK11,FALSE,R&D- HOUSING: HOUSING (BASIC RESEARCH),2002,2020,2003,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AK11,TRUE,COMMERCE AND HOUSING CREDIT R&D SERVICES; COMMERCE AND HOUSING CREDIT; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AK12,FALSE,R&D- HOUSING: HOUSING (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2004,2020,2006,2020,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AK12,TRUE,COMMERCE AND HOUSING CREDIT R&D SERVICES; COMMERCE AND HOUSING CREDIT; APPLIED RESEARCH,2022,2022,2022,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AK13,FALSE,HOUSING (ADVANCED),2005,2009,2005,2019,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AK14,FALSE,R&D- HOUSING: HOUSING (ENGINEERING DEVELOPMENT),2004,2020,2008,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AK14,TRUE,GENERAL SCIENCE & TECHNOLOGY R&D SVCS; GENERAL SCIENCE & TECHNOLOGY; R&D ADMINISTRATIVE EXPENSES,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AK15,FALSE,HOUSING (OPERATIONAL),2005,2009,2005,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AK16,FALSE,HOUSING (MANAGEMENT/SUPPORT),2001,2009,2003,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AK16,TRUE,R&D- HOUSING: HOUSING (MANAGEMENT/SUPPORT),2020,2022,2020,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AK17,FALSE,R&D-HOUSING-COMERCLIZ,2003,2020,2007,2021,Other R&D and Knowledge Based,Commercialization,Commercialization
+AL11,FALSE,R&D- INCOME SECURITY: EMPLOYMENT (BASIC RESEARCH),2003,2020,2004,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AL11,TRUE,INCOME SECURITY R&D SERVICES; INCOME SECURITY; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AL12,FALSE,EMPLOYMENT (APPLIED/EXPLORATORY),2004,2009,2004,2020,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AL12,TRUE,INCOME SECURITY R&D SERVICES; INCOME SECURITY; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AL13,FALSE,EMPLOYMENT (ADVANCED),2005,2009,2006,2018,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AL14,FALSE,EMPLOYMENT (ENGINEERING),2004,2009,2009,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AL15,FALSE,EMPLOYMENT (OPERATIONAL),2004,2009,2004,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AL16,FALSE,EMPLOYMENT (MANAGEMENT/SUPPORT),2002,2009,2003,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AL16,TRUE,R&D- INCOME SECURITY: EMPLOYMENT (MANAGEMENT/SUPPORT),2020,2022,2020,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AL17,FALSE,R&D-EMPLOYMENT-COMERCLIZ,2007,2009,2008,2010,Other R&D and Knowledge Based,Commercialization,Commercialization
+AL21,FALSE,INCOME MAINTENANCE (BASIC),2003,2009,2003,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AL22,FALSE,R&D-INCOME MAINT-A RES/EXPL DEV,2004,2008,2008,2020,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AL23,FALSE,INCOME MAINTENANCE (ADVANCED),2007,2009,2007,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AL24,FALSE,R&D- INCOME SECURITY: INCOME MAINTENANCE (ENGINEERING DEVELOPMENT),2003,2020,2004,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AL25,FALSE,INCOME MAINTENANCE (OPERATIONAL),2002,2009,2002,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AL27,FALSE,R&D-INCOME MAINT-COMERCLIZ,2005,2006,2006,2021,Other R&D and Knowledge Based,Commercialization,Commercialization
+AL91,FALSE,OTHER INCOME SECURITY (BASIC),2002,2009,2003,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AL92,FALSE,R&D-OTHER INCOME SECURITY-A RES/EXP,2008,2020,2010,2020,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AL93,FALSE,OTHER INCOME SECURITY (ADVANCED),2004,2005,2005,2010,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AL94,FALSE,OTHER INCOME SECURITY (ENGINEERING),2004,2008,2005,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AL95,FALSE,OTHER INCOME SECURITY (OPERATIONAL),2001,2009,2005,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AL96,FALSE,R&D-OTHER INCOME SECURITY-MGMT SUP,2003,2007,2003,2010,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AL96,TRUE,R&D- INCOME SECURITY: OTHER (MANAGEMENT/SUPPORT),2020,2022,2020,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AL97,FALSE,R&D-OTHER INCOME SECURTIY-COMERCLIZ,2004,2004,2008,2008,Other R&D and Knowledge Based,Commercialization,Commercialization
+AM11,FALSE,R&D-INTERNATIONAL AFFAIRS-B RES,2001,2020,2001,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AM11,TRUE,INTERNATIONAL AFFAIRS R&D SERVICES; INTERNATIONAL AFFAIRS; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AM12,FALSE,R&D-INTERNATIONAL AFFAIRS-A RES/EXP,2001,2020,2002,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AM12,TRUE,INTERNATIONAL AFFAIRS R&D SERVICES; INTERNATIONAL AFFAIRS; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AM13,FALSE,R&D-INTERNATIONAL AFFAIRS-ADV DEV,2002,2009,2004,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AM14,FALSE,R&D-INTERNATIONAL AFFAIRS-ENG DEV,2005,2006,2006,2006,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AM15,FALSE,R&D-INTERNATIONAL AFFAIRS-OPSY DEV,2003,2006,2004,2019,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AM15,TRUE,INTERNATIONAL AFFAIRS R&D SVCS; INTERNATIONAL AFFAIRS; R&D FACILITIES & MAJ EQUIP,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AM16,FALSE,R&D-INTERNATIONAL AFFAIRS-MGMT SUP,2005,2008,2005,2019,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AM16,TRUE,R&D- INTERNATIONAL AFFAIRS AND COOPERATION (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AM17,FALSE,R&D-INTERNATIONAL AFFAIRS-COMERCLIZ,2002,2008,2006,2015,Other R&D and Knowledge Based,Commercialization,Commercialization
+AN10,FALSE,R&D-BIOMEDICAL,2004,2004,2005,2005,Other R&D and Knowledge Based,Uncategorized R&D,Uncategorized R&D
+AN11,FALSE,R&D- MEDICAL: BIOMEDICAL (BASIC RESEARCH),2001,2020,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN11,TRUE,HEALTH R&D SERVICES; HEALTH CARE SERVICES; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN12,FALSE,R&D- MEDICAL: BIOMEDICAL (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2001,2020,2001,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN12,TRUE,HEALTH R&D SERVICES; HEALTH CARE SERVICES; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN13,FALSE,R&D- MEDICAL: BIOMEDICAL (ADVANCED DEVELOPMENT),2001,2020,2002,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AN13,TRUE,HEALTH R&D SERVICES; HEALTH CARE SERVICES; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AN14,FALSE,R&D- MEDICAL: BIOMEDICAL (ENGINEERING DEVELOPMENT),2001,2020,2004,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AN14,TRUE,HEALTH R&D SERVICES; HEALTH CARE SERVICES; R&D ADMINISTRATIVE EXPENSES,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN15,FALSE,R&D- MEDICAL: BIOMEDICAL (OPERATIONAL SYSTEMS DEVELOPMENT),2001,2020,2002,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AN15,TRUE,HEALTH R&D SERVICES; HEALTH CARE SERVICES; EXPENSES FOR R&D FACILITIES AND MAJOR EQUIPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AN16,FALSE,BIOMEDICAL (MANAGEMENT/SUPPORT),2001,2009,2001,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN16,TRUE,R&D- MEDICAL: BIOMEDICAL (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN17,FALSE,R&D-BIOMEDICAL-COMERCLIZ,2003,2009,2005,2021,Other R&D and Knowledge Based,Commercialization,Commercialization
+AN17,TRUE,R&D- MEDICAL: BIOMEDICAL (COMMERCIALIZED),2020,2023,2020,2023,Other R&D and Knowledge Based,Commercialization,Commercialization
+AN21,FALSE,R&D- MEDICAL: DRUG DEPENDENCY (BASIC RESEARCH),2004,2020,2005,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN21,TRUE,HEALTH R&D SERVICES; HEALTH RESEARCH AND TRAINING; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN22,FALSE,R&D-DRUG DEPENDENCY-A RES/EXPL DEV,2003,2020,2006,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN22,TRUE,HEALTH R&D SERVICES; HEALTH RESEARCH AND TRAINING; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN23,FALSE,R&D- MEDICAL: DRUG DEPENDENCY (ADVANCED DEVELOPMENT),2002,2020,2008,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AN23,TRUE,HEALTH R&D SERVICES; HEALTH RESEARCH AND TRAINING; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AN24,FALSE,DRUGS DEPENDENCY (ENGINEERING),2003,2004,2005,2005,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AN24,TRUE,HEALTH R&D SERVICES; HEALTH RESEARCH AND TRAINING; R&D ADMINISTRATIVE EXPENSES,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN25,FALSE,R&D- MEDICAL: DRUG DEPENDENCY (OPERATIONAL SYSTEMS DEVELOPMENT),2004,2020,2005,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AN25,TRUE,HEALTH R&D SERVICES; HEALTH RESEARCH AND TRAINING; EXPENSES FOR R&D FACILITIES AND MAJOR EQUIPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AN26,FALSE,R&D-DRUG DEPENDENCY-MGMT SUP,2001,2009,2004,2018,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN26,TRUE,R&D- MEDICAL: DRUG DEPENDENCY (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN27,FALSE,R&D-DRUG DEPENDENCY-COMERCLIZ,2007,2009,2007,2009,Other R&D and Knowledge Based,Commercialization,Commercialization
+AN31,FALSE,R&D- MEDICAL: ALCOHOL DEPENDENCY (BASIC RESEARCH),2003,2020,2004,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN31,TRUE,HEALTH R&D SERVICES; CONSUMER AND OCCUPATIONAL HEALTH AND SAFETY; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN32,FALSE,R&D-ALCOHOL DEPENDENCY-A RES/EXPL D,2004,2009,2005,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN32,TRUE,HEALTH R&D SERVICES; CONSUMER AND OCCUPATIONAL HEALTH AND SAFETY; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN33,FALSE,ALCOHOL DEPENDENCY (ADVANCED),2007,2007,2007,2008,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AN33,TRUE,HEALTH R&D SERVICES; CONSUMER AND OCCUPATIONAL HEALTH AND SAFETY; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AN34,FALSE,ALCOHOL DEPENDENCY (ENGINEERING),2006,2006,2021,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AN34,TRUE,HEALTH R&D SERVICES; CONSUMER AND OCCUPATIONAL HEALTH AND SAFETY; R&D ADMINISTRATIVE EXPENSES,2022,2022,2022,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN35,FALSE,ALCOHOL DEPENDENCY (OPERATIONAL),2007,2007,2008,2008,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AN35,TRUE,HEALTH R&D SVCS; CONSUMER & OCCUPATIONAL HEALTH & SAFETY; R&D FACILITIES & MAJ EQUIP,2022,2022,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AN36,FALSE,R&D-ALCOHOL DEPENDENCY-MGMT SUP,2001,2001,2002,2002,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN37,FALSE,R&D-ALCOHOL DEPENDENCY-COMERCLIZ,2004,2004,2020,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AN41,FALSE,R&D- MEDICAL: HEALTH SERVICES (BASIC RESEARCH),2001,2020,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN41,TRUE,HEALTH R&D SERVICES; HEALTH CARE - OTHER; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN42,FALSE,R&D-HEALTH SVCS-A RES/EXPL DEV,2001,2020,2001,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN42,TRUE,HEALTH R&D SERVICES; HEALTH CARE - OTHER; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN43,FALSE,R&D- MEDICAL: HEALTH SERVICES (ADVANCED DEVELOPMENT),2001,2020,2001,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AN43,TRUE,HEALTH R&D SERVICES; HEALTH CARE - OTHER; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AN44,FALSE,R&D- MEDICAL: HEALTH SERVICES (ENGINEERING DEVELOPMENT),2004,2020,2005,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AN44,TRUE,HEALTH R&D SERVICES; HEALTH CARE - OTHER; R&D ADMINISTRATIVE EXPENSES,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN45,FALSE,R&D- MEDICAL: HEALTH SERVICES (OPERATIONAL SYSTEMS DEVELOPMENT),2001,2020,2003,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AN45,TRUE,HEALTH R&D SERVICES; HEALTH CARE - OTHER; EXPENSES FOR R&D FACILITIES AND MAJOR EQUIPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AN46,FALSE,R&D-HEALTH SVCS-MGMT SUP,2001,2009,2001,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN46,TRUE,R&D- MEDICAL: HEALTH SERVICES (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN47,FALSE,R&D-HEALTH SVCS-COMERCLIZ,2001,2009,2006,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AN47,TRUE,R&D- MEDICAL: HEALTH SERVICES (COMMERCIALIZED),2020,2023,2020,2023,Other R&D and Knowledge Based,Commercialization,Commercialization
+AN51,FALSE,MENTAL HEALTH (BASIC),2001,2009,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN51,TRUE,R&D- MEDICAL: MENTAL HEALTH (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN52,FALSE,MENTAL HEALTH (APPLIED/EXPLORATORY),2001,2009,2001,2015,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN52,TRUE,R&D- MEDICAL: MENTAL HEALTH (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN53,FALSE,MENTAL HEALTH (ADVANCED),2005,2009,2005,2011,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AN54,FALSE,MENTAL HEALTH (ENGINEERING),2005,2005,2009,2009,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AN55,FALSE,R&D- MEDICAL: MENTAL HEALTH (OPERATIONAL SYSTEMS DEVELOPMENT),2005,2020,2006,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AN56,FALSE,MENTAL HEALTH (MANAGEMENT/SUPPORT),2001,2009,2002,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN56,TRUE,R&D- MEDICAL: MENTAL HEALTH (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN57,FALSE,R&D-MENTAL HEALTH-COMERCLIZ,2004,2009,2006,2011,Other R&D and Knowledge Based,Commercialization,Commercialization
+AN61,FALSE,REHABILITATIVE ENGINEERING (BASIC),2001,2020,2003,2020,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN62,FALSE,R&D-MED REHAB ENGINEERING-A RES/EXP,2001,2009,2001,2009,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN62,TRUE,R&D- MEDICAL: REHABILITATIVE ENGINEERING (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN63,FALSE,R&D-MED REHAB ENGINEERING-ADV DEV,2006,2020,2006,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AN64,FALSE,R&D-MED REHAB ENGINEERING-ENG DEV,2004,2009,2004,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AN64,TRUE,R&D- MEDICAL: REHABILITATIVE ENGINEERING (ENGINEERING DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AN66,FALSE,R&D-MED REHAB ENGINEERING-MGMT SUP,2002,2009,2002,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN71,FALSE,R&D-SPEC MED SVCS-B RES,2001,2009,2002,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN71,TRUE,R&D- MEDICAL: SPECIALIZED MEDICAL SERVICES (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN72,FALSE,R&D-SPEC MED SVCS-A RES/EXPL DEV,2001,2009,2002,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN72,TRUE,R&D- MEDICAL: SPECIALIZED MEDICAL SERVICES (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN73,FALSE,R&D-SPEC MED SVCS-ADV DEV,2002,2009,2006,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AN73,TRUE,R&D- MEDICAL: SPECIALIZED MEDICAL SERVICES (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AN74,FALSE,R&D-SPEC MED SVCS-ENG DEV,2003,2009,2004,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AN74,TRUE,R&D- MEDICAL: SPECIALIZED MEDICAL SERVICES (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AN75,FALSE,R&D-SPEC MED SVCS-OPSY DEV,2002,2020,2007,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AN76,FALSE,R&D-SPEC MED SVCS-MGMT SUP,2001,2009,2002,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN76,TRUE,R&D- MEDICAL: SPECIALIZED MEDICAL SERVICES (MANAGEMENT/SUPPORT),2020,2022,2020,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN77,FALSE,R&D-SPEC MED SVCS-COMERCLIZ,2001,2009,2006,2021,Other R&D and Knowledge Based,Commercialization,Commercialization
+AN77,TRUE,R&D- MEDICAL: SPECIALIZED MEDICAL SERVICES (COMMERCIALIZED),2020,2022,2020,2022,Other R&D and Knowledge Based,Commercialization,Commercialization
+AN81,FALSE,AIDS RESEARCH (BASIC),2001,2009,2001,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN81,TRUE,R&D- MEDICAL: AIDS RESEARCH (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN82,FALSE,AIDS RESEARCH (APPLIED/EXPLORATORY),2001,2009,2001,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN82,TRUE,R&D- MEDICAL: AIDS RESEARCH (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN83,FALSE,AIDS RESEARCH (ADVANCED),2001,2009,2004,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AN84,FALSE,AIDS RESEARCH (ENGINEERING),2001,2009,2004,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AN85,FALSE,AIDS RESEARCH (OPERATIONAL),2003,2009,2010,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AN86,FALSE,AIDS RESEARCH (MANAGEMENT/SUPPORT),2001,2009,2002,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN86,TRUE,R&D- MEDICAL: AIDS RESEARCH (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN91,FALSE,OTHER MEDICAL (BASIC),2001,2009,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN91,TRUE,R&D- MEDICAL: OTHER (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AN92,FALSE,OTHER MEDICAL (APPLIED/EXPLORATORY),2001,2009,2001,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN92,TRUE,R&D- MEDICAL: OTHER (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AN93,FALSE,OTHER MEDICAL (ADVANCED),2001,2009,2004,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AN93,TRUE,R&D- MEDICAL: OTHER (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AN94,FALSE,OTHER MEDICAL (ENGINEERING),2001,2009,2002,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AN94,TRUE,R&D- MEDICAL: OTHER (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AN95,FALSE,OTHER MEDICAL (OPERATIONAL),2001,2009,2004,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AN95,TRUE,R&D- MEDICAL: OTHER (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AN96,FALSE,OTHER MEDICAL (MANAGEMENT/SUPPORT),2001,2009,2002,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN96,TRUE,R&D- MEDICAL: OTHER (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AN97,FALSE,R&D-OTHER MEDICAL-COMERCLIZ,2001,2009,2006,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AN97,TRUE,R&D- MEDICAL: OTHER (COMMERCIALIZED),2020,2023,2020,2023,Other R&D and Knowledge Based,Commercialization,Commercialization
+AP17,FALSE,R&D-NAT RESOURCE-AQUACUL-COMERCLIZ,2005,2007,2007,2008,Other R&D and Knowledge Based,Commercialization,Commercialization
+AP21,FALSE,LAND (BASIC),2001,2009,2004,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AP21,TRUE,R&D- NATURAL RESOURCE: LAND (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AP22,FALSE,LAND (APPLIED/EXPLORATORY),2001,2009,2006,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AP23,FALSE,LAND (ADVANCED),2003,2009,2005,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AP24,FALSE,R&D- NATURAL RESOURCE: LAND (ENGINEERING DEVELOPMENT),2004,2020,2005,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AP25,FALSE,R&D- NATURAL RESOURCE: LAND (OPERATIONAL SYSTEMS DEVELOPMENT),2004,2020,2009,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AP26,FALSE,LAND (MANAGEMENT/SUPPORT),2004,2009,2005,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AP26,TRUE,R&D- NATURAL RESOURCE: LAND (MANAGEMENT/SUPPORT),2020,2022,2020,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AP27,FALSE,R&D-NAT RESOURCE-LAND-COMERCLIZ,2008,2008,2008,2008,Other R&D and Knowledge Based,Commercialization,Commercialization
+AP31,FALSE,MINERAL (BASIC),2004,2009,2004,2009,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AP32,FALSE,MINERAL (APPLIED/EXPLORATORY),2001,2006,2002,2006,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AP34,FALSE,MINERAL (ENGINEERING),2008,2009,2008,2009,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AP34,TRUE,R&D- NATURAL RESOURCE: MINERAL (ENGINEERING DEVELOPMENT),2022,2022,2022,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AP35,FALSE,MINERAL (OPERATIONAL),2009,2009,2020,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AP36,FALSE,MINERAL (MANAGEMENT/SUPPORT),2009,2009,2011,2011,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AP41,FALSE,RECREATION (BASIC),2004,2009,2005,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AP43,FALSE,RECREATION (ADVANCED),2005,2009,2006,2018,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AP44,FALSE,RECREATION (ENGINEERING),2003,2007,2004,2007,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AP45,FALSE,RECREATION (OPERATIONAL),2005,2020,2005,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AP46,FALSE,RECREATION (MANAGEMENT/SUPPORT),2004,2009,2004,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AP47,FALSE,R&D-NAT RESOURCE-RECREATN-COMERCLIZ,2007,2009,2007,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AP50,FALSE,R&D-NAT RES-MARINE & OCEAN,2004,2005,2010,2010,Other R&D and Knowledge Based,Uncategorized R&D,Uncategorized R&D
+AP51,FALSE,MARINE AND OCEANOGRAPHIC (BASIC),2001,2009,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AP51,TRUE,R&D- NATURAL RESOURCE: MARINE AND OCEANOGRAPHIC (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AP52,FALSE,R&D-NAT RES-MARINE & OCEAN-A RES/EX,2001,2009,2001,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AP52,TRUE,R&D- NATURAL RESOURCE: MARINE AND OCEANOGRAPHIC (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2022,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AP53,FALSE,MARINE AND OCEANOGRAPHIC (ADVANCED),2002,2009,2004,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AP54,FALSE,R&D-NAT RES-MARINE & OCEAN-ENG DEV,2004,2008,2005,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AP55,FALSE,R&D-NAT RES-MARINE & OCEAN-OPSY DEV,2005,2008,2007,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AP56,FALSE,R&D-NAT RES-MARINE & OCEAN-MGMT SUP,2001,2020,2020,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AP57,FALSE,R&D-NAT RESOURCE-MARINE-COMERCLIZ,2009,2009,2009,2009,Other R&D and Knowledge Based,Commercialization,Commercialization
+AP61,FALSE,MARINE FISHERIES (BASIC),2001,2009,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AP61,TRUE,R&D- NATURAL RESOURCE: MARINE FISHERIES (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AP62,FALSE,R&D-NAT RES-MARINE FISHERIES-A RES/,2001,2009,2002,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AP62,TRUE,R&D- NATURAL RESOURCE: MARINE FISHERIES (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AP63,FALSE,MARINE FISHERIES (ADVANCED),2003,2009,2004,2015,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AP63,TRUE,R&D- NATURAL RESOURCE: MARINE FISHERIES (ADVANCED DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AP64,FALSE,MARINE FISHERIES (ENGINEERING),2004,2009,2005,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AP65,FALSE,MARINE FISHERIES (OPERATIONAL),2002,2009,2003,2009,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AP66,FALSE,R&D-NAT RES-MARINE FISHERIES-MGMT S,2002,2020,2002,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AP67,FALSE,RDTE/MARINE FISHERIES - OPERATIONAL SYSTEM DEV,2005,2005,2006,2015,Other R&D and Knowledge Based,Commercialization,Commercialization
+AP71,FALSE,ATMOSPHERIC (BASIC),2001,2009,2002,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AP72,FALSE,ATMOSPHERIC (APPLIED/EXPLORATORY),2001,2009,2001,2019,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AP72,TRUE,R&D- NATURAL RESOURCE: ATMOSPHERIC (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AP73,FALSE,ATMOSPHERIC (ADVANCED),2001,2009,2001,2012,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AP73,TRUE,R&D- NATURAL RESOURCE: ATMOSPHERIC (ADVANCED DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AP74,FALSE,ATMOSPHERIC (ENGINEERING),2002,2009,2002,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AP74,TRUE,R&D- NATURAL RESOURCE: ATMOSPHERIC (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AP75,FALSE,ATMOSPHERIC (OPERATIONAL),2006,2009,2009,2012,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AP76,FALSE,ATMOSPHERIC (MANAGEMENT/SUPPORT),2004,2009,2009,2020,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AP76,TRUE,R&D- NATURAL RESOURCE: ATMOSPHERIC (MANAGEMENT/SUPPORT),2020,2022,2020,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AP91,FALSE,OTHER NATURAL RESOURCES (BASIC),2001,2009,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AP91,TRUE,R&D- NATURAL RESOURCE: OTHER (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AP92,FALSE,R&D-OTHER NAT RESOURCE-A RES/EXPL D,2001,2020,2001,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AP93,FALSE,R&D- NATURAL RESOURCE: OTHER (ADVANCED DEVELOPMENT),2004,2020,2005,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AP94,FALSE,R&D-OTHER NAT RESOURCE-ENG DEV,2006,2008,2008,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AP94,TRUE,R&D- NATURAL RESOURCE: OTHER (ENGINEERING DEVELOPMENT),2020,2023,2022,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AP95,TRUE,R&D- NATURAL RESOURCE: OTHER (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AP96,FALSE,R&D-OTHER NAT RESOURCE-MGMT SUP,2002,2009,2006,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AP96,TRUE,R&D- NATURAL RESOURCE: OTHER (MANAGEMENT/SUPPORT),2020,2022,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AQ,FALSE,SOCIAL SERVICES RANDD,2004,2004,2005,2010,Other R&D and Knowledge Based,Uncategorized R&D,Uncategorized R&D
+AQ11,FALSE,R&D-SOCIAL SVCS-GERIATRIC-B RES,2006,2020,2015,2020,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AQ12,FALSE,R&D-SOCIAL SVCS-GERIATRIC-A RES/EXP,2001,2009,2015,2019,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AQ13,FALSE,R&D-SOCIAL SVCS-GERIATRIC-ADV DEV,2009,2009,2009,2009,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AQ14,FALSE,R&D-SOCIAL SVCS-GERIATRIC-ENG DEV,2002,2005,2015,2015,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AQ91,FALSE,OTHER SOCIAL SERVICES (BASIC),2002,2009,2005,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AQ91,TRUE,R&D- SOCIAL SERVICES: OTHER (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AQ92,FALSE,R&D-OTHER SOCIAL SVCS-A RES/EXPL DE,2004,2009,2005,2020,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AQ92,TRUE,R&D- SOCIAL SERVICES: OTHER (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AQ93,FALSE,OTHER SOCIAL SERVICES (ADVANCED),2002,2009,2002,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AQ93,TRUE,R&D- SOCIAL SERVICES: OTHER (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AQ94,FALSE,OTHER SOCIAL SERVICES (ENGINEERING),2008,2009,2009,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AQ95,FALSE,OTHER SOCIAL SERVICES (OPERATIONAL),2004,2009,2009,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AQ95,TRUE,R&D- SOCIAL SERVICES: OTHER (OPERATIONAL SYSTEMS DEVELOPMENT),2022,2022,2022,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AQ96,FALSE,R&D-OTHER SOCIAL SVCS-MGMT SUP,2001,2009,2002,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AQ96,TRUE,R&D- SOCIAL SERVICES: OTHER (MANAGEMENT/SUPPORT),2020,2022,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AQ97,FALSE,R&D-OTHER SOCIAL SVCS-COMERCLIZ,2003,2009,2005,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AR10,FALSE,R&D-AERO & SPACE TECH,2001,2009,2006,2011,Space Systems,Uncategorized R&D,Uncategorized R&D
+AR11,FALSE,R&D-AERO & SPACE TECH-B RES,2001,2020,2001,2022,Space Systems,Basic Research (6.1),Basic Research (6.1)
+AR11,TRUE,"SPACE R&D SERVICES; SPACE FLIGHT, RESEARCH AND SUPPORTING ACTIVITIES; BASIC RESEARCH",2022,2023,2022,2023,Space Systems,Basic Research (6.1),Basic Research (6.1)
+AR12,FALSE,R&D-AERO & SPACE TECH-A RES/EXPL DE,2001,2020,2001,2022,Space Systems,Applied Research (6.2),Applied Research (6.2)
+AR12,TRUE,"SPACE R&D SERVICES; SPACE FLIGHT, RESEARCH AND SUPPORTING ACTIVITIES; APPLIED RESEARCH",2022,2023,2022,2023,Space Systems,Applied Research (6.2),Applied Research (6.2)
+AR13,FALSE,R&D-AERO & SPACE TECH-ADV DEV,2001,2020,2001,2022,Space Systems,Advanced Development,Advanced Development
+AR13,TRUE,"SPACE R&D SERVICES; SPACE FLIGHT, RESEARCH AND SUPPORTING ACTIVITIES; EXPERIMENTAL DEVELOPMENT",2022,2023,2022,2023,Space Systems,Experimental Development,Experimental Development
+AR14,FALSE,R&D-AERO & SPACE TECH-ENG DEV,2001,2020,2001,2022,Space Systems,Engineering Development,Engineering Development
+AR14,TRUE,"SPACE R&D SERVICES; SPACE FLIGHT, RESEARCH AND SUPPORTING ACTIVITIES; R&D ADMINISTRATIVE EXPENSES",2022,2023,2022,2023,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AR15,FALSE,R&D-AERO & SPACE TECH-OPSY DEV,2001,2020,2002,2022,Space Systems,Operational Systems Development,Operational Systems Development
+AR15,TRUE,"SPACE R&D SVCS; SPACE FLIGHT, RESEARCH & SUPPORTING ACTIVITIES; R&D FACILITIES & MAJ EQUIP",2022,2023,2022,2023,Space Systems,R&D facilities and major equipment,R&D facilities and major equipment
+AR16,FALSE,R&D-AERO & SPACE TECH-MGMT SUP,2001,2009,2004,2017,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AR16,TRUE,R&D- SPACE: AERONAUTICS/SPACE TECHNOLOGY (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AR17,FALSE,R&D-AERO & SPACE TECH-COMERCLIZ,2001,2005,2006,2006,Space Systems,Commercialization,Commercialization
+AR17,TRUE,R&D- SPACE: AERONAUTICS/SPACE TECHNOLOGY (COMMERCIALIZED),2020,2023,2020,2023,Space Systems,Commercialization,Commercialization
+AR21,FALSE,R&D-SPACE SCIENCE & APPL-B RES,2001,2009,2001,2022,Space Systems,Basic Research (6.1),Basic Research (6.1)
+AR21,TRUE,R&D- SPACE: SCIENCE/APPLICATIONS (BASIC RESEARCH),2020,2023,2020,2023,Space Systems,Basic Research (6.1),Basic Research (6.1)
+AR22,FALSE,R&D-SPACE SCIENCE & APPL-A RES/EXPL,2001,2009,2001,2021,Space Systems,Applied Research (6.2),Applied Research (6.2)
+AR22,TRUE,R&D- SPACE: SCIENCE/APPLICATIONS (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Space Systems,Applied Research (6.2),Applied Research (6.2)
+AR23,FALSE,R&D-SPACE SCIENCE & APPL-ADV DEV,2001,2009,2001,2022,Space Systems,Advanced Development,Advanced Development
+AR23,TRUE,R&D- SPACE: SCIENCE/APPLICATIONS (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Space Systems,Advanced Development,Advanced Development
+AR24,FALSE,R&D-SPACE SCIENCE & APPL-ENG DEV,2001,2009,2001,2019,Space Systems,Engineering Development,Engineering Development
+AR24,TRUE,R&D- SPACE: SCIENCE/APPLICATIONS (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Space Systems,Engineering Development,Engineering Development
+AR25,FALSE,R&D-SPACE SCIENCE & APPL-OPSY DEV,2001,2009,2002,2020,Space Systems,Operational Systems Development,Operational Systems Development
+AR25,TRUE,R&D- SPACE: SCIENCE/APPLICATIONS (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2022,2020,2022,Space Systems,Operational Systems Development,Operational Systems Development
+AR26,FALSE,R&D-SPACE SCIENCE & APPL-MGMT SUP,2001,2009,2003,2020,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AR26,TRUE,R&D- SPACE: SCIENCE/APPLICATIONS (MANAGEMENT/SUPPORT),2020,2022,2020,2022,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AR27,FALSE,R&D-SPACE SCIENCE-COMERCLIZ,2004,2009,2006,2010,Space Systems,Commercialization,Commercialization
+AR31,FALSE,SPACE FLIGHT (BASIC),2001,2009,2001,2020,Space Systems,Basic Research (6.1),Basic Research (6.1)
+AR31,TRUE,R&D- SPACE: FLIGHT (BASIC RESEARCH),2020,2022,2020,2022,Space Systems,Basic Research (6.1),Basic Research (6.1)
+AR32,FALSE,SPACE FLIGHT (APPLIED/EXPLORATORY),2001,2009,2001,2019,Space Systems,Applied Research (6.2),Applied Research (6.2)
+AR32,TRUE,R&D- SPACE: FLIGHT (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Space Systems,Applied Research (6.2),Applied Research (6.2)
+AR33,FALSE,SPACE FLIGHT (ADVANCED),2001,2009,2001,2020,Space Systems,Advanced Development,Advanced Development
+AR33,TRUE,R&D- SPACE: FLIGHT (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Space Systems,Advanced Development,Advanced Development
+AR34,FALSE,SPACE FLIGHT (ENGINEERING),2001,2009,2001,2021,Space Systems,Engineering Development,Engineering Development
+AR34,TRUE,R&D- SPACE: FLIGHT (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Space Systems,Engineering Development,Engineering Development
+AR35,FALSE,SPACE FLIGHT (OPERATIONAL),2001,2009,2002,2019,Space Systems,Operational Systems Development,Operational Systems Development
+AR35,TRUE,R&D- SPACE: FLIGHT (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Space Systems,Operational Systems Development,Operational Systems Development
+AR36,FALSE,SPACE FLIGHT (MANAGEMENT/SUPPORT),2001,2008,2002,2014,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AR36,TRUE,R&D- SPACE: FLIGHT (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AR37,FALSE,R&D-SPACE TRANS SYSTEMS -COMERCLIZ,2006,2008,2009,2009,Space Systems,Commercialization,Commercialization
+AR37,TRUE,R&D- SPACE: FLIGHT (COMMERCIALIZED),2020,2023,2020,2023,Space Systems,Commercialization,Commercialization
+AR41,FALSE,R&D-SPACE TRACK DATA ACQ-B RES,2001,2009,2001,2022,Space Systems,Basic Research (6.1),Basic Research (6.1)
+AR41,TRUE,"R&D- SPACE: OPERATIONS, TRACKING AND DATA ACQUISITION (BASIC RESEARCH)",2020,2023,2020,2023,Space Systems,Basic Research (6.1),Basic Research (6.1)
+AR42,FALSE,R&D-SPACE TRACK DATA ACQ-A RES/EXPL,2001,2009,2002,2022,Space Systems,Applied Research (6.2),Applied Research (6.2)
+AR42,TRUE,"R&D- SPACE: OPERATIONS, TRACKING AND DATA ACQUISITION (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT)",2020,2022,2020,2022,Space Systems,Applied Research (6.2),Applied Research (6.2)
+AR43,FALSE,R&D-SPACE TRACK DATA ACQ-ADV DEV,2001,2009,2001,2020,Space Systems,Advanced Development,Advanced Development
+AR43,TRUE,"R&D- SPACE: OPERATIONS, TRACKING AND DATA ACQUISITION (ADVANCED DEVELOPMENT)",2020,2023,2020,2023,Space Systems,Advanced Development,Advanced Development
+AR44,FALSE,R&D-SPACE TRACK DATA ACQ-ENG DEV,2001,2009,2006,2020,Space Systems,Engineering Development,Engineering Development
+AR44,TRUE,"R&D- SPACE: OPERATIONS, TRACKING AND DATA ACQUISITION (ENGINEERING DEVELOPMENT)",2020,2023,2020,2023,Space Systems,Engineering Development,Engineering Development
+AR45,FALSE,R&D-SPACE TRACK DATA ACQ-OPSY DEV,2001,2009,2004,2022,Space Systems,Operational Systems Development,Operational Systems Development
+AR45,TRUE,"R&D- SPACE: OPERATIONS, TRACKING AND DATA ACQUISITION (OPERATIONAL SYSTEMS DEVELOPMENT)",2020,2023,2020,2023,Space Systems,Operational Systems Development,Operational Systems Development
+AR46,FALSE,R&D-SPACE TRACK DATA ACQ-MGMT SUP,2001,2009,2002,2020,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AR46,TRUE,"R&D- SPACE: OPERATIONS, TRACKING AND DATA ACQUISITION (MANAGEMENT/SUPPORT)",2020,2023,2020,2023,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AR47,FALSE,R&D-SPACE TRACK DATA ACQ-COMERCLIZ,2006,2006,2009,2009,Space Systems,Commercialization,Commercialization
+AR52,FALSE,RDTE/SP+TERRESTRIAL APP-APPLIED RES,2001,2005,2006,2020,Space Systems,Applied Research (6.2),Applied Research (6.2)
+AR54,FALSE,RDTE/SP+TERRESTRIAL APP-DEMO/VALID,2001,2008,2006,2019,Space Systems,Engineering Development,Engineering Development
+AR55,FALSE,RDTE/SP+TERRESTRIAL APP-ENG/MANUF,2001,2009,2006,2020,Space Systems,Operational Systems Development,Operational Systems Development
+AR56,FALSE,R&D-SPACE & TERRESTRIAL-MGMT SUP,2003,2003,2021,2021,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AR57,FALSE,R&D-SPACE & TERRESTRIAL-COMERCLIZ,2003,2009,2004,2021,Space Systems,Commercialization,Commercialization
+AR61,FALSE,R&D-SPACE STATION-B RES,2001,2009,2004,2020,Space Systems,Basic Research (6.1),Basic Research (6.1)
+AR61,TRUE,R&D- SPACE: STATION (BASIC RESEARCH),2020,2022,2020,2023,Space Systems,Basic Research (6.1),Basic Research (6.1)
+AR62,FALSE,R&D-SPACE STATION-A RES/EXP DEV,2001,2009,2004,2018,Space Systems,Applied Research (6.2),Applied Research (6.2)
+AR62,TRUE,R&D- SPACE: STATION (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Space Systems,Applied Research (6.2),Applied Research (6.2)
+AR63,FALSE,R&D-SPACE STATION-ADV DEV,2001,2009,2008,2014,Space Systems,Advanced Development,Advanced Development
+AR64,FALSE,R&D-SPACE STATION-ENG DEV,2001,2009,2001,2021,Space Systems,Engineering Development,Engineering Development
+AR64,TRUE,R&D- SPACE: STATION (ENGINEERING DEVELOPMENT),2020,2022,2020,2022,Space Systems,Engineering Development,Engineering Development
+AR65,FALSE,R&D-SPACE STATION-OPSY DEV,2001,2007,2004,2009,Space Systems,Operational Systems Development,Operational Systems Development
+AR66,FALSE,R&D-SPACE STATION-MGMT SUP,2001,2006,2004,2010,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AR66,TRUE,R&D- SPACE: STATION (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AR67,TRUE,R&D- SPACE: STATION (COMMERCIALIZED),2020,2023,2020,2023,Space Systems,Commercialization,Commercialization
+AR71,FALSE,R&D-COMMERCIAL PROGRAMS-B RES,2001,2008,2002,2021,Space Systems,Basic Research (6.1),Basic Research (6.1)
+AR71,TRUE,R&D- SPACE: COMMERCIAL PROGRAMS (BASIC RESEARCH),2020,2023,2020,2023,Space Systems,Basic Research (6.1),Basic Research (6.1)
+AR72,FALSE,R&D-COMMERCIAL PROGRAMS A RES/EXP D,2001,2008,2001,2020,Space Systems,Applied Research (6.2),Applied Research (6.2)
+AR73,FALSE,R&D-COMMERCIAL PROGRAMS-ADV DEV,2001,2020,2003,2021,Space Systems,Advanced Development,Advanced Development
+AR74,FALSE,R&D-COMMERCIAL PROGRAMS-ENG DEV,2005,2009,2005,2022,Space Systems,Engineering Development,Engineering Development
+AR74,TRUE,R&D- SPACE: COMMERCIAL PROGRAMS (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Space Systems,Engineering Development,Engineering Development
+AR75,FALSE,R&D-COMMERCIAL PROGRAMS-OPSY DEV,2001,2009,2005,2022,Space Systems,Operational Systems Development,Operational Systems Development
+AR76,FALSE,R&D-COMMERCIAL PROGRAMS-MGMT SUP,2001,2009,2004,2020,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AR77,FALSE,R&D-COMMERCIAL PROGRAMS-COMERCLIZ,2007,2009,2008,2020,Space Systems,Commercialization,Commercialization
+AR91,FALSE,R&D-OTHER SPACE-B RES,2001,2009,2001,2022,Space Systems,Basic Research (6.1),Basic Research (6.1)
+AR91,TRUE,R&D- SPACE: OTHER (BASIC RESEARCH),2020,2023,2020,2023,Space Systems,Basic Research (6.1),Basic Research (6.1)
+AR92,FALSE,R&D-OTHER SPACE-A RES/EXPL DEV,2001,2009,2002,2022,Space Systems,Applied Research (6.2),Applied Research (6.2)
+AR92,TRUE,R&D- SPACE: OTHER (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Space Systems,Applied Research (6.2),Applied Research (6.2)
+AR93,FALSE,R&D-OTHER SPACE-ADV DEV,2001,2009,2001,2020,Space Systems,Advanced Development,Advanced Development
+AR93,TRUE,R&D- SPACE: OTHER (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Space Systems,Advanced Development,Advanced Development
+AR94,FALSE,R&D-OTHER SPACE-ENG DEV,2001,2009,2006,2021,Space Systems,Engineering Development,Engineering Development
+AR94,TRUE,R&D- SPACE: OTHER (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Space Systems,Engineering Development,Engineering Development
+AR95,FALSE,R&D-OTHER SPACE-OPSY DEV,2001,2009,2006,2021,Space Systems,Operational Systems Development,Operational Systems Development
+AR95,TRUE,R&D- SPACE: OTHER (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Space Systems,Operational Systems Development,Operational Systems Development
+AR96,FALSE,R&D-OTHER SPACE-MGMT SUP,2001,2009,2002,2022,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AR96,TRUE,R&D- SPACE: OTHER (MANAGEMENT/SUPPORT),2020,2023,2022,2023,Space Systems,R&D administrative and operational expenses,R&D administrative and operational expenses
+AR97,FALSE,R&D-OTHER SPACE-COMERCLIZ,2004,2020,2007,2022,Space Systems,Commercialization,Commercialization
+AS11,FALSE,R&D- MODAL TRANSPORTATION: AIR (BASIC RESEARCH),2001,2020,2002,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AS11,TRUE,"TRANSPORTATION R&D SERVICES; SURFACE TRANSPORTATION, PUBLIC TRANSIT, AND RAIL; BASIC RESEARCH",2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AS12,FALSE,R&D-TRANS-AIR-A RES/EXPL DEV,2001,2020,2001,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AS12,TRUE,"TRANSPORTATION R&D SERVICES; SURFACE TRANSPORTATION, PUBLIC TRANSIT, AND RAIL; APPLIED RESEARCH",2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AS13,FALSE,AIR TRANSPORTATION (ADVANCED),2003,2009,2004,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AS13,TRUE,"TRANSPORTATION R&D SVCS; SURFACE TRANSPORTATION, PUBLIC TRANSIT, & RAIL; EXPERIMENTAL DEVELOPMENT",2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AS14,FALSE,R&D- MODAL TRANSPORTATION: AIR (ENGINEERING DEVELOPMENT),2002,2020,2005,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AS14,TRUE,"TRANSPORTATION R&D SVCS; SURFACE TRANSPORTATION, PUBLIC TRANSIT, & RAIL; R&D ADMINISTRATIVE EXPENSES",2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AS15,FALSE,R&D- MODAL TRANSPORTATION: AIR (OPERATIONAL SYSTEMS DEVELOPMENT),2002,2020,2003,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AS15,TRUE,"TRANSPORTATION R&D SVCS; SURFACE TRANSPORTATION, PUBLIC TRANSIT, & RAIL; R&D FACILITIES & MAJ EQUIP",2022,2023,2023,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AS16,FALSE,R&D-TRANS-AIR-MGMT SUP,2005,2020,2006,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AS17,FALSE,R&D-TRANS-AIR-COMERCLIZ,2003,2020,2005,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AS21,FALSE,SURFACE MOTOR VEHICLES (BASIC),2001,2020,2002,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AS21,TRUE,TRANSPORTATION R&D SERVICES; AEROSPACE RESEARCH; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AS22,FALSE,R&D-TRANS- MOTOR VEH-A RES/EXPL DEV,2001,2020,2003,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AS22,TRUE,TRANSPORTATION R&D SERVICES; AEROSPACE RESEARCH; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AS23,FALSE,SURFACE MOTOR VEHICLES (ADVANCED),2001,2020,2004,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AS23,TRUE,TRANSPORTATION R&D SERVICES; AEROSPACE RESEARCH; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AS24,FALSE,R&D-TRANS- MOTOR VEH-ENG DEV,2002,2020,2002,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AS24,TRUE,TRANSPORTATION R&D SERVICES; AEROSPACE RESEARCH; R&D ADMINISTRATIVE EXPENSES,2022,2023,2023,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AS25,FALSE,R&D-TRANS- MOTOR VEH-OPSY DEV,2001,2007,2006,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AS25,TRUE,TRANSPORTATION R&D SERVICES; AEROSPACE RESEARCH; EXPENSES FOR R&D FACILITIES AND MAJOR EQUIPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AS26,FALSE,R&D-TRANS- MOTOR VEH-MGMT SUP,2002,2009,2006,2020,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AS26,TRUE,R&D- MODAL TRANSPORTATION: SURFACE MOTOR VEHICLES (MANAGEMENT/SUPPORT),2020,2022,2020,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AS27,FALSE,R&D-TRANS- MOTOR VEH-COMERCLIZ,2003,2020,2006,2022,Other R&D and Knowledge Based,Commercialization,Commercialization
+AS31,FALSE,RAIL TRANSPORTATION (BASIC),2001,2020,2003,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AS31,TRUE,TRANSPORTATION R&D SERVICES; WATER TRANSPORTATION; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AS32,FALSE,R&D-TRANS-RAIL-A RES/EXPL DEV,2001,2020,2001,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AS32,TRUE,TRANSPORTATION R&D SERVICES; WATER TRANSPORTATION; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AS33,FALSE,RAIL TRANSPORTATION (ADVANCED),2001,2020,2002,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AS33,TRUE,TRANSPORTATION R&D SERVICES; WATER TRANSPORTATION; EXPERIMENTAL DEVELOPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,Experimental Development,Experimental Development
+AS34,FALSE,RAIL TRANSPORTATION (ENGINEERING),2003,2020,2003,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AS34,TRUE,TRANSPORTATION R&D SERVICES; WATER TRANSPORTATION; R&D ADMINISTRATIVE EXPENSES,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AS35,FALSE,RAIL TRANSPORTATION (OPERATIONAL),2004,2020,2009,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AS35,TRUE,TRANSPORTATION R&D SERVICES; WATER TRANSPORTATION; EXPENSES FOR R&D FACILITIES AND MAJOR EQUIPMENT,2022,2023,2022,2023,Other R&D and Knowledge Based,R&D facilities and major equipment,R&D facilities and major equipment
+AS36,FALSE,R&D-TRANS-RAIL-MGMT SUP,2003,2003,2009,2009,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AS36,TRUE,R&D- MODAL TRANSPORTATION: RAIL (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AS37,FALSE,R&D-TRANS-RAIL-COMERCLIZ,2007,2008,2007,2010,Other R&D and Knowledge Based,Commercialization,Commercialization
+AS41,FALSE,R&D- MODAL TRANSPORTATION: MARINE (BASIC RESEARCH),2001,2020,2003,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AS41,TRUE,TRANSPORTATION R&D SVCS; PIPELINES; HAZ MAT; CROSS-FUNCTIONAL TRANSPORTATION; BASIC RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AS42,FALSE,R&D-TRANS-MARINE-A RES/EXPL DEV,2008,2009,2010,2020,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AS42,TRUE,TRANSPORTATION R&D SVCS; PIPELINES; HAZ MAT; CROSS-FUNCTIONAL TRANSPORTATION; APPLIED RESEARCH,2022,2023,2022,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AS43,FALSE,MARINE TRANSPORTATION (ADVANCED),2002,2009,2006,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AS44,FALSE,MARINE TRANSPORTATION (ENGINEERING),2002,2008,2004,2010,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AS44,TRUE,TRANSPORTATION R&D SVCS; PIPELINES; HAZ MAT; CROSS-FUNCTIONAL TRANSP; R&D ADMINISTRATIVE EXPENSES,2022,2022,2022,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AS45,FALSE,R&D- MODAL TRANSPORTATION: MARINE (OPERATIONAL SYSTEMS DEVELOPMENT),2004,2020,2004,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AS46,FALSE,R&D-TRANS-MARINE-MGMT SUP,2003,2007,2009,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AS47,FALSE,R&D-TRANS-MARINE-COMERCLIZ,2004,2009,2009,2009,Other R&D and Knowledge Based,Commercialization,Commercialization
+AS47,TRUE,R&D- MODAL TRANSPORTATION: MARINE (COMMERCIALIZED),2022,2022,2023,2023,Other R&D and Knowledge Based,Commercialization,Commercialization
+AS91,FALSE,OTHER MODAL TRANSPORTATION (BASIC),2001,2009,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AS91,TRUE,R&D- MODAL TRANSPORTATION: OTHER MODAL (BASIC RESEARCH),2020,2022,2020,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AS92,FALSE,R&D-OTHER MODAL TRANS-A RES/EXPL DE,2001,2009,2002,2020,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AS92,TRUE,R&D- MODAL TRANSPORTATION: OTHER MODAL (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2022,2021,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AS93,FALSE,R&D-OTHER MODAL TRANS-ADV DEV,2002,2009,2009,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AS96,FALSE,R&D-OTHER MODAL TRANS-MGMT SUP,2001,2009,2005,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AS96,TRUE,R&D- MODAL TRANSPORTATION: OTHER MODAL (MANAGEMENT/SUPPORT),2020,2022,2020,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AS97,FALSE,R&D-OTHER MODAL TRANS-COMERCLIZ,2002,2009,2009,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AT11,FALSE,R&D-TRANS-ROADS-BRIDGES-B RES,2001,2009,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AT11,TRUE,"R&D- OTHER TRANSPORTATION: HIGHWAYS, ROADS, AND BRIDGES (BASIC RESEARCH)",2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AT12,FALSE,R&D-TRANS-ROADS-BRIDGES-A RES/EXPL,2001,2009,2001,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AT12,TRUE,"R&D- OTHER TRANSPORTATION: HIGHWAYS, ROADS, AND BRIDGES (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT)",2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AT13,FALSE,R&D-TRANS-ROADS-BRIDGES-ADV DEV,2004,2009,2005,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AT13,TRUE,"R&D- OTHER TRANSPORTATION: HIGHWAYS, ROADS, AND BRIDGES (ADVANCED DEVELOPMENT)",2020,2022,2020,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AT14,FALSE,R&D-TRANS-ROADS-BRIDGES-ENG DEV,2005,2009,2005,2009,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AT14,TRUE,"R&D- OTHER TRANSPORTATION: HIGHWAYS, ROADS, AND BRIDGES (ENGINEERING DEVELOPMENT)",2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AT15,FALSE,R&D-TRANS-ROADS-BRIDGES-OPSY DEV,2001,2009,2004,2010,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AT16,FALSE,R&D-TRANS-ROADS-BRIDGES-MGMT SUP,2001,2009,2002,2012,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AT16,TRUE,"R&D- OTHER TRANSPORTATION: HIGHWAYS, ROADS, AND BRIDGES (MANAGEMENT/SUPPORT)",2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AT17,FALSE,R&D-TRANS-ROADS-BRIDGES-COMERCLIZ,2003,2020,2005,2021,Other R&D and Knowledge Based,Commercialization,Commercialization
+AT21,FALSE,R&D-TRANS-HUMAN FACTORS-B RES,2002,2009,2003,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AT21,TRUE,R&D- OTHER TRANSPORTATION: HUMAN FACTORS CONCERNING TRANSPORTATION (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AT22,FALSE,R&D-TRANS-HUMAN FACTORS-A RES/EXPL,2001,2020,2004,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AT24,FALSE,R&D-TRANS-HUMAN FACTORS-ENG DEV,2001,2009,2001,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AT24,TRUE,R&D- OTHER TRANSPORTATION: HUMAN FACTORS CONCERNING TRANSPORTATION (ENGINEERING DEVELOPMENT),2020,2022,2021,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AT26,FALSE,R&D-TRANS-HUMAN FACTORS-MGMT SUP,2002,2009,2004,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AT27,FALSE,R&D-TRANS-HUMAN FACTORS-COMERCLIZ,2002,2006,2009,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AT31,FALSE,R&D-TRANS-NAVIGATION AIDS-B RES,2003,2004,2009,2019,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AT31,TRUE,R&D- OTHER TRANSPORTATION: NAVIGATION AND NAVIGATIONAL AIDS (BASIC RESEARCH),2020,2022,2020,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AT32,FALSE,R&D-TRANS-NAVIGATION AIDS-A RES/EXP,2002,2009,2006,2020,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AT32,TRUE,R&D- OTHER TRANSPORTATION: NAVIGATION/NAVIGATIONAL AIDS (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AT33,FALSE,R&D-TRANS-NAVIGATION AIDS-ADV DEV,2001,2009,2006,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AT34,FALSE,R&D-TRANS-NAVIGATION AIDS-ENG DEV,2003,2020,2009,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AT35,FALSE,R&D-TRANS-NAVIGATION AIDS-OPSY DEV,2004,2020,2020,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AT36,FALSE,R&D-TRANS-NAVIGATION AIDS-MGMT SUP,2005,2009,2005,2009,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AT41,FALSE,R&D-TRANS-PASS SAFETY-B RES,2001,2009,2004,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AT41,TRUE,R&D- OTHER TRANSPORTATION: PASSENGER SAFETY AND SECURITY (BASIC RESEARCH),2020,2023,2021,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AT42,FALSE,R&D-TRANS-PASS SAFETY-A RES/EXPL DE,2001,2009,2004,2012,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AT42,TRUE,R&D- OTHER TRANSPORTATION: PASSENGER SAFETY AND SECURITY (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2022,2021,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AT43,FALSE,R&D-TRANS-PASS SAFETY-ADV DEV,2005,2009,2006,2010,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AT43,TRUE,R&D- OTHER TRANSPORTATION: PASSENGER SAFETY AND SECURITY (ADVANCED DEVELOPMENT),2022,2022,2022,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AT44,FALSE,R&D-TRANS-PASS SAFETY-ENG DEV,2005,2008,2005,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AT44,TRUE,R&D- OTHER TRANSPORTATION: PASSENGER SAFETY AND SECURITY (ENGINEERING DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AT46,FALSE,R&D-TRANS-PASS SAFETY-MGMT SUP,2007,2007,2019,2019,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AT46,TRUE,R&D- OTHER TRANSPORTATION: PASSENGER SAFETY AND SECURITY (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AT47,FALSE,R&D-TRANS-PASS SAFETY-COMERCLIZ,2001,2020,2005,2021,Other R&D and Knowledge Based,Commercialization,Commercialization
+AT51,FALSE,PIPELINE SAFETY (BASIC),2002,2009,2005,2018,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AT52,TRUE,R&D- OTHER TRANSPORTATION: PIPELINE SAFETY (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2022,2021,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AT53,FALSE,PIPELINE SAFETY (ADVANCED),2004,2009,2004,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AT54,FALSE,R&D- OTHER TRANSPORTATION: PIPELINE SAFETY (ENGINEERING DEVELOPMENT),2009,2020,2011,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AT55,FALSE,PIPELINE SAFETY (OPERATIONAL),2006,2009,2006,2020,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AT56,TRUE,R&D- OTHER TRANSPORTATION: PIPELINE SAFETY (MANAGEMENT/SUPPORT),2020,2022,2020,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AT61,FALSE,TRAFFIC MANAGEMENT (BASIC),2001,2009,2001,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AT61,TRUE,R&D- OTHER TRANSPORTATION: TRAFFIC MANAGEMENT (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AT62,FALSE,R&D-TRANS-TRAFFIC MGT-A RES/EXPL DE,2001,2020,2002,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AT63,FALSE,TRAFFIC MANAGEMENT (ADVANCED),2001,2009,2001,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AT64,FALSE,TRAFFIC MANAGEMENT (ENGINEERING),2006,2008,2006,2010,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AT64,TRUE,R&D- OTHER TRANSPORTATION: TRAFFIC MANAGEMENT (ENGINEERING DEVELOPMENT),2020,2022,2021,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AT65,FALSE,TRAFFIC MANAGEMENT (OPERATIONAL),2005,2009,2006,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AT65,TRUE,R&D- OTHER TRANSPORTATION: TRAFFIC MANAGEMENT (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AT66,FALSE,R&D-TRANS-TRAFFIC MGT-MGMT SUP,2004,2009,2005,2019,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AT66,TRUE,R&D- OTHER TRANSPORTATION: TRAFFIC MANAGEMENT (MANAGEMENT/SUPPORT),2020,2022,2020,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AT67,FALSE,R&D-TRANS-TRAFFIC MGT-COMERCLIZ,2002,2004,2009,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AT72,FALSE,R&D-TRANS-TUNNELS-A RES/EXPL DEV,2005,2005,2021,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AT73,FALSE,R&D-TRANS-TUNNELS-ADV DEV,2005,2005,2006,2006,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AT75,FALSE,R&D-TRANS-TUNNELS-OPSY DEV,2004,2004,2019,2019,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AT76,FALSE,R&D-TRANS-TUNNELS-MGMT SUP,2004,2009,2010,2015,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AT77,TRUE,R&D- OTHER TRANSPORTATION: TUNNELS AND OTHER SUBSURFACE STRUCTURES (COMMERCIALIZED),2020,2022,2020,2022,Other R&D and Knowledge Based,Commercialization,Commercialization
+AT81,FALSE,R&D-TRANS OF HAZARD MAT-B RES,2001,2009,2008,2020,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AT81,TRUE,R&D- OTHER TRANSPORTATION: TRANSPORTING HAZARDOUS MATERIALS (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AT82,FALSE,R&D-TRANS OF HAZARD MAT-A RES/EXPL,2005,2006,2005,2006,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AT82,TRUE,R&D- OTHER TRANSPORTATION: TRANSPORTING HAZ MAT (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2021,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AT83,FALSE,R&D-TRANS OF HAZARD MAT-ADV DEV,2009,2009,2021,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AT83,TRUE,R&D- OTHER TRANSPORTATION: TRANSPORTING HAZARDOUS MATERIALS (ADVANCED DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AT86,FALSE,R&D-TRANS OF HAZARD MAT-MGMT SUP,2004,2009,2005,2014,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AT87,FALSE,RDTE/TRANS - HAZARDOUS MATS - OPERATIONAL SY DEV,2008,2009,2009,2010,Other R&D and Knowledge Based,Commercialization,Commercialization
+AT90,FALSE,R&D-OTHER GENERAL TRANS,2005,2005,2021,2021,Other R&D and Knowledge Based,Uncategorized R&D,Uncategorized R&D
+AT91,FALSE,R&D-OTHER GENERAL TRANS-B RES,2001,2009,2003,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AT91,TRUE,R&D- OTHER TRANSPORTATION: OTHER GENERAL (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AT92,FALSE,R&D-OTHER GENERAL TRANS-A RES/EXPL,2002,2009,2003,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AT92,TRUE,R&D- OTHER TRANSPORTATION: OTHER GENERAL (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AT93,FALSE,R&D-OTHER GENERAL TRANS-ADV DEV,2001,2009,2005,2021,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AT94,FALSE,R&D-OTHER GENERAL TRANS-ENG DEV,2001,2009,2006,2021,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AT94,TRUE,R&D- OTHER TRANSPORTATION: OTHER GENERAL (ENGINEERING DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AT95,FALSE,R&D-OTHER GENERAL TRANS-OPSY DEV,2001,2009,2006,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AT95,TRUE,R&D- OTHER TRANSPORTATION: OTHER GENERAL (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AT96,FALSE,R&D-OTHER GENERAL TRANS-MGMT SUP,2001,2020,2001,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AT97,FALSE,R&D-OTHER GENERAL TRANS-COMERCLIZ,2002,2009,2006,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AT97,TRUE,R&D- OTHER TRANSPORTATION: OTHER GENERAL (COMMERCIALIZED),2020,2023,2020,2023,Other R&D and Knowledge Based,Commercialization,Commercialization
+AU17,FALSE,R&D-TRANS OF HAZARD MAT-COMERCLIZ,2004,2009,2005,2021,Other R&D and Knowledge Based,Commercialization,Commercialization
+AV11,FALSE,SUBSURFACE MINING EQUIPMENT (BASIC),2001,2008,2007,2015,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AV11,TRUE,R&D- MINING: SUBSURFACE MINING EQUIPMENT (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AV12,FALSE,R&D-SUBSURFACE MINING EQ-A RES/EXPL,2008,2009,2015,2016,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AV12,TRUE,R&D- MINING: SUBSURFACE MINING EQUIPMENT (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AV13,FALSE,R&D-SUBSURFACE MINING EQ-ADV DEV,2007,2009,2015,2015,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AV14,FALSE,R&D-SUBSURFACE MINING EQ-ENG DEV,2007,2008,2015,2015,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AV14,TRUE,R&D- MINING: SUBSURFACE MINING EQUIPMENT (ENGINEERING DEVELOPMENT),2022,2022,2022,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AV15,FALSE,R&D-SUBSURFACE MINING EQ-OPSY DEV,2001,2009,2006,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AV16,FALSE,R&D-SUBSURFACE MINING EQ-MGMT SUP,2009,2009,2015,2015,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AV17,FALSE,R&D-SUBSURFACE MINING EQ-COMERCLIZ,2008,2009,2015,2015,Other R&D and Knowledge Based,Commercialization,Commercialization
+AV21,FALSE,SURFACE MINING EQUIPMENT (BASIC),2006,2009,2007,2015,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AV23,FALSE,SURFACE MINING EQUIPMENT (ADVANCED),2008,2008,2015,2015,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AV25,FALSE,R&D-SURFACE MINING EQ-OPSY DEV,2006,2007,2015,2015,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AV26,FALSE,R&D-SURFACE MINING EQ-MGMT SUP,2002,2020,2020,2021,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AV31,FALSE,SUBSURFACE MINING METHODS (BASIC),2007,2020,2015,2020,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AV32,FALSE,R&D-SUBSURF MINING METHS-A RES/EXPL,2003,2009,2009,2015,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AV33,FALSE,R&D-SUBSURF MINING METHS-ADV DEV,2007,2007,2015,2015,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AV34,FALSE,R&D- MINING: SUBSURFACE MINING METHODS (ENGINEERING DEVELOPMENT),2020,2020,2020,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AV35,FALSE,R&D-SUBSURF MINING METHS-OPSY DEV,2009,2009,2009,2015,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AV36,FALSE,R&D-SUBSURF MINING METHS-MGMT SUP,2008,2009,2015,2015,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AV42,FALSE,R&D-SURFACE MINING METHS-A RES/EXPL,2008,2008,2009,2009,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AV51,FALSE,MINING RECLAMATION METHODS (BASIC),2005,2009,2006,2020,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AV53,FALSE,R&D-MINING RECLAM METHS-ADV DEV,2002,2002,2009,2009,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AV61,FALSE,MINING SAFETY (BASIC),2004,2009,2006,2021,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AV61,TRUE,R&D- MINING: MINING SAFETY (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AV62,FALSE,MINING SAFETY (APPLIED/EXPLORATORY),2004,2009,2015,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AV62,TRUE,R&D- MINING: MINING SAFETY (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AV63,FALSE,MINING SAFETY (ADVANCED),2007,2009,2007,2020,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AV64,FALSE,MINING SAFETY (ENGINEERING),2005,2009,2015,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AV64,TRUE,R&D- MINING: MINING SAFETY (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AV65,FALSE,MINING SAFETY (OPERATIONAL),2006,2009,2007,2021,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AV65,TRUE,R&D- MINING: MINING SAFETY (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AV66,FALSE,MINING SAFETY (MANAGEMENT/SUPPORT),2008,2009,2010,2015,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AV71,FALSE,METALLURGICAL (BASIC),2004,2009,2005,2020,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AV72,FALSE,R&D- MINING: METALLURGICAL (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2007,2020,2015,2020,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AV73,FALSE,METALLURGICAL (ADVANCED),2007,2009,2007,2009,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AV75,FALSE,METALLURGICAL (OPERATIONAL),2007,2009,2015,2015,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AV76,FALSE,METALLURGICAL (MANAGEMENT/SUPPORT),2007,2009,2007,2011,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AV91,FALSE,OTHER MINING ACTIVITIES (BASIC),2002,2006,2003,2015,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AV92,FALSE,R&D-OTHER MINING ACTIV-A RES/EXPL D,2002,2009,2006,2021,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AV92,TRUE,R&D- MINING: OTHER MINING ACTIVITIES (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AV93,TRUE,R&D- MINING: OTHER MINING ACTIVITIES (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AV94,FALSE,R&D-OTHER MINING ACTIV-ENG DEV,2006,2020,2006,2020,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AV95,FALSE,R&D-OTHER MINING ACTIV-OPSY DEV,2007,2009,2015,2015,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AV95,TRUE,R&D- MINING: OTHER MINING ACTIVITIES (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2022,2020,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AV96,FALSE,R&D-OTHER MINING ACTIV-MGMT SUP,2008,2009,2015,2015,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AV97,FALSE,R&D-OTHER MINING ACTIV-COMERCLIZ,2004,2009,2008,2020,Other R&D and Knowledge Based,Commercialization,Commercialization
+AZ10,FALSE,R&D-OTHER R & D,2008,2008,2012,2012,Other R&D and Knowledge Based,Uncategorized R&D,Uncategorized R&D
+AZ11,FALSE,R&D-OTHER R & D-B RES,2001,2009,2001,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AZ11,TRUE,R&D- OTHER RESEARCH AND DEVELOPMENT (BASIC RESEARCH),2020,2023,2020,2023,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
+AZ12,FALSE,R&D-OTHER R & D-A RES/EXPL DEV,2001,2009,2001,2022,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AZ12,TRUE,R&D- OTHER RESEARCH AND DEVELOPMENT (APPLIED RESEARCH/EXPLORATORY DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Applied Research (6.2),Applied Research (6.2)
+AZ13,FALSE,R&D-OTHER R & D-ADV DEV,2001,2009,2001,2022,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AZ13,TRUE,R&D- OTHER RESEARCH AND DEVELOPMENT (ADVANCED DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Advanced Development,Advanced Development
+AZ14,FALSE,R&D-OTHER R & D-ENG DEV,2001,2009,2001,2022,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AZ14,TRUE,R&D- OTHER RESEARCH AND DEVELOPMENT (ENGINEERING DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Engineering Development,Engineering Development
+AZ15,FALSE,R&D-OTHER R & D-OPSY DEV,2001,2009,2001,2022,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AZ15,TRUE,R&D- OTHER RESEARCH AND DEVELOPMENT (OPERATIONAL SYSTEMS DEVELOPMENT),2020,2023,2020,2023,Other R&D and Knowledge Based,Operational Systems Development,Operational Systems Development
+AZ16,FALSE,R&D-OTHER R & D-MGMT SUP,2001,2009,2001,2022,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AZ16,TRUE,R&D- OTHER RESEARCH AND DEVELOPMENT (MANAGEMENT/SUPPORT),2020,2023,2020,2023,Other R&D and Knowledge Based,R&D administrative and operational expenses,R&D administrative and operational expenses
+AZ17,FALSE,R&D-OTHER R & D-COMERCLIZ,2001,2009,2006,2022,Other R&D and Knowledge Based,Commercialization,Commercialization
+AZ17,TRUE,R&D- OTHER RESEARCH AND DEVELOPMENT (COMMERCIALIZED),2020,2023,2020,2023,Other R&D and Knowledge Based,Commercialization,Commercialization
