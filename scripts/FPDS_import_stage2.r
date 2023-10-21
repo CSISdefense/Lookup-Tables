@@ -2,6 +2,7 @@
 source("scripts//SQLimportTools.r")
 library(tidyverse)
 
+
 ###### From Stage 2 to Contract.FPDS #########
 #Match up Errorlogging.FPDSstage2 to Contract.FPDS 
 Stage2TableType.df<-read_create_table("ErrorLogging.FPDSstage2.Table.sql",
@@ -13,6 +14,10 @@ DestinationTable.df<-read_create_table("Contract.FPDS.Table.sql",
 translate_name(DestinationTable.df,test_only=TRUE)
 
 MergeStage2.df<-merge_source_and_csis_name_tables(Stage2TableType.df,DestinationTable.df)
+
+#Check for size mismatch
+# View(MergeStage2.df %>% filter(SourceVariableType!=CSISvariableType))
+# MergeStage2.df %>% filter(substr(MergeStage2.df$SourceVariableType,2,6)=="nv")
 
 #Try converts shouldn't be necessary unless there's been a change in contract.fpds
 #That said, the differences in date format mean some will be generated.
@@ -142,3 +147,16 @@ update_list<-create_update_FPDS(MergeStage2.df,
   DateType=101,
   drop_name=TRUE)
 write(update_list,"Output/ErrorLogging_FPDSstage2_update_destination.txt")
+MergeStage2.df %>% filter(substr(CSISvariableType,2,3) %in% c("NV","nv")) %>% select(SourceVariableName)
+substr(MergeStage2.df$CSISvariableType,2,3)
+###### From Stage 2 to Contract.FPDS #########
+#Match up Errorlogging.FPDSstage2 to Contract.FPDS 
+Stage2TableType.df<-read_create_table("ErrorLogging.FPDSstage2.Table.sql",
+                                      dir="SQL")
+Stage2TableType.df<-translate_name(Stage2TableType.df)
+
+DupTable.df<-read_create_table("ErrorLogging.FPDSdeleted.Table.sql",
+                                       dir="SQL")
+translate_name(DupTable.df,test_only=TRUE)
+debug(merge_source_and_csis_name_tables)
+MergeStage2.df<-merge_source_and_csis_name_tables(Stage2TableType.df,DupTable.df)
