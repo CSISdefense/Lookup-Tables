@@ -24,9 +24,16 @@ Clothing & Subsistence,Clothing & Subsistence,Products,Products (All),Clothing &
 Aircraft,Aircraft,Products,Products (All),Aircraft,Aircraft,TRUE,Products (All),Supplies,Supplies,Products (All)
 Basic Research (6.1),R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Basic Research (6.1)
 Applied Research (6.2),R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Applied Research (6.2)
-Advanced Technology Development (6.3),R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Advanced Technology Development (6.3)
-Advanced Component Development & Prototypes (6.4),R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Advanced Component Development & Prototypes (6.4)
-System Development & Demonstration (6.5),R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,System Development & Demonstration (6.5)
-Operational Systems Development (6.7),R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Operational Systems Development (6.7)
-Operation of Government R&D Facilities,R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Operation of Government R&D Facilities
+Experimental Development,R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Experimental Development
+Advanced Development,R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Advanced Development
+Advanced Technology Development (6.3),R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Advanced Development
+Engineering Development,R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Engineering Development
+Advanced Component Development & Prototypes (6.4),R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Engineering Development
+Operational Systems Development,R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Operational Systems Development
+System Development & Demonstration (6.5),R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Operational Systems Development
+R&D administrative and operational expenses,R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,R&D administrative and operational expenses
+Operation of Government R&D Facilities,R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,R&D administrative and operational expenses
+R&D facilities and major equipment,R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,R&D facilities and major equipment
+Commercialization,R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Commercialization
+Operational Systems Development (6.7),R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Commercialization
 Uncategorized R&D,R&D,R&D,R&D,R&D,Other Services,TRUE,R&D,Other Services,Other Services,Uncategorized R&D
