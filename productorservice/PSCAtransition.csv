@@ -1,4 +1,4 @@
-productorservicecode,fiscal_year_gt_2020,product_or_service_code_description,minofsignedyear,maxofsignedyear,minoflast_modified_year,maxoflast_modified_year,PlatformPortfolio,ProductServiceOrRnDarea,RnD_budgetActivity
+ProductOrServiceCode,Fiscal_Year_gt_2020,product_or_service_code_description,minofsignedyear,maxofsignedyear,minoflast_modified_year,maxoflast_modified_year,PlatformPortfolio,ProductServiceOrRnDarea,RnD_budgetActivity
 A,FALSE,RESEARCH AND DEVELOPMENT,2004,2004,2005,2005,Other R&D and Knowledge Based,Uncategorized R&D,Uncategorized R&D
 AA10,FALSE,R&D-INSECT & DIS CONT,2004,2004,2004,2004,Other R&D and Knowledge Based,Uncategorized R&D,Uncategorized R&D
 AA11,FALSE,R&D-INSECT & DIS CONT-B RES,2001,2020,2002,2022,Other R&D and Knowledge Based,Basic Research (6.1),Basic Research (6.1)
