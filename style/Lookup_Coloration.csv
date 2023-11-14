@@ -646,7 +646,7 @@ Pricing,Firm-fixed price,Firm-fixed price,2,blue,#326496,16,,,default grey,#5544
 Pricing,Firm-Fixed-Price / No Fee,Firm-Fixed Price / No Fee,2,blue,#326496,,,,default grey,#554449,
 Pricing,No Fee,No Fee,1,blue,#326496,,,,default grey,#554449,
 Pricing,Fixed Price (Firm),Fixed Price (Firm),2,blue,#326496,,,,default grey,#554449,
-Pricing,Firm-Fixed-Price,FFP,2,blue,#326496,,,,default grey,#554449,
+Pricing,Firm-Fixed Price,FFP,2,blue,#326496,,,,default grey,#554449,
 Pricing,FFP,FFP,2,blue,#326496,,,,default grey,#554449,
 Pricing,Fixed,Fixed,3,dark blue,#4572A7,,,,default grey,#554449,
 Pricing,Fixed Price (Other),Fixed Price (Other),3,Blue,#B9CDE5,,,,default grey,#554449,
