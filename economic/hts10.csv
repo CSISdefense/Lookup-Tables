@@ -1,10 +1,19 @@
 hts10,hts_description,USITC.Tier,PlatformPortfolio.USITC,PlatformPortfolio.Ordnance,PlatformPortfolio,PlatformPortfolio2,PlatformPortfolio3,ArmsDual, Total ,MinOfYear,MaxOfYear,Invalid
 3603.00.0000,"SAFETY FUSES; DETONATING FUSES; PERCUSSION OR DETONATING CAPS, IGNITERS; ELECTRIC DETONATORS",Parts and Accessories,Ordnance and Missiles,Other Munitions,Ordnance and Missiles,NA,NA,Arms,5121318179,1989,2019,FALSE
+3603.10.0000,Safety fuses,Parts and Accessories,Ordnance and Missiles,Other Munitions,Ordnance and Missiles,NA,NA,Arms,,,,
+3603.20.0000,Detonating cords,Parts and Accessories,Ordnance and Missiles,Other Munitions,Ordnance and Missiles,NA,NA,Arms,,,,
+3603.30.0000,Percussion caps,Parts and Accessories,Ordnance and Missiles,Other Munitions,Ordnance and Missiles,NA,NA,Arms,,,,
+3603.40.0000,Detonating caps,Parts and Accessories,Ordnance and Missiles,Other Munitions,Ordnance and Missiles,NA,NA,Arms,,,,
+3603.50.0000,Igniters,Parts and Accessories,Ordnance and Missiles,Other Munitions,Ordnance and Missiles,NA,NA,Arms,,,,
+3603.60.00.00,Electric detonators,Parts and Accessories,Ordnance and Missiles,Other Munitions,Ordnance and Missiles,NA,NA,Arms,,,,
 4011.30.0000,"NEW PNEUMATIC TIRES, OF RUBBER, USED ON AIRCRAFT",Parts and Accessories,Aerospace,Aerospace,Aircraft,NA,NA,Dual,862215094,1989,2008,FALSE
+4011.30.0050,"NEW PNEUMATIC TIRES, OF RUBBER, USED ON AIRCRAFT, EXCEPT CIVIL AIRCRAFT USE",Parts and Accessories,Aerospace,Aerospace,Aircraft,NA,NA,Arms,,,,
 4012.10.5020,"RETREADED TIRES, OF RUBBER, FOR ON-THE-HIGHWAY TRUCK AND BUS",Parts and Accessories,Land Vehicles,Land Vehicles,Land Vehicles,NA,NA,Dual,47764848,1989,2001,FALSE
 4012.10.6000,"RETREADED TIRES, OF RUBBER, EXCEPT FOR ON-THE-HIGHWAY TRUCK AND BUS, NESOI",Parts and Accessories,Land Vehicles,Land Vehicles,Land Vehicles,NA,NA,Dual,117897819,1989,2001,FALSE
 4012.13.0000,"RETREADED TIRES OF RUBBER,  OF A KIND USED ON AIRCRAFT",Parts and Accessories,Aerospace,Aerospace,Aircraft,NA,NA,Dual,33230298,2002,2008,FALSE
+4012.13.0050,"RETREADED TIRES OF RUBBER,  OF A KIND USED ON AIRCRAFT, EXCEPT CIVIL AIRCRAFT USE",Parts and Accessories,Aerospace,Aerospace,Aircraft,NA,NA,Arms,,,,
 4012.20.0000,USED PNEUMATIC TIRES OF RUBBER,Parts and Accessories,Cross-Platform,Cross-Platform,Land Vehicles,Aircraft,NA,Dual,660678579,1989,2019,FALSE
+4012.20.1050,"USED PNEUMATIC TIRES OF RUBBER,  OF A KIND USED ON AIRCRAFT, EXCEPT CIVIL AIRCRAFT USE",Parts and Accessories,Aerospace,Aerospace,Aircraft,NA,NA,Arms,,,,
 8407.10.0090,"SPARK-IGNITION RECIPROCATING OR ROTARY INTERNAL COMBUSTION PISTON TYPE AIRCRAFT ENGINES, EXCEPT CIVIL AIRCRAFT USE",Parts and Accessories,Aerospace,Aerospace,Aircraft,NA,NA,Arms,"2,962,650,771.00",1989,2019,FALSE
 8407.21.0000,OUTBOARD ENGINES FOR MARINE PROPULSION,Engines,Ships & Submarines,Ships & Submarines,Ships/Subs,NA,NA,Dual,7527570416,1989,2019,FALSE
 8407.29.0010,"SPARK-IGNITION RECIPROCATING OR ROTARY INTERNAL COMBUSTION PISTON ENGINES FOR MARINE PROPULSION, INBOARD ENGINES WITH OUTBOARD DRIVE",Engines,Ships & Submarines,Ships & Submarines,Ships/Subs,NA,NA,Dual,1394212178,1989,2019,FALSE
