@@ -313,6 +313,7 @@ FLK: FALKLAND ISLANDS (MALVINAS),FLK,FLK
 FR,FR,FRA
 Fr Polynesia,PYF,PYF
 Fr S & Ant Land,NULL,ATF
+Fr S &amp; Ant Land,NULL,ATF
 FRA,FRA,FRA
 FRA: FRANCE,FRA,FRA
 FRANCE,FRA,FRA
@@ -385,6 +386,7 @@ GUYANA,GUY,GUY
 HAITI,HTI,HTI
 Hamas (Palestine)*,NULL,NULL
 Heard & McDn Is,NULL,HMD
+Heard &amp; McDn Is,NULL,HMD
 Heard Island and McDonald Islands,NULL,HMD
 HKG,HKG,HKG
 HKG: HONG KONG,HKG,HKG
@@ -566,6 +568,7 @@ MONACO,MCO,MCO
 MONGOLIA,MNG,MNG
 MONTENEGRO,MNE,MNE
 Montserrat,MSR,MSR
+"xml:space=""preserve"">Montserrat",MSR,MSR
 MONTSERRAT [UNITED KINGDOM],MSR,MSR
 MOROCCO,MAR,MAR
 MOZ,MOZ,MOZ
@@ -726,6 +729,7 @@ SAINT VINCENT AND THE GRENADINES,VCT,VCT
 SAMOA,WSM,WSM
 San Marino,NULL,SMR
 Sao Tome & Prin,STP,STP
+Sao Tome &amp; Prin,STP,STP
 Sao Tome & Principe,STP,STP
 SAO TOME AND PRINCIPE,STP,STP
 SAU,SAU,SAU
@@ -799,7 +803,9 @@ St Kitts And Nevis,KNA,KNA
 St Kitts-Nevis,KNA,KNA
 St Lucia,LCA,LCA
 St Pierre & Miq,SPM,SPM
+St Pierre &amp; Miq,SPM,SPM
 St Vinc & Gren,VCT,VCT
+St Vinc &amp; Gren,VCT,VCT
 St Vincent + Gren.,VCT,VCT
 St. Kitts and Nevis,KNA,KNA
 St. Lucia,LCA,LCA
@@ -867,6 +873,7 @@ TON: TONGA,TON,TON
 TONGA,TON,TON
 Total / Global Organizations,*WO,*WO
 Trin & Tobago,TTO,TTO
+Trin &amp; Tobago,TTO,TTO
 Trinidad + Tobago,TTO,TTO
 TRINIDAD AND TOBAGO,TTO,TTO
 Trinidad-Tobago,TTO,TTO
@@ -881,6 +888,7 @@ TURKEY,TUR,TUR
 Turkiye,TUR,TUR
 TURKMENISTAN,TKM,TKM
 Turks & Caic Is,TCA,TCA
+Turks &amp; Caic Is,TCA,TCA
 Turks and Caicos Islands,TCA,TCA
 TURKS AND CAICOS ISLANDS [UNITED KINGDOM],TCA,TCA
 TUVALU,TUV,TUV
@@ -942,6 +950,7 @@ VNM: VIET NAM,VNM,VNM
 VUT,VUT,VUT
 VUT: VANUATU,VUT,VUT
 Wallis & Futuna,NULL,WLF
+Wallis &amp; Futuna,NULL,WLF
 Wallis and Futuna,NULL,WLF
 West Africa (not specified),*SA,?SA
 West Africa Regional,?SA,?SA
