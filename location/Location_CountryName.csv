@@ -970,10 +970,10 @@ YEM,YEM,YEM
 YEM: YEMEN,YEM,YEM
 "Yemen, Rep.",YEM,YEM
 YEMEN,YEM,YEM
-Yemen (Aden),*SY,SYM
+Yemen (Aden),*SY,YMD
 Yemen Arab Republic,YEM,YEM
-Yemen People's Republic,*SY,SYM
-"Yemen, South",*SY,SYM
+Yemen People's Republic,*SY,YMD
+"Yemen, South",*SY,YMD
 Yugoslavia,^YG,YUG
 Yugoslavia89-92,^YG,YUG
 ZAF,ZAF,ZAF
