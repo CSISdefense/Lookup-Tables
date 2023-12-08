@@ -786,7 +786,7 @@ SOUTH KOREA,KOR,KOR
 South Pacific Regional,*SP,*SP
 South Sudan,SSD,SSD
 South Vietnam,NULL,*SV
-South Yemen,NULL,*SY
+South Yemen,*SY,YMD
 Southern Africa (not specified),?SF,?SF
 Soviet Union,~RQ,~RQ
 SPAIN,ESP,ESP
