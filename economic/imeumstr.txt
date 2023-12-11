@@ -1,0 +1,228 @@
+********************************************************************************
+*                                                                              *
+* Import END-USE codes - 1,2,3 and 5 digit                                     *
+*                                                                              *
+*------------------------------------------------------------------------------*
+*CODE   DESCRIPTION                                                            *                                                                                                        
+********************************************************************************
+0       Foods, feeds, and beverages
+00      Agricultural
+000     Green coffee, cocoa beans, and cane sugar
+00000   Green coffee
+00010   Cocoa beans
+00020   Cane and beet sugar
+001     Other agricultural foods
+00100   Meat products
+00110   Dairy products and eggs
+00120   Fruits, frozen juices
+00130   Vegetables
+00140   Nuts
+00150   Food oils, oilseeds
+00160   Bakery products
+00170   Tea, spices, etc.
+00180   Other foods
+00190   Wine, beer, and related products
+002     Feedstuff and foodgrains
+00200   Feedstuff and foodgrains
+01      Nonagricultural products
+010     Nonagricultural products
+01000   Fish and shellfish
+01010   Alcoholic beverages, excluding wine
+01020   Nonagricultural foods, etc.
+1       Industrial supplies and materials
+10      Fuels and lubricants
+100     Petroleum and products, excluding gas
+10000   Crude oil
+10010   Fuel oil
+10020   Petroleum products, other
+10030   Liquefied petroleum gases
+101     Fuels, n.e.s.-coal and gas
+10100   Coal and related fuels
+10110   Gas-natural
+103     Nuclear Fuel Materials and Fuels
+10300   Nuclear fuel materials
+104     Electric energy
+10400   Electric energy
+11      Paper and paper base stocks
+110     Paper base stocks
+11000   Pulpwood and woodpulp
+111     Newsprint and other paper products
+11100   Newsprint
+11110   Paper and paper products
+12      Agricultural products, textile supplies and chemicals
+120     Agricultural products
+12000   Cotton, natural fibers
+12030   Hides and skins
+12050   Natural rubber
+12060   Farming materials, livestock
+12070   Tobacco, waxes, etc.
+121     Textile supplies and related materials
+12100   Cotton cloth, fabrics
+12110   Wool, silk, etc.
+12135   Synthetic cloth
+12140   Hair, waste materials
+12150   Finished textile supplies
+12160   Leather and furs
+123     Other materials, except chemicals
+12320   Materials, excluding chemicals
+125     Chemicals, excluding medicinals and food additives
+12500   Plastic materials
+12510   Chemicals-fertilizers
+12530   Chemicals-inorganic
+12540   Chemicals-organic
+12550   Chemicals-other, n.e.c.
+13      Selected building materials, except metals
+130     Lumber and other unfinished building materials
+13000   Lumber
+13010   Plywood and veneers
+13020   Stone, sand, cement, etc.
+131     Building materials, finished
+13100   Glass-plate, sheet, etc.
+13110   Shingles, wallboard
+13120   Nontextile floor tiles
+14      Unfinished metals associated with durable goods output
+140     Steelmaking and ferroalloying materials-unmanufactured
+14000   Steelmaking materials
+141     Iron and steel mill products-semifinished
+14100   Iron and steel mill products
+142     Major nonferrous metals-crude and semifinished
+14200   Bauxite and aluminum
+14220   Copper
+14240   Nickel
+14250   Tin
+14260   Zinc
+14270   Nonmonetary gold
+14280   Other precious metals
+14290   Nonferrous metals, other
+15      Finished metals associated with durable goods output
+150     Iron and steel products, except advanced manufactures
+15000   Iron and steel products, n.e.c.
+151     Iron and steel manufactures-advanced
+15100   Iron and steel, advanced
+152     Finished metal shapes and advanced manufactures, except steel
+15200   Finished metal shapes
+16      Nonmetals associated with durable goods output
+160     Unfinished
+16040   Sulfur, nonmetallic minerals
+16050   Synthetic rubber--primary
+161     Finished
+16110   Blank tapes, audio & visual
+16120   Industrial supplies, other
+2       Capital goods, except automotive
+20      Electric generating, and electric equipment and parts equipment and parts
+200     Electric and electric generating equipment
+20000   Generators, accessories
+20005   Electric apparatus
+21      Nonelectrical machinery, except consumer-type
+210     Oil drilling, mining and construction machinery
+21000   Drilling & oilfield equipment
+21010   Specialized mining
+21030   Excavating machinery
+21040   Nonfarm tractors and parts
+211     Industrial and service machinery, n.e.c.
+21100   Industrial engines
+21110   Food, tobacco machinery
+21120   Metalworking machine tools
+21130   Textile, sewing machines
+21140   Wood, glass, plastic
+21150   Pulp and paper machinery
+21160   Measuring, testing, control instruments
+21170   Materials handling equipment
+21180   Industrial machines, other
+21190   Photo, service industry machinery
+212     Agricultural machinery and equipment
+21200   Agricultural machinery, equipment
+213     Computers, peripherals and semiconductors
+21300   Computers
+21301   Computer accessories
+21320   Semiconductors
+214     Telecommunications equipment
+21400   Telecommunications equipment
+215     Business machinery and equipment, except computers and related products
+21500   Business machines and equipment
+216     Scientific, hospital and medical machinery
+21600   Laboratory testing instruments
+21610   Medicinal equipment
+22      Transportation equipment and spacecraft, except automotive
+220     Civilian aircraft, engines and parts
+22000   Civilian aircraft
+22010   Parts-civilian aircraft
+22020   Engines-civilian aircraft
+221     Railway transportation equipment
+22100   Railway transportation equipment
+222     Vessels, except military and pleasure craft, miscellaneous vehicles
+22200   Vessels, except scrap
+22210   Commercial vessels, other
+22220   Marine engines, parts
+223     Spacecraft, engines and parts, except military
+22300   Spacecraft, excluding military
+3       Automotive vehicles, parts, and engines
+30      Automotive vehicles, parts, and engines
+300     Passenger cars, new and used
+30000   Passenger cars, new and used
+301     Trucks, buses, and special purpose vehicles
+30100   Trucks, buses, and special purpose vehicles
+30110   Bodies and chassis for trucks and buses
+302     Parts, engines, bodies, and chassis
+30200   Engines and engine parts (carburetors, pistons, rings, and valves)
+30210   Bodies and chassis for passenger cars
+30220   Automotive tires and tubes
+30230   Other parts and accessories of vehicles
+4       Consumer goods
+40      Nondurables, manufactured-except rugs
+400     Apparel, footwear, and household goods
+40000   Apparel, household goods - cotton
+40010   Apparel, household goods - wool
+40020   Apparel, textiles, nonwool or cotton
+40030   Apparel,household goods-nontextile
+40040   Footwear
+40050   Camping apparel and gear
+401     Other consumer nondurables
+40100   Pharmaceutical preparations
+40110   Books, printed matter
+40120   Toiletries and cosmetics
+40140   Other consumer nondurables
+41      Durables, manufactured-except automotive
+410     Household goods
+41000   Furniture, household goods, etc.
+41010   Glassware, chinaware
+41020   Cookware, cutlery, tools
+41030   Household appliances
+41040   Rugs
+41050   Cell phones and other household goods, n.e.c.
+411     Recreational equipment and materials
+41100   Motorcycles and parts
+41110   Pleasure boats and motors
+41120   Toys, games, and sporting goods
+41130   Photo equipment
+41140   Musical instruments
+412     Home entertainment equipment
+41200   Televisions and video equipment
+41210   Stereo equipment, etc
+41220   Recorded media
+413     Coins, gems, jewelry, and collectibles
+41300   Numismatic coins
+41310   Jewelry
+41320   Artwork, antiques, stamps, etc.
+42      Consumer durables and nondurables-unmanufactured
+420     Nondurables-unmanufactured
+42000   Nursery stock, etc.
+421     Durables-unmanufactured
+42100   Gem diamonds
+42110   Gem stones, other
+5       Other goods
+50      Imports, N.E.S.
+500     Imports, N.E.S.
+50000   Military aircraft and parts
+50010   Other military equipment
+50020   U.S. goods returned, and reimports
+50030   Minimum value shipments
+50040   Other (movies, miscellaneous imports, and special transactions)
+
+
+********************************************************************************
+* Questions: Foreign Trade Division, U.S. Census Bureau, Washignton, DC 20233  *
+* E-mail   : ftdwebmaster@census.gov                                           *
+********************************************************************************
+
+Published:              17APRIL2012
