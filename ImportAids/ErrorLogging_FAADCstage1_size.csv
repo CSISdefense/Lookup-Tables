@@ -110,3 +110,4 @@ highly_compensated_officer_5_amount,decimal,
 usaspending_permalink,varchar,255
 last_modified_date,date,
 USAspending_file_name,varchar,255
+generated_pragmatic_obligations,decimal,
