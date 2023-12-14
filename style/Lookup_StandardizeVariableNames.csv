@@ -667,7 +667,7 @@ European Collaborative Defence Equipment Procurement Expenditure,EurCollabProc
 Collaborative Defence R&T Expenditure                           ,CollabRnD
 European Collaborative Defence R&T,EurCollabRnT
 European Collaborative Defence R&T Expenditure      ,EurCollabRnT
-assistance_transaction_unique_key,
+assistance_transaction_unique_key,assistance_transaction_unique_key
 assistance_award_unique_key,assistance_award_unique_key
 award_id_fain,award_id_fain
 modification_number,ModificationNumber
