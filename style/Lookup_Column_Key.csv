@@ -8,6 +8,8 @@ Customer.sum,Agencies,Customer,,,FALSE
 Customer.FMS,Agencies,Customer,,,FALSE
 BioTechCustomer,Agencies,Customer,,,FALSE
 EnzymeCustomer,Agencies,Customer,,,FALSE
+awarding_agency_name,Agencies,Awarder,,,FALSE
+Awarder,Agencies,Awarder,,,FALSE
 Agency,Agencies,Agency,,,FALSE
 Organization,Agencies,Organization,,,FALSE
 Is.Defense,Agencies,Defense or Civilian,,,FALSE
