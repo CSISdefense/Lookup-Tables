@@ -2211,7 +2211,7 @@ UNK   ,Unknown                                                     ,NULL,NULL,NU
 33392,Material Handling Equipment Manufacturing,31-33,333,3339,NULL,NULL,
 33399,All Other General Purpose Machinery Manufacturing,31-33,333,3339,NULL,NULL,
 33441,Semiconductor and Other Electronic Component Manufacturing,31-33,334,3344,NULL,NULL,
-334410,Semiconductor and Other Electronic Component Manufacturing,31-33,334,3344,NULL,NULL,
+334410,Semiconductor and Other Electronic Component Manufacturing,31-33,334,3344,NULL,NULL,Microelectronics
 33451,"Navigational, Measuring, Electromedical, and Control Instruments Manufacturing",31-33,334,3345,NULL,NULL,
 33461,Manufacturing and Reproducing Magnetic and Optical Media,31-33,334,3346,NULL,NULL,
 33511,Electric Lamp Bulb and Part Manufacturing,31-33,335,3351,NULL,NULL,
