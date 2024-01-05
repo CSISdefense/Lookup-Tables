@@ -3596,6 +3596,8 @@ Region,West,West,5,teal,#4198AF,,,,default grey,#554449,W
 Region,Afghanistan and Pakistan,Afghanistan\nand Pakistan,7,Olive Green,#9BBB59,,,,default grey,#554449,
 Region,Africa,Africa,5,"DIIG Secondary, Purplish Blue",#9eadd8,,,,default grey,#554449,
 Region,East Asia and Pacific,East Asia\nand Pacific,8,"DIIG Secondary, Sea Green",#7ac49b,,,,default grey,#554449,
+Region,Japan,Japan,8.25,"DIIG Secondary, Amaranth",#7c131b,,,,default grey,#554449,
+Region,South Korea,ROK,8.5,"DIIG Secondary, Amaranth",#7c131b,,,,default grey,#554449,
 Region,South and Central Asia,South and\nCentral Asia,8,"DIIG Primary, Green",#4c9361,,,,default grey,#554449,
 Region,Asia,Asia,8,"DIIG Secondary, Sea Green",#7ac49b,,,,default grey,#554449,
 Region,Europe and Eurasia,Europe and\nEurasia,4,"DIIG Primary, Blue",#0054A4,,,,default grey,#554449,
