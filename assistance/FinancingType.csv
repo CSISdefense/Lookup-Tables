@@ -1,0 +1,48 @@
+program,FinancingType,FinancingDescription,FinancingType.Sum
+,Direct Loan,Direct Loan,Direct Loan
+504,504,504,504
+504,504 Refinance,504 Refinance,Refinancing
+504,504REFI,504 Refinance,Refinancing
+504,ALP,Lender Programs,Lender Programs
+504,Direct Loans,Direct Loan,Direct Loan
+504,PCLP,Lender Programs,Lender Programs
+7(A),CA,Community Advantage,Advantage
+7(A),CLP,Certified Lenders Program,Lender Programs
+7(A),COMM EXPRS,Community Express (inactive),Express
+7(A),CRL,,Other
+7(A),DFP,Dealer Floor Plan (inactive),Other
+7(A),EWCP,Export Working Capital Program,Trade Related
+7(A),EXIM,Co-guaranty with Export-Import Bank (inactive),Trade Related
+7(A),EXPRES EXP,Export Express,Trade Related
+7(A),GO LOANS,Gulf Opportunity Loan (inactive),Other
+7(A),INTER TRDE,International Trade,Trade Related
+7(A),OTH 7A,Other 7A,Other
+7(A),PATRIOT EX,Patriot Express (inactive),Express
+7(A),PCLP,Premier Certified Lenders Program,Lender Programs
+7(A),PLP,Preferred Lenders Program,Lender Programs
+7(A),RLA,Rural Lender Advantage (inactive),Advantage
+7(A),SBA EXPRES,SBA Express,Express
+7(A),SLA,Small Loan Advantage,Advantage
+7(A),USCAIP,US Community Adjustment and Investment Program,Other
+7(A),Y2K,Y2K Loan (inactive),Other
+ATVM,Direct Loan,Direct Loan,Direct Loan
+DFC,Equity,Equity,Equity
+DFC,Fund,Fund,Fund
+DFC,Guarantee,Loan Guarantee,Loan Guarantee
+DFC,Investment funds,Investment funds,Investment funds
+DFC,LPG,Loan Portfolio Guarantee,Loan Portfolio Guarantee
+DFC,Loan,Direct Loan,Direct Loan
+DFC,Loan guar,Loan Guarantee,Loan Guarantee
+DFC,Loan guarantee ,Loan Guarantee,Loan Guarantee
+DFC,Loan guarantee facility,Loan Guarantee,Loan Guarantee
+DFC,Refinancing,Refinancing,Refinancing
+EXIM,Guarantee,Loan Guarantee,Loan Guarantee
+EXIM,Insurance,Insurance,Insurance
+EXIM,Loan,Direct Loan,Direct Loan
+EXIM,Working Capital,Working Capital,Working Capital
+SBG,SBG,Prior Approval (SBG),Other
+SBG,PSB,Preferred Surety (PSB),Other
+Title 17,Guaranteed/Insured Loan,Guaranteed/Insured Loan,Loan Guarantee
+Title 17,Loan Guarantee,Loan Guarantee,Loan Guarantee
+Title 17,Loan TypeLoan Guarantee,Loan Guarantee,Loan Guarantee
+Title 17,Partial Loan Guarantee,Partial Loan Guarantee,Partial Loan Guarantee

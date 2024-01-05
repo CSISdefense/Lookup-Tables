@@ -1,0 +1,32 @@
+program,FinancingStatus,FinancingStatusText,FinancingStatus.sum
+,Conditional Commitment,Conditional Commitment,Undispursed
+504,CANCLD,Cancelled,Cancelled
+504,CHGOFF,Charged Off,Charged Off
+504,EXEMPT,Exempt from Reporting,Active*
+504,NOT FUNDED,Undispursed,Undispursed
+504,PIF,Paid in Full,Paid in Full
+7(A),CANCLD,Cancelled,Cancelled
+7(A),CHGOFF,Chargeoff,Charged Off
+7(A),COMMIT,Undispursed,Undispursed
+7(A),EXEMPT,Exempt from Reporting,Active*
+7(A),PIF,Paid in Full,Paid in Full
+ATVM,Active,Active,Active
+ATVM,Conditional Commitment,Conditional Commitment,Conditional Commitment
+ATVM,DISCONTINUED PROJECTS,Discontinued Projects,Discontinued Projects
+ATVM,INACTIVE CONDITIONAL COMMITMENTS�,Inactive Conditional Commitments,Inactive Conditional Commitments
+ATVM,Repaid,Repaid,Repaid
+ATVM,Unknown,Unknown,Unknown
+EXIM,No,No,Not Cancelled
+EXIM,Yes,Yes,Cancelled
+SBG,Active,Active,Active*
+SBG,Cancelled,Cancelled,Cancelled
+SBG,Closed,Closed,Closed
+SBG,Default,Default,Default
+SBG,Reinstate,Reinstated,Reinstated
+Title 17,Active,Active,Active
+Title 17,Conditional Commitment,Conditional Commitment,Undispursed
+Title 17,DISCONTINUED PROJECTS,Discontinued Projects,Cancelled
+Title 17,INACTIVE CONDITIONAL COMMITMENTS�,Inactive Conditional Commitments,Dispursion Cancelled
+Title 17,PROJECTS THAT CLOSED ON LOANS BUT RECEIVED NO DISBURSEMENT,Projects That Closed On Loans But Received No Disbursement,Dispursion Cancelled
+Title 17,Repaid,Repaid,Repaid
+Title 17,Unknown,Unknown,Unknown
