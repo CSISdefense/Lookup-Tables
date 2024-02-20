@@ -957,7 +957,15 @@ get_CSISvariableNameToPrimaryKey<-function(DestinationSchema,
   }
   lookup.CSISvariableNameToPrimaryKey$SourceVariableName<-paste("[",lookup.CSISvariableNameToPrimaryKey$SourceVariableName,"]",sep="")
   lookup.CSISvariableNameToPrimaryKey<-translate_name(lookup.CSISvariableNameToPrimaryKey)%>%group_by()%>%
-    select(-SourceVariableName,-IsDuplicate,-Pair)
+    select(-SourceVariableName)
+  if("Pair" %in% colnames(lookup.CSISvariableNameToPrimaryKey))
+    lookup.CSISvariableNameToPrimaryKey<-lookup.CSISvariableNameToPrimaryKey[
+      ,!colnames(lookup.CSISvariableNameToPrimaryKey) %in% c("Pair")
+    ]
+  if("IsDuplicate" %in% colnames(lookup.CSISvariableNameToPrimaryKey))
+    lookup.CSISvariableNameToPrimaryKey<-lookup.CSISvariableNameToPrimaryKey[
+      ,!colnames(lookup.CSISvariableNameToPrimaryKey) %in% c("IsDuplicate")
+    ]
   lookup.CSISvariableNameToPrimaryKey
 }
 
