@@ -18,14 +18,15 @@ library(DBI)
 #6,665,969 row, started 23:03:31, finished 0:23:54
 #This suggests an entire file in around 3d4h (not counting download time)
 #But this is just 11 of the fields. 
-
+# 2017 4912947 started 08:07, finished 11:08
+# 2018 5618756 started 11:08, finished 14:05
 pgpwd<-askpass("Please enter the Postgres account password")
 login<-askpass("Please enter the SQL login account")
 pwd<-askpass("Please enter the SQL account password")
 
 proc<-dbReadTable(pgcon,  name = SQL('"raw"."detached_award_2023"'))
-
-for (fy in 2017:2018){
+#1977-2002, 2017-2018,2019#-2022# 2023-2024.
+for (fy in 2019:2022){
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
