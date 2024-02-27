@@ -24,9 +24,16 @@ pgpwd<-askpass("Please enter the Postgres account password")
 login<-askpass("Please enter the SQL login account")
 pwd<-askpass("Please enter the SQL account password")
 
-proc<-dbReadTable(pgcon,  name = SQL('"raw"."detached_award_2023"'))
-#1977-2002, 2017-2018,2019#-2022# 2023-2024.
-for (fy in 2019:2022){
+pgcon <- dbConnect(odbc(),
+                   Driver = "PostgreSQL Unicode(x64)",
+                   Server = "127.0.0.1",
+                   Database = "raw",
+                   UID = "postgres",
+                   PWD =pgpwd)
+
+# proc<-dbReadTable(pgcon,  name = SQL('"raw"."detached_award_2023"'))
+#1977-2002, 2017-2024.
+for (fy in 2003){
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
