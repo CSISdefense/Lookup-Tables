@@ -31,9 +31,41 @@ pgcon <- dbConnect(odbc(),
                    UID = "postgres",
                    PWD =pgpwd)
 
+fy<-2023
+m<-10
+
+
+   #          and s
+   # 	action_date<=to_date('",fy,"-09-30','yyyy-mm-dd');")
+print(c("Fiscal Year",fy,"Download Start", format(Sys.time(), "%c")))
+#October to end of december 19:48 to 20:13
+# latest_fpds<-dbGetQuery(pgcon,  sql)
+#Error: Query needs to be bound before fetching
+cy<-2023
+quarter_dates<-c("01-01","04-01","07-01","10-01")
+for (q in 1:4){
+  sql<-paste0(" SELECT *
+   FROM raw.source_procurement_transaction
+    WHERE to_date(action_date, 'yyyy-mm-dd') >=to_date('",cy,"-",quarter_dates[q],"','yyyy-mm-dd') and 
+          to_date(action_date, 'yyyy-mm-dd') <to_date('",cy,"-",quarter_dates[numbers::mod(q,4)+1],"','yyyy-mm-dd');")
+  print(c("Download start",cy,quarter_dates[q], format(Sys.time(), "%c")))
+  sql<-dbGetQuery(pgcon, sql)
+  print(c("Download complete",cy,quarter_dates[q],nrow(latest_fpds), format(Sys.time(), "%c")))
+  
+  save(latest_fpds,file= file.path("data","semi_clean",paste("fpds_cy",cy,"_q",q,".rda")))
+  print(c("Save complete",cy,quarter_dates[q],nrow(latest_fpds), format(Sys.time(), "%c")))
+}
+   # WHERE  substring(action_date,1,4)='",fy,"' and substring(action_date,6,7)=?")
+
+
+
+# fpds_2023<-dbGetQuery(pgcon, sql, params=list(stringi::stri_sub(paste0(0,1:12),-2,-1)))
+
+
+
 # proc<-dbReadTable(pgcon,  name = SQL('"raw"."detached_award_2023"'))
-#1977-2002, 2017-2024.
-for (fy in 2003){
+#1977-2024 2024-02-08 YTD. NOte that probably everything pre-1990 I should probably capture in one single query.
+for (fy in 2004:2005){
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
