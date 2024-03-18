@@ -49,7 +49,7 @@ for (q in 1:4){
     WHERE to_date(action_date, 'yyyy-mm-dd') >=to_date('",cy,"-",quarter_dates[q],"','yyyy-mm-dd') and 
           to_date(action_date, 'yyyy-mm-dd') <to_date('",cy,"-",quarter_dates[numbers::mod(q,4)+1],"','yyyy-mm-dd');")
   print(c("Download start",cy,quarter_dates[q], format(Sys.time(), "%c")))
-  sql<-dbGetQuery(pgcon, sql)
+  latest_fpds<-dbGetQuery(pgcon, sql)
   print(c("Download complete",cy,quarter_dates[q],nrow(latest_fpds), format(Sys.time(), "%c")))
   
   save(latest_fpds,file= file.path("data","semi_clean",paste("fpds_cy",cy,"_q",q,".rda")))
