@@ -130,7 +130,7 @@ translate_name<-function(TargetTable.df,test_only=FALSE){
   
   if(any(is.na(TargetTable.df$CSISvariableName))){
     print(unique(TargetTable.df$SourceVariableName[is.na(TargetTable.df$CSISvariableName)]))
-    stop("Unmatched columns in SourceVariableName.")
+    stop("Unmatched columns in SourceVariableName in ImportAids/NameConversion.csv.")
   }
   
   #Protection against duplicate CSISvariableName
@@ -857,7 +857,7 @@ convert_field_to_foreign_key<-function(FKschema,
                         
                         "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
                         "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
-                        "WHERE pk.",PKcolumn," is NULL\n",
+                        "WHERE pk.",PKcolumn," is NULL and fk.",FKcolumn," is not null\n",
                         "GROUP BY fk.",FKcolumn,"\n",
                         sep="")
     )

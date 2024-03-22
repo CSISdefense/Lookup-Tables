@@ -40,10 +40,6 @@ SELECT
 		nullif([current_total_value_of_award],'') is not null,1,0)) as [current_total_value_of_award]
 	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([potential_total_value_of_award],''))) is null and
 		nullif([potential_total_value_of_award],'') is not null,1,0)) as [potential_total_value_of_award]
-	,max(iif(Try_Convert([bigint], Try_Convert(real,nullif([number_of_employees],''))) is null and
-		nullif([number_of_employees],'') is not null,1,0)) as [number_of_employees]
-	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([annual_revenues],''))) is null and
-		nullif([annual_revenues],'') is not null,1,0)) as [annual_revenues]
 	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([total_dollars_obligated],''))) is null and
 		nullif([total_dollars_obligated],'') is not null,1,0)) as [total_dollars_obligated]
 	,max(iif(Try_Convert([date], nullif([solicitation_date],''),120) is null and
@@ -82,6 +78,8 @@ SELECT
 		nullif([prime_award_transaction_place_of_performance_state_fips_code],'') is not null,1,0)) as [prime_award_transaction_place_of_performance_state_fips_code]
 	,max(iif(Try_Convert([decimal](19, 4), Try_Convert(real,nullif([total_outlayed_amount_for_overall_award],''))) is null and
 		nullif([total_outlayed_amount_for_overall_award],'') is not null,1,0)) as [total_outlayed_amount_for_overall_award]
+	,max(iif(Try_Convert([datetime2](7), nullif([initial_report_date],'')) is null and
+		nullif([initial_report_date],'') is not null,1,0)) as [initial_report_date]
 	FROM Errorlogging.FPDSstage1
 
 --Check across all bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.
@@ -301,7 +299,7 @@ SELECT
 ,iif([primary_place_of_performance_county_name]>26,[primary_place_of_performance_county_name],NULL) as [primary_place_of_performance_county_name]
 ,iif([primary_place_of_performance_state_code]>2,[primary_place_of_performance_state_code],NULL) as [primary_place_of_performance_state_code]
 ,iif([primary_place_of_performance_zip_4]>10,[primary_place_of_performance_zip_4],NULL) as [primary_place_of_performance_zip_4]
-,iif([prime_award_transaction_place_of_performance_cd_current]>6,[prime_award_transaction_place_of_performance_cd_current],NULL) as [prime_award_transaction_place_of_performance_cd_current]
+,iif([prime_award_transaction_place_of_performance_cd_current]>22,[prime_award_transaction_place_of_performance_cd_current],NULL) as [prime_award_transaction_place_of_performance_cd_current]
 ,iif([award_type_code]>1,[award_type_code],NULL) as [award_type_code]
 ,iif([idv_type_code]>1,[idv_type_code],NULL) as [idv_type_code]
 ,iif([multiple_or_single_award_idv_code]>1,[multiple_or_single_award_idv_code],NULL) as [multiple_or_single_award_idv_code]
@@ -375,8 +373,8 @@ SELECT
 ,iif([recipient_county_name]>30,[recipient_county_name],NULL) as [recipient_county_name]
 ,iif([recipient_uei]>12,[recipient_uei],NULL) as [recipient_uei]
 ,iif([recipient_parent_uei]>12,[recipient_parent_uei],NULL) as [recipient_parent_uei]
-,iif([prime_award_transaction_recipient_cd_original]>5,[prime_award_transaction_recipient_cd_original],NULL) as [prime_award_transaction_recipient_cd_original]
-,iif([prime_award_transaction_place_of_performance_cd_original]>5,[prime_award_transaction_place_of_performance_cd_original],NULL) as [prime_award_transaction_place_of_performance_cd_original] 
+,iif([prime_award_transaction_recipient_cd_original]>22,[prime_award_transaction_recipient_cd_original],NULL) as [prime_award_transaction_recipient_cd_original]
+,iif([prime_award_transaction_place_of_performance_cd_original]>22,[prime_award_transaction_place_of_performance_cd_original],NULL) as [prime_award_transaction_place_of_performance_cd_original] 
 FROM (SELECT
  	,max(len([award_id_piid])) as [award_id_piid]
 	,max(len([modification_number])) as [modification_number]

@@ -69,7 +69,7 @@ input_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                                      dir="sql",
                                                      suppress_select = TRUE,
                                                     suppress_alter = TRUE,
-                                                    suppress_update= FALSE,
+                                                    suppress_update= TRUE,
                                                     skip_list = skip_list)
 write(input_missing_code,
       file=file.path("Output","ErrorLogging_FPDSstage2_input_foreign_key.txt"),  
@@ -158,5 +158,4 @@ Stage2TableType.df<-translate_name(Stage2TableType.df)
 DupTable.df<-read_create_table("ErrorLogging.FPDSdeleted.Table.sql",
                                        dir="SQL")
 translate_name(DupTable.df,test_only=TRUE)
-debug(merge_source_and_csis_name_tables)
 MergeStage2.df<-merge_source_and_csis_name_tables(Stage2TableType.df,DupTable.df)

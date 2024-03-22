@@ -304,6 +304,7 @@ sum(iif([prime_award_transaction_place_of_performance_state_fips_code] is null,1
 sum(iif(nullif([prime_award_transaction_recipient_cd_original],'') is null,1,0)) as [prime_award_transaction_recipient_cd_original],
 sum(iif(nullif([prime_award_transaction_place_of_performance_cd_original],'') is null,1,0)) as [prime_award_transaction_place_of_performance_cd_original],
 sum(iif([total_outlayed_amount_for_overall_award] is null,1,0)) as [total_outlayed_amount_for_overall_award],
-sum(iif(nullif([USAspending_file_name],'') is null,1,0)) as [USAspending_file_name]
+sum(iif(nullif([USAspending_file_name],'') is null,1,0)) as [USAspending_file_name],
+sum(iif([initial_report_date] is null,1,0)) as [initial_report_date]
 FROM ErrorLogging.FPDSstage2
 
