@@ -6,6 +6,7 @@ CREATE TABLE [agency].[awarding_agency_code](
 	[awarding_agency_code] [smallint] NOT NULL,
 	[awarding_agency_name] [varchar](100) NULL,
 	[AgencyID] [varchar](4) NULL,
+	[Customer] [nvarchar](50) NULL,
  CONSTRAINT [pk_awarding_agency_code] PRIMARY KEY CLUSTERED 
 (
 	[awarding_agency_code] ASC
@@ -14,4 +15,7 @@ CREATE TABLE [agency].[awarding_agency_code](
 GO
 ALTER TABLE [agency].[awarding_agency_code]  WITH CHECK ADD FOREIGN KEY([AgencyID])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
+GO
+ALTER TABLE [agency].[awarding_agency_code]  WITH CHECK ADD FOREIGN KEY([Customer])
+REFERENCES [agency].[Customer] ([Customer])
 GO

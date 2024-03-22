@@ -284,8 +284,111 @@ CREATE TABLE [Contract].[FPDS](
 	[prime_award_transaction_place_of_performance_state_fips_code] [tinyint] NULL,
 	[prime_award_transaction_recipient_cd_original] [varchar](22) NULL,
 	[prime_award_transaction_place_of_performance_cd_original] [varchar](22) NULL,
-	[total_outlayed_amount_for_overall_award] [decimal](19, 4) NULL
+	[total_outlayed_amount_for_overall_award] [decimal](19, 4) NULL,
+	[temp_uei] [varchar](12) NULL,
+	[temp_uei_parent] [varchar](12) NULL,
+	[initial_report_date] [datetime2](7) NULL
 ) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [Contract_FPDS_systemequipmentcode_fiscal_year] ON [Contract].[FPDS]
+(
+	[systemequipmentcode] ASC
+)
+INCLUDE([fiscal_year]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_contract_FPDS_agencyID_PIID_IDVpiid_idvagencyid_IDVpiid_modnumber_transactionnumber] ON [Contract].[FPDS]
+(
+	[agencyid] ASC,
+	[piid] ASC,
+	[idvagencyid] ASC,
+	[idvpiid] ASC,
+	[modnumber] ASC,
+	[transactionnumber] ASC
+)
+WHERE ([PIID] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_contract_FPDS_contract_transaction_unique_key] ON [Contract].[FPDS]
+(
+	[contract_transaction_unique_key] ASC
+)
+WHERE ([contract_transaction_unique_key] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_ContractingOfficeAgencyID] ON [Contract].[FPDS]
+(
+	[contractingofficeagencyid] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_FPDS_ContractNumber_AgencyID_IDVagencyID_ModNumber_TransNumber] ON [Contract].[FPDS]
+(
+	[ContractNumber] ASC,
+	[agencyid] ASC,
+	[idvagencyid] ASC,
+	[modnumber] ASC,
+	[transactionnumber] ASC
+)
+WHERE ([ContractNumber] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_FPDS_ContractNumber_AgencyID_ModNumber_TransNumber] ON [Contract].[FPDS]
+(
+	[ContractNumber] ASC,
+	[agencyid] ASC,
+	[modnumber] ASC,
+	[transactionnumber] ASC
+)
+WHERE ([ContractNumber] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_contract_FPDS_csistranscationID] ON [Contract].[FPDS]
+(
+	[CSIStransactionID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_Dunsnumber_Fiscal_Year] ON [Contract].[FPDS]
+(
+	[dunsnumber] ASC,
+	[fiscal_year] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_headquartercode_Fiscal_Year] ON [Contract].[FPDS]
+(
+	[headquartercode] ASC,
+	[fiscal_year] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_ParentDunsnumber_Fiscal_Year] ON [Contract].[FPDS]
+(
+	[parentdunsnumber] ASC,
+	[fiscal_year] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_contract_fpds_recipient_uei_otherID] ON [Contract].[FPDS]
+(
+	[recipient_uei] ASC
+)
+INCLUDE([signeddate],[dunsnumber],[parentdunsnumber],[headquartercode],[CAGE],[recipient_parent_uei]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
 ALTER TABLE [Contract].[FPDS] ADD  CONSTRAINT [DF_FPDS_CSISCreatedDate]  DEFAULT (getdate()) FOR [CSISCreatedDate]
 GO
@@ -308,6 +411,12 @@ REFERENCES [Location].[County_FIPS_Code] ([county_fips_code])
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD FOREIGN KEY([prime_award_transaction_place_of_performance_state_fips_code])
 REFERENCES [Location].[State_FIPS_Code] ([state_fips_code])
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD FOREIGN KEY([temp_uei])
+REFERENCES [Vendor].[UEI] ([UEI])
+GO
+ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD FOREIGN KEY([temp_uei_parent])
+REFERENCES [Vendor].[UEI] ([UEI])
 GO
 ALTER TABLE [Contract].[FPDS]  WITH CHECK ADD  CONSTRAINT [fk_contract_contract_transaction_unique_key] FOREIGN KEY([contract_transaction_unique_key])
 REFERENCES [Contract].[contract_transaction_unique_key] ([contract_transaction_unique_key])

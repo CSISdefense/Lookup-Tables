@@ -116,7 +116,8 @@ CREATE TABLE [ErrorLogging].[FAADCstage1](
 	[USAspending_file_name] [varchar](255) NULL,
 	[CSISmodifiedDate] [datetime2](7) NOT NULL,
 	[CSIScreatedDate] [datetime2](7) NOT NULL,
-	[row_num] [bigint] IDENTITY(1,1) NOT NULL
+	[row_num] [bigint] IDENTITY(1,1) NOT NULL,
+	[generated_pragmatic_obligations] [varchar](255) NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FAADCstage1] ADD  CONSTRAINT [FAADCstage1_CSISmodifiedDate_default]  DEFAULT (getdate()) FOR [CSISmodifiedDate]

@@ -26,7 +26,7 @@ CREATE TABLE [FPDSTypeTable].[ProductOrServiceCode](
 	[PBLscore] [smallint] NULL,
 	[IsPossibleReclassification] [bit] NULL,
 	[IsPossibleSoftwareEngineering] [varchar](255) NULL,
-	[RnD_BudgetActivity] [varchar](100) NULL,
+	[RnD_BudgetActivity] [varchar](49) NULL,
 	[ProductServiceOrRnDarea] [varchar](49) NULL,
 	[CanadaSector] [nvarchar](75) NULL,
 	[OCOcrisisScore] [smallint] NULL,
@@ -44,6 +44,7 @@ CREATE TABLE [FPDSTypeTable].[ProductOrServiceCode](
 	[IsPossibleC2] [bit] NULL,
 	[IsRemotelyOperated] [bit] NULL,
 	[AsAServiceLaborProduct] [varchar](15) NULL,
+	[IsEOsensor] [bit] NULL,
  CONSTRAINT [PK_ProductOrServiceCode] PRIMARY KEY CLUSTERED 
 (
 	[ProductOrServiceCode] ASC
@@ -76,6 +77,11 @@ ALTER TABLE [FPDSTypeTable].[ProductOrServiceCode]  WITH NOCHECK ADD  CONSTRAINT
 REFERENCES [ProductOrServiceCode].[PlatformPortfolio] ([PlatformPortfolio])
 GO
 ALTER TABLE [FPDSTypeTable].[ProductOrServiceCode] CHECK CONSTRAINT [fk_FPDSTypeTable_ProductOrServiceCode_PlatformPortfolio]
+GO
+ALTER TABLE [FPDSTypeTable].[ProductOrServiceCode]  WITH CHECK ADD  CONSTRAINT [fk_FPDSTypeTable_ProductOrServiceCode_RnD_budgetActivity] FOREIGN KEY([RnD_BudgetActivity])
+REFERENCES [ProductOrServiceCode].[ProductServiceOrRnDarea] ([ProductServiceOrRnDarea])
+GO
+ALTER TABLE [FPDSTypeTable].[ProductOrServiceCode] CHECK CONSTRAINT [fk_FPDSTypeTable_ProductOrServiceCode_RnD_budgetActivity]
 GO
 ALTER TABLE [FPDSTypeTable].[ProductOrServiceCode]  WITH NOCHECK ADD  CONSTRAINT [fk_ProductOrServiceCode_ProductOrServiceArea] FOREIGN KEY([ProductOrServiceArea])
 REFERENCES [ProductOrServiceCode].[ProductOrServiceArea] ([ProductOrServiceArea])

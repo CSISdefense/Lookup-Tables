@@ -36,6 +36,21 @@ CREATE TABLE [Project].[DBAp2020semiclean](
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_DBAp2020semiclean_PByear_ADSI_DefOrg_BA_BSA_LI_Proj_BaseOther] ON [Project].[DBAp2020semiclean]
+(
+	[PByear] ASC,
+	[AccountDSI] ASC,
+	[DefenseOrganization] ASC,
+	[BudgetActivity] ASC,
+	[BudgetSubActivity] ASC,
+	[LineItem] ASC,
+	[CostTypeTitle] ASC,
+	[ProjectionType] ASC,
+	[BaseOther] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
 ALTER TABLE [Project].[DBAp2020semiclean]  WITH NOCHECK ADD  CONSTRAINT [fk_Budget_dbaP2020semiclean_AccountDSI] FOREIGN KEY([AccountDSI])
 REFERENCES [budget].[AccountDSI] ([AccountDSI])
 GO
