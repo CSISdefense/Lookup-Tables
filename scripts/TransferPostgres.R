@@ -13,7 +13,7 @@ library(DBI)
 
 
 
-#Download was way faster than I expected. Took roughly 2m for 4,9m rows. 
+#Download was way faster than I expected. Took roughly 2m for 4.9m rows. 
 # 3 minutes per 10k rows, so about 3h18m for 6.6m rows.
 #6,665,969 row, started 23:03:31, finished 0:23:54
 #This suggests an entire file in around 3d4h (not counting download time)
