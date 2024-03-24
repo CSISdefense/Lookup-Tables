@@ -329,11 +329,11 @@ NULLIF([primary_place_of_performance_zip_4],'') IS NOT NULL) OR
 
 SELECT DISTINCT [prime_award_transaction_place_of_performance_cd_current],
 len([prime_award_transaction_place_of_performance_cd_current]) as Length,
-'[varchar](6)' as DestinationType
+'[varchar](22)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([varchar](6), [prime_award_transaction_place_of_performance_cd_current]) IS NULL AND
+WHERE (Try_Convert([varchar](22), [prime_award_transaction_place_of_performance_cd_current]) IS NULL AND
 NULLIF([prime_award_transaction_place_of_performance_cd_current],'') IS NOT NULL) OR
- len([prime_award_transaction_place_of_performance_cd_current]) > 6
+ len([prime_award_transaction_place_of_performance_cd_current]) > 22
 
 SELECT DISTINCT [award_type_code],
 len([award_type_code]) as Length,
@@ -1471,20 +1471,6 @@ WHERE (Try_Convert([varchar](30), [organizational_type]) IS NULL AND
 NULLIF([organizational_type],'') IS NOT NULL) OR
  len([organizational_type]) > 30
 
-SELECT DISTINCT [number_of_employees],
-len([number_of_employees]) as Length,
-'[bigint]' as DestinationType
-FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([bigint], Try_Convert(real,nullif([number_of_employees],''))) IS NULL AND
-NULLIF([number_of_employees],'') IS NOT NULL)
-
-SELECT DISTINCT [annual_revenues],
-len([annual_revenues]) as Length,
-'[decimal](19, 4)' as DestinationType
-FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([annual_revenues],''))) IS NULL AND
-NULLIF([annual_revenues],'') IS NOT NULL)
-
 SELECT DISTINCT [total_dollars_obligated],
 len([total_dollars_obligated]) as Length,
 '[decimal](19, 4)' as DestinationType
@@ -1733,19 +1719,19 @@ NULLIF([prime_award_transaction_place_of_performance_state_fips_code],'') IS NOT
 
 SELECT DISTINCT [prime_award_transaction_recipient_cd_original],
 len([prime_award_transaction_recipient_cd_original]) as Length,
-'[varchar](5)' as DestinationType
+'[varchar](22)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([varchar](5), [prime_award_transaction_recipient_cd_original]) IS NULL AND
+WHERE (Try_Convert([varchar](22), [prime_award_transaction_recipient_cd_original]) IS NULL AND
 NULLIF([prime_award_transaction_recipient_cd_original],'') IS NOT NULL) OR
- len([prime_award_transaction_recipient_cd_original]) > 5
+ len([prime_award_transaction_recipient_cd_original]) > 22
 
 SELECT DISTINCT [prime_award_transaction_place_of_performance_cd_original],
 len([prime_award_transaction_place_of_performance_cd_original]) as Length,
-'[varchar](5)' as DestinationType
+'[varchar](22)' as DestinationType
 FROM Errorlogging.FPDSstage1
-WHERE (Try_Convert([varchar](5), [prime_award_transaction_place_of_performance_cd_original]) IS NULL AND
+WHERE (Try_Convert([varchar](22), [prime_award_transaction_place_of_performance_cd_original]) IS NULL AND
 NULLIF([prime_award_transaction_place_of_performance_cd_original],'') IS NOT NULL) OR
- len([prime_award_transaction_place_of_performance_cd_original]) > 5
+ len([prime_award_transaction_place_of_performance_cd_original]) > 22
 
 SELECT DISTINCT [total_outlayed_amount_for_overall_award],
 len([total_outlayed_amount_for_overall_award]) as Length,
@@ -1753,4 +1739,11 @@ len([total_outlayed_amount_for_overall_award]) as Length,
 FROM Errorlogging.FPDSstage1
 WHERE (Try_Convert([decimal](19, 4), Try_Convert(real,nullif([total_outlayed_amount_for_overall_award],''))) IS NULL AND
 NULLIF([total_outlayed_amount_for_overall_award],'') IS NOT NULL)
+
+SELECT DISTINCT [initial_report_date],
+len([initial_report_date]) as Length,
+'[datetime2](7)' as DestinationType
+FROM Errorlogging.FPDSstage1
+WHERE (Try_Convert([datetime2](7), nullif([initial_report_date],'')) IS NULL AND
+NULLIF([initial_report_date],'') IS NOT NULL)
 

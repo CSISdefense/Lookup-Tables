@@ -262,8 +262,6 @@ CREATE TABLE [ErrorLogging].[FPDSstage1](
 	[inherently_governmental_functions] [varchar](255) NULL,
 	[inherently_governmental_functions_description] [varchar](255) NULL,
 	[organizational_type] [varchar](255) NULL,
-	[number_of_employees] [varchar](255) NULL,
-	[annual_revenues] [varchar](255) NULL,
 	[total_dollars_obligated] [varchar](255) NULL,
 	[foreign_funding_description] [varchar](255) NULL,
 	[contract_transaction_unique_key] [varchar](255) NULL,
@@ -303,7 +301,8 @@ CREATE TABLE [ErrorLogging].[FPDSstage1](
 	[prime_award_transaction_recipient_cd_original] [varchar](255) NULL,
 	[prime_award_transaction_place_of_performance_cd_original] [varchar](255) NULL,
 	[total_outlayed_amount_for_overall_award] [varchar](255) NULL,
-	[USAspending_file_name] [varchar](255) NULL
+	[USAspending_file_name] [varchar](255) NULL,
+	[initial_report_date] [varchar](255) NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FPDSstage1] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__6FAB3F2B]  DEFAULT (getdate()) FOR [CSISmodifiedDate]

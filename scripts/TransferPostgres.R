@@ -31,7 +31,82 @@ pgcon <- dbConnect(odbc(),
                    UID = "postgres",
                    PWD =pgpwd)
 
+
+
 fy<-2023
+
+# path<-"C:\\Users\\grego\\Repositories\\USAspending-local\\"
+path<-"D:\\Users\\Greg\\Repositories\\USAspending-local\\"
+# path<-"F:\\Users\\Greg\\Repositories\\USAspending-local\\"
+sql_fpds<-read_delim(file.path(path,"contract_fpds_ctu_list_2024_03_19.txt"),delim="\t",col_types="iciD")
+sql_fpds$last_modified_date<-as.Date(sql_fpds$last_modified_date,format="%Y-%m%-%d 00:00:00.0000000")
+
+for (fy in 2000:2023){
+  pgcon <- dbConnect(odbc(),
+                     Driver = "PostgreSQL Unicode(x64)",
+                     Server = "127.0.0.1",
+                     Database = "raw",
+                     UID = "postgres",
+                     PWD =pgpwd)
+  print(c("Fiscal Year",fy,"Download Start", format(Sys.time(), "%c")))
+  sql_fpds_fy<-sql_fpds %>%filter(fiscal_year==fy) %>%as.data.frame()
+    for (r in 0:floor(nrow(sql_fpds_fy)/1000000)){
+    start<-(r*1000000)+1
+    end<-((r+1)*1000000)
+    #Stop when we've reached the end of imports
+    if(start>nrow(sql_fpds_fy)) {break}
+    if(end>nrow(sql_fpds_fy)) {end<-nrow(sql_fpds_fy)}
+    print(c(start,end, format(Sys.time(), "%c")))
+    dbAppendTable(conn = pgcon, 
+                  name = SQL('"raw"."contract_fpds_ctu_list"'), 
+                  value = sql_fpds_fy[start:end,])  ## x is any data frame
+    #https://stackoverflow.com/questions/66864660/r-dbi-sql-server-dbwritetable-truncates-rows-field-types-parameter-does-not-w
+    # values <- DBI::sqlAppendTable(
+    #   vmcon = vmcon,
+    #   table = Id(database = "CSIS360", schema = "ErrorLogging", table = "FPDSstage1"),
+    #   values = i[start:end,])
+    # DBI::dbExecute(conn = vmcon, values)
+  }
+  #Note, transactions will not commit until you disconnect! Whether or not
+  #the computer maintains this connection in the meantime doesn't matter,
+  #formal disconnection is required.
+  dbDisconnect(pgcon)
+}
+
+
+
+#          and s
+# 	action_date<=to_date('",fy,"-09-30','yyyy-mm-dd');")
+print(c("Fiscal Year",fy,"Download Start", format(Sys.time(), "%c")))
+#October to end of december 19:48 to 20:13
+# latest_fpds<-dbGetQuery(pgcon,  sql)
+#Error: Query needs to be bound before fetching
+for (fy in 2000:2023){
+  pgcon <- dbConnect(odbc(),
+                     Driver = "PostgreSQL Unicode(x64)",
+                     Server = "127.0.0.1",
+                     Database = "raw",
+                     UID = "postgres",
+                     PWD =pgpwd)
+  sql<-paste0(" SELECT p.*
+   FROM raw.source_procurement_transaction p
+   LEFT OUTER JOIN raw.contract_fpds_ctu_list c
+   on p.detached_award_proc_unique=c.contract_transaction_unique_key
+    WHERE date_part('year',to_date(p.action_date, 'yyyy-mm-dd')) = ",fy," and \n",
+              "\nand (c.contract_transaction_unique_key is null or c.last_modified_date < ",
+              "to_date(p.action_date, 'yyyy-mm-dd'));")
+  print(c("Download start",fy, format(Sys.time(), "%c")))
+  latest_fpds<-dbGetQuery(pgcon, sql)
+  print(c("Download complete",fy,nrow(latest_fpds), format(Sys.time(), "%c")))
+  
+  save(latest_fpds,file= file.path("data","semi_clean",paste("fpds_cy",cy,"_q",q,".rda")))
+  print(c("Save complete",fy,nrow(latest_fpds), format(Sys.time(), "%c")))
+}
+
+
+
+dir<-"FY2023_All_Contracts_Full_20230808\\"
+
 m<-10
 
 
@@ -49,7 +124,7 @@ for (q in 1:4){
     WHERE to_date(action_date, 'yyyy-mm-dd') >=to_date('",cy,"-",quarter_dates[q],"','yyyy-mm-dd') and 
           to_date(action_date, 'yyyy-mm-dd') <to_date('",cy,"-",quarter_dates[numbers::mod(q,4)+1],"','yyyy-mm-dd');")
   print(c("Download start",cy,quarter_dates[q], format(Sys.time(), "%c")))
-  sql<-dbGetQuery(pgcon, sql)
+  latest_fpds<-dbGetQuery(pgcon, sql)
   print(c("Download complete",cy,quarter_dates[q],nrow(latest_fpds), format(Sys.time(), "%c")))
   
   save(latest_fpds,file= file.path("data","semi_clean",paste("fpds_cy",cy,"_q",q,".rda")))

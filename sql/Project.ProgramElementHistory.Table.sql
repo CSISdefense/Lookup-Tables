@@ -29,6 +29,61 @@ CREATE TABLE [Project].[ProgramElementHistory](
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_ProgramElementHistory_CSISbudgetLineKeyDBAr2016_PByear_Handoff] ON [Project].[ProgramElementHistory]
+(
+	[CSISbudgetLineKeyDBAr2016] ASC,
+	[PByear] ASC,
+	[IsHandoff] ASC
+)
+WHERE ([CSISbudgetLineKeyDBAr2016] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_ProgramElementHistory_CSISbudgetLineKeyDBAr2020_PByear_Handoff] ON [Project].[ProgramElementHistory]
+(
+	[CSISbudgetLineKeyDBAr2020] ASC,
+	[PByear] ASC,
+	[IsHandoff] ASC
+)
+WHERE ([CSISbudgetLineKeyDBAr2020] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_ProgramElementHistory_CSISBudgetLineKeyR1_PByear_Handoff] ON [Project].[ProgramElementHistory]
+(
+	[CSISbudgetLineKeyR1] ASC,
+	[PByear] ASC,
+	[IsHandoff] ASC
+)
+WHERE ([CSISBudgetLineKeyR1] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_ProgramElementHistory_CSISBudgetLineKeyR2_PByear_Handoff] ON [Project].[ProgramElementHistory]
+(
+	[CSISbudgetLineKeyR2] ASC,
+	[PByear] ASC,
+	[IsHandoff] ASC
+)
+WHERE ([CSISBudgetLineKeyR2] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IDX_Project_ProgramElementHistory_ProgramElement_BA_ADSI_PByear_Handoff] ON [Project].[ProgramElementHistory]
+(
+	[ProgramElement] ASC,
+	[BudgetActivity] ASC,
+	[AccountDSI] ASC,
+	[PByear] ASC,
+	[IsHandoff] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
 ALTER TABLE [Project].[ProgramElementHistory] ADD  CONSTRAINT [project_ProgramElementHistory_CSIScreateddate_getdate]  DEFAULT (getdate()) FOR [CSIScreateddate]
 GO
 ALTER TABLE [Project].[ProgramElementHistory] ADD  CONSTRAINT [project_ProgramElementHistory_CSISmodifiedDate_getdate]  DEFAULT (getdate()) FOR [CSISmodifiedDate]

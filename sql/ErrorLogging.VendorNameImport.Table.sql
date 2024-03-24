@@ -3,7 +3,8 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [ErrorLogging].[VendorNameImport](
-	[VendorName] [nvarchar](150) NOT NULL,
-	[StandardizedVendorName] [nvarchar](150) NOT NULL
+	[VendorName] [varchar](255) NULL,
+	[StandardizedVendorName] [varchar](255) NULL,
+	[blank_check] [varchar](255) NULL
 ) ON [PRIMARY]
 GO

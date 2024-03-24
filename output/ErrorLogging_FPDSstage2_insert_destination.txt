@@ -239,7 +239,8 @@ INSERT INTO Contract.FPDS
 [prime_award_transaction_place_of_performance_state_fips_code],
 [prime_award_transaction_recipient_cd_original],
 [prime_award_transaction_place_of_performance_cd_original],
-[total_outlayed_amount_for_overall_award]
+[total_outlayed_amount_for_overall_award],
+[initial_report_date]
 )
  SELECT 
 [last_modified_date],
@@ -481,7 +482,8 @@ Convert([datetime], [CSIScreatedDate]),
 [prime_award_transaction_place_of_performance_state_fips_code],
 [prime_award_transaction_recipient_cd_original],
 [prime_award_transaction_place_of_performance_cd_original],
-[total_outlayed_amount_for_overall_award]
+[total_outlayed_amount_for_overall_award],
+[initial_report_date]
 FROM ErrorLogging.FPDSstage2
 WHERE CSIStransactionID NOT in (SELECT CSIStransactionID FROM Contract.FPDS
 and CSIStransactionID is not NULL
