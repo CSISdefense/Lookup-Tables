@@ -81,7 +81,7 @@ print(c("Fiscal Year",cy,"Download Start", format(Sys.time(), "%c")))
 #October to end of december 19:48 to 20:13
 # latest_fpds<-dbGetQuery(pgcon,  sql)
 #Error: Query needs to be bound before fetching
-for (cy in 1960:1999){
+for (cy in 1983:1999){
   pgcon <- dbConnect(odbc(),
                      Driver = "PostgreSQL Unicode(x64)",
                      Server = "127.0.0.1",
