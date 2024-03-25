@@ -5,15 +5,15 @@ library(tidyverse)
 
 ###### From Stage 2 to Contract.FPDS #########
 #Match up Errorlogging.FPDSstage2 to Contract.FPDS 
-Stage2TableType.df<-read_create_table("ErrorLogging.FPDSstage2.Table.sql",
+Import.df<-read_create_table("ErrorLogging.source_procurement_transaction.Table.sql",
                                       dir="SQL")
-Stage2TableType.df<-translate_name(Stage2TableType.df)
+Import.df<-translate_name(Import.df,file="PostgresNameConversion.csv")
 
 DestinationTable.df<-read_create_table("Contract.FPDS.Table.sql",
                                        dir="SQL")
 translate_name(DestinationTable.df,test_only=TRUE)
 
-MergeStage2.df<-merge_source_and_csis_name_tables(Stage2TableType.df,DestinationTable.df)
+MergeStage2.df<-merge_source_and_csis_name_tables(Import.df,DestinationTable.df)
 
 #Check for size mismatch
 # View(MergeStage2.df %>% filter(SourceVariableType!=CSISvariableType))
@@ -81,7 +81,7 @@ write(input_missing_code,
 
 
 #Create the code to count empty rows by variable.
-count_list<-count_empties(Stage2TableType.df,"ErrorLogging","FPDSstage2")
+count_list<-count_empties(Import.df,"ErrorLogging","FPDSstage2")
 write(count_list,"Output//ErrorLogging_FPDSstage2_count_empties.txt")
 
 
@@ -151,11 +151,11 @@ MergeStage2.df %>% filter(substr(CSISvariableType,2,3) %in% c("NV","nv")) %>% se
 substr(MergeStage2.df$CSISvariableType,2,3)
 ###### From Stage 2 to Contract.FPDS #########
 #Match up Errorlogging.FPDSstage2 to Contract.FPDS 
-Stage2TableType.df<-read_create_table("ErrorLogging.FPDSstage2.Table.sql",
+Import.df<-read_create_table("ErrorLogging.FPDSstage2.Table.sql",
                                       dir="SQL")
-Stage2TableType.df<-translate_name(Stage2TableType.df)
+Import.df<-translate_name(Import.df)
 
 DupTable.df<-read_create_table("ErrorLogging.FPDSdeleted.Table.sql",
                                        dir="SQL")
 translate_name(DupTable.df,test_only=TRUE)
-MergeStage2.df<-merge_source_and_csis_name_tables(Stage2TableType.df,DupTable.df)
+MergeStage2.df<-merge_source_and_csis_name_tables(Import.df,DupTable.df)

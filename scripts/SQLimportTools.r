@@ -105,8 +105,8 @@ list_problem_type<-function(TargetTable.df){
 }
 
 
-translate_name<-function(TargetTable.df,test_only=FALSE){
-  lookup.NameConversion<-read.csv("ImportAids\\NameConversion.csv",
+translate_name<-function(TargetTable.df,test_only=FALSE,file="NameConversion.csv"){
+  lookup.NameConversion<-read.csv(file.path("ImportAids",file),
                                   stringsAsFactors = FALSE,
                                   na.strings = c("NULL","NA"))
   if(!"SourceVariableName" %in% colnames(TargetTable.df)){
