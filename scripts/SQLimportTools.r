@@ -428,7 +428,10 @@ create_try_converts<-function(data,
     return(0)
   }
   data<-convert_switch(data,DateType,TRUE,Apply_Drop=Apply_Drop)
-  if(any(is.na(data$ConvertList))) stop("NA ConvertList")
+  if(any(is.na(data$ConvertList))){
+    View(data %>% filter(is.na(ConvertList)))
+     stop("NA ConvertList")
+  }
   
   #This is only relevant to legacy FPDS
   if(Add_Colon_Split==TRUE){

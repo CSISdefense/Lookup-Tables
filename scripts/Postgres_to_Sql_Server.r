@@ -21,10 +21,20 @@ MergeStage2.df<-merge_source_and_csis_name_tables(Import.df,DestinationTable.df)
 
 #Try converts shouldn't be necessary unless there's been a change in contract.fpds
 #That said, the differences in date format mean some will be generated.
-TryConvertList<-create_try_converts(MergeStage2.df,"Errorlogging","FPDSstage2"
-                                    ,IncludeAlters=TRUE)
-write(TryConvertList,"Output\\Stage2TryConvertList.txt")
 
+
+TryConvertList<-create_try_converts(MergeStage2.df,"Errorlogging","source_procurement_transaction"
+                                    ,IncludeAlters=TRUE)
+TryConvertList<-create_try_converts(MergeStage2.df,"Errorlogging","source_procurement_transaction"
+                                    ,IncludeAlters=TRUE
+                                    ,IncludeSingle = FALSE
+                                    ,IncludeMultiple = FALSE
+                                    )
+write(TryConvertList,"Output\\PostgresTryConvertList.txt")
+write_delim(MergeStage2.df %>% select(SourceVariableName,SourceVariableType,CSISvariableType)%>%
+        mutate(SourceVariableType=ifelse(!is.na(CSISvariableType),CSISvariableType,SourceVariableType),
+               comma=",") %>%
+        select(-CSISvariableType),"Output\\PostgresCreateTable.txt",delim = " ")
 #Create Foreign Key Assignments
 # undebug(get_CSISvariableNameToPrimaryKey)
 # debug(create_foreign_key_assigments)
