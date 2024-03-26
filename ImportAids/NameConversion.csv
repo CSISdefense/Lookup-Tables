@@ -385,7 +385,7 @@ SourceVariableName,CSISvariableName,IsDuplicate
 [type_of_idc],[type_of_idc_name],
 [type_of_contract_pricing_code],[typeofcontractpricing],
 [type_of_contract_pricing],[type_of_contract_pricing_name],
-[award_description],[descriptionofcontractrequirement],
+[award_description],[prime_award_base_transaction_description],
 [action_type_code],[reasonformodification],
 [action_type],[action_type_name],
 [solicitation_identifier],[solicitationid],

@@ -105,8 +105,8 @@ list_problem_type<-function(TargetTable.df){
 }
 
 
-translate_name<-function(TargetTable.df,test_only=FALSE){
-  lookup.NameConversion<-read.csv("ImportAids\\NameConversion.csv",
+translate_name<-function(TargetTable.df,test_only=FALSE,file="NameConversion.csv"){
+  lookup.NameConversion<-read.csv(file.path("ImportAids",file),
                                   stringsAsFactors = FALSE,
                                   na.strings = c("NULL","NA"))
   if(!"SourceVariableName" %in% colnames(TargetTable.df)){
@@ -428,7 +428,10 @@ create_try_converts<-function(data,
     return(0)
   }
   data<-convert_switch(data,DateType,TRUE,Apply_Drop=Apply_Drop)
-  if(any(is.na(data$ConvertList))) stop("NA ConvertList")
+  if(any(is.na(data$ConvertList))){
+    View(data %>% filter(is.na(ConvertList)))
+     stop("NA ConvertList")
+  }
   
   #This is only relevant to legacy FPDS
   if(Add_Colon_Split==TRUE){
