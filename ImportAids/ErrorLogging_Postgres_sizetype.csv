@@ -22,7 +22,7 @@ awarding_sub_tier_agency_c, varchar,4
 awarding_sub_tier_agency_n, varchar,255
 base_and_all_options_value, decimal, 
 base_exercised_options_val, decimal, 
-business_categories, varchar,1
+business_categories, varchar,150
 cage_code, varchar,5
 clinger_cohen_act_pla_desc, varchar,255
 clinger_cohen_act_planning, bit, 

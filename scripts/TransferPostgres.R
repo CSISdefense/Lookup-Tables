@@ -109,17 +109,16 @@ for (cy in 1983:1999){
 #1977-2024 2024-02-08 YTD. NOte that probably everything pre-1990 I should probably capture in one single query.
 file.list<-list.files(file.path(path,postgresdir))
 
-for (f in 1:length(file.list)){
+for (f in 2:length(file.list)){
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
                      Database = "CSIS360",
                      UID = login,
                      PWD =pwd)
+  
   load(file.path(path,postgresdir,file.list[f]))
-  
   print(c("File",file.list[f],"Upload Start", format(Sys.time(), "%c")))
-  
   
   if(nrow(latest_fpds)==0)
     next
@@ -131,17 +130,41 @@ for (f in 1:length(file.list)){
     filecheck$maxlen[c]<-max(sapply(latest_fpds[,filecheck$colname[c]],nchar),na.rm=TRUE)
   }
   filecheck$importtype<-sapply(latest_fpds,class)
-  # t<-read_and_join_experiment(filecheck,"ErrorLogging_FAADCstage1_size.csv",directory="ImportAids//",skip_check_var = "stage1size")
-  # t$stage1size<-text_to_number(t$stage1size)
-  # if(nrow(t %>% filter (maxlen>=stage1size))>0){
-  #   t %>% filter (maxlen>=stage1size)
-  #   # stop("Column length will lead to truncation")
-  # }
-  # distinct(t %>% select(stage1type,importtype))
-  # if(nrow(t %>% filter (stage1type %in% c("decimal","date")&importtype=="character" ))){
-  #   t %>% filter (stage1type %in% c("decimal","date")&importtype=="character" )
-  #   stop("Column type mismatch")
-  # }
+  t<-read_and_join_experiment(filecheck,"ErrorLogging_Postgres_sizetype.csv",directory="ImportAids//",skip_check_var = "varcharsize")
+  # t$varcharsize<-text_to_number(t$varcharsize)
+  if(nrow(t %>% filter (destinationtype %in% c("varchar","nvarchar") & maxlen>varcharsize))>0){
+    t %>% filter (destinationtype %in% c("varchar","nvarchar") & maxlen>varcharsize)
+    stop("Column length will lead to truncation")
+  }
+  # Handle numerical formats
+  for(c in t$colname[t$destinationtype %in% c("decimal","int","bigint","smallint")& t$importtype=="character"]){
+    if(any(!is.na(latest_fpds[,c])& 
+           is.na(text_to_number(latest_fpds[,c]))))
+      stop(paste("Conversion to number failed for",c))
+    latest_fpds[,c]<-text_to_number(latest_fpds[,c])
+    t$importtype[t$colname==c]<-t$destinationtype[t$colname==c]
+  }
+  #Handle dates
+  for(c in t$colname[t$destinationtype %in% c("date","datetime2")& t$importtype=="character"]){
+    if(any(!is.na(latest_fpds[,c])& 
+           is.na(as.Date(latest_fpds[,c]))))
+      stop(paste("Conversion to date failed for",c))
+    latest_fpds[,c]<-as.Date(latest_fpds[,c])
+    t$importtype[t$colname==c]<-t$destinationtype[t$colname==c]
+  }
+  #Handle bits
+  for(c in t$colname[t$destinationtype %in% c("bit")& t$importtype!="bit"]){
+    newval<-text_to_bit(latest_fpds[,c])
+    if(any(!is.na(latest_fpds[,c])& 
+           is.na(newval))){
+      summary(factor(latest_fpds[,c]))
+      View(latest_fpds[!is.na(latest_fpds[,c])&is.na(newval),c])
+      stop(paste("Conversion to bit failed for",c))
+    }
+    latest_fpds[,c]<-newval
+    t$importtype[t$colname==c]<-t$destinationtype[t$colname==c]
+  }
+  t$importtype<-sapply(latest_fpds,class)
   
   for (r in 0:floor(nrow(latest_fpds)/100000)){
     start<-(r*100000)+1

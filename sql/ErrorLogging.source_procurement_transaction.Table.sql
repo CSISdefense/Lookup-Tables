@@ -29,7 +29,7 @@ CREATE TABLE [ErrorLogging].[source_procurement_transaction](
 	[awarding_sub_tier_agency_n] [text] NULL,
 	[base_and_all_options_value] [decimal](19, 4) NULL,
 	[base_exercised_options_val] [decimal](19, 4) NULL,
-	[business_categories] [varchar](1) NULL,
+	[business_categories] [varchar](150) NULL,
 	[cage_code] [varchar](5) NULL,
 	[clinger_cohen_act_pla_desc] [text] NULL,
 	[clinger_cohen_act_planning] [bit] NULL,
