@@ -35,6 +35,8 @@ pgcon <- dbConnect(odbc(),
 
 fy<-2023
 
+#### Upload contract_fpds_ctu list to Postgres database #####
+
 # path<-"C:\\Users\\grego\\Repositories\\USAspending-local\\"
 path<-"D:\\Users\\Greg\\Repositories\\USAspending-local\\"
 # path<-"F:\\Users\\Greg\\Repositories\\USAspending-local\\"
@@ -74,13 +76,8 @@ for (fy in 2000:2022){
 }
 
 
-
-#          and s
-# 	action_date<=to_date('",fy,"-09-30','yyyy-mm-dd');")
-print(c("Fiscal Year",cy,"Download Start", format(Sys.time(), "%c")))
-#October to end of december 19:48 to 20:13
-# latest_fpds<-dbGetQuery(pgcon,  sql)
-#Error: Query needs to be bound before fetching
+#### Download new or changed rows from Postgres database #####
+postgresdir<-"Postgres_2024_02_08"
 for (cy in 1983:1999){
   pgcon <- dbConnect(odbc(),
                      Driver = "PostgreSQL Unicode(x64)",
@@ -99,22 +96,79 @@ for (cy in 1983:1999){
   latest_fpds<-dbGetQuery(pgcon, sql)
   print(c("Download complete",cy,nrow(latest_fpds), format(Sys.time(), "%c")))
   if(nrow(latest_fpds)==0)     next
-  save(latest_fpds,file= file.path("output",paste0("fpds_cy_",cy,".rda")))
+  save(latest_fpds,file= file.path(path,postgresdir,paste0("fpds_cy_",cy,".rda")))
 }
 
 
 
-dir<-"FY2023_All_Contracts_Full_20230808\\"
-
-m<-10
 
 
-   #          and s
-   # 	action_date<=to_date('",fy,"-09-30','yyyy-mm-dd');")
-print(c("Fiscal Year",fy,"Download Start", format(Sys.time(), "%c")))
-#October to end of december 19:48 to 20:13
-# latest_fpds<-dbGetQuery(pgcon,  sql)
-#Error: Query needs to be bound before fetching
+#### Upload new or changed rows to SQL server #####
+
+# proc<-dbReadTable(pgcon,  name = SQL('"raw"."detached_award_2023"'))
+#1977-2024 2024-02-08 YTD. NOte that probably everything pre-1990 I should probably capture in one single query.
+file.list<-list.files(file.path(path,postgresdir))
+
+for (f in 1:length(file.list)){
+  vmcon <- dbConnect(odbc(),
+                     Driver = "SQL Server",
+                     Server = "vmsqldiig.database.windows.net",
+                     Database = "CSIS360",
+                     UID = login,
+                     PWD =pwd)
+  load(file.path(path,postgresdir,file.list[f]))
+  
+  print(c("File",file.list[f],"Upload Start", format(Sys.time(), "%c")))
+  
+  
+  if(nrow(latest_fpds)==0)
+    next
+  latest_fpds<- as.data.frame(latest_fpds)
+  filecheck<-data.frame(colname=colnames(latest_fpds))
+  filecheck$maxlen<-NULL
+  for(c in 1:nrow(filecheck)){
+    if (numbers::mod(c,10) == 0) print(c)
+    filecheck$maxlen[c]<-max(sapply(latest_fpds[,filecheck$colname[c]],nchar),na.rm=TRUE)
+  }
+  filecheck$importtype<-sapply(latest_fpds,class)
+  # t<-read_and_join_experiment(filecheck,"ErrorLogging_FAADCstage1_size.csv",directory="ImportAids//",skip_check_var = "stage1size")
+  # t$stage1size<-text_to_number(t$stage1size)
+  # if(nrow(t %>% filter (maxlen>=stage1size))>0){
+  #   t %>% filter (maxlen>=stage1size)
+  #   # stop("Column length will lead to truncation")
+  # }
+  # distinct(t %>% select(stage1type,importtype))
+  # if(nrow(t %>% filter (stage1type %in% c("decimal","date")&importtype=="character" ))){
+  #   t %>% filter (stage1type %in% c("decimal","date")&importtype=="character" )
+  #   stop("Column type mismatch")
+  # }
+  
+  for (r in 0:floor(nrow(latest_fpds)/100000)){
+    start<-(r*100000)+1
+    end<-((r+1)*100000)
+    #Stop when we've reached the end of imports
+    if(start>nrow(latest_fpds)) {break}
+    if(end>nrow(latest_fpds)) {end<-nrow(latest_fpds)}
+    print(c(start,end, format(Sys.time(), "%c")))
+    dbAppendTable(conn = vmcon, 
+                  name = SQL('"ErrorLogging"."source_procurement_transaction"'), 
+                  value = latest_fpds[start:end,])  ## x is any data frame
+    #https://stackoverflow.com/questions/66864660/r-dbi-sql-server-dbwritetable-truncates-rows-field-types-parameter-does-not-w
+    # values <- DBI::sqlAppendTable(
+    #   vmcon = vmcon,
+    #   table = Id(database = "CSIS360", schema = "ErrorLogging", table = "FPDSstage1"),
+    #   values = latest_fpds[start:end,])
+    # DBI::dbExecute(conn = vmcon, values)
+  }
+  #Note, transactions will not commit until you disconnect! Whether or not
+  #the computer maintains this connection in the meantime doesn't matter,
+  #formal disconnection is required.
+  dbDisconnect(vmcon)
+}
+
+
+#### Download all rows from Postgres database #####
+
 cy<-2023
 quarter_dates<-c("01-01","04-01","07-01","10-01")
 for (q in 1:4){
@@ -136,6 +190,7 @@ for (q in 1:4){
 # fpds_2023<-dbGetQuery(pgcon, sql, params=list(stringi::stri_sub(paste0(0,1:12),-2,-1)))
 
 
+#### Transfer selected fields from Postgres database to fill in gaps #####
 
 # proc<-dbReadTable(pgcon,  name = SQL('"raw"."detached_award_2023"'))
 #1977-2024 2024-02-08 YTD. NOte that probably everything pre-1990 I should probably capture in one single query.
