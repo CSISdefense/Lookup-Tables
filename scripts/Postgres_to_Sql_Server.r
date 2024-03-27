@@ -9,11 +9,18 @@ Import.df<-read_create_table("ErrorLogging.source_procurement_transaction.Table.
                                       dir="SQL")
 Import.df<-translate_name(Import.df,file="PostgresNameConversion.csv")
 
+Stage2Table.df<-read_create_table("ErrorLogging.FPDSstage2.Table.sql",
+                                       dir="SQL")
+
+
 DestinationTable.df<-read_create_table("Contract.FPDS.Table.sql",
                                        dir="SQL")
+
+
 translate_name(DestinationTable.df,test_only=TRUE)
 
-MergeStage2.df<-merge_source_and_csis_name_tables(Import.df,DestinationTable.df)
+MergeDestination.df<-merge_source_and_csis_name_tables(Import.df,DestinationTable.df)
+MergeStage2.df<-merge_source_and_csis_name_tables(Import.df,Stage2Table.df)
 
 #Check for size mismatch
 # View(MergeStage2.df %>% filter(SourceVariableType!=CSISvariableType))
@@ -24,11 +31,14 @@ MergeStage2.df<-merge_source_and_csis_name_tables(Import.df,DestinationTable.df)
 
 
 TryConvertList<-create_try_converts(MergeStage2.df,"Errorlogging","source_procurement_transaction"
-                                    ,IncludeAlters=TRUE)
+                                    ,IncludeAlters=TRUE,
+                                    Apply_Drop = FALSE,
+                                    IncludeSingle = FALSE)
 TryConvertList<-create_try_converts(MergeStage2.df,"Errorlogging","source_procurement_transaction"
                                     ,IncludeAlters=TRUE
                                     ,IncludeSingle = FALSE
                                     ,IncludeMultiple = FALSE
+                                    ,Apply_Drop = FALSE
                                     )
 write(TryConvertList,"Output\\PostgresTryConvertList.txt")
 write_delim(MergeStage2.df %>% select(SourceVariableName,SourceVariableType,CSISvariableType)%>%

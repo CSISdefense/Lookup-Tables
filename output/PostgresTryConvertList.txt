@@ -1,414 +1,344 @@
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [a_76_fair_act_action] [bit]
+ALTER COLUMN [a_76_fair_act_action_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [action_date] [date]
+ALTER COLUMN [action_date] [datetime2](7)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [action_type] [varchar](1)
+ALTER COLUMN [action_type_description] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [agency_id] [varchar](4)
+ALTER COLUMN [awarding_agency_name] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [annual_revenue] [decimal](19, 4)
+ALTER COLUMN [awarding_office_name] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [award_description] [varchar](4035)
+ALTER COLUMN [awarding_sub_tier_agency_n] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [award_modification_amendme] [varchar](25)
+ALTER COLUMN [clinger_cohen_act_pla_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [award_or_idv_flag] [varchar](5)
+ALTER COLUMN [commercial_item_acqui_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [awardee_or_recipient_legal] [nvarchar](150)
+ALTER COLUMN [commercial_item_test_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [awardee_or_recipient_uniqu] [nvarchar](150)
+ALTER COLUMN [consolidated_contract_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [awarding_agency_code] [smallint]
+ALTER COLUMN [construction_wage_rat_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [awarding_office_code] [varchar](6)
+ALTER COLUMN [contingency_humanitar_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [awarding_sub_tier_agency_c] [varchar](4)
+ALTER COLUMN [contract_award_type_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [base_and_all_options_value] [decimal](19, 4)
+ALTER COLUMN [contract_bundling_descrip] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [base_exercised_options_val] [decimal](19, 4)
+ALTER COLUMN [contract_financing_descrip] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [business_categories] [varchar](1)
+ALTER COLUMN [contracting_officers_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [cage_code] [varchar](5)
+ALTER COLUMN [cost_accounting_stand_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [clinger_cohen_act_planning] [bit]
+ALTER COLUMN [cost_or_pricing_data_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [commercial_item_acquisitio] [varchar](1)
+ALTER COLUMN [country_of_product_or_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [commercial_item_test_progr] [varchar](1)
+ALTER COLUMN [dod_claimant_prog_cod_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [consolidated_contract] [varchar](1)
+ALTER COLUMN [domestic_or_foreign_e_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [construction_wage_rate_req] [varchar](1)
+ALTER COLUMN [epa_designated_produc_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [contingency_humanitarian_o] [varchar](1)
+ALTER COLUMN [evaluated_preference_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [contract_award_type] [varchar](1)
+ALTER COLUMN [extent_compete_description] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [contract_bundling] [varchar](1)
+ALTER COLUMN [fair_opportunity_limi_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [contract_financing] [varchar](1)
+ALTER COLUMN [fed_biz_opps_description] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [contracting_officers_deter] [varchar](1)
+ALTER COLUMN [foreign_funding_desc] [varchar](25)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [cost_accounting_standards] [varchar](1)
+ALTER COLUMN [funding_agency_name] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [cost_or_pricing_data] [varchar](1)
+ALTER COLUMN [funding_office_name] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [country_of_product_or_serv] [varchar](3)
+ALTER COLUMN [funding_sub_tier_agency_na] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [current_total_value_award] [decimal](19, 4)
+ALTER COLUMN [government_furnished_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [division_name] [nvarchar](150)
+ALTER COLUMN [idv_type_description] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [division_number_or_office] [varchar](10)
+ALTER COLUMN [information_technolog_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [dod_claimant_program_code] [varchar](3)
+ALTER COLUMN [inherently_government_desc] [varchar](40)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [domestic_or_foreign_entity] [bit]
+ALTER COLUMN [interagency_contract_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [epa_designated_product] [varchar](1)
+ALTER COLUMN [labor_standards_descrip] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [evaluated_preference] [varchar](6)
+ALTER COLUMN [legal_entity_country_name] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [extent_competed] [varchar](3)
+ALTER COLUMN [legal_entity_state_descrip] [varchar](35)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [fair_opportunity_limited_s] [varchar](4)
+ALTER COLUMN [local_area_set_aside_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [fed_biz_opps] [varchar](1)
+ALTER COLUMN [materials_supplies_descrip] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [federal_action_obligation] [decimal](19, 4)
+ALTER COLUMN [multi_year_contract_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [foreign_funding] [varchar](21)
+ALTER COLUMN [multiple_or_single_aw_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [funding_agency_code] [varchar](4)
+ALTER COLUMN [naics_description] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [funding_office_code] [varchar](6)
+ALTER COLUMN [national_interest_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [funding_sub_tier_agency_co] [varchar](4)
+ALTER COLUMN [ordering_period_end_date] [datetime2](7)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [government_furnished_prope] [varchar](1)
+ALTER COLUMN [other_than_full_and_o_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [high_comp_officer1_amount] [decimal](19, 4)
+ALTER COLUMN [performance_based_se_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [high_comp_officer1_full_na] [varchar](100)
+ALTER COLUMN [period_of_performance_star] [datetime2](7)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [high_comp_officer2_amount] [decimal](19, 4)
+ALTER COLUMN [place_of_manufacture_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [high_comp_officer2_full_na] [varchar](100)
+ALTER COLUMN [place_of_perf_country_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [high_comp_officer3_amount] [decimal](19, 4)
+ALTER COLUMN [place_of_perfor_state_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [high_comp_officer3_full_na] [varchar](100)
+ALTER COLUMN [product_or_service_co_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [high_comp_officer4_amount] [decimal](19, 4)
+ALTER COLUMN [purchase_card_as_paym_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [high_comp_officer4_full_na] [varchar](100)
+ALTER COLUMN [recovered_materials_s_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [high_comp_officer5_amount] [decimal](19, 4)
+ALTER COLUMN [referenced_idv_agency_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [high_comp_officer5_full_na] [varchar](100)
+ALTER COLUMN [referenced_idv_type_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [idv_type] [varchar](1)
+ALTER COLUMN [referenced_mult_or_si_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [information_technology_com] [varchar](30)
+ALTER COLUMN [research_description] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [inherently_government_func] [varchar](10)
+ALTER COLUMN [sam_exception] [varchar](70)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [initial_report_date] [datetime2](7)
+ALTER COLUMN [sam_exception_description] [varchar](71)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [interagency_contracting_au] [varchar](3)
+ALTER COLUMN [sea_transportation_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [labor_standards] [varchar](1)
+ALTER COLUMN [solicitation_procedur_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [last_modified] [datetime2](7)
+ALTER COLUMN [subcontracting_plan_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [legal_entity_address_line1] [varchar](115)
+ALTER COLUMN [type_of_contract_pric_desc] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [legal_entity_address_line2] [varchar](64)
+ALTER COLUMN [type_of_idc_description] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [legal_entity_address_line3] [varchar](55)
+ALTER COLUMN [type_set_aside_description] [varchar](255)
 
 ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [legal_entity_city_name] [varchar](35)
+ALTER COLUMN [undefinitized_action_desc] [varchar](255)
 
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [legal_entity_congressional] [varchar](22)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [legal_entity_country_code] [nvarchar](50)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [legal_entity_county_code] [int]
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [legal_entity_county_name] [varchar](30)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [legal_entity_state_code] [varchar](35)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [legal_entity_zip4] [varchar](28)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [local_area_set_aside] [varchar](4)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [major_program] [varchar](104)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [materials_supplies_article] [varchar](1)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [multi_year_contract] [bit]
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [multiple_or_single_award_i] [varchar](1)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [naics] [varchar](6)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [national_interest_action] [varchar](4)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [number_of_actions] [bigint]
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [number_of_employees] [bigint]
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [number_of_offers_received] [bigint]
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [ordering_period_end_date] [date]
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [organizational_type] [varchar](30)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [other_statutory_authority] [varchar](1000)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [other_than_full_and_open_c] [varchar](3)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [parent_award_id] [varchar](50)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [performance_based_service] [varchar](38)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [period_of_perf_potential_e] [datetime2](7)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [period_of_performance_curr] [datetime2](7)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [period_of_performance_star] [date]
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [piid] [varchar](50)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [place_of_manufacture] [varchar](1)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [place_of_perform_city_name] [varchar](100)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [place_of_perform_country_c] [varchar](3)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [place_of_perform_county_co] [int]
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [place_of_perform_county_na] [varchar](26)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [place_of_performance_congr] [varchar](22)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [place_of_performance_locat] [varchar](9)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [place_of_performance_state] [varchar](2)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [place_of_performance_zip4a] [varchar](10)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [potential_total_value_awar] [decimal](19, 4)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [price_evaluation_adjustmen] [smallint]
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [product_or_service_code] [varchar](4)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [program_acronym] [varchar](29)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [program_system_or_equ_desc] [varchar](255)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [program_system_or_equipmen] [varchar](4)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [purchase_card_as_payment_m] [bit]
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [recovered_materials_sustai] [varchar](1)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [referenced_idv_agency_iden] [varchar](4)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [referenced_idv_modificatio] [varchar](25)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [referenced_idv_type] [varchar](1)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [referenced_mult_or_single] [varchar](1)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [research] [varchar](3)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [sam_exception] [varchar](1)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [sea_transportation] [varchar](1)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [solicitation_date] [date]
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [solicitation_identifier] [varchar](69)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [solicitation_procedures] [varchar](5)
+--Check across all non-varchar and non-bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.
+SELECT
+	,max(iif(Try_Convert([varchar](255), [a_76_fair_act_action_desc]) is null and
+		nullif([a_76_fair_act_action_desc],'') is not null,1,0)) as [a_76_fair_act_action_desc]
+	,max(iif(Try_Convert([datetime2](7), nullif([action_date],'')) is null and
+		nullif([action_date],'') is not null,1,0)) as [action_date]
+	,max(iif(Try_Convert([varchar](255), [action_type_description]) is null and
+		nullif([action_type_description],'') is not null,1,0)) as [action_type_description]
+	,max(iif(Try_Convert([varchar](255), [awarding_agency_name]) is null and
+		nullif([awarding_agency_name],'') is not null,1,0)) as [awarding_agency_name]
+	,max(iif(Try_Convert([varchar](255), [awarding_office_name]) is null and
+		nullif([awarding_office_name],'') is not null,1,0)) as [awarding_office_name]
+	,max(iif(Try_Convert([varchar](255), [awarding_sub_tier_agency_n]) is null and
+		nullif([awarding_sub_tier_agency_n],'') is not null,1,0)) as [awarding_sub_tier_agency_n]
+	,max(iif(Try_Convert([varchar](255), [clinger_cohen_act_pla_desc]) is null and
+		nullif([clinger_cohen_act_pla_desc],'') is not null,1,0)) as [clinger_cohen_act_pla_desc]
+	,max(iif(Try_Convert([varchar](255), [commercial_item_acqui_desc]) is null and
+		nullif([commercial_item_acqui_desc],'') is not null,1,0)) as [commercial_item_acqui_desc]
+	,max(iif(Try_Convert([varchar](255), [commercial_item_test_desc]) is null and
+		nullif([commercial_item_test_desc],'') is not null,1,0)) as [commercial_item_test_desc]
+	,max(iif(Try_Convert([varchar](255), [consolidated_contract_desc]) is null and
+		nullif([consolidated_contract_desc],'') is not null,1,0)) as [consolidated_contract_desc]
+	,max(iif(Try_Convert([varchar](255), [construction_wage_rat_desc]) is null and
+		nullif([construction_wage_rat_desc],'') is not null,1,0)) as [construction_wage_rat_desc]
+	,max(iif(Try_Convert([varchar](255), [contingency_humanitar_desc]) is null and
+		nullif([contingency_humanitar_desc],'') is not null,1,0)) as [contingency_humanitar_desc]
+	,max(iif(Try_Convert([varchar](255), [contract_award_type_desc]) is null and
+		nullif([contract_award_type_desc],'') is not null,1,0)) as [contract_award_type_desc]
+	,max(iif(Try_Convert([varchar](255), [contract_bundling_descrip]) is null and
+		nullif([contract_bundling_descrip],'') is not null,1,0)) as [contract_bundling_descrip]
+	,max(iif(Try_Convert([varchar](255), [contract_financing_descrip]) is null and
+		nullif([contract_financing_descrip],'') is not null,1,0)) as [contract_financing_descrip]
+	,max(iif(Try_Convert([varchar](255), [contracting_officers_desc]) is null and
+		nullif([contracting_officers_desc],'') is not null,1,0)) as [contracting_officers_desc]
+	,max(iif(Try_Convert([varchar](255), [cost_accounting_stand_desc]) is null and
+		nullif([cost_accounting_stand_desc],'') is not null,1,0)) as [cost_accounting_stand_desc]
+	,max(iif(Try_Convert([varchar](255), [cost_or_pricing_data_desc]) is null and
+		nullif([cost_or_pricing_data_desc],'') is not null,1,0)) as [cost_or_pricing_data_desc]
+	,max(iif(Try_Convert([varchar](255), [country_of_product_or_desc]) is null and
+		nullif([country_of_product_or_desc],'') is not null,1,0)) as [country_of_product_or_desc]
+	,max(iif(Try_Convert([varchar](255), [dod_claimant_prog_cod_desc]) is null and
+		nullif([dod_claimant_prog_cod_desc],'') is not null,1,0)) as [dod_claimant_prog_cod_desc]
+	,max(iif(Try_Convert([varchar](255), [domestic_or_foreign_e_desc]) is null and
+		nullif([domestic_or_foreign_e_desc],'') is not null,1,0)) as [domestic_or_foreign_e_desc]
+	,max(iif(Try_Convert([varchar](255), [epa_designated_produc_desc]) is null and
+		nullif([epa_designated_produc_desc],'') is not null,1,0)) as [epa_designated_produc_desc]
+	,max(iif(Try_Convert([varchar](255), [evaluated_preference_desc]) is null and
+		nullif([evaluated_preference_desc],'') is not null,1,0)) as [evaluated_preference_desc]
+	,max(iif(Try_Convert([varchar](255), [extent_compete_description]) is null and
+		nullif([extent_compete_description],'') is not null,1,0)) as [extent_compete_description]
+	,max(iif(Try_Convert([varchar](255), [fair_opportunity_limi_desc]) is null and
+		nullif([fair_opportunity_limi_desc],'') is not null,1,0)) as [fair_opportunity_limi_desc]
+	,max(iif(Try_Convert([varchar](255), [fed_biz_opps_description]) is null and
+		nullif([fed_biz_opps_description],'') is not null,1,0)) as [fed_biz_opps_description]
+	,max(iif(Try_Convert([varchar](25), [foreign_funding_desc]) is null and
+		nullif([foreign_funding_desc],'') is not null,1,0)) as [foreign_funding_desc]
+	,max(iif(Try_Convert([varchar](255), [funding_agency_name]) is null and
+		nullif([funding_agency_name],'') is not null,1,0)) as [funding_agency_name]
+	,max(iif(Try_Convert([varchar](255), [funding_office_name]) is null and
+		nullif([funding_office_name],'') is not null,1,0)) as [funding_office_name]
+	,max(iif(Try_Convert([varchar](255), [funding_sub_tier_agency_na]) is null and
+		nullif([funding_sub_tier_agency_na],'') is not null,1,0)) as [funding_sub_tier_agency_na]
+	,max(iif(Try_Convert([varchar](255), [government_furnished_desc]) is null and
+		nullif([government_furnished_desc],'') is not null,1,0)) as [government_furnished_desc]
+	,max(iif(Try_Convert([varchar](255), [idv_type_description]) is null and
+		nullif([idv_type_description],'') is not null,1,0)) as [idv_type_description]
+	,max(iif(Try_Convert([varchar](255), [information_technolog_desc]) is null and
+		nullif([information_technolog_desc],'') is not null,1,0)) as [information_technolog_desc]
+	,max(iif(Try_Convert([varchar](40), [inherently_government_desc]) is null and
+		nullif([inherently_government_desc],'') is not null,1,0)) as [inherently_government_desc]
+	,max(iif(Try_Convert([varchar](255), [interagency_contract_desc]) is null and
+		nullif([interagency_contract_desc],'') is not null,1,0)) as [interagency_contract_desc]
+	,max(iif(Try_Convert([varchar](255), [labor_standards_descrip]) is null and
+		nullif([labor_standards_descrip],'') is not null,1,0)) as [labor_standards_descrip]
+	,max(iif(Try_Convert([varchar](255), [legal_entity_country_name]) is null and
+		nullif([legal_entity_country_name],'') is not null,1,0)) as [legal_entity_country_name]
+	,max(iif(Try_Convert([varchar](35), [legal_entity_state_descrip]) is null and
+		nullif([legal_entity_state_descrip],'') is not null,1,0)) as [legal_entity_state_descrip]
+	,max(iif(Try_Convert([varchar](255), [local_area_set_aside_desc]) is null and
+		nullif([local_area_set_aside_desc],'') is not null,1,0)) as [local_area_set_aside_desc]
+	,max(iif(Try_Convert([varchar](255), [materials_supplies_descrip]) is null and
+		nullif([materials_supplies_descrip],'') is not null,1,0)) as [materials_supplies_descrip]
+	,max(iif(Try_Convert([varchar](255), [multi_year_contract_desc]) is null and
+		nullif([multi_year_contract_desc],'') is not null,1,0)) as [multi_year_contract_desc]
+	,max(iif(Try_Convert([varchar](255), [multiple_or_single_aw_desc]) is null and
+		nullif([multiple_or_single_aw_desc],'') is not null,1,0)) as [multiple_or_single_aw_desc]
+	,max(iif(Try_Convert([varchar](255), [naics_description]) is null and
+		nullif([naics_description],'') is not null,1,0)) as [naics_description]
+	,max(iif(Try_Convert([varchar](255), [national_interest_desc]) is null and
+		nullif([national_interest_desc],'') is not null,1,0)) as [national_interest_desc]
+	,max(iif(Try_Convert([datetime2](7), nullif([ordering_period_end_date],'')) is null and
+		nullif([ordering_period_end_date],'') is not null,1,0)) as [ordering_period_end_date]
+	,max(iif(Try_Convert([varchar](255), [other_than_full_and_o_desc]) is null and
+		nullif([other_than_full_and_o_desc],'') is not null,1,0)) as [other_than_full_and_o_desc]
+	,max(iif(Try_Convert([varchar](255), [performance_based_se_desc]) is null and
+		nullif([performance_based_se_desc],'') is not null,1,0)) as [performance_based_se_desc]
+	,max(iif(Try_Convert([datetime2](7), nullif([period_of_performance_star],'')) is null and
+		nullif([period_of_performance_star],'') is not null,1,0)) as [period_of_performance_star]
+	,max(iif(Try_Convert([varchar](255), [place_of_manufacture_desc]) is null and
+		nullif([place_of_manufacture_desc],'') is not null,1,0)) as [place_of_manufacture_desc]
+	,max(iif(Try_Convert([varchar](255), [place_of_perf_country_desc]) is null and
+		nullif([place_of_perf_country_desc],'') is not null,1,0)) as [place_of_perf_country_desc]
+	,max(iif(Try_Convert([varchar](255), [place_of_perfor_state_desc]) is null and
+		nullif([place_of_perfor_state_desc],'') is not null,1,0)) as [place_of_perfor_state_desc]
+	,max(iif(Try_Convert([varchar](255), [product_or_service_co_desc]) is null and
+		nullif([product_or_service_co_desc],'') is not null,1,0)) as [product_or_service_co_desc]
+	,max(iif(Try_Convert([varchar](255), [purchase_card_as_paym_desc]) is null and
+		nullif([purchase_card_as_paym_desc],'') is not null,1,0)) as [purchase_card_as_paym_desc]
+	,max(iif(Try_Convert([varchar](255), [recovered_materials_s_desc]) is null and
+		nullif([recovered_materials_s_desc],'') is not null,1,0)) as [recovered_materials_s_desc]
+	,max(iif(Try_Convert([varchar](255), [referenced_idv_agency_desc]) is null and
+		nullif([referenced_idv_agency_desc],'') is not null,1,0)) as [referenced_idv_agency_desc]
+	,max(iif(Try_Convert([varchar](255), [referenced_idv_type_desc]) is null and
+		nullif([referenced_idv_type_desc],'') is not null,1,0)) as [referenced_idv_type_desc]
+	,max(iif(Try_Convert([varchar](255), [referenced_mult_or_si_desc]) is null and
+		nullif([referenced_mult_or_si_desc],'') is not null,1,0)) as [referenced_mult_or_si_desc]
+	,max(iif(Try_Convert([varchar](255), [research_description]) is null and
+		nullif([research_description],'') is not null,1,0)) as [research_description]
+	,max(iif(Try_Convert([varchar](71), [sam_exception_description]) is null and
+		nullif([sam_exception_description],'') is not null,1,0)) as [sam_exception_description]
+	,max(iif(Try_Convert([varchar](255), [sea_transportation_desc]) is null and
+		nullif([sea_transportation_desc],'') is not null,1,0)) as [sea_transportation_desc]
+	,max(iif(Try_Convert([varchar](255), [solicitation_procedur_desc]) is null and
+		nullif([solicitation_procedur_desc],'') is not null,1,0)) as [solicitation_procedur_desc]
+	,max(iif(Try_Convert([varchar](255), [subcontracting_plan_desc]) is null and
+		nullif([subcontracting_plan_desc],'') is not null,1,0)) as [subcontracting_plan_desc]
+	,max(iif(Try_Convert([varchar](255), [type_of_contract_pric_desc]) is null and
+		nullif([type_of_contract_pric_desc],'') is not null,1,0)) as [type_of_contract_pric_desc]
+	,max(iif(Try_Convert([varchar](255), [type_of_idc_description]) is null and
+		nullif([type_of_idc_description],'') is not null,1,0)) as [type_of_idc_description]
+	,max(iif(Try_Convert([varchar](255), [type_set_aside_description]) is null and
+		nullif([type_set_aside_description],'') is not null,1,0)) as [type_set_aside_description]
+	,max(iif(Try_Convert([varchar](255), [undefinitized_action_desc]) is null and
+		nullif([undefinitized_action_desc],'') is not null,1,0)) as [undefinitized_action_desc]
+	FROM Errorlogging.source_procurement_transaction
 
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [subcontracting_plan] [varchar](1)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [total_obligated_amount] [decimal](19, 4)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [transaction_number] [bigint]
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [type_of_contract_pricing] [varchar](2)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [type_of_idc] [varchar](41)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [type_set_aside] [varchar](10)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [ultimate_parent_legal_enti] [nvarchar](150)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [undefinitized_action] [varchar](1)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [unique_award_key] [varchar](120)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [vendor_alternate_name] [varchar](150)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [vendor_alternate_site_code] [varchar](20)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [vendor_doing_as_business_n] [nvarchar](150)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [vendor_fax_number] [varchar](30)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [vendor_legal_org_name] [nvarchar](150)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [vendor_phone_number] [varchar](20)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [vendor_site_code] [varchar](15)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [awardee_or_recipient_uei] [varchar](12)
-
-ALTER TABLE Errorlogging.source_procurement_transaction
-ALTER COLUMN [ultimate_parent_uei] [varchar](12)
+--Varchar to varchar group check. Note you have to remove an extraneous comma from the first item. 
+SELECT
+ ,iif([sam_exception]>70,[sam_exception],NULL) as [sam_exception] 
+FROM (SELECT
+ 	,max(len([sam_exception])) as [sam_exception] 
+	FROM  Errorlogging . source_procurement_transaction ) as ml
 
