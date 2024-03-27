@@ -22,7 +22,7 @@ awarding_sub_tier_agency_c, varchar,4
 awarding_sub_tier_agency_n, varchar,255
 base_and_all_options_value, decimal, 
 base_exercised_options_val, decimal, 
-business_categories, varchar,150
+business_categories, varchar,1000
 cage_code, varchar,5
 clinger_cohen_act_pla_desc, varchar,255
 clinger_cohen_act_planning, bit, 
@@ -57,7 +57,7 @@ division_number_or_office, varchar,10
 dod_claimant_prog_cod_desc, varchar,255
 dod_claimant_program_code, varchar,3
 domestic_or_foreign_e_desc, varchar,255
-domestic_or_foreign_entity, bit, 
+domestic_or_foreign_entity,varchar,1
 epa_designated_produc_desc, varchar,255
 epa_designated_product, varchar,1
 evaluated_preference, varchar,6

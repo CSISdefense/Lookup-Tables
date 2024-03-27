@@ -109,7 +109,7 @@ for (cy in 1983:1999){
 #1977-2024 2024-02-08 YTD. NOte that probably everything pre-1990 I should probably capture in one single query.
 file.list<-list.files(file.path(path,postgresdir))
 
-for (f in 2:length(file.list)){
+for (f in 30:length(file.list)){
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
@@ -126,14 +126,15 @@ for (f in 2:length(file.list)){
   filecheck<-data.frame(colname=colnames(latest_fpds))
   filecheck$maxlen<-NULL
   for(c in 1:nrow(filecheck)){
-    if (numbers::mod(c,10) == 0) print(c)
+    if (numbers::mod(c,50) == 0) print(c)
     filecheck$maxlen[c]<-max(sapply(latest_fpds[,filecheck$colname[c]],nchar),na.rm=TRUE)
   }
   filecheck$importtype<-sapply(latest_fpds,class)
-  t<-read_and_join_experiment(filecheck,"ErrorLogging_Postgres_sizetype.csv",directory="ImportAids//",skip_check_var = "varcharsize")
+  t<-read_and_join_experiment(filecheck,"ErrorLogging_Postgres_sizetype.csv",directory="ImportAids//",skip_check_var = "varcharsize",
+                              path="offline")
   # t$varcharsize<-text_to_number(t$varcharsize)
   if(nrow(t %>% filter (destinationtype %in% c("varchar","nvarchar") & maxlen>varcharsize))>0){
-    t %>% filter (destinationtype %in% c("varchar","nvarchar") & maxlen>varcharsize)
+    View(t %>% filter (destinationtype %in% c("varchar","nvarchar") & maxlen>varcharsize))
     stop("Column length will lead to truncation")
   }
   # Handle numerical formats
@@ -155,7 +156,7 @@ for (f in 2:length(file.list)){
   #Handle bits
   for(c in t$colname[t$destinationtype %in% c("bit")& t$importtype!="bit"]){
     newval<-text_to_bit(latest_fpds[,c])
-    if(any(!is.na(latest_fpds[,c])& 
+    if(any(!is.na(latest_fpds[,c])&  !latest_fpds[,c] %in% c("",":") &
            is.na(newval))){
       summary(factor(latest_fpds[,c]))
       View(latest_fpds[!is.na(latest_fpds[,c])&is.na(newval),c])
