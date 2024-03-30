@@ -148,6 +148,19 @@ translate_name<-function(TargetTable.df,test_only=FALSE,file="NameConversion.csv
   
   TargetTable.df$SourceVariableName<-TargetTable.df$OriginalSourceVariableName
 
+  #Determine Source Variable names for any pairs
+  lookup.PairConversion<-lookup.NameConversion %>% 
+    mutate(pair=CSISvariableName,
+           SourcePairName=SourceVariableName) %>%
+    filter(pair %in% TargetTable.df$pair)
+  select(-CSISvariableName,-SourceVariableName) 
+  
+  if(any(duplicated(lookup.PairConversion$pair))){
+    print(unique(lookup.PairConversion$pair[duplicated(lookup.PairConversion$pair)]))
+    stop(paste("Duplicate pair entries in CSISvariableName in",file))
+  }
+  
+  TargetTable.df<-left_join(TargetTable.df,lookup.PairConversion)
   
   TargetTable.df<-subset(TargetTable.df,select=-c(OriginalSourceVariableName))
   
