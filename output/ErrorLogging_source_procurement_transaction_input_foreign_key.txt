@@ -1,0 +1,756 @@
+-- Insert new [detached_award_proc_unique] into Contract.contract_transaction_unique_key
+INSERT INTO Contract.contract_transaction_unique_key
+(contract_transaction_unique_key)
+SELECT fk.[detached_award_proc_unique]
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Contract.contract_transaction_unique_key as pk
+On pk.contract_transaction_unique_key=fk.[detached_award_proc_unique]
+WHERE pk.contract_transaction_unique_key is NULL and fk.[detached_award_proc_unique] is not null
+GROUP BY fk.[detached_award_proc_unique]
+
+-- Insert new [action_type] into FPDSTypeTable.reasonformodification
+INSERT INTO FPDSTypeTable.reasonformodification
+(reasonformodification,reasonformodificationText)
+SELECT fk.[action_type]
+,max(fk.action_type_name) as reasonformodificationText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.reasonformodification as pk
+On pk.reasonformodification=fk.[action_type]
+WHERE pk.reasonformodification is NULL and fk.[action_type] is not null
+GROUP BY fk.[action_type]
+
+-- Insert new [agency_id] into FPDSTypeTable.AgencyID
+INSERT INTO FPDSTypeTable.AgencyID
+(AgencyID)
+SELECT fk.[agency_id]
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[agency_id]
+WHERE pk.AgencyID is NULL and fk.[agency_id] is not null
+GROUP BY fk.[agency_id]
+
+-- Insert new [award_or_idv_flag] into Contract.award_or_idv_flag
+INSERT INTO Contract.award_or_idv_flag
+(award_or_idv_flag)
+SELECT fk.[award_or_idv_flag]
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Contract.award_or_idv_flag as pk
+On pk.award_or_idv_flag=fk.[award_or_idv_flag]
+WHERE pk.award_or_idv_flag is NULL and fk.[award_or_idv_flag] is not null
+GROUP BY fk.[award_or_idv_flag]
+
+-- Insert new [awardee_or_recipient_legal] into Vendor.VendorName
+INSERT INTO Vendor.VendorName
+(vendorname)
+SELECT fk.[awardee_or_recipient_legal]
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[awardee_or_recipient_legal]
+WHERE pk.vendorname is NULL and fk.[awardee_or_recipient_legal] is not null
+GROUP BY fk.[awardee_or_recipient_legal]
+
+-- Insert new [awardee_or_recipient_uniqu] into Vendor.VendorName
+INSERT INTO Vendor.VendorName
+(vendorname)
+SELECT fk.[awardee_or_recipient_uniqu]
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[awardee_or_recipient_uniqu]
+WHERE pk.vendorname is NULL and fk.[awardee_or_recipient_uniqu] is not null
+GROUP BY fk.[awardee_or_recipient_uniqu]
+
+-- Insert new [awarding_agency_code] into agency.awarding_agency_code
+INSERT INTO agency.awarding_agency_code
+(awarding_agency_code,awarding_agency_name)
+SELECT fk.[awarding_agency_code]
+,max(fk.awarding_agency_name) as awarding_agency_name
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN agency.awarding_agency_code as pk
+On pk.awarding_agency_code=fk.[awarding_agency_code]
+WHERE pk.awarding_agency_code is NULL and fk.[awarding_agency_code] is not null
+GROUP BY fk.[awarding_agency_code]
+
+-- Insert new [awarding_sub_tier_agency_c] into FPDSTypeTable.AgencyID
+INSERT INTO FPDSTypeTable.AgencyID
+(AgencyID,AgencyIDtext)
+SELECT fk.[awarding_sub_tier_agency_c]
+,max(fk.awarding_sub_agency_name) as AgencyIDtext
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[awarding_sub_tier_agency_c]
+WHERE pk.AgencyID is NULL and fk.[awarding_sub_tier_agency_c] is not null
+GROUP BY fk.[awarding_sub_tier_agency_c]
+
+-- Insert new [business_categories] into FPDSTypeTable.TypeofBusinessDD350
+INSERT INTO FPDSTypeTable.TypeofBusinessDD350
+(TypeOfBusiness)
+SELECT fk.[business_categories]
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.TypeofBusinessDD350 as pk
+On pk.TypeOfBusiness=fk.[business_categories]
+WHERE pk.TypeOfBusiness is NULL and fk.[business_categories] is not null
+GROUP BY fk.[business_categories]
+
+-- Insert new [commercial_item_acquisitio] into FPDSTypeTable.CommercialItemAcquisitionProcedures
+INSERT INTO FPDSTypeTable.CommercialItemAcquisitionProcedures
+(CommercialItemAcquisitionProcedures,CommercialItemAcquisitionProceduresText)
+SELECT fk.[commercial_item_acquisitio]
+,max(fk.commercial_item_acquisition_procedures_name) as CommercialItemAcquisitionProceduresText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.CommercialItemAcquisitionProcedures as pk
+On pk.CommercialItemAcquisitionProcedures=fk.[commercial_item_acquisitio]
+WHERE pk.CommercialItemAcquisitionProcedures is NULL and fk.[commercial_item_acquisitio] is not null
+GROUP BY fk.[commercial_item_acquisitio]
+
+-- Insert new [commercial_item_test_progr] into FPDSTypeTable.simplified_procedures_for_certain_commercial_items_code
+INSERT INTO FPDSTypeTable.simplified_procedures_for_certain_commercial_items_code
+(simplified_procedures_for_certain_commercial_items_code,simplified_procedures_for_certain_commercial_items)
+SELECT fk.[commercial_item_test_progr]
+,max(fk.simplified_procedures_for_certain_commercial_items) as simplified_procedures_for_certain_commercial_items
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.simplified_procedures_for_certain_commercial_items_code as pk
+On pk.simplified_procedures_for_certain_commercial_items_code=fk.[commercial_item_test_progr]
+WHERE pk.simplified_procedures_for_certain_commercial_items_code is NULL and fk.[commercial_item_test_progr] is not null
+GROUP BY fk.[commercial_item_test_progr]
+
+-- Insert new [consolidated_contract] into Contract.consolidatedcontract
+INSERT INTO Contract.consolidatedcontract
+(consolidatedcontract,consolidated_contract_name)
+SELECT fk.[consolidated_contract]
+,max(fk.consolidated_contract_name) as consolidated_contract_name
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Contract.consolidatedcontract as pk
+On pk.consolidatedcontract=fk.[consolidated_contract]
+WHERE pk.consolidatedcontract is NULL and fk.[consolidated_contract] is not null
+GROUP BY fk.[consolidated_contract]
+
+-- Insert new [construction_wage_rate_req] into FPDSTypeTable.davisbaconact
+INSERT INTO FPDSTypeTable.davisbaconact
+(davisbaconact,davisbaconactText)
+SELECT fk.[construction_wage_rate_req]
+,max(fk.davis_bacon_act_name) as davisbaconactText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.davisbaconact as pk
+On pk.davisbaconact=fk.[construction_wage_rate_req]
+WHERE pk.davisbaconact is NULL and fk.[construction_wage_rate_req] is not null
+GROUP BY fk.[construction_wage_rate_req]
+
+-- Insert new [contingency_humanitarian_o] into Assistance.ContingencyHumanitarianPeacekeepingOperation
+INSERT INTO Assistance.ContingencyHumanitarianPeacekeepingOperation
+(ContingencyHumanitarianPeacekeepingOperation,contingencyhumanitarianpeacekeepingoperationText)
+SELECT fk.[contingency_humanitarian_o]
+,max(fk.contingency_humanitarian_or_peacekeeping_operation_name) as contingencyhumanitarianpeacekeepingoperationText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Assistance.ContingencyHumanitarianPeacekeepingOperation as pk
+On pk.ContingencyHumanitarianPeacekeepingOperation=fk.[contingency_humanitarian_o]
+WHERE pk.ContingencyHumanitarianPeacekeepingOperation is NULL and fk.[contingency_humanitarian_o] is not null
+GROUP BY fk.[contingency_humanitarian_o]
+
+-- Insert new [contract_award_type] into FPDSTypeTable.award_type_code
+INSERT INTO FPDSTypeTable.award_type_code
+(award_type_code,award_type_name)
+SELECT fk.[contract_award_type]
+,max(fk.award_type_name) as award_type_name
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.award_type_code as pk
+On pk.award_type_code=fk.[contract_award_type]
+WHERE pk.award_type_code is NULL and fk.[contract_award_type] is not null
+GROUP BY fk.[contract_award_type]
+
+-- Insert new [contract_bundling] into FPDSTypeTable.contractbundling
+INSERT INTO FPDSTypeTable.contractbundling
+(contractbundling,contractbundlingText)
+SELECT fk.[contract_bundling]
+,max(fk.contract_bundling_name) as contractbundlingText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.contractbundling as pk
+On pk.contractbundling=fk.[contract_bundling]
+WHERE pk.contractbundling is NULL and fk.[contract_bundling] is not null
+GROUP BY fk.[contract_bundling]
+
+-- Insert new [contract_financing] into FPDSTypeTable.contractfinancing
+INSERT INTO FPDSTypeTable.contractfinancing
+(contractfinancing,contractfinancingText)
+SELECT fk.[contract_financing]
+,max(fk.contract_financing_name) as contractfinancingText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.contractfinancing as pk
+On pk.contractfinancing=fk.[contract_financing]
+WHERE pk.contractfinancing is NULL and fk.[contract_financing] is not null
+GROUP BY fk.[contract_financing]
+
+-- Insert new [contracting_officers_deter] into FPDSTypeTable.contractingofficerbusinesssizedetermination
+INSERT INTO FPDSTypeTable.contractingofficerbusinesssizedetermination
+(contractingofficerbusinesssizedetermination,ContractingOfficerBusinessSizeDeterminationText)
+SELECT fk.[contracting_officers_deter]
+,max(fk.ContractingOfficerBusinessSizeDeterminationText) as ContractingOfficerBusinessSizeDeterminationText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.contractingofficerbusinesssizedetermination as pk
+On pk.contractingofficerbusinesssizedetermination=fk.[contracting_officers_deter]
+WHERE pk.contractingofficerbusinesssizedetermination is NULL and fk.[contracting_officers_deter] is not null
+GROUP BY fk.[contracting_officers_deter]
+
+-- Insert new [cost_accounting_standards] into FPDSTypeTable.CostAccountingStandardsClause
+INSERT INTO FPDSTypeTable.CostAccountingStandardsClause
+(CostAccountingStandardsClause,cost_accounting_standards_clause_name)
+SELECT fk.[cost_accounting_standards]
+,max(fk.cost_accounting_standards_clause_name) as cost_accounting_standards_clause_name
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.CostAccountingStandardsClause as pk
+On pk.CostAccountingStandardsClause=fk.[cost_accounting_standards]
+WHERE pk.CostAccountingStandardsClause is NULL and fk.[cost_accounting_standards] is not null
+GROUP BY fk.[cost_accounting_standards]
+
+-- Insert new [cost_or_pricing_data] into FPDSTypeTable.costorpricingdata
+INSERT INTO FPDSTypeTable.costorpricingdata
+(costorpricingdata,costorpricingdataText)
+SELECT fk.[cost_or_pricing_data]
+,max(fk.cost_or_pricing_data_name) as costorpricingdataText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.costorpricingdata as pk
+On pk.costorpricingdata=fk.[cost_or_pricing_data]
+WHERE pk.costorpricingdata is NULL and fk.[cost_or_pricing_data] is not null
+GROUP BY fk.[cost_or_pricing_data]
+
+-- Insert new [country_of_product_or_serv] into FPDSTypeTable.Country3LetterCode
+INSERT INTO FPDSTypeTable.Country3LetterCode
+(Country3LetterCode,Country3LetterCodeText)
+SELECT fk.[country_of_product_or_serv]
+,max(fk.country_of_product_or_service_origin_name) as Country3LetterCodeText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
+On pk.Country3LetterCode=fk.[country_of_product_or_serv]
+WHERE pk.Country3LetterCode is NULL and fk.[country_of_product_or_serv] is not null
+GROUP BY fk.[country_of_product_or_serv]
+
+-- Insert new [division_name] into Vendor.VendorName
+INSERT INTO Vendor.VendorName
+(vendorname)
+SELECT fk.[division_name]
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[division_name]
+WHERE pk.vendorname is NULL and fk.[division_name] is not null
+GROUP BY fk.[division_name]
+
+-- Insert new [dod_claimant_program_code] into FPDSTypeTable.ClaimantProgramCode
+INSERT INTO FPDSTypeTable.ClaimantProgramCode
+(ClaimantProgramCode,ClaimantProgramCodeText)
+SELECT fk.[dod_claimant_program_code]
+,max(fk.dod_claimant_program_description) as ClaimantProgramCodeText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.ClaimantProgramCode as pk
+On pk.ClaimantProgramCode=fk.[dod_claimant_program_code]
+WHERE pk.ClaimantProgramCode is NULL and fk.[dod_claimant_program_code] is not null
+GROUP BY fk.[dod_claimant_program_code]
+
+-- Insert new [epa_designated_product] into FPDSTypeTable.useofepadesignatedproducts
+INSERT INTO FPDSTypeTable.useofepadesignatedproducts
+(useofepadesignatedproducts,useofepadesignatedproductsText)
+SELECT fk.[epa_designated_product]
+,max(fk.epa_designated_product_name) as useofepadesignatedproductsText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.useofepadesignatedproducts as pk
+On pk.useofepadesignatedproducts=fk.[epa_designated_product]
+WHERE pk.useofepadesignatedproducts is NULL and fk.[epa_designated_product] is not null
+GROUP BY fk.[epa_designated_product]
+
+-- Insert new [evaluated_preference] into FPDSTypeTable.evaluatedpreference
+INSERT INTO FPDSTypeTable.evaluatedpreference
+(evaluatedpreference,evaluatedpreferenceText)
+SELECT fk.[evaluated_preference]
+,max(fk.evaluated_preference_name) as evaluatedpreferenceText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.evaluatedpreference as pk
+On pk.evaluatedpreference=fk.[evaluated_preference]
+WHERE pk.evaluatedpreference is NULL and fk.[evaluated_preference] is not null
+GROUP BY fk.[evaluated_preference]
+
+-- Insert new [extent_competed] into FPDSTypeTable.extentcompeted
+INSERT INTO FPDSTypeTable.extentcompeted
+(extentcompeted,extentcompetedText)
+SELECT fk.[extent_competed]
+,max(fk.extent_competed_name) as extentcompetedText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.extentcompeted as pk
+On pk.extentcompeted=fk.[extent_competed]
+WHERE pk.extentcompeted is NULL and fk.[extent_competed] is not null
+GROUP BY fk.[extent_competed]
+
+-- Insert new [fair_opportunity_limited_s] into FPDSTypeTable.statutoryexceptiontofairopportunity
+INSERT INTO FPDSTypeTable.statutoryexceptiontofairopportunity
+(statutoryexceptiontofairopportunity,statutoryexceptiontofairopportunityText)
+SELECT fk.[fair_opportunity_limited_s]
+,max(fk.fair_opportunity_limited_sources_name) as statutoryexceptiontofairopportunityText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.statutoryexceptiontofairopportunity as pk
+On pk.statutoryexceptiontofairopportunity=fk.[fair_opportunity_limited_s]
+WHERE pk.statutoryexceptiontofairopportunity is NULL and fk.[fair_opportunity_limited_s] is not null
+GROUP BY fk.[fair_opportunity_limited_s]
+
+-- Insert new [fed_biz_opps] into FPDSTypeTable.fedbizopps
+INSERT INTO FPDSTypeTable.fedbizopps
+(fedbizopps,fed_biz_opps_name)
+SELECT fk.[fed_biz_opps]
+,max(fk.fed_biz_opps_name) as fed_biz_opps_name
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.fedbizopps as pk
+On pk.fedbizopps=fk.[fed_biz_opps]
+WHERE pk.fedbizopps is NULL and fk.[fed_biz_opps] is not null
+GROUP BY fk.[fed_biz_opps]
+
+-- Insert new [foreign_funding] into budget.FundedByForeignEntity
+INSERT INTO budget.FundedByForeignEntity
+(fundedbyforeignentity,foreign_funding_description)
+SELECT fk.[foreign_funding]
+,max(fk.foreign_funding_description) as foreign_funding_description
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN budget.FundedByForeignEntity as pk
+On pk.fundedbyforeignentity=fk.[foreign_funding]
+WHERE pk.fundedbyforeignentity is NULL and fk.[foreign_funding] is not null
+GROUP BY fk.[foreign_funding]
+
+-- Insert new [funding_agency_code] into FPDSTypeTable.AgencyID
+INSERT INTO FPDSTypeTable.AgencyID
+(AgencyID,AgencyIDtext)
+SELECT fk.[funding_agency_code]
+,max(fk.funding_agency_name) as AgencyIDtext
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[funding_agency_code]
+WHERE pk.AgencyID is NULL and fk.[funding_agency_code] is not null
+GROUP BY fk.[funding_agency_code]
+
+-- Insert new [funding_sub_tier_agency_co] into FPDSTypeTable.AgencyID
+INSERT INTO FPDSTypeTable.AgencyID
+(AgencyID,AgencyIDtext)
+SELECT fk.[funding_sub_tier_agency_co]
+,max(fk.funding_sub_agency_name) as AgencyIDtext
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[funding_sub_tier_agency_co]
+WHERE pk.AgencyID is NULL and fk.[funding_sub_tier_agency_co] is not null
+GROUP BY fk.[funding_sub_tier_agency_co]
+
+-- Insert new [government_furnished_prope] into FPDSTypeTable.gfe_gfp
+INSERT INTO FPDSTypeTable.gfe_gfp
+(gfe_gfp,gfe_gfpText)
+SELECT fk.[government_furnished_prope]
+,max(fk.gfe_gfp_name) as gfe_gfpText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.gfe_gfp as pk
+On pk.gfe_gfp=fk.[government_furnished_prope]
+WHERE pk.gfe_gfp is NULL and fk.[government_furnished_prope] is not null
+GROUP BY fk.[government_furnished_prope]
+
+-- Insert new [idv_type] into FPDSTypeTable.idv_type_code
+INSERT INTO FPDSTypeTable.idv_type_code
+(idv_type_code,idv_type_name)
+SELECT fk.[idv_type]
+,max(fk.idv_type_name) as idv_type_name
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
+On pk.idv_type_code=fk.[idv_type]
+WHERE pk.idv_type_code is NULL and fk.[idv_type] is not null
+GROUP BY fk.[idv_type]
+
+-- Insert new [information_technology_com] into FPDSTypeTable.informationtechnologycommercialitemcategory
+INSERT INTO FPDSTypeTable.informationtechnologycommercialitemcategory
+(informationtechnologycommercialitemcategory,informationtechnologycommercialitemcategoryText)
+SELECT fk.[information_technology_com]
+,max(fk.information_technology_commercial_item_category_name) as informationtechnologycommercialitemcategoryText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.informationtechnologycommercialitemcategory as pk
+On pk.informationtechnologycommercialitemcategory=fk.[information_technology_com]
+WHERE pk.informationtechnologycommercialitemcategory is NULL and fk.[information_technology_com] is not null
+GROUP BY fk.[information_technology_com]
+
+-- Insert new [inherently_government_func] into ProductOrServiceCode.inherently_governmental_functions
+INSERT INTO ProductOrServiceCode.inherently_governmental_functions
+(inherently_governmental_functions,inherently_governmental_functions_description)
+SELECT fk.[inherently_government_func]
+,max(fk.inherently_governmental_functions_description) as inherently_governmental_functions_description
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN ProductOrServiceCode.inherently_governmental_functions as pk
+On pk.inherently_governmental_functions=fk.[inherently_government_func]
+WHERE pk.inherently_governmental_functions is NULL and fk.[inherently_government_func] is not null
+GROUP BY fk.[inherently_government_func]
+
+-- Insert new [interagency_contracting_au] into FPDSTypeTable.interagencycontractingauthority
+INSERT INTO FPDSTypeTable.interagencycontractingauthority
+(interagencycontractingauthority,interagencycontractingauthorityText)
+SELECT fk.[interagency_contracting_au]
+,max(fk.interagency_contracting_authority_name) as interagencycontractingauthorityText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.interagencycontractingauthority as pk
+On pk.interagencycontractingauthority=fk.[interagency_contracting_au]
+WHERE pk.interagencycontractingauthority is NULL and fk.[interagency_contracting_au] is not null
+GROUP BY fk.[interagency_contracting_au]
+
+-- Insert new [labor_standards] into FPDSTypeTable.servicecontractact
+INSERT INTO FPDSTypeTable.servicecontractact
+(servicecontractact,servicecontractactText)
+SELECT fk.[labor_standards]
+,max(fk.service_contract_act_name) as servicecontractactText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.servicecontractact as pk
+On pk.servicecontractact=fk.[labor_standards]
+WHERE pk.servicecontractact is NULL and fk.[labor_standards] is not null
+GROUP BY fk.[labor_standards]
+
+-- Insert new [legal_entity_county_code] into Location.County_FIPS_Code
+INSERT INTO Location.County_FIPS_Code
+(county_fips_code)
+SELECT fk.[legal_entity_county_code]
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Location.County_FIPS_Code as pk
+On pk.county_fips_code=fk.[legal_entity_county_code]
+WHERE pk.county_fips_code is NULL and fk.[legal_entity_county_code] is not null
+GROUP BY fk.[legal_entity_county_code]
+
+-- Insert new [legal_entity_state_code] into Location.recipient_state_code
+INSERT INTO Location.recipient_state_code
+(recipient_state_code,recipient_state_name)
+SELECT fk.[legal_entity_state_code]
+,max(fk.recipient_state_name) as recipient_state_name
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Location.recipient_state_code as pk
+On pk.recipient_state_code=fk.[legal_entity_state_code]
+WHERE pk.recipient_state_code is NULL and fk.[legal_entity_state_code] is not null
+GROUP BY fk.[legal_entity_state_code]
+
+-- Insert new [local_area_set_aside] into Location.localareasetaside
+INSERT INTO Location.localareasetaside
+(localareasetaside,local_area_set_aside_name)
+SELECT fk.[local_area_set_aside]
+,max(fk.local_area_set_aside_name) as local_area_set_aside_name
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Location.localareasetaside as pk
+On pk.localareasetaside=fk.[local_area_set_aside]
+WHERE pk.localareasetaside is NULL and fk.[local_area_set_aside] is not null
+GROUP BY fk.[local_area_set_aside]
+
+-- Insert new [major_program] into Contract.MajorProgramCode
+INSERT INTO Contract.MajorProgramCode
+(majorprogramcode)
+SELECT fk.[major_program]
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Contract.MajorProgramCode as pk
+On pk.majorprogramcode=fk.[major_program]
+WHERE pk.majorprogramcode is NULL and fk.[major_program] is not null
+GROUP BY fk.[major_program]
+
+-- Insert new [materials_supplies_article] into FPDSTypeTable.walshhealyact
+INSERT INTO FPDSTypeTable.walshhealyact
+(walshhealyact,walshhealyactText)
+SELECT fk.[materials_supplies_article]
+,max(fk.walsh_healey_act_name) as walshhealyactText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.walshhealyact as pk
+On pk.walshhealyact=fk.[materials_supplies_article]
+WHERE pk.walshhealyact is NULL and fk.[materials_supplies_article] is not null
+GROUP BY fk.[materials_supplies_article]
+
+-- Insert new [multiple_or_single_award_i] into FPDSTypeTable.multipleorsingleawardidc
+INSERT INTO FPDSTypeTable.multipleorsingleawardidc
+(multipleorsingleawardidc,multipleorsingleawardidcText)
+SELECT fk.[multiple_or_single_award_i]
+,max(fk.multiple_or_single_award_idv_name) as multipleorsingleawardidcText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.multipleorsingleawardidc as pk
+On pk.multipleorsingleawardidc=fk.[multiple_or_single_award_i]
+WHERE pk.multipleorsingleawardidc is NULL and fk.[multiple_or_single_award_i] is not null
+GROUP BY fk.[multiple_or_single_award_i]
+
+-- Insert new [naics] into FPDSTypeTable.PrincipalNaicsCode
+INSERT INTO FPDSTypeTable.PrincipalNaicsCode
+(principalnaicscode,principalnaicscodeText)
+SELECT fk.[naics]
+,max(fk.naics_description) as principalnaicscodeText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.PrincipalNaicsCode as pk
+On pk.principalnaicscode=fk.[naics]
+WHERE pk.principalnaicscode is NULL and fk.[naics] is not null
+GROUP BY fk.[naics]
+
+-- Insert new [national_interest_action] into Assistance.NationalInterestActionCode
+INSERT INTO Assistance.NationalInterestActionCode
+(NationalInterestActionCode,National_Interest_Action_Name)
+SELECT fk.[national_interest_action]
+,max(fk.national_interest_action_name) as National_Interest_Action_Name
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Assistance.NationalInterestActionCode as pk
+On pk.NationalInterestActionCode=fk.[national_interest_action]
+WHERE pk.NationalInterestActionCode is NULL and fk.[national_interest_action] is not null
+GROUP BY fk.[national_interest_action]
+
+-- Insert new [organizational_type] into Vendor.OrganizationalType
+INSERT INTO Vendor.OrganizationalType
+(OrganizationalType)
+SELECT fk.[organizational_type]
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Vendor.OrganizationalType as pk
+On pk.OrganizationalType=fk.[organizational_type]
+WHERE pk.OrganizationalType is NULL and fk.[organizational_type] is not null
+GROUP BY fk.[organizational_type]
+
+-- Insert new [other_than_full_and_open_c] into FPDSTypeTable.reasonnotcompeted
+INSERT INTO FPDSTypeTable.reasonnotcompeted
+(reasonnotcompeted,reasonnotcompetedText)
+SELECT fk.[other_than_full_and_open_c]
+,max(fk.other_than_full_and_open_competition_name) as reasonnotcompetedText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.reasonnotcompeted as pk
+On pk.reasonnotcompeted=fk.[other_than_full_and_open_c]
+WHERE pk.reasonnotcompeted is NULL and fk.[other_than_full_and_open_c] is not null
+GROUP BY fk.[other_than_full_and_open_c]
+
+-- Insert new [performance_based_service] into FPDSTypeTable.PerformanceBasedServiceContract
+INSERT INTO FPDSTypeTable.PerformanceBasedServiceContract
+(performancebasedservicecontract,performancebasedservicecontractText)
+SELECT fk.[performance_based_service]
+,max(fk.performance_based_service_acquisition_name) as performancebasedservicecontractText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.PerformanceBasedServiceContract as pk
+On pk.performancebasedservicecontract=fk.[performance_based_service]
+WHERE pk.performancebasedservicecontract is NULL and fk.[performance_based_service] is not null
+GROUP BY fk.[performance_based_service]
+
+-- Insert new [place_of_manufacture] into FPDSTypeTable.PlaceOfManufacture
+INSERT INTO FPDSTypeTable.PlaceOfManufacture
+(PlaceOfManufacture,PlaceOfManufactureText)
+SELECT fk.[place_of_manufacture]
+,max(fk.place_of_manufacture_name) as PlaceOfManufactureText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.PlaceOfManufacture as pk
+On pk.PlaceOfManufacture=fk.[place_of_manufacture]
+WHERE pk.PlaceOfManufacture is NULL and fk.[place_of_manufacture] is not null
+GROUP BY fk.[place_of_manufacture]
+
+-- Insert new [place_of_perform_country_c] into FPDSTypeTable.Country3LetterCode
+INSERT INTO FPDSTypeTable.Country3LetterCode
+(Country3LetterCode,Country3LetterCodeText)
+SELECT fk.[place_of_perform_country_c]
+,max(fk.primary_place_of_performance_country_name) as Country3LetterCodeText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
+On pk.Country3LetterCode=fk.[place_of_perform_country_c]
+WHERE pk.Country3LetterCode is NULL and fk.[place_of_perform_country_c] is not null
+GROUP BY fk.[place_of_perform_country_c]
+
+-- Insert new [place_of_perform_county_co] into Location.County_FIPS_Code
+INSERT INTO Location.County_FIPS_Code
+(county_fips_code)
+SELECT fk.[place_of_perform_county_co]
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Location.County_FIPS_Code as pk
+On pk.county_fips_code=fk.[place_of_perform_county_co]
+WHERE pk.county_fips_code is NULL and fk.[place_of_perform_county_co] is not null
+GROUP BY fk.[place_of_perform_county_co]
+
+-- Insert new [place_of_performance_state] into FPDSTypeTable.statecode
+INSERT INTO FPDSTypeTable.statecode
+(statecode,statecodeText)
+SELECT fk.[place_of_performance_state]
+,max(fk.primary_place_of_performance_state_name) as statecodeText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.statecode as pk
+On pk.statecode=fk.[place_of_performance_state]
+WHERE pk.statecode is NULL and fk.[place_of_performance_state] is not null
+GROUP BY fk.[place_of_performance_state]
+
+-- Insert new [product_or_service_code] into FPDSTypeTable.ProductOrServiceCode
+INSERT INTO FPDSTypeTable.ProductOrServiceCode
+(ProductOrServiceCode,ProductOrServiceCodeText)
+SELECT fk.[product_or_service_code]
+,max(fk.product_or_service_code_description) as ProductOrServiceCodeText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.ProductOrServiceCode as pk
+On pk.ProductOrServiceCode=fk.[product_or_service_code]
+WHERE pk.ProductOrServiceCode is NULL and fk.[product_or_service_code] is not null
+GROUP BY fk.[product_or_service_code]
+
+-- Insert new [program_system_or_equipmen] into Project.SystemEquipmentCode
+INSERT INTO Project.SystemEquipmentCode
+(systemequipmentcode,systemequipmentcodeText)
+SELECT fk.[program_system_or_equipmen]
+,max(fk.dod_acquisition_program_description) as systemequipmentcodeText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Project.SystemEquipmentCode as pk
+On pk.systemequipmentcode=fk.[program_system_or_equipmen]
+WHERE pk.systemequipmentcode is NULL and fk.[program_system_or_equipmen] is not null
+GROUP BY fk.[program_system_or_equipmen]
+
+-- Insert new [recovered_materials_sustai] into FPDSTypeTable.recoveredmaterialclauses
+INSERT INTO FPDSTypeTable.recoveredmaterialclauses
+(recoveredmaterialclauses,recoveredmaterialclausesText)
+SELECT fk.[recovered_materials_sustai]
+,max(fk.recovered_materials_sustainability_name) as recoveredmaterialclausesText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.recoveredmaterialclauses as pk
+On pk.recoveredmaterialclauses=fk.[recovered_materials_sustai]
+WHERE pk.recoveredmaterialclauses is NULL and fk.[recovered_materials_sustai] is not null
+GROUP BY fk.[recovered_materials_sustai]
+
+-- Insert new [referenced_idv_agency_iden] into FPDSTypeTable.AgencyID
+INSERT INTO FPDSTypeTable.AgencyID
+(AgencyID,AgencyIDtext)
+SELECT fk.[referenced_idv_agency_iden]
+,max(fk.parent_award_agency_name) as AgencyIDtext
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[referenced_idv_agency_iden]
+WHERE pk.AgencyID is NULL and fk.[referenced_idv_agency_iden] is not null
+GROUP BY fk.[referenced_idv_agency_iden]
+
+-- Insert new [referenced_idv_type] into FPDSTypeTable.idv_type_code
+INSERT INTO FPDSTypeTable.idv_type_code
+(idv_type_code,idv_type_name)
+SELECT fk.[referenced_idv_type]
+,max(fk.parent_award_type_name) as idv_type_name
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
+On pk.idv_type_code=fk.[referenced_idv_type]
+WHERE pk.idv_type_code is NULL and fk.[referenced_idv_type] is not null
+GROUP BY fk.[referenced_idv_type]
+
+-- Insert new [referenced_mult_or_single] into FPDSTypeTable.multipleorsingleawardidc
+INSERT INTO FPDSTypeTable.multipleorsingleawardidc
+(multipleorsingleawardidc,multipleorsingleawardidcText)
+SELECT fk.[referenced_mult_or_single]
+,max(fk.parent_award_single_or_multiple_name) as multipleorsingleawardidcText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.multipleorsingleawardidc as pk
+On pk.multipleorsingleawardidc=fk.[referenced_mult_or_single]
+WHERE pk.multipleorsingleawardidc is NULL and fk.[referenced_mult_or_single] is not null
+GROUP BY fk.[referenced_mult_or_single]
+
+-- Insert new [research] into ProductOrServiceCode.Research_Code
+INSERT INTO ProductOrServiceCode.Research_Code
+(Research_Code,Research_Name)
+SELECT fk.[research]
+,max(fk.research_name) as Research_Name
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN ProductOrServiceCode.Research_Code as pk
+On pk.Research_Code=fk.[research]
+WHERE pk.Research_Code is NULL and fk.[research] is not null
+GROUP BY fk.[research]
+
+-- Insert new [sam_exception] into Vendor.CCRexception
+INSERT INTO Vendor.CCRexception
+(CCRexception,sam_exception_description)
+SELECT fk.[sam_exception]
+,max(fk.sam_exception_description) as sam_exception_description
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Vendor.CCRexception as pk
+On pk.CCRexception=fk.[sam_exception]
+WHERE pk.CCRexception is NULL and fk.[sam_exception] is not null
+GROUP BY fk.[sam_exception]
+
+-- Insert new [sea_transportation] into FPDSTypeTable.seatransportation
+INSERT INTO FPDSTypeTable.seatransportation
+(seatransportation,seatransportationText)
+SELECT fk.[sea_transportation]
+,max(fk.sea_transportation_name) as seatransportationText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.seatransportation as pk
+On pk.seatransportation=fk.[sea_transportation]
+WHERE pk.seatransportation is NULL and fk.[sea_transportation] is not null
+GROUP BY fk.[sea_transportation]
+
+-- Insert new [solicitation_procedures] into FPDSTypeTable.solicitationprocedures
+INSERT INTO FPDSTypeTable.solicitationprocedures
+(solicitationprocedures,solicitationproceduresText)
+SELECT fk.[solicitation_procedures]
+,max(fk.solicitation_procedures_name) as solicitationproceduresText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.solicitationprocedures as pk
+On pk.solicitationprocedures=fk.[solicitation_procedures]
+WHERE pk.solicitationprocedures is NULL and fk.[solicitation_procedures] is not null
+GROUP BY fk.[solicitation_procedures]
+
+-- Insert new [subcontracting_plan] into FPDSTypeTable.subcontractplan
+INSERT INTO FPDSTypeTable.subcontractplan
+(subcontractplan,subcontractplanText)
+SELECT fk.[subcontracting_plan]
+,max(fk.subcontracting_plan_name) as subcontractplanText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.subcontractplan as pk
+On pk.subcontractplan=fk.[subcontracting_plan]
+WHERE pk.subcontractplan is NULL and fk.[subcontracting_plan] is not null
+GROUP BY fk.[subcontracting_plan]
+
+-- Insert new [type_of_contract_pricing] into FPDSTypeTable.typeofcontractpricing
+INSERT INTO FPDSTypeTable.typeofcontractpricing
+(TypeOfContractPricing,TypeOfContractPricingText)
+SELECT fk.[type_of_contract_pricing]
+,max(fk.type_of_contract_pricing_name) as TypeOfContractPricingText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.typeofcontractpricing as pk
+On pk.TypeOfContractPricing=fk.[type_of_contract_pricing]
+WHERE pk.TypeOfContractPricing is NULL and fk.[type_of_contract_pricing] is not null
+GROUP BY fk.[type_of_contract_pricing]
+
+-- Insert new [type_of_idc] into FPDSTypeTable.TypeOfIDC
+INSERT INTO FPDSTypeTable.TypeOfIDC
+(typeofIDC,typeOfIDCdescription)
+SELECT fk.[type_of_idc]
+,max(fk.type_of_idc_name) as typeOfIDCdescription
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.TypeOfIDC as pk
+On pk.typeofIDC=fk.[type_of_idc]
+WHERE pk.typeofIDC is NULL and fk.[type_of_idc] is not null
+GROUP BY fk.[type_of_idc]
+
+-- Insert new [type_set_aside] into FPDSTypeTable.typeofsetaside
+INSERT INTO FPDSTypeTable.typeofsetaside
+(typeofsetaside,typeofsetasideText)
+SELECT fk.[type_set_aside]
+,max(fk.type_of_set_aside_name) as typeofsetasideText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.typeofsetaside as pk
+On pk.typeofsetaside=fk.[type_set_aside]
+WHERE pk.typeofsetaside is NULL and fk.[type_set_aside] is not null
+GROUP BY fk.[type_set_aside]
+
+-- Insert new [ultimate_parent_legal_enti] into Vendor.VendorName
+INSERT INTO Vendor.VendorName
+(vendorname)
+SELECT fk.[ultimate_parent_legal_enti]
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[ultimate_parent_legal_enti]
+WHERE pk.vendorname is NULL and fk.[ultimate_parent_legal_enti] is not null
+GROUP BY fk.[ultimate_parent_legal_enti]
+
+-- Insert new [undefinitized_action] into FPDSTypeTable.lettercontract
+INSERT INTO FPDSTypeTable.lettercontract
+(LetterContract,UndefinitizedActionText)
+SELECT fk.[undefinitized_action]
+,max(fk.undefinitized_action_name) as UndefinitizedActionText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.lettercontract as pk
+On pk.LetterContract=fk.[undefinitized_action]
+WHERE pk.LetterContract is NULL and fk.[undefinitized_action] is not null
+GROUP BY fk.[undefinitized_action]
+
+-- Insert new [vendor_doing_as_business_n] into Vendor.VendorName
+INSERT INTO Vendor.VendorName
+(vendorname)
+SELECT fk.[vendor_doing_as_business_n]
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[vendor_doing_as_business_n]
+WHERE pk.vendorname is NULL and fk.[vendor_doing_as_business_n] is not null
+GROUP BY fk.[vendor_doing_as_business_n]
+
+-- Insert new [vendor_legal_org_name] into Vendor.VendorName
+INSERT INTO Vendor.VendorName
+(vendorname)
+SELECT fk.[vendor_legal_org_name]
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[vendor_legal_org_name]
+WHERE pk.vendorname is NULL and fk.[vendor_legal_org_name] is not null
+GROUP BY fk.[vendor_legal_org_name]
+

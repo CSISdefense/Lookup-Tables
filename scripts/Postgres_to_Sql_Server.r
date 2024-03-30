@@ -49,16 +49,14 @@ write_delim(MergeStage2.df %>% select(SourceVariableName,SourceVariableType,CSIS
 # undebug(get_CSISvariableNameToPrimaryKey)
 # debug(create_foreign_key_assigments)
 # Skip list for select
-skip_list<-c("[contract_award_unique_key]",
+skip_list<-c("[unique_award_key]",
              "[CSIStransactionID]",
-             "[vendorcountrycode]",
-             "[dunsnumber]",
-             "[parentdunsnumber]",
-             "[vendorname]",
-             "[vendordoingasbusinessname]",
-             "[mod_parent]", #Some day we'll foreign key this one ut also skip it for select. 
-             "[recipient_uei]",
-             "[recipient_parent_uei]"
+             "[legal_entity_country_code]",#Handled via chain insert manually written
+             "[awardee_or_recipient_uei]",
+             "[ultimate_parent_uei]",
+             "[recipient_country_name]",
+             "[awardee_or_recipient_legal]",
+             "[vendor_doing_as_business_n]"
              ) #Handled via chain insert manually written
 
 # debug(get_CSISvariableNameToPrimaryKey)
@@ -70,19 +68,19 @@ select_missing_code <- create_foreign_key_assigments("ErrorLogging",
                               suppress_alter = TRUE,
                               suppress_insert = TRUE,
                               skip_list = skip_list,
-                              name) 
+                              file="PostgresNameConversion.csv") 
 write(select_missing_code,
       file=file.path("Output","ErrorLogging_source_procurement_transaction_select_foreign_key.txt"), 
       append=FALSE)  
 
-skip_list<-c("[contract_award_unique_key]",
+skip_list<-c("[unique_award_key]",
              "[CSIStransactionID]",
-             "[vendorcountrycode]",
-             "[dunsnumber]",
-             "[parentdunsnumber]",
-             "[recipient_uei]",
-             "[recipient_parent_uei]") #Handled via chain insert manually written
-
+             "[legal_entity_country_code]",#Handled via chain insert manually written
+             "[awardee_or_recipient_uei]",
+             "[ultimate_parent_uei]",
+             "[recipient_country_name]",
+             "") 
+# debug(convert_field_to_foreign_key)
 input_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                                      "source_procurement_transaction",
                                                     "Contract",
