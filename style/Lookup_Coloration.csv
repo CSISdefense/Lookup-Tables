@@ -1245,6 +1245,7 @@ HighTech,SensorCyber,Sensor & Cyber,6,"DIIG Primary, Air Force",#72a0c1,,,,black
 HighTech,Space,Space,7,"DIIG Primary, Air Force",#72a0c1,,,,black,#000000,
 HighTech,High Technology,Assorted High Technology,8,"DIIG Primary, Air Force",#72a0c1,,,,black,#000000,
 HighTech,Rest of Defense,Rest of Defense,9,"DIIG Primary, Air Force",#72a0c1,,,,black,#000000,
+HighTech,Remaining Sectors,Remaining Sectors,9,"DIIG Primary, Air Force",#72a0c1,,,,black,#000000,
 ,,,,,,,,,,,
 PlatformPortfolio,Aerospace,Aerospace,1,"DIIG Primary, Air Force",#72a0c1,,,,black,#000000,
 PlatformPortfolio,F-35 JSF,F-35 JSF,0.5,"DIIG Secondary, Marine",#999999,,,,default grey,#554449,

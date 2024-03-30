@@ -109,7 +109,7 @@ for (cy in 1983:1999){
 #1977-2024 2024-02-08 YTD. NOte that probably everything pre-1990 I should probably capture in one single query.
 file.list<-list.files(file.path(path,postgresdir))
 
-for (f in 30:length(file.list)){
+for (f in 47:length(file.list)){
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",

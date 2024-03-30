@@ -6,7 +6,7 @@ a_76_fair_act_action_desc, varchar,255
 action_date, datetime2,7
 action_type, varchar,1
 action_type_description, varchar,255
-additional_reporting, varchar,255
+additional_reporting, varchar,92
 agency_id, varchar,4
 annual_revenue, decimal, 
 award_description, varchar,4035
@@ -113,8 +113,8 @@ legal_entity_county_name, varchar,30
 legal_entity_state_code, varchar,35
 legal_entity_state_descrip, varchar,35
 legal_entity_zip4, varchar,28
-legal_entity_zip5, varchar,255
-legal_entity_zip_last4, varchar,255
+legal_entity_zip5, varchar,5
+legal_entity_zip_last4, varchar,4
 local_area_set_aside, varchar,4
 local_area_set_aside_desc, varchar,255
 major_program, varchar,104
@@ -153,12 +153,12 @@ place_of_perform_country_n, varchar,255
 place_of_perform_county_co, int, 
 place_of_perform_county_na, varchar,26
 place_of_perform_state_nam, varchar,255
-place_of_perform_zip_last4, varchar,255
+place_of_perform_zip_last4, varchar,4
 place_of_performance_congr, varchar,22
 place_of_performance_locat, varchar,9
 place_of_performance_state, varchar,2
 place_of_performance_zip4a, varchar,10
-place_of_performance_zip5, varchar,255
+place_of_performance_zip5, varchar,5
 potential_total_value_awar, decimal, 
 price_evaluation_adjustmen, smallint, 
 product_or_service_co_desc, varchar,255
@@ -200,7 +200,7 @@ type_of_idc_description, varchar,255
 type_set_aside, varchar,10
 type_set_aside_description, varchar,255
 ultimate_parent_legal_enti, nvarchar,150
-ultimate_parent_unique_ide, varchar,255
+ultimate_parent_unique_ide, varchar,9
 undefinitized_action, varchar,1
 undefinitized_action_desc, varchar,255
 unique_award_key, varchar,120
@@ -303,4 +303,4 @@ for_profit_organization, bit,
 nonprofit_organization, bit, 
 other_not_for_profit_organ, bit, 
 us_local_government, bit, 
-entity_data_source, varchar,255
+entity_data_source, varchar,9

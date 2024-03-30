@@ -32,11 +32,9 @@ write(TryConvertList,"Output\\Stage2TryConvertList.txt")
 skip_list<-c("[contract_award_unique_key]",
              "[CSIStransactionID]",
              "[vendorcountrycode]",
-             "[dunsnumber]",
-             "[parentdunsnumber]",
              "[vendorname]",
              "[vendordoingasbusinessname]",
-             "[mod_parent]", #Some day we'll foreign key this one ut also skip it for select. 
+             "[mod_parent]", #Some day we'll foreign key this one but also skip it for select. 
              "[recipient_uei]",
              "[recipient_parent_uei]"
              ) #Handled via chain insert manually written

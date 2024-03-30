@@ -4,12 +4,12 @@ library(tidyverse)
 
 
 ###### From Stage 2 to Contract.FPDS #########
-#Match up Errorlogging.FPDSstage2 to Contract.FPDS 
+#Match up Errorlogging.source_procurement_transaction to Contract.FPDS 
 Import.df<-read_create_table("ErrorLogging.source_procurement_transaction.Table.sql",
                                       dir="SQL")
 Import.df<-translate_name(Import.df,file="PostgresNameConversion.csv")
 
-Stage2Table.df<-read_create_table("ErrorLogging.FPDSstage2.Table.sql",
+Stage2Table.df<-read_create_table("ErrorLogging.source_procurement_transaction.Table.sql",
                                        dir="SQL")
 
 
@@ -63,15 +63,16 @@ skip_list<-c("[contract_award_unique_key]",
 
 # debug(get_CSISvariableNameToPrimaryKey)
 select_missing_code <- create_foreign_key_assigments("ErrorLogging",
-                                        "FPDSstage2",
+                                        "source_procurement_transaction",
                                         "Contract",
                                         "FPDS",
                                         dir="sql",
                               suppress_alter = TRUE,
                               suppress_insert = TRUE,
-                              skip_list = skip_list) 
+                              skip_list = skip_list,
+                              name) 
 write(select_missing_code,
-      file=file.path("Output","ErrorLogging_FPDSstage2_select_foreign_key.txt"), 
+      file=file.path("Output","ErrorLogging_source_procurement_transaction_select_foreign_key.txt"), 
       append=FALSE)  
 
 skip_list<-c("[contract_award_unique_key]",
@@ -83,16 +84,18 @@ skip_list<-c("[contract_award_unique_key]",
              "[recipient_parent_uei]") #Handled via chain insert manually written
 
 input_missing_code <- create_foreign_key_assigments("ErrorLogging",
-                                                     "FPDSstage2",
+                                                     "source_procurement_transaction",
                                                     "Contract",
                                                     "FPDS",
                                                      dir="sql",
                                                      suppress_select = TRUE,
                                                     suppress_alter = TRUE,
                                                     suppress_update= TRUE,
-                                                    skip_list = skip_list)
+                                                    skip_list = skip_list,
+                                                    file="PostgresNameConversion.csv"
+                                                    )
 write(input_missing_code,
-      file=file.path("Output","ErrorLogging_FPDSstage2_input_foreign_key.txt"),  
+      file=file.path("Output","ErrorLogging_source_procurement_transaction_input_foreign_key.txt"),  
       append=FALSE) 
 
 
@@ -101,11 +104,11 @@ write(input_missing_code,
 
 
 #Create the code to count empty rows by variable.
-count_list<-count_empties(Import.df,"ErrorLogging","FPDSstage2")
-write(count_list,"Output//ErrorLogging_FPDSstage2_count_empties.txt")
+count_list<-count_empties(Import.df,"ErrorLogging","source_procurement_transaction")
+write(count_list,"Output//ErrorLogging_source_procurement_transaction_count_empties.txt")
 
 
-#Transfer from Errorlogging.FPDSstage2 to Contract.FPDS
+#Transfer from Errorlogging.source_procurement_transaction to Contract.FPDS
 if(nrow(MergeStage2.df[is.na(MergeStage2.df$CSISvariableType)&is.na(MergeStage2.df$IsDroppedNameField),])>1){
   write.csv(MergeStage2.df[is.na(MergeStage2.df$CSISvariableType)&is.na(MergeStage2.df$IsDroppedNameField),],
             file="Output/Unmatched_NameConversion.csv")
@@ -151,27 +154,27 @@ rm(pair_kept)
 
 InsertList<-create_insert(MergeStage2.df,
                          "ErrorLogging",
-                         "FPDSstage2",
+                         "source_procurement_transaction",
                          "Contract",
                          "FPDS",
                          DateType=120,
                          FPDS=TRUE)
-write(InsertList,"Output/ErrorLogging_FPDSstage2_insert_destination.txt")
+write(InsertList,"Output/ErrorLogging_source_procurement_transaction_insert_destination.txt")
 
 #Create Updates
 update_list<-create_update_FPDS(MergeStage2.df,
   "ErrorLogging",
-  "FPDSstage2",
+  "source_procurement_transaction",
   "Contract",
   "FPDS",
   DateType=101,
   drop_name=TRUE)
-write(update_list,"Output/ErrorLogging_FPDSstage2_update_destination.txt")
+write(update_list,"Output/ErrorLogging_source_procurement_transaction_update_destination.txt")
 MergeStage2.df %>% filter(substr(CSISvariableType,2,3) %in% c("NV","nv")) %>% select(SourceVariableName)
 substr(MergeStage2.df$CSISvariableType,2,3)
 ###### From Stage 2 to Contract.FPDS #########
-#Match up Errorlogging.FPDSstage2 to Contract.FPDS 
-Import.df<-read_create_table("ErrorLogging.FPDSstage2.Table.sql",
+#Match up Errorlogging.source_procurement_transaction to Contract.FPDS 
+Import.df<-read_create_table("ErrorLogging.source_procurement_transaction.Table.sql",
                                       dir="SQL")
 Import.df<-translate_name(Import.df)
 

@@ -287,7 +287,7 @@ pk_Vendor_OrganizationalType,PRIMARY_KEY_CONSTRAINT,varchar,30,Vendor,Organizati
 pk_vendor_recipient_uei,PRIMARY_KEY_CONSTRAINT,varchar,12,Vendor,UEI,UEI,1,NULL
 pk_vendor_recipient_ueitoParentIDhistory,PRIMARY_KEY_CONSTRAINT,smallint,NULL,Vendor,UEIhistory,Fiscal_Year,2,NULL
 pk_vendor_recipient_ueitoParentIDhistory,PRIMARY_KEY_CONSTRAINT,varchar,12,Vendor,UEIhistory,UEI,2,NULL
-pk_VendorCountryCode,PRIMARY_KEY_CONSTRAINT,nvarchar,50,FPDSTypeTable,vendorcountrycode,vendorcountrycode,1,NULL
+pk_VendorCountryCode,PRIMARY_KEY_CONSTRAINT,nvarchar,50,FPDSTypeTable,vendorcountrycode,vendorcountrycode,1,recipient_country_name 
 PK_VendorName,PRIMARY_KEY_CONSTRAINT,nvarchar,150,Vendor,VendorName,vendorname,1,NULL
 PK_walshhealyact NO PK,PRIMARY_KEY_CONSTRAINT,varchar,1,FPDSTypeTable,walshhealyact,walshhealyact,1,walshhealyactText
 reasonformodification_key,PRIMARY_KEY_CONSTRAINT,varchar,1,FPDSTypeTable,reasonformodification,reasonformodification,1,reasonformodificationText

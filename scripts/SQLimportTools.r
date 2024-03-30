@@ -113,7 +113,7 @@ translate_name<-function(TargetTable.df,test_only=FALSE,file="NameConversion.csv
     colnames(TargetTable.df)[1]<-"SourceVariableName" 
   }
   if(any(lookup.NameConversion$CSISvariableName==""))
-    stop("Missing CSISvariableName in NameConversion.csv")
+    stop(paste0("Missing CSISvariableName in ",file))
 
   TargetTable.df$OriginalSourceVariableName<-TargetTable.df$SourceVariableName
   TargetTable.df$SourceVariableName<-tolower(TargetTable.df$SourceVariableName)
@@ -981,7 +981,8 @@ create_foreign_key_assigments<-function(Schema,
                               suppress_alter=FALSE,
                               suppress_insert=FALSE,
                               suppress_update=TRUE,
-                              skip_list=NULL){
+                              skip_list=NULL,
+                              file="NameConversion.csv"){
   table_file<-file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))
   if (file.exists(file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))))
       table_file<-file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))
@@ -990,7 +991,7 @@ create_foreign_key_assigments<-function(Schema,
   else stop("Table file not found")
     
   MergeTable.df<-read_create_table(table_file,dir=NULL)
-  MergeTable.df<-translate_name(MergeTable.df)
+  MergeTable.df<-translate_name(MergeTable.df,file=file)
   
   #Limit it to just cases where the variable type is changing
   lookup.CSISvariableNameToPrimaryKey<-get_CSISvariableNameToPrimaryKey(DestinationSchema,
