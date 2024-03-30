@@ -150,14 +150,14 @@ translate_name<-function(TargetTable.df,test_only=FALSE,file="NameConversion.csv
 
   #Determine Source Variable names for any pairs
   lookup.PairConversion<-lookup.NameConversion %>% 
-    mutate(pair=CSISvariableName,
+    mutate(Pair=CSISvariableName,
            SourcePairName=SourceVariableName) %>%
-    filter(pair %in% TargetTable.df$pair)
+    filter(Pair %in% TargetTable.df$Pair & SourcePairName %in% TargetTable.df$SourceVariableName) %>%
   select(-CSISvariableName,-SourceVariableName) 
   
-  if(any(duplicated(lookup.PairConversion$pair))){
-    print(unique(lookup.PairConversion$pair[duplicated(lookup.PairConversion$pair)]))
-    stop(paste("Duplicate pair entries in CSISvariableName in",file))
+  if(any(duplicated(lookup.PairConversion$Pair))){
+    print(unique(lookup.PairConversion$Pair[duplicated(lookup.PairConversion$Pair)]))
+    stop(paste("Duplicate Pair entries in CSISvariableName in",file))
   }
   
   TargetTable.df<-left_join(TargetTable.df,lookup.PairConversion)
@@ -1008,7 +1008,8 @@ create_foreign_key_assigments<-function(Schema,
   
   #Limit it to just cases where the variable type is changing
   lookup.CSISvariableNameToPrimaryKey<-get_CSISvariableNameToPrimaryKey(DestinationSchema,
-                                                                        DestinationTable)
+                                                                        DestinationTable)%>%
+    select(-SourcePairName,-IsDroppedNameField)
   
   
   MergeTable.df<-left_join(MergeTable.df,lookup.CSISvariableNameToPrimaryKey,
@@ -1026,7 +1027,7 @@ create_foreign_key_assigments<-function(Schema,
                                          MergeTable.df$PKSchemaName[i],
                                          MergeTable.df$PKTableName[i],
                                          MergeTable.df$PKColumnCode[i],
-                                         FKname=MergeTable.df$Pair[i],
+                                         FKname=MergeTable.df$SourcePairName[i],
                                          PKname=MergeTable.df$PKcolumnText[i],
                                          suppress_select=suppress_select,
                                          suppress_alter=suppress_alter,

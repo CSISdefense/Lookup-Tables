@@ -59,7 +59,7 @@ skip_list<-c("[unique_award_key]",
              "[vendor_doing_as_business_n]"
              ) #Handled via chain insert manually written
 
-# debug(get_CSISvariableNameToPrimaryKey)
+debug(create_foreign_key_assigments)
 select_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                         "source_procurement_transaction",
                                         "Contract",

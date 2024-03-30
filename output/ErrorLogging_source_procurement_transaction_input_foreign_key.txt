@@ -12,7 +12,7 @@ GROUP BY fk.[detached_award_proc_unique]
 INSERT INTO FPDSTypeTable.reasonformodification
 (reasonformodification,reasonformodificationText)
 SELECT fk.[action_type]
-,max(fk.action_type_name) as reasonformodificationText
+,max(fk.action_type_description) as reasonformodificationText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.reasonformodification as pk
 On pk.reasonformodification=fk.[action_type]
@@ -74,7 +74,7 @@ GROUP BY fk.[awarding_agency_code]
 INSERT INTO FPDSTypeTable.AgencyID
 (AgencyID,AgencyIDtext)
 SELECT fk.[awarding_sub_tier_agency_c]
-,max(fk.awarding_sub_agency_name) as AgencyIDtext
+,max(fk.awarding_sub_tier_agency_n) as AgencyIDtext
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
 On pk.AgencyID=fk.[awarding_sub_tier_agency_c]
@@ -95,7 +95,7 @@ GROUP BY fk.[business_categories]
 INSERT INTO FPDSTypeTable.CommercialItemAcquisitionProcedures
 (CommercialItemAcquisitionProcedures,CommercialItemAcquisitionProceduresText)
 SELECT fk.[commercial_item_acquisitio]
-,max(fk.commercial_item_acquisition_procedures_name) as CommercialItemAcquisitionProceduresText
+,max(fk.commercial_item_acqui_desc) as CommercialItemAcquisitionProceduresText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.CommercialItemAcquisitionProcedures as pk
 On pk.CommercialItemAcquisitionProcedures=fk.[commercial_item_acquisitio]
@@ -106,7 +106,7 @@ GROUP BY fk.[commercial_item_acquisitio]
 INSERT INTO FPDSTypeTable.simplified_procedures_for_certain_commercial_items_code
 (simplified_procedures_for_certain_commercial_items_code,simplified_procedures_for_certain_commercial_items)
 SELECT fk.[commercial_item_test_progr]
-,max(fk.simplified_procedures_for_certain_commercial_items) as simplified_procedures_for_certain_commercial_items
+,max(fk.commercial_item_test_desc) as simplified_procedures_for_certain_commercial_items
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.simplified_procedures_for_certain_commercial_items_code as pk
 On pk.simplified_procedures_for_certain_commercial_items_code=fk.[commercial_item_test_progr]
@@ -117,7 +117,7 @@ GROUP BY fk.[commercial_item_test_progr]
 INSERT INTO Contract.consolidatedcontract
 (consolidatedcontract,consolidated_contract_name)
 SELECT fk.[consolidated_contract]
-,max(fk.consolidated_contract_name) as consolidated_contract_name
+,max(fk.consolidated_contract_desc) as consolidated_contract_name
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN Contract.consolidatedcontract as pk
 On pk.consolidatedcontract=fk.[consolidated_contract]
@@ -128,7 +128,7 @@ GROUP BY fk.[consolidated_contract]
 INSERT INTO FPDSTypeTable.davisbaconact
 (davisbaconact,davisbaconactText)
 SELECT fk.[construction_wage_rate_req]
-,max(fk.davis_bacon_act_name) as davisbaconactText
+,max(fk.construction_wage_rat_desc) as davisbaconactText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.davisbaconact as pk
 On pk.davisbaconact=fk.[construction_wage_rate_req]
@@ -139,7 +139,7 @@ GROUP BY fk.[construction_wage_rate_req]
 INSERT INTO Assistance.ContingencyHumanitarianPeacekeepingOperation
 (ContingencyHumanitarianPeacekeepingOperation,contingencyhumanitarianpeacekeepingoperationText)
 SELECT fk.[contingency_humanitarian_o]
-,max(fk.contingency_humanitarian_or_peacekeeping_operation_name) as contingencyhumanitarianpeacekeepingoperationText
+,max(fk.contingency_humanitar_desc) as contingencyhumanitarianpeacekeepingoperationText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN Assistance.ContingencyHumanitarianPeacekeepingOperation as pk
 On pk.ContingencyHumanitarianPeacekeepingOperation=fk.[contingency_humanitarian_o]
@@ -150,7 +150,7 @@ GROUP BY fk.[contingency_humanitarian_o]
 INSERT INTO FPDSTypeTable.award_type_code
 (award_type_code,award_type_name)
 SELECT fk.[contract_award_type]
-,max(fk.award_type_name) as award_type_name
+,max(fk.contract_award_type_desc) as award_type_name
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.award_type_code as pk
 On pk.award_type_code=fk.[contract_award_type]
@@ -161,7 +161,7 @@ GROUP BY fk.[contract_award_type]
 INSERT INTO FPDSTypeTable.contractbundling
 (contractbundling,contractbundlingText)
 SELECT fk.[contract_bundling]
-,max(fk.contract_bundling_name) as contractbundlingText
+,max(fk.contract_bundling_descrip) as contractbundlingText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.contractbundling as pk
 On pk.contractbundling=fk.[contract_bundling]
@@ -172,7 +172,7 @@ GROUP BY fk.[contract_bundling]
 INSERT INTO FPDSTypeTable.contractfinancing
 (contractfinancing,contractfinancingText)
 SELECT fk.[contract_financing]
-,max(fk.contract_financing_name) as contractfinancingText
+,max(fk.contract_financing_descrip) as contractfinancingText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.contractfinancing as pk
 On pk.contractfinancing=fk.[contract_financing]
@@ -183,7 +183,7 @@ GROUP BY fk.[contract_financing]
 INSERT INTO FPDSTypeTable.contractingofficerbusinesssizedetermination
 (contractingofficerbusinesssizedetermination,ContractingOfficerBusinessSizeDeterminationText)
 SELECT fk.[contracting_officers_deter]
-,max(fk.ContractingOfficerBusinessSizeDeterminationText) as ContractingOfficerBusinessSizeDeterminationText
+,max(fk.contracting_officers_desc) as ContractingOfficerBusinessSizeDeterminationText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.contractingofficerbusinesssizedetermination as pk
 On pk.contractingofficerbusinesssizedetermination=fk.[contracting_officers_deter]
@@ -194,7 +194,7 @@ GROUP BY fk.[contracting_officers_deter]
 INSERT INTO FPDSTypeTable.CostAccountingStandardsClause
 (CostAccountingStandardsClause,cost_accounting_standards_clause_name)
 SELECT fk.[cost_accounting_standards]
-,max(fk.cost_accounting_standards_clause_name) as cost_accounting_standards_clause_name
+,max(fk.cost_accounting_stand_desc) as cost_accounting_standards_clause_name
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.CostAccountingStandardsClause as pk
 On pk.CostAccountingStandardsClause=fk.[cost_accounting_standards]
@@ -205,7 +205,7 @@ GROUP BY fk.[cost_accounting_standards]
 INSERT INTO FPDSTypeTable.costorpricingdata
 (costorpricingdata,costorpricingdataText)
 SELECT fk.[cost_or_pricing_data]
-,max(fk.cost_or_pricing_data_name) as costorpricingdataText
+,max(fk.cost_or_pricing_data_desc) as costorpricingdataText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.costorpricingdata as pk
 On pk.costorpricingdata=fk.[cost_or_pricing_data]
@@ -216,7 +216,7 @@ GROUP BY fk.[cost_or_pricing_data]
 INSERT INTO FPDSTypeTable.Country3LetterCode
 (Country3LetterCode,Country3LetterCodeText)
 SELECT fk.[country_of_product_or_serv]
-,max(fk.country_of_product_or_service_origin_name) as Country3LetterCodeText
+,max(fk.country_of_product_or_desc) as Country3LetterCodeText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
 On pk.Country3LetterCode=fk.[country_of_product_or_serv]
@@ -237,7 +237,7 @@ GROUP BY fk.[division_name]
 INSERT INTO FPDSTypeTable.ClaimantProgramCode
 (ClaimantProgramCode,ClaimantProgramCodeText)
 SELECT fk.[dod_claimant_program_code]
-,max(fk.dod_claimant_program_description) as ClaimantProgramCodeText
+,max(fk.dod_claimant_prog_cod_desc) as ClaimantProgramCodeText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.ClaimantProgramCode as pk
 On pk.ClaimantProgramCode=fk.[dod_claimant_program_code]
@@ -248,7 +248,7 @@ GROUP BY fk.[dod_claimant_program_code]
 INSERT INTO FPDSTypeTable.useofepadesignatedproducts
 (useofepadesignatedproducts,useofepadesignatedproductsText)
 SELECT fk.[epa_designated_product]
-,max(fk.epa_designated_product_name) as useofepadesignatedproductsText
+,max(fk.epa_designated_produc_desc) as useofepadesignatedproductsText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.useofepadesignatedproducts as pk
 On pk.useofepadesignatedproducts=fk.[epa_designated_product]
@@ -259,7 +259,7 @@ GROUP BY fk.[epa_designated_product]
 INSERT INTO FPDSTypeTable.evaluatedpreference
 (evaluatedpreference,evaluatedpreferenceText)
 SELECT fk.[evaluated_preference]
-,max(fk.evaluated_preference_name) as evaluatedpreferenceText
+,max(fk.evaluated_preference_desc) as evaluatedpreferenceText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.evaluatedpreference as pk
 On pk.evaluatedpreference=fk.[evaluated_preference]
@@ -270,7 +270,7 @@ GROUP BY fk.[evaluated_preference]
 INSERT INTO FPDSTypeTable.extentcompeted
 (extentcompeted,extentcompetedText)
 SELECT fk.[extent_competed]
-,max(fk.extent_competed_name) as extentcompetedText
+,max(fk.extent_compete_description) as extentcompetedText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.extentcompeted as pk
 On pk.extentcompeted=fk.[extent_competed]
@@ -281,7 +281,7 @@ GROUP BY fk.[extent_competed]
 INSERT INTO FPDSTypeTable.statutoryexceptiontofairopportunity
 (statutoryexceptiontofairopportunity,statutoryexceptiontofairopportunityText)
 SELECT fk.[fair_opportunity_limited_s]
-,max(fk.fair_opportunity_limited_sources_name) as statutoryexceptiontofairopportunityText
+,max(fk.fair_opportunity_limi_desc) as statutoryexceptiontofairopportunityText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.statutoryexceptiontofairopportunity as pk
 On pk.statutoryexceptiontofairopportunity=fk.[fair_opportunity_limited_s]
@@ -292,7 +292,7 @@ GROUP BY fk.[fair_opportunity_limited_s]
 INSERT INTO FPDSTypeTable.fedbizopps
 (fedbizopps,fed_biz_opps_name)
 SELECT fk.[fed_biz_opps]
-,max(fk.fed_biz_opps_name) as fed_biz_opps_name
+,max(fk.fed_biz_opps_description) as fed_biz_opps_name
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.fedbizopps as pk
 On pk.fedbizopps=fk.[fed_biz_opps]
@@ -303,7 +303,7 @@ GROUP BY fk.[fed_biz_opps]
 INSERT INTO budget.FundedByForeignEntity
 (fundedbyforeignentity,foreign_funding_description)
 SELECT fk.[foreign_funding]
-,max(fk.foreign_funding_description) as foreign_funding_description
+,max(fk.foreign_funding_desc) as foreign_funding_description
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN budget.FundedByForeignEntity as pk
 On pk.fundedbyforeignentity=fk.[foreign_funding]
@@ -325,7 +325,7 @@ GROUP BY fk.[funding_agency_code]
 INSERT INTO FPDSTypeTable.AgencyID
 (AgencyID,AgencyIDtext)
 SELECT fk.[funding_sub_tier_agency_co]
-,max(fk.funding_sub_agency_name) as AgencyIDtext
+,max(fk.funding_sub_tier_agency_na) as AgencyIDtext
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
 On pk.AgencyID=fk.[funding_sub_tier_agency_co]
@@ -336,7 +336,7 @@ GROUP BY fk.[funding_sub_tier_agency_co]
 INSERT INTO FPDSTypeTable.gfe_gfp
 (gfe_gfp,gfe_gfpText)
 SELECT fk.[government_furnished_prope]
-,max(fk.gfe_gfp_name) as gfe_gfpText
+,max(fk.government_furnished_desc) as gfe_gfpText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.gfe_gfp as pk
 On pk.gfe_gfp=fk.[government_furnished_prope]
@@ -347,7 +347,7 @@ GROUP BY fk.[government_furnished_prope]
 INSERT INTO FPDSTypeTable.idv_type_code
 (idv_type_code,idv_type_name)
 SELECT fk.[idv_type]
-,max(fk.idv_type_name) as idv_type_name
+,max(fk.idv_type_description) as idv_type_name
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
 On pk.idv_type_code=fk.[idv_type]
@@ -358,7 +358,7 @@ GROUP BY fk.[idv_type]
 INSERT INTO FPDSTypeTable.informationtechnologycommercialitemcategory
 (informationtechnologycommercialitemcategory,informationtechnologycommercialitemcategoryText)
 SELECT fk.[information_technology_com]
-,max(fk.information_technology_commercial_item_category_name) as informationtechnologycommercialitemcategoryText
+,max(fk.information_technolog_desc) as informationtechnologycommercialitemcategoryText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.informationtechnologycommercialitemcategory as pk
 On pk.informationtechnologycommercialitemcategory=fk.[information_technology_com]
@@ -369,7 +369,7 @@ GROUP BY fk.[information_technology_com]
 INSERT INTO ProductOrServiceCode.inherently_governmental_functions
 (inherently_governmental_functions,inherently_governmental_functions_description)
 SELECT fk.[inherently_government_func]
-,max(fk.inherently_governmental_functions_description) as inherently_governmental_functions_description
+,max(fk.inherently_government_desc) as inherently_governmental_functions_description
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN ProductOrServiceCode.inherently_governmental_functions as pk
 On pk.inherently_governmental_functions=fk.[inherently_government_func]
@@ -380,7 +380,7 @@ GROUP BY fk.[inherently_government_func]
 INSERT INTO FPDSTypeTable.interagencycontractingauthority
 (interagencycontractingauthority,interagencycontractingauthorityText)
 SELECT fk.[interagency_contracting_au]
-,max(fk.interagency_contracting_authority_name) as interagencycontractingauthorityText
+,max(fk.interagency_contract_desc) as interagencycontractingauthorityText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.interagencycontractingauthority as pk
 On pk.interagencycontractingauthority=fk.[interagency_contracting_au]
@@ -391,7 +391,7 @@ GROUP BY fk.[interagency_contracting_au]
 INSERT INTO FPDSTypeTable.servicecontractact
 (servicecontractact,servicecontractactText)
 SELECT fk.[labor_standards]
-,max(fk.service_contract_act_name) as servicecontractactText
+,max(fk.labor_standards_descrip) as servicecontractactText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.servicecontractact as pk
 On pk.servicecontractact=fk.[labor_standards]
@@ -412,7 +412,7 @@ GROUP BY fk.[legal_entity_county_code]
 INSERT INTO Location.recipient_state_code
 (recipient_state_code,recipient_state_name)
 SELECT fk.[legal_entity_state_code]
-,max(fk.recipient_state_name) as recipient_state_name
+,max(fk.legal_entity_state_descrip) as recipient_state_name
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN Location.recipient_state_code as pk
 On pk.recipient_state_code=fk.[legal_entity_state_code]
@@ -423,7 +423,7 @@ GROUP BY fk.[legal_entity_state_code]
 INSERT INTO Location.localareasetaside
 (localareasetaside,local_area_set_aside_name)
 SELECT fk.[local_area_set_aside]
-,max(fk.local_area_set_aside_name) as local_area_set_aside_name
+,max(fk.local_area_set_aside_desc) as local_area_set_aside_name
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN Location.localareasetaside as pk
 On pk.localareasetaside=fk.[local_area_set_aside]
@@ -444,7 +444,7 @@ GROUP BY fk.[major_program]
 INSERT INTO FPDSTypeTable.walshhealyact
 (walshhealyact,walshhealyactText)
 SELECT fk.[materials_supplies_article]
-,max(fk.walsh_healey_act_name) as walshhealyactText
+,max(fk.materials_supplies_descrip) as walshhealyactText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.walshhealyact as pk
 On pk.walshhealyact=fk.[materials_supplies_article]
@@ -455,7 +455,7 @@ GROUP BY fk.[materials_supplies_article]
 INSERT INTO FPDSTypeTable.multipleorsingleawardidc
 (multipleorsingleawardidc,multipleorsingleawardidcText)
 SELECT fk.[multiple_or_single_award_i]
-,max(fk.multiple_or_single_award_idv_name) as multipleorsingleawardidcText
+,max(fk.multiple_or_single_aw_desc) as multipleorsingleawardidcText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.multipleorsingleawardidc as pk
 On pk.multipleorsingleawardidc=fk.[multiple_or_single_award_i]
@@ -477,7 +477,7 @@ GROUP BY fk.[naics]
 INSERT INTO Assistance.NationalInterestActionCode
 (NationalInterestActionCode,National_Interest_Action_Name)
 SELECT fk.[national_interest_action]
-,max(fk.national_interest_action_name) as National_Interest_Action_Name
+,max(fk.national_interest_desc) as National_Interest_Action_Name
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN Assistance.NationalInterestActionCode as pk
 On pk.NationalInterestActionCode=fk.[national_interest_action]
@@ -498,7 +498,7 @@ GROUP BY fk.[organizational_type]
 INSERT INTO FPDSTypeTable.reasonnotcompeted
 (reasonnotcompeted,reasonnotcompetedText)
 SELECT fk.[other_than_full_and_open_c]
-,max(fk.other_than_full_and_open_competition_name) as reasonnotcompetedText
+,max(fk.other_than_full_and_o_desc) as reasonnotcompetedText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.reasonnotcompeted as pk
 On pk.reasonnotcompeted=fk.[other_than_full_and_open_c]
@@ -509,7 +509,7 @@ GROUP BY fk.[other_than_full_and_open_c]
 INSERT INTO FPDSTypeTable.PerformanceBasedServiceContract
 (performancebasedservicecontract,performancebasedservicecontractText)
 SELECT fk.[performance_based_service]
-,max(fk.performance_based_service_acquisition_name) as performancebasedservicecontractText
+,max(fk.performance_based_se_desc) as performancebasedservicecontractText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.PerformanceBasedServiceContract as pk
 On pk.performancebasedservicecontract=fk.[performance_based_service]
@@ -520,7 +520,7 @@ GROUP BY fk.[performance_based_service]
 INSERT INTO FPDSTypeTable.PlaceOfManufacture
 (PlaceOfManufacture,PlaceOfManufactureText)
 SELECT fk.[place_of_manufacture]
-,max(fk.place_of_manufacture_name) as PlaceOfManufactureText
+,max(fk.place_of_manufacture_desc) as PlaceOfManufactureText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.PlaceOfManufacture as pk
 On pk.PlaceOfManufacture=fk.[place_of_manufacture]
@@ -531,7 +531,7 @@ GROUP BY fk.[place_of_manufacture]
 INSERT INTO FPDSTypeTable.Country3LetterCode
 (Country3LetterCode,Country3LetterCodeText)
 SELECT fk.[place_of_perform_country_c]
-,max(fk.primary_place_of_performance_country_name) as Country3LetterCodeText
+,max(fk.place_of_perf_country_desc) as Country3LetterCodeText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
 On pk.Country3LetterCode=fk.[place_of_perform_country_c]
@@ -552,7 +552,7 @@ GROUP BY fk.[place_of_perform_county_co]
 INSERT INTO FPDSTypeTable.statecode
 (statecode,statecodeText)
 SELECT fk.[place_of_performance_state]
-,max(fk.primary_place_of_performance_state_name) as statecodeText
+,max(fk.place_of_perfor_state_desc) as statecodeText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.statecode as pk
 On pk.statecode=fk.[place_of_performance_state]
@@ -563,7 +563,7 @@ GROUP BY fk.[place_of_performance_state]
 INSERT INTO FPDSTypeTable.ProductOrServiceCode
 (ProductOrServiceCode,ProductOrServiceCodeText)
 SELECT fk.[product_or_service_code]
-,max(fk.product_or_service_code_description) as ProductOrServiceCodeText
+,max(fk.product_or_service_co_desc) as ProductOrServiceCodeText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.ProductOrServiceCode as pk
 On pk.ProductOrServiceCode=fk.[product_or_service_code]
@@ -574,7 +574,7 @@ GROUP BY fk.[product_or_service_code]
 INSERT INTO Project.SystemEquipmentCode
 (systemequipmentcode,systemequipmentcodeText)
 SELECT fk.[program_system_or_equipmen]
-,max(fk.dod_acquisition_program_description) as systemequipmentcodeText
+,max(fk.program_system_or_equ_desc) as systemequipmentcodeText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN Project.SystemEquipmentCode as pk
 On pk.systemequipmentcode=fk.[program_system_or_equipmen]
@@ -585,7 +585,7 @@ GROUP BY fk.[program_system_or_equipmen]
 INSERT INTO FPDSTypeTable.recoveredmaterialclauses
 (recoveredmaterialclauses,recoveredmaterialclausesText)
 SELECT fk.[recovered_materials_sustai]
-,max(fk.recovered_materials_sustainability_name) as recoveredmaterialclausesText
+,max(fk.recovered_materials_s_desc) as recoveredmaterialclausesText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.recoveredmaterialclauses as pk
 On pk.recoveredmaterialclauses=fk.[recovered_materials_sustai]
@@ -596,7 +596,7 @@ GROUP BY fk.[recovered_materials_sustai]
 INSERT INTO FPDSTypeTable.AgencyID
 (AgencyID,AgencyIDtext)
 SELECT fk.[referenced_idv_agency_iden]
-,max(fk.parent_award_agency_name) as AgencyIDtext
+,max(fk.referenced_idv_agency_desc) as AgencyIDtext
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
 On pk.AgencyID=fk.[referenced_idv_agency_iden]
@@ -607,7 +607,7 @@ GROUP BY fk.[referenced_idv_agency_iden]
 INSERT INTO FPDSTypeTable.idv_type_code
 (idv_type_code,idv_type_name)
 SELECT fk.[referenced_idv_type]
-,max(fk.parent_award_type_name) as idv_type_name
+,max(fk.referenced_idv_type_desc) as idv_type_name
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
 On pk.idv_type_code=fk.[referenced_idv_type]
@@ -618,7 +618,7 @@ GROUP BY fk.[referenced_idv_type]
 INSERT INTO FPDSTypeTable.multipleorsingleawardidc
 (multipleorsingleawardidc,multipleorsingleawardidcText)
 SELECT fk.[referenced_mult_or_single]
-,max(fk.parent_award_single_or_multiple_name) as multipleorsingleawardidcText
+,max(fk.referenced_mult_or_si_desc) as multipleorsingleawardidcText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.multipleorsingleawardidc as pk
 On pk.multipleorsingleawardidc=fk.[referenced_mult_or_single]
@@ -629,7 +629,7 @@ GROUP BY fk.[referenced_mult_or_single]
 INSERT INTO ProductOrServiceCode.Research_Code
 (Research_Code,Research_Name)
 SELECT fk.[research]
-,max(fk.research_name) as Research_Name
+,max(fk.research_description) as Research_Name
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN ProductOrServiceCode.Research_Code as pk
 On pk.Research_Code=fk.[research]
@@ -651,7 +651,7 @@ GROUP BY fk.[sam_exception]
 INSERT INTO FPDSTypeTable.seatransportation
 (seatransportation,seatransportationText)
 SELECT fk.[sea_transportation]
-,max(fk.sea_transportation_name) as seatransportationText
+,max(fk.sea_transportation_desc) as seatransportationText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.seatransportation as pk
 On pk.seatransportation=fk.[sea_transportation]
@@ -662,7 +662,7 @@ GROUP BY fk.[sea_transportation]
 INSERT INTO FPDSTypeTable.solicitationprocedures
 (solicitationprocedures,solicitationproceduresText)
 SELECT fk.[solicitation_procedures]
-,max(fk.solicitation_procedures_name) as solicitationproceduresText
+,max(fk.solicitation_procedur_desc) as solicitationproceduresText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.solicitationprocedures as pk
 On pk.solicitationprocedures=fk.[solicitation_procedures]
@@ -673,7 +673,7 @@ GROUP BY fk.[solicitation_procedures]
 INSERT INTO FPDSTypeTable.subcontractplan
 (subcontractplan,subcontractplanText)
 SELECT fk.[subcontracting_plan]
-,max(fk.subcontracting_plan_name) as subcontractplanText
+,max(fk.subcontracting_plan_desc) as subcontractplanText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.subcontractplan as pk
 On pk.subcontractplan=fk.[subcontracting_plan]
@@ -684,7 +684,7 @@ GROUP BY fk.[subcontracting_plan]
 INSERT INTO FPDSTypeTable.typeofcontractpricing
 (TypeOfContractPricing,TypeOfContractPricingText)
 SELECT fk.[type_of_contract_pricing]
-,max(fk.type_of_contract_pricing_name) as TypeOfContractPricingText
+,max(fk.type_of_contract_pric_desc) as TypeOfContractPricingText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.typeofcontractpricing as pk
 On pk.TypeOfContractPricing=fk.[type_of_contract_pricing]
@@ -695,7 +695,7 @@ GROUP BY fk.[type_of_contract_pricing]
 INSERT INTO FPDSTypeTable.TypeOfIDC
 (typeofIDC,typeOfIDCdescription)
 SELECT fk.[type_of_idc]
-,max(fk.type_of_idc_name) as typeOfIDCdescription
+,max(fk.type_of_idc_description) as typeOfIDCdescription
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.TypeOfIDC as pk
 On pk.typeofIDC=fk.[type_of_idc]
@@ -706,7 +706,7 @@ GROUP BY fk.[type_of_idc]
 INSERT INTO FPDSTypeTable.typeofsetaside
 (typeofsetaside,typeofsetasideText)
 SELECT fk.[type_set_aside]
-,max(fk.type_of_set_aside_name) as typeofsetasideText
+,max(fk.type_set_aside_description) as typeofsetasideText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.typeofsetaside as pk
 On pk.typeofsetaside=fk.[type_set_aside]
@@ -727,7 +727,7 @@ GROUP BY fk.[ultimate_parent_legal_enti]
 INSERT INTO FPDSTypeTable.lettercontract
 (LetterContract,UndefinitizedActionText)
 SELECT fk.[undefinitized_action]
-,max(fk.undefinitized_action_name) as UndefinitizedActionText
+,max(fk.undefinitized_action_desc) as UndefinitizedActionText
 FROM ErrorLogging.source_procurement_transaction as fk
 LEFT OUTER JOIN FPDSTypeTable.lettercontract as pk
 On pk.LetterContract=fk.[undefinitized_action]
