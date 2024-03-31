@@ -30,7 +30,7 @@ MergeStage2.df<-merge_source_and_csis_name_tables(Import.df,Stage2Table.df)
 #That said, the differences in date format mean some will be generated.
 
 
-TryConvertList<-create_try_converts(MergeStage2.df,"Errorlogging","source_procurement_transaction"
+TryConvertList<-create_try_converts(MergeDestination.df,"Errorlogging","source_procurement_transaction"
                                     ,IncludeAlters=TRUE,
                                     Apply_Drop = FALSE,
                                     IncludeSingle = FALSE)
@@ -59,7 +59,7 @@ skip_list<-c("[unique_award_key]",
              "[vendor_doing_as_business_n]"
              ) #Handled via chain insert manually written
 
-debug(create_foreign_key_assigments)
+# debug(create_foreign_key_assigments)
 select_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                         "source_procurement_transaction",
                                         "Contract",
@@ -107,12 +107,12 @@ write(count_list,"Output//ErrorLogging_source_procurement_transaction_count_empt
 
 
 #Transfer from Errorlogging.source_procurement_transaction to Contract.FPDS
-if(nrow(MergeStage2.df[is.na(MergeStage2.df$CSISvariableType)&is.na(MergeStage2.df$IsDroppedNameField),])>1){
-  write.csv(MergeStage2.df[is.na(MergeStage2.df$CSISvariableType)&is.na(MergeStage2.df$IsDroppedNameField),],
+if(nrow(MergeDestination.df[is.na(MergeDestination.df$CSISvariableType)&is.na(MergeDestination.df$IsDroppedNameField),])>1){
+  write.csv(MergeDestination.df[is.na(MergeDestination.df$CSISvariableType)&is.na(MergeDestination.df$IsDroppedNameField),],
             file="Output/Unmatched_NameConversion.csv")
   stop("Update ImportAids/NameList.csv using Output/Unmatched_NameConversion.csv")
 }
-DroppedField<-MergeStage2.df %>% filter(IsDroppedNameField)
+DroppedField<-MergeDestination.df %>% filter(IsDroppedNameField)
 fklist<-read.csv("ImportAids//ErrorLogging_ForeignKeyList.csv") %>% 
   filter(FKSchema=="Contract" & FKTableName=="FPDS")
 DroppedField$Pair<-gsub("[\\],\\[]","",DroppedField$Pair,perl=T) #https://stackoverflow.com/questions/32041265/how-to-escape-closed-bracket-in-regex-in-r
@@ -133,13 +133,13 @@ rm(DroppedField,DroppedFieldFK,fklist)
 #a76action, clingercohenact, multiyearcontract, purchasecardaspaymentmethod are bits
 
 
-MergeStage2.df$IsDroppedNameField[is.na(MergeStage2.df$IsDroppedNameField)]<-FALSE
+MergeDestination.df$IsDroppedNameField[is.na(MergeDestination.df$IsDroppedNameField)]<-FALSE
 
 #Remove CSISstage2ID, it's entirely for internal purposes
-MergeStage2.df<-MergeStage2.df %>% filter(!SourceVariableName %in% c("[CSISstage2id]","[USAspending_file_name]"))
+MergeDestination.df<-MergeDestination.df %>% filter(!SourceVariableName %in% c("[CSISstage2id]","[USAspending_file_name]"))
 #Check that all dropped fields correspond with a preserved field
-pair_kept<-left_join(MergeStage2.df %>% filter(IsDroppedNameField==TRUE)%>% select(SourceVariableName,Pair),
-          MergeStage2.df %>% filter(IsDroppedNameField==FALSE) %>% select(SourceVariableName,IsDroppedNameField),
+pair_kept<-left_join(MergeDestination.df %>% filter(IsDroppedNameField==TRUE)%>% select(SourceVariableName,Pair),
+          MergeDestination.df %>% filter(IsDroppedNameField==FALSE) %>% select(SourceVariableName,IsDroppedNameField),
           by=c("Pair"="SourceVariableName"))
 
 if(any(is.na(pair_kept$IsDroppedNameField))){
@@ -150,7 +150,7 @@ rm(pair_kept)
 
 
 
-InsertList<-create_insert(MergeStage2.df,
+InsertList<-create_insert(MergeDestination.df,
                          "ErrorLogging",
                          "source_procurement_transaction",
                          "Contract",
@@ -159,8 +159,20 @@ InsertList<-create_insert(MergeStage2.df,
                          FPDS=TRUE)
 write(InsertList,"Output/ErrorLogging_source_procurement_transaction_insert_destination.txt")
 
+
+#Create Compare Values (double checking that column matches are good)
+compare_list<-create_compare_cols(MergeDestination.df,
+                                "ErrorLogging",
+                                "source_procurement_transaction",
+                                "Contract",
+                                "FPDS",
+                                source_primary_key="detached_award_proc_unique",
+                                target_primary_key="contract_transaction_unique_key",
+                                drop_unmatched=TRUE)
+write(compare_list,"Output/ErrorLogging_source_procurement_transaction_compare_destination.txt")
+
 #Create Updates
-update_list<-create_update_FPDS(MergeStage2.df,
+update_list<-create_update_FPDS(MergeDestination.df,
   "ErrorLogging",
   "source_procurement_transaction",
   "Contract",
@@ -168,8 +180,8 @@ update_list<-create_update_FPDS(MergeStage2.df,
   DateType=101,
   drop_name=TRUE)
 write(update_list,"Output/ErrorLogging_source_procurement_transaction_update_destination.txt")
-MergeStage2.df %>% filter(substr(CSISvariableType,2,3) %in% c("NV","nv")) %>% select(SourceVariableName)
-substr(MergeStage2.df$CSISvariableType,2,3)
+MergeDestination.df %>% filter(substr(CSISvariableType,2,3) %in% c("NV","nv")) %>% select(SourceVariableName)
+substr(MergeDestination.df$CSISvariableType,2,3)
 ###### From Stage 2 to Contract.FPDS #########
 #Match up Errorlogging.source_procurement_transaction to Contract.FPDS 
 Import.df<-read_create_table("ErrorLogging.source_procurement_transaction.Table.sql",
@@ -179,4 +191,4 @@ Import.df<-translate_name(Import.df)
 DupTable.df<-read_create_table("ErrorLogging.FPDSdeleted.Table.sql",
                                        dir="SQL")
 translate_name(DupTable.df,test_only=TRUE)
-MergeStage2.df<-merge_source_and_csis_name_tables(Import.df,DupTable.df)
+MergeDestination.df<-merge_source_and_csis_name_tables(Import.df,DupTable.df)

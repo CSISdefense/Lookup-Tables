@@ -49,14 +49,14 @@ On pk.vendorname=fk.[awardee_or_recipient_legal]
 WHERE pk.vendorname is NULL and fk.[awardee_or_recipient_legal] is not null
 GROUP BY fk.[awardee_or_recipient_legal]
 
--- Insert new [awardee_or_recipient_uniqu] into Vendor.VendorName
-INSERT INTO Vendor.VendorName
-(vendorname)
+-- Insert new [awardee_or_recipient_uniqu] into Contractor.Dunsnumber
+INSERT INTO Contractor.Dunsnumber
+(DUNSnumber)
 SELECT fk.[awardee_or_recipient_uniqu]
 FROM ErrorLogging.source_procurement_transaction as fk
-LEFT OUTER JOIN Vendor.VendorName as pk
-On pk.vendorname=fk.[awardee_or_recipient_uniqu]
-WHERE pk.vendorname is NULL and fk.[awardee_or_recipient_uniqu] is not null
+LEFT OUTER JOIN Contractor.Dunsnumber as pk
+On pk.DUNSnumber=fk.[awardee_or_recipient_uniqu]
+WHERE pk.DUNSnumber is NULL and fk.[awardee_or_recipient_uniqu] is not null
 GROUP BY fk.[awardee_or_recipient_uniqu]
 
 -- Insert new [awarding_agency_code] into agency.awarding_agency_code
@@ -80,16 +80,6 @@ LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
 On pk.AgencyID=fk.[awarding_sub_tier_agency_c]
 WHERE pk.AgencyID is NULL and fk.[awarding_sub_tier_agency_c] is not null
 GROUP BY fk.[awarding_sub_tier_agency_c]
-
--- Insert new [business_categories] into FPDSTypeTable.TypeofBusinessDD350
-INSERT INTO FPDSTypeTable.TypeofBusinessDD350
-(TypeOfBusiness)
-SELECT fk.[business_categories]
-FROM ErrorLogging.source_procurement_transaction as fk
-LEFT OUTER JOIN FPDSTypeTable.TypeofBusinessDD350 as pk
-On pk.TypeOfBusiness=fk.[business_categories]
-WHERE pk.TypeOfBusiness is NULL and fk.[business_categories] is not null
-GROUP BY fk.[business_categories]
 
 -- Insert new [commercial_item_acquisitio] into FPDSTypeTable.CommercialItemAcquisitionProcedures
 INSERT INTO FPDSTypeTable.CommercialItemAcquisitionProcedures
@@ -722,6 +712,16 @@ LEFT OUTER JOIN Vendor.VendorName as pk
 On pk.vendorname=fk.[ultimate_parent_legal_enti]
 WHERE pk.vendorname is NULL and fk.[ultimate_parent_legal_enti] is not null
 GROUP BY fk.[ultimate_parent_legal_enti]
+
+-- Insert new [ultimate_parent_unique_ide] into Contractor.Dunsnumber
+INSERT INTO Contractor.Dunsnumber
+(DUNSnumber)
+SELECT fk.[ultimate_parent_unique_ide]
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Contractor.Dunsnumber as pk
+On pk.DUNSnumber=fk.[ultimate_parent_unique_ide]
+WHERE pk.DUNSnumber is NULL and fk.[ultimate_parent_unique_ide] is not null
+GROUP BY fk.[ultimate_parent_unique_ide]
 
 -- Insert new [undefinitized_action] into FPDSTypeTable.lettercontract
 INSERT INTO FPDSTypeTable.lettercontract

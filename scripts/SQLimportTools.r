@@ -672,6 +672,57 @@ create_update_FPDS<-function(MergeTable.df,
 
 
 
+create_compare_cols<-function(MergeTable.df,
+                             SourceSchema,
+                             SourceTableName,
+                             TargetSchema,
+                             TargetTableName,
+                             source_primary_key="detached_award_proc_unique",
+                             target_primary_key="contract_transaction_unique_key",
+                             drop_unmatched=FALSE){
+  
+  compare_list<-"SELECT count(*) as N,"
+  
+  if("IsDroppedNameField" %in% colnames(MergeTable.df))
+    MergeTable.df<-MergeTable.df %>% filter(IsDroppedNameField==FALSE | is.na(IsDroppedNameField))
+  
+  if(drop_unmatched)
+    MergeTable.df<-MergeTable.df %>% filter(!is.na(CSISvariableName))
+  else
+    if(any(is.na(CSISvariableName)))
+      stop("Some source fields do not appear in the destination table")
+  
+  #Remove rows that shouldn't be updated
+  MergeTable.df<-MergeTable.df[which(!tolower(MergeTable.df$SourceVariableName) %in% tolower(c(
+    "[CSISCreatedDate]",
+    "[unique_transaction_id]",
+    "[CSIStransactionID]"))),]
+  
+  
+  compare_list<-c(compare_list,paste0("SUM(CASE WHEN t.",MergeTable.df$CSISvariableName,"=",
+                                    "s.",MergeTable.df$SourceVariableName," THEN 1",
+                                    " WHEN t.",MergeTable.df$CSISvariableName," IS NULL AND ",
+                                    "s.",MergeTable.df$SourceVariableName," IS NULL THEN 1 ",
+                                    "ELSE 0 END) AS ", MergeTable.df$SourceVariableName,","))
+  #Remove the comma from the select list column
+  compare_list[length(compare_list)]<-substr(compare_list[length(compare_list)],
+                                           1,
+                                           nchar(compare_list[length(compare_list)])-1)
+  #Wrap up
+  compare_list<-c(compare_list,
+                 paste("FROM ",TargetSchema,".",TargetTableName," as T",sep="")
+  )    
+  compare_list<-c(compare_list,
+                 paste("INNER Join ",SourceSchema,".",SourceTableName," as S",sep=""),
+                 paste0("ON s.",source_primary_key,"=t.",target_primary_key)
+  )    
+  
+  
+  compare_list
+}
+
+
+
 create_insert<-function(MergeTable.df,
                        SourceSchema,
                        SourceTableName,

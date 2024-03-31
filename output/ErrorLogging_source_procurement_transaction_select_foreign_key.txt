@@ -58,13 +58,13 @@ GROUP BY fk.[award_or_idv_flag]
 ORDER BY fk.[award_or_idv_flag]
 
 
---List new [awardee_or_recipient_uniqu] for insertion into Vendor.VendorName
+--List new [awardee_or_recipient_uniqu] for insertion into Contractor.Dunsnumber
 SELECT fk.[awardee_or_recipient_uniqu],
-'Vendor.VendorName' as PrimaryKeyTable
+'Contractor.Dunsnumber' as PrimaryKeyTable
 FROM ErrorLogging.source_procurement_transaction as fk
-LEFT OUTER JOIN Vendor.VendorName as pk
-On pk.vendorname=fk.[awardee_or_recipient_uniqu]
-WHERE pk.vendorname is NULL
+LEFT OUTER JOIN Contractor.Dunsnumber as pk
+On pk.DUNSnumber=fk.[awardee_or_recipient_uniqu]
+WHERE pk.DUNSnumber is NULL
 GROUP BY fk.[awardee_or_recipient_uniqu]
 ORDER BY fk.[awardee_or_recipient_uniqu]
 
@@ -121,17 +121,6 @@ HAVING max(iif(fk.awarding_sub_tier_agency_n=pk.AgencyIDtext or
 	charindex('('+fk.awarding_sub_tier_agency_n+')',pk.AgencyIDtext )>0,
 	0,1))=1
 ORDER BY fk.[awarding_sub_tier_agency_c]
-
-
---List new [business_categories] for insertion into FPDSTypeTable.TypeofBusinessDD350
-SELECT fk.[business_categories],
-'FPDSTypeTable.TypeofBusinessDD350' as PrimaryKeyTable
-FROM ErrorLogging.source_procurement_transaction as fk
-LEFT OUTER JOIN FPDSTypeTable.TypeofBusinessDD350 as pk
-On pk.TypeOfBusiness=fk.[business_categories]
-WHERE pk.TypeOfBusiness is NULL
-GROUP BY fk.[business_categories]
-ORDER BY fk.[business_categories]
 
 
 --List new [commercial_item_acquisitio] and updated commercial_item_acqui_desc for insertion into FPDSTypeTable.CommercialItemAcquisitionProcedures
@@ -1602,6 +1591,17 @@ On pk.vendorname=fk.[ultimate_parent_legal_enti]
 WHERE pk.vendorname is NULL
 GROUP BY fk.[ultimate_parent_legal_enti]
 ORDER BY fk.[ultimate_parent_legal_enti]
+
+
+--List new [ultimate_parent_unique_ide] for insertion into Contractor.Dunsnumber
+SELECT fk.[ultimate_parent_unique_ide],
+'Contractor.Dunsnumber' as PrimaryKeyTable
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Contractor.Dunsnumber as pk
+On pk.DUNSnumber=fk.[ultimate_parent_unique_ide]
+WHERE pk.DUNSnumber is NULL
+GROUP BY fk.[ultimate_parent_unique_ide]
+ORDER BY fk.[ultimate_parent_unique_ide]
 
 
 --List new [undefinitized_action] and updated undefinitized_action_desc for insertion into FPDSTypeTable.lettercontract

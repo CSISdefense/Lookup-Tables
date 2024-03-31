@@ -1,4 +1,4 @@
-﻿SourceVariableName,CSISvariableName,IsDuplicate,UnmatchedPostgres
+﻿SourceVariableName,CSISvariableName,IsEmpty,UnmatchedPostgres
 [a_76_fair_act_action],[a76action],,
 [a_76_fair_act_action_desc],[a76_fair_act_action_name],,
 [action_date],[signeddate],,
@@ -14,10 +14,10 @@
 [asian_pacific_american_own],[apaobflag],,
 [award_description],[transaction_description],,
 [award_modification_amendme],[modnumber],,
-[award_or_idv_flag],[award_or_idv_flag],,
+[award_or_idv_flag],[award_or_idv_flag],TRUE,
 [awardee_or_recipient_legal],[vendorname],,
 [awardee_or_recipient_uei],[recipient_uei],,
-[awardee_or_recipient_uniqu],[recipient_name_raw],,
+[awardee_or_recipient_uniqu],[dunsnumber],,
 [awarding_agency_code],[awarding_agency_code],,
 [awarding_agency_name],[awarding_agency_name],,
 [awarding_office_code],[contractingofficeid],,
@@ -27,7 +27,7 @@
 [base_and_all_options_value],[baseandalloptionsvalue],,
 [base_exercised_options_val],[baseandexercisedoptionsvalue],,
 [black_american_owned_busin],[baobflag],,
-[business_categories],[TypeOfBusiness],,
+[business_categories],[business_categories],,TRUE
 [c1862_land_grant_college],[is1862landgrantcollege],,
 [c1890_land_grant_college],[is1890landgrantcollege],,
 [c1994_land_grant_college],[is1994landgrantcollege],,
@@ -235,7 +235,7 @@
 [recovered_materials_sustai],[recoveredmaterialclauses],,
 [referenced_idv_agency_desc],[parent_award_agency_name],,
 [referenced_idv_agency_iden],[idvagencyid],,
-[referenced_idv_agency_name],[referenced_idv_agency_name],TRUE,
+[referenced_idv_agency_name],[referenced_idv_agency_name],TRUE,TRUE
 [referenced_idv_modificatio],[idvmodificationnumber],,
 [referenced_idv_type],[parent_award_type_code],,
 [referenced_idv_type_desc],[parent_award_type_name],,
@@ -280,7 +280,7 @@
 [type_set_aside_description],[type_of_set_aside_name],,
 [ultimate_parent_legal_enti],[recipient_parent_name_raw],,
 [ultimate_parent_uei],[recipient_parent_uei],,
-[ultimate_parent_unique_ide],[ultimate_parent_unique_ide],TRUE,TRUE
+[ultimate_parent_unique_ide],[parentdunsnumber],,
 [undefinitized_action],[lettercontract],,
 [undefinitized_action_desc],[undefinitized_action_name],,
 [unique_award_key],[contract_award_unique_key],,
@@ -293,10 +293,10 @@
 [vendor_alternate_name],[vendoralternatename],,
 [vendor_alternate_site_code],[vendoralternatesitecode],,
 [vendor_doing_as_business_n],[vendordoingasbusinessname],,
-[vendor_enabled],[vendor_enabled],,TRUE
+[vendor_enabled],[vendor_enabled],TRUE,TRUE
 [vendor_fax_number],[faxno],,
 [vendor_legal_org_name],[vendorlegalorganizationname],,
-[vendor_location_disabled_f],[vendorlocationdisableflag],,
+[vendor_location_disabled_f],[vendorlocationdisableflag],TRUE,
 [vendor_phone_number],[phoneno],,
 [vendor_site_code],[vendorsitecode],,
 [veteran_owned_business],[veteranownedflag],,
