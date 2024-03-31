@@ -1,0 +1,49 @@
+ALTER TABLE Errorlogging.source_procurement_transaction
+ALTER COLUMN [action_date] [date]
+
+ALTER TABLE Errorlogging.source_procurement_transaction
+ALTER COLUMN [awardee_or_recipient_uniqu] [varchar](13)
+
+ALTER TABLE Errorlogging.source_procurement_transaction
+ALTER COLUMN [domestic_or_foreign_entity] [bit]
+
+ALTER TABLE Errorlogging.source_procurement_transaction
+ALTER COLUMN [ordering_period_end_date] [date]
+
+ALTER TABLE Errorlogging.source_procurement_transaction
+ALTER COLUMN [period_of_performance_star] [date]
+
+ALTER TABLE Errorlogging.source_procurement_transaction
+ALTER COLUMN [sam_exception] [varchar](1)
+
+ALTER TABLE Errorlogging.source_procurement_transaction
+ALTER COLUMN [ultimate_parent_unique_ide] [varchar](13)
+
+--Check across all non-varchar and non-bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.
+SELECT
+	,max(iif(Try_Convert([date], nullif([action_date],''),101) is null and
+		nullif([action_date],'') is not null,1,0)) as [action_date]
+	,max(iif(Try_Convert([varchar](13), [awardee_or_recipient_uniqu]) is null and
+		nullif([awardee_or_recipient_uniqu],'') is not null,1,0)) as [awardee_or_recipient_uniqu]
+	,max(iif(Try_Convert([date], nullif([ordering_period_end_date],''),101) is null and
+		nullif([ordering_period_end_date],'') is not null,1,0)) as [ordering_period_end_date]
+	,max(iif(Try_Convert([date], nullif([period_of_performance_star],''),101) is null and
+		nullif([period_of_performance_star],'') is not null,1,0)) as [period_of_performance_star]
+	FROM Errorlogging.source_procurement_transaction
+
+--Check across all bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.
+SELECT
+,max([domestic_or_foreign_entity]) as [domestic_or_foreign_entity]
+FROM (SELECT
+	,(SELECT ReturnBit from ErrorLogging.IsFailedConvertYNtoBit([domestic_or_foreign_entity])) as [domestic_or_foreign_entity]
+	FROM Errorlogging.source_procurement_transaction) as ml
+
+--Varchar to varchar group check. Note you have to remove an extraneous comma from the first item. 
+SELECT
+ ,iif([sam_exception]>1,[sam_exception],NULL) as [sam_exception]
+,iif([ultimate_parent_unique_ide]>13,[ultimate_parent_unique_ide],NULL) as [ultimate_parent_unique_ide] 
+FROM (SELECT
+ 	,max(len([sam_exception])) as [sam_exception]
+	,max(len([ultimate_parent_unique_ide])) as [ultimate_parent_unique_ide] 
+	FROM  Errorlogging . source_procurement_transaction ) as ml
+

@@ -1,4 +1,4 @@
-/****** Object:  Table [ErrorLogging].[source_procurement_transaction]    Script Date: 3/24/2024 8:48:37 PM ******/
+/****** Object:  Table [ErrorLogging].[source_procurement_transaction]    Script Date: 3/31/2024 4:33:35 PM ******/
 SET ANSI_NULLS ON
 GO
 
@@ -10,10 +10,10 @@ CREATE TABLE [ErrorLogging].[source_procurement_transaction](
 	[detached_award_proc_unique] [varchar](154) NULL,
 	[a_76_fair_act_action] [bit] NULL,
 	[a_76_fair_act_action_desc] [varchar](255) NULL,
-	[action_date] [date] NULL,
+	[action_date] [datetime2](7) NULL,
 	[action_type] [varchar](1) NULL,
 	[action_type_description] [varchar](255) NULL,
-	[additional_reporting] [varchar](92) NULL,
+	[additional_reporting] [varchar](255) NULL,
 	[agency_id] [varchar](4) NULL,
 	[annual_revenue] [decimal](19, 4) NULL,
 	[award_description] [varchar](4035) NULL,
@@ -77,7 +77,7 @@ CREATE TABLE [ErrorLogging].[source_procurement_transaction](
 	[fed_biz_opps_description] [varchar](255) NULL,
 	[federal_action_obligation] [decimal](19, 4) NULL,
 	[foreign_funding] [varchar](21) NULL,
-	[foreign_funding_desc] [varchar](255) NULL,
+	[foreign_funding_desc] [varchar](25) NULL,
 	[funding_agency_code] [varchar](4) NULL,
 	[funding_agency_name] [varchar](255) NULL,
 	[funding_office_code] [varchar](6) NULL,
@@ -100,7 +100,7 @@ CREATE TABLE [ErrorLogging].[source_procurement_transaction](
 	[idv_type_description] [varchar](255) NULL,
 	[information_technolog_desc] [varchar](255) NULL,
 	[information_technology_com] [varchar](30) NULL,
-	[inherently_government_desc] [varchar](255) NULL,
+	[inherently_government_desc] [varchar](40) NULL,
 	[inherently_government_func] [varchar](10) NULL,
 	[initial_report_date] [datetime2](7) NULL,
 	[interagency_contract_desc] [varchar](255) NULL,
@@ -118,10 +118,10 @@ CREATE TABLE [ErrorLogging].[source_procurement_transaction](
 	[legal_entity_county_code] [int] NULL,
 	[legal_entity_county_name] [varchar](30) NULL,
 	[legal_entity_state_code] [varchar](35) NULL,
-	[legal_entity_state_descrip] [varchar](255) NULL,
+	[legal_entity_state_descrip] [varchar](35) NULL,
 	[legal_entity_zip4] [varchar](28) NULL,
-	[legal_entity_zip5] [varchar](5) NULL,
-	[legal_entity_zip_last4] [varchar](4) NULL,
+	[legal_entity_zip5] [varchar](255) NULL,
+	[legal_entity_zip_last4] [varchar](255) NULL,
 	[local_area_set_aside] [varchar](4) NULL,
 	[local_area_set_aside_desc] [varchar](255) NULL,
 	[major_program] [varchar](104) NULL,
@@ -138,7 +138,7 @@ CREATE TABLE [ErrorLogging].[source_procurement_transaction](
 	[number_of_actions] [bigint] NULL,
 	[number_of_employees] [bigint] NULL,
 	[number_of_offers_received] [bigint] NULL,
-	[ordering_period_end_date] [date] NULL,
+	[ordering_period_end_date] [datetime2](7) NULL,
 	[organizational_type] [varchar](30) NULL,
 	[other_statutory_authority] [varchar](1000) NULL,
 	[other_than_full_and_o_desc] [varchar](255) NULL,
@@ -148,7 +148,7 @@ CREATE TABLE [ErrorLogging].[source_procurement_transaction](
 	[performance_based_service] [varchar](38) NULL,
 	[period_of_perf_potential_e] [datetime2](7) NULL,
 	[period_of_performance_curr] [datetime2](7) NULL,
-	[period_of_performance_star] [date] NULL,
+	[period_of_performance_star] [datetime2](7) NULL,
 	[piid] [varchar](50) NULL,
 	[place_of_manufacture] [varchar](1) NULL,
 	[place_of_manufacture_desc] [varchar](255) NULL,
@@ -160,12 +160,12 @@ CREATE TABLE [ErrorLogging].[source_procurement_transaction](
 	[place_of_perform_county_co] [int] NULL,
 	[place_of_perform_county_na] [varchar](26) NULL,
 	[place_of_perform_state_nam] [varchar](255) NULL,
-	[place_of_perform_zip_last4] [varchar](4) NULL,
+	[place_of_perform_zip_last4] [varchar](255) NULL,
 	[place_of_performance_congr] [varchar](22) NULL,
 	[place_of_performance_locat] [varchar](9) NULL,
 	[place_of_performance_state] [varchar](2) NULL,
 	[place_of_performance_zip4a] [varchar](10) NULL,
-	[place_of_performance_zip5] [varchar](5) NULL,
+	[place_of_performance_zip5] [varchar](255) NULL,
 	[potential_total_value_awar] [decimal](19, 4) NULL,
 	[price_evaluation_adjustmen] [smallint] NULL,
 	[product_or_service_co_desc] [varchar](255) NULL,
@@ -188,8 +188,8 @@ CREATE TABLE [ErrorLogging].[source_procurement_transaction](
 	[referenced_mult_or_single] [varchar](1) NULL,
 	[research] [varchar](3) NULL,
 	[research_description] [varchar](255) NULL,
-	[sam_exception] [varchar](1) NULL,
-	[sam_exception_description] [varchar](255) NULL,
+	[sam_exception] [varchar](70) NULL,
+	[sam_exception_description] [varchar](71) NULL,
 	[sea_transportation] [varchar](1) NULL,
 	[sea_transportation_desc] [varchar](255) NULL,
 	[solicitation_date] [date] NULL,
@@ -207,7 +207,7 @@ CREATE TABLE [ErrorLogging].[source_procurement_transaction](
 	[type_set_aside] [varchar](10) NULL,
 	[type_set_aside_description] [varchar](255) NULL,
 	[ultimate_parent_legal_enti] [nvarchar](150) NULL,
-	[ultimate_parent_unique_ide] [varchar](9) NULL,
+	[ultimate_parent_unique_ide] [varchar](255) NULL,
 	[undefinitized_action] [varchar](1) NULL,
 	[undefinitized_action_desc] [varchar](255) NULL,
 	[unique_award_key] [varchar](120) NULL,
@@ -310,16 +310,17 @@ CREATE TABLE [ErrorLogging].[source_procurement_transaction](
 	[nonprofit_organization] [bit] NULL,
 	[other_not_for_profit_organ] [bit] NULL,
 	[us_local_government] [bit] NULL,
-	[entity_data_source] [varchar](3) NULL,
- CONSTRAINT [source_procurement_transaction_pkey] PRIMARY KEY CLUSTERED 
-(
-	[detached_award_procurement_id] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY],
- CONSTRAINT [source_procurement_transaction_detached_award_proc_unique_key] UNIQUE NONCLUSTERED 
-(
-	[detached_award_proc_unique] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-) 
+	[entity_data_source] [varchar](255) NULL,
+	[CSISCreatedDate] [datetime2](7) NOT NULL,
+	[CSISmodifiedDate] [datetime2](7) NOT NULL,
+	[temp_uei] [varchar](12) NULL
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [ErrorLogging].[source_procurement_transaction] ADD  DEFAULT (getdate()) FOR [CSISCreatedDate]
+GO
+
+ALTER TABLE [ErrorLogging].[source_procurement_transaction] ADD  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
 
 

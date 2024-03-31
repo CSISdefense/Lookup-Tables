@@ -58,6 +58,17 @@ GROUP BY fk.[award_or_idv_flag]
 ORDER BY fk.[award_or_idv_flag]
 
 
+--List new [awardee_or_recipient_legal] for insertion into Vendor.VendorName
+SELECT fk.[awardee_or_recipient_legal],
+'Vendor.VendorName' as PrimaryKeyTable
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[awardee_or_recipient_legal]
+WHERE pk.vendorname is NULL
+GROUP BY fk.[awardee_or_recipient_legal]
+ORDER BY fk.[awardee_or_recipient_legal]
+
+
 --List new [awardee_or_recipient_uniqu] for insertion into Contractor.Dunsnumber
 SELECT fk.[awardee_or_recipient_uniqu],
 'Contractor.Dunsnumber' as PrimaryKeyTable
@@ -483,6 +494,33 @@ HAVING max(iif(fk.dod_claimant_prog_cod_desc=pk.ClaimantProgramCodeText or
 	charindex('('+fk.dod_claimant_prog_cod_desc+')',pk.ClaimantProgramCodeText )>0,
 	0,1))=1
 ORDER BY fk.[dod_claimant_program_code]
+
+
+--List new [domestic_or_foreign_entity] and updated domestic_or_foreign_e_desc for insertion into FPDSTypeTable.manufacturingorganizationtype
+SELECT fk.[domestic_or_foreign_entity],
+max(iif(fk.domestic_or_foreign_e_desc=pk.manufacturingorganizationtypeText or
+	fk.domestic_or_foreign_e_desc='' or
+	charindex('('+fk.domestic_or_foreign_e_desc+')',pk.manufacturingorganizationtypeText )>0,
+	NULL,fk.domestic_or_foreign_e_desc)) as MaxOfNewFKdomestic_or_foreign_e_desc,
+count(distinct iif(fk.domestic_or_foreign_e_desc=pk.manufacturingorganizationtypeText or
+	fk.domestic_or_foreign_e_desc='' or
+	charindex('('+fk.domestic_or_foreign_e_desc+')',pk.manufacturingorganizationtypeText )>0,
+	NULL,fk.domestic_or_foreign_e_desc)) as unmatched_name_count,
+pk.manufacturingorganizationtypeText as PKmanufacturingorganizationtypeText,
+max(iif(fk.domestic_or_foreign_e_desc=pk.manufacturingorganizationtypeText or
+	fk.domestic_or_foreign_e_desc='' or
+	charindex('('+fk.domestic_or_foreign_e_desc+')',pk.manufacturingorganizationtypeText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.manufacturingorganizationtype' as PrimaryKeyTable
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.manufacturingorganizationtype as pk
+On pk.manufacturingorganizationtype=fk.[domestic_or_foreign_entity]
+GROUP BY fk.[domestic_or_foreign_entity], pk.manufacturingorganizationtypeText
+HAVING max(iif(fk.domestic_or_foreign_e_desc=pk.manufacturingorganizationtypeText or
+	fk.domestic_or_foreign_e_desc='' or
+	charindex('('+fk.domestic_or_foreign_e_desc+')',pk.manufacturingorganizationtypeText )>0,
+	0,1))=1
+ORDER BY fk.[domestic_or_foreign_entity]
 
 
 --List new [epa_designated_product] and updated epa_designated_produc_desc for insertion into FPDSTypeTable.useofepadesignatedproducts
@@ -1629,6 +1667,17 @@ HAVING max(iif(fk.undefinitized_action_desc=pk.UndefinitizedActionText or
 	charindex('('+fk.undefinitized_action_desc+')',pk.UndefinitizedActionText )>0,
 	0,1))=1
 ORDER BY fk.[undefinitized_action]
+
+
+--List new [vendor_doing_as_business_n] for insertion into Vendor.VendorName
+SELECT fk.[vendor_doing_as_business_n],
+'Vendor.VendorName' as PrimaryKeyTable
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[vendor_doing_as_business_n]
+WHERE pk.vendorname is NULL
+GROUP BY fk.[vendor_doing_as_business_n]
+ORDER BY fk.[vendor_doing_as_business_n]
 
 
 --List new [vendor_legal_org_name] for insertion into Vendor.VendorName

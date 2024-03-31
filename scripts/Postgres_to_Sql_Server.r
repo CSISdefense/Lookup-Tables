@@ -34,13 +34,16 @@ TryConvertList<-create_try_converts(MergeDestination.df,"Errorlogging","source_p
                                     ,IncludeAlters=TRUE,
                                     Apply_Drop = FALSE,
                                     IncludeSingle = FALSE)
+if(!is.null(nrow(TryConvertList)))
+  write(TryConvertList,"Output\\PostgresTryConvertList.txt_FPDS.txt")
 TryConvertList<-create_try_converts(MergeStage2.df,"Errorlogging","source_procurement_transaction"
                                     ,IncludeAlters=TRUE
                                     ,IncludeSingle = FALSE
                                     ,IncludeMultiple = FALSE
                                     ,Apply_Drop = FALSE
                                     )
-write(TryConvertList,"Output\\PostgresTryConvertList.txt")
+if(!is.null(nrow(TryConvertList)))
+  write(TryConvertList,"Output\\PostgresTryConvertList.txt_FPDSstage2.txt")
 write_delim(MergeStage2.df %>% select(SourceVariableName,SourceVariableType,CSISvariableType)%>%
         mutate(SourceVariableType=ifelse(!is.na(CSISvariableType),CSISvariableType,SourceVariableType),
                comma=",") %>%
@@ -161,6 +164,9 @@ write(InsertList,"Output/ErrorLogging_source_procurement_transaction_insert_dest
 
 
 #Create Compare Values (double checking that column matches are good)
+colnames(MergeDestination.df)
+MergeDestination.df %>% filter(SourceVariableType!=CSISvariableType)
+
 compare_list<-create_compare_cols(MergeDestination.df,
                                 "ErrorLogging",
                                 "source_procurement_transaction",
@@ -170,6 +176,7 @@ compare_list<-create_compare_cols(MergeDestination.df,
                                 target_primary_key="contract_transaction_unique_key",
                                 drop_unmatched=TRUE)
 write(compare_list,"Output/ErrorLogging_source_procurement_transaction_compare_destination.txt")
+
 
 #Create Updates
 update_list<-create_update_FPDS(MergeDestination.df,

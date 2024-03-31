@@ -234,6 +234,17 @@ On pk.ClaimantProgramCode=fk.[dod_claimant_program_code]
 WHERE pk.ClaimantProgramCode is NULL and fk.[dod_claimant_program_code] is not null
 GROUP BY fk.[dod_claimant_program_code]
 
+-- Insert new [domestic_or_foreign_entity] into FPDSTypeTable.manufacturingorganizationtype
+INSERT INTO FPDSTypeTable.manufacturingorganizationtype
+(manufacturingorganizationtype,manufacturingorganizationtypeText)
+SELECT fk.[domestic_or_foreign_entity]
+,max(fk.domestic_or_foreign_e_desc) as manufacturingorganizationtypeText
+FROM ErrorLogging.source_procurement_transaction as fk
+LEFT OUTER JOIN FPDSTypeTable.manufacturingorganizationtype as pk
+On pk.manufacturingorganizationtype=fk.[domestic_or_foreign_entity]
+WHERE pk.manufacturingorganizationtype is NULL and fk.[domestic_or_foreign_entity] is not null
+GROUP BY fk.[domestic_or_foreign_entity]
+
 -- Insert new [epa_designated_product] into FPDSTypeTable.useofepadesignatedproducts
 INSERT INTO FPDSTypeTable.useofepadesignatedproducts
 (useofepadesignatedproducts,useofepadesignatedproductsText)

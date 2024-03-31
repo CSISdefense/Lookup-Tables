@@ -303,6 +303,9 @@ sum(iif([for_profit_organization] is null,1,0)) as [for_profit_organization],
 sum(iif([nonprofit_organization] is null,1,0)) as [nonprofit_organization],
 sum(iif([other_not_for_profit_organ] is null,1,0)) as [other_not_for_profit_organ],
 sum(iif([us_local_government] is null,1,0)) as [us_local_government],
-sum(iif(nullif([entity_data_source],'') is null,1,0)) as [entity_data_source]
+sum(iif(nullif([entity_data_source],'') is null,1,0)) as [entity_data_source],
+sum(iif([CSISCreatedDate] is null,1,0)) as [CSISCreatedDate],
+sum(iif([CSISmodifiedDate] is null,1,0)) as [CSISmodifiedDate],
+sum(iif(nullif([temp_uei],'') is null,1,0)) as [temp_uei]
 FROM ErrorLogging.source_procurement_transaction
 
