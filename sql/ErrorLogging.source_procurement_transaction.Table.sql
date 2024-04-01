@@ -324,3 +324,31 @@ ALTER TABLE [ErrorLogging].[source_procurement_transaction] ADD  DEFAULT (getdat
 GO
 
 
+
+
+alter table errorlogging.source_procurement_transaction
+alter column legal_entity_zip5 varchar(5)
+
+alter table errorlogging.source_procurement_transaction
+alter column legal_entity_zip_last4 varchar(4)
+
+alter table errorlogging.source_procurement_transaction
+alter column place_of_perform_zip_last4 varchar(4)
+
+alter table errorlogging.source_procurement_transaction
+alter column place_of_performance_zip5 varchar(5)
+
+alter table errorlogging.fpdsstage2
+alter column ccrexception varchar(1)
+
+alter table errorlogging.source_procurement_transaction
+alter column sam_exception_description varchar(71)
+
+alter table errorlogging.source_procurement_transaction
+alter column ultimate_parent_unique_ide varchar(13)
+
+alter table errorlogging.source_procurement_transaction
+alter column awardee_or_recipient_uniqu varchar(13)
+
+alter table errorlogging.source_procurement_transaction
+alter column awardee_or_recipient_uniqu varchar(13)

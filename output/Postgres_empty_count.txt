@@ -1,0 +1,305 @@
+totalrows	" 92,786,491 "
+detached_award_procurement_id	 -   
+detached_award_proc_unique	 -   
+a_76_fair_act_action	" 1,269,016 "
+a_76_fair_act_action_desc	" 31,357,920 "
+action_date	 -   
+action_type	" 70,626,448 "
+action_type_description	" 70,626,448 "
+additional_reporting	" 61,645,430 "
+agency_id	 -   
+annual_revenue	" 35,921,529 "
+award_description	" 4,436,279 "
+award_modification_amendme	 10 
+award_or_idv_flag	" 92,786,491 "
+awardee_or_recipient_legal	" 556,447 "
+awardee_or_recipient_uniqu	" 18,919,018 "
+awarding_agency_code	" 2,812 "
+awarding_agency_name	" 2,847 "
+awarding_office_code	" 8,145 "
+awarding_office_name	" 96,511 "
+awarding_sub_tier_agency_c	" 2,820 "
+awarding_sub_tier_agency_n	" 2,821 "
+base_and_all_options_value	 -   
+base_exercised_options_val	" 2,876,168 "
+cage_code	" 51,650,807 "
+clinger_cohen_act_pla_desc	" 30,185,631 "
+clinger_cohen_act_planning	" 9,002 "
+commercial_item_acqui_desc	" 30,577,768 "
+commercial_item_acquisitio	" 521,604 "
+commercial_item_test_desc	" 3,214,338 "
+commercial_item_test_progr	" 3,214,338 "
+consolidated_contract	" 497,912 "
+consolidated_contract_desc	" 497,912 "
+construction_wage_rat_desc	" 16,613 "
+construction_wage_rate_req	" 16,613 "
+contingency_humanitar_desc	" 28,501,837 "
+contingency_humanitarian_o	" 28,501,837 "
+contract_award_type	" 3,848,011 "
+contract_award_type_desc	" 3,848,011 "
+contract_bundling	" 9,001,989 "
+contract_bundling_descrip	" 9,002,036 "
+contract_financing	" 40,513,217 "
+contract_financing_descrip	" 40,514,363 "
+contracting_officers_desc	" 16,339 "
+contracting_officers_deter	" 16,338 "
+cost_accounting_stand_desc	" 46,937,365 "
+cost_accounting_standards	" 54,698,623 "
+cost_or_pricing_data	" 43,904,227 "
+cost_or_pricing_data_desc	" 43,904,227 "
+country_of_product_or_desc	" 35,824,403 "
+country_of_product_or_serv	" 5,647,585 "
+created_at	 -   
+current_total_value_award	" 35,580,999 "
+division_name	" 92,786,241 "
+division_number_or_office	" 92,786,454 "
+dod_claimant_prog_cod_desc	" 42,699,448 "
+dod_claimant_program_code	" 42,699,435 "
+domestic_or_foreign_e_desc	" 30,408,791 "
+domestic_or_foreign_entity	" 30,408,556 "
+epa_designated_produc_desc	" 9,488,547 "
+epa_designated_product	" 9,488,547 "
+evaluated_preference	" 7,562,760 "
+evaluated_preference_desc	" 7,565,188 "
+extent_compete_description	" 3,566,220 "
+extent_competed	" 3,566,219 "
+fair_opportunity_limi_desc	" 52,323,793 "
+fair_opportunity_limited_s	" 79,014,243 "
+fed_biz_opps	" 6,239,636 "
+fed_biz_opps_description	" 5,409,148 "
+federal_action_obligation	 -   
+foreign_funding	" 30,139,717 "
+foreign_funding_desc	" 1,946 "
+funding_agency_code	" 920,729 "
+funding_agency_name	" 9,922,010 "
+funding_office_code	" 13,880,017 "
+funding_office_name	" 14,096,198 "
+funding_sub_tier_agency_co	" 9,921,445 "
+funding_sub_tier_agency_na	" 9,921,967 "
+government_furnished_desc	" 2,742 "
+government_furnished_prope	" 2,742 "
+high_comp_officer1_amount	" 86,880,863 "
+high_comp_officer1_full_na	" 86,880,863 "
+high_comp_officer2_amount	" 87,006,543 "
+high_comp_officer2_full_na	" 87,006,543 "
+high_comp_officer3_amount	" 87,091,919 "
+high_comp_officer3_full_na	" 87,091,919 "
+high_comp_officer4_amount	" 87,129,722 "
+high_comp_officer4_full_na	" 87,129,722 "
+high_comp_officer5_amount	" 87,224,487 "
+high_comp_officer5_full_na	" 87,224,487 "
+idv_type	" 88,938,480 "
+idv_type_description	" 88,938,480 "
+information_technolog_desc	" 43,053,623 "
+information_technology_com	" 43,053,623 "
+inherently_government_desc	" 84,308,818 "
+inherently_government_func	" 84,308,371 "
+initial_report_date	" 30,177,470 "
+interagency_contract_desc	" 159,417 "
+interagency_contracting_au	" 157,402 "
+labor_standards	" 17,517 "
+labor_standards_descrip	" 17,517 "
+last_modified	 606 
+legal_entity_address_line1	" 89,441 "
+legal_entity_address_line2	" 91,487,223 "
+legal_entity_address_line3	" 92,782,829 "
+legal_entity_city_name	" 64,852 "
+legal_entity_congressional	" 20,005,453 "
+legal_entity_country_code	" 118,985 "
+legal_entity_country_name	" 27,561,677 "
+legal_entity_county_code	" 29,504,922 "
+legal_entity_county_name	" 29,513,968 "
+legal_entity_state_code	" 2,828,321 "
+legal_entity_state_descrip	" 27,732,710 "
+legal_entity_zip4	" 787,952 "
+legal_entity_zip5	" 29,469,485 "
+legal_entity_zip_last4	" 36,011,943 "
+local_area_set_aside	" 22,970,145 "
+local_area_set_aside_desc	" 35,869,148 "
+major_program	" 86,914,133 "
+materials_supplies_article	" 16,896 "
+materials_supplies_descrip	" 18,901 "
+multi_year_contract	" 22,011,258 "
+multi_year_contract_desc	" 22,011,258 "
+multiple_or_single_aw_desc	" 89,148,450 "
+multiple_or_single_award_i	" 89,148,447 "
+naics	" 3,938,270 "
+naics_description	" 4,857,280 "
+national_interest_action	" 292,995 "
+national_interest_desc	" 293,021 "
+number_of_actions	" 3,848,046 "
+number_of_employees	" 35,921,548 "
+number_of_offers_received	" 27,015,039 "
+ordering_period_end_date	" 88,962,663 "
+organizational_type	" 43,580,824 "
+other_statutory_authority	" 90,378,144 "
+other_than_full_and_o_desc	" 77,586,943 "
+other_than_full_and_open_c	" 77,541,207 "
+parent_award_id	" 27,253,730 "
+performance_based_se_desc	" 2,066 "
+performance_based_service	" 4,942 "
+period_of_perf_potential_e	" 10,845,038 "
+period_of_performance_curr	" 3,887,009 "
+period_of_performance_star	 440 
+piid	 2 
+place_of_manufacture	" 22,952,408 "
+place_of_manufacture_desc	" 22,955,467 "
+place_of_perf_country_desc	" 4,598,127 "
+place_of_perfor_state_desc	" 8,621,930 "
+place_of_perform_city_name	" 16,606,350 "
+place_of_perform_country_c	" 4,597,244 "
+place_of_perform_country_n	" 92,786,491 "
+place_of_perform_county_co	" 16,280,901 "
+place_of_perform_county_na	" 16,290,695 "
+place_of_perform_state_nam	" 92,786,491 "
+place_of_perform_zip_last4	" 16,257,205 "
+place_of_performance_congr	" 11,093,717 "
+place_of_performance_locat	" 73,523,197 "
+place_of_performance_state	" 8,607,001 "
+place_of_performance_zip4a	" 15,802,403 "
+place_of_performance_zip5	" 16,245,401 "
+potential_total_value_awar	" 32,836,871 "
+price_evaluation_adjustmen	" 79,212,375 "
+product_or_service_co_desc	" 270,823 "
+product_or_service_code	" 268,555 "
+program_acronym	" 91,929,875 "
+program_system_or_equ_desc	" 49,418,926 "
+program_system_or_equipmen	" 47,603,574 "
+pulled_from	 -   
+purchase_card_as_paym_desc	" 3,850,551 "
+purchase_card_as_payment_m	" 3,850,551 "
+recovered_materials_s_desc	" 18,801,315 "
+recovered_materials_sustai	" 18,801,315 "
+referenced_idv_agency_desc	" 32,813,059 "
+referenced_idv_agency_iden	" 27,253,925 "
+referenced_idv_agency_name	" 92,786,491 "
+referenced_idv_modificatio	" 23,368,293 "
+referenced_idv_type	" 46,130,584 "
+referenced_idv_type_desc	" 46,130,586 "
+referenced_mult_or_si_desc	" 46,319,909 "
+referenced_mult_or_single	" 46,319,899 "
+research	" 92,503,852 "
+research_description	" 62,429,708 "
+sam_exception	" 92,610,846 "
+sam_exception_description	" 62,437,707 "
+sea_transportation	" 42,390,513 "
+sea_transportation_desc	" 42,390,513 "
+solicitation_date	" 70,905,147 "
+solicitation_identifier	" 77,386,483 "
+solicitation_procedur_desc	" 5,396,819 "
+solicitation_procedures	" 5,396,149 "
+subcontracting_plan	" 36,139,760 "
+subcontracting_plan_desc	" 36,139,760 "
+total_obligated_amount	" 32,836,871 "
+transaction_number	" 3,848,011 "
+type_of_contract_pric_desc	" 356,982 "
+type_of_contract_pricing	" 356,858 "
+type_of_idc	" 91,484,152 "
+type_of_idc_description	" 61,373,716 "
+type_set_aside	" 35,155,682 "
+type_set_aside_description	" 35,162,905 "
+ultimate_parent_legal_enti	" 241,496 "
+ultimate_parent_unique_ide	" 18,920,297 "
+undefinitized_action	" 663,710 "
+undefinitized_action_desc	" 652,907 "
+unique_award_key	 -   
+updated_at	 -   
+vendor_alternate_name	" 66,619,109 "
+vendor_alternate_site_code	" 15,381,297 "
+vendor_doing_as_business_n	" 88,282,233 "
+vendor_enabled	" 92,786,491 "
+vendor_fax_number	" 40,080,067 "
+vendor_legal_org_name	" 63,251,443 "
+vendor_location_disabled_f	" 92,786,491 "
+vendor_phone_number	" 28,983,690 "
+vendor_site_code	" 31,744,418 "
+awardee_or_recipient_uei	" 14,285 "
+ultimate_parent_uei	" 64,265 "
+small_business_competitive	" 54,821,589 "
+city_local_government	 -   
+county_local_government	 -   
+inter_municipal_local_gove	 -   
+local_government_owned	 -   
+municipality_local_governm	 -   
+school_district_local_gove	 -   
+township_local_government	 -   
+us_state_government	 -   
+us_federal_government	 -   
+federal_agency	 -   
+federally_funded_research	 -   
+us_tribal_government	 -   
+foreign_government	 -   
+community_developed_corpor	 -   
+labor_surplus_area_firm	 -   
+corporate_entity_not_tax_e	 -   
+corporate_entity_tax_exemp	 -   
+partnership_or_limited_lia	 -   
+sole_proprietorship	 -   
+small_agricultural_coopera	 -   
+international_organization	 -   
+us_government_entity	" 30,176,629 "
+emerging_small_business	 -   
+c8a_program_participant	 -   
+sba_certified_8_a_joint_ve	" 30,176,629 "
+dot_certified_disadvantage	" 30,113,372 "
+self_certified_small_disad	 -   
+historically_underutilized	 -   
+small_disadvantaged_busine	 -   
+the_ability_one_program	 -   
+historically_black_college	 -   
+c1862_land_grant_college	 -   
+c1890_land_grant_college	 -   
+c1994_land_grant_college	 -   
+minority_institution	 -   
+private_university_or_coll	 -   
+school_of_forestry	 -   
+state_controlled_instituti	 -   
+tribal_college	 -   
+veterinary_college	 -   
+educational_institution	 -   
+alaskan_native_servicing_i	" 30,176,629 "
+community_development_corp	 -   
+native_hawaiian_servicing	" 30,176,629 "
+domestic_shelter	 -   
+manufacturer_of_goods	 -   
+hospital_flag	 -   
+veterinary_hospital	 -   
+hispanic_servicing_institu	 -   
+foundation	 -   
+woman_owned_business	 -   
+minority_owned_business	 -   
+women_owned_small_business	" 4,318,101 "
+economically_disadvantaged	 -   
+joint_venture_women_owned	 -   
+joint_venture_economically	 -   
+veteran_owned_business	 -   
+service_disabled_veteran_o	 -   
+contracts	 -   
+grants	 -   
+receives_contracts_and_gra	 -   
+airport_authority	 -   
+council_of_governments	 -   
+housing_authorities_public	 -   
+interstate_entity	 -   
+planning_commission	 -   
+port_authority	 -   
+transit_authority	 -   
+subchapter_s_corporation	 -   
+limited_liability_corporat	 -   
+foreign_owned_and_located	 -   
+american_indian_owned_busi	 -   
+alaskan_native_owned_corpo	 -   
+indian_tribe_federally_rec	 -   
+native_hawaiian_owned_busi	 -   
+tribally_owned_business	 -   
+asian_pacific_american_own	 -   
+black_american_owned_busin	 -   
+hispanic_american_owned_bu	 -   
+native_american_owned_busi	 -   
+subcontinent_asian_asian_i	 -   
+other_minority_owned_busin	 -   
+for_profit_organization	 -   
+nonprofit_organization	 -   
+other_not_for_profit_organ	 -   
+us_local_government	 -   
+entity_data_source	" 73,395,545 "
