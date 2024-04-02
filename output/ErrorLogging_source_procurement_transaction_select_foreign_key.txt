@@ -58,17 +58,6 @@ GROUP BY fk.[award_or_idv_flag]
 ORDER BY fk.[award_or_idv_flag]
 
 
---List new [awardee_or_recipient_legal] for insertion into Vendor.VendorName
-SELECT fk.[awardee_or_recipient_legal],
-'Vendor.VendorName' as PrimaryKeyTable
-FROM ErrorLogging.source_procurement_transaction as fk
-LEFT OUTER JOIN Vendor.VendorName as pk
-On pk.vendorname=fk.[awardee_or_recipient_legal]
-WHERE pk.vendorname is NULL
-GROUP BY fk.[awardee_or_recipient_legal]
-ORDER BY fk.[awardee_or_recipient_legal]
-
-
 --List new [awardee_or_recipient_uniqu] for insertion into Contractor.Dunsnumber
 SELECT fk.[awardee_or_recipient_uniqu],
 'Contractor.Dunsnumber' as PrimaryKeyTable
@@ -1667,17 +1656,6 @@ HAVING max(iif(fk.undefinitized_action_desc=pk.UndefinitizedActionText or
 	charindex('('+fk.undefinitized_action_desc+')',pk.UndefinitizedActionText )>0,
 	0,1))=1
 ORDER BY fk.[undefinitized_action]
-
-
---List new [vendor_doing_as_business_n] for insertion into Vendor.VendorName
-SELECT fk.[vendor_doing_as_business_n],
-'Vendor.VendorName' as PrimaryKeyTable
-FROM ErrorLogging.source_procurement_transaction as fk
-LEFT OUTER JOIN Vendor.VendorName as pk
-On pk.vendorname=fk.[vendor_doing_as_business_n]
-WHERE pk.vendorname is NULL
-GROUP BY fk.[vendor_doing_as_business_n]
-ORDER BY fk.[vendor_doing_as_business_n]
 
 
 --List new [vendor_legal_org_name] for insertion into Vendor.VendorName
