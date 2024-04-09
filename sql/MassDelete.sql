@@ -1,14 +1,21 @@
+--2h32m
 select csistransactionid
 into Errorlogging.Massdelete20240409
 from contract.fpds
  where contract_transaction_unique_key is null and
  fiscal_year>=2000
 
+CREATE NONCLUSTERED INDEX [<Name of Missing Index, sysname,>]
+ON [Contract].[FPDS] ([contract_transaction_unique_key],[fiscal_year])
+INCLUDE ([unique_transaction_id],[transaction_status],[obligatedamount],[baseandexercisedoptionsvalue],[baseandalloptionsvalue],[maj_agency_cat],[mod_agency],[maj_fund_agency_cat],[contractingofficeagencyid],[contractingofficeid],[fundingrequestingagencyid],[fundingrequestingofficeid],[fundedbyforeignentity],[signeddate],[effectivedate],[currentcompletiondate],[ultimatecompletiondate],[lastdatetoorder],[contractactiontype],[reasonformodification],[typeofcontractpricing],[priceevaluationpercentdifference],[subcontractplan],[lettercontract],[multiyearcontract],[performancebasedservicecontract],[majorprogramcode],[contingencyhumanitarianpeacekeepingoperation],[contractfinancing],[costorpricingdata],[costaccountingstandardsclause],[transaction_description],[purchasecardaspaymentmethod],[nationalinterestactioncode],[progsourceagency],[progsourceaccount],[progsourcesubacct],[account_title],[rec_flag],[typeofidc],[multipleorsingleawardidc],[programacronym],[vendorname],[vendoralternatename],[vendorlegalorganizationname],[vendordoingasbusinessname],[divisionname],[divisionnumberorofficecode],[ccrexception],[streetaddress],[streetaddress2],[streetaddress3],[city],[zipcode],[vendorcountrycode],[vendor_state_code],[prime_award_transaction_recipient_cd_current],[vendorsitecode],[vendoralternatesitecode],[dunsnumber],[parentdunsnumber],[phoneno],[faxno],[registrationdate],[renewaldate],[mod_parent],[locationcode],[statecode],[pop_state_code],[placeofperformancecountrycode],[placeofperformancezipcode],[prime_award_transaction_place_of_performance_cd_current],[psc_cat],[productorservicecode],[systemequipmentcode],[claimantprogramcode],[principalnaicscode],[informationtechnologycommercialitemcategory],[gfe_gfp_code],[useofepadesignatedproducts],[recoveredmaterialclauses],[seatransportation],[contractbundling],[consolidatedcontract],[countryoforigin],[placeofmanufacture],[manufacturingorganizationtype],[agencyid],[piid],[modnumber],[transactionnumber],[idvagencyid],[idvpiid],[idvmodificationnumber],[solicitationid],[extentcompeted],[reasonnotcompeted],[numberofoffersreceived],[commercialitemacquisitionprocedures],[simplified_procedures_for_certain_commercial_items_code],[smallbusinesscompetitivenessdemonstrationprogram],[a76action],[solicitationprocedures],[typeofsetaside],[localareasetaside],[evaluatedpreference],[fedbizopps],[research_code],[statutoryexceptiontofairopportunity],[organizationaltype],[firm8aflag],[hubzoneflag],[sdbflag],[issbacertifiedsmalldisadvantagedbusiness],[shelteredworkshopflag],[hbcuflag],[educationalinstitutionflag],[womenownedflag],[veteranownedflag],[srdvobflag],[localgovernmentflag],[minorityinstitutionflag],[aiobflag],[stategovernmentflag],[federalgovernmentflag],[minorityownedbusinessflag],[apaobflag],[tribalgovernmentflag],[baobflag],[naobflag],[saaobflag],[nonprofitorganizationflag],[isothernotforprofitorganization],[isforprofitorganization],[isfoundation],[haobflag],[ishispanicservicinginstitution],[emergingsmallbusinessflag],[hospitalflag],[contractingofficerbusinesssizedetermination],[is1862landgrantcollege],[is1890landgrantcollege],[is1994landgrantcollege],[isveterinarycollege],[isveterinaryhospital],[isprivateuniversityorcollege],[isschoolofforestry],[isstatecontrolledinstitutionofhigherlearning],[receivescontracts],[receivesgrants],[receivescontractsandgrants],[isairportauthority],[iscouncilofgovernments],[ishousingauthoritiespublicortribal],[isinterstateentity],[isplanningcommission],[isportauthority],[istransitauthority],[issubchapterscorporation],[islimitedliabilitycorporation],[foreign_owned],[isarchitectureandengineering],[isdotcertifieddisadvantagedbusinessenterprise],[iscitylocalgovernment],[iscommunitydevelopedcorporationownedfirm],[iscommunitydevelopmentcorporation],[isconstructionfirm],[ismanufacturerofgoods],[iscorporateentitynottaxexempt],[iscountylocalgovernment],[isdomesticshelter],[isfederalgovernmentagency],[isfederallyfundedresearchanddevelopmentcorp],[isforeigngovernment],[isindiantribe],[isintermunicipallocalgovernment],[isinternationalorganization],[islaborsurplusareafirm],[islocalgovernmentowned],[ismunicipalitylocalgovernment],[isnativehawaiianownedorganizationorfirm],[isotherbusinessororganization],[isotherminorityowned],[ispartnershiporlimitedliabilitypartnership],[isschooldistrictlocalgovernment],[issmallagriculturalcooperative],[issoleproprietorship],[istownshiplocalgovernment],[istriballyownedfirm],[istribalcollege],[isalaskannativeownedcorporationorfirm],[iscorporateentitytaxexempt],[iswomenownedsmallbusiness],[isecondisadvwomenownedsmallbusiness],[isjointventurewomenownedsmallbusiness],[isjointventureecondisadvwomenownedsmallbusiness],[walshhealyact],[servicecontractact],[davisbaconact],[clingercohenact],[otherstatutoryauthority],[interagencycontractingauthority],[CSISCreatedDate],[CSISModifiedDate],[numberofactions],[numberofemployees],[annualrevenue],[CSIStransactionID],[PlaceofPerformanceCity],[prime_awardee_executive1],[prime_awardee_executive2],[prime_awardee_executive3],[prime_awardee_executive4],[prime_awardee_executive5],[prime_awardee_executive5_compensation],[prime_awardee_executive2_compensation],[prime_awardee_executive3_compensation],[prime_awardee_executive4_compensation],[prime_awardee_executive1_compensation],[last_modified_date],[TypeOfBusiness],[ContractActionTypeDD350],[headquartercode],[CAGE],[ContractNumber],[award_type_code],[idv_type_code],[parent_award_type_code],[parent_award_single_or_multiple_code],[primary_place_of_performance_county_name],[indian_tribe_federally_recognized],[other_minority_owned_business],[community_developed_corporation_owned_firm],[labor_surplus_area_firm],[city_local_government],[county_local_government],[inter_municipal_local_government],[local_government_owned],[corporate_entity_not_tax_exempt],[international_organization],[us_government_entity],[community_development_corporation],[domestic_shelter],[manufacturer_of_goods],[alaskan_native_servicing_institution],[native_hawaiian_servicing_institution],[sba_certified_8a_joint_venture],[dot_certified_disadvantage],[contract_award_unique_key],[current_total_value_of_award],[potential_total_value_of_award],[award_or_idv_flag],[inherently_governmental_functions],[total_dollars_obligated],[solicitation_date],[treasury_accounts_funding_this_award],[federal_accounts_funding_this_award],[usaspending_permalink],[awarding_agency_code],[recipient_county_name],[disaster_emergency_fund_codes_for_overall_award],[object_classes_funding_this_award],[program_activities_funding_this_award],[obligated_amount_funded_by_COVID19_supplementals_for_overall_award],[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award],[dod_acquisition_program_description],[recipient_uei],[recipient_parent_uei],[prime_award_base_transaction_description],[obligated_amount_funded_by_IIJA_supplementals_for_overall_award],[outlayed_amount_funded_by_IIJA_supplementals_for_overall_award],[recipient_name_raw],[recipient_parent_name_raw],[prime_award_transaction_recipient_county_fips_code],[prime_award_transaction_recipient_state_fips_code],[prime_award_transaction_place_of_performance_county_fips_code],[prime_award_transaction_place_of_performance_state_fips_code],[prime_award_transaction_recipient_cd_original],[prime_award_transaction_place_of_performance_cd_original],[total_outlayed_amount_for_overall_award],[initial_report_date])
+
+
  alter table Errorlogging.Massdelete20240409
  alter column csistransactionid int not null
 
  alter table Errorlogging.Massdelete20240409
  add constraint pk_Errorlogging_Massdelete20240409 primary key (csistransactionid)
+
 
 insert into [ErrorLogging].[FPDSdeleted] 
 ([unique_transaction_id]
@@ -579,13 +586,13 @@ SELECT  T.[unique_transaction_id]
       ,T.[total_outlayed_amount_for_overall_award]
 	  ,T.[initial_report_date]
 FROM Contract.FPDS as T 
-inner join Errorloggging.Massdelete2020409 m 
+inner join Errorlogging.Massdelete20240409 m 
 on t.CSIStransactionID=m.csistransactionid 
 where fiscal_year>=2001 and fiscal_year<=2007 and t.contract_transaction_unique_key is null
 
 delete t
 FROM Contract.FPDS as T 
-inner join Errorloggging.Massdelete2020409 m 
+inner join Errorlogging.Massdelete20240409 m 
 on t.CSIStransactionID=m.csistransactionid 
 inner join ErrorLogging.FPDSdeleted d
 on t.CSIStransactionID=d.CSIStransactionID
@@ -1161,13 +1168,13 @@ SELECT  T.[unique_transaction_id]
       ,T.[total_outlayed_amount_for_overall_award]
 	  ,T.[initial_report_date]
 FROM Contract.FPDS as T 
-inner join Errorloggging.Massdelete2020409 m 
+inner join Errorlogging.Massdelete20240409 m 
 on t.CSIStransactionID=m.csistransactionid 
 where fiscal_year>=2008 and fiscal_year<=2010 and t.contract_transaction_unique_key is null
 
 delete t
 FROM Contract.FPDS as T 
-inner join Errorloggging.Massdelete2020409 m 
+inner join Errorlogging.Massdelete20240409 m 
 on t.CSIStransactionID=m.csistransactionid 
 inner join ErrorLogging.FPDSdeleted d
 on t.CSIStransactionID=d.CSIStransactionID
@@ -1743,14 +1750,14 @@ SELECT  T.[unique_transaction_id]
       ,T.[total_outlayed_amount_for_overall_award]
 	  ,T.[initial_report_date]
 FROM Contract.FPDS as T 
-inner join Errorloggging.Massdelete2020409 m 
+inner join Errorlogging.Massdelete20240409 m 
 on t.CSIStransactionID=m.csistransactionid 
 where fiscal_year>=2011 and fiscal_year<=2014 and t.contract_transaction_unique_key is null
 
 
 delete t
 FROM Contract.FPDS as T 
-inner join Errorloggging.Massdelete2020409 m 
+inner join Errorlogging.Massdelete20240409 m 
 on t.CSIStransactionID=m.csistransactionid 
 inner join ErrorLogging.FPDSdeleted d
 on t.CSIStransactionID=d.CSIStransactionID
@@ -2325,13 +2332,13 @@ SELECT  T.[unique_transaction_id]
       ,T.[total_outlayed_amount_for_overall_award]
 	  ,T.[initial_report_date]
 FROM Contract.FPDS as T 
-inner join Errorloggging.Massdelete2020409 m 
+inner join Errorlogging.Massdelete20240409 m 
 on t.CSIStransactionID=m.csistransactionid 
 where fiscal_year=2015 and t.contract_transaction_unique_key is null
 
 delete t
 FROM Contract.FPDS as T 
-inner join Errorloggging.Massdelete2020409 m 
+inner join Errorlogging.Massdelete20240409 m 
 on t.CSIStransactionID=m.csistransactionid 
 inner join ErrorLogging.FPDSdeleted d
 on t.CSIStransactionID=d.CSIStransactionID
@@ -2907,13 +2914,13 @@ SELECT  T.[unique_transaction_id]
       ,T.[total_outlayed_amount_for_overall_award]
 	  ,T.[initial_report_date]
 FROM Contract.FPDS as T 
-inner join Errorloggging.Massdelete2020409 m 
+inner join Errorlogging.Massdelete20240409 m 
 on t.CSIStransactionID=m.csistransactionid 
 where fiscal_year=2016 and t.contract_transaction_unique_key is null
 
 delete t
 FROM Contract.FPDS as T 
-inner join Errorloggging.Massdelete2020409 m 
+inner join Errorlogging.Massdelete20240409 m 
 on t.CSIStransactionID=m.csistransactionid 
 inner join ErrorLogging.FPDSdeleted d
 on t.CSIStransactionID=d.CSIStransactionID
@@ -3489,13 +3496,13 @@ SELECT  T.[unique_transaction_id]
       ,T.[total_outlayed_amount_for_overall_award]
 	  ,T.[initial_report_date]
 FROM Contract.FPDS as T 
-inner join Errorloggging.Massdelete2020409 m 
+inner join Errorlogging.Massdelete20240409 m 
 on t.CSIStransactionID=m.csistransactionid 
 where fiscal_year=2017 and t.contract_transaction_unique_key is null
 
 delete t
 FROM Contract.FPDS as T 
-inner join Errorloggging.Massdelete2020409 m 
+inner join Errorlogging.Massdelete20240409 m 
 on t.CSIStransactionID=m.csistransactionid 
 inner join ErrorLogging.FPDSdeleted d
 on t.CSIStransactionID=d.CSIStransactionID
