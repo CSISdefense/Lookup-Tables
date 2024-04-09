@@ -244,9 +244,9 @@ UPDATE T SET
 --NA=coalesce(nullif(S.[temp_uei],''),T.NA)
 FROM Contract.FPDS as T
 inner join errorlogging.CTIDmatchmissingCTU ffyc 
-on t.CSIStransactionID=ffyc.CSIStransactionID
+on t.CSIStransactionID=t.CSIStransactionID
 INNER Join ErrorLogging.source_procurement_transaction as S
-ON s.[detached_award_proc_unique]=ffyc.detached_award_proc_unique
+ON s.[detached_award_proc_unique]=t.detached_award_proc_unique
 WHERE s.last_modified>=t.last_modified_date --and s.fiscal_year in (2000,2001,2002,2003,2004) and  t.fiscal_year in (2000,2001,2002,2003,2004)
 
 INSERT INTO Contract.FPDS
@@ -3162,8 +3162,10 @@ FROM ErrorLogging.source_procurement_transaction s
 --on s.detached_award_proc_unique=ctu.contract_transaction_unique_key
 inner join errorlogging.postgrestoinsert ctu
 on s.detached_award_proc_unique=ctu.detached_award_proc_unique
-WHERE s.fiscal_year in (2020,2021,2022,2023,2024) and
-ctu.fiscal_year in (2020,2021,2022,2023,2024)--detached_award_proc_unique NOT in (SELECT contract_transaction_unique_key 
+WHERE s.fiscal_year in (2020,2021,2022) and
+ctu.fiscal_year in (2020,2021,2022) and 
+not ctu.detached_award_proc_unique in (select contract_transaction_unique_key from contract.fpds where  fiscal_year in (2020,2021,2022))
+--detached_award_proc_unique NOT in (SELECT contract_transaction_unique_key 
 --FROM Contract.FPDS where contract_transaction_unique_key is not null and fiscal_year in (2001,2002,2003,2004)) 
 --and s.fiscal_year in (2001,2002,2003,2004)
 
