@@ -236,7 +236,8 @@ UPDATE T SET
 [prime_award_transaction_place_of_performance_state_fips_code]=coalesce(S.[prime_award_transaction_place_of_performance_state_fips_code],T.[prime_award_transaction_place_of_performance_state_fips_code]),
 [prime_award_transaction_recipient_cd_original]=coalesce(nullif(S.[prime_award_transaction_recipient_cd_original],''),T.[prime_award_transaction_recipient_cd_original]),
 [prime_award_transaction_place_of_performance_cd_original]=coalesce(nullif(S.[prime_award_transaction_place_of_performance_cd_original],''),T.[prime_award_transaction_place_of_performance_cd_original]),
-[total_outlayed_amount_for_overall_award]=coalesce(S.[total_outlayed_amount_for_overall_award],T.[total_outlayed_amount_for_overall_award])
+[total_outlayed_amount_for_overall_award]=coalesce(S.[total_outlayed_amount_for_overall_award],T.[total_outlayed_amount_for_overall_award]),
+[initial_report_date]=coalesce(S.[initial_report_date],T.[initial_report_date])
 FROM Contract.FPDS as T
 INNER Join ErrorLogging.FPDSstage2 as S
 ON s.CSIStransactionID=t.CSIStransactionID

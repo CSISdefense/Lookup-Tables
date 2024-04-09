@@ -55,6 +55,10 @@ NoCompOffr,Competition,How many offers a contract received(No Competition/1 offe
 Competition.effective.only,Competition,Extent of Competition,,,FALSE
 AnyCommercialText,Commercial,Commercial,,,FALSE
 Commercial,Commercial,Commercial,,,FALSE
+CriticalTech,HighTech,Economic Sector Relevant to Critical Tech,,,FALSE
+costorpricingdata,costorpricingdata,Cost or Pricing Data,,,TRUE
+casorffp,Pricing,Cost Accounting Standards (CAS),,,FALSE
+costaccountingstandardsclause,Pricing,Cost Accounting Standards (CAS),,,FALSE
 Pricing.Mechanism.detail,Pricing,Pricing Mechanism,,,FALSE
 Pricing.Mechanism.sum,Pricing,Pricing Mechanism,,,FALSE
 Base,Pricing,Pricing Mechanism,,,FALSE
@@ -232,8 +236,6 @@ multiyearcontract,,,,,TRUE
 performancebasedservicecontract,,,,,FALSE
 majorprogramcode,,,,,FALSE
 contractfinancing,,,,,TRUE
-costorpricingdata,,,,,TRUE
-costaccountingstandardsclause,,,,,FALSE
 descriptionofcontractrequirement,,,,,FALSE
 purchasecardaspaymentmethod,,,,,TRUE
 numberofactions,,,,,FALSE

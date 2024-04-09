@@ -85,10 +85,10 @@ read_create_table<-function(FileName,dir="ImportAids\\"){
 }
 
 convert_all_of_type<-function(TargetTable.df,
-                           OldType,
-                           NewType,
-                           Schema,
-                           TableName){
+                              OldType,
+                              NewType,
+                              Schema,
+                              TableName){
   #Limit it to just relevant variables
   TargetTable.df<-TargetTable.df[TargetTable.df$VariableType==OldType,]
   if(nrow(TargetTable.df)==0)
@@ -105,16 +105,18 @@ list_problem_type<-function(TargetTable.df){
 }
 
 
-translate_name<-function(TargetTable.df,test_only=FALSE){
-  lookup.NameConversion<-read.csv("ImportAids\\NameConversion.csv",
+translate_name<-function(TargetTable.df,
+                         test_only=FALSE,
+                         file="NameConversion.csv"){
+  lookup.NameConversion<-read.csv(file.path("ImportAids",file),
                                   stringsAsFactors = FALSE,
                                   na.strings = c("NULL","NA"))
   if(!"SourceVariableName" %in% colnames(TargetTable.df)){
     colnames(TargetTable.df)[1]<-"SourceVariableName" 
   }
   if(any(lookup.NameConversion$CSISvariableName==""))
-    stop("Missing CSISvariableName in NameConversion.csv")
-
+    stop(paste0("Missing CSISvariableName in ",file))
+  
   TargetTable.df$OriginalSourceVariableName<-TargetTable.df$SourceVariableName
   TargetTable.df$SourceVariableName<-tolower(TargetTable.df$SourceVariableName)
   
@@ -130,14 +132,14 @@ translate_name<-function(TargetTable.df,test_only=FALSE){
   
   if(any(is.na(TargetTable.df$CSISvariableName))){
     print(unique(TargetTable.df$SourceVariableName[is.na(TargetTable.df$CSISvariableName)]))
-    stop("Unmatched columns in SourceVariableName.")
+    stop(paste0("Unmatched columns in SourceVariableName in ImportAids/",file,"."))
   }
   
   #Protection against duplicate CSISvariableName
   if(any(duplicated(TargetTable.df$CSISvariableName))){
     print(all_duplicate(TargetTable.df[,c("SourceVariableName","CSISvariableName")],key="CSISvariableName"))
-      # unique(TargetTable.df[duplicated(TargetTable.df$CSISvariableName),c("SourceVariableName","CSISvariableName")])
-      # )
+    # unique(TargetTable.df[duplicated(TargetTable.df$CSISvariableName),c("SourceVariableName","CSISvariableName")])
+    # )
     stop("Duplicate entries in CSISvariableName after matching")
   }
   #Add the CSISvariableName fields: IsDroppedNameField	Pair
@@ -147,15 +149,28 @@ translate_name<-function(TargetTable.df,test_only=FALSE){
                                              skip_check_var = "IsDroppedNameField")
   
   TargetTable.df$SourceVariableName<-TargetTable.df$OriginalSourceVariableName
-
+  
+  #Determine Source Variable names for any pairs
+  lookup.PairConversion<-lookup.NameConversion %>% 
+    mutate(Pair=CSISvariableName,
+           SourcePairName=SourceVariableName) %>%
+    filter(Pair %in% TargetTable.df$Pair & SourcePairName %in% TargetTable.df$SourceVariableName) %>%
+    select(-CSISvariableName,-SourceVariableName) 
+  
+  if(any(duplicated(lookup.PairConversion$Pair))){
+    print(unique(lookup.PairConversion$Pair[duplicated(lookup.PairConversion$Pair)]))
+    stop(paste("Duplicate Pair entries in CSISvariableName in",file))
+  }
+  
+  TargetTable.df<-left_join(TargetTable.df,lookup.PairConversion)
   
   TargetTable.df<-subset(TargetTable.df,select=-c(OriginalSourceVariableName))
   
   
   TargetTable.df$CSISvariableName[TargetTable.df$SourceVariableName %in% 
-                   lookup.NameConversion$CSISvariableName]<-
+                                    lookup.NameConversion$CSISvariableName]<-
     TargetTable.df$SourceVariableName[TargetTable.df$SourceVariableName %in% 
-                     lookup.NameConversion$CSISvariableName]
+                                        lookup.NameConversion$CSISvariableName]
   
   
   if(test_only) return(TRUE)
@@ -165,8 +180,8 @@ translate_name<-function(TargetTable.df,test_only=FALSE){
 
 
 merge_source_and_csis_name_tables<-function(SourceTable.df,
-    CSIStable.df,
-    drop_unmatched=TRUE){
+                                            CSIStable.df,
+                                            drop_unmatched=TRUE){
   colnames(SourceTable.df)[1:3]<-c("SourceVariableName",
                                    "SourceVariableType",
                                    "SourceNullable")
@@ -250,9 +265,9 @@ convert_switch<-function(MergeTable.df,
   
   ConvertText<-ifelse(IsTryConvert,"Try_Convert","Convert")
   MergeTable.df$CSISvariableShortType<-substr(MergeTable.df$CSISvariableType,1,
-                                          regexpr(']',MergeTable.df$CSISvariableType))
+                                              regexpr(']',MergeTable.df$CSISvariableType))
   MergeTable.df$SourceVariableShortType<-substr(MergeTable.df$SourceVariableType,1,
-                                              regexpr(']',MergeTable.df$SourceVariableType))
+                                                regexpr(']',MergeTable.df$SourceVariableType))
   
   MergeTable.df$ConvertList<-NA
   
@@ -262,7 +277,7 @@ convert_switch<-function(MergeTable.df,
     SwitchList[MergeTable.df$IsDroppedNameField==TRUE] <-FALSE
   MergeTable.df$ConvertList[SwitchList]<-MergeTable.df$SourceVariableName[SwitchList]
   
-    
+  
   #Converting to a numerical type
   SwitchList<-MergeTable.df$CSISvariableShortType %in% c("[decimal]","[smallint]","[bigint]")&
     is.na(MergeTable.df$ConvertList)
@@ -336,61 +351,61 @@ convert_switch<-function(MergeTable.df,
 
 
 length_check<-function(data){
-
-    data$length_check<-""
-
-    data$VariableTypeNumber<-as.numeric(
-        (substr(data$CSISvariableType,
-                regexpr('[(]',data$CSISvariableType)+1,
-                regexpr('[)]',data$CSISvariableType)-1)
-        ))
-
-    
-    #No Colon and Varchar to Varchar
+  
+  data$length_check<-""
+  
+  data$VariableTypeNumber<-as.numeric(
+    (substr(data$CSISvariableType,
+            regexpr('[(]',data$CSISvariableType)+1,
+            regexpr('[)]',data$CSISvariableType)-1)
+    ))
+  
+  
+  #No Colon and Varchar to Varchar
+  SwitchList<-data$CSISvariableShortType=="[varchar]"&
+    data$SourceVariableShortType=="[varchar]" &
+    data$length_check==""&
+    !is.na(data$VariableTypeNumber)
+  if("is.colon.split" %in% colnames(data))
+    SwitchList<-SwitchList&(data$is.colon.split=="FALSE" | is.na(data$is.colon.split))
+  
+  data$length_check[SwitchList]<-
+    paste("len(",data$SourceVariableName[SwitchList] ,")",sep=""
+    )
+  
+  
+  
+  #No Colon and other  to Varchar
+  
+  SwitchList<-data$CSISvariableShortType=="[varchar]"&
+    data$length_check==""&
+    !is.na(data$VariableTypeNumber)
+  if("is.colon.split" %in% colnames(data))
+    SwitchList<-SwitchList&(data$is.colon.split=="FALSE" | is.na(data$is.colon.split))
+  data$length_check[SwitchList]<-
+    paste("len(",data$SourceVariableName[SwitchList] ,")",sep=""
+          
+    )
+  
+  
+  
+  
+  #Colon Split
+  if("is.colon.split" %in% colnames(data)){
     SwitchList<-data$CSISvariableShortType=="[varchar]"&
-      data$SourceVariableShortType=="[varchar]" &
       data$length_check==""&
-      !is.na(data$VariableTypeNumber)
-    if("is.colon.split" %in% colnames(data))
-      SwitchList<-SwitchList&(data$is.colon.split=="FALSE" | is.na(data$is.colon.split))
-    
+      !is.na(data$VariableTypeNumber)&
+      (data$is.colon.split=="TRUE")
     data$length_check[SwitchList]<-
-      paste("len(",data$SourceVariableName[SwitchList] ,")",sep=""
+      paste("OR len(",
+            "(Select LeftOfColon from FPDSTypeTable.leftofcolon(",
+            data$SourceVariableName[SwitchList],")))",
+            ">",data$VariableTypeNumber[SwitchList],"\n"
       )
-    
-    
-            
-    #No Colon and other  to Varchar
-
-    SwitchList<-data$CSISvariableShortType=="[varchar]"&
-        data$length_check==""&
-        !is.na(data$VariableTypeNumber)
-    if("is.colon.split" %in% colnames(data))
-       SwitchList<-SwitchList&(data$is.colon.split=="FALSE" | is.na(data$is.colon.split))
-    data$length_check[SwitchList]<-
-        paste("len(",data$SourceVariableName[SwitchList] ,")",sep=""
-              
-        )
-    
-    
-    
-    
-    #Colon Split
-    if("is.colon.split" %in% colnames(data)){
-      SwitchList<-data$CSISvariableShortType=="[varchar]"&
-        data$length_check==""&
-        !is.na(data$VariableTypeNumber)&
-        (data$is.colon.split=="TRUE")
-      data$length_check[SwitchList]<-
-        paste("OR len(",
-              "(Select LeftOfColon from FPDSTypeTable.leftofcolon(",
-              data$SourceVariableName[SwitchList],")))",
-              ">",data$VariableTypeNumber[SwitchList],"\n"
-        )
-    }
-    
-    
-    data
+  }
+  
+  
+  data
 }
 
 left_of_colon<-function(data){
@@ -402,9 +417,9 @@ left_of_colon<-function(data){
   data$left_of_colon[SwitchList]<-
     paste("(Select LeftOfColon from FPDSTypeTable.leftofcolon(",
           data$SourceVariableName[SwitchList],")) as leftofcolon,\n",
-    sep=""
+          sep=""
     )
-
+  
   data
 }
 
@@ -414,11 +429,11 @@ create_try_converts<-function(data,
                               TableName,
                               DateType=101,
                               IncludeAlters=TRUE,
-  path="https://raw.githubusercontent.com/CSISdefense/Lookup-Tables/master/style/",
-  Add_Colon_Split=FALSE,
-  Apply_Drop=TRUE,
-  IncludeSingle=TRUE,
-  IncludeMultiple=TRUE){
+                              path="https://raw.githubusercontent.com/CSISdefense/Lookup-Tables/master/style/",
+                              Add_Colon_Split=FALSE,
+                              Apply_Drop=TRUE,
+                              IncludeSingle=TRUE,
+                              IncludeMultiple=TRUE){
   #Limit it to just cases where the variable type is changing
   data<-subset(data,SourceVariableType!=data$CSISvariableType)
   
@@ -428,7 +443,10 @@ create_try_converts<-function(data,
     return(0)
   }
   data<-convert_switch(data,DateType,TRUE,Apply_Drop=Apply_Drop)
-  if(any(is.na(data$ConvertList))) stop("NA ConvertList")
+  if(any(is.na(data$ConvertList))){
+    View(data %>% filter(is.na(ConvertList)))
+    stop("NA ConvertList")
+  }
   
   #This is only relevant to legacy FPDS
   if(Add_Colon_Split==TRUE){
@@ -545,25 +563,25 @@ create_try_converts<-function(data,
 
 
 count_empties<-function(Table.df,
-  Schema,
-  TableName){
+                        Schema,
+                        TableName){
   
   Table.df$NullCheck<-Table.df$SourceVariableName
   Table.df$NullCheck[substr(Table.df$VariableType,1,9)=="[varchar]" | 
-  substr(Table.df$VariableType,1,7)=="varchar"]<-
+                       substr(Table.df$VariableType,1,7)=="varchar"]<-
     paste("nullif(",Table.df$NullCheck[substr(Table.df$VariableType,1,9)=="[varchar]" | 
-  substr(Table.df$VariableType,1,7)=="varchar"],",'')",sep="")
+                                         substr(Table.df$VariableType,1,7)=="varchar"],",'')",sep="")
   
   InsertList<-"SELECT count(*) as TotalRows,"
   InsertList<-c(InsertList,paste("sum(iif(",Table.df$NullCheck,
-    " is null,1,0)) as ",Table.df$SourceVariableName,",",sep=""))
+                                 " is null,1,0)) as ",Table.df$SourceVariableName,",",sep=""))
   #Remove the comma from the select list column
   InsertList[length(InsertList)]<-substr(InsertList[length(InsertList)],
-    1,
-    nchar(InsertList[length(InsertList)])-1)
+                                         1,
+                                         nchar(InsertList[length(InsertList)])-1)
   
   InsertList<-c(InsertList,
-    paste("FROM ",Schema,".",TableName,"\n",sep="")
+                paste("FROM ",Schema,".",TableName,"\n",sep="")
   )    
   
   InsertList
@@ -573,13 +591,13 @@ count_empties<-function(Table.df,
 
 
 create_update_FPDS<-function(MergeTable.df,
-    SourceSchema,
-    SourceTableName,
-    TargetSchema,
-    TargetTableName,
-    DateType=101,
-    drop_name=FALSE,
-    update_with_null=FALSE){
+                             SourceSchema,
+                             SourceTableName,
+                             TargetSchema,
+                             TargetTableName,
+                             DateType=101,
+                             drop_name=FALSE,
+                             update_with_null=FALSE){
   
   update_list<-"UPDATE T SET"
   
@@ -592,32 +610,32 @@ create_update_FPDS<-function(MergeTable.df,
     "[CSISCreatedDate]",
     "[unique_transaction_id]",
     "[CSIStransactionID]"))),]
-
+  
   #Add a null check to columns missing in recent USAspending downloads
   if(update_with_null==TRUE){
-  NullCheckCols<-which(tolower(MergeTable.df$SourceVariableName) %in% tolower(c(
-    "[mod_agency]",
-    "[lettercontract]",
-    "[majorprogramcode]",
-    "[account_title]",
-    "[rec_flag]",
-    "[parentdunsnumber]",
-    "[locationcode]",
-    "[statecode]",
-    "[smallbusinesscompetitivenessdemonstrationprogram]",
-    "[isarchitectureandengineering]",
-    "[isconstructionfirm]",
-    "[isotherbusinessororganization]",
-    "[iswomenownedsmallbusiness]",
-    "[isecondisadvwomenownedsmallbusiness]",
-    "[isjointventurewomenownedsmallbusiness]",
-    "[isjointventureecondisadvwomenownedsmallbusiness]",
-    "[prime_awardee_executive5]",
-    "[prime_awardee_executive4]",
-    "[prime_awardee_executive3]",
-    "[prime_awardee_executive2]",
-    "[prime_awardee_executive1]",
-    "[progsourcesubacct]")))
+    NullCheckCols<-which(tolower(MergeTable.df$SourceVariableName) %in% tolower(c(
+      "[mod_agency]",
+      "[lettercontract]",
+      "[majorprogramcode]",
+      "[account_title]",
+      "[rec_flag]",
+      "[parentdunsnumber]",
+      "[locationcode]",
+      "[statecode]",
+      "[smallbusinesscompetitivenessdemonstrationprogram]",
+      "[isarchitectureandengineering]",
+      "[isconstructionfirm]",
+      "[isotherbusinessororganization]",
+      "[iswomenownedsmallbusiness]",
+      "[isecondisadvwomenownedsmallbusiness]",
+      "[isjointventurewomenownedsmallbusiness]",
+      "[isjointventureecondisadvwomenownedsmallbusiness]",
+      "[prime_awardee_executive5]",
+      "[prime_awardee_executive4]",
+      "[prime_awardee_executive3]",
+      "[prime_awardee_executive2]",
+      "[prime_awardee_executive1]",
+      "[progsourcesubacct]")))
   }
   else
     NullCheckCols<-1:nrow(MergeTable.df)
@@ -628,43 +646,94 @@ create_update_FPDS<-function(MergeTable.df,
   MergeTable.df$NullCheck<-paste("S.",MergeTable.df$SourceVariableName,sep="")
   MergeTable.df$NullCheck[NullCheckCols&varchar]<-
     paste("coalesce(nullif(",MergeTable.df$NullCheck[NullCheckCols&varchar],",''),",
-      "T.",MergeTable.df$CSISvariableName[NullCheckCols&varchar],")",sep="")
+          "T.",MergeTable.df$CSISvariableName[NullCheckCols&varchar],")",sep="")
   MergeTable.df$NullCheck[NullCheckCols&!varchar]<-
     paste("coalesce(",MergeTable.df$NullCheck[NullCheckCols&!varchar],",",
           "T.",MergeTable.df$CSISvariableName[NullCheckCols&!varchar],")",sep="")
   
   
-    update_list<-c(update_list,paste(MergeTable.df$CSISvariableName,"=",
-    MergeTable.df$NullCheck,",",sep=""))
+  update_list<-c(update_list,paste(MergeTable.df$CSISvariableName,"=",
+                                   MergeTable.df$NullCheck,",",sep=""))
   #Remove the comma from the select list column
   update_list[length(update_list)]<-substr(update_list[length(update_list)],
-    1,
-    nchar(update_list[length(update_list)])-1)
+                                           1,
+                                           nchar(update_list[length(update_list)])-1)
   #Wrap up
   update_list<-c(update_list,
-    paste("FROM ",TargetSchema,".",TargetTableName," as T",sep="")
+                 paste("FROM ",TargetSchema,".",TargetTableName," as T",sep="")
   )    
   update_list<-c(update_list,
-    paste("INNER Join ",SourceSchema,".",SourceTableName," as S",sep=""),
-    "ON s.CSIStransactionID=t.CSIStransactionID",
-    "WHERE s.last_modified_date>=t.last_modified_date"
+                 paste("INNER Join ",SourceSchema,".",SourceTableName," as S",sep=""),
+                 "ON s.CSIStransactionID=t.CSIStransactionID",
+                 "WHERE s.last_modified_date>=t.last_modified_date"
   )    
   
-    
+  
   update_list
 }
 
 
 
+create_compare_cols<-function(MergeTable.df,
+                              SourceSchema,
+                              SourceTableName,
+                              TargetSchema,
+                              TargetTableName,
+                              source_primary_key="detached_award_proc_unique",
+                              target_primary_key="contract_transaction_unique_key",
+                              drop_unmatched=FALSE){
+  
+  compare_list<-"SELECT count(*) as N,"
+  
+  if("IsDroppedNameField" %in% colnames(MergeTable.df))
+    MergeTable.df<-MergeTable.df %>% filter(IsDroppedNameField==FALSE | is.na(IsDroppedNameField))
+  
+  if(drop_unmatched)
+    MergeTable.df<-MergeTable.df %>% filter(!is.na(CSISvariableName))
+  else
+    if(any(is.na(CSISvariableName)))
+      stop("Some source fields do not appear in the destination table")
+  
+  #Remove rows that shouldn't be updated
+  MergeTable.df<-MergeTable.df[which(!tolower(MergeTable.df$SourceVariableName) %in% tolower(c(
+    "[CSISCreatedDate]",
+    "[unique_transaction_id]",
+    "[CSIStransactionID]"))),]
+  
+  
+  compare_list<-c(compare_list,paste0("SUM(CASE WHEN t.",MergeTable.df$CSISvariableName,"=",
+                                      "s.",MergeTable.df$SourceVariableName," THEN 1",
+                                      " WHEN t.",MergeTable.df$CSISvariableName," IS NULL AND ",
+                                      "s.",MergeTable.df$SourceVariableName," IS NULL THEN 1 ",
+                                      "ELSE 0 END) AS ", MergeTable.df$SourceVariableName,","))
+  #Remove the comma from the select list column
+  compare_list[length(compare_list)]<-substr(compare_list[length(compare_list)],
+                                             1,
+                                             nchar(compare_list[length(compare_list)])-1)
+  #Wrap up
+  compare_list<-c(compare_list,
+                  paste("FROM ",TargetSchema,".",TargetTableName," as T",sep="")
+  )    
+  compare_list<-c(compare_list,
+                  paste("INNER Join ",SourceSchema,".",SourceTableName," as S",sep=""),
+                  paste0("ON s.",source_primary_key,"=t.",target_primary_key)
+  )    
+  
+  
+  compare_list
+}
+
+
+
 create_insert<-function(MergeTable.df,
-                       SourceSchema,
-                       SourceTableName,
-                       TargetSchema,
-                       TargetTableName,
-                       DateType=101,
-                       allow_missing=TRUE,
-                       Apply_Drop=TRUE,
-                       FPDS=FALSE){
+                        SourceSchema,
+                        SourceTableName,
+                        TargetSchema,
+                        TargetTableName,
+                        DateType=101,
+                        allow_missing=TRUE,
+                        Apply_Drop=TRUE,
+                        FPDS=FALSE){
   
   if("IsDroppedNameField" %in% colnames(MergeTable.df) & Apply_Drop==TRUE)
     MergeTable.df<-MergeTable.df %>% filter(IsDroppedNameField==FALSE | is.na(IsDroppedNameField))
@@ -672,7 +741,7 @@ create_insert<-function(MergeTable.df,
     MergeTable.df<-MergeTable.df %>% filter(!is.na(CSISvariableType))
   else if(any(is.na(MergeTable.df$CSISvariableType)))
     stop("Some columns are missing a destination type")
-    
+  
   MergeTable.df<-convert_switch(MergeTable.df,DateType,FALSE,Apply_Drop = Apply_Drop)
   InsertList<-paste("INSERT INTO ",TargetSchema,".",TargetTableName,"\n",
                     "(",sep="")
@@ -683,10 +752,10 @@ create_insert<-function(MergeTable.df,
   InsertList<-c(InsertList,paste(MergeTable.df$ConvertList,",",sep=""))
   #Remove the comma from the select list column
   InsertList[length(InsertList)]<-substr(InsertList[length(InsertList)],1,
-                                       nchar(InsertList[length(InsertList)])-1)
+                                         nchar(InsertList[length(InsertList)])-1)
   
   InsertList<-c(InsertList,
-                    paste("FROM ",SourceSchema,".",SourceTableName,sep="")
+                paste("FROM ",SourceSchema,".",SourceTableName,sep="")
   )
   if (FPDS==TRUE)
     InsertList<-c(InsertList,
@@ -700,19 +769,19 @@ create_insert<-function(MergeTable.df,
 
 
 convert_field_to_foreign_key<-function(FKschema,
-                                   FKtable,
-                                   FKcolumn,
-                                   TargetTable.df,
-                                   PKschema,
-                                   PKtable,
-                                   PKcolumn=PKtable,
-                                   FKname=NULL,
-                                   PKname=NULL,
-                                   suppress_select=FALSE,
-                                   suppress_alter=FALSE,
-                                   suppress_insert=FALSE,
-                                   suppress_update=TRUE,
-                                   allow_name_mismatch=TRUE){
+                                       FKtable,
+                                       FKcolumn,
+                                       TargetTable.df,
+                                       PKschema,
+                                       PKtable,
+                                       PKcolumn=PKtable,
+                                       FKname=NULL,
+                                       PKname=NULL,
+                                       suppress_select=FALSE,
+                                       suppress_alter=FALSE,
+                                       suppress_insert=FALSE,
+                                       suppress_update=TRUE,
+                                       allow_name_mismatch=TRUE){
   
   
   fkTable.df<-get_ForeignKeyList()
@@ -737,15 +806,15 @@ convert_field_to_foreign_key<-function(FKschema,
   pkTable.df<-subset(pkTable.df,
                      toupper(PKSchemaName)==toupper(PKschema) &
                        toupper(PKTableName)==toupper(PKtable) &
-                     toupper(PKColumnCode)==toupper(PKcolumn))
+                       toupper(PKColumnCode)==toupper(PKcolumn))
   if(nrow(pkTable.df)==0)
     stop(paste("No Primary Key match for",PKschema,PKtable,PKcolumn))
   #Test if the field can be converted to the primary keys typed.
   
   if(!"SourceVariableType" %in% colnames(TargetTable.df)){
     colnames(TargetTable.df)[1:3]<-c("SourceVariableName" ,
-                                "SourceVariableType",
-                                "SourceVariableNullable")
+                                     "SourceVariableType",
+                                     "SourceVariableNullable")
   }
   
   if(length(FKname)>0){ 
@@ -776,23 +845,23 @@ convert_field_to_foreign_key<-function(FKschema,
     stop(paste("No Source match for",FKcolumn))
   
   
-
+  
   TargetTable.df<-left_join(TargetTable.df,pkTable.df,
-                       by=c("PKSchemaName",
-                            "PKTableName",
-                            "PKColumnCode")
-                            )
+                            by=c("PKSchemaName",
+                                 "PKTableName",
+                                 "PKColumnCode")
+  )
   #If the VariableTypes don't match, create a select and alter to fix that'
   
-    TryConvertTable.df<-TargetTable.df
-    TryConvertTable.df$CSISvariableName<-pkTable.df$PKColumnCode
-    TryConvertTable.df$CSISvariableType<-paste('[',pkTable.df$ColumnDataType,']',sep='')
-    if(TryConvertTable.df$CSISvariableType[1]=="[varchar]"){
-      TryConvertTable.df$CSISvariableType<-paste(TryConvertTable.df$CSISvariableType,
-                                             "(",pkTable.df$ColumnLength,")",
-                                             sep="")
-    }
-
+  TryConvertTable.df<-TargetTable.df
+  TryConvertTable.df$CSISvariableName<-pkTable.df$PKColumnCode
+  TryConvertTable.df$CSISvariableType<-paste('[',pkTable.df$ColumnDataType,']',sep='')
+  if(TryConvertTable.df$CSISvariableType[1]=="[varchar]"){
+    TryConvertTable.df$CSISvariableType<-paste(TryConvertTable.df$CSISvariableType,
+                                               "(",pkTable.df$ColumnLength,")",
+                                               sep="")
+  }
+  
   Output<-''
   if(suppress_alter==FALSE & TryConvertTable.df$CSISvariableType!=TryConvertTable.df$SourceVariableType){  
     Output<-create_try_converts(TryConvertTable.df,
@@ -849,7 +918,7 @@ convert_field_to_foreign_key<-function(FKschema,
     #Insert unmatched values into the primary key table
     Output<-rbind(Output,
                   paste("-- Insert new ",FKcolumn," into ",PKschema,".",PKtable,"\n",
-                    "INSERT INTO ",PKschema,".",PKtable,"\n",
+                        "INSERT INTO ",PKschema,".",PKtable,"\n",
                         "(",PKcolumn,ifelse(is.null(FKname),"",paste(",",PKname,sep="")),")\n",
                         "SELECT fk.",FKcolumn,"\n",
                         ifelse(is.null(FKname),"",paste(",max(fk.",FKname,") as ",PKname,"\n",sep="")),
@@ -857,7 +926,7 @@ convert_field_to_foreign_key<-function(FKschema,
                         
                         "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
                         "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
-                        "WHERE pk.",PKcolumn," is NULL\n",
+                        "WHERE pk.",PKcolumn," is NULL and fk.",FKcolumn," is not null\n",
                         "GROUP BY fk.",FKcolumn,"\n",
                         sep="")
     )
@@ -870,16 +939,16 @@ convert_field_to_foreign_key<-function(FKschema,
                          paste("-- Update ",PKname," using ",FKname," where there is a blank in ",PKschema,".",PKtable,"\n",
                                "UPDATE pk\n",
                                "SET ",PKname,"=fk.",FKname,"\n",
-                        "FROM ",FKschema,".",FKtable," as fk\n",
-                        "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
-                        "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
-                        "WHERE nullif(pk.",PKname,",'') is NULL AND\n",
-                        "nullif(fk.",FKname,",'') is NOT NULL\n",
-                        sep="")
-                        )
+                               "FROM ",FKschema,".",FKtable," as fk\n",
+                               "LEFT OUTER JOIN ",PKschema,".",PKtable," as pk\n",
+                               "On pk.",PKcolumn,"=fk.",FKcolumn,"\n",
+                               "WHERE nullif(pk.",PKname,",'') is NULL AND\n",
+                               "nullif(fk.",FKname,",'') is NOT NULL\n",
+                               sep="")
+                  )
     )
   }
- 
+  
   if(suppress_alter==FALSE)    
     Output<-rbind(Output,
                   paste("ALTER TABLE ",FKschema,".",FKtable,"\n",
@@ -901,8 +970,8 @@ get_ForeignKeyList<-function(){
   
   
   fk_list<-read.csv(fk_file,
-                                                stringsAsFactors = FALSE,
-                                                na.strings = c("","NULL","NA"))
+                    stringsAsFactors = FALSE,
+                    na.strings = c("","NULL","NA"))
   
   fk_list<-remove_bom(fk_list)
 }
@@ -910,29 +979,29 @@ get_ForeignKeyList<-function(){
 
 get_CSISvariableNameToPrimaryKey<-function(DestinationSchema,
                                            DestinationTable){
-
-
+  
+  
   lookup.CSISvariableNameToPrimaryKey<-get_ForeignKeyList()
   lookup.CSISvariableNameToPrimaryKey<-lookup.CSISvariableNameToPrimaryKey %>%
     filter(FKSchema==DestinationSchema,
            FKTableName==DestinationTable)
-    
-
+  
+  
   lookup.CSISvariableNameToPrimaryKey$FKColumnNameUp<-toupper(lookup.CSISvariableNameToPrimaryKey$FKColumnName)
-
-
-
+  
+  
+  
   #Starting by dropping cases in which case a primary key is a foreign key for a different table.
   #E.g. MailingElectionDate->ElectionDate. In this case, we want MailingElectionDate to match up to the higher level in the
   #heirarchy, Election.MailingElectionDate. We don't need them to match with the base, Eletion.ElectionDate because everything
   #in Election.MailingElectionDate already is a component of the subsequent table, thanks to the existing foreign key.
   lookup.CSISvariableNameToPrimaryKey<- lookup.CSISvariableNameToPrimaryKey %>%
     dplyr::filter(toupper(FKTableName)!=toupper(FKColumnName))
-
+  
   #Filter out multi-key primary keys, this function isn't smart enough to handle them
   lookup.CSISvariableNameToPrimaryKey<- lookup.CSISvariableNameToPrimaryKey %>%
     dplyr::filter(PKcolumnCount==1)
-
+  
   #First consolidate down to only CSISvariable names and keys, using upper to handle case sensitivity
   lookup.CSISvariableNameToPrimaryKey <- lookup.CSISvariableNameToPrimaryKey %>% #remove_bom() %>%
     dplyr::rename(SourceVariableName= FKColumnName) %>%
@@ -940,7 +1009,7 @@ get_CSISvariableNameToPrimaryKey<-function(DestinationSchema,
     dplyr::summarise(SourceVariableName=max(SourceVariableName)) %>%
     dplyr::group_by(SourceVariableName) %>%
     dplyr::select(-FKColumnNameUp)
-
+  
   #Handle those cases with multiple primary keys (typically these involves heirarchical pks that appear across multiple tables)
   #The core one should share a name with the column name (with a few exceptions, like contractor.parentcontractor)
   lookup.CSISvariableNameToPrimaryKey <- lookup.CSISvariableNameToPrimaryKey %>%
@@ -948,8 +1017,8 @@ get_CSISvariableNameToPrimaryKey<-function(DestinationSchema,
                   AnyExact=max(ifelse(toupper(PKTableName)==toupper(PKColumnCode),1,0))) %>%
     dplyr::filter(AnyExact==0 | RepeatCount==1 | toupper(PKTableName)==toupper(PKColumnCode)) %>%
     dplyr::mutate(RepeatCount=length(SourceVariableName))
-
-
+  
+  
   if(max(lookup.CSISvariableNameToPrimaryKey$RepeatCount>1)){
     print(lookup.CSISvariableNameToPrimaryKey%>% dplyr::filter(RepeatCount>1))
     warning("Repeated SourceVariableName")
@@ -957,37 +1026,47 @@ get_CSISvariableNameToPrimaryKey<-function(DestinationSchema,
   }
   lookup.CSISvariableNameToPrimaryKey$SourceVariableName<-paste("[",lookup.CSISvariableNameToPrimaryKey$SourceVariableName,"]",sep="")
   lookup.CSISvariableNameToPrimaryKey<-translate_name(lookup.CSISvariableNameToPrimaryKey)%>%group_by()%>%
-    select(-SourceVariableName,-IsDuplicate,-Pair)
+    select(-SourceVariableName)
+  if("Pair" %in% colnames(lookup.CSISvariableNameToPrimaryKey))
+    lookup.CSISvariableNameToPrimaryKey<-lookup.CSISvariableNameToPrimaryKey[
+      ,!colnames(lookup.CSISvariableNameToPrimaryKey) %in% c("Pair")
+    ]
+  if("IsDuplicate" %in% colnames(lookup.CSISvariableNameToPrimaryKey))
+    lookup.CSISvariableNameToPrimaryKey<-lookup.CSISvariableNameToPrimaryKey[
+      ,!colnames(lookup.CSISvariableNameToPrimaryKey) %in% c("IsDuplicate")
+    ]
   lookup.CSISvariableNameToPrimaryKey
 }
 
 create_foreign_key_assigments<-function(Schema,
-                              TableName,
-                              DestinationSchema,
-                              DestinationTable,
-                              dir="SQL",
-                              suppress_select=FALSE,
-                              suppress_alter=FALSE,
-                              suppress_insert=FALSE,
-                              suppress_update=TRUE,
-                              skip_list=NULL){
+                                        TableName,
+                                        DestinationSchema,
+                                        DestinationTable,
+                                        dir="SQL",
+                                        suppress_select=FALSE,
+                                        suppress_alter=FALSE,
+                                        suppress_insert=FALSE,
+                                        suppress_update=TRUE,
+                                        skip_list=NULL,
+                                        file="NameConversion.csv"){
   table_file<-file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))
   if (file.exists(file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))))
-      table_file<-file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))
+    table_file<-file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))
   else if (file.path(dir,paste(Schema,"_",TableName,".txt",sep="")))
-      table_file<-file.path(dir,paste(Schema,"_",TableName,".txt",sep=""))
+    table_file<-file.path(dir,paste(Schema,"_",TableName,".txt",sep=""))
   else stop("Table file not found")
-    
+  
   MergeTable.df<-read_create_table(table_file,dir=NULL)
-  MergeTable.df<-translate_name(MergeTable.df)
+  MergeTable.df<-translate_name(MergeTable.df,file=file)
   
   #Limit it to just cases where the variable type is changing
   lookup.CSISvariableNameToPrimaryKey<-get_CSISvariableNameToPrimaryKey(DestinationSchema,
-                                                                        DestinationTable)
+                                                                        DestinationTable)%>%
+    select(-SourcePairName,-IsDroppedNameField)
   
   
   MergeTable.df<-left_join(MergeTable.df,lookup.CSISvariableNameToPrimaryKey,
-                      by="CSISvariableName")#Note this is case sensitive which isn't ideal.
+                           by="CSISvariableName")#Note this is case sensitive which isn't ideal.
   MergeTable.df<-subset(MergeTable.df,!is.na(PKSchemaName))
   if(nrow(MergeTable.df)==0){
     warning("No foreign keys to assign")
@@ -1001,7 +1080,7 @@ create_foreign_key_assigments<-function(Schema,
                                          MergeTable.df$PKSchemaName[i],
                                          MergeTable.df$PKTableName[i],
                                          MergeTable.df$PKColumnCode[i],
-                                         FKname=MergeTable.df$Pair[i],
+                                         FKname=MergeTable.df$SourcePairName[i],
                                          PKname=MergeTable.df$PKcolumnText[i],
                                          suppress_select=suppress_select,
                                          suppress_alter=suppress_alter,
@@ -1015,19 +1094,19 @@ create_foreign_key_assigments<-function(Schema,
       output<-singlecol
     }
     ForeignKeyList<-c(ForeignKeyList,
-                         output
-                          )
+                      output
+    )
     
   }
   
-    ForeignKeyList[ForeignKeyList!=""]
+  ForeignKeyList[ForeignKeyList!=""]
 }
 
 
 match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate=TRUE,insert=FALSE,dir="ImportAids\\"){
   #******Importing into Voter_VoterList_2016_07_14.txt
   NewTableType.df<-read_create_table(paste(NewSchema,".",NewTable,sep=""),dir=dir)
-    NewTableType.df<-translate_name(NewTableType.df)
+  NewTableType.df<-translate_name(NewTableType.df)
   
   #Sync up with the VID Table
   TargetTableType.df<-read_create_table(paste(TargetSchema,".",TargetTable,sep=""),dir=dir)
@@ -1035,8 +1114,8 @@ match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate
   TryConvertList<-create_try_converts(MergeTable.df,NewSchema,NewTable)
   if(length(TryConvertList)!=0){
     write(TryConvertList,
-        paste("Output//",NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","try_convert.txt",sep=""), 
-        append=FALSE)
+          paste("Output//",NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","try_convert.txt",sep=""), 
+          append=FALSE)
   }
   if(insert==TRUE){
     #Transfer from Voter.VoterList_2016_07_14 to Voter.VID
@@ -1055,10 +1134,10 @@ match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate
 
 
 shift_table<-function(Schema,
-                     Table,
-                     NColShift,
-                     FirstColumnName=NA,
-                     WhereValue=NA){
+                      Table,
+                      NColShift,
+                      FirstColumnName=NA,
+                      WhereValue=NA){
   TableType.df<-read_create_table(paste(Schema,"_",Table,".txt",sep=""))  
   ListLength<-length(TableType.df$VariableName)
   FirstColumn<-1

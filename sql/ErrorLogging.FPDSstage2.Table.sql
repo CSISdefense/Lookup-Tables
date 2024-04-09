@@ -308,8 +308,26 @@ CREATE TABLE [ErrorLogging].[FPDSstage2](
 	[prime_award_transaction_recipient_cd_original] [varchar](22) NULL,
 	[prime_award_transaction_place_of_performance_cd_original] [varchar](22) NULL,
 	[total_outlayed_amount_for_overall_award] [decimal](19, 4) NULL,
-	[USAspending_file_name] [varchar](255) NULL
+	[USAspending_file_name] [varchar](255) NULL,
+	[initial_report_date] [datetime2](7) NULL
 ) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_errorlogging_fpdsbetaviolatesconstraint_sixUTI] ON [ErrorLogging].[FPDSstage2]
+(
+	[piid] ASC,
+	[idvpiid] ASC,
+	[modnumber] ASC,
+	[idvmodificationnumber] ASC,
+	[contractingofficeagencyid] ASC,
+	[transactionnumber] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [ix_FPDSbetaViolatesConstraint_CSIStransactionID] ON [ErrorLogging].[FPDSstage2]
+(
+	[CSIStransactionID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FPDSstage2] ADD  CONSTRAINT [DF__FPDSbetaV__CSISm__7193879D]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO

@@ -14,11 +14,19 @@ CREATE TABLE [Contract].[contract_transaction_unique_key](
 	[idvagencyid] [varchar](4) NULL,
 	[ParentCTU] [varchar](154) NULL,
 	[IsParentCTU] [bit] NOT NULL,
+	[fiscal_year] [smallint] NULL,
  CONSTRAINT [pk_contract_transaction_unique_key] PRIMARY KEY CLUSTERED 
 (
 	[contract_transaction_unique_key] ASC
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [idx_contract_transaction_unique_key_CSIStransactionID] ON [Contract].[contract_transaction_unique_key]
+(
+	[CSIStransactionID] ASC
+)
+WHERE ([CSIStransactionID] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
 ALTER TABLE [Contract].[contract_transaction_unique_key] ADD  DEFAULT ((0)) FOR [IsParentCTU]
 GO

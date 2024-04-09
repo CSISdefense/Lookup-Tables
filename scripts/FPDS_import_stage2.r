@@ -32,11 +32,9 @@ write(TryConvertList,"Output\\Stage2TryConvertList.txt")
 skip_list<-c("[contract_award_unique_key]",
              "[CSIStransactionID]",
              "[vendorcountrycode]",
-             "[dunsnumber]",
-             "[parentdunsnumber]",
              "[vendorname]",
              "[vendordoingasbusinessname]",
-             "[mod_parent]", #Some day we'll foreign key this one ut also skip it for select. 
+             "[mod_parent]", #Some day we'll foreign key this one but also skip it for select. 
              "[recipient_uei]",
              "[recipient_parent_uei]"
              ) #Handled via chain insert manually written
@@ -69,7 +67,7 @@ input_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                                      dir="sql",
                                                      suppress_select = TRUE,
                                                     suppress_alter = TRUE,
-                                                    suppress_update= FALSE,
+                                                    suppress_update= TRUE,
                                                     skip_list = skip_list)
 write(input_missing_code,
       file=file.path("Output","ErrorLogging_FPDSstage2_input_foreign_key.txt"),  
@@ -158,5 +156,4 @@ Stage2TableType.df<-translate_name(Stage2TableType.df)
 DupTable.df<-read_create_table("ErrorLogging.FPDSdeleted.Table.sql",
                                        dir="SQL")
 translate_name(DupTable.df,test_only=TRUE)
-debug(merge_source_and_csis_name_tables)
 MergeStage2.df<-merge_source_and_csis_name_tables(Stage2TableType.df,DupTable.df)
