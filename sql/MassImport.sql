@@ -2681,10 +2681,14 @@ ctu.fiscal_year in (2017,2018,2019)--detached_award_proc_unique NOT in (SELECT c
 --FROM Contract.FPDS where contract_transaction_unique_key is not null and fiscal_year in (2001,2002,2003,2004)) 
 --and s.fiscal_year in (2001,2002,2003,2004)
 
+
+--2h36m
+--12h4mm for 75,667 2020, 2021,2022
 INSERT INTO Contract.FPDS
 (
 [detached_award_procurement_id],
-[contract_transaction_unique_key],
+[
+],
 [a76action],
 [signeddate],
 [reasonformodification],
@@ -3170,7 +3174,7 @@ not ctu.detached_award_proc_unique in (select contract_transaction_unique_key fr
 --and s.fiscal_year in (2001,2002,2003,2004)
 
 
---2h36m
+
 select  coalesce(t.fiscal_year,s.fiscal_year) as fiscal_year
 ,case
 when contract_transaction_unique_key is null AND [detached_award_proc_unique] IS NULL
