@@ -20,6 +20,7 @@ SubCustomer.detail,Agencies,Component,,,FALSE
 SubCustomer.sum,Agencies,Component,,,FALSE
 SubCustomer.DoD,Agencies,Component,,,FALSE
 SubCustomer.OTA,Agencies,Component,,,FALSE
+SubCustomer.OTA.sum,Agencies,Component,,,FALSE
 SubCustomer.FMS,Agencies,Component,,,FALSE
 SubCustomer.component,Agencies,Component,,,FALSE
 SubCustomer.platform,Agencies,Component,,,FALSE
@@ -42,6 +43,9 @@ ProductServiceOrRnDarea.covid,Area,"Product, Service, or R&D",,,FALSE
 ProductServiceOrRnDarea.sum,Area,"Product, Service, or R&D",,,FALSE
 SimpleArea.AETP,Area,"Product, Service, or R&D",,,FALSE
 SimpleArea.engines,Area,"Product, Service, or R&D",,,FALSE
+AreaType,Area,Contract Area and OTA Agreement Type,,,FALSE
+SimpleAreaType,Area,Contract Area and OTA Agreement Type,,,FALSE
+TypeOfAgreement,Area,Agreement Type,,,FALSE
 SimpleArea.fuels,Area,"Product, Service, R&D, or Fuels",,,FALSE
 SimpleArea,Area,"Product, Service, or R&D",,,FALSE
 ProductOrServiceArea.DLA,Area,Product or Service Area,,,FALSE
