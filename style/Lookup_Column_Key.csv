@@ -199,6 +199,7 @@ Action_Obligation_OMB_2019,,Obligations (Constant 2019 $s),Share Contract $,,FAL
 Action_Obligation_OMB20_GDP20,,Obligations (Constant 2020 $s),Share Contract $,,FALSE
 Action_Obligation_OMB23_GDP21,,Obligations (Constant 2021 $s),Share Contract $,,FALSE
 Action_Obligation_OMB24_GDP22,,Obligations (Constant 2022 $s),Share Contract $,,FALSE
+Action_Obligation_OMB25_GDP23,,Obligations (Constant 2023 $s),Share Contract $,,FALSE
 SourceFiscalYear,,Fiscal Year,,,FALSE
 FiscalYear,,Fiscal Year,,,FALSE
 Fiscal.Year,,Fiscal Year,,,FALSE
