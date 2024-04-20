@@ -96,6 +96,7 @@ comparison.dollar.type.sum,Dollar Type,,,,FALSE
 ContractSize,Contract Size,Contract Size,,,FALSE
 Contract.Size.detail,Contract Size,Contract Size,,,FALSE
 Contract.Size.sum,Contract Size,Contract Size,,,FALSE
+LargestContract2018dollars,Contract Size,Contract Ceiling,,,FALSE
 Ceil,Contract Size,Contract Ceiling,,,FALSE
 LowCeil,Contract Size,Contract Ceiling,,,FALSE
 Ceil.Simple,Contract Size,Contract Ceiling,,,FALSE
@@ -135,6 +136,8 @@ DefOrEqu,Aggregate,,,,FALSE
 MetricName,Aggregate,,,,FALSE
 OCOlabelDetail,Crisis,,,,FALSE
 NIAcontradictions,Crisis,,,,FALSE
+AlwaysIsSmallLabel,Vendors,,,,FALSE
+IsEntityTraditionalLabel,Vendors,,,,FALSE
 IsFMSplaceIntl,International,Foreign Place of Performance and FMS,,,FALSE
 PlaceIsForeign,International,Foreign Place of Performance,,,FALSE
 OriginIsForeign,International,Foreign Origin,,,FALSE
