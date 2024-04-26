@@ -304,3 +304,5 @@ prime_award_transaction_place_of_performance_cd_current,255
 total_outlayed_amount_for_overall_award,255
 USAspending_file_name,255
 initial_report_date,255
+correction_delete_ind,255
+agency_id,255
