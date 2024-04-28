@@ -314,5 +314,3 @@ GO
 
 ALTER TABLE [ErrorLogging].[FPDSdelta1] ADD  CONSTRAINT [DF__FPDSdeltaCSIScreatedDate]  DEFAULT (getdate()) FOR [CSIScreatedDate]
 GO
-
-

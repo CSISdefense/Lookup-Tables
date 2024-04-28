@@ -1,0 +1,9 @@
+﻿Unseperated,manufacturingorganizationtype,manufacturingorganizationText,ManufacturingOrganizationText_sum,IsForeignOrganization,IsBusinessOrganization
+" : "," ",NULL,NULL,NULL,NULL
+": ",:,NULL,NULL,NULL,NULL
+A: U.S. Owned Business,A,U.S. Owned Business,U.S. Owned Business,0,1
+B: Other U.S. Entity (e.g. Government),B,Other U.S. Entity (e.g. Government),Other Entities (e.g. Governments),0,0
+C: Foreign-Owned Business Incorporated in the U.S.,C,Foreign-Owned Business Incorporated in the U.S.,Foreign-Owned Business Incorporated in the U.S.,1,1
+D: Foreign-Owned Business Not Incorporated in the U.S.,D,Foreign-Owned Business Not Incorporated in the U.S.,Foreign-Owned Business Not Incorporated in the U.S.,1,1
+O: Other Foreign Entity (e.g. Foreign Government),O,Other Foreign Entity (e.g. Foreign Government),Other Entities (e.g. Governments),1,0
+"X: ",X,NULL,NULL,NULL,NULL
