@@ -61,8 +61,8 @@ AnyCommercialText,Commercial,Commercial,,,FALSE
 Commercial,Commercial,Commercial,,,FALSE
 CriticalTech,HighTech,Economic Sector Relevant to Critical Tech,,,FALSE
 costorpricingdata,costorpricingdata,Cost or Pricing Data,,,TRUE
-casorffp,Pricing,Cost Accounting Standards (CAS),,,FALSE
-costaccountingstandardsclause,Pricing,Cost Accounting Standards (CAS),,,FALSE
+casorffp,CAS,Cost Accounting Standards (CAS),,,FALSE
+costaccountingstandardsclause,CAS,Cost Accounting Standards (CAS),,,FALSE
 Pricing.Mechanism.detail,Pricing,Pricing Mechanism,,,FALSE
 Pricing.Mechanism.sum,Pricing,Pricing Mechanism,,,FALSE
 Base,Pricing,Pricing Mechanism,,,FALSE
@@ -89,7 +89,9 @@ VendorSize_Intl,Vendors,Vendor Size and Nationality,,,FALSE
 Vendor.Size.sum,Vendors,Vendor Size,,,FALSE
 Shiny.VendorSize,Vendors,Vendor Size,,,FALSE
 RoughUniqueEntitySize,Vendors,Vendor Size,,,FALSE
-AlwaysIsSmallLabel,Vendors,Vendor Size,,,FALSE
+ntdc_label,Vendors,Vendor Size or Largest Contract,,,FALSE
+cas_label,CAS,Cost Accounting Standards,,,
+IsEntityTraditionalLabel,Vendors,Vendor Type,,,
 entrant,entrant,Entrant Status,,,FALSE
 entrant_2016T,entrant,Entrant Status,,,FALSE
 entrant_2018T,entrant,Entrant Status,,,FALSE
@@ -139,6 +141,7 @@ MetricName,Aggregate,,,,FALSE
 OCOlabelDetail,Crisis,,,,FALSE
 NIAcontradictions,Crisis,,,,FALSE
 IsEntityTraditionalLabel,Vendors,,,,FALSE
+AlwaysIsSmallLabel,Vendors,,,,FALSE
 IsFMSplaceIntl,International,Foreign Place of Performance and FMS,,,FALSE
 PlaceIsForeign,International,Foreign Place of Performance,,,FALSE
 OriginIsForeign,International,Foreign Origin,,,FALSE
@@ -211,6 +214,7 @@ fiscal_quarter,quarter,Fiscal Quarter,,,FALSE
 Fiscal_Year,,Fiscal Year,,,FALSE
 dFYear,,Fiscal Year,,,FALSE
 contingencyhumanitarianpeacekeepingoperation,,,,,TRUE
+FMS,FMS,,,,FALSE
 IsFMS,FMS,,,,FALSE
 IsComplete,Binary,,,,FALSE
 IsMultipleYearProcRnD,Binary,,,,FALSE
@@ -682,6 +686,7 @@ Armament.category,PlatformPortfolio,Platform Portfolio,,,
 Armament.category.UAV,PlatformPortfolio,Platform Portfolio,,,
 Armament.category.UAVLM,PlatformPortfolio,Platform Portfolio,,,
 PlatformPortfolio.Ordnance,PlatformPortfolio,Armament Category,,,
+TopPSCtextMY,TopPSCtext,Product or Service,,,
 Order.date,,Order Calendar Year,,,
 Numbers.delivered,,Number of Units Delivered,,,
 Delivery.year,,Delivery Calendar Year,,,
@@ -734,6 +739,7 @@ SEATO,Binary,South East Asian Treaty Organization Member,,,
 RioTreaty,Binary,Rio Treaty Member,,,
 FiveEyes,Binary,Five Eyes Member,,,
 AgreeDeliv,FMS,Agreement or Delivery,,,
+Topline,Topline,Spending Category,,,
 ColorOfMoney,Budget,Color of Money,,,
 Budget,Budget,Color of Money,,,
 Collaboration,Budget,Color of Money,,,

@@ -249,7 +249,7 @@ c8a_program_participant,255
 historically_underutilized_business_zone_hubzone_firm,255
 sba_certified_8a_joint_venture,255
 CSISmodifiedDate,
-CSIScreatedDate,
+CSIScreatedDate,stage1size
 IsDuplicateUTI,#VALUE!
 current_total_value_of_award,255
 potential_total_value_of_award,255
@@ -284,7 +284,7 @@ disaster_emergency_fund_codes_for_overall_award,4000
 outlayed_amount_from_COVID-19_supplementals_for_overall_award,255
 obligated_amount_from_COVID-19_supplementals_for_overall_award,255
 object_classes_funding_this_award,4000
-program_activities_funding_this_award,5000
+program_activities_funding_this_award,5012
 recipient_county_name,255
 recipient_uei,255
 recipient_parent_uei,255
@@ -304,3 +304,5 @@ prime_award_transaction_place_of_performance_cd_current,255
 total_outlayed_amount_for_overall_award,255
 USAspending_file_name,255
 initial_report_date,255
+correction_delete_ind,255
+agency_id,255
