@@ -84,10 +84,12 @@ Vehicle.sum,Vehicles,Contract Vehicle,,,FALSE
 Vehicle.sum7,Vehicles,Contract Vehicle,,,FALSE
 Vendor.Size.detail,Vendors,Vendor Size,,,FALSE
 VendorSize,Vendors,Vendor Size,,,FALSE
+VendorSize.NTDC,Vendors,Vendor Size,,,FALSE
 VendorSize_Intl,Vendors,Vendor Size and Nationality,,,FALSE
 Vendor.Size.sum,Vendors,Vendor Size,,,FALSE
 Shiny.VendorSize,Vendors,Vendor Size,,,FALSE
 RoughUniqueEntitySize,Vendors,Vendor Size,,,FALSE
+AlwaysIsSmallLabel,Vendors,Vendor Size,,,FALSE
 entrant,entrant,Entrant Status,,,FALSE
 entrant_2016T,entrant,Entrant Status,,,FALSE
 entrant_2018T,entrant,Entrant Status,,,FALSE
@@ -136,7 +138,6 @@ DefOrEqu,Aggregate,,,,FALSE
 MetricName,Aggregate,,,,FALSE
 OCOlabelDetail,Crisis,,,,FALSE
 NIAcontradictions,Crisis,,,,FALSE
-AlwaysIsSmallLabel,Vendors,,,,FALSE
 IsEntityTraditionalLabel,Vendors,,,,FALSE
 IsFMSplaceIntl,International,Foreign Place of Performance and FMS,,,FALSE
 PlaceIsForeign,International,Foreign Place of Performance,,,FALSE
