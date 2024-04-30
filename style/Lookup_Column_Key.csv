@@ -140,7 +140,6 @@ DefOrEqu,Aggregate,,,,FALSE
 MetricName,Aggregate,,,,FALSE
 OCOlabelDetail,Crisis,,,,FALSE
 NIAcontradictions,Crisis,,,,FALSE
-IsEntityTraditionalLabel,Vendors,,,,FALSE
 AlwaysIsSmallLabel,Vendors,,,,FALSE
 IsFMSplaceIntl,International,Foreign Place of Performance and FMS,,,FALSE
 PlaceIsForeign,International,Foreign Place of Performance,,,FALSE
