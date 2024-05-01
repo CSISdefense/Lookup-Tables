@@ -85,6 +85,7 @@ Vehicle.sum7,Vehicles,Contract Vehicle,,,FALSE
 Vendor.Size.detail,Vendors,Vendor Size,,,FALSE
 VendorSize,Vendors,Vendor Size,,,FALSE
 VendorSize_Intl,Vendors,Vendor Size and Nationality,,,FALSE
+VendorSize_NTDC,Vendors,Vendor Size and Nationality,,,FALSE
 Vendor.Size.sum,Vendors,Vendor Size,,,FALSE
 Shiny.VendorSize,Vendors,Vendor Size,,,FALSE
 RoughUniqueEntitySize,Vendors,Vendor Size,,,FALSE
