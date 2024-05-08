@@ -50,6 +50,7 @@ SimpleArea.fuels,Area,"Product, Service, R&D, or Fuels",,,FALSE
 SimpleArea,Area,"Product, Service, or R&D",,,FALSE
 ProductOrServiceArea.DLA,Area,Product or Service Area,,,FALSE
 CrisisProductOrServiceArea,Area,Product or Service Area,,,FALSE
+SpaceArea,Area,Space Product or Service Area,,,FALSE
 Competition.detail,Competition,Extent of Competition,,,FALSE
 Competition.multisum,Competition,Extent of Competition,,,FALSE
 Competition.sum,Competition,Extent of Competition,,,FALSE
@@ -91,6 +92,7 @@ Vendor.Size.sum,Vendors,Vendor Size,,,FALSE
 Shiny.VendorSize,Vendors,Vendor Size,,,FALSE
 RoughUniqueEntitySize,Vendors,Vendor Size,,,FALSE
 ntdc_label,Vendors,Vendor Size or Largest Contract,,,FALSE
+SpaceParentID,ParentID,Contractor,,,FALSE
 cas_label,CAS,Cost Accounting Standards,,,
 IsEntityTraditionalLabel,Vendors,Vendor Type,,,
 entrant,entrant,Entrant Status,,,FALSE
