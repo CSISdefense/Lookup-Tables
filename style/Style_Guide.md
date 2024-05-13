@@ -56,3 +56,10 @@ Loren
 ## Picking Colors
 
 Check out (Melanie Frazier's guide to R colors and palettes)[https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf].
+
+
+"#0054A4"
+
+"#4c9361"
+
+"#BB4243""

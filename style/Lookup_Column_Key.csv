@@ -122,6 +122,7 @@ European.Region,Europe,,,,FALSE
 Europe.Region.Block,Europe,,,,FALSE
 Deployment,Deployment,,,,FALSE
 Term,Performance,,,,FALSE
+FinancingStatus.sum,Performance,Financing Status,,,FALSE
 AddressCat,PBL,,,,FALSE
 MaxOfIsOfficialPBL,PBL,,,,FALSE
 JointScore,PBL,,,,FALSE
@@ -713,6 +714,8 @@ PartnerSubRegion,EUregion,EU country or region,,,
 BuyerSubRegion,EUregion,EU country or region,,,
 SellerSubRegion,EUregion,EU country or region,,,
 SubRegion,EUregion,EU country or region,,,
+NATOregion,EUregion,,,,FALSE
+EUregion,EUregion,,,,FALSE
 DeclarantEUtrade.sum,EUrelationship,EU partner,,,
 PartnerEUtrade.sum,EUrelationship,EU partner,,,
 BuyerEUtrade.sum,EUrelationship,EU partner,,,

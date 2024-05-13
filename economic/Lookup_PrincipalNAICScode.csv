@@ -789,13 +789,13 @@
 334113,Computer Terminal Manufacturing,31-33,334,3341,NULL,NULL,Computing
 334118,Computer Terminal and Other Computer Peripheral Equipment Manufacturing,31-33,334,3341,NULL,NULL,Computing
 334119,Other Computer Peripheral Equipment Manufacturing,31-33,334,3341,NULL,NULL,Computing
-3342,Communications Equipment Manufacturing,31-33,334,3342,NULL,NULL,FutureG
-33421,Telephone Apparatus Manufacturing,31-33,334,3342,NULL,NULL,FutureG
-334210,Telephone Apparatus Manufacturing,31-33,334,3342,NULL,NULL,FutureG
-33422,Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing,31-33,334,3342,NULL,NULL,FutureG
-334220,Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing,31-33,334,3342,NULL,NULL,FutureG
-33429,Other Communications Equipment Manufacturing,31-33,334,3342,NULL,NULL,FutureG
-334290,Other Communications Equipment Manufacturing,31-33,334,3342,NULL,NULL,FutureG
+3342,Communications Equipment Manufacturing,31-33,334,3342,NULL,NULL,Modern Telecom
+33421,Telephone Apparatus Manufacturing,31-33,334,3342,NULL,NULL,Modern Telecom
+334210,Telephone Apparatus Manufacturing,31-33,334,3342,NULL,NULL,Modern Telecom
+33422,Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing,31-33,334,3342,NULL,NULL,Modern Telecom
+334220,Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing,31-33,334,3342,NULL,NULL,Modern Telecom
+33429,Other Communications Equipment Manufacturing,31-33,334,3342,NULL,NULL,Modern Telecom
+334290,Other Communications Equipment Manufacturing,31-33,334,3342,NULL,NULL,Modern Telecom
 3343,Audio and Video Equipment Manufacturing,31-33,334,3343,NULL,NULL,Remaining Sectors
 33431,Audio and Video Equipment Manufacturing,31-33,334,3343,NULL,NULL,Remaining Sectors
 334310,Audio and Video Equipment Manufacturing,31-33,334,3343,NULL,NULL,Remaining Sectors
@@ -1442,19 +1442,19 @@
 5171,Wired Telecommunications Carriers,51,517,5171,NULL,NULL,Remaining Sectors
 517110,Wired Telecommunications Carriers,51,517,5171,NULL,NULL,Remaining Sectors
 5172,Wireless Telecommunications Carriers (except Satellite),51,517,5172,NULL,NULL,Remaining Sectors
-51721,Wireless Telecommunications Carriers (except Satellite),51,517,5172,NULL,NULL,FutureG
-517210,Wireless Telecommunications Carriers (except Satellite),51,517,5172,NULL,NULL,FutureG
+51721,Wireless Telecommunications Carriers (except Satellite),51,517,5172,NULL,NULL,Modern Telecom
+517210,Wireless Telecommunications Carriers (except Satellite),51,517,5172,NULL,NULL,Modern Telecom
 517211,Paging,51,517,5172,NULL,NULL,Remaining Sectors
-517212,Cellular and Other Wireless Telecommunications,51,517,5172,NULL,NULL,FutureG
+517212,Cellular and Other Wireless Telecommunications,51,517,5172,NULL,NULL,Modern Telecom
 517310,Telecommunications Resellers,51,517,5173,NULL,NULL,Remaining Sectors
 517311,Wired Telecommunications Carriers,NULL,NULL,NULL,NULL,NULL,Remaining Sectors
-517312,Wireless Telecommunications Carriers (except Satellite),NULL,NULL,NULL,NULL,NULL,FutureG
+517312,Wireless Telecommunications Carriers (except Satellite),NULL,NULL,NULL,NULL,NULL,Modern Telecom
 5174,Satellite Telecommunications,51,517,5174,NULL,NULL,Space
 517410,Satellite Telecommunications,51,517,5174,NULL,NULL,Space
 517510,Cable and Other Program Distribution,51,517,5175,NULL,NULL,Remaining Sectors
-5179,Other Telecommunications,51,517,5179,NULL,NULL,FutureG
-51791,Other Telecommunications,51,517,5179,NULL,NULL,FutureG
-517910,Other Telecommunications,51,517,5179,NULL,NULL,FutureG
+5179,Other Telecommunications,51,517,5179,NULL,NULL,Remaining Sectors
+51791,Other Telecommunications,51,517,5179,NULL,NULL,Modern Telecom
+517910,Other Telecommunications,51,517,5179,NULL,NULL,Modern Telecom
 517911,Telecommunications Resellers,51,517,5179,NULL,NULL,Remaining Sectors
 517919,All Other Telecommunications,51,517,5179,NULL,NULL,Remaining Sectors
 518,"Data Processing, Hosting, and Related Services",51,518,NULL,NULL,NULL,Remaining Sectors
