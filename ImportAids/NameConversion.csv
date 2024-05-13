@@ -815,3 +815,5 @@ SourceVariableName,CSISvariableName,IsDuplicate
 [entity_data_source],[entity_data_source],
 [created_at],[created_at],
 [updated_at],[updated_at],
+[agency_id],[agencyid],
+[correction_delete_ind],[correction_delete_ind],

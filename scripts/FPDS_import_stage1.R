@@ -13,6 +13,9 @@ Stage1TableType.df<-read_create_table("ErrorLogging.FPDSstage1.Table.sql",
 
 Stage1TableType.df<-translate_name(Stage1TableType.df)
 
+"[prime_award_principal_place_zip]" %in% Stage1TableType.df$VariableName 
+
+
 
 DestinationTable.df<-read_create_table("Contract.FPDS.Table.sql",
                                        dir="SQL")

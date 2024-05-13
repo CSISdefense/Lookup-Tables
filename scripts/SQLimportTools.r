@@ -107,7 +107,9 @@ list_problem_type<-function(TargetTable.df){
 
 translate_name<-function(TargetTable.df,
                          test_only=FALSE,
-                         file="NameConversion.csv"){
+                         file="NameConversion.csv",
+                         DestVariableNamefile="CSISvariableName.csv"
+                         ){
   lookup.NameConversion<-read.csv(file.path("ImportAids",file),
                                   stringsAsFactors = FALSE,
                                   na.strings = c("NULL","NA"))
@@ -143,9 +145,9 @@ translate_name<-function(TargetTable.df,
     stop("Duplicate entries in CSISvariableName after matching")
   }
   #Add the CSISvariableName fields: IsDroppedNameField	Pair
-  if(file.exists(file.path("ImportAids","CSISvariableName.csv")))
+  if(file.exists(file.path("ImportAids",DestVariableNamefile)))
     TargetTable.df<-read_and_join_experiment(TargetTable.df,
-                                             path="",dir="ImportAids\\",lookup_file = "CSISvariableName.csv",
+                                             path="",dir="ImportAids\\",lookup_file = DestVariableNamefile,
                                              skip_check_var = "IsDroppedNameField")
   
   TargetTable.df$SourceVariableName<-TargetTable.df$OriginalSourceVariableName
