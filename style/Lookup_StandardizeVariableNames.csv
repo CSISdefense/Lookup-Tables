@@ -640,6 +640,7 @@ Number of Actions,NumberofActions
 Number of Records,NumberofRecords
 Performing.Activity...Location,Contractor.or.Government.Performing.Activity
 Contract.Method...Type,Contract.Method.Type.or.Funding.Vehicle
+EU MS,CountryName
 Total Defence Expenditure                                       ,DefExp
 Total Defence Expenditure (A+B+C+D+E),DefExp
 Total Defence Expenditure as % of GDP                           ,pDefExpGDP
@@ -782,3 +783,4 @@ ManufacturingOrganizationType,ManufacturingOrganizationType
 IsForeignHeadquarters,IsForeignHeadquarters
 IsForeignMFGorPerform,IsForeignMFGorPerform
 AnyInternational,AnyInternational
+EU MS,
