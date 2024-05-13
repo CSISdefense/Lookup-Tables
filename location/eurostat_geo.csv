@@ -1,71 +1,74 @@
-geo,ISOalpha3,CountryName,SubRegion
-AL,ALB,Albania,Other Central and Eastern
-AT,AUT,Austria,Rest of EU27
-BE,BEL,Belgium,Rest of EU27
-BG,BGR,Bulgaria,Other Central and Eastern
-BA,BIH,Bosnia & Herzegovina,Other Central and Eastern
-CH,CHE,Switzerland,Switzerland
-CY,CYP,Cyprus,Rest of EU27
-CZ,CZE,Czech Republic,Other Central and Eastern
-DE,DEU,Germany,Germany
-DK,DNK,Denmark,Nordics
-ES,ESP,Spain,Spain
-EE,EST,Estonia,Baltics
-FI,FIN,Finland,Nordics
-FR,FRA,France,France
-HR,HRV,Croatia,Other Central and Eastern
-HU,HUN,Hungary,Other Central and Eastern
-IE,IRL,Ireland,Rest of EU27
-IS,ISL,Iceland,Nordics
-IT,ITA,Italy,Italy
-LT,LTU,Lithuania,Baltics
-LU,LUX,Luxembourg,Rest of EU27
-LV,LVA,Latvia,Baltics
-MK,MKD,North Macedonia,Other Central and Eastern
-MT,MLT,Malta,Rest of EU27
-ME,MNE,Montenegro,Other Central and Eastern
-NL,NLD,Netherlands,Rest of EU27
-NO,NOR,Norway,Nordics
-PL,POL,Poland,Poland
-PT,PRT,Portugal,Rest of EU27
-RO,ROU,Romania,Other Central and Eastern
-RS,SRB,Serbia,Other Central and Eastern
-SK,SVK,Slovakia,Other Central and Eastern
-SI,SVN,Slovenia,Other Central and Eastern
-SE,SWE,Sweden,Nordics
-TR,TUR,Turkey,Turkey
-EA,NULL,Euro area,Unlabeled
-EA12,NULL,Euro area - 19 countries,Unlabeled
-EA19,NULL,Euro area - 19 countries,Unlabeled
-EA20,NULL,Euro area - 20 countries,Unlabeled
-EL,GRC,Greece,Greece
-EU15,NULL,Euro area - 15 countries,Unlabeled
-EU27_2020,NULL,EU - 27 countries,Unlabeled
-EU28,NULL,EU - 28 countries,Unlabeled
-UK,GBR,United Kingdom,United Kingdom
-XK,*KS,Kosovo,Other Central and Eastern
-NULL,VGB,"Virgin Islands, British",United Kingdom
-NULL,BMU,Bermuda,United Kingdom
-NULL,MTQ,Martinique,France
-NULL,PYF,French Polynesia,France
-NULL,MAF,Saint Martin (French part),France
-NULL,CYM,Cayman Islands,United Kingdom
-NULL,WLF,Wallis and Futuna,France
-NULL,GRL,Greenland,Nordics
-NULL,TCA,Turks and Caicos Islands,United Kingdom
-NULL,MSR,Montserrat,United Kingdom
-NULL,MYT,Mayotte,France
-NULL,AIA,Anguilla,United Kingdom
-NULL,NCL,New Caledonia,France
-NULL,PCN,Pitcairn,United Kingdom
-NULL,FRO,Faroe Islands,Nordics
-NULL,SHN,"Saint Helena, Ascension and Tristan da Cunha",United Kingdom
-NULL,ATF,French Southern Territories,France
-NULL,GIB,Gibraltar,United Kingdom
-NULL,COK,Cook Islands,United Kingdom
-NULL,REU,Réunion,France
-NULL,IOT,British Indian Ocean Territory,United Kingdom
-NULL,FLK,Falkland Islands (Malvinas),United Kingdom
-NULL,NIU,Niue,United Kingdom
-NULL,SJM,Svalbard and Jan Mayen,Nordics
-NULL,UKR,Ukraine,Ukraine
+geo,ISOalpha3,CountryName,EUregion,NATOregion
+AL,ALB,Albania,Other Central and Eastern,Other Central and Eastern
+AT,AUT,Austria,Rest of EU27,EU27 outside NATO
+BE,BEL,Belgium,Rest of EU27,Other European NATO
+BG,BGR,Bulgaria,Other Central and Eastern,Other Central and Eastern
+BA,BIH,Bosnia & Herzegovina,Other Central and Eastern,Other Central and Eastern
+CH,CHE,Switzerland,Switzerland,Switzerland
+CY,CYP,Cyprus,Rest of EU27,EU27 outside NATO
+CZ,CZE,Czech Republic,Other Central and Eastern,Other Central and Eastern
+DE,DEU,Germany,Germany,Germany
+DK,DNK,Denmark,Nordics,Nordics
+ES,ESP,Spain,Spain,Spain
+EE,EST,Estonia,Baltics,Other Central and Eastern
+FI,FIN,Finland,Nordics,Nordics
+FR,FRA,France,France,France
+HR,HRV,Croatia,Other Central and Eastern,Other Central and Eastern
+HU,HUN,Hungary,Other Central and Eastern,Other Central and Eastern
+IE,IRL,Ireland,Rest of EU27,EU27 outside NATO
+IS,ISL,Iceland,Nordics,Nordics
+IT,ITA,Italy,Italy,Italy
+LT,LTU,Lithuania,Baltics,Other Central and Eastern
+LU,LUX,Luxembourg,Rest of EU27,Other European NATO
+LV,LVA,Latvia,Baltics,Other Central and Eastern
+MK,MKD,North Macedonia,Other Central and Eastern,Other Central and Eastern
+MT,MLT,Malta,Rest of EU27,EU27 outside NATO
+ME,MNE,Montenegro,Other Central and Eastern,Other Central and Eastern
+NL,NLD,Netherlands,Rest of EU27,Other European NATO
+NO,NOR,Norway,Nordics,Nordics
+PL,POL,Poland,Poland,Poland
+PT,PRT,Portugal,Rest of EU27,Other European NATO
+RO,ROU,Romania,Other Central and Eastern,Other Central and Eastern
+RS,SRB,Serbia,Other Central and Eastern,Other Central and Eastern
+SK,SVK,Slovakia,Other Central and Eastern,Other Central and Eastern
+SI,SVN,Slovenia,Other Central and Eastern,Other Central and Eastern
+SE,SWE,Sweden,Nordics,Nordics
+TR,TUR,Turkey,Turkey,Turkey
+EA,NULL,Euro area,Unlabeled,Unlabeled
+EA12,NULL,Euro area - 19 countries,Unlabeled,Unlabeled
+EA19,NULL,Euro area - 19 countries,Unlabeled,Unlabeled
+EA20,NULL,Euro area - 20 countries,Unlabeled,Unlabeled
+EL,GRC,Greece,Greece,Greece
+EU15,NULL,Euro area - 15 countries,Unlabeled,Unlabeled
+EU27_2020,NULL,EU - 27 countries,Unlabeled,Unlabeled
+EU28,NULL,EU - 28 countries,Unlabeled,Unlabeled
+UK,GBR,United Kingdom,United Kingdom,United Kingdom
+XK,*KS,Kosovo,Other Central and Eastern,Other Central and Eastern
+NULL,VGB,"Virgin Islands, British",United Kingdom,United Kingdom
+NULL,BMU,Bermuda,United Kingdom,United Kingdom
+NULL,MTQ,Martinique,France,France
+NULL,PYF,French Polynesia,France,France
+NULL,MAF,Saint Martin (French part),France,France
+NULL,CYM,Cayman Islands,United Kingdom,United Kingdom
+NULL,WLF,Wallis and Futuna,France,France
+NULL,GRL,Greenland,Nordics,Nordics
+NULL,TCA,Turks and Caicos Islands,United Kingdom,United Kingdom
+NULL,MSR,Montserrat,United Kingdom,United Kingdom
+NULL,MYT,Mayotte,France,France
+NULL,AIA,Anguilla,United Kingdom,United Kingdom
+NULL,NCL,New Caledonia,France,France
+NULL,PCN,Pitcairn,United Kingdom,United Kingdom
+NULL,FRO,Faroe Islands,Nordics,Nordics
+NULL,SHN,"Saint Helena, Ascension and Tristan da Cunha",United Kingdom,United Kingdom
+NULL,ATF,French Southern Territories,France,France
+NULL,GIB,Gibraltar,United Kingdom,United Kingdom
+NULL,COK,Cook Islands,United Kingdom,United Kingdom
+NULL,REU,Réunion,France,France
+NULL,IOT,British Indian Ocean Territory,United Kingdom,United Kingdom
+NULL,FLK,Falkland Islands (Malvinas),United Kingdom,United Kingdom
+NULL,NIU,Niue,United Kingdom,United Kingdom
+NULL,SJM,Svalbard and Jan Mayen,Nordics,Nordics
+NULL,UKR,Ukraine,Ukraine,Ukraine
+NULL,HMD,Heard Island and McDonald Islands,United Kingdom,United Kingdom
+NULL,CAN,Canada,Not Europe,Canada
+NULL,SPM,Saint Pierre and Miquelon,United States,Other European NATO
