@@ -3793,6 +3793,8 @@ EUrelationship,Other Treaty Ally,Other\nTreaty Ally,19,light Blue,#93CDDD,,,,def
 EUrelationship,Saudi Arabia & UAE,Saudi Arabia &\nUAE,21,Peach,#FAC090,,,,default grey,#554449,
 EUrelationship,PRC and Russia,China and Russia,100,Light Red,#D19392,,,,default grey,#554449,
 EUrelationship,Rest of World,Rest of World,99,Purpleblue,#93A9CF,,,,default grey,#554449,
+EUrelationship,EU & NATO,EU & NATO,1,"DIIG Primary, National Guard",#0e99d6,,,,default grey,#554449,
+EUrelationship,EU Outside NATO,EU Outside NATO,5,"DIIG Additional Colors, Highlight Blue",#66c6cb,,,,default grey,#554449,
 ,,,,,,,,,,,
 Relationship,United States,United States,1,red,#AA4643,,,,default grey,#554449,
 Relationship,NTIB and RDP,NTIB and RDP,1,red,#AA4643,,,,default grey,#554449,
