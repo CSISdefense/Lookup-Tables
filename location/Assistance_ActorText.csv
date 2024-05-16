@@ -127,6 +127,7 @@ Government of Hungary,40,HUN,FALSE
 Government of India,141,IND,FALSE
 Government of Indonesia,155,IDN,FALSE
 Government of Iran,114,IRN,FALSE
+Kurdistan Regional Government (Iraq)*,NA,IRQ,FALSE
 Government of Iraq,116,IRQ,FALSE
 Government of Israel,121,ISR,FALSE
 Government of Jordan,120,JOR,FALSE
@@ -278,6 +279,7 @@ Niger,75,NER,FALSE
 Nigeria,84,NGA,FALSE
 NLA (Macedonia)*,NULL,MKD,TRUE
 North Korea,138,PRK,FALSE
+Yemen Arab Republic (North Yemen),123,YEM,FALSE
 North Yemen,123,YEM,FALSE
 Northern Alliance (Afghanistan)*,NULL,AFG,TRUE
 Northern Cyprus,NULL,CYP,FALSE
@@ -296,6 +298,7 @@ Pathet Lao (Laos)*,NULL,LAO,TRUE
 Peru,21,PER,FALSE
 Philippines,154,PHL,FALSE
 PIJ (Israel/Palestine)*,NULL,PSE,TRUE
+PKK (Turkiye)*,NULL,TUR,TRUE
 PKK (Turkey)*,NULL,TUR,TRUE
 PLO (Israel)*,NULL,PSE,TRUE
 Poland,NULL,POL,FALSE
