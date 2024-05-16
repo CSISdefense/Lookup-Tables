@@ -683,6 +683,7 @@ PlaceStateRegion,Region,Region,,,
 VendorStateRegion,Region,Region,,,
 OriginStateRegion,Region,Region,,,
 DeclarantStateRegion,Region,Region,,,
+SubjectStateRegion,Region,Region,,,
 PartnerStateRegion,Region,Region,,,
 Armament.category.F35,PlatformPortfolio,Platform Portfolio,,,
 Armament.category,PlatformPortfolio,Platform Portfolio,,,
@@ -709,24 +710,32 @@ FMStype,FMS,Broad Category of FMS,,,
 dtDelivYear,,Year of Obligation or Delivery (Calendar or Fiscal Varies by Source),,,
 Mixed Year,,Year of Obligation or Delivery (Calendar or Fiscal Varies by Source),,,
 EDAcountry,EDAcountry,EU country or region,,,
+SubjectSubRegion,EUregion,EU country or region,,,
 DeclarantSubRegion,EUregion,EU country or region,,,
 PartnerSubRegion,EUregion,EU country or region,,,
 BuyerSubRegion,EUregion,EU country or region,,,
 SellerSubRegion,EUregion,EU country or region,,,
 SubRegion,EUregion,EU country or region,,,
+PartnerNATOregion,EUregion,,,,FALSE
+PartnerEUregion,EUregion,,,,FALSE
+SubjectNATOregion,EUregion,,,,FALSE
+SubjectEUregion,EUregion,,,,FALSE
 NATOregion,EUregion,,,,FALSE
 EUregion,EUregion,,,,FALSE
+SubjectEUtrade.sum,EUrelationship,EU partner,,,
 DeclarantEUtrade.sum,EUrelationship,EU partner,,,
 PartnerEUtrade.sum,EUrelationship,EU partner,,,
 BuyerEUtrade.sum,EUrelationship,EU partner,,,
 SellerEUtrade.sum,EUrelationship,EU partner,,,
 EUtrade.sum,EUrelationship,EU partner,,,
+SubjectEUtrade,EUrelationship,EU partner,,,
 DeclarantEUtrade,EUrelationship,EU partner,,,
 PartnerEUtrade,EUrelationship,EU partner,,,
 BuyerEUtrade,EUrelationship,EU partner,,,
 SellerEUtrade,EUrelationship,EU partner,,,
 EUtrade,EUrelationship,EU partner,,,
 PartnerNATOtrade,EUrelationship,,,,FALSE
+SubjectNATOtrade,EUrelationship,,,,FALSE
 DeclarantNATOtrade,EUrelationship,,,,FALSE
 RDPsosa,Relationship,RDP and SOSA Status,,,
 AcquisitionCooperation,Relationship,Cooperative Acquisition Arrangement,,,
