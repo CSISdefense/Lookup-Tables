@@ -716,6 +716,10 @@ PartnerSubRegion,EUregion,EU country or region,,,
 BuyerSubRegion,EUregion,EU country or region,,,
 SellerSubRegion,EUregion,EU country or region,,,
 SubRegion,EUregion,EU country or region,,,
+PartnerNATOregion,EUregion,,,,FALSE
+PartnerEUregion,EUregion,,,,FALSE
+SubjectNATOregion,EUregion,,,,FALSE
+SubjectEUregion,EUregion,,,,FALSE
 NATOregion,EUregion,,,,FALSE
 EUregion,EUregion,,,,FALSE
 SubjectEUtrade.sum,EUrelationship,EU partner,,,
