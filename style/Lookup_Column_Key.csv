@@ -734,9 +734,10 @@ PartnerEUtrade,EUrelationship,EU partner,,,
 BuyerEUtrade,EUrelationship,EU partner,,,
 SellerEUtrade,EUrelationship,EU partner,,,
 EUtrade,EUrelationship,EU partner,,,
-PartnerNATOtrade,EUrelationship,,,,FALSE
-SubjectNATOtrade,EUrelationship,,,,FALSE
-DeclarantNATOtrade,EUrelationship,,,,FALSE
+NATOtrade,EUrelationship,NATO partner,,,FALSE
+PartnerNATOtrade,EUrelationship,NATO partner,,,FALSE
+SubjectNATOtrade,EUrelationship,NATO partner,,,FALSE
+DeclarantNATOtrade,EUrelationship,NATO partner,,,FALSE
 RDPsosa,Relationship,RDP and SOSA Status,,,
 AcquisitionCooperation,Relationship,Cooperative Acquisition Arrangement,,,
 MutualDefense,Relationship,Mutual Defense Agreement,,,
