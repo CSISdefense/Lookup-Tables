@@ -1,19 +1,19 @@
-﻿PlaceOfManufacture,PlaceOfManufactureText,IsManufacturedInUS,PlaceOfManufacture_Sum,BAAcategory,PlaceOfManufacture_DoD,ContentIsForeign
-,NULL,NULL,NULL,Unlabeled,NULL,NULL
-!,NULL,NULL,NULL,Unlabeled,NULL,NULL
-:,NULL,NULL,NULL,Unlabeled,NULL,NULL
-1,NULL,NULL,NULL,Unlabeled,NULL,NULL
-A,"PERFORMED OR MANUFACTURED IN US, BUT SERVICES PERFORMED BY A FOREIGN CONCERN OR MORE THAN 50% FOREIGN CONTENT",NULL,In U.S. but Foreign Services or Content,Not Apply,"Foreign MFG, Perfomed, or Content, Unlabeled Waiver",1
-B,PERFORMED OR MANUFACTURED OUTSIDE US,NULL,Performed/Manufactured Outside U.S.,Not Apply,"Foreign MFG, Perfomed, or Content, Unlabeled Waiver",1
-C,NOT A MANUFACTURED END PRODUCT,NULL,Not Manufactured End Product,Not MFG,NULL,NULL
-D,MFG IN U.S.,1,Manufactured in U.S.,MFG in U.S.,U.S. Manufactured,0
-E,MFG OUTSIDE U.S. - USE OUTSIDE THE UNITED STATES,0,Manufactured Outside U.S.,Not Apply,"MFG Outside U.S., Use outside U.S.",1
-F,MFG OUTSIDE U.S. - RESALE,0,Manufactured Outside U.S.,Exception,"MFG Outside U.S., Other Exception or Waiver",1
-G,MFG OUTSIDE U.S. - TRADE AGREEMENTS,0,Manufactured Outside U.S.,Waiver,"MFG Outside U.S., Other Exception or Waiver",1
-H,MFG OUTSIDE U.S. - COMMERCIAL INFORMATION TECHNOLOGY,0,Manufactured Outside U.S.,Exception,"MFG Outside U.S., Other Exception or Waiver",1
-I,MFG OUTSIDE U.S. - PUBLIC INTEREST DETERMINATION,0,Manufactured Outside U.S.,Exception,"MFG Outside U.S., Other Exception or Waiver",1
-J,MFG OUTSIDE U.S. - DOMESTIC NONAVAILABILITY,0,Manufactured Outside U.S.,Exception,"MFG Outside U.S., Other Exception or Waiver",1
-K,MFG OUTSIDE U.S. - UNREASONABLE COST,0,Manufactured Outside U.S.,Exception,"MFG Outside U.S., Other Exception or Waiver",1
-L,MFG OUTSIDE U.S. - QUALIFYING COUNTRY (DOD ONLY),0,Manufactured Outside U.S.,Waiver,"MFG Outside U.S., Qualifying Country",1
-S,NULL,NULL,NULL,Unlabeled,NULL,NULL
-U,NULL,NULL,NULL,Unlabeled,NULL,NULL
+﻿PlaceOfManufacture,PlaceOfManufactureText,IsManufacturedInUS,PlaceOfManufacture_Sum,BAAcategory,PlaceOfManufacture_DoD,MFGorPerformIsForeign,MFGisForeign
+,NULL,NULL,NULL,Unlabeled,NULL,NULL,NULL
+!,NULL,NULL,NULL,Unlabeled,NULL,NULL,NULL
+:,NULL,NULL,NULL,Unlabeled,NULL,NULL,NULL
+1,NULL,NULL,NULL,Unlabeled,NULL,NULL,NULL
+A,"PERFORMED OR MANUFACTURED IN US, BUT SERVICES PERFORMED BY A FOREIGN CONCERN OR MORE THAN 50% FOREIGN CONTENT",NULL,In U.S. but Foreign Services or Content,Not Apply,"Foreign MFG, Perfomed, or Content, Unlabeled Waiver",1,NULL
+B,PERFORMED OR MANUFACTURED OUTSIDE US,NULL,Performed/Manufactured Outside U.S.,Not Apply,"Foreign MFG, Perfomed, or Content, Unlabeled Waiver",1,NULL
+C,NOT A MANUFACTURED END PRODUCT,NULL,Not Manufactured End Product,Not MFG,NULL,NULL,NULL
+D,MFG IN U.S.,1,Manufactured in U.S.,MFG in U.S.,U.S. Manufactured,0,0
+E,MFG OUTSIDE U.S. - USE OUTSIDE THE UNITED STATES,0,Manufactured Outside U.S.,Not Apply,"MFG Outside U.S., Use outside U.S.",1,1
+F,MFG OUTSIDE U.S. - RESALE,0,Manufactured Outside U.S.,Exception,"MFG Outside U.S., Other Exception or Waiver",1,1
+G,MFG OUTSIDE U.S. - TRADE AGREEMENTS,0,Manufactured Outside U.S.,Waiver,"MFG Outside U.S., Other Exception or Waiver",1,1
+H,MFG OUTSIDE U.S. - COMMERCIAL INFORMATION TECHNOLOGY,0,Manufactured Outside U.S.,Exception,"MFG Outside U.S., Other Exception or Waiver",1,1
+I,MFG OUTSIDE U.S. - PUBLIC INTEREST DETERMINATION,0,Manufactured Outside U.S.,Exception,"MFG Outside U.S., Other Exception or Waiver",1,1
+J,MFG OUTSIDE U.S. - DOMESTIC NONAVAILABILITY,0,Manufactured Outside U.S.,Exception,"MFG Outside U.S., Other Exception or Waiver",1,1
+K,MFG OUTSIDE U.S. - UNREASONABLE COST,0,Manufactured Outside U.S.,Exception,"MFG Outside U.S., Other Exception or Waiver",1,1
+L,MFG OUTSIDE U.S. - QUALIFYING COUNTRY (DOD ONLY),0,Manufactured Outside U.S.,Waiver,"MFG Outside U.S., Qualifying Country",1,1
+S,NULL,NULL,NULL,Unlabeled,NULL,NULL,NULL
+U,NULL,NULL,NULL,Unlabeled,NULL,NULL,NULL

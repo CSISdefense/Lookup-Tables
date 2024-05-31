@@ -1,4 +1,4 @@
-﻿ManufacturingOrganizationType,ManufacturingOrganizationText,ManufacturingOrganizationText_sum,ParentHQisForeign,IsBusinessOrganization
+﻿ManufacturingOrganizationType,ManufacturingOrganizationText,ManufacturingOrganizationText_sum,ManufacturingOrganizationParentHQisForeign,ManufacturingOrganizationIsBusiness
  ,NULL,NULL,NULL,NULL
 :,NULL,NULL,NULL,NULL
 A,U.S. Owned Business,U.S. Owned Business,0,1

@@ -148,9 +148,9 @@ OCOlabelDetail,Crisis,,,,FALSE
 NIAcontradictions,Crisis,,,,FALSE
 AlwaysIsSmallLabel,Vendors,,,,FALSE
 IsFMSplaceIntl,International,Foreign Place of Performance and FMS,,,FALSE
-PlaceIsForeign,International,Foreign Place of Performance,,,FALSE
-OriginIsForeign,International,Foreign Origin,,,FALSE
-VendorIsForeign,International,Foreign Vendor,,,FALSE
+PlaceIsForeign,PlaceIsForeign,Foreign Place of Performance,,,FALSE
+OriginIsForeign,OriginIsForeign,Foreign Origin,,,FALSE
+VendorIsForeign,VendorIsForeign,Foreign Vendor,,,FALSE
 International,International,,,,FALSE
 PlaceOfManufactureText,International,Place of Manufacture,,,FALSE
 PlaceOfManufacture_Sum,International,Place of Manufacture,,,FALSE
