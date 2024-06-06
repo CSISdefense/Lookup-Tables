@@ -16,6 +16,7 @@ Australia,NULL,AUS,FALSE
 Austria,NULL,AUT,FALSE
 Azerbaijan,64,AZE,FALSE
 Bahamas,NULL,BHS,FALSE
+"Bahamas, The",NULL,BHS,FALSE
 Bahrain,126,BHR,FALSE
 Bangladesh,143,BGD,FALSE
 Barbados,NULL,BRB,FALSE
@@ -27,9 +28,11 @@ Bhutan,NULL,BTN,FALSE
 Biafra,NULL,*BI,FALSE
 Bolivia,23,BOL,FALSE
 Bosnia-Herzegovina,50,BIH,FALSE
+Bosnia & Herzegovina,50,BIH,FALSE
 Botswana,NULL,BWA,FALSE
 Brazil,22,BRA,FALSE
 Brunei,NULL,BRN,FALSE
+Brunei Darussalam,NULL,BRN,FALSE
 Bulgaria,NULL,BGR,FALSE
 Burkina Faso,78,BFA,FALSE
 Burundi,93,BDI,FALSE
@@ -44,6 +47,7 @@ Chile,25,CHL,FALSE
 China,135,CHN,FALSE
 Colombia,17,COL,FALSE
 Comoros,107,COM,FALSE
+Congo (Brazzaville),88,COG,FALSE
 Congo,88,COG,FALSE
 Contras (Nicaragua)*,NULL,NIC,TRUE
 Costa Rica,15,CRI,FALSE
@@ -51,12 +55,14 @@ Cote d'Ivoire,NULL,CIV,FALSE
 Croatia,48,HRV,FALSE
 Cuba,5,CUB,FALSE
 Cyprus,53,CYP,FALSE
+Chechia,NULL,CZE,FALSE
 Czech Republic,NULL,CZE,FALSE
 Czechia,NULL,CZE,FALSE
 Czechoslovakia,NULL,~CQ,FALSE
 Denmark,NULL,DNK,FALSE
 Djibouti,96,DJI,FALSE
 Dominican Republic,7,DOM,FALSE
+Congo (Kinshasa),NULL,COD,FALSE
 DR Congo,NULL,COD,FALSE
 East Germany (GDR),NULL,DDR,FALSE
 Ecuador,20,ECU,FALSE
@@ -68,6 +74,7 @@ Equatorial Guinea,NULL,GNQ,FALSE
 Eritrea,98,ERI,FALSE
 Estonia,NULL,EST,FALSE
 Ethiopia,97,ETH,FALSE
+European Union**,NULL,EUE,TRUE
 FAN (Chad)*,NULL,TCD,TRUE
 Fiji,NULL,FJI,FALSE
 Finland,NULL,FIN,FALSE
@@ -76,6 +83,7 @@ FNLA (Angola)*,NULL,AGO,TRUE
 France,33,FRA,FALSE
 FRELIMO (Portugal)*,NULL,MOZ,TRUE
 Gabon,85,GAB,FALSE
+"Gambia, The",71,GMB,FALSE
 Gambia,71,GMB,FALSE
 Georgia,63,GEO,FALSE
 Germany,NULL,DEU,FALSE
@@ -258,6 +266,7 @@ Marshall Islands,NULL,MHL,FALSE
 Mauritania,74,MRT,FALSE
 Mauritius,NULL,MUS,FALSE
 Mexico,10,MEX,FALSE
+Micronesia (Federated States of),NULL,FSM,FALSE
 Micronesia,NULL,FSM,FALSE
 MNLF (Philippines)*,NULL,PHL,TRUE
 Moldova,55,MDA,FALSE
@@ -268,6 +277,7 @@ Mozambique,100,MOZ,FALSE
 MPLA (Portugal)*,NULL,AGO,TRUE
 MTA (Myanmar)*,NULL,MMR,TRUE
 Mujahedin (Afghanistan)*,NULL,AFG,TRUE
+Burma,NULL,MMR,FALSE
 Myanmar,NULL,MMR,FALSE
 Namibia,NULL,NAM,FALSE
 NATO**,NULL,*EE,TRUE
@@ -291,6 +301,7 @@ PAIGC (Portugal)*,NULL,GNB,TRUE
 Pakistan,142,PAK,FALSE
 Palau,NULL,PLW,FALSE
 Palestine,NULL,PSE,FALSE
+West Bank/Gaza,NULL,PSE,FALSE
 Panama,16,PAN,FALSE
 Papua New Guinea,157,PNG,FALSE
 Paraguay,24,PRY,FALSE
@@ -319,7 +330,9 @@ RUF (Sierra Leone)*,NULL,SLE,TRUE
 Russia,57,RUS,FALSE
 Rwanda,94,RWA,FALSE
 Saint Kitts and Nevis,NULL,KNA,FALSE
+St. Kitts and Nevis,NULL,KNA,FALSE
 Saint Vincent,NULL,VCT,FALSE
+St. Vincent and Grenadines,NULL,VCT,FALSE
 Samoa,NULL,WSM,FALSE
 Saudi Arabia,122,SAU,FALSE
 Senegal,73,SEN,FALSE
@@ -364,6 +377,7 @@ Turkey,115,TUR,FALSE
 Turkiye,115,TUR,FALSE
 Turkmenistan,NULL,TKM,FALSE
 Tuvalu,NULL,TUV,FALSE
+United Arab Emirates,NULL,ARE,FALSE
 UAE,NULL,ARE,FALSE
 Uganda,90,UGA,FALSE
 UIC (Somalia)*,NULL,SOM,TRUE
@@ -383,6 +397,7 @@ Vanuatu,NULL,VUT,FALSE
 Venezuela,18,VEN,FALSE
 Viet Cong (South Vietnam)*,NULL,YEM,TRUE
 Viet Minh (France)*,NULL,VNM,TRUE
+Vietnam,NULL,VNM,FALSE
 Viet Nam,NULL,VNM,FALSE
 Western Sahara,NULL,ESH,FALSE
 Yemen,NULL,YEM,FALSE
