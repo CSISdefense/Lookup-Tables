@@ -1,38 +1,38 @@
 geo,ISOalpha3,CountryName,EUregion,NATOregion
 AL,ALB,Albania,Other Central and Eastern,Other Central and Eastern
-AT,AUT,Austria,Rest of EU27,EU27 outside NATO
-BE,BEL,Belgium,Rest of EU27,Other European NATO
+AT,AUT,Austria,EU27 outside NATO,EU27 outside NATO
+BE,BEL,Belgium,Other European NATO,Other European NATO
 BG,BGR,Bulgaria,Other Central and Eastern,Other Central and Eastern
 BA,BIH,Bosnia & Herzegovina,Other Central and Eastern,Other Central and Eastern
 CH,CHE,Switzerland,Switzerland,Switzerland
-CY,CYP,Cyprus,Rest of EU27,EU27 outside NATO
+CY,CYP,Cyprus,EU27 outside NATO,EU27 outside NATO
 CZ,CZE,Czech Republic,Other Central and Eastern,Other Central and Eastern
 DE,DEU,Germany,Germany,Germany
-DK,DNK,Denmark,Nordics,Nordics
+DK,DNK,Denmark,"Sweden, Denmark, and Finland",Nordics
 ES,ESP,Spain,Spain,Spain
-EE,EST,Estonia,Baltics,Other Central and Eastern
-FI,FIN,Finland,Nordics,Nordics
+EE,EST,Estonia,Poland and the Baltics,Poland and the Baltics
+FI,FIN,Finland,"Sweden, Denmark, and Finland",Nordics
 FR,FRA,France,France,France
 HR,HRV,Croatia,Other Central and Eastern,Other Central and Eastern
 HU,HUN,Hungary,Other Central and Eastern,Other Central and Eastern
-IE,IRL,Ireland,Rest of EU27,EU27 outside NATO
-IS,ISL,Iceland,Nordics,Nordics
+IE,IRL,Ireland,EU27 outside NATO,EU27 outside NATO
+IS,ISL,Iceland,Other European NATO,Nordics
 IT,ITA,Italy,Italy,Italy
-LT,LTU,Lithuania,Baltics,Other Central and Eastern
-LU,LUX,Luxembourg,Rest of EU27,Other European NATO
-LV,LVA,Latvia,Baltics,Other Central and Eastern
+LT,LTU,Lithuania,Poland and the Baltics,Poland and the Baltics
+LU,LUX,Luxembourg,Other European NATO,Other European NATO
+LV,LVA,Latvia,Poland and the Baltics,Poland and the Baltics
 MK,MKD,North Macedonia,Other Central and Eastern,Other Central and Eastern
-MT,MLT,Malta,Rest of EU27,EU27 outside NATO
+MT,MLT,Malta,EU27 outside NATO,EU27 outside NATO
 ME,MNE,Montenegro,Other Central and Eastern,Other Central and Eastern
-NL,NLD,Netherlands,Rest of EU27,Other European NATO
-NO,NOR,Norway,Nordics,Nordics
-PL,POL,Poland,Poland,Poland
-PT,PRT,Portugal,Rest of EU27,Other European NATO
+NL,NLD,Netherlands,Other European NATO,Other European NATO
+NO,NOR,Norway,Other European NATO,Nordics
+PL,POL,Poland,Poland and the Baltics,Poland and the Baltics
+PT,PRT,Portugal,Other European NATO,Other European NATO
 RO,ROU,Romania,Other Central and Eastern,Other Central and Eastern
 RS,SRB,Serbia,Other Central and Eastern,Other Central and Eastern
 SK,SVK,Slovakia,Other Central and Eastern,Other Central and Eastern
 SI,SVN,Slovenia,Other Central and Eastern,Other Central and Eastern
-SE,SWE,Sweden,Nordics,Nordics
+SE,SWE,Sweden,"Sweden, Denmark, and Finland",Nordics
 TR,TUR,Turkey,Turkey,Turkey
 EA,NULL,Euro area,Unlabeled,Unlabeled
 EA12,NULL,Euro area - 19 countries,Unlabeled,Unlabeled
@@ -67,9 +67,9 @@ NULL,REU,Réunion,France,France
 NULL,IOT,British Indian Ocean Territory,United Kingdom,United Kingdom
 NULL,FLK,Falkland Islands (Malvinas),United Kingdom,United Kingdom
 NULL,NIU,Niue,United Kingdom,United Kingdom
-NULL,SJM,Svalbard and Jan Mayen,Nordics,Nordics
+NULL,SJM,Svalbard and Jan Mayen,Other European NATO,Nordics
 NULL,UKR,Ukraine,Ukraine,Ukraine
 NULL,HMD,Heard Island and McDonald Islands,United Kingdom,United Kingdom
 NULL,CAN,Canada,Not Europe,Canada
-NULL,SPM,Saint Pierre and Miquelon,United States,Other European NATO
+NULL,SPM,Saint Pierre and Miquelon,Not Europe,United States
 NULL,USA,United States,Not Europe,United States
