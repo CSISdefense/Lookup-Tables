@@ -3827,7 +3827,7 @@ EUrelationship,Other Non-EU NATO,Other Non-EU NATO,4,"DIIG Secondary, Navy",#1d2
 EUrelationship,NATO,NATO,6,"DIIG Secondary, Navy",#1d2d5c,,,,default grey,#554449,
 EUrelationship,Post-Brexit UK,Post-Brexit UK,3,Orange,#DB843D,,,,default grey,#554449,
 EUrelationship,Top 5 Other Partners,Top 5 Other Partners,7,green,#92D050,,,,default grey,#554449,
-EUrelationship,"Switzerland, Israel, & South Korea","Switzerland, Israel\n& South Korea",7,green,#92D050,,,,default grey,#554449,
+EUrelationship,"Switzerland, Israel, & South Korea","Switzerland, Israel,\n& South Korea",7,green,#92D050,,,,default grey,#554449,
 EUrelationship,Japan and ROK,Japan and ROK,7,green,#92D050,,,,default grey,#554449,
 EUrelationship,Unspecified extra-union,Non-EU (unspecified),9,Peach,#FAC090,,,,default grey,#554449,
 EUrelationship,Bilateral Mutual Defense,Bilateral\nMutual Defense,11,teal,#4198AF,,,,default grey,#554449,
