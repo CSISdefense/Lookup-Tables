@@ -155,6 +155,7 @@ International,International,,,,FALSE
 PlaceOfManufactureText,International,Place of Manufacture,,,FALSE
 PlaceOfManufacture_Sum,International,Place of Manufacture,,,FALSE
 ausorgtype,International,,,,FALSE
+intlorgtype,International,,,,FALSE
 IsCSISOCO,Crisis,,,,FALSE
 OCOcrisisScore,Crisis,,,,FALSE
 CrisisFunding,Crisis,Crisis-Funding,,,FALSE

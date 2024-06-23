@@ -784,6 +784,7 @@ IsForeignHeadquarters,IsForeignHeadquarters
 IsForeignMFGorPerform,IsForeignMFGorPerform
 AnyInternational,AnyInternational
 parentheadquarterscountrycode,ParentHQISOalpha3
+ParentHQISOalpha3,ParentHQISOalpha3
 PlaceISOalpha3,PlaceISOalpha3
 VendorISOalpha3,VendorISOalpha3
 OriginISOalpha3,OriginISOalpha3
@@ -791,3 +792,4 @@ ParentHQISOalpha3,ParentHQISOalpha3
 ParentHQisForeign,ParentHQisForeign
 ManufacturingOrganizationParentHQisForeign,ManufacturingOrganizationParentHQisForeign
 ManufacturingOrganizationIsBusiness,ManufacturingOrganizationIsBusiness
+IsFMS,IsFMS
