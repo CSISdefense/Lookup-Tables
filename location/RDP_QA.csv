@@ -1,44 +1,45 @@
 Country,ISOalpha3,Agreement_Name,Agreement_Start,Latest_Amendment,IsRDP,IncludesQA,Source,Secondary_Source,Present in Treaties in Force
-Australia,AUS,Reciprocal Defense Procurement (RDP),1995-04-19,2013-04-11,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-australia.pdf,NA,TRUE
-Australia,AUS,Quality Assuarance (QA),1995-04-19,2013-04-11,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-australia.pdf,NA,FALSE
-Austria,AUT,Reciprocal Defense Procurement (RDP),1991-09-03,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-austria.pdf,NA,FALSE
-Belgium,BEL,"Mutual Cooperation in the Research, Development, Production, Procurement and Logistic Support of Defense Equipment",1979-12-12,1983-04-26,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-belgium.pdf,NA,TRUE
-Canada,CAN,Procurement of Defense Supplies,1984-04-01,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-canada.pdf,NA,FALSE
-Canada,CAN,MOU U.S.-Canada,1956-07-27,1984-04-01,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-canada.pdf,NA,FALSE
-Canada,CAN,U.S-Canandian Defense Production Sharing Program,1963-11-21,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-canada.pdf,NA,FALSE
-Czech Republic,CZE,Reciprocal Defense Procurement (RDP),2012-04-18,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-czech.pdf,NA,FALSE
-Czech Republic,CZE,Quality Assuarance (QA),2004-05-07,NA,FALSE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-czech.pdf,NA,FALSE
-Denmark,DNK,"Mutual Cooperation in the Research, Development, Production, Procurement and Logistic Support of Defense Equipment",1980-01-30,1994-05-27,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-denmark.pdf,NA,TRUE
-Egypt,EGY,"Mutual Cooperation in the Research, Development, Procurement and Logistic Support of Defense Equipment",1988-03-23,1999-04-15,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-egypt.pdf,NA,FALSE
-Estonia,EST,Reciprocal Defense Procurement (RDP),2016-09-23,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-estonia.pdf,NA,TRUE
-Finland,FIN,Quality Assuarance (QA),2016-11-15,NA,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/GQA_USA_FIN_2016.pdf,NA,FALSE
-Finland,FIN,Reciprocal Defense Procurement (RDP),1991-10-24,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-finland.pdf,NA,Disagreement
-France,FRA,"Memorandum of understanding relating to military procurement, with an exchange of letters",1961-12-20,NA,FALSE,NA,NA,NA,TRUE
-France,FRA,Reciprocal Purchases of Defense Equipment,1978-05-22,1990-06-06,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-france.pdf,NA,FALSE
-Germany,DEU,"Mutual Cooperation in the Research, Development, Production, Procurement and Logistic Support of Defense Equipment",1978-10-17,1991-12-04,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-germany.pdf,NA,FALSE
-Greece,GRC,Defense Industrial Cooperation,1986-11-10,1992-09-23,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-greece.pdf,NA,TRUE
-Israel,ISR,"Mutual Cooperation in Research and Development, Scientist and Engineer Exchange, Procurement and Logistic Support of Defense Eqipment",1987-12-14,2008-05-07,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-israel.pdf,NA,TRUE
-Italy,ITA,Reciprocal Defense Procurement (RDP),2008-10-20,NA,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-italy.pdf,NA,FALSE
-Italy,ITA,"Principles Governing Mutual Cooperation in Research, Development, Production and Procurement of Defense Equipment",1978-09-11,NA,TRUE,NA,https://www.acq.osd.mil/dpap/Docs/mou-italy.pdf,NA,TRUE
-Japan,JPN,Reciprocal Defense Procurement (RDP),2016-06-04,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/EON%20for%20Japan.%20EON%20for%20US.%20US%20Japan%20RDP%20MOU%201.pdf,NA,TRUE
-Japan,JPN,"Mutual defense assistance agreement, with annexes",1954-05-01,NA,FALSE,NA,https://www.acq.osd.mil/dpap/Docs/EON%20for%20Japan.%20EON%20for%20US.%20US%20Japan%20RDP%20MOU%201.pdf,NA,TRUE
-Latvia,LVA,Reciprocal Defense Procurement (RDP),2017-04-10,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-Latvia.pdf,NA,TRUE
-Luxembourg,LUX,Reciprocal Defense Procurement (RDP),2010-10-14,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-luxembourg.pdf,NA,TRUE
-Netherlands,NLD,"Memorandum of understanding concerning principles governing mutual cooperation in research and development, production and procurement of conventional defense equipment",1978-08-24,NA,NA,NA,NA,NA,TRUE
-Netherlands,NLD,"Cooperation in the Research and Development, Production and Procurement of Defense Equipment",1990-08-24,2005-10-26,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-netherlands.pdf,NA,FALSE
-Norway,NOR,"Cooperation in the Research and Development, Production and Procurement of Defense Equipment",1978-05-19,1991-05-08,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-norway.pdf,NA,FALSE
-Poland,POL,Memorandum of understanding regarding reciprocal government quality assurance services,2007-06-22,NA,FALSE,TRUE,https://www.acq.osd.mil/dpap/Docs/US-PolandQA-MOU-20070622.pdf,NA,TRUE
-Poland,POL,Reciprocal Defense Procurement (RDP),2011-09-08,2011-09-08,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-poland.pdf,NA,FALSE
-Portugal,PRT,"Mutual Cooperation in the Research, Development, Procurement and Logistic Support of Defense Equipment",1979-03-28,1980-07-07,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-portugal.pdf,NA,TRUE
-Romania,ROU,Quality Assuarance (QA),2015-12-01,NA,FALSE,TRUE,https://www.acq.osd.mil/dpap/cpic/ic/docs/Republic_of_Romania.pdf,NA,FALSE
-Slovakia,SVK,Quality Assuarance (QA),2015-12-08,NA,FALSE,TRUE,https://www.acq.osd.mil/dpap/cpic/ic/docs/US-Slovak_GQA_signed_12-08-15.pdf,NA,FALSE
-Slovenia,SVN,Reciprocal Defense Procurement (RDP),2016-04-08,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/RDP%20between%20USA%20and%20Slovenia.pdf,NA,TRUE
-South Korea,KOR,Quality Assuarance (QA),2011-12-13,NA,FALSE,TRUE,https://www.acq.osd.mil/dpap/cpic/ic/docs/US-KR_GQA_Annex_II_-_Signed_13_Dec_11.pdf,NA,FALSE
-Spain,ESP,"Agreement on friendship, defense and cooperation, with complementary agreements* and exchanges of notes: Defense Industrial Cooperation",1982-07-02,NA,TRUE,TRUE,https://www.acq.osd.mil/dpap/cpic/ic/docs/mou-spain.pdf,NA,TRUE
-Spain,ESP,Quality Assuarance (QA),2014-06-10,NA,TRUE,TRUE,https://www.acq.osd.mil/dpap/cpic/ic/docs/mou-spain.pdf,NA,FALSE
-Sweden,SWE,Mutual Cooperation in the Defense Procurement Area,1987-06-16,2003-06-26,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-sweden.pdf,NA,TRUE
-Switzerland,CHE,Reciprocal Defense Procurement (RDP),1975-07-09,2007-02-15,TRUE,FALSE,https://www.acq.osd.mil/dpap/paic/attachments/swiss-mou20070228.pdf,NA,TRUE
-Turkey,TUR,Quality Assuarance (QA),2001-03-12,NA,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-turkey.pdf,NA,FALSE
-Turkey,TUR,Defense Industrial Cooperation,1980-12-18,NA,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-turkey.pdf,NA,TRUE
-UK,GBR,"Principles Governing Cooperation in Research and Development, Production, Procurement and Logistics Support of Defense Capability",2004-12-16,NA,TRUE,NA,https://www.acq.osd.mil/dpap/Docs/paic/US-UK%20RDP%20MOU%20signed%2022%20Dec%202017%20USA003826-17.pdf,NA,FALSE
-UK,GBR,Reciprocal Defense Procurement (RDP),1975-09-24,NA,TRUE,TRUE,https://www.gao.gov/assets/b-189733.pdf,NA,FALSE
+Australia,AUS,Reciprocal Defense Procurement (RDP),4/19/1995,4/11/2013,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-australia.pdf,NA,TRUE
+Australia,AUS,Quality Assuarance (QA),4/19/1995,4/11/2013,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-australia.pdf,NA,FALSE
+Austria,AUT,Reciprocal Defense Procurement (RDP),9/3/1991,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-austria.pdf,NA,FALSE
+Belgium,BEL,"Mutual Cooperation in the Research, Development, Production, Procurement and Logistic Support of Defense Equipment",12/12/1979,4/26/1983,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-belgium.pdf,NA,TRUE
+Canada,CAN,Procurement of Defense Supplies,4/1/1984,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-canada.pdf,NA,FALSE
+Canada,CAN,MOU U.S.-Canada,7/27/1956,4/1/1984,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-canada.pdf,NA,FALSE
+Canada,CAN,U.S-Canandian Defense Production Sharing Program,11/21/1963,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-canada.pdf,NA,FALSE
+Czech Republic,CZE,Reciprocal Defense Procurement (RDP),4/18/2012,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-czech.pdf,NA,FALSE
+Czech Republic,CZE,Quality Assuarance (QA),5/7/2004,NA,FALSE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-czech.pdf,NA,FALSE
+Denmark,DNK,"Mutual Cooperation in the Research, Development, Production, Procurement and Logistic Support of Defense Equipment",1/30/1980,5/27/1994,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-denmark.pdf,NA,TRUE
+Egypt,EGY,"Mutual Cooperation in the Research, Development, Procurement and Logistic Support of Defense Equipment",3/23/1988,4/15/1999,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-egypt.pdf,NA,FALSE
+Estonia,EST,Reciprocal Defense Procurement (RDP),9/23/2016,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-estonia.pdf,NA,TRUE
+Finland,FIN,Quality Assuarance (QA),11/15/2016,NA,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/GQA_USA_FIN_2016.pdf,NA,FALSE
+Finland,FIN,Reciprocal Defense Procurement (RDP),10/24/1991,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-finland.pdf,NA,Disagreement
+France,FRA,"Memorandum of understanding relating to military procurement, with an exchange of letters",12/20/1961,NA,FALSE,NA,NA,NA,TRUE
+France,FRA,Reciprocal Purchases of Defense Equipment,5/22/1978,6/6/1990,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-france.pdf,NA,FALSE
+Germany,DEU,"Mutual Cooperation in the Research, Development, Production, Procurement and Logistic Support of Defense Equipment",10/17/1978,12/4/1991,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-germany.pdf,NA,FALSE
+Greece,GRC,Defense Industrial Cooperation,11/10/1986,9/23/1992,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-greece.pdf,NA,TRUE
+Israel,ISR,"Mutual Cooperation in Research and Development, Scientist and Engineer Exchange, Procurement and Logistic Support of Defense Eqipment",12/14/1987,5/7/2008,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-israel.pdf,NA,TRUE
+Italy,ITA,Reciprocal Defense Procurement (RDP),10/20/2008,NA,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-italy.pdf,NA,FALSE
+Italy,ITA,"Principles Governing Mutual Cooperation in Research, Development, Production and Procurement of Defense Equipment",9/11/1978,NA,TRUE,NA,https://www.acq.osd.mil/dpap/Docs/mou-italy.pdf,NA,TRUE
+Japan,JPN,Reciprocal Defense Procurement (RDP),6/4/2016,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/EON%20for%20Japan.%20EON%20for%20US.%20US%20Japan%20RDP%20MOU%201.pdf,NA,TRUE
+Japan,JPN,"Mutual defense assistance agreement, with annexes",5/1/1954,NA,FALSE,NA,https://www.acq.osd.mil/dpap/Docs/EON%20for%20Japan.%20EON%20for%20US.%20US%20Japan%20RDP%20MOU%201.pdf,NA,TRUE
+Latvia,LVA,Reciprocal Defense Procurement (RDP),4/10/2017,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-Latvia.pdf,NA,TRUE
+Lithuania,LTU,Reciprocal Defense Procurement,12/13/2021,NA,TRUE,FALSE,https://www.acq.osd.mil/asda/dpc/cp/ic/docs/rdp-mous/mou-lithuania.pdf,NA,TRUE
+Luxembourg,LUX,Reciprocal Defense Procurement (RDP),10/14/2010,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-luxembourg.pdf,NA,TRUE
+Netherlands,NLD,"Memorandum of understanding concerning principles governing mutual cooperation in research and development, production and procurement of conventional defense equipment",8/24/1978,NA,NA,NA,NA,NA,TRUE
+Netherlands,NLD,"Cooperation in the Research and Development, Production and Procurement of Defense Equipment",8/24/1990,10/26/2005,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-netherlands.pdf,NA,FALSE
+Norway,NOR,"Cooperation in the Research and Development, Production and Procurement of Defense Equipment",5/19/1978,5/8/1991,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-norway.pdf,NA,FALSE
+Poland,POL,Memorandum of understanding regarding reciprocal government quality assurance services,6/22/2007,NA,FALSE,TRUE,https://www.acq.osd.mil/dpap/Docs/US-PolandQA-MOU-20070622.pdf,NA,TRUE
+Poland,POL,Reciprocal Defense Procurement (RDP),9/8/2011,9/8/2011,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-poland.pdf,NA,FALSE
+Portugal,PRT,"Mutual Cooperation in the Research, Development, Procurement and Logistic Support of Defense Equipment",3/28/1979,7/7/1980,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-portugal.pdf,NA,TRUE
+Romania,ROU,Quality Assuarance (QA),12/1/2015,NA,FALSE,TRUE,https://www.acq.osd.mil/dpap/cpic/ic/docs/Republic_of_Romania.pdf,NA,FALSE
+Slovakia,SVK,Quality Assuarance (QA),12/8/2015,NA,FALSE,TRUE,https://www.acq.osd.mil/dpap/cpic/ic/docs/US-Slovak_GQA_signed_12-08-15.pdf,NA,FALSE
+Slovenia,SVN,Reciprocal Defense Procurement (RDP),4/8/2016,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/RDP%20between%20USA%20and%20Slovenia.pdf,NA,TRUE
+South Korea,KOR,Quality Assuarance (QA),12/13/2011,NA,FALSE,TRUE,https://www.acq.osd.mil/dpap/cpic/ic/docs/US-KR_GQA_Annex_II_-_Signed_13_Dec_11.pdf,NA,FALSE
+Spain,ESP,"Agreement on friendship, defense and cooperation, with complementary agreements* and exchanges of notes: Defense Industrial Cooperation",7/2/1982,NA,TRUE,TRUE,https://www.acq.osd.mil/dpap/cpic/ic/docs/mou-spain.pdf,NA,TRUE
+Spain,ESP,Quality Assuarance (QA),6/10/2014,NA,TRUE,TRUE,https://www.acq.osd.mil/dpap/cpic/ic/docs/mou-spain.pdf,NA,FALSE
+Sweden,SWE,Mutual Cooperation in the Defense Procurement Area,6/16/1987,6/26/2003,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-sweden.pdf,NA,TRUE
+Switzerland,CHE,Reciprocal Defense Procurement (RDP),7/9/1975,2/15/2007,TRUE,FALSE,https://www.acq.osd.mil/dpap/paic/attachments/swiss-mou20070228.pdf,NA,TRUE
+Turkey,TUR,Quality Assuarance (QA),3/12/2001,NA,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-turkey.pdf,NA,FALSE
+Turkey,TUR,Defense Industrial Cooperation,12/18/1980,NA,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-turkey.pdf,NA,TRUE
+UK,GBR,"Principles Governing Cooperation in Research and Development, Production, Procurement and Logistics Support of Defense Capability",12/16/2004,NA,TRUE,NA,https://www.acq.osd.mil/dpap/Docs/paic/US-UK%20RDP%20MOU%20signed%2022%20Dec%202017%20USA003826-17.pdf,NA,FALSE
+UK,GBR,Reciprocal Defense Procurement (RDP),9/24/1975,NA,TRUE,TRUE,https://www.gao.gov/assets/b-189733.pdf,NA,FALSE
