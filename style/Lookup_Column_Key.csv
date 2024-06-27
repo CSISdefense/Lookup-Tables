@@ -744,6 +744,7 @@ NATOtrade,EUrelationship,NATO partner,,,FALSE
 PartnerNATOtrade,EUrelationship,NATO partner,,,FALSE
 SubjectNATOtrade,EUrelationship,NATO partner,,,FALSE
 DeclarantNATOtrade,EUrelationship,NATO partner,,,FALSE
+PartnerUStrade,EUrelationship,,,,FALSE
 RDPsosa,Relationship,RDP and SOSA Status,,,
 AcquisitionCooperation,Relationship,Cooperative Acquisition Arrangement,,,
 MutualDefense,Relationship,Mutual Defense Agreement,,,
@@ -914,3 +915,5 @@ changes_done_text,likert5,Changes Implemented,,,
 Are.there.any.important.aspects.of.MOSA.incentives.that.were.not.covered.in.our.questions.,,,,,
 Are.there.any.further.business.models.or.experts.you.recommend.we.study.or.speak.to.,,,,,
 respondents,,Number of Respondents,Share of Respondents,,
+RDPpartner,RDPpartner,,,,FALSE
+RDPsubject,RDPpartner,,,,FALSE
