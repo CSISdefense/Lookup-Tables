@@ -1,6 +1,5 @@
 Country,ISOalpha3,Agreement_Name,Agreement_Start,Latest_Amendment,IsRDP,IncludesQA,Source,Secondary_Source,Present in Treaties in Force
 Australia,AUS,Reciprocal Defense Procurement (RDP),4/19/1995,4/11/2013,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-australia.pdf,NA,TRUE
-Australia,AUS,Quality Assuarance (QA),4/19/1995,4/11/2013,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-australia.pdf,NA,FALSE
 Austria,AUT,Reciprocal Defense Procurement (RDP),9/3/1991,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-austria.pdf,NA,FALSE
 Belgium,BEL,"Mutual Cooperation in the Research, Development, Production, Procurement and Logistic Support of Defense Equipment",12/12/1979,4/26/1983,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-belgium.pdf,NA,TRUE
 Canada,CAN,Procurement of Defense Supplies,4/1/1984,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-canada.pdf,NA,FALSE
@@ -20,7 +19,7 @@ Greece,GRC,Defense Industrial Cooperation,11/10/1986,9/23/1992,TRUE,TRUE,https:/
 Israel,ISR,"Mutual Cooperation in Research and Development, Scientist and Engineer Exchange, Procurement and Logistic Support of Defense Eqipment",12/14/1987,5/7/2008,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-israel.pdf,NA,TRUE
 Italy,ITA,Reciprocal Defense Procurement (RDP),10/20/2008,NA,TRUE,TRUE,https://www.acq.osd.mil/dpap/Docs/mou-italy.pdf,NA,FALSE
 Italy,ITA,"Principles Governing Mutual Cooperation in Research, Development, Production and Procurement of Defense Equipment",9/11/1978,NA,TRUE,NA,https://www.acq.osd.mil/dpap/Docs/mou-italy.pdf,NA,TRUE
-Japan,JPN,Reciprocal Defense Procurement (RDP),6/4/2016,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/EON%20for%20Japan.%20EON%20for%20US.%20US%20Japan%20RDP%20MOU%201.pdf,NA,TRUE
+Japan,JPN,Reciprocal Defense Procurement (RDP),6/4/2016,6/3/2021,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/EON%20for%20Japan.%20EON%20for%20US.%20US%20Japan%20RDP%20MOU%201.pdf,NA,TRUE
 Japan,JPN,"Mutual defense assistance agreement, with annexes",5/1/1954,NA,FALSE,NA,https://www.acq.osd.mil/dpap/Docs/EON%20for%20Japan.%20EON%20for%20US.%20US%20Japan%20RDP%20MOU%201.pdf,NA,TRUE
 Latvia,LVA,Reciprocal Defense Procurement (RDP),4/10/2017,NA,TRUE,FALSE,https://www.acq.osd.mil/dpap/Docs/mou-Latvia.pdf,NA,TRUE
 Lithuania,LTU,Reciprocal Defense Procurement,12/13/2021,NA,TRUE,FALSE,https://www.acq.osd.mil/asda/dpc/cp/ic/docs/rdp-mous/mou-lithuania.pdf,NA,TRUE
