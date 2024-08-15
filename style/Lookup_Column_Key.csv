@@ -62,6 +62,7 @@ Competition.effective.only,Competition,Extent of Competition,,,FALSE
 AnyCommercialText,Commercial,Commercial,,,FALSE
 Commercial,Commercial,Commercial,,,FALSE
 CriticalTech,HighTech,Economic Sector Relevant to Critical Tech,,,FALSE
+CriticalTech.sum,HighTech,,,,FALSE
 costorpricingdata,costorpricingdata,Cost or Pricing Data,,,TRUE
 casorffp,CAS,Cost Accounting Standards (CAS),,,FALSE
 costaccountingstandardsclause,CAS,Cost Accounting Standards (CAS),,,FALSE
