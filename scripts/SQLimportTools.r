@@ -164,7 +164,8 @@ translate_name<-function(TargetTable.df,
     stop(paste("Duplicate Pair entries in CSISvariableName in",file))
   }
   
-  TargetTable.df<-left_join(TargetTable.df,lookup.PairConversion)
+  if(nrow(lookup.PairConversion>0))
+    TargetTable.df<-left_join(TargetTable.df,lookup.PairConversion)
   
   TargetTable.df<-subset(TargetTable.df,select=-c(OriginalSourceVariableName))
   
