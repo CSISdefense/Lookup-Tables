@@ -695,6 +695,7 @@ Armament.category,PlatformPortfolio,Platform Portfolio,,,
 Armament.category.UAV,PlatformPortfolio,Platform Portfolio,,,
 Armament.category.UAVLM,PlatformPortfolio,Platform Portfolio,,,
 PlatformPortfolio.Ordnance,PlatformPortfolio,Armament Category,,,
+PlatformPortfolio.Ordnance.sum,PlatformPortfolio,,,,FALSE
 TopPSCtextMY,TopPSCtext,Product or Service,,,
 Order.date,,Order Calendar Year,,,
 Numbers.delivered,,Number of Units Delivered,,,
@@ -918,3 +919,4 @@ Are.there.any.further.business.models.or.experts.you.recommend.we.study.or.speak
 respondents,,Number of Respondents,Share of Respondents,,
 RDPpartner,RDPpartner,,,,FALSE
 RDPsubject,RDPpartner,,,,FALSE
+USITC.Tier,Tier,,,,FALSE
