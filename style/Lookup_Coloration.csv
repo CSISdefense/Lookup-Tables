@@ -3854,26 +3854,72 @@ EUrelationship,EU & NATO,EU & NATO,1,"DIIG Primary, National Guard",#0e99d6,,,,d
 EUrelationship,EU Outside NATO,EU Outside NATO,5,"DIIG Additional Colors, Highlight Blue",#66c6cb,,,,default grey,#554449,
 ,,,,,,,,,,,
 Relationship,United States,United States,1,red,#AA4643,,,,default grey,#554449,
-Relationship,NTIB and RDP,NTIB and RDP,1,red,#AA4643,,,,default grey,#554449,
+Relationship,"United
+ States","United
+ States",1,red,#AA4643,,,,default grey,#554449,
+Relationship,NTIB and RDP,NTIB and RDP,2,red,#AA4643,,,,default grey,#554449,
 Relationship,NTIB,NTIB,2,red,#AA4643,,,,default grey,#554449,
-Relationship,NATO and RDP,NATO and RDP,3,Blue,#0070C0,,,,default grey,#554449,
-Relationship,NATO,NATO,4,Blue,#0070C0,,,,default grey,#554449,
+Relationship,"U.S.,
+Canada, U.K.,
+& Australia","U.S.,
+Canada, U.K.,
+& Australia",3,Blue,#0070C0,,,,default grey,#554449,
+Relationship,"Canada, United
+Kingdom, Australia","Canada, United
+Kingdom, Australia",3,Blue,#0070C0,,,,default grey,#554449,
+Relationship,NATO and RDP,NATO and RDP,4,"DIIG Secondary, Navy",#1d2d5c,,,,default grey,#554449,
+Relationship,NATO,NATO,4,"DIIG Secondary, Navy",#1d2d5c,,,,default grey,#554449,
+Relationship,"Other
+NATO","Other
+NATO",4,"DIIG Secondary, Navy",#1d2d5c,,,,default grey,#554449,
 Relationship,Major Non-NATO and RDP,Major Non-NATO and RDP,5,Orange,#DB843D,,,,default grey,#554449,
+Relationship,"Major
+ Non-NATO &
+Treaty Ally","Major
+ Non-NATO &
+Treaty Ally",6,Orange,#DB843D,,,,default grey,#554449,
 Relationship,Major Non-NATO & Treaty Ally,Major Non-NATO\n& Treaty Ally,6,Orange,#DB843D,,,,default grey,#554449,
+Relationship,"Maj. Non-
+NATO &
+Treaty Ally","Maj. Non-
+NATO &
+Treaty Ally",6,Orange,#DB843D,,,,default grey,#554449,
 Relationship,RDP and SOSA,RDP and SOSA,7,green,#92D050,,,,default grey,#554449,
 Relationship,ANZUS,ANZUS,7,green,#92D050,,,,default grey,#554449,
 Relationship,Southeast Asia,Southeast Asia,9,Peach,#FAC090,,,,default grey,#554449,
+Relationship,Israel,Israel,11,teal,#4198AF,,,,default grey,#554449,
 Relationship,Bilateral Mutual Defense,Bilateral\nMutual Defense,11,teal,#4198AF,,,,default grey,#554449,
 Relationship,SOSA alone,SOSA alone,11,teal,#4198AF,,,,default grey,#554449,
 Relationship,Rio Treaty,Rio Treaty,13,Light Red,#D19392,,,,default grey,#554449,
 Relationship,RDP,RDP,14,"DIIG Additional, Yellow",#eec260,,,,default grey,#554449,
 Relationship,RDP alone,RDP alone,14,"DIIG Additional, Yellow",#eec260,,,,default grey,#554449,
 Relationship,Major Non-NATO,Major Non-NATO,15,"DIIG Additional, Yellow",#eec260,,,,default grey,#554449,
+Relationship,"Other Major
+Non-NATO","Other Major
+Non-NATO",15,"DIIG Additional, Yellow",#eec260,,,,default grey,#554449,
+Relationship,"Other Major
+Non-NATO
+& Ukraine","Other Major
+Non-NATO
+& Ukraine",17,"DIIG Additional, Yellow",#eec260,,,,default grey,#554449,
 Relationship,Other Major Non-NATO,Other Major\nNon-NATO,17,"DIIG Additional, Yellow",#eec260,,,,default grey,#554449,
+Relationship,Ukraine,Ukraine,18,"DIIG Additional, Yellow",#eec260,,,,default grey,#554449,
 Relationship,Other Treaty Ally,Other\nTreaty Ally,19,light Blue,#93CDDD,,,,default grey,#554449,
 Relationship,Saudi Arabia & UAE,Saudi Arabia &\nUAE,21,Peach,#FAC090,,,,default grey,#554449,
+Relationship,"Other
+Near East","Other
+Near East",21,Peach,#FAC090,,,,default grey,#554449,
 Relationship,None,None,22,Light Red,#D19392,,,,default grey,#554449,
+Relationship,"Other
+East Asia
+& Pacific","Other
+East Asia
+& Pacific",23,Peach,#FAC090,,,,default grey,#554449,
+Relationship,"Rest of
+World","Rest of
+World",99,Purpleblue,#93A9CF,,,,default grey,#554449,
 Relationship,Rest of World,Rest of\nWorld,99,Purpleblue,#93A9CF,,,,default grey,#554449,
+Relationship,Russia,Russia,100,Light Red,#D19392,,,,default grey,#554449,
 ,,,,,,,,,,,
 FMS,Foreign Funds FMS,Foreign Funds FMS,1,Blue,#0070C0,,,,default grey,#554449,
 FMS,Foreign Funds non-FMS,Foreign Funds non-FMS,3,National Guard,#0e99d6,,,,default grey,#554449,

@@ -761,6 +761,8 @@ OriginMutualAcquisition,Relationship,Mutual Defense Agreement and Acquisition Ar
 VendorAcquisitionCooperation,Relationship,Cooperative Acquisition Arrangement,,,
 VendorMutualDefense,Relationship,Mutual Defense Agreement,,,
 VendorMutualAcquisition,Relationship,Mutual Defense Agreement and Acquisition Arrangement,,,
+MutAcqImp,Relationship,,,,FALSE
+MutAcqExpSum,Relationship,,,,FALSE
 SEATO,Binary,South East Asian Treaty Organization Member,,,
 RioTreaty,Binary,Rio Treaty Member,,,
 FiveEyes,Binary,Five Eyes Member,,,
