@@ -696,6 +696,7 @@ Armament.category.UAV,PlatformPortfolio,Platform Portfolio,,,
 Armament.category.UAVLM,PlatformPortfolio,Platform Portfolio,,,
 PlatformPortfolio.Ordnance,PlatformPortfolio,Armament Category,,,
 PlatformPortfolio.Ordnance.sum,PlatformPortfolio,,,,FALSE
+Armament.category.sum,PlatformPortfolio,,,,FALSE
 TopPSCtextMY,TopPSCtext,Product or Service,,,
 Order.date,,Order Calendar Year,,,
 Numbers.delivered,,Number of Units Delivered,,,
