@@ -1393,7 +1393,7 @@ HighTech,Solar Manufacturing,Solar Manufacturing,20,"DIIG Primary, Air Force",#7
 HighTech,Advanced Vehicles & Components,Advanced Vehicles & Components,21,"DIIG Primary, Air Force",#72a0c1,,,,,,
 HighTech,Hydrogen,Hydrogen,22,"DIIG Primary, Air Force",#72a0c1,,,,,,
 HighTech,SensorCyber,Sensor & Cyber,23,"DIIG Additional, Yellow",#eec260,,,,black,#000000,
-HighTech,Advanced Nuclear,,24,"DIIG Primary, Air Force",#72a0c1,,,,,,
+HighTech,Advanced Nuclear,Advanced Nuclear,24,"DIIG Primary, Air Force",#72a0c1,,,,,,
 HighTech,Space,Space,25,"DIIG Secondary, Navy",#1d2d5c,,,,black,#000000,
 HighTech,High Technology,Assorted High Technology,26,"DIIG, Highlight Blue",#66c6cb,,,,black,#000000,
 HighTech,Rest of Defense,Rest of Defense,27,"DIIG Primary, Air Force",#72a0c1,,,,black,#000000,
