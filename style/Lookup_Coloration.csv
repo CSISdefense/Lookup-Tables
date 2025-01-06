@@ -1521,7 +1521,7 @@ PlatformPortfolio,Osprey,Osprey,23,,#C74745,,,,,,
 PlatformPortfolio,Cross-Platform,Cross-Platform,99,"DIIG Secondary, Mallard",#3D4936,,,,default grey,#554449,
 PlatformPortfolio,Cross-Category Parts and Accessories,Cross-Category Parts and Accessories,99,"DIIG Secondary, Mallard",#3D4936,,,,default grey,#554449,
 PlatformPortfolio,Other Ordnance,Other Ordnance,6.5,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
-PlatformPortfolio,Artillery and Launchers,Artillery and Launchers,3.5,green,#92D050,,,,default grey,#554449,
+PlatformPortfolio,Artillery and Launchers,Artillery & Launchers,3.5,green,#92D050,,,,default grey,#554449,
 PlatformPortfolio,Artillery and Naval weapons,Artillery and Naval weapons,3.5,green,#92D050,,,,default grey,#554449,
 ,,,,,,,,,,,
 TopPSCtext,DEFENSE AIRCRAFT (ADVANCED),Defense R&D\n(Advanced),1,"DIIG Secondary, Sea Green",#7ac49b,,,,,,
@@ -3918,6 +3918,9 @@ NATO &
 Treaty Ally","Maj. Non-
 NATO &
 Treaty Ally",6,Orange,#DB843D,,,,default grey,#554449,
+Relationship,"Other U.S.
+Treaty Ally","Other U.S.
+Treaty Ally",7,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
 Relationship,RDP and SOSA,RDP and SOSA,7,green,#92D050,,,,default grey,#554449,
 Relationship,ANZUS,ANZUS,7,green,#92D050,,,,default grey,#554449,
 Relationship,Southeast Asia,Southeast Asia,9,Peach,#FAC090,,,,default grey,#554449,
@@ -3939,6 +3942,7 @@ Non-NATO
 Relationship,Other Major Non-NATO,Other Major\nNon-NATO,17,"DIIG Additional, Yellow",#eec260,,,,default grey,#554449,
 Relationship,Ukraine,Ukraine,18,"DIIG Additional, Yellow",#eec260,,,,default grey,#554449,
 Relationship,Other Treaty Ally,Other\nTreaty Ally,19,light Blue,#93CDDD,,,,default grey,#554449,
+Relationship,India,India,20,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
 Relationship,Saudi Arabia & UAE,Saudi Arabia &\nUAE,21,Peach,#FAC090,,,,default grey,#554449,
 Relationship,"Other
 Near East","Other
@@ -4431,3 +4435,5 @@ RDPpartner,KOR,ROK\n(No RDP-A),8,"DIIG Secondary, Tangelo",#e58846,,,,default gr
 RDPpartner,SGP,Singapore\n(No RDP-A),9,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
 RDPpartner,Netherlands,Netherlands\n(1978;1990),5,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
 RDPpartner,Singapore,Singapore\n(No RDP-A),9,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
+Measurement,Trend Indicator Value,Trend Indicator\nValue,1,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
+Measurement,Number Delivered,Number\nDelivered,2,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
