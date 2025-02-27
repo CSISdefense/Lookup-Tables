@@ -439,14 +439,14 @@ Area,Other Transaction Authority (OTA) R&D Agreements,Other Transaction Authorit
 Tier,Systems and Ordnance,Systems and\nOrdnance,1,"DIIG Secondary, Marine Corps",#999999,,,,default grey,#554449,
 Tier,Parts and Accessories,Parts and\nAccessories,2,"DIIG Primary, Blue",#0054A4,,,,default grey,#554449,
 Tier,Munitions,Munitions,3,"DIIG Primary, Red",#BB4243,,,,default grey,#554449,
-Tier,Engines,Engines,0,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
-Tier,Sensors,Sensors,0,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
+Tier,Engines,Engines,4,"DIIG Secondary, Tangelo",#7c131b,,,,default grey,#554449,
+Tier,Sensors,Sensors,5,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
 Tier,Other,Other,0,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
 Tier,"Component &
 Accessories","Component &
 Accessories",0,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
 Tier,Aircraft/Airframe,Aircraft/Airframe,0,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
-Tier,Engine Accs.,Engine Accs.,0,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
+Tier,Engine Accs.,Engine Accs.,6,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
 Tier,"Launching, Landing,
 & Ground","Launching, Landing,
 & Ground",0,"DIIG Secondary, Tangelo",#e58846,,,,default grey,#554449,
