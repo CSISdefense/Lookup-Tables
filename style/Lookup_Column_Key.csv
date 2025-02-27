@@ -29,6 +29,7 @@ SubCustomer.engines,Agencies,Component,,,FALSE
 MilDep,Agencies,Military Department,,,FALSE
 DoDcomp,Agencies,DoD Component,,,FALSE
 DefenseOrganization,Agencies,Defense Organization,,,FALSE
+SubCustomer.MRO,Agencies,,,,FALSE
 ServicesCategory.detail,Area,Services Area,,,FALSE
 ServicesCategory.sum,Area,Services Area,,,FALSE
 DISAprodserv.sum,Area,Product or Service Area,,,FALSE
