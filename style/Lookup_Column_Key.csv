@@ -731,6 +731,7 @@ SubjectNATOregion,EUregion,,,,FALSE
 SubjectEUregion,EUregion,,,,FALSE
 NATOregion,EUregion,,,,FALSE
 EUregion,EUregion,,,,FALSE
+DeclarantEUregion.sum,EUregion,,,,FALSE
 SubjectEUtrade.sum,EUrelationship,EU partner,,,
 DeclarantEUtrade.sum,EUrelationship,EU partner,,,
 PartnerEUtrade.sum,EUrelationship,EU partner,,,
