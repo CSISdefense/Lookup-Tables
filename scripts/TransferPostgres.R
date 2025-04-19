@@ -43,6 +43,8 @@ path<-"D:\\Users\\Greg\\Repositories\\USAspending-local\\"
 sql_fpds<-read_delim(file.path(path,"contract_fpds_ctu_list_2025_04_13.txt"),delim="\t",col_types="iciD")
 sql_fpds$last_modified_date<-as.Date(sql_fpds$last_modified_date,format="%Y-%m%-%d 00:00:00.0000000")
 
+sql_fpds<-sql_fpds %>% filter(contract_transaction_unique_key!="NULL")
+
 for (fy in 2000:2024){
   pgcon <- dbConnect(odbc(),
                      Driver = "PostgreSQL Unicode(x64)",
@@ -60,7 +62,7 @@ for (fy in 2000:2024){
     if(end>nrow(sql_fpds_fy)) {end<-nrow(sql_fpds_fy)}
     print(c(start,end, format(Sys.time(), "%c")))
     dbAppendTable(conn = pgcon, 
-                  name = SQL('"raw"."contract_fpds_ctu_list"'), 
+                  name = SQL('"helper"."contract_fpds_ctu_list"'), 
                   value = sql_fpds_fy[start:end,])  ## x is any data frame
     #https://stackoverflow.com/questions/66864660/r-dbi-sql-server-dbwritetable-truncates-rows-field-types-parameter-does-not-w
     # values <- DBI::sqlAppendTable(
@@ -77,8 +79,8 @@ for (fy in 2000:2024){
 
 
 #### Download new or changed rows from Postgres database #####
-postgresdir<-"Postgres_2024_02_08"
-for (cy in 1983:1999){
+postgresdir<-"Postgres_2025_04_08"
+for (fy in 1962:2025){
   pgcon <- dbConnect(odbc(),
                      Driver = "PostgreSQL Unicode(x64)",
                      Server = "127.0.0.1",
@@ -87,16 +89,19 @@ for (cy in 1983:1999){
                      PWD =pgpwd)
   sql<-paste0(" SELECT p.*
    FROM raw.source_procurement_transaction p
-   LEFT OUTER JOIN raw.contract_fpds_ctu_list c
+   LEFT OUTER JOIN helper.contract_fpds_ctu_list c
    on p.detached_award_proc_unique=c.contract_transaction_unique_key
-    WHERE date_part('year',to_date(p.action_date, 'yyyy-mm-dd')) = ",cy," and",
+   LEFT OUTER JOIN date_list d
+   on p.action_date=d.action_date
+   
+    WHERE d.fiscal_year = ",fy," and",
               "(c.contract_transaction_unique_key is null or c.last_modified_date < ",
-              "to_date(p.action_date, 'yyyy-mm-dd'));")
-  print(c("Download start",cy, format(Sys.time(), "%c")))
+              "to_date(p.last_modified_date, 'yyyy-mm-dd'));")
+  print(c("Download start",fy, format(Sys.time(), "%c")))
   latest_fpds<-dbGetQuery(pgcon, sql)
-  print(c("Download complete",cy,nrow(latest_fpds), format(Sys.time(), "%c")))
+  print(c("Download complete",fy,nrow(latest_fpds), format(Sys.time(), "%c")))
   if(nrow(latest_fpds)==0)     next
-  save(latest_fpds,file= file.path(path,postgresdir,paste0("fpds_cy_",cy,".rda")))
+  save(latest_fpds,file= file.path(path,postgresdir,paste0("fpds_fy_",fy,".rda")))
 }
 
 
