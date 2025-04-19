@@ -32,25 +32,25 @@ pgcon <- dbConnect(odbc(),
                    PWD =pgpwd)
 
 
-
-fy<-2023
-
 #### Upload contract_fpds_ctu list to Postgres database #####
 
 # path<-"C:\\Users\\grego\\Repositories\\USAspending-local\\"
 path<-"D:\\Users\\Greg\\Repositories\\USAspending-local\\"
 # path<-"F:\\Users\\Greg\\Repositories\\USAspending-local\\"
-sql_fpds<-read_delim(file.path(path,"contract_fpds_ctu_list_2024_03_19.txt"),delim="\t",col_types="iciD")
+
+
+#Ideally this should pull down automatically. 
+sql_fpds<-read_delim(file.path(path,"contract_fpds_ctu_list_2025_04_13.txt"),delim="\t",col_types="iciD")
 sql_fpds$last_modified_date<-as.Date(sql_fpds$last_modified_date,format="%Y-%m%-%d 00:00:00.0000000")
 
-for (fy in 2000:2022){
+for (fy in 2000:2024){
   pgcon <- dbConnect(odbc(),
                      Driver = "PostgreSQL Unicode(x64)",
                      Server = "127.0.0.1",
                      Database = "raw",
                      UID = "postgres",
                      PWD =pgpwd)
-  print(c("Fiscal Year",fy,"Download Start", format(Sys.time(), "%c")))
+  print(c("Fiscal Year",fy,"Upload Start", format(Sys.time(), "%c")))
   sql_fpds_fy<-sql_fpds %>%filter(fiscal_year==fy) %>%as.data.frame()
     for (r in 0:floor(nrow(sql_fpds_fy)/1000000)){
     start<-(r*1000000)+1
