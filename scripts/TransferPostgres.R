@@ -34,9 +34,17 @@ pgcon <- dbConnect(odbc(),
 
 #### Upload contract_fpds_ctu list to Postgres database #####
 
-# path<-"C:\\Users\\grego\\Repositories\\USAspending-local\\"
-path<-"D:\\Users\\Greg\\Repositories\\USAspending-local\\"
-# path<-"F:\\Users\\Greg\\Repositories\\USAspending-local\\"
+if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
+  path<-"C:\\Users\\grego\\Repositories\\USAspending-local\\"
+} else if(dir.exists("D:\\Users\\Greg\\Repositories\\USAspending-local\\")) {
+  path<-"D:\\Users\\Greg\\Repositories\\USAspending-local\\"
+} else if(dir.exists("F:\\Users\\Greg\\Repositories\\USAspending-local\\")) {
+  path<-"F:\\Users\\Greg\\Repositories\\USAspending-local\\"
+} else if(dir.exists("C:\\Users\\grego\\Repos\\USAspending-local\\")) {
+  path<-"C:\\Users\\grego\\Repos\\USAspending-local\\"
+} else{
+  stop("USAspending-local dir location unknown")
+}
 
 
   #Ideally this should pull down automatically. 
@@ -129,7 +137,7 @@ for (fy in 2000:2025){
 #1977-2024 2024-02-08 YTD. 
 file.list<-list.files(file.path(path,postgresdir))
 
-for (f in 47:length(file.list)){
+for (f in 1:length(file.list)){
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
@@ -138,6 +146,12 @@ for (f in 47:length(file.list)){
                      PWD =pwd)
   
   load(file.path(path,postgresdir,file.list[f]))
+  #I've sometimes added an entirely empty fiscal_year folde. Remove it.
+  if("fiscal_year" %in% colnames(latest_fpds)){
+    if(all(is.na(latest_fpds$fiscal_year)))
+      latest_fpds<-latest_fpds[colnames(latest_fpds) !="fiscal_year"]
+  }
+  
   print(c("File",file.list[f],"Upload Start", format(Sys.time(), "%c")))
   
   if(nrow(latest_fpds)==0)
