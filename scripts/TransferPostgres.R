@@ -86,6 +86,7 @@ for (fy in 1962:2025){
 #to reduce query fixed costs.
 #Subseqeuntly they start to scale up in duration when mre rows show up. Raising to
 #something like an hour per million rows.
+#Note, by using a second computer, the upload can happen in parallel because Azure and Postgres are different DBs
 postgresdir<-"Postgres_2025_04_08"
 for (fy in 2000:2025){
   pgcon <- dbConnect(odbc(),
