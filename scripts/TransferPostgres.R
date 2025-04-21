@@ -39,13 +39,16 @@ path<-"D:\\Users\\Greg\\Repositories\\USAspending-local\\"
 # path<-"F:\\Users\\Greg\\Repositories\\USAspending-local\\"
 
 
-#Ideally this should pull down automatically. 
-sql_fpds<-read_delim(file.path(path,"contract_fpds_ctu_list_2025_04_13.txt"),delim="\t",col_types="iciD")
+  #Ideally this should pull down automatically. 
+  sql_fpds<-read_delim(file.path(path,"contract_fpds_ctu_list_2025_04_13.txt"),delim="\t",col_types="iciT") #T or c for last_modified?
+  
+  #necessary?
 sql_fpds$last_modified_date<-as.Date(sql_fpds$last_modified_date,format="%Y-%m%-%d 00:00:00.0000000")
 
 sql_fpds<-sql_fpds %>% filter(contract_transaction_unique_key!="NULL")
 
-for (fy in 2000:2024){
+##Took roughly 24 hours
+for (fy in 1962:2025){
   pgcon <- dbConnect(odbc(),
                      Driver = "PostgreSQL Unicode(x64)",
                      Server = "127.0.0.1",
@@ -79,8 +82,12 @@ for (fy in 2000:2024){
 
 
 #### Download new or changed rows from Postgres database #####
+#Takes 20-40 minutes for the each of the early years. Grouping those up to 2000
+#to reduce query fixed costs.
+#Subseqeuntly they start to scale up in duration when mre rows show up. Raising to
+#something like an hour per million rows.
 postgresdir<-"Postgres_2025_04_08"
-for (fy in 1962:2025){
+for (fy in 2000:2025){
   pgcon <- dbConnect(odbc(),
                      Driver = "PostgreSQL Unicode(x64)",
                      Server = "127.0.0.1",
@@ -91,17 +98,25 @@ for (fy in 1962:2025){
    FROM raw.source_procurement_transaction p
    LEFT OUTER JOIN helper.contract_fpds_ctu_list c
    on p.detached_award_proc_unique=c.contract_transaction_unique_key
-   LEFT OUTER JOIN date_list d
-   on p.action_date=d.action_date
-   
-    WHERE d.fiscal_year = ",fy," and",
-              "(c.contract_transaction_unique_key is null or c.last_modified_date < ",
-              "to_date(p.last_modified_date, 'yyyy-mm-dd'));")
+   LEFT OUTER JOIN helper.date_list ad
+   on p.action_date=ad.action_date
+   LEFT OUTER JOIN helper.date_list lm
+   on p.last_modified=lm.action_date ")
+  if (fy==1989 ){
+    sql<-paste0(sql,"WHERE ad.fiscal_year <= ",fy," and ")
+  } else 
+    sql<-paste0(sql,"WHERE ad.fiscal_year = ",fy," and ")
+  sql<-paste0(sql,"(c.contract_transaction_unique_key is null or ",
+              "(lm.t_date > ad.t_date and ad.fiscal_year>2023));")
+  #Last modified date wasn't properly imported, so using the kludge since everything was updated in 2024_02
   print(c("Download start",fy, format(Sys.time(), "%c")))
   latest_fpds<-dbGetQuery(pgcon, sql)
   print(c("Download complete",fy,nrow(latest_fpds), format(Sys.time(), "%c")))
   if(nrow(latest_fpds)==0)     next
-  save(latest_fpds,file= file.path(path,postgresdir,paste0("fpds_fy_",fy,".rda")))
+  if (fy==2000 )
+    save(latest_fpds,file= file.path(path,postgresdir,paste0("fpds_fy_",fy,"and_before.rda")))
+  else 
+    save(latest_fpds,file= file.path(path,postgresdir,paste0("fpds_fy_",fy,".rda")))
 }
 
 
@@ -111,7 +126,7 @@ for (fy in 1962:2025){
 #### Upload new or changed rows to SQL server #####
 
 # proc<-dbReadTable(pgcon,  name = SQL('"raw"."detached_award_2023"'))
-#1977-2024 2024-02-08 YTD. NOte that probably everything pre-1990 I should probably capture in one single query.
+#1977-2024 2024-02-08 YTD. 
 file.list<-list.files(file.path(path,postgresdir))
 
 for (f in 47:length(file.list)){
