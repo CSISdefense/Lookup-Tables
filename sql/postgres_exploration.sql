@@ -21,3 +21,12 @@ max(length([additional_reporting])) as additional_reporting
 ,max(length([ultimate_parent_unique_ide])) as [ultimate_parent_unique_ide]
 ,max(length([vendor_enabled])) as [vendor_enabled]
 from raw.source_procurement_transaction p
+
+
+
+SET QUERY_GOVERNOR_COST_LIMIT 0
+--9h31m at 47%
+SET ANSI_WARNINGS OFF;
+SET NOCOUNT ON;
+select fiscal_year, contract_transaction_unique_key, csistransactionid, last_modified_date
+from contract.FPDS

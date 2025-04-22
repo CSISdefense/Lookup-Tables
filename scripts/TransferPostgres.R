@@ -32,25 +32,38 @@ pgcon <- dbConnect(odbc(),
                    PWD =pgpwd)
 
 
-
-fy<-2023
-
 #### Upload contract_fpds_ctu list to Postgres database #####
 
-# path<-"C:\\Users\\grego\\Repositories\\USAspending-local\\"
-path<-"D:\\Users\\Greg\\Repositories\\USAspending-local\\"
-# path<-"F:\\Users\\Greg\\Repositories\\USAspending-local\\"
-sql_fpds<-read_delim(file.path(path,"contract_fpds_ctu_list_2024_03_19.txt"),delim="\t",col_types="iciD")
+if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
+  path<-"C:\\Users\\grego\\Repositories\\USAspending-local\\"
+} else if(dir.exists("D:\\Users\\Greg\\Repositories\\USAspending-local\\")) {
+  path<-"D:\\Users\\Greg\\Repositories\\USAspending-local\\"
+} else if(dir.exists("F:\\Users\\Greg\\Repositories\\USAspending-local\\")) {
+  path<-"F:\\Users\\Greg\\Repositories\\USAspending-local\\"
+} else if(dir.exists("C:\\Users\\grego\\Repos\\USAspending-local\\")) {
+  path<-"C:\\Users\\grego\\Repos\\USAspending-local\\"
+} else{
+  stop("USAspending-local dir location unknown")
+}
+
+
+  #Ideally this should pull down automatically. 
+  sql_fpds<-read_delim(file.path(path,"contract_fpds_ctu_list_2025_04_13.txt"),delim="\t",col_types="iciT") #T or c for last_modified?
+  
+  #necessary?
 sql_fpds$last_modified_date<-as.Date(sql_fpds$last_modified_date,format="%Y-%m%-%d 00:00:00.0000000")
 
-for (fy in 2000:2022){
+sql_fpds<-sql_fpds %>% filter(contract_transaction_unique_key!="NULL")
+
+##Took roughly 24 hours
+for (fy in 1962:2025){
   pgcon <- dbConnect(odbc(),
                      Driver = "PostgreSQL Unicode(x64)",
                      Server = "127.0.0.1",
                      Database = "raw",
                      UID = "postgres",
                      PWD =pgpwd)
-  print(c("Fiscal Year",fy,"Download Start", format(Sys.time(), "%c")))
+  print(c("Fiscal Year",fy,"Upload Start", format(Sys.time(), "%c")))
   sql_fpds_fy<-sql_fpds %>%filter(fiscal_year==fy) %>%as.data.frame()
     for (r in 0:floor(nrow(sql_fpds_fy)/1000000)){
     start<-(r*1000000)+1
@@ -60,7 +73,7 @@ for (fy in 2000:2022){
     if(end>nrow(sql_fpds_fy)) {end<-nrow(sql_fpds_fy)}
     print(c(start,end, format(Sys.time(), "%c")))
     dbAppendTable(conn = pgcon, 
-                  name = SQL('"raw"."contract_fpds_ctu_list"'), 
+                  name = SQL('"helper"."contract_fpds_ctu_list"'), 
                   value = sql_fpds_fy[start:end,])  ## x is any data frame
     #https://stackoverflow.com/questions/66864660/r-dbi-sql-server-dbwritetable-truncates-rows-field-types-parameter-does-not-w
     # values <- DBI::sqlAppendTable(
@@ -77,8 +90,13 @@ for (fy in 2000:2022){
 
 
 #### Download new or changed rows from Postgres database #####
-postgresdir<-"Postgres_2024_02_08"
-for (cy in 1983:1999){
+#Takes 20-40 minutes for the each of the early years. Grouping those up to 2000
+#to reduce query fixed costs.
+#Subseqeuntly they start to scale up in duration when mre rows show up. Raising to
+#something like an hour per million rows.
+#Note, by using a second computer, the upload can happen in parallel because Azure and Postgres are different DBs
+postgresdir<-"Postgres_2025_04_08"
+for (fy in 2000:2025){
   pgcon <- dbConnect(odbc(),
                      Driver = "PostgreSQL Unicode(x64)",
                      Server = "127.0.0.1",
@@ -87,16 +105,27 @@ for (cy in 1983:1999){
                      PWD =pgpwd)
   sql<-paste0(" SELECT p.*
    FROM raw.source_procurement_transaction p
-   LEFT OUTER JOIN raw.contract_fpds_ctu_list c
+   LEFT OUTER JOIN helper.contract_fpds_ctu_list c
    on p.detached_award_proc_unique=c.contract_transaction_unique_key
-    WHERE date_part('year',to_date(p.action_date, 'yyyy-mm-dd')) = ",cy," and",
-              "(c.contract_transaction_unique_key is null or c.last_modified_date < ",
-              "to_date(p.action_date, 'yyyy-mm-dd'));")
-  print(c("Download start",cy, format(Sys.time(), "%c")))
+   LEFT OUTER JOIN helper.date_list ad
+   on p.action_date=ad.action_date
+   LEFT OUTER JOIN helper.date_list lm
+   on p.last_modified=lm.action_date ")
+  if (fy==1989 ){
+    sql<-paste0(sql,"WHERE ad.fiscal_year <= ",fy," and ")
+  } else 
+    sql<-paste0(sql,"WHERE ad.fiscal_year = ",fy," and ")
+  sql<-paste0(sql,"(c.contract_transaction_unique_key is null or ",
+              "(lm.t_date > ad.t_date and ad.fiscal_year>2023));")
+  #Last modified date wasn't properly imported, so using the kludge since everything was updated in 2024_02
+  print(c("Download start",fy, format(Sys.time(), "%c")))
   latest_fpds<-dbGetQuery(pgcon, sql)
-  print(c("Download complete",cy,nrow(latest_fpds), format(Sys.time(), "%c")))
+  print(c("Download complete",fy,nrow(latest_fpds), format(Sys.time(), "%c")))
   if(nrow(latest_fpds)==0)     next
-  save(latest_fpds,file= file.path(path,postgresdir,paste0("fpds_cy_",cy,".rda")))
+  if (fy==2000 )
+    save(latest_fpds,file= file.path(path,postgresdir,paste0("fpds_fy_",fy,"and_before.rda")))
+  else 
+    save(latest_fpds,file= file.path(path,postgresdir,paste0("fpds_fy_",fy,".rda")))
 }
 
 
@@ -106,10 +135,10 @@ for (cy in 1983:1999){
 #### Upload new or changed rows to SQL server #####
 
 # proc<-dbReadTable(pgcon,  name = SQL('"raw"."detached_award_2023"'))
-#1977-2024 2024-02-08 YTD. NOte that probably everything pre-1990 I should probably capture in one single query.
+#1977-2024 2024-02-08 YTD. 
 file.list<-list.files(file.path(path,postgresdir))
 
-for (f in 47:length(file.list)){
+for (f in 1:length(file.list)){
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
@@ -118,6 +147,12 @@ for (f in 47:length(file.list)){
                      PWD =pwd)
   
   load(file.path(path,postgresdir,file.list[f]))
+  #I've sometimes added an entirely empty fiscal_year folde. Remove it.
+  if("fiscal_year" %in% colnames(latest_fpds)){
+    if(all(is.na(latest_fpds$fiscal_year)))
+      latest_fpds<-latest_fpds[colnames(latest_fpds) !="fiscal_year"]
+  }
+  
   print(c("File",file.list[f],"Upload Start", format(Sys.time(), "%c")))
   
   if(nrow(latest_fpds)==0)

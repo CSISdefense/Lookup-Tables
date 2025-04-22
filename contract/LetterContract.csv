@@ -1,0 +1,7 @@
+LetterContract,IsLetterContract,IsUndefinitizedAction,UndefinitizedActionText
+,NULL,NULL,NAN
+A,1,1,Letter Contract
+B,0,1,Other Undefinitized Action
+N,0,0,No
+X,0,0,No
+Y,1,1,Letter Contract
