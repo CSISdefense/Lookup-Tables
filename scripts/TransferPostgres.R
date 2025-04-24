@@ -115,7 +115,7 @@ download_from_postgres<-function(
 postgresdir<-"Postgres_2025_04_08"
 #Split year is used to avoid memory problems that may come with importing millions of rows from the new year.
 #It might also be a highly modified year (e.g. 2 million + rows) or for multiple years for a computer with less memory available.
-split_year<-c(2024)
+split_year<-c(2024,2025)
 for (fy in 2024:2025){
   pgcon <- dbConnect(odbc(),
                      Driver = "PostgreSQL Unicode(x64)",
@@ -137,10 +137,10 @@ for (fy in 2024:2025){
   
   if(fy %in% split_year){
     sql<-paste0(sql,"ad.fiscal_year = ",fy," and ")
-    for (i in 1:4){
+    for (i in 1:12){
     download_from_postgres( pgcon,
-                            paste0(sql,"date_part('month', ad.t_date) >",(i-1)*3," and date_part('month', ad.t_date) <=",i*3," ;"),
-                            fy+(i/5),
+                            paste0(sql,"date_part('month', ad.t_date) =",i," ;"),
+                            fy+(i/100),
                             file.path(path,postgresdir),
                             file=paste0("fpds_fy_",fy,"_",i,".rda"))
     }
