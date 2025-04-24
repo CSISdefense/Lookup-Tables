@@ -45,7 +45,7 @@ if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
 } else{
   stop("USAspending-local dir location unknown")
 }
-
+postgresdir<-"Postgres_2025_04_08"
 
   #Ideally this should pull down automatically. 
   sql_fpds<-read_delim(file.path(path,"contract_fpds_ctu_list_2025_04_13.txt"),delim="\t",col_types="iciT") #T or c for last_modified?
@@ -169,11 +169,19 @@ for (fy in 2024:2025){
 
 #### Upload new or changed rows to SQL server #####
 
+# Dupes to delete, 2023 spt fiscal_year between 22:42:03 and 22:53:35 
+# I keep encountering this error on my lpatop and I don't know why. 
+#Solution might be to just allow some way of recovering from an error and tracking what already went in.
+#Perhaps via the dbappedn function. I could kludge it to just say what row to start on, but that annoys me.
+# I'm still hoping this will go away when I can just run it on the desktop.
+# Error: nanodbc/nanodbc.cpp:1771: 08S01
+# [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionRead (recv()). 
+# [Microsoft][ODBC SQL Server Driver][DBNETLIB]General network error. Check your network documentation. 
 # proc<-dbReadTable(pgcon,  name = SQL('"raw"."detached_award_2023"'))
 #1977-2024 2024-02-08 YTD. 
 file.list<-list.files(file.path(path,postgresdir))
-
-for (f in 1:length(file.list)){
+file.list[15]
+for (f in 19:length(file.list)){
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
@@ -236,10 +244,10 @@ for (f in 1:length(file.list)){
     t$importtype[t$colname==c]<-t$destinationtype[t$colname==c]
   }
   t$importtype<-sapply(latest_fpds,class)
-  
-  for (r in 0:floor(nrow(latest_fpds)/100000)){
-    start<-(r*100000)+1
-    end<-((r+1)*100000)
+  interval<-25000
+  for (r in 0:floor(nrow(latest_fpds)/interval)){
+    start<-(r*interval)+1
+    end<-((r+1)*interval)
     #Stop when we've reached the end of imports
     if(start>nrow(latest_fpds)) {break}
     if(end>nrow(latest_fpds)) {end<-nrow(latest_fpds)}
