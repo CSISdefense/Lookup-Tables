@@ -95,8 +95,29 @@ for (fy in 1962:2025){
 #Subseqeuntly they start to scale up in duration when mre rows show up. Raising to
 #something like an hour per million rows.
 #Note, by using a second computer, the upload can happen in parallel because Azure and Postgres are different DBs
+
+
+download_from_postgres<-function(
+    pgcon,
+    sql,
+    fy,
+    path,
+    file){
+  print(c("Download start",fy, format(Sys.time(), "%c")))
+  latest_fpds<-dbGetQuery(pgcon, sql)
+  print(c("Download complete",fy,nrow(latest_fpds), format(Sys.time(), "%c")))
+  if(nrow(latest_fpds)==0)     
+    return(latest_fpds)
+  save(latest_fpds,file= file.path(path,file))
+  latest_fpds
+}
+
 postgresdir<-"Postgres_2025_04_08"
-for (fy in 2000:2025){
+#Split year is used to avoid memory problems that may come with importing millions of rows from the new year.
+#It might also be a highly modified year (e.g. 1.5 million + rows) or for multiple years for a computer with less memory available.
+#Each month for a new year, at 560,000 or so a month, takes around a half hour.
+split_year<-c(2024,2025)
+for (fy in 2024:2025){
   pgcon <- dbConnect(odbc(),
                      Driver = "PostgreSQL Unicode(x64)",
                      Server = "127.0.0.1",
@@ -111,22 +132,36 @@ for (fy in 2000:2025){
    on p.action_date=ad.action_date
    LEFT OUTER JOIN helper.date_list lm
    on p.last_modified=lm.action_date ")
-  if (fy==1989 ){
-    sql<-paste0(sql,"WHERE ad.fiscal_year <= ",fy," and ")
-  } else 
-    sql<-paste0(sql,"WHERE ad.fiscal_year = ",fy," and ")
-  sql<-paste0(sql,"(c.contract_transaction_unique_key is null or ",
-              "(lm.t_date > ad.t_date and ad.fiscal_year>2023));")
+  sql<-paste0(sql,"WHERE (c.contract_transaction_unique_key is null or ",
+              "(lm.t_date > ad.t_date and ad.fiscal_year>2023)) and ")
   #Last modified date wasn't properly imported, so using the kludge since everything was updated in 2024_02
-  print(c("Download start",fy, format(Sys.time(), "%c")))
-  latest_fpds<-dbGetQuery(pgcon, sql)
-  print(c("Download complete",fy,nrow(latest_fpds), format(Sys.time(), "%c")))
-  if(nrow(latest_fpds)==0)     next
-  if (fy==2000 )
-    save(latest_fpds,file= file.path(path,postgresdir,paste0("fpds_fy_",fy,"and_before.rda")))
-  else 
-    save(latest_fpds,file= file.path(path,postgresdir,paste0("fpds_fy_",fy,".rda")))
+  
+  if(fy %in% split_year){
+    sql<-paste0(sql,"ad.fiscal_year = ",fy," and ")
+    for (i in 1:12){
+    download_from_postgres( pgcon,
+                            paste0(sql,"date_part('month', ad.t_date) =",i," ;"),
+                            fy+(i/100),
+                            file.path(path,postgresdir),
+                            file=paste0("fpds_fy_",fy,"_",i,".rda"))
+    }
+  } else if(fy==1989 ){
+    sql<-paste0(sql,"ad.fiscal_year <= ",fy,";")
+    download_from_postgres( pgcon,
+                            sql,
+                            fy,
+                            file.path(path,postgresdir),
+                            file=paste0("fpds_fy_",fy,"and_before.rda"))
+  } else {
+    sql<-paste0(sql,"ad.fiscal_year = ",fy,";")
+    download_from_postgres( pgcon,
+                            sql,
+                            fy,
+                            file,path(path,postgresdir),
+                            file=paste0("fpds_fy_",fy,".rda"))
+  }
 }
+
 
 
 
