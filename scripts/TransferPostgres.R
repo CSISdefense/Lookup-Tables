@@ -250,7 +250,7 @@ for (f in 16:17){#length(file.list)
     stop("latest_fpds has entries prior to day1")
   for (r in 0:floor(366/interval_days)){
     start<-day1+days((r*interval_days))
-    end<-day1+days(((r+1)*interval_days)-1)
+    end<-day1+days(((r+1)*interval_days))
     #Stop when we've reached the end of imports
     if(start>max(latest_fpds$action_date)) {break}
     if(end>max(latest_fpds$action_date)+1) {end<-max(latest_fpds$action_date)+1}
