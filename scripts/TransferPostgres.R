@@ -134,7 +134,6 @@ for (fy in 2000:2025){
 
 #### Upload new or changed rows to SQL server #####
 
-# Dupes to delete, 2023 spt fiscal_year between 22:42:03 and 22:53:35 
 # I keep encountering this error on my lpatop and I don't know why. 
 #Solution might be to just allow some way of recovering from an error and tracking what already went in.
 #Perhaps via the dbappedn function. I could kludge it to just say what row to start on, but that annoys me.
@@ -145,8 +144,10 @@ for (fy in 2000:2025){
 # proc<-dbReadTable(pgcon,  name = SQL('"raw"."detached_award_2023"'))
 #1977-2024 2024-02-08 YTD. 
 file.list<-list.files(file.path(path,postgresdir))
-file.list[15]
-for (f in 19:length(file.list)){
+file.list[16]
+
+interval_days<-10
+for (f in 16:17){#length(file.list)
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
@@ -209,17 +210,20 @@ for (f in 19:length(file.list)){
     t$importtype[t$colname==c]<-t$destinationtype[t$colname==c]
   }
   t$importtype<-sapply(latest_fpds,class)
-  interval<-25000
-  for (r in 0:floor(nrow(latest_fpds)/interval)){
-    start<-(r*interval)+1
-    end<-((r+1)*interval)
+  day1<-as.Date(paste(min(year(latest_fpds$action_date)),"10","1",sep="-"))
+  if(min(latest_fpds$action_date) < day1)
+    stop("latest_fpds has entries prior to day1")
+  for (r in 0:floor(366/interval_days)){
+    start<-day1+days((r*interval_days))
+    end<-day1+days(((r+1)*interval_days)-1)
     #Stop when we've reached the end of imports
-    if(start>nrow(latest_fpds)) {break}
-    if(end>nrow(latest_fpds)) {end<-nrow(latest_fpds)}
-    print(c(start,end, format(Sys.time(), "%c")))
+    if(start>max(latest_fpds$action_date)) {break}
+    if(end>max(latest_fpds$action_date)+1) {end<-max(latest_fpds$action_date)+1}
+    latest_fpds_filtered<-latest_fpds %>% filter(action_date>= start & action_date<end)
+    print(c("Upload Current Start:",format(start,fmt="yyyy mmm dd"),"Next Start:",format(end,fmt="yyyy mmm dd"), nrow(latest_fpds_filtered),format(Sys.time(), "%c")))
     dbAppendTable(conn = vmcon, 
                   name = SQL('"ErrorLogging"."source_procurement_transaction"'), 
-                  value = latest_fpds[start:end,])  ## x is any data frame
+                  value = latest_fpds_filtered)  ## x is any data frame
     #https://stackoverflow.com/questions/66864660/r-dbi-sql-server-dbwritetable-truncates-rows-field-types-parameter-does-not-w
     # values <- DBI::sqlAppendTable(
     #   vmcon = vmcon,
@@ -232,29 +236,6 @@ for (f in 19:length(file.list)){
   #formal disconnection is required.
   dbDisconnect(vmcon)
 }
-
-
-#### Download all rows from Postgres database #####
-
-cy<-2023
-quarter_dates<-c("01-01","04-01","07-01","10-01")
-for (q in 1:4){
-  sql<-paste0(" SELECT *
-   FROM raw.source_procurement_transaction
-    WHERE to_date(action_date, 'yyyy-mm-dd') >=to_date('",cy,"-",quarter_dates[q],"','yyyy-mm-dd') and 
-          to_date(action_date, 'yyyy-mm-dd') <to_date('",cy,"-",quarter_dates[numbers::mod(q,4)+1],"','yyyy-mm-dd');")
-  print(c("Download start",cy,quarter_dates[q], format(Sys.time(), "%c")))
-  latest_fpds<-dbGetQuery(pgcon, sql)
-  print(c("Download complete",cy,quarter_dates[q],nrow(latest_fpds), format(Sys.time(), "%c")))
-  
-  save(latest_fpds,file= file.path("data","semi_clean",paste("fpds_cy",cy,"_q",q,".rda")))
-  print(c("Save complete",cy,quarter_dates[q],nrow(latest_fpds), format(Sys.time(), "%c")))
-}
-   # WHERE  substring(action_date,1,4)='",fy,"' and substring(action_date,6,7)=?")
-
-
-
-# fpds_2023<-dbGetQuery(pgcon, sql, params=list(stringi::stri_sub(paste0(0,1:12),-2,-1)))
 
 
 #### Transfer selected fields from Postgres database to fill in gaps #####
