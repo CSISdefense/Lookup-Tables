@@ -181,7 +181,8 @@ for (fy in 2024:2025){
 file.list<-list.files(file.path(path,postgresdir))
 file.list[36]
 
-#FY 2003 - 0700
+#Started with 2003 at 0700
+#Completion times:
 #FY 2012 - 1648 Mostly empty will be quite fast.
 #FY 2013 - 1648
 #FY 2018 - 1651
@@ -189,9 +190,32 @@ file.list[36]
 #FY 2022 - 1817
 #FY 2023 - 2045
 
+#Started with 2024-Jan at 1443 
+#Completion times:
+#FY 2024-Jan 1630
+#FY 2024-Oct 1752
+#FY 2024-Nov 1932
+#FY 2024-Dec 2120
+#FY 2024-Feb 2337
+#FY 2024-Mar 0149
+#FY 2024-Apr 0411
+#FY 2024-May 0623
+#FY 2024-Jun 
+#FY 2024-Jul
+#FY 2024-Aug
+#FY 2024-Sep
+#FY 2025-Jan
+#FY 2025-Oct
+#FY 2025-Nov
+#FY 2025-Dec
+#FY 2025-Feb
+#FY 2025-Mar
+#FY 2025-April
 
+
+# Single months of 2024 lacking previous imports take 2 hours or often more.
 interval_days<-10
-for (f in 36:length(file.list)){
+for (f in 37:length(file.list)){
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
@@ -254,26 +278,20 @@ for (f in 36:length(file.list)){
     t$importtype[t$colname==c]<-t$destinationtype[t$colname==c]
   }
   t$importtype<-sapply(latest_fpds,class)
-  day1<-as.Date(paste(min(year(latest_fpds$action_date)),"10","1",sep="-"))
-  if(min(latest_fpds$action_date) < day1)
-    stop("latest_fpds has entries prior to day1")
-  for (r in 0:floor(366/interval_days)){
+  day1<-min(latest_fpds$action_date) 
+  enddate<-max(latest_fpds$action_date)
+  for (r in 0:floor(366/interval_days)){  #reset to 0 when not recovering from a crash
     start<-day1+days((r*interval_days))
     end<-day1+days(((r+1)*interval_days))
     #Stop when we've reached the end of imports
-    if(start>max(latest_fpds$action_date)) {break}
-    if(end>max(latest_fpds$action_date)+1) {end<-max(latest_fpds$action_date)+1}
+    if(start>enddate) {break}
+    if(end>(enddate+1)) {end<-enddate+1}
     latest_fpds_filtered<-latest_fpds %>% filter(action_date>= start & action_date<end)
     print(c("Upload Current Start:",format(start,fmt="yyyy mmm dd"),"Next Start:",format(end,fmt="yyyy mmm dd"), nrow(latest_fpds_filtered),format(Sys.time(), "%c")))
     dbAppendTable(conn = vmcon, 
                   name = SQL('"ErrorLogging"."source_procurement_transaction"'), 
                   value = latest_fpds_filtered)  ## x is any data frame
     #https://stackoverflow.com/questions/66864660/r-dbi-sql-server-dbwritetable-truncates-rows-field-types-parameter-does-not-w
-    # values <- DBI::sqlAppendTable(
-    #   vmcon = vmcon,
-    #   table = Id(database = "CSIS360", schema = "ErrorLogging", table = "FPDSstage1"),
-    #   values = latest_fpds[start:end,])
-    # DBI::dbExecute(conn = vmcon, values)
   }
   #Note, transactions will not commit until you disconnect! Whether or not
   #the computer maintains this connection in the meantime doesn't matter,
