@@ -182,7 +182,7 @@ referenced_mult_or_single, varchar,1
 research, varchar,3
 research_description, varchar,255
 sam_exception, varchar,70
-sam_exception_description, varchar,71
+sam_exception_description, varchar,91
 sea_transportation, varchar,1
 sea_transportation_desc, varchar,255
 solicitation_date, date, 

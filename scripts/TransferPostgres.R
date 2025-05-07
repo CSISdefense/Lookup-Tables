@@ -179,10 +179,19 @@ for (fy in 2024:2025){
 # proc<-dbReadTable(pgcon,  name = SQL('"raw"."detached_award_2023"'))
 #1977-2024 2024-02-08 YTD. 
 file.list<-list.files(file.path(path,postgresdir))
-file.list[16]
+file.list[36]
+
+#FY 2003 - 0700
+#FY 2012 - 1648 Mostly empty will be quite fast.
+#FY 2013 - 1648
+#FY 2018 - 1651
+#FY 2020 - 1729
+#FY 2022 - 1817
+#FY 2023 - 2045
+
 
 interval_days<-10
-for (f in 16:17){#length(file.list)
+for (f in 36:length(file.list)){
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
