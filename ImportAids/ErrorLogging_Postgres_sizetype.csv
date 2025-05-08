@@ -101,8 +101,8 @@ interagency_contracting_au, varchar,3
 labor_standards, varchar,1
 labor_standards_descrip, varchar,255
 last_modified, datetime2,7
-legal_entity_address_line1, varchar,115
-legal_entity_address_line2, varchar,64
+legal_entity_address_line1, varchar,125
+legal_entity_address_line2, varchar,70
 legal_entity_address_line3, varchar,55
 legal_entity_city_name, varchar,35
 legal_entity_congressional, varchar,22

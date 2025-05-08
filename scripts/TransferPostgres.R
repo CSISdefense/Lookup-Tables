@@ -178,8 +178,7 @@ for (fy in 2024:2025){
 # [Microsoft][ODBC SQL Server Driver][DBNETLIB]General network error. Check your network documentation. 
 # proc<-dbReadTable(pgcon,  name = SQL('"raw"."detached_award_2023"'))
 #1977-2024 2024-02-08 YTD. 
-file.list<-list.files(file.path(path,postgresdir))
-file.list[36]
+
 
 #Started with 2003 at 0700
 #Completion times:
@@ -200,22 +199,26 @@ file.list[36]
 #FY 2024-Mar 0149
 #FY 2024-Apr 0411
 #FY 2024-May 0623
-#FY 2024-Jun 
-#FY 2024-Jul
-#FY 2024-Aug
-#FY 2024-Sep
-#FY 2025-Jan
-#FY 2025-Oct
-#FY 2025-Nov
-#FY 2025-Dec
-#FY 2025-Feb
-#FY 2025-Mar
-#FY 2025-April
+#FY 2024-Jun 0754
+#FY 2024-Jul 0952
+#Restarted with 2024-Aug at 1752
+#FY 2024-Aug 2129
+#FY 2024-Sep 0052
+#FY 2025-Jan 0209
+#FY 2025-Oct 0332
+#Restarted with 2024-Nov at 0604
+#FY 2025-Nov 0740
+#FY 2025-Dec 0914
+#FY 2025-Feb 0930
+#FY 2025-Mar 0954
+#FY 2025-April 0955
 
+file.list<-list.files(file.path(path,postgresdir))
+file.list[36]
 
 # Single months of 2024 lacking previous imports take 2 hours or often more.
 interval_days<-10
-for (f in 37:length(file.list)){
+for (f in 36:36){
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
@@ -278,7 +281,7 @@ for (f in 37:length(file.list)){
     t$importtype[t$colname==c]<-t$destinationtype[t$colname==c]
   }
   t$importtype<-sapply(latest_fpds,class)
-  day1<-min(latest_fpds$action_date) 
+  day1<-as.Date('2023-05-30') #min(latest_fpds$action_date) 
   enddate<-max(latest_fpds$action_date)
   for (r in 0:floor(366/interval_days)){  #reset to 0 when not recovering from a crash
     start<-day1+days((r*interval_days))
