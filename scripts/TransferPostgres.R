@@ -112,6 +112,26 @@ download_from_postgres<-function(
   latest_fpds
 }
 
+#Download the deleted rows. I'm hoping we can do this in one batch because there
+#should be a lot fewer.
+pgcon <- dbConnect(odbc(),
+                   Driver = "PostgreSQL Unicode(x64)",
+                   Server = "127.0.0.1",
+                   Database = "raw",
+                   UID = "postgres",
+                   PWD =pgpwd)
+sql<-paste0(" SELECT c.contract_transaction_unique_key
+   FROM  helper.contract_fpds_ctu_list c
+   LEFT OUTER JOIN raw.source_procurement_transaction p
+   on p.detached_award_proc_unique=c.contract_transaction_unique_key
+   WHERE p.detached_award_proc_unique is NULL and c.contract_transaction_unique_key is not null
+   ")
+print(c("Download start", format(Sys.time(), "%c")))
+delete_fpds<-dbGetQuery(pgcon, sql)
+print(c("Download complete",nrow(delete_fpds), format(Sys.time(), "%c")))
+save(delete_fpds,file= file.path(path,"delete_fpds.rda"))
+
+
 postgresdir<-"Postgres_2025_04_08"
 #Split year is used to avoid memory problems that may come with importing millions of rows from the new year.
 #It might also be a highly modified year (e.g. 1.5 million + rows) or for multiple years for a computer with less memory available.
@@ -218,7 +238,7 @@ file.list[36]
 
 # Single months of 2024 lacking previous imports take 2 hours or often more.
 interval_days<-10
-for (f in 36:36){
+for (f in 1:36){
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
