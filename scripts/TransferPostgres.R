@@ -112,6 +112,26 @@ download_from_postgres<-function(
   latest_fpds
 }
 
+#Download the deleted rows. I'm hoping we can do this in one batch because there
+#should be a lot fewer.
+pgcon <- dbConnect(odbc(),
+                   Driver = "PostgreSQL Unicode(x64)",
+                   Server = "127.0.0.1",
+                   Database = "raw",
+                   UID = "postgres",
+                   PWD =pgpwd)
+sql<-paste0(" SELECT c.contract_transaction_unique_key
+   FROM  helper.contract_fpds_ctu_list c
+   LEFT OUTER JOIN raw.source_procurement_transaction p
+   on p.detached_award_proc_unique=c.contract_transaction_unique_key
+   WHERE p.detached_award_proc_unique is NULL and c.contract_transaction_unique_key is not null
+   ")
+print(c("Download start", format(Sys.time(), "%c")))
+delete_fpds<-dbGetQuery(pgcon, sql)
+print(c("Download complete",nrow(delete_fpds), format(Sys.time(), "%c")))
+save(delete_fpds,file= file.path(path,"delete_fpds.rda"))
+
+
 postgresdir<-"Postgres_2025_04_08"
 #Split year is used to avoid memory problems that may come with importing millions of rows from the new year.
 #It might also be a highly modified year (e.g. 1.5 million + rows) or for multiple years for a computer with less memory available.
@@ -178,10 +198,10 @@ for (fy in 2024:2025){
 # [Microsoft][ODBC SQL Server Driver][DBNETLIB]General network error. Check your network documentation. 
 # proc<-dbReadTable(pgcon,  name = SQL('"raw"."detached_award_2023"'))
 #1977-2024 2024-02-08 YTD. 
-file.list<-list.files(file.path(path,postgresdir))
-file.list[36]
 
-#FY 2003 - 0700
+
+#Started with 2003 at 0700
+#Completion times:
 #FY 2012 - 1648 Mostly empty will be quite fast.
 #FY 2013 - 1648
 #FY 2018 - 1651
@@ -189,9 +209,36 @@ file.list[36]
 #FY 2022 - 1817
 #FY 2023 - 2045
 
+#Started with 2024-Jan at 1443 
+#Completion times:
+#FY 2024-Jan 1630
+#FY 2024-Oct 1752
+#FY 2024-Nov 1932
+#FY 2024-Dec 2120
+#FY 2024-Feb 2337
+#FY 2024-Mar 0149
+#FY 2024-Apr 0411
+#FY 2024-May 0623
+#FY 2024-Jun 0754
+#FY 2024-Jul 0952
+#Restarted with 2024-Aug at 1752
+#FY 2024-Aug 2129
+#FY 2024-Sep 0052
+#FY 2025-Jan 0209
+#FY 2025-Oct 0332
+#Restarted with 2024-Nov at 0604
+#FY 2025-Nov 0740
+#FY 2025-Dec 0914
+#FY 2025-Feb 0930
+#FY 2025-Mar 0954
+#FY 2025-April 0955
 
+file.list<-list.files(file.path(path,postgresdir))
+file.list[36]
+
+# Single months of 2024 lacking previous imports take 2 hours or often more.
 interval_days<-10
-for (f in 36:length(file.list)){
+for (f in 1:36){
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
@@ -254,26 +301,20 @@ for (f in 36:length(file.list)){
     t$importtype[t$colname==c]<-t$destinationtype[t$colname==c]
   }
   t$importtype<-sapply(latest_fpds,class)
-  day1<-as.Date(paste(min(year(latest_fpds$action_date)),"10","1",sep="-"))
-  if(min(latest_fpds$action_date) < day1)
-    stop("latest_fpds has entries prior to day1")
-  for (r in 0:floor(366/interval_days)){
+  day1<-as.Date('2023-05-30') #min(latest_fpds$action_date) 
+  enddate<-max(latest_fpds$action_date)
+  for (r in 0:floor(366/interval_days)){  #reset to 0 when not recovering from a crash
     start<-day1+days((r*interval_days))
     end<-day1+days(((r+1)*interval_days))
     #Stop when we've reached the end of imports
-    if(start>max(latest_fpds$action_date)) {break}
-    if(end>max(latest_fpds$action_date)+1) {end<-max(latest_fpds$action_date)+1}
+    if(start>enddate) {break}
+    if(end>(enddate+1)) {end<-enddate+1}
     latest_fpds_filtered<-latest_fpds %>% filter(action_date>= start & action_date<end)
     print(c("Upload Current Start:",format(start,fmt="yyyy mmm dd"),"Next Start:",format(end,fmt="yyyy mmm dd"), nrow(latest_fpds_filtered),format(Sys.time(), "%c")))
     dbAppendTable(conn = vmcon, 
                   name = SQL('"ErrorLogging"."source_procurement_transaction"'), 
                   value = latest_fpds_filtered)  ## x is any data frame
     #https://stackoverflow.com/questions/66864660/r-dbi-sql-server-dbwritetable-truncates-rows-field-types-parameter-does-not-w
-    # values <- DBI::sqlAppendTable(
-    #   vmcon = vmcon,
-    #   table = Id(database = "CSIS360", schema = "ErrorLogging", table = "FPDSstage1"),
-    #   values = latest_fpds[start:end,])
-    # DBI::dbExecute(conn = vmcon, values)
   }
   #Note, transactions will not commit until you disconnect! Whether or not
   #the computer maintains this connection in the meantime doesn't matter,
