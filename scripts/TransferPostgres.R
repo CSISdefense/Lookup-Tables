@@ -1,6 +1,8 @@
-###############################################################
-# Get Top 10 rows of aggregated Amount and # of action
-################################################################
+# Wholee database imports from PostGreSQL to Errorlogging.source_procurement_transaction
+
+#### Setup #####
+
+
 library(dplyr)
 library(tidyr)
 library(tidyverse)
@@ -10,8 +12,6 @@ library(sqldf)
 library(odbc)
 library(askpass)
 library(DBI)
-
-
 
 #Download was way faster than I expected. Took roughly 2m for 4.9m rows. 
 # 3 minutes per 10k rows, so about 3h18m for 6.6m rows.
@@ -32,8 +32,6 @@ pgcon <- dbConnect(odbc(),
                    PWD =pgpwd)
 
 
-#### Upload contract_fpds_ctu list to Postgres database #####
-
 if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
   path<-"C:\\Users\\grego\\Repositories\\USAspending-local\\"
 } else if(dir.exists("D:\\Users\\Greg\\Repositories\\USAspending-local\\")) {
@@ -47,9 +45,11 @@ if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
 }
 postgresdir<-"Postgres_2025_04_08"
 
-  #Ideally this should pull down automatically. 
-  sql_fpds<-read_delim(file.path(path,"contract_fpds_ctu_list_2025_04_13.txt"),delim="\t",col_types="iciT") #T or c for last_modified?
-  
+#### Upload contract_fpds_ctu list to Postgres database #####
+
+
+#Ideally this should pull down automatically. 
+sql_fpds<-read_delim(file.path(path,"contract_fpds_ctu_list_2025_04_13.txt"),delim="\t",col_types="iciT") #T or c for last_modified?
   #necessary?
 sql_fpds$last_modified_date<-as.Date(sql_fpds$last_modified_date,format="%Y-%m%-%d 00:00:00.0000000")
 
@@ -88,14 +88,13 @@ for (fy in 1962:2025){
   dbDisconnect(pgcon)
 }
 
-
-#### Download new or changed rows from Postgres database #####
+#### Transfer New or Modified Rows ####
+##### Download new or changed rows from Postgres database #####
 #Takes 20-40 minutes for the each of the early years. Grouping those up to 2000
 #to reduce query fixed costs.
 #Subseqeuntly they start to scale up in duration when mre rows show up. Raising to
 #something like an hour per million rows.
 #Note, by using a second computer, the upload can happen in parallel because Azure and Postgres are different DBs
-
 
 download_from_postgres<-function(
     pgcon,
@@ -112,61 +111,9 @@ download_from_postgres<-function(
   latest_fpds
 }
 
-#Download the deleted rows. I'm hoping we can do this in one batch because there
-#should be a lot fewer.
-pgcon <- dbConnect(odbc(),
-                   Driver = "PostgreSQL Unicode(x64)",
-                   Server = "127.0.0.1",
-                   Database = "raw",
-                   UID = "postgres",
-                   PWD =pgpwd)
-sql<-paste0(" SELECT c.contract_transaction_unique_key
-   FROM  helper.contract_fpds_ctu_list c
-   LEFT OUTER JOIN raw.source_procurement_transaction p
-   on p.detached_award_proc_unique=c.contract_transaction_unique_key
-   WHERE p.detached_award_proc_unique is NULL and c.contract_transaction_unique_key is not null
-   ")
-print(c("Download start", format(Sys.time(), "%c")))
-delete_fpds<-dbGetQuery(pgcon, sql)
-print(c("Download complete",nrow(delete_fpds), format(Sys.time(), "%c")))
-save(delete_fpds,file= file.path(path,"delete_fpds.rda"))
 
-# Upload deleted rows, just a small number of columns, so hopefully much faster
-n<-nrow(delete_fpds)
-delete_fpds<-distinct(delete_fpds)
-interval<-100000
-start1<-2
-delete_fpds<-as.data.frame(delete_fpds)
-for (f in 1:(n/interval)){
-  start<-start1+f*interval
-  end<-start1+(f+1)*interval-1
-  #Stop when we've reached the end of imports
-  if(start>nrow(delete_fpds)) {break}
-  if(end>nrow(delete_fpds)) {end<-nrow(delete_fpds)}
-  delete_fpds_filtered<-as.data.frame(delete_fpds[start:end,])
-  colnames(delete_fpds_filtered)[1]<-"contract_transaction_unique_key"
-  vmcon <- dbConnect(odbc(),
-                     Driver = "SQL Server",
-                     Server = "vmsqldiig.database.windows.net",
-                     Database = "CSIS360",
-                     UID = login,
-                     PWD =pwd)
-  
-
-  print(c("Upload Current Start:",start,"Next Start:",end+1,format(Sys.time(), "%c")))
-    dbAppendTable(conn = vmcon, 
-                  name = SQL('"ErrorLogging"."unmatched_contract_transaction_unique_key"'), 
-                  value = delete_fpds_filtered)  ## x is any data frame
-    #https://stackoverflow.com/questions/66864660/r-dbi-sql-server-dbwritetable-truncates-rows-field-types-parameter-does-not-w
-  # }
-  #Note, transactions will not commit until you disconnect! Whether or not
-  #the computer maintains this connection in the meantime doesn't matter,
-  #formal disconnection is required.
-  dbDisconnect(vmcon)
-}
-
-
-postgresdir<-"Postgres_2025_04_08"
+-
+ostgresdir<-"Postgres_2025_04_08"
 #Split year is used to avoid memory problems that may come with importing millions of rows from the new year.
 #It might also be a highly modified year (e.g. 1.5 million + rows) or for multiple years for a computer with less memory available.
 #Each month for a new year, at 560,000 or so a month, takes around a half hour.
@@ -217,11 +164,7 @@ for (fy in 2024:2025){
 }
 
 
-
-
-
-
-#### Upload new or changed rows to SQL server #####
+##### Upload new or changed rows to SQL server #####
 
 # I keep encountering this error on my lpatop and I don't know why. 
 #Solution might be to just allow some way of recovering from an error and tracking what already went in.
@@ -355,8 +298,63 @@ for (f in 1:36){
   #formal disconnection is required.
   dbDisconnect(vmcon)
 }
+#### Log Unmatched Rows ####
 
+##### Download deleted row list from ErrorLogging.unmatched_contract_transaction_unique_key####
+#Download the deleted rows. This can be done in one batch because it is just a single column
+pgcon <- dbConnect(odbc(),
+                   Driver = "PostgreSQL Unicode(x64)",
+                   Server = "127.0.0.1",
+                   Database = "raw",
+                   UID = "postgres",
+                   PWD =pgpwd)
+sql<-paste0(" SELECT c.contract_transaction_unique_key
+   FROM  helper.contract_fpds_ctu_list c
+   LEFT OUTER JOIN raw.source_procurement_transaction p
+   on lower(p.detached_award_proc_unique)=lower(c.contract_transaction_unique_key)
+   WHERE p.detached_award_proc_unique is NULL and c.contract_transaction_unique_key is not null
+   ")
+print(c("Download start", format(Sys.time(), "%c")))
+delete_fpds<-dbGetQuery(pgcon, sql)
+print(c("Download complete",nrow(delete_fpds), format(Sys.time(), "%c")))
+save(delete_fpds,file= file.path(path,"delete_fpds.rda"))
 
+##### Upload deleted row list to ErrorLogging.unmatched_contract_transaction_unique_key####
+# Upload deleted rows, just a small number of columns, so hopefully much faster
+n<-nrow(delete_fpds)
+delete_fpds<-distinct(delete_fpds)
+interval<-100000
+start1<-2
+delete_fpds<-as.data.frame(delete_fpds)
+for (f in 1:(n/interval)){
+  start<-start1+f*interval
+  end<-start1+(f+1)*interval-1
+  #Stop when we've reached the end of imports
+  if(start>nrow(delete_fpds)) {break}
+  if(end>nrow(delete_fpds)) {end<-nrow(delete_fpds)}
+  delete_fpds_filtered<-as.data.frame(delete_fpds[start:end,])
+  colnames(delete_fpds_filtered)[1]<-"contract_transaction_unique_key"
+  vmcon <- dbConnect(odbc(),
+                     Driver = "SQL Server",
+                     Server = "vmsqldiig.database.windows.net",
+                     Database = "CSIS360",
+                     UID = login,
+                     PWD =pwd)
+  
+  
+  print(c("Upload Current Start:",start,"Next Start:",end+1,format(Sys.time(), "%c")))
+  dbAppendTable(conn = vmcon, 
+                name = SQL('"ErrorLogging"."unmatched_contract_transaction_unique_key"'), 
+                value = delete_fpds_filtered)  ## x is any data frame
+  #https://stackoverflow.com/questions/66864660/r-dbi-sql-server-dbwritetable-truncates-rows-field-types-parameter-does-not-w
+  # }
+  #Note, transactions will not commit until you disconnect! Whether or not
+  #the computer maintains this connection in the meantime doesn't matter,
+  #formal disconnection is required.
+  dbDisconnect(vmcon)
+}
+
+ 
 #### Transfer selected fields from Postgres database to fill in gaps #####
 
 # proc<-dbReadTable(pgcon,  name = SQL('"raw"."detached_award_2023"'))

@@ -3,13 +3,13 @@ source("scripts//SQLimportTools.r")
 library(tidyverse)
 
 
-###### From Stage 2 to Contract.FPDS #########
+###### Matching Source_procurement_Transaction  to Contract.FPDS #########
 #Match up Errorlogging.source_procurement_transaction to Contract.FPDS 
 Import.df<-read_create_table("ErrorLogging.source_procurement_transaction.Table.sql",
                                       dir="SQL")
 Import.df<-translate_name(Import.df,file="PostgresNameConversion.csv")
 
-Stage2Table.df<-read_create_table("ErrorLogging.source_procurement_transaction.Table.sql",
+SPTtable.df<-read_create_table("ErrorLogging.source_procurement_transaction.Table.sql",
                                        dir="SQL")
 
 
@@ -20,15 +20,14 @@ DestinationTable.df<-read_create_table("Contract.FPDS.Table.sql",
 translate_name(DestinationTable.df,test_only=TRUE)
 
 MergeDestination.df<-merge_source_and_csis_name_tables(Import.df,DestinationTable.df)
-MergeStage2.df<-merge_source_and_csis_name_tables(Import.df,Stage2Table.df)
+MergeSPT.df<-merge_source_and_csis_name_tables(Import.df,SPTtable.df)
 
 #Check for size mismatch
-# View(MergeStage2.df %>% filter(SourceVariableType!=CSISvariableType))
-# MergeStage2.df %>% filter(substr(MergeStage2.df$SourceVariableType,2,6)=="nv")
+# View(MergeSPT.df %>% filter(SourceVariableType!=CSISvariableType))
+# MergeSPT.df %>% filter(substr(MergeSPT.df$SourceVariableType,2,6)=="nv")
 
 #Try converts shouldn't be necessary unless there's been a change in contract.fpds
 #That said, the differences in date format mean some will be generated.
-
 
 TryConvertList<-create_try_converts(MergeDestination.df,"Errorlogging","source_procurement_transaction"
                                     ,IncludeAlters=TRUE,
@@ -36,15 +35,15 @@ TryConvertList<-create_try_converts(MergeDestination.df,"Errorlogging","source_p
                                     IncludeSingle = FALSE)
 if(!is.null(nrow(TryConvertList)))
   write(TryConvertList,"Output\\PostgresTryConvertList.txt_FPDS.txt")
-TryConvertList<-create_try_converts(MergeStage2.df,"Errorlogging","source_procurement_transaction"
+TryConvertList<-create_try_converts(MergeSPT.df,"Errorlogging","source_procurement_transaction"
                                     ,IncludeAlters=TRUE
                                     ,IncludeSingle = FALSE
                                     ,IncludeMultiple = FALSE
                                     ,Apply_Drop = FALSE
                                     )
 if(!is.null(nrow(TryConvertList)))
-  write(TryConvertList,"Output\\PostgresTryConvertList.txt_FPDSstage2.txt")
-write_delim(MergeStage2.df %>% select(SourceVariableName,SourceVariableType,CSISvariableType)%>%
+  write(TryConvertList,"Output\\PostgresTryConvertList_FPDSstage2.txt")
+write_delim(MergeSPT.df %>% select(SourceVariableName,SourceVariableType,CSISvariableType)%>%
         mutate(SourceVariableType=ifelse(!is.na(CSISvariableType),CSISvariableType,SourceVariableType),
                comma=",") %>%
         select(-CSISvariableType),"Output\\PostgresCreateTable.txt",delim = " ")
@@ -98,11 +97,6 @@ input_missing_code <- create_foreign_key_assigments("ErrorLogging",
 write(input_missing_code,
       file=file.path("Output","ErrorLogging_source_procurement_transaction_input_foreign_key.txt"),  
       append=FALSE) 
-
-
-
-
-
 
 #Create the code to count empty rows by variable.
 count_list<-count_empties(Import.df,"ErrorLogging","source_procurement_transaction")
@@ -189,8 +183,8 @@ update_list<-create_update_FPDS(MergeDestination.df,
 write(update_list,"Output/ErrorLogging_source_procurement_transaction_update_destination.txt")
 MergeDestination.df %>% filter(substr(CSISvariableType,2,3) %in% c("NV","nv")) %>% select(SourceVariableName)
 substr(MergeDestination.df$CSISvariableType,2,3)
-###### From Stage 2 to Contract.FPDS #########
-#Match up Errorlogging.source_procurement_transaction to Contract.FPDS 
+
+###### Matching Source_procurement_Transaction to Errorlogging.FPDSdeleted #########
 Import.df<-read_create_table("ErrorLogging.source_procurement_transaction.Table.sql",
                                       dir="SQL")
 Import.df<-translate_name(Import.df)
