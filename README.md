@@ -10,7 +10,7 @@ These tables are used by the [Defense-Industrial Initiative Group (DIIG)](http:/
 * Please feel free to contact gsanders at csis.org if you encounter any problems with these files.
 
 ##General resources
-* The Federal Procurement Data System (FPDS) provides a list of links relating to [Product Or Service Codes, North American Industrial Classifical Codes (NAICS), and more](https://www.fpds.gov/wiki/index.php/PSC,_NAICS_and_more)
+* The Federal Procurement Data System (FPDS) provides a list of links relating to [Product Or Service Codes, North American Industrial Classification Codes (NAICS), and more](https://www.fpds.gov/wiki/index.php/PSC,_NAICS_and_more)
 * [List of Contracting Offices and Agency/Department IDs (xls)](https://www.fpds.gov/downloads/top_requests/FPDSNG_Contracting_Offices.xls)
 
 ##Product Or Service Codes (PSC)

@@ -794,3 +794,6 @@ ManufacturingOrganizationParentHQisForeign,ManufacturingOrganizationParentHQisFo
 ManufacturingOrganizationIsBusiness,ManufacturingOrganizationIsBusiness
 IsFMS,IsFMS
 LetterContract(UndefinitizedAction)Code,LetterContract
+OriginIsForeign,OriginIsForeign
+VendorIsForeign,VendorIsForeign
+PlaceIsFoeign,PlaceIsFoeign
