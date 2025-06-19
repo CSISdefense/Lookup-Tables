@@ -1,4 +1,4 @@
-# Wholee database imports from PostGreSQL to Errorlogging.source_procurement_transaction
+# Monthly delta datebase imports from flatfile to Errorlogging.source_procurement_transaction
 
 #### Setup #####
 

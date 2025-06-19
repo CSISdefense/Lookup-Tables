@@ -1,0 +1,6 @@
+ALTER TABLE Errorlogging.FPDSdelta
+ALTER COLUMN [CSISmodifiedDate] [datetime]
+
+ALTER TABLE Errorlogging.FPDSdelta
+ALTER COLUMN [CSIScreatedDate] [datetime]
+

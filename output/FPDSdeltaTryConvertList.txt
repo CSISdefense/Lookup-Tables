@@ -1,0 +1,8 @@
+--Check across all non-varchar and non-bit destination types for failed tryconverts. Note you have to remove an extraneous comma from the first item.
+SELECT
+	,max(iif(Try_Convert([datetime], [CSISmodifiedDate]) is null and
+		nullif([CSISmodifiedDate],'') is not null,1,0)) as [CSISmodifiedDate]
+	,max(iif(Try_Convert([datetime], [CSIScreatedDate]) is null and
+		nullif([CSIScreatedDate],'') is not null,1,0)) as [CSIScreatedDate]
+	FROM Errorlogging.FPDSdelta
+

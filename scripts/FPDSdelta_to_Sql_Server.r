@@ -3,7 +3,7 @@ source("scripts//SQLimportTools.r")
 library(tidyverse)
 
 
-###### From Stage 2 to Contract.FPDS #########
+###### Matching FPDSdelta to Contract.FPDS #########
 #Match up Errorlogging.FPDSdelta to Contract.FPDS 
 Import.df<-read_create_table("ErrorLogging.FPDSdelta.Table.sql",
                                       dir="SQL")
@@ -73,7 +73,7 @@ skip_list<-c("[unique_award_key]",
              "[recipient_country_code]",
              "[recipient_country_name]",
              "[awardee_or_recipient_legal]",
-             "[vendor_doing_as_business_n]",
+             "[vendor_doing_as_business_n]"
              
              ) #Handled via chain insert manually written
 
@@ -107,8 +107,8 @@ input_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                                      suppress_select = TRUE,
                                                     suppress_alter = TRUE,
                                                     suppress_update= TRUE,
-                                                    skip_list = skip_list,
-                                                    file="FPDSdeltaNameConversion.csv"
+                                                    skip_list = skip_list#,
+                                                    # file="FPDSdeltaNameConversion.csv"
                                                     )
 write(input_missing_code,
       file=file.path("Output","ErrorLogging_FPDSdelta_input_foreign_key.txt"),  
@@ -127,7 +127,7 @@ write(count_list,"Output//ErrorLogging_FPDSdelta_count_empties.txt")
 #Transfer from Errorlogging.FPDSdelta to Contract.FPDS
 if(nrow(MergeDestination.df[is.na(MergeDestination.df$CSISvariableType)&is.na(MergeDestination.df$IsDroppedNameField),])>1){
   write.csv(MergeDestination.df[is.na(MergeDestination.df$CSISvariableType)&is.na(MergeDestination.df$IsDroppedNameField),],
-            file="Output/Unmatched_NameConversion.csv")
+            file="Output/Unmatched_NameConversion.csv",row.names = FALSE)
   stop("Update ImportAids/NameList.csv using Output/Unmatched_NameConversion.csv")
 }
 DroppedField<-MergeDestination.df %>% filter(IsDroppedNameField)
@@ -204,13 +204,3 @@ update_list<-create_update_FPDS(MergeDestination.df,
 write(update_list,"Output/ErrorLogging_FPDSdelta_update_destination.txt")
 MergeDestination.df %>% filter(substr(CSISvariableType,2,3) %in% c("NV","nv")) %>% select(SourceVariableName)
 substr(MergeDestination.df$CSISvariableType,2,3)
-###### From Stage 2 to Contract.FPDS #########
-#Match up Errorlogging.FPDSdelta to Contract.FPDS 
-Import.df<-read_create_table("ErrorLogging.FPDSdelta.Table.sql",
-                                      dir="SQL")
-Import.df<-translate_name(Import.df)
-
-DupTable.df<-read_create_table("ErrorLogging.FPDSdeleted.Table.sql",
-                                       dir="SQL")
-translate_name(DupTable.df,test_only=TRUE)
-MergeDestination.df<-merge_source_and_csis_name_tables(Import.df,DupTable.df)
