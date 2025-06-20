@@ -59,9 +59,10 @@ for (f in 1:length(file.list)){
                      PWD =pwd)
   
   load(file.path(path,deltadir,file.list[f]))
+  fd<-as.data.frame(fd)
 
   print(c("File",file.list[f],"Processing Start", format(Sys.time(), "%c")))
-
+  print(summary(factor(fd$correction_delete_ind)))
   filecheck<-data.frame(colname=colnames(fd))
   filecheck$maxlen<-NULL
   for(c in 1:nrow(filecheck)){
@@ -106,17 +107,18 @@ for (f in 1:length(file.list)){
   }
   t$importtype<-sapply(fd,class)
   
-  interval<-100000
+  interval<-25000
   rowcount<-nrow(fd)
-  for (r in 0:ceiling(rowcount/invterval)){  #reset to 0 when not recovering from a crash
+  #Roughy 12 minutes per interval, so two hours per file.
+  for (r in 0:ceiling(rowcount/interval)){  #reset to 0 when not recovering from a crash
     start<-1+r*interval
     end<-(r+1)*interval
     if(start>rowcount) {break}
     if(end>rowcount) {end<-rowcount}
-    fd_filtered<-fd %>% fd[start:end,]
+    fd_filtered<-fd[start:end,]
     print(c("Upload Current Start:",start,"Next Start:",end+1, nrow(fd_filtered),format(Sys.time(), "%c")))
     dbAppendTable(conn = vmcon, 
-                  name = SQL('"ErrorLogging"."fpdsdeleted"'), 
+                  name = SQL('"ErrorLogging"."FPDSdelta"'), 
                   value = fd_filtered)  ## x is any data frame
     #https://stackoverflow.com/questions/66864660/r-dbi-sql-server-dbwritetable-truncates-rows-field-types-parameter-does-not-w
   }
