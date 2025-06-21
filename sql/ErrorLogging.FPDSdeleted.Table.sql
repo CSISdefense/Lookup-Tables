@@ -268,7 +268,7 @@ CREATE TABLE [ErrorLogging].[FPDSdeleted](
 	[recipient_county_name] [varchar](30) NULL,
 	[disaster_emergency_fund_codes_for_overall_award] [varchar](500) NULL,
 	[object_classes_funding_this_award] [varchar](1000) NULL,
-	[program_activities_funding_this_award] [varchar](4000) NULL,
+	[program_activities_funding_this_award] [varchar](5012) NULL,
 	[obligated_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[outlayed_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[IsMissingFromUpdate] [bit] NOT NULL,
@@ -286,15 +286,23 @@ CREATE TABLE [ErrorLogging].[FPDSdeleted](
 	[prime_award_transaction_place_of_performance_state_fips_code] [tinyint] NULL,
 	[prime_award_transaction_recipient_cd_original] [varchar](22) NULL,
 	[prime_award_transaction_place_of_performance_cd_original] [varchar](22) NULL,
-	[total_outlayed_amount_for_overall_award] [decimal](19, 4) NULL
+	[total_outlayed_amount_for_overall_award] [decimal](19, 4) NULL,
+	[initial_report_date] [datetime2](7) NULL,
+	[detached_award_procurement_id] [int] NULL,
+	[additional_reporting] [varchar](92) NULL,
+	[business_categories] [varchar](1000) NULL,
+	[pulled_from] [varchar](5) NULL,
+	[entity_data_source] [varchar](3) NULL,
+	[created_at] [datetime2](7) NULL,
+	[updated_at] [datetime2](7) NULL
 ) ON [PRIMARY]
 GO
 ALTER TABLE [ErrorLogging].[FPDSdeleted] ADD  CONSTRAINT [df_CSISmodifiedDate]  DEFAULT (getdate()) FOR [CSISModifiedDate]
 GO
 ALTER TABLE [ErrorLogging].[FPDSdeleted] ADD  DEFAULT ((1)) FOR [IsMissingFromUpdate]
 GO
-ALTER TABLE [ErrorLogging].[FPDSdeleted]  WITH CHECK ADD  CONSTRAINT [fk_errorlogging_fpdsduplicates_csistransctionid] FOREIGN KEY([CSIStransactionID])
-REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
+ALTER TABLE [ErrorLogging].[FPDSdeleted]  WITH CHECK ADD  CONSTRAINT [fk_errorlogging_FPDSdeleted_csistransctionid] FOREIGN KEY([CSIStransactionID])
+REFERENCES [ErrorLogging].[FPDSdeletedCSIStransactionID] ([CSIStransactionID])
 GO
-ALTER TABLE [ErrorLogging].[FPDSdeleted] CHECK CONSTRAINT [fk_errorlogging_fpdsduplicates_csistransctionid]
+ALTER TABLE [ErrorLogging].[FPDSdeleted] CHECK CONSTRAINT [fk_errorlogging_FPDSdeleted_csistransctionid]
 GO

@@ -32,19 +32,18 @@ deltadir<-"FY(All)_All_Contracts_Delta_20250506"
 
 ####Import from flatfiles to R #####
 file.list<-list.files(file.path(path,deltadir))
-file.list<-file.list[substr(file.list,nchar(deltadir)-3,nchar(file.list))==".csv"]
-deltalabel<-substr(deltadir,nchar(deltadir)-7,nchar(deltadir))
+file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".csv"]
 
 #Import
 for (f in 1:length(file.list)){
   print(c(deltadir,f,"Read Start", format(Sys.time(), "%c")))
   fd<-read_csv(file.path(path,deltadir,file.list[f]), guess_max = 10000000)
   print(c(deltadir,f,"Read Finish", format(Sys.time(), "%c")))
-  save_file=paste0("fpds_delta_",deltalabel,"_",f,".rda")
+  save_file=paste0(substr(file.list[f],1,nchar(file.list)-4),".rda")
   save(fd,file=file.path(path,deltadir,save_file))
 }
 
-
+ctu
 #### Upload from R to SQL server ####
 
 file.list<-list.files(file.path(path,deltadir))
@@ -77,19 +76,33 @@ for (f in 3:length(file.list)){
     View(t %>% filter (destinationtype %in% c("varchar","nvarchar") & maxlen>varcharsize))
     stop("Column length will lead to truncation")
   }
+  # Handle a misinterpretation by read_csv of NAN
+  for(c in t$colname[t$importtype %in% c("numeric") & t$destinationtype %in% c("varchar","nvarchar")]){
+    if(any(is.nan(fd[,c]))){
+      fd[,c]<-as.character(fd[,c])
+      fd[is.nan(fd[,c]),c]<-"NAN"
+    }
+    else{
+      fd[,c]<-as.character(fd[,c])
+    }
+  }
+  
   # Handle numerical formats
   for(c in t$colname[t$destinationtype %in% c("decimal","int","bigint","smallint","tinyint")& t$importtype=="character"]){
+    converted_num<-text_to_number(fd[,c])
     if(any(!is.na(fd[,c])& 
            is.na(converted_num)))
       stop(paste("Conversion to number failed for",c))
-    fd[,c]<-text_to_number(fd[,c])
-    m<-max(abs(fd[,c],na.rm=TRUE))
-    if(t$destinationtype == "int" & m>2147483647)
-      stop(paste("Numbe overflows int for",c))
-    if(t$destinationtype == "smallint" & m> 32767)
-      stop(paste("Numbe overflows smallint for",c))
-    if(t$destinationtype == "tinyint" & m> 255)
-      stop(paste("Numbe overflows smallint for",c))
+    fd[,c]<-converted_num
+    m<-max(abs(fd[,c]),na.rm=TRUE)
+    if(t$destinationtype[t$colname==c] == "decimal" & m>999999999999999.9999)
+      stop(paste("Number overflows decimal(19,4) for",c))
+    if(t$destinationtype[t$colname==c] == "int" & m>2147483647)
+      stop(paste("Number overflows int for",c))
+    if(t$destinationtype[t$colname==c] == "smallint" & m> 32767)
+      stop(paste("Number overflows smallint for",c))
+    if(t$destinationtype[t$colname==c] == "tinyint" & m> 255)
+      stop(paste("Number overflows smallint for",c))
     t$importtype[t$colname==c]<-t$destinationtype[t$colname==c]
   }
   #Handle dates
@@ -118,24 +131,28 @@ for (f in 3:length(file.list)){
     stop(paste("Unknown destination type ",t$destinationtype[!t$destinationtype %in% handled_destination]))
   }
     
-  
-  t$importtype<-sapply(fd,class)
-  
-  interval<-25000
-  rowcount<-nrow(fd)
-  #Roughy 12 minutes per interval, so two hours per file.
-  for (r in 0:ceiling(rowcount/interval)){  #reset to 0 when not recovering from a crash
-    start<-1+r*interval
-    end<-(r+1)*interval
-    if(start>rowcount) {break}
-    if(end>rowcount) {end<-rowcount}
-    fd_filtered<-fd[start:end,]
-    print(c("Upload Current Start:",start,"Next Start:",end+1, nrow(fd_filtered),format(Sys.time(), "%c")))
-    dbAppendTable(conn = vmcon, 
-                  name = SQL('"ErrorLogging"."FPDSdelta"'), 
-                  value = fd_filtered)  ## x is any data frame
-    #https://stackoverflow.com/questions/66864660/r-dbi-sql-server-dbwritetable-truncates-rows-field-types-parameter-does-not-w
-  }
+    interval<-25000
+    rowcount<-nrow(fd)
+    #Roughy 12 minutes per 100k interval, so two hours per file.
+    for (r in 0:ceiling(rowcount/interval)){  #reset to 0 when not recovering from a crash
+      start<-1+r*interval
+      end<-(r+1)*interval
+      if(start>rowcount) {break}
+      if(end>rowcount) {end<-rowcount}
+      fd_filtered<-fd[start:end,]
+      # ctu<-fd_filtered$contract_transaction_unique_key
+      # t %>% filter(importtype %in% c("numeric") & !t$destinationtype %in% c("decimal","int","bigint","smallint","tinyint"))
+      # fd_filtered[,t$importtype %in% c("numeric") &
+      #               !t$destinationtype %in% c("decimal","int","bigint","smallint","tinyint")]<-NA
+      # # fd_filtered[,t$destinationtype %in% c("decimal","int","bigint","smallint","tinyint")]<-NA #%in% c("decidecimal","int","bigint","smallint","tinyint")]
+      # summary(factor(fd$type_of_idc))
+      
+      print(c("Upload Current Start:",start,"Next Start:",end+1, nrow(fd_filtered),format(Sys.time(), "%c")))
+      dbAppendTable(conn = vmcon, 
+                    name = SQL('"ErrorLogging"."FPDSdelta"'), 
+                    value = fd_filtered)  ## x is any data frame
+      #https://stackoverflow.com/questions/66864660/r-dbi-sql-server-dbwritetable-truncates-rows-field-types-parameter-does-not-w
+    }
   #Note, transactions will not commit until you disconnect! Whether or not
   #the computer maintains this connection in the meantime doesn't matter,
   #formal disconnection is required.

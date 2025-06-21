@@ -5,6 +5,7 @@ GO
 CREATE TABLE [FPDSTypeTable].[CostAccountingStandardsClause](
 	[CostAccountingStandardsClause] [varchar](1) NOT NULL,
 	[cost_accounting_standards_clause_name] [varchar](255) NULL,
+	[IsCASclause] [bit] NULL,
  CONSTRAINT [pk_FPDStypetable_CostAccountingStandardsClause] PRIMARY KEY CLUSTERED 
 (
 	[CostAccountingStandardsClause] ASC

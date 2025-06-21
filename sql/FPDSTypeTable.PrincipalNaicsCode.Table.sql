@@ -17,6 +17,7 @@ CREATE TABLE [FPDSTypeTable].[PrincipalNaicsCode](
 	[NASbioEconomy] [varchar](50) NULL,
 	[NASbioEconomyPT] [bit] NULL,
 	[IsPossibleC2] [bit] NULL,
+	[IsFormerCFIUScriticalTech] [bit] NULL,
  CONSTRAINT [PK_principalnaicscode] PRIMARY KEY CLUSTERED 
 (
 	[principalnaicscode] ASC

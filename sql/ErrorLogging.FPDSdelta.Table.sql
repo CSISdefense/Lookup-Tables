@@ -1,10 +1,7 @@
-/****** Object:  Table [ErrorLogging].[FPDSdelta]    Script Date: 5/4/2024 11:08:18 PM ******/
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
 CREATE TABLE [ErrorLogging].[FPDSdelta](
 	[government_furnished_property] [varchar](255) NULL,
 	[research] [varchar](255) NULL,
@@ -310,11 +307,7 @@ CREATE TABLE [ErrorLogging].[FPDSdelta](
 	[correction_delete_ind] [varchar](255) NULL
 ) ON [PRIMARY]
 GO
-
 ALTER TABLE [ErrorLogging].[FPDSdelta] ADD  CONSTRAINT [DF__FPDSdelta2CSISmodifiedDate]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
-
 ALTER TABLE [ErrorLogging].[FPDSdelta] ADD  CONSTRAINT [DF__FPDSdelta2CSIScreatedDate]  DEFAULT (getdate()) FOR [CSIScreatedDate]
 GO
-
-

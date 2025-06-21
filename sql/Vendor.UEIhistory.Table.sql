@@ -24,10 +24,10 @@ CREATE TABLE [Vendor].[UEIhistory](
 	[ObligatedAmountIsSmall] [decimal](19, 4) NULL,
 	[IsOnePercentPlusSmall] [bit] NULL,
 	[EntitySizeCode] [varchar](1) NULL,
-	[IsEntityAbove1990constantReportingThreshold] [bit] NULL,
-	[IsEntityAbove2016constantReportingThreshold] [bit] NULL,
-	[IsEntityAbove2018constant10ThousandThreshold] [bit] NULL,
-	[IsEntityAbove2016constantOneMillionThreshold] [bit] NULL,
+	[IsEntityAbove1990constantMTAthreshold] [bit] NULL,
+	[IsEntityAbove2016constantMTAthreshold] [bit] NULL,
+	[IsEntityAbove2018constantMTAthreshold] [bit] NULL,
+	[IsEntityAbove2016constantArbitrary1000k] [bit] NULL,
 	[AnyEntityUSplaceOfPerformance] [bit] NULL,
 	[AnyEntityForeignPlaceOfPerformance] [bit] NULL,
 	[ChildCount] [int] NULL,
@@ -40,6 +40,18 @@ CREATE TABLE [Vendor].[UEIhistory](
 	[TotalAmount] [decimal](19, 4) NULL,
 	[TopDunsnumberCount] [int] NULL,
 	[TotalCount] [int] NULL,
+	[IsEntityAbove2018constantSimplifedAcquisition250kThreshold] [bit] NULL,
+	[IsEntityAbove2018constantCommercialItem7500k] [bit] NULL,
+	[IsEntityAbove2018constantCostAccounting2000kThreshold] [bit] NULL,
+	[AnyDefense] [bit] NULL,
+	[DefenseObligated] [decimal](19, 4) NULL,
+	[AlwaysCAUisCASexemptOrWaived] [bit] NULL,
+	[AnyCASclause] [bit] NULL,
+	[IsEntityTraditional] [bit] NULL,
+	[manufacturingorganizationtype] [varchar](1) NULL,
+	[TopParent_UEI] [varchar](12) NULL,
+	[TopParent_UEIAmount] [decimal](19, 4) NULL,
+	[TopParent_UEIcount] [int] NULL,
  CONSTRAINT [pk_vendor_recipient_ueitoParentIDhistory] PRIMARY KEY CLUSTERED 
 (
 	[UEI] ASC,
@@ -62,6 +74,9 @@ GO
 ALTER TABLE [Vendor].[UEIhistory]  WITH CHECK ADD FOREIGN KEY([TopDunsnumber])
 REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])
 GO
+ALTER TABLE [Vendor].[UEIhistory]  WITH CHECK ADD FOREIGN KEY([manufacturingorganizationtype])
+REFERENCES [Location].[manufacturingorganizationtype] ([manufacturingorganizationtype])
+GO
 ALTER TABLE [Vendor].[UEIhistory]  WITH CHECK ADD FOREIGN KEY([Parent_UEI])
 REFERENCES [Vendor].[UEI] ([UEI])
 GO
@@ -70,6 +85,9 @@ REFERENCES [Vendor].[UEI] ([UEI])
 GO
 ALTER TABLE [Vendor].[UEIhistory]  WITH CHECK ADD FOREIGN KEY([ParentID])
 REFERENCES [Contractor].[ParentContractor] ([ParentID])
+GO
+ALTER TABLE [Vendor].[UEIhistory]  WITH CHECK ADD FOREIGN KEY([TopParent_UEI])
+REFERENCES [Vendor].[UEI] ([UEI])
 GO
 ALTER TABLE [Vendor].[UEIhistory]  WITH CHECK ADD FOREIGN KEY([UEI])
 REFERENCES [Vendor].[UEI] ([UEI])
