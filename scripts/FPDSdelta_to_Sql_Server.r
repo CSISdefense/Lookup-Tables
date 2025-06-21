@@ -7,17 +7,20 @@ library(tidyverse)
 #Match up Errorlogging.FPDSdelta to Contract.FPDS 
 Import.df<-read_create_table("ErrorLogging.FPDSdelta.Table.sql",
                                       dir="SQL")
-# write.csv(Import.df,file="Import.csv")
-Import.df<-translate_name(Import.df,file="USAspendingNameMirror.csv",
-                          DestVariableNamefile="USAspendingVariableName.csv")
 
+Import.df<-translate_name(Import.df)#,#file="PostgresNameConversion.csv")#,file="USAspendingNameMirror.csv",
+                          # DestVariableNamefile="USAspendingVariableName.csv")
+
+# Import.df<-translate_name(Import.df,file="USAspendingNameMirror.csv",
+#                           DestVariableNamefile="USAspendingVariableName.csv")
+# write.csv(Import.df,file="Import.csv")
 DestinationTable.df<-read_create_table("Contract.FPDS",
                                        dir="SQL")
 
 
 
 translate_name(DestinationTable.df,test_only=TRUE)
-
+# debug(merge_source_and_csis_name_tables)
 MergeDestination.df<-merge_source_and_csis_name_tables(Import.df,DestinationTable.df)
 
 #Check for size mismatch
@@ -99,6 +102,7 @@ skip_list<-c("[unique_award_key]",
              "[recipient_country_name]",
              "") 
 # debug(convert_field_to_foreign_key)
+
 input_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                                      "FPDSdelta",
                                                     "Contract",
@@ -107,9 +111,10 @@ input_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                                      suppress_select = TRUE,
                                                     suppress_alter = TRUE,
                                                     suppress_update= TRUE,
-                                                    skip_list = skip_list#,
-                                                    # file="FPDSdeltaNameConversion.csv"
+                                                    skip_list = skip_list,
+                                                    file="NameConversion.csv"
                                                     )
+
 write(input_missing_code,
       file=file.path("Output","ErrorLogging_FPDSdelta_input_foreign_key.txt"),  
       append=FALSE) 
@@ -138,8 +143,8 @@ DroppedFieldFK<-left_join(DroppedField,fklist,by=c("Pair"="FKColumnName")) %>%fi
 DroppedFieldFK<-DroppedFieldFK  %>% filter(!SourceVariableName %in% c("[USAspending_file_name]"))
 #Drop bit fields now being checked for in Select
 DroppedFieldFK<-DroppedFieldFK  %>% filter(!Pair %in% c("a76action", "clingercohenact", "multiyearcontract", "purchasecardaspaymentmethod"))
-#CSISstage2id is just for internal checks
-DroppedFieldFK<-DroppedFieldFK  %>% filter(SourceVariableType != "[int] IDENTITY(1,1)")
+#correction_delete_ind is used for processing the delta file, we do not add it to contract.fpds
+DroppedFieldFK<-DroppedFieldFK  %>% filter(SourceVariableName != "[correction_delete_ind]")
 if(nrow(DroppedFieldFK>1)){
   write.csv(DroppedFieldFK,
             file="Output/NameConversion_Missing_ForeignKey.csv")
@@ -153,16 +158,19 @@ rm(DroppedField,DroppedFieldFK,fklist)
 
 MergeDestination.df$IsDroppedNameField[is.na(MergeDestination.df$IsDroppedNameField)]<-FALSE
 
-#Remove CSISstage2ID, it's entirely for internal purposes
-MergeDestination.df<-MergeDestination.df %>% filter(!SourceVariableName %in% c("[CSISstage2id]","[USAspending_file_name]"))
 #Check that all dropped fields correspond with a preserved field
+
 pair_kept<-left_join(MergeDestination.df %>% filter(IsDroppedNameField==TRUE)%>% select(SourceVariableName,Pair),
           MergeDestination.df %>% filter(IsDroppedNameField==FALSE) %>% select(SourceVariableName,IsDroppedNameField),
           by=c("Pair"="SourceVariableName"))
+#Drop correction_delete_ind as it is unmatched but not kep
+pair_kept<-pair_kept %>% filter(!SourceVariableName %in% c("[correction_delete_ind]"))
 
 if(any(is.na(pair_kept$IsDroppedNameField))){
+  write.csv(pair_kept %>% filter(is.na(IsDroppedNameField)),file="output//FPDS_delta_dropped_name_without_kept_pair.csv",row.names = FALSE)
   stop(paste("We drop name field(s) that does not have a corresponding kept code field:\n",
              paste(pair_kept$SourceVariableName[is.na(pair_kept$IsDroppedNameField)],collapse=", ")))
+  
 }
 rm(pair_kept)
 

@@ -184,7 +184,8 @@ translate_name<-function(TargetTable.df,
 
 merge_source_and_csis_name_tables<-function(SourceTable.df,
                                             CSIStable.df,
-                                            drop_unmatched=TRUE){
+                                            drop_unmatched=TRUE,
+                                            require_CSISvariableName=TRUE){
   colnames(SourceTable.df)[1:3]<-c("SourceVariableName",
                                    "SourceVariableType",
                                    "SourceNullable")
@@ -209,6 +210,13 @@ merge_source_and_csis_name_tables<-function(SourceTable.df,
     SourceTable.df$CSISnullable[is.na(SourceTable.df$CSISnullable)]<-
       SourceTable.df$SourceNullable[is.na(SourceTable.df$CSISnullable)]
   }
+  
+  if(require_CSISvariableName &
+     any(is.na(SourceTable.df$CSISvariableName)&!SourceTable.df$IsDroppedNameField&
+         !is.na(SourceTable.df$IsDroppedNameField))){
+    stop("Unmatched CSISvariableName")
+  }
+  
   SourceTable.df
 }
 
@@ -1065,7 +1073,7 @@ create_foreign_key_assigments<-function(Schema,
   #Limit it to just cases where the variable type is changing
   lookup.CSISvariableNameToPrimaryKey<-get_CSISvariableNameToPrimaryKey(DestinationSchema,
                                                                         DestinationTable)%>%
-    select(-SourcePairName,-IsDroppedNameField)
+    select(-IsDroppedNameField)#-SourcePairName,
   
   
   MergeTable.df<-left_join(MergeTable.df,lookup.CSISvariableNameToPrimaryKey,

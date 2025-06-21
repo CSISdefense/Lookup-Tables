@@ -50,7 +50,7 @@ for (f in 1:length(file.list)){
 file.list<-list.files(file.path(path,deltadir))
 file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rda"]
 
-for (f in 1:length(file.list)){
+for (f in 3:length(file.list)){
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
@@ -78,11 +78,18 @@ for (f in 1:length(file.list)){
     stop("Column length will lead to truncation")
   }
   # Handle numerical formats
-  for(c in t$colname[t$destinationtype %in% c("decimal","int","bigint","smallint")& t$importtype=="character"]){
+  for(c in t$colname[t$destinationtype %in% c("decimal","int","bigint","smallint","tinyint")& t$importtype=="character"]){
     if(any(!is.na(fd[,c])& 
-           is.na(text_to_number(fd[,c]))))
+           is.na(converted_num)))
       stop(paste("Conversion to number failed for",c))
     fd[,c]<-text_to_number(fd[,c])
+    m<-max(abs(fd[,c],na.rm=TRUE))
+    if(t$destinationtype == "int" & m>2147483647)
+      stop(paste("Numbe overflows int for",c))
+    if(t$destinationtype == "smallint" & m> 32767)
+      stop(paste("Numbe overflows smallint for",c))
+    if(t$destinationtype == "tinyint" & m> 255)
+      stop(paste("Numbe overflows smallint for",c))
     t$importtype[t$colname==c]<-t$destinationtype[t$colname==c]
   }
   #Handle dates
@@ -105,6 +112,13 @@ for (f in 1:length(file.list)){
     fd[,c]<-newval
     t$importtype[t$colname==c]<-t$destinationtype[t$colname==c]
   }
+  
+  handled_destination<-c("varchar","nvarchar","decimal","int","bigint","smallint","tinyint","date","datetime2","bit")
+  if(any(!t$destinationtype %in% handled_destination)){
+    stop(paste("Unknown destination type ",t$destinationtype[!t$destinationtype %in% handled_destination]))
+  }
+    
+  
   t$importtype<-sapply(fd,class)
   
   interval<-25000
