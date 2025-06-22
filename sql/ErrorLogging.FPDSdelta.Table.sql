@@ -307,6 +307,32 @@ CREATE TABLE [ErrorLogging].[FPDSdelta](
 	[correction_delete_ind] [varchar](255) NULL
 ) ON [PRIMARY]
 GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_ErrorLogging_FPDSdelta_contract_award_unique_key] ON [ErrorLogging].[FPDSdelta]
+(
+	[contract_award_unique_key] ASC
+)
+INCLUDE([award_id_piid],[parent_award_agency_id],[parent_award_id_piid],[award_or_idv_flag],[agency_id],[correction_delete_ind]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_errorlogging_FPDSdelta_ctu] ON [ErrorLogging].[FPDSdelta]
+(
+	[contract_transaction_unique_key] ASC,
+	[correction_delete_ind] ASC
+)
+INCLUDE([federal_action_obligation],[recipient_uei],[recipient_parent_uei],[action_date_fiscal_year],[award_id_piid],[parent_award_id_piid],[agency_id],[parent_award_agency_id],[modification_number],[parent_award_modification_number],[transaction_number],[award_or_idv_flag],[last_modified_date]) WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_Errorlogging_FPDSdelta_ctu_fiscal_year] ON [ErrorLogging].[FPDSdelta]
+(
+	[action_date_fiscal_year] ASC,
+	[contract_transaction_unique_key] ASC
+)
+INCLUDE([federal_action_obligation],[recipient_uei],[contract_award_unique_key],[agency_id],[last_modified_date]) WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
 ALTER TABLE [ErrorLogging].[FPDSdelta] ADD  CONSTRAINT [DF__FPDSdelta2CSISmodifiedDate]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
 ALTER TABLE [ErrorLogging].[FPDSdelta] ADD  CONSTRAINT [DF__FPDSdelta2CSIScreatedDate]  DEFAULT (getdate()) FOR [CSIScreatedDate]

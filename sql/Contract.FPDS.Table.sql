@@ -295,6 +295,141 @@ CREATE TABLE [Contract].[FPDS](
 	[updated_at] [datetime2](7) NULL
 ) ON [PRIMARY]
 GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_FPDS_agencyID_PIID_IDVpiid_idvagencyid_IDVpiid_modnumber_transactionnumber] ON [Contract].[FPDS]
+(
+	[agencyid] ASC,
+	[piid] ASC,
+	[idvagencyid] ASC,
+	[idvpiid] ASC,
+	[modnumber] ASC,
+	[transactionnumber] ASC
+)
+WHERE ([PIID] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_Contract_Award_Unique_Key_uei] ON [Contract].[FPDS]
+(
+	[contract_award_unique_key] ASC
+)
+INCLUDE([fiscal_year],[obligatedamount],[baseandexercisedoptionsvalue],[baseandalloptionsvalue],[recipient_uei],[recipient_parent_uei],[dunsnumber],[parentdunsnumber],[contractingofficerbusinesssizedetermination],[placeofperformancecountrycode],[pop_state_code],[costaccountingstandardsclause],[costorpricingdata],[total_dollars_obligated],[current_total_value_of_award],[potential_total_value_of_award],[solicitationprocedures],[placeofmanufacture],[isforeigngovernment],[typeofcontractpricing],[extentcompeted],[statutoryexceptiontofairopportunity],[numberofoffersreceived],[signeddate],[award_or_idv_flag],[currentcompletiondate],[ultimatecompletiondate],[lastdatetoorder],[multiyearcontract],[commercialitemacquisitionprocedures]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_FPDS_contract_transaction_unique_key] ON [Contract].[FPDS]
+(
+	[contract_transaction_unique_key] ASC
+)
+WHERE ([contract_transaction_unique_key] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_FPDS_contract_transaction_unique_key_Fiscal_Year] ON [Contract].[FPDS]
+(
+	[fiscal_year] ASC,
+	[contract_transaction_unique_key] ASC
+)
+INCLUDE([obligatedamount],[recipient_uei],[contract_award_unique_key],[CSIStransactionID],[contractingofficeagencyid],[last_modified_date]) 
+WHERE ([contract_transaction_unique_key] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_ContractingOfficeAgencyID] ON [Contract].[FPDS]
+(
+	[contractingofficeagencyid] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_FPDS_ContractNumber_AgencyID_IDVagencyID_ModNumber_TransNumber] ON [Contract].[FPDS]
+(
+	[ContractNumber] ASC,
+	[agencyid] ASC,
+	[idvagencyid] ASC,
+	[modnumber] ASC,
+	[transactionnumber] ASC
+)
+WHERE ([ContractNumber] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_FPDS_ContractNumber_AgencyID_ModNumber_TransNumber] ON [Contract].[FPDS]
+(
+	[ContractNumber] ASC,
+	[agencyid] ASC,
+	[modnumber] ASC,
+	[transactionnumber] ASC
+)
+WHERE ([ContractNumber] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_csiscontractid_labeling] ON [Contract].[FPDS]
+(
+	[fiscal_year] ASC
+)
+INCLUDE([agencyid],[piid],[idvagencyid],[idvpiid],[CSIStransactionID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_contract_FPDS_csistranscationID2] ON [Contract].[FPDS]
+(
+	[CSIStransactionID] ASC
+)
+INCLUDE([agencyid],[piid],[modnumber],[transactionnumber],[idvagencyid],[idvpiid],[contract_transaction_unique_key]) WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_Dunsnumber_Fiscal_Year] ON [Contract].[FPDS]
+(
+	[dunsnumber] ASC,
+	[fiscal_year] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_headquartercode_Fiscal_Year] ON [Contract].[FPDS]
+(
+	[headquartercode] ASC,
+	[fiscal_year] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_ParentDunsnumber_Fiscal_Year] ON [Contract].[FPDS]
+(
+	[parentdunsnumber] ASC,
+	[fiscal_year] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_Recipient_UEI_Fiscal_Year_CSIScontractID] ON [Contract].[FPDS]
+(
+	[recipient_uei] ASC,
+	[fiscal_year] ASC
+)
+INCLUDE([dunsnumber],[parentdunsnumber],[headquartercode],[CAGE],[recipient_parent_uei],[obligatedamount],[vendorcountrycode],[vendorname],[contractingofficerbusinesssizedetermination],[contract_award_unique_key],[manufacturingorganizationtype],[isforeigngovernment],[costaccountingstandardsclause]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_Recipient_UEI_otherID] ON [Contract].[FPDS]
+(
+	[recipient_uei] ASC
+)
+INCLUDE([signeddate],[dunsnumber],[parentdunsnumber],[headquartercode],[CAGE],[recipient_parent_uei],[obligatedamount]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_systemequipmentcode_fiscal_year] ON [Contract].[FPDS]
+(
+	[systemequipmentcode] ASC
+)
+INCLUDE([fiscal_year]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
 ALTER TABLE [Contract].[FPDS] ADD  CONSTRAINT [DF_FPDS_CSISCreatedDate]  DEFAULT (getdate()) FOR [CSISCreatedDate]
 GO
 ALTER TABLE [Contract].[FPDS] ADD  CONSTRAINT [DF_FPDS_CSISModifiedDate]  DEFAULT (getdate()) FOR [CSISModifiedDate]

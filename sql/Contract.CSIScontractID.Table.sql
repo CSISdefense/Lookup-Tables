@@ -44,7 +44,15 @@ CREATE TABLE [Contract].[CSIScontractID](
 	[topContractingOfficeAmount] [decimal](19, 4) NULL,
 	[IsParentCSIScontractID] [bit] NULL,
 	[IsDuplicate] [bit] NULL,
-	[IsAbove2018constant10ThousandThreshold] [bit] NULL,
+	[IsAbove2018constantMTAthreshold] [bit] NULL,
+	[IsAbove2018constantSimplifedAcquisition250kThreshold] [bit] NULL,
+	[IsAbove2018constantCommercialItem7500k] [bit] NULL,
+	[IsAbove2018constantCostAccounting2000kThreshold] [bit] NULL,
+	[agencyid] [varchar](4) NOT NULL,
+	[parent_award_agency_id] [varchar](4) NULL,
+	[IsContradiction] [bit] NULL,
+	[IsBlankAgencyID] [bit] NULL,
+	[IsAnyCCIDconflict] [bit] NULL,
  CONSTRAINT [pk_CSIScontractID] PRIMARY KEY CLUSTERED 
 (
 	[CSIScontractID] ASC

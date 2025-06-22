@@ -49,7 +49,7 @@ ctu
 file.list<-list.files(file.path(path,deltadir))
 file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rda"]
 
-for (f in 3:length(file.list)){
+for (f in 10:length(file.list)){
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
@@ -62,6 +62,7 @@ for (f in 3:length(file.list)){
 
   print(c("File",file.list[f],"Processing Start", format(Sys.time(), "%c")))
   print(summary(factor(fd$correction_delete_ind)))
+  print(summary(factor(fd$action_date_fiscal_year)))
   filecheck<-data.frame(colname=colnames(fd))
   filecheck$maxlen<-NULL
   for(c in 1:nrow(filecheck)){

@@ -40,6 +40,9 @@ CREATE TABLE [Contractor].[DunsnumberToParentContractorHistory](
 	[IsEntityAbove2018constant10ThousandThreshold] [bit] NULL,
 	[recipient_uei] [varchar](12) NULL,
 	[recipient_parent_uei] [varchar](12) NULL,
+	[IsEntityAbove2018constantSimplifedAcquisition250kThreshold] [bit] NULL,
+	[IsEntityAbove2018constantCommercialItem7500k] [bit] NULL,
+	[IsEntityAbove2018constantCostAccounting2000kThreshold] [bit] NULL,
  CONSTRAINT [pk_DunsnumberToParentContractorHistory_DunsNumber_FiscalYear] PRIMARY KEY CLUSTERED 
 (
 	[DUNSnumber] ASC,

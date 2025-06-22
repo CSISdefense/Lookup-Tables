@@ -41,11 +41,6 @@ CREATE TABLE [Location].[CCCContractIDtoVendorName](
 	[CSISidvpiidID] [int] NULL
 ) ON [PRIMARY]
 GO
-ALTER TABLE [Location].[CCCContractIDtoVendorName]  WITH NOCHECK ADD  CONSTRAINT [FK__CCCContra__CSISc__09801FC7] FOREIGN KEY([CSIScontractID])
-REFERENCES [Contract].[CSIScontractID] ([CSIScontractID])
-GO
-ALTER TABLE [Location].[CCCContractIDtoVendorName] CHECK CONSTRAINT [FK__CCCContra__CSISc__09801FC7]
-GO
 ALTER TABLE [Location].[CCCContractIDtoVendorName]  WITH NOCHECK ADD  CONSTRAINT [FK__CCCContra__CSISi__0A744400] FOREIGN KEY([CSISidvpiidID])
 REFERENCES [Contract].[CSISidvpiidID] ([CSISidvpiidID])
 GO

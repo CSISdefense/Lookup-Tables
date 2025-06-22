@@ -123,6 +123,12 @@ GO
 ALTER TABLE [Contract].[DD350]  WITH CHECK ADD FOREIGN KEY([CSIStransactionID])
 REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
 GO
+ALTER TABLE [Contract].[DD350]  WITH CHECK ADD FOREIGN KEY([CSIStransactionID])
+REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
+GO
+ALTER TABLE [Contract].[DD350]  WITH CHECK ADD FOREIGN KEY([CSIStransactionID])
+REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
+GO
 ALTER TABLE [Contract].[DD350]  WITH NOCHECK ADD  CONSTRAINT [FK__DD350__DodClaima__3E1E0538] FOREIGN KEY([DodClaimantProgramCode])
 REFERENCES [FPDSTypeTable].[ClaimantProgramCode] ([ClaimantProgramCode])
 GO

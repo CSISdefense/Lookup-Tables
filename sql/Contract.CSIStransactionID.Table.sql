@@ -20,50 +20,50 @@ CREATE TABLE [Contract].[CSIStransactionID](
 	[contractingofficeagencyid] [varchar](4) NULL,
 	[IsInContractFPDS] [bit] NULL,
 	[idvagencyid] [varchar](4) NULL,
-	[AgencyID] [varchar](4) NULL,
-	[IsNew6Dup] [bit] NULL,
+	[AgencyID] [varchar](4) NOT NULL,
 	[IsInCTU] [bit] NULL,
 	[IsInFPDSdeleted] [bit] NOT NULL,
 	[IsOddBlankIDVagencyID] [bit] NOT NULL,
 	[IsOddBlankIDVPIID] [bit] NOT NULL,
+	[IsDuplicate] [bit] NOT NULL,
+	[IsInUnlabeledEntityID] [bit] NULL,
+	[IsCCIDconflict] [bit] NULL,
+	[IsBlankFY] [bit] NULL,
+	[IsMarkedForDeletion] [bit] NOT NULL,
  CONSTRAINT [pk_CSIStransactionID] PRIMARY KEY CLUSTERED 
 (
 	[CSIStransactionID] ASC
 )WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-CREATE NONCLUSTERED INDEX [ix_Contract_CSIStransactionID_CSIScontractID] ON [Contract].[CSIStransactionID]
+CREATE NONCLUSTERED INDEX [ix_Contract_CSIStransactionID_IsCCIDconflict_fiscal_year] ON [Contract].[CSIStransactionID]
 (
-	[CSIScontractID] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+	[IsCCIDconflict] ASC,
+	[fiscal_year] ASC
+)
+INCLUDE([CSIScontractID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
-SET ANSI_PADDING ON
-GO
-CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_CSIStransactionID_CSIScontractID_AgencyID_IDVagencyID_ModNumber_TransNumber] ON [Contract].[CSIStransactionID]
+CREATE NONCLUSTERED INDEX [ix_Contract_CSIStransactionID_isduplicate] ON [Contract].[CSIStransactionID]
 (
-	[CSIScontractID] ASC,
-	[AgencyID] ASC,
-	[idvagencyid] ASC,
-	[modnumber] ASC,
-	[transactionnumber] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-CREATE NONCLUSTERED INDEX [ix_Contract_CSIStransactionID_CSISsourceIDVmodificationID] ON [Contract].[CSIStransactionID]
-(
-	[CSISsourceIDVmodificationID] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+	[IsDuplicate] ASC
+)
+INCLUDE([CSIScontractID],[modnumber],[transactionnumber],[IsInContractFPDS],[idvagencyid],[AgencyID],[IsInCTU],[IsInFPDSdeleted]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
 ALTER TABLE [Contract].[CSIStransactionID] ADD  CONSTRAINT [DF__CSIStrans__CSISm__4DB54E83]  DEFAULT (suser_sname()) FOR [CSISmodifiedBy]
 GO
 ALTER TABLE [Contract].[CSIStransactionID] ADD  CONSTRAINT [DF__CSIStrans__CSISm__4EA972BC]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
-GO
-ALTER TABLE [Contract].[CSIStransactionID] ADD  DEFAULT ((0)) FOR [IsNew6Dup]
 GO
 ALTER TABLE [Contract].[CSIStransactionID] ADD  DEFAULT ((0)) FOR [IsInFPDSdeleted]
 GO
 ALTER TABLE [Contract].[CSIStransactionID] ADD  DEFAULT ((0)) FOR [IsOddBlankIDVagencyID]
 GO
 ALTER TABLE [Contract].[CSIStransactionID] ADD  DEFAULT ((0)) FOR [IsOddBlankIDVPIID]
+GO
+ALTER TABLE [Contract].[CSIStransactionID] ADD  DEFAULT ((0)) FOR [IsDuplicate]
+GO
+ALTER TABLE [Contract].[CSIStransactionID] ADD  DEFAULT ((0)) FOR [IsCCIDconflict]
+GO
+ALTER TABLE [Contract].[CSIStransactionID] ADD  DEFAULT ((0)) FOR [IsMarkedForDeletion]
 GO
 ALTER TABLE [Contract].[CSIStransactionID]  WITH CHECK ADD FOREIGN KEY([AgencyID])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
