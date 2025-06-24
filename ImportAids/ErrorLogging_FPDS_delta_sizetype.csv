@@ -39,7 +39,7 @@ recipient_parent_name,nvarchar,
 recipient_parent_duns,varchar,13
 recipient_country_code,nvarchar,
 recipient_country_name,varchar,255
-recipient_address_line_1,varchar,125
+recipient_address_line_1,varchar,150
 recipient_address_line_2,varchar,70
 recipient_city_name,varchar,35
 recipient_state_code,varchar,35
@@ -278,11 +278,11 @@ highly_compensated_officer_5_name,varchar,100
 highly_compensated_officer_5_amount,decimal,
 usaspending_permalink,varchar,150
 action_date_fiscal_year,smallint,
-disaster_emergency_fund_codes_for_overall_award,varchar,500
+disaster_emergency_fund_codes_for_overall_award,varchar,650
 outlayed_amount_from_COVID-19_supplementals_for_overall_award,decimal,
 obligated_amount_from_COVID-19_supplementals_for_overall_award,decimal,
 object_classes_funding_this_award,varchar,1000
-program_activities_funding_this_award,varchar,5012
+program_activities_funding_this_award,varchar,6000
 recipient_county_name,varchar,30
 recipient_uei,varchar,12
 recipient_parent_uei,varchar,12

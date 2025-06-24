@@ -49,14 +49,22 @@ ctu
 file.list<-list.files(file.path(path,deltadir))
 file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rda"]
 
-for (f in 10:length(file.list)){
-  vmcon <- dbConnect(odbc(),
-                     Driver = "SQL Server",
-                     Server = "vmsqldiig.database.windows.net",
-                     Database = "CSIS360",
-                     UID = login,
-                     PWD =pwd)
-  
+# First upload attempt, before the NaN errors, was 100k rows in a bout 12 minutes, or about 2 hours per file.
+# I started hitting OBDC upload errors with no details, so I was planning to shrink down the interval.
+# After discover the NaN import bug, where character columns exclusively NAN or NULL were treated as "not a number" numerics, 
+# I accidentally restarted runs with a 25 row interval.
+# I did switch to 25k when rerunning last night, but first it failed for a new reason. 
+"Sat Jun 21 21:56:12 2025"
+# Error: nanodbc/nanodbc.cpp:4616: 08S01: [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionWrite (send()).  [Microsoft][ODBC SQL Server Driver][DBNETLIB]General network error. Check your network documentation.
+# Error occurs again on file 13 Error: nanodbc/nanodbc.cpp:4616: 08S01: [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionWrite (send()).  [Microsoft][ODBC SQL Server Driver][DBNETLIB]General network error. Check your network documentation. 
+# To my surprise, when restarting with a 25k interval, the first file completed from 800 to 829, or about 30 minutes per. 
+
+
+
+
+
+
+for (f in 26:length(file.list)){
   load(file.path(path,deltadir,file.list[f]))
   fd<-as.data.frame(fd)
 
@@ -132,6 +140,13 @@ for (f in 10:length(file.list)){
     stop(paste("Unknown destination type ",t$destinationtype[!t$destinationtype %in% handled_destination]))
   }
     
+  vmcon <- dbConnect(odbc(),
+                     Driver = "SQL Server",
+                     Server = "vmsqldiig.database.windows.net",
+                     Database = "CSIS360",
+                     UID = login,
+                     PWD =pwd)
+  
     interval<-25000
     rowcount<-nrow(fd)
     #Roughy 12 minutes per 100k interval, so two hours per file.

@@ -17,6 +17,7 @@ read_create_table<-function(FileName,dir="ImportAids\\"){
   
   #For now we're ignoring everything except the lines describing variable types
   CreateRow<-which(TargetTable.df$V1=="CREATE")
+  if(length(CreateRow)>1) CreateRow<-CreateRow[1]
   TargetTable.df<-TargetTable.df[-c(1:CreateRow),]
   EndRow<-min(which(TargetTable.df$V1==")" | TargetTable.df$V2=="CONSTRAINT"))
   TargetTable.df<-TargetTable.df[-c(EndRow:nrow(TargetTable.df)),]
@@ -770,7 +771,7 @@ create_insert<-function(MergeTable.df,
   )
   if (FPDS==TRUE)
     InsertList<-c(InsertList,
-                  paste("WHERE CSIStransactionID NOT in (SELECT CSIStransactionID FROM ",TargetSchema,".",TargetTableName,"\n",
+                  paste("WHERE CSIStransactionID NOT in (SELECT CSIStransactionID FROM ",TargetSchema,".",TargetTableName,")\n",
                         "and CSIStransactionID is not NULL",sep="")
     )
   
