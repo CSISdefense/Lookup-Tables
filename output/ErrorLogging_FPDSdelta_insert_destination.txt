@@ -477,5 +477,5 @@ Convert([datetime], [CSIScreatedDate]),
 [initial_report_date],
 [agency_id]
 FROM ErrorLogging.FPDSdelta
-WHERE CSIStransactionID NOT in (SELECT CSIStransactionID FROM Contract.FPDS
+WHERE CSIStransactionID NOT in (SELECT CSIStransactionID FROM Contract.FPDS)
 and CSIStransactionID is not NULL
