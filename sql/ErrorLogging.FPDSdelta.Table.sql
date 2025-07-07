@@ -42,8 +42,8 @@ CREATE TABLE [ErrorLogging].[FPDSdelta](
 	[recipient_parent_duns] [varchar](13) NULL,
 	[recipient_country_code] [nvarchar](50) NULL,
 	[recipient_country_name] [varchar](255) NULL,
-	[recipient_address_line_1] [varchar](115) NULL,
-	[recipient_address_line_2] [varchar](64) NULL,
+	[recipient_address_line_1] [varchar](150) NULL,
+	[recipient_address_line_2] [varchar](70) NULL,
 	[recipient_city_name] [varchar](35) NULL,
 	[recipient_state_code] [varchar](35) NULL,
 	[recipient_state_name] [varchar](255) NULL,
@@ -281,11 +281,11 @@ CREATE TABLE [ErrorLogging].[FPDSdelta](
 	[highly_compensated_officer_5_amount] [decimal](19, 4) NULL,
 	[usaspending_permalink] [varchar](150) NULL,
 	[action_date_fiscal_year] [smallint] NULL,
-	[disaster_emergency_fund_codes_for_overall_award] [varchar](500) NULL,
+	[disaster_emergency_fund_codes_for_overall_award] [varchar](650) NULL,
 	[outlayed_amount_from_COVID-19_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[obligated_amount_from_COVID-19_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[object_classes_funding_this_award] [varchar](1000) NULL,
-	[program_activities_funding_this_award] [varchar](5000) NULL,
+	[program_activities_funding_this_award] [varchar](6000) NULL,
 	[recipient_county_name] [varchar](30) NULL,
 	[recipient_uei] [varchar](12) NULL,
 	[recipient_parent_uei] [varchar](12) NULL,
@@ -304,7 +304,9 @@ CREATE TABLE [ErrorLogging].[FPDSdelta](
 	[USAspending_file_name] [varchar](255) NULL,
 	[initial_report_date] [datetime2](7) NULL,
 	[agency_id] [varchar](4) NULL,
-	[correction_delete_ind] [varchar](255) NULL
+	[correction_delete_ind] [varchar](255) NULL,
+	[IsTransferred] [bit] NULL,
+	[temp_uei] [varchar](12) NULL
 ) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
