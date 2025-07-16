@@ -27,13 +27,14 @@ if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
 } else{
   stop("USAspending-local dir location unknown")
 }
-deltadir<-"FY(All)_All_Contracts_Delta_20250506"
+deltadir<-"FY(All)_All_Contracts_Delta_20250606"
 
 
 ####Import from flatfiles to R #####
 file.list<-list.files(file.path(path,deltadir))
 file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".csv"]
 
+#This should be quite fast, roughly 2 minutes per file.
 #Import
 for (f in 1:length(file.list)){
   print(c(deltadir,f,"Read Start", format(Sys.time(), "%c")))
@@ -43,7 +44,7 @@ for (f in 1:length(file.list)){
   save(fd,file=file.path(path,deltadir,save_file))
 }
 
-ctu
+
 #### Upload from R to SQL server ####
 
 file.list<-list.files(file.path(path,deltadir))
@@ -64,7 +65,7 @@ file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rd
 
 
 
-for (f in 26:length(file.list)){
+for (f in 1:length(file.list)){
   load(file.path(path,deltadir,file.list[f]))
   fd<-as.data.frame(fd)
 
