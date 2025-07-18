@@ -289,6 +289,17 @@ On pk.recoveredmaterialclauses=fk.[recovered_materials_sustainability_code]
 WHERE pk.recoveredmaterialclauses is NULL and fk.[recovered_materials_sustainability_code] is not null
 GROUP BY fk.[recovered_materials_sustainability_code]
 
+-- Insert new [domestic_or_foreign_entity_code] into Location.manufacturingorganizationtype
+INSERT INTO Location.manufacturingorganizationtype
+(manufacturingorganizationtype,manufacturingorganizationtypeText)
+SELECT fk.[domestic_or_foreign_entity_code]
+,max(fk.domestic_or_foreign_entity) as manufacturingorganizationtypeText
+FROM ErrorLogging.FPDSdelta as fk
+LEFT OUTER JOIN Location.manufacturingorganizationtype as pk
+On pk.manufacturingorganizationtype=fk.[domestic_or_foreign_entity_code]
+WHERE pk.manufacturingorganizationtype is NULL and fk.[domestic_or_foreign_entity_code] is not null
+GROUP BY fk.[domestic_or_foreign_entity_code]
+
 -- Insert new [dod_acquisition_program_code] into Project.SystemEquipmentCode
 INSERT INTO Project.SystemEquipmentCode
 (systemequipmentcode,systemequipmentcodeText)

@@ -620,6 +620,33 @@ HAVING max(iif(fk.recovered_materials_sustainability=pk.recoveredmaterialclauses
 ORDER BY fk.[recovered_materials_sustainability_code]
 
 
+--List new [domestic_or_foreign_entity_code] and updated domestic_or_foreign_entity for insertion into Location.manufacturingorganizationtype
+SELECT fk.[domestic_or_foreign_entity_code],
+max(iif(fk.domestic_or_foreign_entity=pk.manufacturingorganizationtypeText or
+	fk.domestic_or_foreign_entity='' or
+	charindex('('+fk.domestic_or_foreign_entity+')',pk.manufacturingorganizationtypeText )>0,
+	NULL,fk.domestic_or_foreign_entity)) as MaxOfNewFKdomestic_or_foreign_entity,
+count(distinct iif(fk.domestic_or_foreign_entity=pk.manufacturingorganizationtypeText or
+	fk.domestic_or_foreign_entity='' or
+	charindex('('+fk.domestic_or_foreign_entity+')',pk.manufacturingorganizationtypeText )>0,
+	NULL,fk.domestic_or_foreign_entity)) as unmatched_name_count,
+pk.manufacturingorganizationtypeText as PKmanufacturingorganizationtypeText,
+max(iif(fk.domestic_or_foreign_entity=pk.manufacturingorganizationtypeText or
+	fk.domestic_or_foreign_entity='' or
+	charindex('('+fk.domestic_or_foreign_entity+')',pk.manufacturingorganizationtypeText )>0,
+	1,0)) as any_name_match,
+'Location.manufacturingorganizationtype' as PrimaryKeyTable
+FROM ErrorLogging.FPDSdelta as fk
+LEFT OUTER JOIN Location.manufacturingorganizationtype as pk
+On pk.manufacturingorganizationtype=fk.[domestic_or_foreign_entity_code]
+GROUP BY fk.[domestic_or_foreign_entity_code], pk.manufacturingorganizationtypeText
+HAVING max(iif(fk.domestic_or_foreign_entity=pk.manufacturingorganizationtypeText or
+	fk.domestic_or_foreign_entity='' or
+	charindex('('+fk.domestic_or_foreign_entity+')',pk.manufacturingorganizationtypeText )>0,
+	0,1))=1
+ORDER BY fk.[domestic_or_foreign_entity_code]
+
+
 --List new [dod_acquisition_program_code] and updated dod_acquisition_program_description for insertion into Project.SystemEquipmentCode
 SELECT fk.[dod_acquisition_program_code],
 max(iif(fk.dod_acquisition_program_description=pk.systemequipmentcodeText or

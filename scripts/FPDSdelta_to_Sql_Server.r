@@ -39,7 +39,7 @@ DroppedFieldFK<-DroppedFieldFK  %>% filter(!SourceVariableName %in% c("[USAspend
 #Drop bit fields now being checked for in Select
 DroppedFieldFK<-DroppedFieldFK  %>% filter(!Pair %in% c("a76action", "clingercohenact", "multiyearcontract", "purchasecardaspaymentmethod"))
 #correction_delete_ind is used for processing the delta file, we do not add it to contract.fpds
-DroppedFieldFK<-DroppedFieldFK  %>% filter(SourceVariableName != "[correction_delete_ind]")
+DroppedFieldFK<-DroppedFieldFK  %>% filter(!SourceVariableName %in% c("[correction_delete_ind]","[IsTransferred]","[temp_uei]"))
 if(nrow(DroppedFieldFK>1)){
   write.csv(DroppedFieldFK,
             file="Output/NameConversion_Missing_ForeignKey.csv")
@@ -59,7 +59,7 @@ pair_kept<-left_join(MergeDestination.df %>% filter(IsDroppedNameField==TRUE)%>%
                      MergeDestination.df %>% filter(IsDroppedNameField==FALSE) %>% select(SourceVariableName,IsDroppedNameField),
                      by=c("SourcePairName"="SourceVariableName"))
 #Drop correction_delete_ind as it is unmatched but not kept
-pair_kept<-pair_kept %>% filter(!SourceVariableName %in% c("[correction_delete_ind]","[USAspending_file_name]"))
+pair_kept<-pair_kept %>% filter(!SourceVariableName %in% c("[correction_delete_ind]","[USAspending_file_name]","[IsTransferred]","[temp_uei]"))
 
 if(any(is.na(pair_kept$IsDroppedNameField))){
   write.csv(pair_kept %>% filter(is.na(IsDroppedNameField)),file="output//FPDS_delta_dropped_name_without_kept_pair.csv",row.names = FALSE)
