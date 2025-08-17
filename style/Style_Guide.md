@@ -58,8 +58,30 @@ Loren
 Check out (Melanie Frazier's guide to R colors and palettes)[https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf].
 
 
-"#0054A4"
+### DIIG Color Palette
+**Primary Colors**
+Blue: #0054A4
+Air Force: #72a0c1
+National Guard: #0e99d6
+Green: #4c9361
+Red: #BB4243
 
-"#4c9361"
+**Secondary Colors**
+Marine Corps: #999999 
+Navy: #1d2d5c
+Coast Guard: #596FB5
+Purplish Blue: #9eadd8
+Pale Blue: #b2e1ea
+Mallard: #3D4936
+Army: #32602F
+Sea Greeen: #7ac49b
+Pale Green: #c2e3cd
+Tangelo: #e58846
 
-"#BB4243""
+**Additional Colors**
+Amaranth: #7c131b
+Sea Pink: #d37d7d
+Highlight Blue: #66c6cb
+Yellow: #eec260
+Pale Gray: #bcbcbc
+

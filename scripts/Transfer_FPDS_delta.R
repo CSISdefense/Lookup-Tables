@@ -1,4 +1,4 @@
-# Wholee database imports from PostGreSQL to Errorlogging.source_procurement_transaction
+# Whole database imports from monthly delta files to Errorlogging.FPDSdelta
 
 #### Setup #####
 
@@ -27,14 +27,14 @@ if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
 } else{
   stop("USAspending-local dir location unknown")
 }
-deltadir<-"FY(All)_All_Contracts_Delta_20250606"
+deltadir<-"FY(All)_All_Contracts_Delta_20250708"
 
 
 ####Import from flatfiles to R #####
 file.list<-list.files(file.path(path,deltadir))
 file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".csv"]
 
-#This should be quite fast, roughly 2 minutes per file.
+#This should be quite fast, roughly 5 minutes per file.
 #Import
 for (f in 1:length(file.list)){
   print(c(deltadir,f,"Read Start", format(Sys.time(), "%c")))

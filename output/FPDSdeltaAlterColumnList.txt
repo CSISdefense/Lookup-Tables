@@ -4,3 +4,6 @@ ALTER COLUMN [CSISmodifiedDate] [datetime]
 ALTER TABLE Errorlogging.FPDSdelta
 ALTER COLUMN [CSIScreatedDate] [datetime]
 
+ALTER TABLE Errorlogging.FPDSdelta
+ALTER COLUMN [disaster_emergency_fund_codes_for_overall_award] [varchar](500)
+
