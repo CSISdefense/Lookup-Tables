@@ -55,14 +55,14 @@ file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rd
 # After discover the NaN import bug, where character columns exclusively NAN or NULL were treated as "not a number" numerics, 
 # I accidentally restarted runs with a 25 row interval.
 # I did switch to 25k when rerunning last night, but first it failed for a new reason. 
-"Sat Jun 21 21:56:12 2025"
+# "Sat Jun 21 21:56:12 2025"
 # Error: nanodbc/nanodbc.cpp:4616: 08S01: [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionWrite (send()).  [Microsoft][ODBC SQL Server Driver][DBNETLIB]General network error. Check your network documentation.
 # Error occurs again on file 13 Error: nanodbc/nanodbc.cpp:4616: 08S01: [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionWrite (send()).  [Microsoft][ODBC SQL Server Driver][DBNETLIB]General network error. Check your network documentation. 
 # To my surprise, when restarting with a 25k interval, the first file completed from 800 to 829, or about 30 minutes per. 
 
 
 
-
+#2025-08-19 upload. 3.13 million rows. Started 07:23 finished 11:33.
 
 
 for (f in 1:length(file.list)){
