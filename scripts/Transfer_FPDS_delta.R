@@ -27,7 +27,7 @@ if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
 } else{
   stop("USAspending-local dir location unknown")
 }
-deltadir<-"FY(All)_All_Contracts_Delta_20250708"
+deltadir<-"FY(All)_All_Contracts_Delta_20250806"
 
 
 ####Import from flatfiles to R #####
@@ -170,41 +170,6 @@ for (f in 1:length(file.list)){
                     value = fd_filtered)  ## x is any data frame
       #https://stackoverflow.com/questions/66864660/r-dbi-sql-server-dbwritetable-truncates-rows-field-types-parameter-does-not-w
     }
-  #Note, transactions will not commit until you disconnect! Whether or not
-  #the computer maintains this connection in the meantime doesn't matter,
-  #formal disconnection is required.
-  dbDisconnect(vmcon)
-}
-
-##### Upload deleted row list to ErrorLogging.unmatched_contract_transaction_unique_key####
-# Upload deleted rows, just a small number of columns, so hopefully much faster
-n<-nrow(delete_fpds)
-delete_fpds<-distinct(delete_fpds)
-interval<-100000
-start1<-2
-delete_fpds<-as.data.frame(delete_fpds)
-for (f in 1:(n/interval)){
-  start<-start1+f*interval
-  end<-start1+(f+1)*interval-1
-  #Stop when we've reached the end of imports
-  if(start>nrow(delete_fpds)) {break}
-  if(end>nrow(delete_fpds)) {end<-nrow(delete_fpds)}
-  delete_fpds_filtered<-as.data.frame(delete_fpds[start:end,])
-  colnames(delete_fpds_filtered)[1]<-"contract_transaction_unique_key"
-  vmcon <- dbConnect(odbc(),
-                     Driver = "SQL Server",
-                     Server = "vmsqldiig.database.windows.net",
-                     Database = "CSIS360",
-                     UID = login,
-                     PWD =pwd)
-  
-  
-  print(c("Upload Current Start:",start,"Next Start:",end+1,format(Sys.time(), "%c")))
-  dbAppendTable(conn = vmcon, 
-                name = SQL('"ErrorLogging"."unmatched_contract_transaction_unique_key"'), 
-                value = delete_fpds_filtered)  ## x is any data frame
-  #https://stackoverflow.com/questions/66864660/r-dbi-sql-server-dbwritetable-truncates-rows-field-types-parameter-does-not-w
-  # }
   #Note, transactions will not commit until you disconnect! Whether or not
   #the computer maintains this connection in the meantime doesn't matter,
   #formal disconnection is required.
