@@ -15,21 +15,21 @@ Other Agencies,Other Agencies,Other Agencies,FALSE,TRUE,"""Other Non-Defense Age
 VA,VA,VA,FALSE,TRUE,"""Other Non-Defense Agencies""
 (2% 2013-2014, -7% 2012-2013)"
 Unlabeled Customer,Unlabeled,Unlabeled,,FALSE,Unlabeled
-Army,Army,Army,TRUE,TRUE,Army
-Navy,Navy,Navy,TRUE,TRUE,Navy
-Air Force,Air Force,Air Force,TRUE,TRUE,Air Force
-DLA,DLA,DLA,TRUE,TRUE,DLA
-Other DoD,Other DoD,Other DoD,TRUE,TRUE,Other DoD
-CBP,CBP,CBP,FALSE,TRUE,CBP
-Coast Guard,Coast Guard,Coast Guard,FALSE,TRUE,Coast Guard
-TSA,TSA,TSA,FALSE,TRUE,TSA
-OSEC,OSEC,OSEC,FALSE,TRUE,OSEC
-FEMA,FEMA,FEMA,FALSE,TRUE,FEMA
-ICE,ICE,ICE,FALSE,TRUE,ICE
-Other DHS,Other DHS,Other DHS,FALSE,TRUE,Other DHS
-State,State,State,FALSE,TRUE,State
-USAID,USAID,USAID,FALSE,TRUE,USAID
-IAP,IAP,IAP,FALSE,TRUE,IAP
+Army,Army,Defense,TRUE,TRUE,Army
+Navy,Navy,Defense,TRUE,TRUE,Navy
+Air Force,Air Force,Defense,TRUE,TRUE,Air Force
+DLA,DLA,Defense,TRUE,TRUE,DLA
+Other DoD,Other DoD,Defense,TRUE,TRUE,Other DoD
+CBP,CBP,DHS,FALSE,TRUE,CBP
+Coast Guard,Coast Guard,DHS,FALSE,TRUE,Coast Guard
+TSA,TSA,DHS,FALSE,TRUE,TSA
+OSEC,OSEC,DHS,FALSE,TRUE,OSEC
+FEMA,FEMA,DHS,FALSE,TRUE,FEMA
+ICE,ICE,DHS,FALSE,TRUE,ICE
+Other DHS,Other DHS,DHS,FALSE,TRUE,Other DHS
+State,State,State and IAP,FALSE,TRUE,State
+USAID,USAID,State and IAP,FALSE,TRUE,USAID
+IAP,IAP,State and IAP,FALSE,TRUE,IAP
 State and IAP,State and IAP,State and IAP,FALSE,TRUE,"State and IAP
 (8% 2013-2014, -12% 2012-2013)"
 Uncategorized,Uncategorized,Uncategorized,,FALSE,Uncategorized

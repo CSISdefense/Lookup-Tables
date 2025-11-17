@@ -35,7 +35,17 @@ if(length(newcols)>0){
   repoPSC<-left_join(repoPSC, newcolsPSC)
 }
 
+newcols<-colnames(repoPSC)[!colnames(repoPSC) %in% colnames(sqlPSC)]
+if(length(newcols)>0){
+  newcolsPSC<-repoPSC[,c(newcols,"ProductOrServiceCode")]
+  sqlPSC<-left_join(sqlPSC, newcolsPSC)
+}
 
+
+colnames(repoPSC)[!colnames(repoPSC) %in% colnames(sqlPSC)]
+
+repoPSC<-rbind(repoPSC,sqlPSC[!sqlPSC$ProductOrServiceCode %in% repoPSC$ProductOrServiceCode,])
+repoPSC<-repoPSC[order(repoPSC$ProductOrServiceCode),]
 
 update_col<-function(repo,sql,colname,fill_SQL_na=TRUE){
   order<-colnames(repo)
