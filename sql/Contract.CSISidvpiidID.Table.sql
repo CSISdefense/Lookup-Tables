@@ -17,6 +17,7 @@ CREATE TABLE [Contract].[CSISidvpiidID](
 	[idv_type_code] [varchar](1) NULL,
 	[ParentCSIScontractID] [int] NULL,
 	[NumberOfOffersReceived] [bigint] NULL,
+	[parent_award_agency_id] [varchar](4) NULL,
  CONSTRAINT [pk_CSISidvpiidID] PRIMARY KEY CLUSTERED 
 (
 	[CSISidvpiidID] ASC
@@ -25,9 +26,10 @@ CREATE TABLE [Contract].[CSISidvpiidID](
 GO
 SET ANSI_PADDING ON
 GO
-CREATE UNIQUE NONCLUSTERED INDEX [Contract_CSISidvPIIDID_IDVPIID] ON [Contract].[CSISidvpiidID]
+CREATE UNIQUE NONCLUSTERED INDEX [Contract_CSISidvPIIDID_IDVPIID_parent_award_agency_id] ON [Contract].[CSISidvpiidID]
 (
-	[idvpiid] ASC
+	[idvpiid] ASC,
+	[parent_award_agency_id] ASC
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
 ALTER TABLE [Contract].[CSISidvpiidID] ADD  CONSTRAINT [DF__CSISidvpi__CSISm__5185DF67]  DEFAULT (suser_sname()) FOR [CSISmodifiedBy]
@@ -41,6 +43,9 @@ ALTER TABLE [Contract].[CSISidvpiidID] CHECK CONSTRAINT [contract_CSISidvpiidID_
 GO
 ALTER TABLE [Contract].[CSISidvpiidID]  WITH CHECK ADD FOREIGN KEY([idv_type_code])
 REFERENCES [FPDSTypeTable].[idv_type_code] ([idv_type_code])
+GO
+ALTER TABLE [Contract].[CSISidvpiidID]  WITH CHECK ADD FOREIGN KEY([parent_award_agency_id])
+REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
 ALTER TABLE [Contract].[CSISidvpiidID]  WITH CHECK ADD FOREIGN KEY([ParentCSIScontractID])
 REFERENCES [Contract].[CSIScontractID] ([CSIScontractID])

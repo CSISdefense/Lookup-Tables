@@ -36,6 +36,9 @@ GO
 ALTER TABLE [Contract].[contract_transaction_unique_key]  WITH CHECK ADD FOREIGN KEY([CSIStransactionID])
 REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
 GO
+ALTER TABLE [Contract].[contract_transaction_unique_key]  WITH CHECK ADD FOREIGN KEY([CSIStransactionID])
+REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
+GO
 ALTER TABLE [Contract].[contract_transaction_unique_key]  WITH CHECK ADD FOREIGN KEY([idvagencyid])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO

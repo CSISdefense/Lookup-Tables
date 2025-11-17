@@ -1,10 +1,7 @@
-/****** Object:  Table [ErrorLogging].[FPDSdelta]    Script Date: 5/4/2024 11:08:18 PM ******/
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
 CREATE TABLE [ErrorLogging].[FPDSdelta](
 	[government_furnished_property] [varchar](255) NULL,
 	[research] [varchar](255) NULL,
@@ -45,8 +42,8 @@ CREATE TABLE [ErrorLogging].[FPDSdelta](
 	[recipient_parent_duns] [varchar](13) NULL,
 	[recipient_country_code] [nvarchar](50) NULL,
 	[recipient_country_name] [varchar](255) NULL,
-	[recipient_address_line_1] [varchar](115) NULL,
-	[recipient_address_line_2] [varchar](64) NULL,
+	[recipient_address_line_1] [varchar](150) NULL,
+	[recipient_address_line_2] [varchar](70) NULL,
 	[recipient_city_name] [varchar](35) NULL,
 	[recipient_state_code] [varchar](35) NULL,
 	[recipient_state_name] [varchar](255) NULL,
@@ -284,11 +281,11 @@ CREATE TABLE [ErrorLogging].[FPDSdelta](
 	[highly_compensated_officer_5_amount] [decimal](19, 4) NULL,
 	[usaspending_permalink] [varchar](150) NULL,
 	[action_date_fiscal_year] [smallint] NULL,
-	[disaster_emergency_fund_codes_for_overall_award] [varchar](500) NULL,
+	[disaster_emergency_fund_codes_for_overall_award] [varchar](650) NULL,
 	[outlayed_amount_from_COVID-19_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[obligated_amount_from_COVID-19_supplementals_for_overall_award] [decimal](19, 4) NULL,
 	[object_classes_funding_this_award] [varchar](1000) NULL,
-	[program_activities_funding_this_award] [varchar](5000) NULL,
+	[program_activities_funding_this_award] [varchar](6000) NULL,
 	[recipient_county_name] [varchar](30) NULL,
 	[recipient_uei] [varchar](12) NULL,
 	[recipient_parent_uei] [varchar](12) NULL,
@@ -307,14 +304,38 @@ CREATE TABLE [ErrorLogging].[FPDSdelta](
 	[USAspending_file_name] [varchar](255) NULL,
 	[initial_report_date] [datetime2](7) NULL,
 	[agency_id] [varchar](4) NULL,
-	[correction_delete_ind] [varchar](255) NULL
+	[correction_delete_ind] [varchar](255) NULL,
+	[IsTransferred] [bit] NULL,
+	[temp_uei] [varchar](12) NULL
 ) ON [PRIMARY]
 GO
-
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_ErrorLogging_FPDSdelta_contract_award_unique_key] ON [ErrorLogging].[FPDSdelta]
+(
+	[contract_award_unique_key] ASC
+)
+INCLUDE([award_id_piid],[parent_award_agency_id],[parent_award_id_piid],[award_or_idv_flag],[agency_id],[correction_delete_ind]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_errorlogging_FPDSdelta_ctu] ON [ErrorLogging].[FPDSdelta]
+(
+	[contract_transaction_unique_key] ASC,
+	[correction_delete_ind] ASC
+)
+INCLUDE([federal_action_obligation],[recipient_uei],[recipient_parent_uei],[action_date_fiscal_year],[award_id_piid],[parent_award_id_piid],[agency_id],[parent_award_agency_id],[modification_number],[parent_award_modification_number],[transaction_number],[award_or_idv_flag],[last_modified_date]) WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_Errorlogging_FPDSdelta_ctu_fiscal_year] ON [ErrorLogging].[FPDSdelta]
+(
+	[action_date_fiscal_year] ASC,
+	[contract_transaction_unique_key] ASC
+)
+INCLUDE([federal_action_obligation],[recipient_uei],[contract_award_unique_key],[agency_id],[last_modified_date]) WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
 ALTER TABLE [ErrorLogging].[FPDSdelta] ADD  CONSTRAINT [DF__FPDSdelta2CSISmodifiedDate]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
-
 ALTER TABLE [ErrorLogging].[FPDSdelta] ADD  CONSTRAINT [DF__FPDSdelta2CSIScreatedDate]  DEFAULT (getdate()) FOR [CSIScreatedDate]
 GO
-
-

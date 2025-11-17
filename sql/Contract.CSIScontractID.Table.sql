@@ -29,9 +29,9 @@ CREATE TABLE [Contract].[CSIScontractID](
 	[AnyIdentifiedSystemEquipment] [bit] NULL,
 	[CSISmodifiedDate] [datetime] NOT NULL,
 	[CSISmodifiedBy] [nvarchar](128) NOT NULL,
-	[IsAbove1990constantReportingThreshold] [bit] NULL,
-	[IsAbove2016constantReportingThreshold] [bit] NULL,
-	[IsAbove2016constantOneMillionThreshold] [bit] NULL,
+	[IsAbove1990constantMTAthreshold] [bit] NULL,
+	[IsAbove2016constantMTAthreshold] [bit] NULL,
+	[IsAbove2016constantArbitrary1000k] [bit] NULL,
 	[topContractingOfficeAgencyID] [varchar](4) NULL,
 	[topContractingOfficeAgencyIDamount] [decimal](19, 4) NULL,
 	[ProductOrServiceCode] [varchar](4) NULL,
@@ -44,7 +44,15 @@ CREATE TABLE [Contract].[CSIScontractID](
 	[topContractingOfficeAmount] [decimal](19, 4) NULL,
 	[IsParentCSIScontractID] [bit] NULL,
 	[IsDuplicate] [bit] NULL,
-	[IsAbove2018constant10ThousandThreshold] [bit] NULL,
+	[IsAbove2018constantMTAthreshold] [bit] NULL,
+	[IsAbove2018constantSimplifedAcquisition250kThreshold] [bit] NULL,
+	[IsAbove2018constantCommercialItem7500k] [bit] NULL,
+	[IsAbove2018constantCostAccounting2000kThreshold] [bit] NULL,
+	[agencyid] [varchar](4) NOT NULL,
+	[parent_award_agency_id] [varchar](4) NULL,
+	[IsContradiction] [bit] NULL,
+	[IsBlankAgencyID] [bit] NULL,
+	[IsAnyCCIDconflict] [bit] NULL,
  CONSTRAINT [pk_CSIScontractID] PRIMARY KEY CLUSTERED 
 (
 	[CSIScontractID] ASC
@@ -86,6 +94,45 @@ INCLUDE([ContractingAgencyID],[topContractingOfficeAgencyID]) WITH (STATISTICS_N
 GO
 SET ANSI_PADDING ON
 GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_CSIScontractid_ContractNumber_AgencyID] ON [Contract].[CSIScontractID]
+(
+	[ContractNumber] ASC,
+	[agencyid] ASC
+)
+WHERE ([ContractNumber] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_CSIScontractid_CSISidvpiidID] ON [Contract].[CSIScontractID]
+(
+	[CSISidvpiidID] ASC
+)
+INCLUDE([idvpiid],[piid],[ContractLabelID],[hyphenatedIDVpiid],[IsPerformanceBasedLogistics],[ContractingAgencyID],[ContractingOfficeID],[MajorCommandID],[FundingAgencyID],[FundingOfficeID],[TypeOfContractPricing],[SystemEquipmentCode],[StatutoryExceptionToFairOpportunity],[ExtentCompeted],[MinOfEffectiveDate],[MaxOfEffectiveDate],[CSISsolicitationID],[ContractNumber],[MinOfSignedDate],[LastUltimateCompletionDate],[MaxOfSignedDate],[AnyIdentifiedSystemEquipment],[CSISmodifiedDate],[CSISmodifiedBy],[IsAbove1990constantMTAthreshold],[IsAbove2016constantMTAthreshold],[IsAbove2016constantArbitrary1000k]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_CSIScontractid_IDVpiidPiid_agencyID_parent_agencyid] ON [Contract].[CSIScontractID]
+(
+	[piid] ASC,
+	[idvpiid] ASC,
+	[agencyid] ASC,
+	[parent_award_agency_id] ASC
+)
+WHERE ([PIID] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_CSIScontractid_isanyccidconflict] ON [Contract].[CSIScontractID]
+(
+	[IsAnyCCIDconflict] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_CSIScontractid_isduplicate] ON [Contract].[CSIScontractID]
+(
+	[IsDuplicate] ASC
+)
+INCLUDE([agencyid],[ContractNumber]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
 CREATE NONCLUSTERED INDEX [ix_Contract_CSIScontractID_principalNAICScode] ON [Contract].[CSIScontractID]
 (
 	[principalnaicscode] ASC
@@ -93,28 +140,26 @@ CREATE NONCLUSTERED INDEX [ix_Contract_CSIScontractID_principalNAICScode] ON [Co
 GO
 SET ANSI_PADDING ON
 GO
-CREATE NONCLUSTERED INDEX [ix_CSIS_ContractID_ContractingAgencyID] ON [Contract].[CSIScontractID]
-(
-	[ContractingAgencyID] ASC
-)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE NONCLUSTERED INDEX [ix_CSIS_ContractID_ProductOrServiceCode] ON [Contract].[CSIScontractID]
+CREATE NONCLUSTERED INDEX [ix_Contract_CSIScontractid_ProductOrServiceCode] ON [Contract].[CSIScontractID]
 (
 	[ProductOrServiceCode] ASC
 )WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
-ALTER TABLE [Contract].[CSIScontractID] ADD  CONSTRAINT [DF__CSIScontr__CSISM__49E4BD9F]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
+ALTER TABLE [Contract].[CSIScontractID] ADD  CONSTRAINT [DF__CSIScontr__CSISmodifiedDate]  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
-ALTER TABLE [Contract].[CSIScontractID] ADD  CONSTRAINT [DF__CSIScontr__CSISm__4BCD0611]  DEFAULT (suser_sname()) FOR [CSISmodifiedBy]
+ALTER TABLE [Contract].[CSIScontractID] ADD  CONSTRAINT [DF__CSIScontr__CSISmodifiedBy]  DEFAULT (suser_sname()) FOR [CSISmodifiedBy]
 GO
 ALTER TABLE [Contract].[CSIScontractID] ADD  DEFAULT ((0)) FOR [IsDuplicate]
+GO
+ALTER TABLE [Contract].[CSIScontractID] ADD  DEFAULT ((0)) FOR [IsAnyCCIDconflict]
 GO
 ALTER TABLE [Contract].[CSIScontractID]  WITH NOCHECK ADD  CONSTRAINT [contract_CSIScontractID_ContractLabelID] FOREIGN KEY([ContractLabelID])
 REFERENCES [Contract].[ContractLabelID] ([ContractLabelID])
 GO
 ALTER TABLE [Contract].[CSIScontractID] CHECK CONSTRAINT [contract_CSIScontractID_ContractLabelID]
+GO
+ALTER TABLE [Contract].[CSIScontractID]  WITH CHECK ADD FOREIGN KEY([agencyid])
+REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
 ALTER TABLE [Contract].[CSIScontractID]  WITH NOCHECK ADD  CONSTRAINT [FK__CSIScontr__Contr__2AD6269A] FOREIGN KEY([ContractingAgencyID])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
@@ -145,6 +190,9 @@ ALTER TABLE [Contract].[CSIScontractID]  WITH NOCHECK ADD  CONSTRAINT [FK__CSISc
 REFERENCES [Office].[MajorCommandID] ([MajorCommandID])
 GO
 ALTER TABLE [Contract].[CSIScontractID] CHECK CONSTRAINT [FK__CSIScontr__Major__2EA6B77E]
+GO
+ALTER TABLE [Contract].[CSIScontractID]  WITH CHECK ADD FOREIGN KEY([parent_award_agency_id])
+REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
 ALTER TABLE [Contract].[CSIScontractID]  WITH NOCHECK ADD  CONSTRAINT [FK__CSIScontr__statu__336B6C9B] FOREIGN KEY([StatutoryExceptionToFairOpportunity])
 REFERENCES [FPDSTypeTable].[statutoryexceptiontofairopportunity] ([statutoryexceptiontofairopportunity])

@@ -22,6 +22,7 @@ CREATE TABLE [Vendor].[UEI](
 	[DunsnumberNullAmount] [decimal](19, 4) NULL,
 	[DunsnumberNullCount] [int] NULL,
 	[IgnoreBeforeYear] [smallint] NULL,
+	[EntityID] [int] NULL,
  CONSTRAINT [pk_vendor_recipient_uei] PRIMARY KEY CLUSTERED 
 (
 	[UEI] ASC
@@ -42,6 +43,9 @@ REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])
 GO
 ALTER TABLE [Vendor].[UEI]  WITH CHECK ADD FOREIGN KEY([topISO3countrycode])
 REFERENCES [Location].[CountryCodes] ([alpha-3])
+GO
+ALTER TABLE [Vendor].[UEI]  WITH CHECK ADD FOREIGN KEY([EntityID])
+REFERENCES [Vendor].[EntityID] ([EntityID])
 GO
 ALTER TABLE [Vendor].[UEI]  WITH CHECK ADD FOREIGN KEY([Parent_UEI])
 REFERENCES [Vendor].[UEI] ([UEI])

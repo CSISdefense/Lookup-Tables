@@ -3,22 +3,72 @@ source("scripts//SQLimportTools.r")
 library(tidyverse)
 
 
-###### From Stage 2 to Contract.FPDS #########
+# Matching FPDSdelta to Contract.FPDS #########
 #Match up Errorlogging.FPDSdelta to Contract.FPDS 
 Import.df<-read_create_table("ErrorLogging.FPDSdelta.Table.sql",
                                       dir="SQL")
-# write.csv(Import.df,file="Import.csv")
-Import.df<-translate_name(Import.df,file="USAspendingNameMirror.csv",
-                          DestVariableNamefile="USAspendingVariableName.csv")
 
+Import.df<-translate_name(Import.df)#,#file="PostgresNameConversion.csv")#,file="USAspendingNameMirror.csv",
+                          # DestVariableNamefile="USAspendingVariableName.csv")
+
+# Import.df<-translate_name(Import.df,file="USAspendingNameMirror.csv",
+#                           DestVariableNamefile="USAspendingVariableName.csv")
+# write.csv(Import.df,file="Import.csv")
 DestinationTable.df<-read_create_table("Contract.FPDS",
                                        dir="SQL")
 
 
 
 translate_name(DestinationTable.df,test_only=TRUE)
-
+# debug(merge_source_and_csis_name_tables)
 MergeDestination.df<-merge_source_and_csis_name_tables(Import.df,DestinationTable.df)
+
+#####1) Error Checking ####
+#Transfer from Errorlogging.FPDSdelta to Contract.FPDS
+if(nrow(MergeDestination.df[is.na(MergeDestination.df$CSISvariableType)&is.na(MergeDestination.df$IsDroppedNameField),])>1){
+  write.csv(MergeDestination.df[is.na(MergeDestination.df$CSISvariableType)&is.na(MergeDestination.df$IsDroppedNameField),],
+            file="Output/Unmatched_NameConversion.csv",row.names = FALSE)
+  stop("Update ImportAids/NameList.csv using Output/Unmatched_NameConversion.csv")
+}
+DroppedField<-MergeDestination.df %>% filter(IsDroppedNameField)
+fklist<-read.csv("ImportAids//ErrorLogging_ForeignKeyList.csv") %>% 
+  filter(FKSchema=="Contract" & FKTableName=="FPDS")
+DroppedField$Pair<-gsub("[\\],\\[]","",DroppedField$Pair,perl=T) #https://stackoverflow.com/questions/32041265/how-to-escape-closed-bracket-in-regex-in-r
+DroppedFieldFK<-left_join(DroppedField,fklist,by=c("Pair"="FKColumnName")) %>%filter(is.na(ConstraintName))
+DroppedFieldFK<-DroppedFieldFK  %>% filter(!SourceVariableName %in% c("[USAspending_file_name]"))
+#Drop bit fields now being checked for in Select
+DroppedFieldFK<-DroppedFieldFK  %>% filter(!Pair %in% c("a76action", "clingercohenact", "multiyearcontract", "purchasecardaspaymentmethod"))
+#correction_delete_ind is used for processing the delta file, we do not add it to contract.fpds
+DroppedFieldFK<-DroppedFieldFK  %>% filter(!SourceVariableName %in% c("[correction_delete_ind]","[IsTransferred]","[temp_uei]"))
+if(nrow(DroppedFieldFK>1)){
+  write.csv(DroppedFieldFK,
+            file="Output/NameConversion_Missing_ForeignKey.csv")
+  stop("Missing a foreign key assignment for a code / dropped name field combination")
+}
+rm(DroppedField,DroppedFieldFK,fklist)
+
+#Most are misaligned names 
+#a76action, clingercohenact, multiyearcontract, purchasecardaspaymentmethod are bits
+
+
+MergeDestination.df$IsDroppedNameField[is.na(MergeDestination.df$IsDroppedNameField)]<-FALSE
+
+#Check that all dropped fields correspond with a preserved field
+
+pair_kept<-left_join(MergeDestination.df %>% filter(IsDroppedNameField==TRUE)%>% select(SourceVariableName,SourcePairName),
+                     MergeDestination.df %>% filter(IsDroppedNameField==FALSE) %>% select(SourceVariableName,IsDroppedNameField),
+                     by=c("SourcePairName"="SourceVariableName"))
+#Drop correction_delete_ind as it is unmatched but not kept
+pair_kept<-pair_kept %>% filter(!SourceVariableName %in% c("[correction_delete_ind]","[USAspending_file_name]","[IsTransferred]","[temp_uei]"))
+
+if(any(is.na(pair_kept$IsDroppedNameField))){
+  write.csv(pair_kept %>% filter(is.na(IsDroppedNameField)),file="output//FPDS_delta_dropped_name_without_kept_pair.csv",row.names = FALSE)
+  stop(paste("We drop name field(s) that does not have a corresponding kept code field:\n",
+             paste(pair_kept$SourceVariableName[is.na(pair_kept$IsDroppedNameField)],collapse=", ")))
+  
+}
+rm(pair_kept)
+
 
 #Check for size mismatch
 # View(MergeStage2.df %>% filter(SourceVariableType!=CSISvariableType))
@@ -27,7 +77,7 @@ MergeDestination.df<-merge_source_and_csis_name_tables(Import.df,DestinationTabl
 #Try converts shouldn't be necessary unless there's been a change in contract.fpds
 #That said, the differences in date format mean some will be generated.
 
-#First the sellect files
+##2) The Try_Converts select files  ####
 TryConvertList<-create_try_converts(MergeDestination.df,"Errorlogging","FPDSdelta"
                                     ,IncludeAlters=FALSE
                                     ,Apply_Drop = FALSE
@@ -73,10 +123,10 @@ skip_list<-c("[unique_award_key]",
              "[recipient_country_code]",
              "[recipient_country_name]",
              "[awardee_or_recipient_legal]",
-             "[vendor_doing_as_business_n]",
+             "[vendor_doing_as_business_n]"
              
              ) #Handled via chain insert manually written
-
+##3) Create missing foreign key assignments#####
 # debug(create_foreign_key_assigments)
 select_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                         "FPDSdelta",
@@ -99,6 +149,7 @@ skip_list<-c("[unique_award_key]",
              "[recipient_country_name]",
              "") 
 # debug(convert_field_to_foreign_key)
+
 input_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                                      "FPDSdelta",
                                                     "Contract",
@@ -108,66 +159,21 @@ input_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                                     suppress_alter = TRUE,
                                                     suppress_update= TRUE,
                                                     skip_list = skip_list,
-                                                    file="FPDSdeltaNameConversion.csv"
+                                                    file="NameConversion.csv"
                                                     )
+
 write(input_missing_code,
       file=file.path("Output","ErrorLogging_FPDSdelta_input_foreign_key.txt"),  
       append=FALSE) 
 
-
-  
-
-
-
+#####4) Count Empties####
 #Create the code to count empty rows by variable.
 count_list<-count_empties(Import.df,"ErrorLogging","FPDSdelta")
 write(count_list,"Output//ErrorLogging_FPDSdelta_count_empties.txt")
 
 
-#Transfer from Errorlogging.FPDSdelta to Contract.FPDS
-if(nrow(MergeDestination.df[is.na(MergeDestination.df$CSISvariableType)&is.na(MergeDestination.df$IsDroppedNameField),])>1){
-  write.csv(MergeDestination.df[is.na(MergeDestination.df$CSISvariableType)&is.na(MergeDestination.df$IsDroppedNameField),],
-            file="Output/Unmatched_NameConversion.csv")
-  stop("Update ImportAids/NameList.csv using Output/Unmatched_NameConversion.csv")
-}
-DroppedField<-MergeDestination.df %>% filter(IsDroppedNameField)
-fklist<-read.csv("ImportAids//ErrorLogging_ForeignKeyList.csv") %>% 
-  filter(FKSchema=="Contract" & FKTableName=="FPDS")
-DroppedField$Pair<-gsub("[\\],\\[]","",DroppedField$Pair,perl=T) #https://stackoverflow.com/questions/32041265/how-to-escape-closed-bracket-in-regex-in-r
-DroppedFieldFK<-left_join(DroppedField,fklist,by=c("Pair"="FKColumnName")) %>%filter(is.na(ConstraintName))
-DroppedFieldFK<-DroppedFieldFK  %>% filter(!SourceVariableName %in% c("[USAspending_file_name]"))
-#Drop bit fields now being checked for in Select
-DroppedFieldFK<-DroppedFieldFK  %>% filter(!Pair %in% c("a76action", "clingercohenact", "multiyearcontract", "purchasecardaspaymentmethod"))
-#CSISstage2id is just for internal checks
-DroppedFieldFK<-DroppedFieldFK  %>% filter(SourceVariableType != "[int] IDENTITY(1,1)")
-if(nrow(DroppedFieldFK>1)){
-  write.csv(DroppedFieldFK,
-            file="Output/NameConversion_Missing_ForeignKey.csv")
-  stop("Missing a foreign key assignment for a code / dropped name field combination")
-}
-rm(DroppedField,DroppedFieldFK,fklist)
 
-#Most are misaligned names 
-#a76action, clingercohenact, multiyearcontract, purchasecardaspaymentmethod are bits
-
-
-MergeDestination.df$IsDroppedNameField[is.na(MergeDestination.df$IsDroppedNameField)]<-FALSE
-
-#Remove CSISstage2ID, it's entirely for internal purposes
-MergeDestination.df<-MergeDestination.df %>% filter(!SourceVariableName %in% c("[CSISstage2id]","[USAspending_file_name]"))
-#Check that all dropped fields correspond with a preserved field
-pair_kept<-left_join(MergeDestination.df %>% filter(IsDroppedNameField==TRUE)%>% select(SourceVariableName,Pair),
-          MergeDestination.df %>% filter(IsDroppedNameField==FALSE) %>% select(SourceVariableName,IsDroppedNameField),
-          by=c("Pair"="SourceVariableName"))
-
-if(any(is.na(pair_kept$IsDroppedNameField))){
-  stop(paste("We drop name field(s) that does not have a corresponding kept code field:\n",
-             paste(pair_kept$SourceVariableName[is.na(pair_kept$IsDroppedNameField)],collapse=", ")))
-}
-rm(pair_kept)
-
-
-
+##5) Inserts into destination####
 InsertList<-create_insert(MergeDestination.df,
                          "ErrorLogging",
                          "FPDSdelta",
@@ -182,6 +188,8 @@ write(InsertList,"Output/ErrorLogging_FPDSdelta_insert_destination.txt")
 colnames(MergeDestination.df)
 MergeDestination.df %>% filter(SourceVariableType!=CSISvariableType)
 
+
+##6) Compare and update destination#####
 compare_list<-create_compare_cols(MergeDestination.df,
                                 "ErrorLogging",
                                 "FPDSdelta",
@@ -204,13 +212,3 @@ update_list<-create_update_FPDS(MergeDestination.df,
 write(update_list,"Output/ErrorLogging_FPDSdelta_update_destination.txt")
 MergeDestination.df %>% filter(substr(CSISvariableType,2,3) %in% c("NV","nv")) %>% select(SourceVariableName)
 substr(MergeDestination.df$CSISvariableType,2,3)
-###### From Stage 2 to Contract.FPDS #########
-#Match up Errorlogging.FPDSdelta to Contract.FPDS 
-Import.df<-read_create_table("ErrorLogging.FPDSdelta.Table.sql",
-                                      dir="SQL")
-Import.df<-translate_name(Import.df)
-
-DupTable.df<-read_create_table("ErrorLogging.FPDSdeleted.Table.sql",
-                                       dir="SQL")
-translate_name(DupTable.df,test_only=TRUE)
-MergeDestination.df<-merge_source_and_csis_name_tables(Import.df,DupTable.df)

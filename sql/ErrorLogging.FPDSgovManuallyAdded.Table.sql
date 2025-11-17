@@ -375,7 +375,7 @@ GO
 ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded] CHECK CONSTRAINT [fk_FPDSgovManuallyAdded_maj_fund_agency_cat]
 GO
 ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded]  WITH NOCHECK ADD  CONSTRAINT [fk_FPDSgovManuallyAdded_manufacturingorganizationtype] FOREIGN KEY([manufacturingorganizationtype])
-REFERENCES [FPDSTypeTable].[manufacturingorganizationtype] ([manufacturingorganizationtype])
+REFERENCES [Location].[manufacturingorganizationtype] ([manufacturingorganizationtype])
 GO
 ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded] CHECK CONSTRAINT [fk_FPDSgovManuallyAdded_manufacturingorganizationtype]
 GO

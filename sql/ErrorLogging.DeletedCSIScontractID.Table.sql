@@ -1,0 +1,60 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [ErrorLogging].[DeletedCSIScontractID](
+	[CSIScontractID] [int] NOT NULL,
+	[idvpiid] [varchar](50) NULL,
+	[piid] [varchar](50) NULL,
+	[ContractLabelID] [int] NULL,
+	[hyphenatedIDVpiid] [varchar](50) NULL,
+	[CSISidvpiidID] [int] NULL,
+	[IsPerformanceBasedLogistics] [bit] NULL,
+	[ContractingAgencyID] [varchar](4) NULL,
+	[ContractingOfficeID] [varchar](6) NULL,
+	[MajorCommandID] [varchar](8) NULL,
+	[FundingAgencyID] [varchar](4) NULL,
+	[FundingOfficeID] [varchar](6) NULL,
+	[TypeOfContractPricing] [varchar](2) NULL,
+	[SystemEquipmentCode] [varchar](4) NULL,
+	[StatutoryExceptionToFairOpportunity] [varchar](4) NULL,
+	[ExtentCompeted] [varchar](3) NULL,
+	[MinOfEffectiveDate] [datetime2](7) NULL,
+	[MaxOfEffectiveDate] [datetime2](7) NULL,
+	[CSISsolicitationID] [int] NULL,
+	[ContractNumber] [varchar](50) NULL,
+	[MinOfSignedDate] [date] NULL,
+	[LastUltimateCompletionDate] [date] NULL,
+	[MaxOfSignedDate] [date] NULL,
+	[AnyIdentifiedSystemEquipment] [bit] NULL,
+	[CSISmodifiedDate] [datetime] NOT NULL,
+	[CSISmodifiedBy] [nvarchar](128) NOT NULL,
+	[IsAbove1990constantMTAthreshold] [bit] NULL,
+	[IsAbove2016constantMTAthreshold] [bit] NULL,
+	[IsAbove2016constantArbitrary1000k] [bit] NULL,
+	[topContractingOfficeAgencyID] [varchar](4) NULL,
+	[topContractingOfficeAgencyIDamount] [decimal](19, 4) NULL,
+	[ProductOrServiceCode] [varchar](4) NULL,
+	[principalnaicscode] [varchar](6) NULL,
+	[topProductOrServiceCode] [varchar](4) NULL,
+	[topProductOrServiceAmount] [decimal](19, 4) NULL,
+	[topPrincipalNAICScode] [varchar](6) NULL,
+	[topPrincipalNAICSamount] [decimal](19, 4) NULL,
+	[topContractingOfficeID] [varchar](6) NULL,
+	[topContractingOfficeAmount] [decimal](19, 4) NULL,
+	[IsParentCSIScontractID] [bit] NULL,
+	[IsDuplicate] [bit] NULL,
+	[IsAbove2018constantMTAthreshold] [bit] NULL,
+	[IsAbove2018constantSimplifedAcquisition250kThreshold] [bit] NULL,
+	[IsAbove2018constantCommercialItem7500k] [bit] NULL,
+	[IsAbove2018constantCostAccounting2000kThreshold] [bit] NULL,
+	[agencyid] [varchar](4) NULL,
+	[parent_award_agency_id] [varchar](4) NULL,
+	[IsContradiction] [bit] NULL,
+	[IsBlankAgencyID] [bit] NULL,
+ CONSTRAINT [pk_CSIScontractID] PRIMARY KEY CLUSTERED 
+(
+	[CSIScontractID] ASC
+)WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO

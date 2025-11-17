@@ -8,6 +8,7 @@ CREATE TABLE [Vendor].[EntityID](
 	[ParentID] [nvarchar](255) NULL,
 	[Dunsnumber] [varchar](13) NULL,
 	[VendorName] [nvarchar](150) NULL,
+	[UEI] [varchar](12) NULL,
  CONSTRAINT [PK__EntityID__9C892FFDD6C95B52] PRIMARY KEY CLUSTERED 
 (
 	[EntityID] ASC
@@ -50,6 +51,9 @@ ALTER TABLE [Vendor].[EntityID]  WITH NOCHECK ADD  CONSTRAINT [FK__EntityID__Par
 REFERENCES [Contractor].[ParentContractor] ([ParentID])
 GO
 ALTER TABLE [Vendor].[EntityID] CHECK CONSTRAINT [FK__EntityID__Parent__4BD7F309]
+GO
+ALTER TABLE [Vendor].[EntityID]  WITH CHECK ADD FOREIGN KEY([UEI])
+REFERENCES [Vendor].[UEI] ([UEI])
 GO
 ALTER TABLE [Vendor].[EntityID]  WITH NOCHECK ADD  CONSTRAINT [FK__EntityID__Vendor__4DC03B7B] FOREIGN KEY([VendorName])
 REFERENCES [Vendor].[VendorName] ([vendorname])

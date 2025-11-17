@@ -1,3 +1,0 @@
-"","SourceVariableName","SourceVariableType","SourceNullable","IsEmpty","UnmatchedPostgres","IsDroppedNameField","Pair","SourcePairName","CSISvariableName","CSISvariableType","CSISnullable","ConstraintName","ConstraintType","FKSchema","FKTableName","ColumnDataType","ColumnLength","PKSchemaName","PKTableName","PKColumnCode","PKcolumnCount","PKcolumnText"
-"1","[legal_entity_zip_last4]","[varchar](255)","NULL",NA,TRUE,TRUE,"zipcode",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"2","[place_of_perform_zip_last4]","[varchar](255)","NULL",NA,TRUE,TRUE,"placeofperformancezipcode",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA

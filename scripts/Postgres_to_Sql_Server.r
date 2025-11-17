@@ -183,13 +183,3 @@ update_list<-create_update_FPDS(MergeDestination.df,
 write(update_list,"Output/ErrorLogging_source_procurement_transaction_update_destination.txt")
 MergeDestination.df %>% filter(substr(CSISvariableType,2,3) %in% c("NV","nv")) %>% select(SourceVariableName)
 substr(MergeDestination.df$CSISvariableType,2,3)
-
-###### Matching Source_procurement_Transaction to Errorlogging.FPDSdeleted #########
-Import.df<-read_create_table("ErrorLogging.source_procurement_transaction.Table.sql",
-                                      dir="SQL")
-Import.df<-translate_name(Import.df)
-
-DupTable.df<-read_create_table("ErrorLogging.FPDSdeleted.Table.sql",
-                                       dir="SQL")
-translate_name(DupTable.df,test_only=TRUE)
-MergeDestination.df<-merge_source_and_csis_name_tables(Import.df,DupTable.df)

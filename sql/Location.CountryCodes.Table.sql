@@ -3,7 +3,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [Location].[CountryCodes](
-	[USAID region] [nvarchar](255) NULL,
+	[USAIDregion] [nvarchar](255) NULL,
 	[name] [nvarchar](255) NULL,
 	[alpha-2] [nvarchar](255) NULL,
 	[alpha-3] [nvarchar](3) NOT NULL,
@@ -34,6 +34,9 @@ CREATE TABLE [Location].[CountryCodes](
 	[FiveEyes] [bit] NULL,
 	[NTIByear] [smallint] NULL,
 	[IsDeprecated] [bit] NOT NULL,
+	[StateRegion] [nvarchar](255) NULL,
+	[EUentryYear] [smallint] NULL,
+	[EUexitYear] [smallint] NULL,
  CONSTRAINT [PK_ISOcountryCode3] PRIMARY KEY CLUSTERED 
 (
 	[alpha-3] ASC

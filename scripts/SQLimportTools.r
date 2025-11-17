@@ -17,6 +17,7 @@ read_create_table<-function(FileName,dir="ImportAids\\"){
   
   #For now we're ignoring everything except the lines describing variable types
   CreateRow<-which(TargetTable.df$V1=="CREATE")
+  if(length(CreateRow)>1) CreateRow<-CreateRow[1]
   TargetTable.df<-TargetTable.df[-c(1:CreateRow),]
   EndRow<-min(which(TargetTable.df$V1==")" | TargetTable.df$V2=="CONSTRAINT"))
   TargetTable.df<-TargetTable.df[-c(EndRow:nrow(TargetTable.df)),]
@@ -184,7 +185,8 @@ translate_name<-function(TargetTable.df,
 
 merge_source_and_csis_name_tables<-function(SourceTable.df,
                                             CSIStable.df,
-                                            drop_unmatched=TRUE){
+                                            drop_unmatched=TRUE,
+                                            require_CSISvariableName=TRUE){
   colnames(SourceTable.df)[1:3]<-c("SourceVariableName",
                                    "SourceVariableType",
                                    "SourceNullable")
@@ -209,6 +211,13 @@ merge_source_and_csis_name_tables<-function(SourceTable.df,
     SourceTable.df$CSISnullable[is.na(SourceTable.df$CSISnullable)]<-
       SourceTable.df$SourceNullable[is.na(SourceTable.df$CSISnullable)]
   }
+  
+  if(require_CSISvariableName &
+     any(is.na(SourceTable.df$CSISvariableName)&!SourceTable.df$IsDroppedNameField&
+         !is.na(SourceTable.df$IsDroppedNameField))){
+    stop("Unmatched CSISvariableName")
+  }
+  
   SourceTable.df
 }
 
@@ -762,7 +771,7 @@ create_insert<-function(MergeTable.df,
   )
   if (FPDS==TRUE)
     InsertList<-c(InsertList,
-                  paste("WHERE CSIStransactionID NOT in (SELECT CSIStransactionID FROM ",TargetSchema,".",TargetTableName,"\n",
+                  paste("WHERE CSIStransactionID NOT in (SELECT CSIStransactionID FROM ",TargetSchema,".",TargetTableName,")\n",
                         "and CSIStransactionID is not NULL",sep="")
     )
   
@@ -1065,7 +1074,7 @@ create_foreign_key_assigments<-function(Schema,
   #Limit it to just cases where the variable type is changing
   lookup.CSISvariableNameToPrimaryKey<-get_CSISvariableNameToPrimaryKey(DestinationSchema,
                                                                         DestinationTable)%>%
-    select(-SourcePairName,-IsDroppedNameField)
+    select(-IsDroppedNameField)#-SourcePairName,
   
   
   MergeTable.df<-left_join(MergeTable.df,lookup.CSISvariableNameToPrimaryKey,

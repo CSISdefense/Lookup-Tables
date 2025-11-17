@@ -620,7 +620,7 @@ HAVING max(iif(fk.recovered_materials_sustainability=pk.recoveredmaterialclauses
 ORDER BY fk.[recovered_materials_sustainability_code]
 
 
---List new [domestic_or_foreign_entity_code] and updated domestic_or_foreign_entity for insertion into FPDSTypeTable.manufacturingorganizationtype
+--List new [domestic_or_foreign_entity_code] and updated domestic_or_foreign_entity for insertion into Location.manufacturingorganizationtype
 SELECT fk.[domestic_or_foreign_entity_code],
 max(iif(fk.domestic_or_foreign_entity=pk.manufacturingorganizationtypeText or
 	fk.domestic_or_foreign_entity='' or
@@ -635,9 +635,9 @@ max(iif(fk.domestic_or_foreign_entity=pk.manufacturingorganizationtypeText or
 	fk.domestic_or_foreign_entity='' or
 	charindex('('+fk.domestic_or_foreign_entity+')',pk.manufacturingorganizationtypeText )>0,
 	1,0)) as any_name_match,
-'FPDSTypeTable.manufacturingorganizationtype' as PrimaryKeyTable
+'Location.manufacturingorganizationtype' as PrimaryKeyTable
 FROM ErrorLogging.FPDSdelta as fk
-LEFT OUTER JOIN FPDSTypeTable.manufacturingorganizationtype as pk
+LEFT OUTER JOIN Location.manufacturingorganizationtype as pk
 On pk.manufacturingorganizationtype=fk.[domestic_or_foreign_entity_code]
 GROUP BY fk.[domestic_or_foreign_entity_code], pk.manufacturingorganizationtypeText
 HAVING max(iif(fk.domestic_or_foreign_entity=pk.manufacturingorganizationtypeText or

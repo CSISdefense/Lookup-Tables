@@ -20,11 +20,44 @@ CREATE TABLE [Contract].[contract_award_unique_key](
 	[typeofidc] [varchar](41) NULL,
 	[parent_award_single_or_multiple_code] [varchar](1) NULL,
 	[IsAwardIDVdup] [bit] NULL,
+	[IsAbove2018constantSimplifedAcquisition250kThreshold] [bit] NULL,
+	[IsAbove2018constantCommercialItem7500k] [bit] NULL,
+	[IsAbove2018constantMTAthreshold] [bit] NULL,
+	[IsAbove2016constantMTAthreshold] [bit] NULL,
+	[IsAbove1990constantMTAthreshold] [bit] NULL,
+	[IsAbove2018constantCostAccounting2000kThreshold] [bit] NULL,
+	[IsAbove2016constantArbitrary1000k] [bit] NULL,
+	[IsDefense] [bit] NULL,
+	[CostAccountingStandardsClause] [varchar](1) NULL,
+	[costorpricingdata] [varchar](1) NULL,
+	[solicitationprocedures] [varchar](5) NULL,
+	[commercialitemacquisitionprocedures] [varchar](1) NULL,
+	[contractingofficerbusinesssizedetermination] [varchar](1) NULL,
+	[isforeigngovernment] [bit] NULL,
+	[extentcompeted] [varchar](3) NULL,
+	[statutoryexceptiontofairopportunity] [varchar](4) NULL,
+	[typeofcontractpricing] [varchar](2) NULL,
+	[CompetedIsSomeCompetition] [bit] NULL,
+	[FairOppIsSomeCompetition] [bit] NULL,
+	[AnyCASclause] [bit] NULL,
  CONSTRAINT [pk_contract_award_unique_key] PRIMARY KEY CLUSTERED 
 (
 	[contract_award_unique_key] ASC
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_contract_award_unique_key_parent_contract_award_unique_key] ON [Contract].[contract_award_unique_key]
+(
+	[parent_contract_award_unique_key] ASC
+)
+INCLUDE([parent_award_id_piid],[parent_award_agency_id]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+CREATE NONCLUSTERED INDEX [ix_Contract_contract_award_unique_key_CSIScontractID] ON [Contract].[contract_award_unique_key]
+(
+	[CSIScontractID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
 ALTER TABLE [Contract].[contract_award_unique_key] ADD  DEFAULT ((0)) FOR [IsDerived]
 GO
@@ -35,6 +68,18 @@ REFERENCES [Contract].[contract_award_unique_key] ([contract_award_unique_key])
 GO
 ALTER TABLE [Contract].[contract_award_unique_key] CHECK CONSTRAINT [contract_contract_award_unique_key_parent_contract_award_unique_key]
 GO
+ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD FOREIGN KEY([commercialitemacquisitionprocedures])
+REFERENCES [FPDSTypeTable].[CommercialItemAcquisitionProcedures] ([CommercialItemAcquisitionProcedures])
+GO
+ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD FOREIGN KEY([contractingofficerbusinesssizedetermination])
+REFERENCES [FPDSTypeTable].[contractingofficerbusinesssizedetermination] ([contractingofficerbusinesssizedetermination])
+GO
+ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD FOREIGN KEY([CostAccountingStandardsClause])
+REFERENCES [FPDSTypeTable].[CostAccountingStandardsClause] ([CostAccountingStandardsClause])
+GO
+ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD FOREIGN KEY([costorpricingdata])
+REFERENCES [FPDSTypeTable].[costorpricingdata] ([costorpricingdata])
+GO
 ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD FOREIGN KEY([CSISidvpiidID])
 REFERENCES [Contract].[CSISidvpiidID] ([CSISidvpiidID])
 GO
@@ -43,6 +88,12 @@ REFERENCES [FPDSTypeTable].[idv_type_code] ([idv_type_code])
 GO
 ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD FOREIGN KEY([parent_award_single_or_multiple_code])
 REFERENCES [FPDSTypeTable].[multipleorsingleawardidc] ([multipleorsingleawardidc])
+GO
+ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD FOREIGN KEY([solicitationprocedures])
+REFERENCES [FPDSTypeTable].[solicitationprocedures] ([solicitationprocedures])
+GO
+ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD FOREIGN KEY([typeofcontractpricing])
+REFERENCES [FPDSTypeTable].[typeofcontractpricing] ([TypeOfContractPricing])
 GO
 ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD  CONSTRAINT [fk_contract_award_unique_key_CSIScontractID] FOREIGN KEY([CSIScontractID])
 REFERENCES [Contract].[CSIScontractID] ([CSIScontractID])

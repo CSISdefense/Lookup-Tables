@@ -8,10 +8,10 @@ CREATE TABLE [Vendor].[EntityIDhistoryTable](
 	[EntityText] [nvarchar](255) NULL,
 	[EntityCategory] [varchar](8) NULL,
 	[EntitySizeCode] [varchar](1) NULL,
-	[IsEntityAbove2016constantOneMillionThreshold] [bit] NULL,
+	[IsEntityAbove2016constantArbitrary1000k] [bit] NULL,
 	[IsEntityAbove2018constant10ThousandThreshold] [bit] NULL,
-	[IsEntityAbove2016constantReportingThreshold] [bit] NULL,
-	[IsEntityAbove1990constantReportingThreshold] [bit] NULL,
+	[IsEntityAbove2016constantMTAthreshold] [bit] NULL,
+	[IsEntityAbove1990constantMTAthreshold] [bit] NULL,
 	[AnyEntityUSplaceOfPerformance] [bit] NULL,
 	[AnyEntityForeignPlaceOfPerformance] [bit] NULL,
 	[ObligatedAmount] [decimal](38, 4) NULL,
@@ -19,6 +19,9 @@ CREATE TABLE [Vendor].[EntityIDhistoryTable](
 	[NumberOfActions] [bigint] NULL,
 	[Top100Federal] [bit] NULL,
 	[Top6] [bit] NULL,
-	[UnknownCompany] [bit] NULL
+	[UnknownCompany] [bit] NULL,
+	[IsEntityAbove2018constantSimplifedAcquisition250kThreshold] [bit] NULL,
+	[IsEntityAbove2018constantCommercialItem7500k] [bit] NULL,
+	[IsEntityAbove2018constantCostAccounting2000kThreshold] [bit] NULL
 ) ON [PRIMARY]
 GO

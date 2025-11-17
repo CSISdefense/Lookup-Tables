@@ -1,10 +1,7 @@
-/****** Object:  Table [ErrorLogging].[source_procurement_transaction]    Script Date: 3/31/2024 4:33:35 PM ******/
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
 CREATE TABLE [ErrorLogging].[source_procurement_transaction](
 	[detached_award_procurement_id] [int] NULL,
 	[detached_award_proc_unique] [varchar](154) NULL,
@@ -108,8 +105,8 @@ CREATE TABLE [ErrorLogging].[source_procurement_transaction](
 	[labor_standards] [varchar](1) NULL,
 	[labor_standards_descrip] [varchar](255) NULL,
 	[last_modified] [datetime2](7) NULL,
-	[legal_entity_address_line1] [varchar](115) NULL,
-	[legal_entity_address_line2] [varchar](64) NULL,
+	[legal_entity_address_line1] [varchar](125) NULL,
+	[legal_entity_address_line2] [varchar](70) NULL,
 	[legal_entity_address_line3] [varchar](55) NULL,
 	[legal_entity_city_name] [varchar](35) NULL,
 	[legal_entity_congressional] [varchar](22) NULL,
@@ -189,7 +186,7 @@ CREATE TABLE [ErrorLogging].[source_procurement_transaction](
 	[research] [varchar](3) NULL,
 	[research_description] [varchar](255) NULL,
 	[sam_exception] [varchar](70) NULL,
-	[sam_exception_description] [varchar](71) NULL,
+	[sam_exception_description] [varchar](91) NULL,
 	[sea_transportation] [varchar](1) NULL,
 	[sea_transportation_desc] [varchar](255) NULL,
 	[solicitation_date] [date] NULL,
@@ -313,17 +310,43 @@ CREATE TABLE [ErrorLogging].[source_procurement_transaction](
 	[entity_data_source] [varchar](255) NULL,
 	[CSISCreatedDate] [datetime2](7) NOT NULL,
 	[CSISmodifiedDate] [datetime2](7) NOT NULL,
-	[temp_uei] [varchar](12) NULL
+	[temp_uei] [varchar](12) NULL,
+	[Fiscal_Year] [smallint] NULL,
+	[IsTransferred] [bit] NOT NULL
 ) ON [PRIMARY]
 GO
-
+CREATE NONCLUSTERED INDEX [is_ErrorLogging_source_procurement_transaction_IsTransferred] ON [ErrorLogging].[source_procurement_transaction]
+(
+	[IsTransferred] ASC
+)
+INCLUDE([detached_award_proc_unique]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE NONCLUSTERED INDEX [ix_errorlogging_source_procurement_transaction_detached_award_proc_unique_Fiscal_Year] ON [ErrorLogging].[source_procurement_transaction]
+(
+	[detached_award_proc_unique] ASC,
+	[Fiscal_Year] ASC
+)
+INCLUDE([federal_action_obligation],[awardee_or_recipient_uei]) 
+WHERE ([detached_award_proc_unique] IS NOT NULL)
+WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [ix_Errorlogging_spt_ctu_fiscal_year] ON [ErrorLogging].[source_procurement_transaction]
+(
+	[Fiscal_Year] ASC,
+	[detached_award_proc_unique] ASC
+)
+INCLUDE([federal_action_obligation],[awardee_or_recipient_uei],[unique_award_key],[awarding_sub_tier_agency_c],[last_modified]) WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+GO
 ALTER TABLE [ErrorLogging].[source_procurement_transaction] ADD  DEFAULT (getdate()) FOR [CSISCreatedDate]
 GO
-
 ALTER TABLE [ErrorLogging].[source_procurement_transaction] ADD  DEFAULT (getdate()) FOR [CSISmodifiedDate]
 GO
-
-
+ALTER TABLE [ErrorLogging].[source_procurement_transaction] ADD  DEFAULT ((0)) FOR [IsTransferred]
+GO
 
 
 alter table errorlogging.source_procurement_transaction

@@ -3,7 +3,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [Location].[County_FIPS_Code](
-	[state_fips_code] [tinyint] NOT NULL,
+	[state_fips_code] [tinyint] NULL,
 	[county_fips_code] [int] NOT NULL,
  CONSTRAINT [pk_location_county_fips_code] PRIMARY KEY CLUSTERED 
 (

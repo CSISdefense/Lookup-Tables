@@ -35,7 +35,7 @@ CREATE TABLE [Contractor].[ParentContractor](
 	[FirstDate] [datetime] NULL,
 	[FirstURL] [nvarchar](255) NULL,
 	[SpunOffFrom] [nvarchar](255) NULL,
-	[Top6] [bit] NOT NULL,
+	[Big5] [bit] NOT NULL,
 	[HooverID] [varchar](255) NULL,
 	[LexisNexisID] [varchar](255) NULL,
 	[TopStandardizedVendor] [varchar](255) NULL,
@@ -61,10 +61,12 @@ CREATE TABLE [Contractor].[ParentContractor](
 	[isInNeedOfInvestigation] [bit] NULL,
 	[isoverrideISO3countrycode] [bit] NULL,
 	[isnonprofit] [bit] NULL,
-	[IsPreTop6] [bit] NULL,
+	[IsPreBig5] [bit] NULL,
 	[IsSiliconValley] [bit] NULL,
 	[EntityID] [int] NULL,
 	[Abbreviation] [varchar](5) NULL,
+	[PlatformPortfolio] [varchar](30) NULL,
+	[Top100SIPRI] [bit] NULL,
  CONSTRAINT [PK_ParentContractor] PRIMARY KEY CLUSTERED 
 (
 	[ParentID] ASC
@@ -96,12 +98,15 @@ ALTER TABLE [Contractor].[ParentContractor] ADD  CONSTRAINT [DF_contractor_paren
 GO
 ALTER TABLE [Contractor].[ParentContractor] ADD  CONSTRAINT [DF_contractor_parentcontractor_alwaysdisplay]  DEFAULT ((0)) FOR [AlwaysDisplay]
 GO
-ALTER TABLE [Contractor].[ParentContractor] ADD  CONSTRAINT [DF_contractor_parentcontractor_top6]  DEFAULT ((0)) FOR [Top6]
+ALTER TABLE [Contractor].[ParentContractor] ADD  CONSTRAINT [DF_contractor_parentcontractor_top6]  DEFAULT ((0)) FOR [Big5]
 GO
 ALTER TABLE [Contractor].[ParentContractor]  WITH NOCHECK ADD  CONSTRAINT [FK__ParentCon__Entit__48FB865E] FOREIGN KEY([EntityID])
 REFERENCES [Vendor].[EntityID] ([EntityID])
 GO
 ALTER TABLE [Contractor].[ParentContractor] CHECK CONSTRAINT [FK__ParentCon__Entit__48FB865E]
+GO
+ALTER TABLE [Contractor].[ParentContractor]  WITH CHECK ADD FOREIGN KEY([PlatformPortfolio])
+REFERENCES [ProductOrServiceCode].[PlatformPortfolio] ([PlatformPortfolio])
 GO
 ALTER TABLE [Contractor].[ParentContractor]  WITH NOCHECK ADD  CONSTRAINT [FK_parentcontractor_parentheadquarterscountrycode] FOREIGN KEY([parentheadquarterscountrycode])
 REFERENCES [Location].[CountryCodes] ([alpha-3])
