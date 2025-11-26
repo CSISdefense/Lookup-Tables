@@ -1,6 +1,6 @@
 # Whole database imports from monthly delta files to Errorlogging.FPDSdelta
 
-#### Setup #####
+#### 1) Setup #####
 
 
 library(dplyr)
@@ -27,10 +27,12 @@ if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
 } else{
   stop("USAspending-local dir location unknown")
 }
-deltadir<-"FY(All)_All_Contracts_Delta_20250806"
+deltadir<-"FY(All)_All_Contracts_Delta_20250906"
 
 
-####Import from flatfiles to R #####
+EXEC ErrorLogging.SP_LastModifiedDateHistory
+
+#### 2) Import from flatfiles to R #####
 file.list<-list.files(file.path(path,deltadir))
 file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".csv"]
 
@@ -45,7 +47,7 @@ for (f in 1:length(file.list)){
 }
 
 
-#### Upload from R to SQL server ####
+#### 3) Upload from R to SQL server ####
 
 file.list<-list.files(file.path(path,deltadir))
 file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rda"]
@@ -112,7 +114,7 @@ for (f in 1:length(file.list)){
     if(t$destinationtype[t$colname==c] == "smallint" & m> 32767)
       stop(paste("Number overflows smallint for",c))
     if(t$destinationtype[t$colname==c] == "tinyint" & m> 255)
-      stop(paste("Number overflows smallint for",c))
+      stop(paste("Number overflows tinyint for",c))
     t$importtype[t$colname==c]<-t$destinationtype[t$colname==c]
   }
   #Handle dates
