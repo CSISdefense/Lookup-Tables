@@ -47,7 +47,7 @@ for (f in 1:length(file.list)){
 }
 
 
-#### 3) Upload from R to SQL server ####
+#### 3) Check for Data Mismatches ####
 
 file.list<-list.files(file.path(path,deltadir))
 file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rda"]
@@ -62,16 +62,11 @@ file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rd
 # Error occurs again on file 13 Error: nanodbc/nanodbc.cpp:4616: 08S01: [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionWrite (send()).  [Microsoft][ODBC SQL Server Driver][DBNETLIB]General network error. Check your network documentation. 
 # To my surprise, when restarting with a 25k interval, the first file completed from 800 to 829, or about 30 minutes per. 
 
-
-
-#2025-08-19 upload. 3.13 million rows. Started 07:23 finished 11:33.
-
-
 for (f in 1:length(file.list)){
   load(file.path(path,deltadir,file.list[f]))
   fd<-as.data.frame(fd)
 
-  print(c("File",file.list[f],"Processing Start", format(Sys.time(), "%c")))
+  print(c("File",file.list[f],"Error Checking Start", format(Sys.time(), "%c")))
   print(summary(factor(fd$correction_delete_ind)))
   print(summary(factor(fd$action_date_fiscal_year)))
   filecheck<-data.frame(colname=colnames(fd))
@@ -142,7 +137,19 @@ for (f in 1:length(file.list)){
   if(any(!t$destinationtype %in% handled_destination)){
     stop(paste("Unknown destination type ",t$destinationtype[!t$destinationtype %in% handled_destination]))
   }
-    
+  print(c("File",file.list[f],"Error Checking Stop", format(Sys.time(), "%c")))
+}
+
+
+### 4) Upload from R to SQL server ####
+#Seperating this from step 3 is less efficient, but
+#2025-08-19 upload. 3.13 million rows. Started 07:23 finished 11:33.
+#2025-11-26 upload two matches 3,505,416 rows, two batches: to 23:23 and 00:18 and 09:08 to 12:43
+  
+for (f in 1:length(file.list)){
+  load(file.path(path,deltadir,file.list[f]))
+  fd<-as.data.frame(fd)
+  print(c("File",file.list[f],"Error Checking Start", format(Sys.time(), "%c")))
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
