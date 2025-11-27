@@ -1,8 +1,40 @@
+---
+title: "Import FPDS delta files"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
 # Whole database imports from monthly delta files to Errorlogging.FPDSdelta
 
-#### 1) Setup #####
+## 1) Setup
 
+This should run very quickly, but you will need to take steps 1.A-1.C
+\### 1.A) Add your USAspending-local folder if needed.
 
+If this is your first time importing a file on this computer, copy and
+paste two of the directory specifying lines and change both lines to
+match your USAspending-local folder. The code chunk below looks like
+this:
+
+``` r
+} else if(dir.exists("C:\\Users\\grego\\Repos\\USAspending-local\\")) {  
+path\<-"C:\\Users\\grego\\Repos\\USAspending-local\\"  
+```
+
+### 1.B) Unzip the delta file and provide the directory name
+
+**Every time**, update the deltadir variable to the month that next
+needs to be imported. (Note you'll need to have already unzipped the
+delta file to create this folder). The code chunk below looks like this:
+`r deltadir\<-"FY(All)\_All_Contracts_Delta_20250906"`
+
+### 1.3B) Have access to the SQL login and password.
+
+I recommend keeping it in a password manager.
+
+```{r setup}
 library(dplyr)
 library(tidyr)
 library(tidyverse)
@@ -31,8 +63,15 @@ deltadir<-"FY(All)_All_Contracts_Delta_20250906"
 
 
 EXEC ErrorLogging.SP_LastModifiedDateHistory
+```
 
-#### 2) Import from flatfiles to R #####
+#### 2) Import from flatfiles to R
+
+Running the next several line will read the unzipped delta files into r
+and then saves then as RDA files. Each file except the last has 1
+million rows and will take roughly 5 minutes per file in zip.
+
+```{r import_to_r}
 file.list<-list.files(file.path(path,deltadir))
 file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".csv"]
 
@@ -45,22 +84,70 @@ for (f in 1:length(file.list)){
   save_file=paste0(substr(file.list[f],1,nchar(file.list)-4),".rda")
   save(fd,file=file.path(path,deltadir,save_file))
 }
+```
+
+#### 3) Check for Data Mismatches
+
+This section uploads the monthly delta files to SQL server. Each file
+except the last takes roughly fifteen minutes to check.
+
+There are multiple categories of errors:
+
+read_and_join_experiment(filecheck,"ErrorLogging_FPDS_delta_sizetype.csv",dir
+
+-   New unrecognized column
+
+Update [ImportAids /
+missing_fpds_delta_matches.csv](https://github.com/CSISdefense/Lookup-Tables/blob/master/ImportAids/ErrorLogging_FPDS_delta_sizetype.csv)
+
+-   Size of character columns. Multiple columns may fail this as once
+    and this is the most common form of errors.
+    -   `r Error: Column length will lead to truncation`
+
+The view code will bring up a window describing the problem columns:
+
+``` r
+View(t %\>% filter (destinationtype %in% c("varchar","nvarchar") & maxlen>varcharsize))
+```
+
+This must be fixed in at least two places:
+
+-   Import Aids "ErrorLogging_FPDS_delta_sizetype.csv"
+
+-   In SQL Server in the "ErrorLogging"."FPDSdelta" table
+
+``` sql
+alter table errorlogging.fpdsdelta
+alter column [column name] varchar([new size]) 
+```
+
+-   If this is a field that carries over into contract.fpds, it will
+    need to be changed there as well.
+
+-   If this is a foreign key column, this will be a painful process
+    requiring temporary disabiling of foreign and primary keys, changing
+    of the type in the foreign key table, and then changing the type in
+    the
+
+-   A column does not import into the expect type.
+
+    -   `r Conversion to number failed for [column name]`
+    -   `r Number overflows decimal(19,4) for [column name]`
+    -   `r Number overflows int for [column name]`
+    -   `r Number overflows smallint for [column name]`
+    -   `r Number overflows tinyint for [column name]`
+    -   `r Conversion to date failed for [column name]`
+    -   `r Conversion to bit failed for [column name]`
+
+-   A column type in the destination table is not recognized in the code
+
+    -   `r Unknown destination type [destination type]`
 
 
-#### 3) Check for Data Mismatches ####
-
+```{r Mismatch Check}
 file.list<-list.files(file.path(path,deltadir))
 file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rda"]
 
-# First upload attempt, before the NaN errors, was 100k rows in a bout 12 minutes, or about 2 hours per file.
-# I started hitting OBDC upload errors with no details, so I was planning to shrink down the interval.
-# After discover the NaN import bug, where character columns exclusively NAN or NULL were treated as "not a number" numerics, 
-# I accidentally restarted runs with a 25 row interval.
-# I did switch to 25k when rerunning last night, but first it failed for a new reason. 
-# "Sat Jun 21 21:56:12 2025"
-# Error: nanodbc/nanodbc.cpp:4616: 08S01: [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionWrite (send()).  [Microsoft][ODBC SQL Server Driver][DBNETLIB]General network error. Check your network documentation.
-# Error occurs again on file 13 Error: nanodbc/nanodbc.cpp:4616: 08S01: [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionWrite (send()).  [Microsoft][ODBC SQL Server Driver][DBNETLIB]General network error. Check your network documentation. 
-# To my surprise, when restarting with a 25k interval, the first file completed from 800 to 829, or about 30 minutes per. 
 
 for (f in 1:length(file.list)){
   load(file.path(path,deltadir,file.list[f]))
@@ -140,12 +227,37 @@ for (f in 1:length(file.list)){
   print(c("File",file.list[f],"Error Checking Stop", format(Sys.time(), "%c")))
 }
 
+```
 
-### 4) Upload from R to SQL server ####
-#Seperating this from step 3 is less efficient, but
-#2025-08-19 upload. 3.13 million rows. Started 07:23 finished 11:33.
-#2025-11-26 upload two matches 3,505,416 rows, two batches: to 23:23 and 00:18 and 09:08 to 12:43
-  
+### 4) Upload from R to SQL server
+
+This section uploads the monthly delta files to SQL server. Each file
+takes between a half hour and an hour to upload per file. Separating
+this from step 3 is less efficient, but means uploads will not be
+interrupted mid process by the need to fix column mismatches.
+
+
+First upload attempt, before the NaN errors, was 100k rows in a about 12
+minutes, or about 2 hours per file.\
+I started hitting OBDC upload errors with no details, so I was planning
+to shrink down the interval. After discover the NaN import bug, where
+character columns exclusively NAN or NULL were treated as "not a number"
+numerics, I accidentally restarted runs with a 25 row interval. I did
+switch to 25k when rerunning last night, but first it failed for a new
+reason. "Sat Jun 21 21:56:12 2025"
+`Error: nanodbc/nanodbc.cpp:4616: 08S01: [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionWrite (send()).  [Microsoft][ODBC SQL Server Driver][DBNETLIB]General network error. Check your network documentation.`
+`Error occurs again on file 13 Error: nanodbc/nanodbc.cpp:4616: 08S01: [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionWrite (send()).  [Microsoft][ODBC SQL Server Driver][DBNETLIB]General network error. Check your network documentation.`
+To my surprise, when restarting with a 25k interval, the first file
+completed from 800 to 829, or about 30 minutes per.
+
+
+#### Past upload time log:
+
+-   2025-08-19 upload: 3.13M rows. Started 07:23 finished 11:33.
+-   2025-11-26 upload; 3,50M rows, two batches: 23:23 to 00:18 & 09:08
+    to 12:43
+
+```{r uploadtoSQL}
 for (f in 1:length(file.list)){
   load(file.path(path,deltadir,file.list[f]))
   fd<-as.data.frame(fd)
@@ -184,5 +296,4 @@ for (f in 1:length(file.list)){
   #formal disconnection is required.
   dbDisconnect(vmcon)
 }
-
- 
+```
