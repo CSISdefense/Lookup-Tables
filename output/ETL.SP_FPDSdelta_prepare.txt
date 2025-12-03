@@ -1,0 +1,56 @@
+﻿correction_delete_ind	istransferred	n_rows
+NULL	0	616168
+C	0	2888698
+D	0	491
+
+
+
+
+
+
+
+
+
+correction_delete_ind	istransferred	isoutdatedduplicate	n_rows
+NULL	0	0	616168
+C	0	0	2888698
+D	0	0	491
+
+
+
+ctu_n	correction_delete_ind	IsTransferred	IsOutdatedDuplicate	
+616168	NULL	0	0	No Contract.FPDS date
+297794	C	0	0	ETL.FPDSdelta newer
+2590904	C	0	0	Match
+361	D	0	0	ETL.FPDSdelta newer
+130	D	0	0	No Contract.FPDS date
+
+
+
+contract_transaction_unique_key	correction_delete_ind	fd_last_modified_date	fd_isoutdatedduplicate	fddup_last_modified_date	fddup_isoutdatedduplicate
+
+
+
+
+
+
+
+
+
+
+
+ctu_n	correction_delete_ind	IsTransferred	IsOutdatedDuplicate	
+616168	NULL	0	0	No Contract.FPDS date
+297794	C	0	0	ETL.FPDSdelta newer
+2590904	C	0	0	Match
+361	D	0	0	ETL.FPDSdelta newer
+130	D	0	0	No Contract.FPDS date
+
+
+
+Msg 208, Level 16, State 1, Procedure ETL.SP_LogFPDSdeltaOutdatedDuplicate, Line 9 [Batch Start Line 145]
+Invalid object name 'ErrorLogging.FPDSdelta'.
+
+
+
+
