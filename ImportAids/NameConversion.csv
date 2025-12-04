@@ -819,3 +819,4 @@ SourceVariableName,CSISvariableName,IsDuplicate
 [correction_delete_ind],[correction_delete_ind],
 [IsTransferred],[IsTransferred],
 [temp_uei],[temp_uei],
+[isoutdatedduplicate],[isoutdatedduplicate],

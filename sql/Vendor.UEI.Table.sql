@@ -23,11 +23,14 @@ CREATE TABLE [Vendor].[UEI](
 	[DunsnumberNullCount] [int] NULL,
 	[IgnoreBeforeYear] [smallint] NULL,
 	[EntityID] [int] NULL,
+	[IsToBeLabeled] [bit] NOT NULL,
  CONSTRAINT [pk_vendor_recipient_uei] PRIMARY KEY CLUSTERED 
 (
 	[UEI] ASC
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
+GO
+ALTER TABLE [Vendor].[UEI] ADD  DEFAULT ((0)) FOR [IsToBeLabeled]
 GO
 ALTER TABLE [Vendor].[UEI]  WITH CHECK ADD FOREIGN KEY([Dunsnumber])
 REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])

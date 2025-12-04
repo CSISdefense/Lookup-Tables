@@ -4,8 +4,8 @@ library(tidyverse)
 
 
 # Matching FPDSdelta to Contract.FPDS #########
-#Match up Errorlogging.FPDSdelta to Contract.FPDS 
-Import.df<-read_create_table("ErrorLogging.FPDSdelta.Table.sql",
+#Match up ETL.FPDSdelta to Contract.FPDS 
+Import.df<-read_create_table("ETL.FPDSdelta.Table.sql",
                                       dir="SQL")
 
 Import.df<-translate_name(Import.df)#,#file="PostgresNameConversion.csv")#,file="USAspendingNameMirror.csv",
@@ -24,14 +24,14 @@ translate_name(DestinationTable.df,test_only=TRUE)
 MergeDestination.df<-merge_source_and_csis_name_tables(Import.df,DestinationTable.df)
 
 #####1) Error Checking ####
-#Transfer from Errorlogging.FPDSdelta to Contract.FPDS
+#Transfer from ETL.FPDSdelta to Contract.FPDS
 if(nrow(MergeDestination.df[is.na(MergeDestination.df$CSISvariableType)&is.na(MergeDestination.df$IsDroppedNameField),])>1){
   write.csv(MergeDestination.df[is.na(MergeDestination.df$CSISvariableType)&is.na(MergeDestination.df$IsDroppedNameField),],
             file="Output/Unmatched_NameConversion.csv",row.names = FALSE)
   stop("Update ImportAids/NameList.csv using Output/Unmatched_NameConversion.csv")
 }
 DroppedField<-MergeDestination.df %>% filter(IsDroppedNameField)
-fklist<-read.csv("ImportAids//ErrorLogging_ForeignKeyList.csv") %>% 
+fklist<-read.csv("ImportAids//ETL_ForeignKeyList.csv") %>% 
   filter(FKSchema=="Contract" & FKTableName=="FPDS")
 DroppedField$Pair<-gsub("[\\],\\[]","",DroppedField$Pair,perl=T) #https://stackoverflow.com/questions/32041265/how-to-escape-closed-bracket-in-regex-in-r
 DroppedFieldFK<-left_join(DroppedField,fklist,by=c("Pair"="FKColumnName")) %>%filter(is.na(ConstraintName))
@@ -78,7 +78,7 @@ rm(pair_kept)
 #That said, the differences in date format mean some will be generated.
 
 ##2) The Try_Converts select files  ####
-TryConvertList<-create_try_converts(MergeDestination.df,"Errorlogging","FPDSdelta"
+TryConvertList<-create_try_converts(MergeDestination.df,"ETL","FPDSdelta"
                                     ,IncludeAlters=FALSE
                                     ,Apply_Drop = FALSE
                                     ,IncludeSingle = FALSE
@@ -86,7 +86,7 @@ TryConvertList<-create_try_converts(MergeDestination.df,"Errorlogging","FPDSdelt
 if(!is.null(TryConvertList))
   write(TryConvertList,"Output\\FPDSdeltaTryConvertList.txt")
 #Then the alters.
-TryConvertList<-create_try_converts(MergeDestination.df,"Errorlogging","FPDSdelta"
+TryConvertList<-create_try_converts(MergeDestination.df,"ETL","FPDSdelta"
                                     ,IncludeAlters=TRUE
                                     ,IncludeSingle = FALSE
                                     ,IncludeMultiple = FALSE
@@ -105,14 +105,14 @@ if(!is.null(TryConvertList))
 
 
 # InsertList<-create_insert(MergeDestination.df,
-#                           "ErrorLogging",
+#                           "ETL",
 #                           "FPDSdelta2",
-#                           "ErrorLogging",
+#                           "ETL",
 #                           "FPDSdelta",
 #                           DateType=23,
 #                           FPDS=TRUE,
 #                           Apply_Drop=FALSE)
-# write(InsertList,"Output/ErrorLogging_FPDSdelta_insert_destination.txt")
+# write(InsertList,"Output/ETL_FPDSdelta_insert_destination.txt")
 
 skip_list<-c("[unique_award_key]",
              "[CSIStransactionID]",
@@ -128,7 +128,7 @@ skip_list<-c("[unique_award_key]",
              ) #Handled via chain insert manually written
 ##3) Create missing foreign key assignments#####
 # debug(create_foreign_key_assigments)
-select_missing_code <- create_foreign_key_assigments("ErrorLogging",
+select_missing_code <- create_foreign_key_assigments("ETL",
                                         "FPDSdelta",
                                         "Contract",
                                         "FPDS",
@@ -138,7 +138,7 @@ select_missing_code <- create_foreign_key_assigments("ErrorLogging",
                               skip_list = skip_list,
                               file="NameConversion.csv") 
 write(select_missing_code,
-      file=file.path("Output","ErrorLogging_FPDSdelta_select_foreign_key.txt"), 
+      file=file.path("Output","ETL_FPDSdelta_select_foreign_key.txt"), 
       append=FALSE)  
 
 skip_list<-c("[unique_award_key]",
@@ -150,7 +150,7 @@ skip_list<-c("[unique_award_key]",
              "") 
 # debug(convert_field_to_foreign_key)
 
-input_missing_code <- create_foreign_key_assigments("ErrorLogging",
+input_missing_code <- create_foreign_key_assigments("ETL",
                                                      "FPDSdelta",
                                                     "Contract",
                                                     "FPDS",
@@ -163,25 +163,25 @@ input_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                                     )
 
 write(input_missing_code,
-      file=file.path("Output","ErrorLogging_FPDSdelta_input_foreign_key.txt"),  
+      file=file.path("Output","ETL_FPDSdelta_input_foreign_key.txt"),  
       append=FALSE) 
 
 #####4) Count Empties####
 #Create the code to count empty rows by variable.
-count_list<-count_empties(Import.df,"ErrorLogging","FPDSdelta")
-write(count_list,"Output//ErrorLogging_FPDSdelta_count_empties.txt")
+count_list<-count_empties(Import.df,"ETL","FPDSdelta")
+write(count_list,"Output//ETL_FPDSdelta_count_empties.txt")
 
 
 
 ##5) Inserts into destination####
 InsertList<-create_insert(MergeDestination.df,
-                         "ErrorLogging",
+                         "ETL",
                          "FPDSdelta",
                          "Contract",
                          "FPDS",
                          DateType=120,
                          FPDS=TRUE)
-write(InsertList,"Output/ErrorLogging_FPDSdelta_insert_destination.txt")
+write(InsertList,"Output/ETL_FPDSdelta_insert_destination.txt")
 
 
 #Create Compare Values (double checking that column matches are good)
@@ -191,24 +191,24 @@ MergeDestination.df %>% filter(SourceVariableType!=CSISvariableType)
 
 ##6) Compare and update destination#####
 compare_list<-create_compare_cols(MergeDestination.df,
-                                "ErrorLogging",
+                                "ETL",
                                 "FPDSdelta",
                                 "Contract",
                                 "FPDS",
                                 source_primary_key="detached_award_proc_unique",
                                 target_primary_key="contract_transaction_unique_key",
                                 drop_unmatched=TRUE)
-write(compare_list,"Output/ErrorLogging_FPDSdelta_compare_destination.txt")
+write(compare_list,"Output/ETL_FPDSdelta_compare_destination.txt")
 
 
 #Create Updates
 update_list<-create_update_FPDS(MergeDestination.df,
-  "ErrorLogging",
+  "ETL",
   "FPDSdelta",
   "Contract",
   "FPDS",
   DateType=101,
   drop_name=TRUE)
-write(update_list,"Output/ErrorLogging_FPDSdelta_update_destination.txt")
+write(update_list,"Output/ETL_FPDSdelta_update_destination.txt")
 MergeDestination.df %>% filter(substr(CSISvariableType,2,3) %in% c("NV","nv")) %>% select(SourceVariableName)
 substr(MergeDestination.df$CSISvariableType,2,3)

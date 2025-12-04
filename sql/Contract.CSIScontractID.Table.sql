@@ -59,30 +59,12 @@ CREATE TABLE [Contract].[CSIScontractID](
 )WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-CREATE NONCLUSTERED INDEX [Contract_CSIScontractID_CSISidvpiidID] ON [Contract].[CSIScontractID]
-(
-	[CSISidvpiidID] ASC
-)
-INCLUDE([idvpiid],[piid],[ContractLabelID],[hyphenatedIDVpiid],[IsPerformanceBasedLogistics],[ContractingAgencyID],[ContractingOfficeID],[MajorCommandID],[FundingAgencyID],[FundingOfficeID],[TypeOfContractPricing],[SystemEquipmentCode],[StatutoryExceptionToFairOpportunity],[ExtentCompeted],[MinOfEffectiveDate],[MaxOfEffectiveDate],[CSISsolicitationID],[ContractNumber],[MinOfSignedDate],[LastUltimateCompletionDate],[MaxOfSignedDate],[AnyIdentifiedSystemEquipment],[CSISmodifiedDate],[CSISmodifiedBy],[IsAbove1990constantReportingThreshold],[IsAbove2016constantReportingThreshold],[IsAbove2016constantOneMillionThreshold]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
 SET ANSI_PADDING ON
 GO
-CREATE UNIQUE NONCLUSTERED INDEX [idx_contract_csiscontractid_ContractNumber] ON [Contract].[CSIScontractID]
+CREATE NONCLUSTERED INDEX [ix_Contract_CSIScontractid_ContractingAgencyID] ON [Contract].[CSIScontractID]
 (
-	[ContractNumber] ASC
-)
-WHERE ([ContractNumber] IS NOT NULL)
-WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
-CREATE UNIQUE NONCLUSTERED INDEX [idx_contract_IDVpiidPiid] ON [Contract].[CSIScontractID]
-(
-	[idvpiid] ASC,
-	[piid] ASC
-)
-WHERE ([PIID] IS NOT NULL)
-WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+	[ContractingAgencyID] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
 GO

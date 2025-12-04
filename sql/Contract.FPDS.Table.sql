@@ -265,7 +265,7 @@ CREATE TABLE [Contract].[FPDS](
 	[usaspending_permalink] [varchar](150) NULL,
 	[awarding_agency_code] [smallint] NULL,
 	[recipient_county_name] [varchar](30) NULL,
-	[disaster_emergency_fund_codes_for_overall_award] [varchar](500) NULL,
+	[disaster_emergency_fund_codes_for_overall_award] [varchar](650) NULL,
 	[object_classes_funding_this_award] [varchar](1000) NULL,
 	[program_activities_funding_this_award] [varchar](6000) NULL,
 	[obligated_amount_funded_by_COVID19_supplementals_for_overall_award] [decimal](19, 4) NULL,
@@ -375,11 +375,11 @@ CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_csiscontractid_labeling] ON [Contrac
 )
 INCLUDE([agencyid],[piid],[idvagencyid],[idvpiid],[CSIStransactionID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
-CREATE UNIQUE NONCLUSTERED INDEX [ix_contract_FPDS_csistranscationID2] ON [Contract].[FPDS]
+CREATE UNIQUE NONCLUSTERED INDEX [ix_contract_FPDS_csistranscationID] ON [Contract].[FPDS]
 (
 	[CSIStransactionID] ASC
 )
-INCLUDE([agencyid],[piid],[modnumber],[transactionnumber],[idvagencyid],[idvpiid],[contract_transaction_unique_key]) WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+INCLUDE([agencyid],[piid],[modnumber],[transactionnumber],[idvagencyid],[idvpiid],[contract_transaction_unique_key],[last_modified_date],[fiscal_year]) WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
 SET ANSI_PADDING ON
 GO

@@ -1,0 +1,17 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [ETL].[PKTableName](
+	[PKSchemaName] [sysname] NOT NULL,
+	[PKTableName] [varchar](64) NOT NULL,
+	[PKcolumnCount] [int] NULL,
+	[PKcolumnText] [varchar](64) NULL,
+	[NoPKColumnText] [bit] NULL,
+ CONSTRAINT [pk_PKTableName] PRIMARY KEY CLUSTERED 
+(
+	[PKSchemaName] ASC,
+	[PKTableName] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO

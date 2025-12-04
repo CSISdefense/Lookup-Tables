@@ -4,12 +4,12 @@ library(tidyverse)
 
 
 ###### Matching Source_procurement_Transaction  to Contract.FPDS #########
-#Match up Errorlogging.source_procurement_transaction to Contract.FPDS 
-Import.df<-read_create_table("ErrorLogging.source_procurement_transaction.Table.sql",
+#Match up ETL.source_procurement_transaction to Contract.FPDS 
+Import.df<-read_create_table("ETL.source_procurement_transaction.Table.sql",
                                       dir="SQL")
 Import.df<-translate_name(Import.df,file="PostgresNameConversion.csv")
 
-SPTtable.df<-read_create_table("ErrorLogging.source_procurement_transaction.Table.sql",
+SPTtable.df<-read_create_table("ETL.source_procurement_transaction.Table.sql",
                                        dir="SQL")
 
 
@@ -29,13 +29,13 @@ MergeSPT.df<-merge_source_and_csis_name_tables(Import.df,SPTtable.df)
 #Try converts shouldn't be necessary unless there's been a change in contract.fpds
 #That said, the differences in date format mean some will be generated.
 
-TryConvertList<-create_try_converts(MergeDestination.df,"Errorlogging","source_procurement_transaction"
+TryConvertList<-create_try_converts(MergeDestination.df,"ETL","source_procurement_transaction"
                                     ,IncludeAlters=TRUE,
                                     Apply_Drop = FALSE,
                                     IncludeSingle = FALSE)
 if(!is.null(nrow(TryConvertList)))
   write(TryConvertList,"Output\\PostgresTryConvertList.txt_FPDS.txt")
-TryConvertList<-create_try_converts(MergeSPT.df,"Errorlogging","source_procurement_transaction"
+TryConvertList<-create_try_converts(MergeSPT.df,"ETL","source_procurement_transaction"
                                     ,IncludeAlters=TRUE
                                     ,IncludeSingle = FALSE
                                     ,IncludeMultiple = FALSE
@@ -62,7 +62,7 @@ skip_list<-c("[unique_award_key]",
              ) #Handled via chain insert manually written
 
 # debug(create_foreign_key_assigments)
-select_missing_code <- create_foreign_key_assigments("ErrorLogging",
+select_missing_code <- create_foreign_key_assigments("ETL",
                                         "source_procurement_transaction",
                                         "Contract",
                                         "FPDS",
@@ -72,7 +72,7 @@ select_missing_code <- create_foreign_key_assigments("ErrorLogging",
                               skip_list = skip_list,
                               file="PostgresNameConversion.csv") 
 write(select_missing_code,
-      file=file.path("Output","ErrorLogging_source_procurement_transaction_select_foreign_key.txt"), 
+      file=file.path("Output","ETL_source_procurement_transaction_select_foreign_key.txt"), 
       append=FALSE)  
 
 skip_list<-c("[unique_award_key]",
@@ -83,7 +83,7 @@ skip_list<-c("[unique_award_key]",
              "[recipient_country_name]",
              "") 
 # debug(convert_field_to_foreign_key)
-input_missing_code <- create_foreign_key_assigments("ErrorLogging",
+input_missing_code <- create_foreign_key_assigments("ETL",
                                                      "source_procurement_transaction",
                                                     "Contract",
                                                     "FPDS",
@@ -95,22 +95,22 @@ input_missing_code <- create_foreign_key_assigments("ErrorLogging",
                                                     file="PostgresNameConversion.csv"
                                                     )
 write(input_missing_code,
-      file=file.path("Output","ErrorLogging_source_procurement_transaction_input_foreign_key.txt"),  
+      file=file.path("Output","ETL_source_procurement_transaction_input_foreign_key.txt"),  
       append=FALSE) 
 
 #Create the code to count empty rows by variable.
-count_list<-count_empties(Import.df,"ErrorLogging","source_procurement_transaction")
-write(count_list,"Output//ErrorLogging_source_procurement_transaction_count_empties.txt")
+count_list<-count_empties(Import.df,"ETL","source_procurement_transaction")
+write(count_list,"Output//ETL_source_procurement_transaction_count_empties.txt")
 
 
-#Transfer from Errorlogging.source_procurement_transaction to Contract.FPDS
+#Transfer from ETL.source_procurement_transaction to Contract.FPDS
 if(nrow(MergeDestination.df[is.na(MergeDestination.df$CSISvariableType)&is.na(MergeDestination.df$IsDroppedNameField),])>1){
   write.csv(MergeDestination.df[is.na(MergeDestination.df$CSISvariableType)&is.na(MergeDestination.df$IsDroppedNameField),],
             file="Output/Unmatched_NameConversion.csv")
   stop("Update ImportAids/NameList.csv using Output/Unmatched_NameConversion.csv")
 }
 DroppedField<-MergeDestination.df %>% filter(IsDroppedNameField)
-fklist<-read.csv("ImportAids//ErrorLogging_ForeignKeyList.csv") %>% 
+fklist<-read.csv("ImportAids//ETL_ForeignKeyList.csv") %>% 
   filter(FKSchema=="Contract" & FKTableName=="FPDS")
 DroppedField$Pair<-gsub("[\\],\\[]","",DroppedField$Pair,perl=T) #https://stackoverflow.com/questions/32041265/how-to-escape-closed-bracket-in-regex-in-r
 DroppedFieldFK<-left_join(DroppedField,fklist,by=c("Pair"="FKColumnName")) %>%filter(is.na(ConstraintName))
@@ -148,13 +148,13 @@ rm(pair_kept)
 
 
 InsertList<-create_insert(MergeDestination.df,
-                         "ErrorLogging",
+                         "ETL",
                          "source_procurement_transaction",
                          "Contract",
                          "FPDS",
                          DateType=120,
                          FPDS=TRUE)
-write(InsertList,"Output/ErrorLogging_source_procurement_transaction_insert_destination.txt")
+write(InsertList,"Output/ETL_source_procurement_transaction_insert_destination.txt")
 
 
 #Create Compare Values (double checking that column matches are good)
@@ -162,24 +162,24 @@ colnames(MergeDestination.df)
 MergeDestination.df %>% filter(SourceVariableType!=CSISvariableType)
 
 compare_list<-create_compare_cols(MergeDestination.df,
-                                "ErrorLogging",
+                                "ETL",
                                 "source_procurement_transaction",
                                 "Contract",
                                 "FPDS",
                                 source_primary_key="detached_award_proc_unique",
                                 target_primary_key="contract_transaction_unique_key",
                                 drop_unmatched=TRUE)
-write(compare_list,"Output/ErrorLogging_source_procurement_transaction_compare_destination.txt")
+write(compare_list,"Output/ETL_source_procurement_transaction_compare_destination.txt")
 
 
 #Create Updates
 update_list<-create_update_FPDS(MergeDestination.df,
-  "ErrorLogging",
+  "ETL",
   "source_procurement_transaction",
   "Contract",
   "FPDS",
   DateType=101,
   drop_name=TRUE)
-write(update_list,"Output/ErrorLogging_source_procurement_transaction_update_destination.txt")
+write(update_list,"Output/ETL_source_procurement_transaction_update_destination.txt")
 MergeDestination.df %>% filter(substr(CSISvariableType,2,3) %in% c("NV","nv")) %>% select(SourceVariableName)
 substr(MergeDestination.df$CSISvariableType,2,3)

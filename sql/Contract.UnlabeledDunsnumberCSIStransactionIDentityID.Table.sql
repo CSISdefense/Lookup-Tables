@@ -18,6 +18,3 @@ CREATE TABLE [Contract].[UnlabeledDunsnumberCSIStransactionIDentityID](
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-ALTER TABLE [Contract].[UnlabeledDunsnumberCSIStransactionIDentityID]  WITH CHECK ADD FOREIGN KEY([CSIStransactionID])
-REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
-GO
