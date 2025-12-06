@@ -538,3 +538,4 @@
 [temp_uei],TRUE,
 [correction_delete_ind],TRUE,
 [IsTransferred],TRUE,
+[isoutdatedduplicate],TRUE,

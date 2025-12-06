@@ -1,0 +1,1770 @@
+--List new [parent_award_agency_id] and updated parent_award_agency_name for insertion into FPDSTypeTable.AgencyID
+SELECT fk.[parent_award_agency_id],
+max(iif(fk.parent_award_agency_name=pk.AgencyIDtext or
+	fk.parent_award_agency_name='' or
+	charindex('('+fk.parent_award_agency_name+')',pk.AgencyIDtext )>0,
+	NULL,fk.parent_award_agency_name)) as MaxOfNewFKparent_award_agency_name,
+count(distinct iif(fk.parent_award_agency_name=pk.AgencyIDtext or
+	fk.parent_award_agency_name='' or
+	charindex('('+fk.parent_award_agency_name+')',pk.AgencyIDtext )>0,
+	NULL,fk.parent_award_agency_name)) as unmatched_name_count,
+pk.AgencyIDtext as PKAgencyIDtext,
+max(iif(fk.parent_award_agency_name=pk.AgencyIDtext or
+	fk.parent_award_agency_name='' or
+	charindex('('+fk.parent_award_agency_name+')',pk.AgencyIDtext )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.AgencyID' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[parent_award_agency_id]
+GROUP BY fk.[parent_award_agency_id], pk.AgencyIDtext
+HAVING max(iif(fk.parent_award_agency_name=pk.AgencyIDtext or
+	fk.parent_award_agency_name='' or
+	charindex('('+fk.parent_award_agency_name+')',pk.AgencyIDtext )>0,
+	0,1))=1
+ORDER BY fk.[parent_award_agency_id]
+
+
+--List new [awarding_agency_code] and updated awarding_agency_name for insertion into agency.awarding_agency_code
+SELECT fk.[awarding_agency_code],
+max(iif(fk.awarding_agency_name=pk.awarding_agency_name or
+	fk.awarding_agency_name='' or
+	charindex('('+fk.awarding_agency_name+')',pk.awarding_agency_name )>0,
+	NULL,fk.awarding_agency_name)) as MaxOfNewFKawarding_agency_name,
+count(distinct iif(fk.awarding_agency_name=pk.awarding_agency_name or
+	fk.awarding_agency_name='' or
+	charindex('('+fk.awarding_agency_name+')',pk.awarding_agency_name )>0,
+	NULL,fk.awarding_agency_name)) as unmatched_name_count,
+pk.awarding_agency_name as PKawarding_agency_name,
+max(iif(fk.awarding_agency_name=pk.awarding_agency_name or
+	fk.awarding_agency_name='' or
+	charindex('('+fk.awarding_agency_name+')',pk.awarding_agency_name )>0,
+	1,0)) as any_name_match,
+'agency.awarding_agency_code' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN agency.awarding_agency_code as pk
+On pk.awarding_agency_code=fk.[awarding_agency_code]
+GROUP BY fk.[awarding_agency_code], pk.awarding_agency_name
+HAVING max(iif(fk.awarding_agency_name=pk.awarding_agency_name or
+	fk.awarding_agency_name='' or
+	charindex('('+fk.awarding_agency_name+')',pk.awarding_agency_name )>0,
+	0,1))=1
+ORDER BY fk.[awarding_agency_code]
+
+
+--List new [awarding_sub_agency_code] and updated awarding_sub_agency_name for insertion into FPDSTypeTable.AgencyID
+SELECT fk.[awarding_sub_agency_code],
+max(iif(fk.awarding_sub_agency_name=pk.AgencyIDtext or
+	fk.awarding_sub_agency_name='' or
+	charindex('('+fk.awarding_sub_agency_name+')',pk.AgencyIDtext )>0,
+	NULL,fk.awarding_sub_agency_name)) as MaxOfNewFKawarding_sub_agency_name,
+count(distinct iif(fk.awarding_sub_agency_name=pk.AgencyIDtext or
+	fk.awarding_sub_agency_name='' or
+	charindex('('+fk.awarding_sub_agency_name+')',pk.AgencyIDtext )>0,
+	NULL,fk.awarding_sub_agency_name)) as unmatched_name_count,
+pk.AgencyIDtext as PKAgencyIDtext,
+max(iif(fk.awarding_sub_agency_name=pk.AgencyIDtext or
+	fk.awarding_sub_agency_name='' or
+	charindex('('+fk.awarding_sub_agency_name+')',pk.AgencyIDtext )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.AgencyID' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[awarding_sub_agency_code]
+GROUP BY fk.[awarding_sub_agency_code], pk.AgencyIDtext
+HAVING max(iif(fk.awarding_sub_agency_name=pk.AgencyIDtext or
+	fk.awarding_sub_agency_name='' or
+	charindex('('+fk.awarding_sub_agency_name+')',pk.AgencyIDtext )>0,
+	0,1))=1
+ORDER BY fk.[awarding_sub_agency_code]
+
+
+--List new [funding_agency_code] and updated funding_agency_name for insertion into FPDSTypeTable.AgencyID
+SELECT fk.[funding_agency_code],
+max(iif(fk.funding_agency_name=pk.AgencyIDtext or
+	fk.funding_agency_name='' or
+	charindex('('+fk.funding_agency_name+')',pk.AgencyIDtext )>0,
+	NULL,fk.funding_agency_name)) as MaxOfNewFKfunding_agency_name,
+count(distinct iif(fk.funding_agency_name=pk.AgencyIDtext or
+	fk.funding_agency_name='' or
+	charindex('('+fk.funding_agency_name+')',pk.AgencyIDtext )>0,
+	NULL,fk.funding_agency_name)) as unmatched_name_count,
+pk.AgencyIDtext as PKAgencyIDtext,
+max(iif(fk.funding_agency_name=pk.AgencyIDtext or
+	fk.funding_agency_name='' or
+	charindex('('+fk.funding_agency_name+')',pk.AgencyIDtext )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.AgencyID' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[funding_agency_code]
+GROUP BY fk.[funding_agency_code], pk.AgencyIDtext
+HAVING max(iif(fk.funding_agency_name=pk.AgencyIDtext or
+	fk.funding_agency_name='' or
+	charindex('('+fk.funding_agency_name+')',pk.AgencyIDtext )>0,
+	0,1))=1
+ORDER BY fk.[funding_agency_code]
+
+
+--List new [funding_sub_agency_code] and updated funding_sub_agency_name for insertion into FPDSTypeTable.AgencyID
+SELECT fk.[funding_sub_agency_code],
+max(iif(fk.funding_sub_agency_name=pk.AgencyIDtext or
+	fk.funding_sub_agency_name='' or
+	charindex('('+fk.funding_sub_agency_name+')',pk.AgencyIDtext )>0,
+	NULL,fk.funding_sub_agency_name)) as MaxOfNewFKfunding_sub_agency_name,
+count(distinct iif(fk.funding_sub_agency_name=pk.AgencyIDtext or
+	fk.funding_sub_agency_name='' or
+	charindex('('+fk.funding_sub_agency_name+')',pk.AgencyIDtext )>0,
+	NULL,fk.funding_sub_agency_name)) as unmatched_name_count,
+pk.AgencyIDtext as PKAgencyIDtext,
+max(iif(fk.funding_sub_agency_name=pk.AgencyIDtext or
+	fk.funding_sub_agency_name='' or
+	charindex('('+fk.funding_sub_agency_name+')',pk.AgencyIDtext )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.AgencyID' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[funding_sub_agency_code]
+GROUP BY fk.[funding_sub_agency_code], pk.AgencyIDtext
+HAVING max(iif(fk.funding_sub_agency_name=pk.AgencyIDtext or
+	fk.funding_sub_agency_name='' or
+	charindex('('+fk.funding_sub_agency_name+')',pk.AgencyIDtext )>0,
+	0,1))=1
+ORDER BY fk.[funding_sub_agency_code]
+
+
+--List new [foreign_funding] and updated foreign_funding_description for insertion into budget.FundedByForeignEntity
+SELECT fk.[foreign_funding],
+max(iif(fk.foreign_funding_description=pk.foreign_funding_description or
+	fk.foreign_funding_description='' or
+	charindex('('+fk.foreign_funding_description+')',pk.foreign_funding_description )>0,
+	NULL,fk.foreign_funding_description)) as MaxOfNewFKforeign_funding_description,
+count(distinct iif(fk.foreign_funding_description=pk.foreign_funding_description or
+	fk.foreign_funding_description='' or
+	charindex('('+fk.foreign_funding_description+')',pk.foreign_funding_description )>0,
+	NULL,fk.foreign_funding_description)) as unmatched_name_count,
+pk.foreign_funding_description as PKforeign_funding_description,
+max(iif(fk.foreign_funding_description=pk.foreign_funding_description or
+	fk.foreign_funding_description='' or
+	charindex('('+fk.foreign_funding_description+')',pk.foreign_funding_description )>0,
+	1,0)) as any_name_match,
+'budget.FundedByForeignEntity' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN budget.FundedByForeignEntity as pk
+On pk.fundedbyforeignentity=fk.[foreign_funding]
+GROUP BY fk.[foreign_funding], pk.foreign_funding_description
+HAVING max(iif(fk.foreign_funding_description=pk.foreign_funding_description or
+	fk.foreign_funding_description='' or
+	charindex('('+fk.foreign_funding_description+')',pk.foreign_funding_description )>0,
+	0,1))=1
+ORDER BY fk.[foreign_funding]
+
+
+--List new [sam_exception] and updated sam_exception_description for insertion into Vendor.CCRexception
+SELECT fk.[sam_exception],
+max(iif(fk.sam_exception_description=pk.sam_exception_description or
+	fk.sam_exception_description='' or
+	charindex('('+fk.sam_exception_description+')',pk.sam_exception_description )>0,
+	NULL,fk.sam_exception_description)) as MaxOfNewFKsam_exception_description,
+count(distinct iif(fk.sam_exception_description=pk.sam_exception_description or
+	fk.sam_exception_description='' or
+	charindex('('+fk.sam_exception_description+')',pk.sam_exception_description )>0,
+	NULL,fk.sam_exception_description)) as unmatched_name_count,
+pk.sam_exception_description as PKsam_exception_description,
+max(iif(fk.sam_exception_description=pk.sam_exception_description or
+	fk.sam_exception_description='' or
+	charindex('('+fk.sam_exception_description+')',pk.sam_exception_description )>0,
+	1,0)) as any_name_match,
+'Vendor.CCRexception' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Vendor.CCRexception as pk
+On pk.CCRexception=fk.[sam_exception]
+GROUP BY fk.[sam_exception], pk.sam_exception_description
+HAVING max(iif(fk.sam_exception_description=pk.sam_exception_description or
+	fk.sam_exception_description='' or
+	charindex('('+fk.sam_exception_description+')',pk.sam_exception_description )>0,
+	0,1))=1
+ORDER BY fk.[sam_exception]
+
+
+--List new [recipient_duns] for insertion into Contractor.Dunsnumber
+SELECT fk.[recipient_duns],
+'Contractor.Dunsnumber' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Contractor.Dunsnumber as pk
+On pk.DUNSnumber=fk.[recipient_duns]
+WHERE pk.DUNSnumber is NULL
+GROUP BY fk.[recipient_duns]
+ORDER BY fk.[recipient_duns]
+
+
+--List new [recipient_name] for insertion into Vendor.VendorName
+SELECT fk.[recipient_name],
+'Vendor.VendorName' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[recipient_name]
+WHERE pk.vendorname is NULL
+GROUP BY fk.[recipient_name]
+ORDER BY fk.[recipient_name]
+
+
+--List new [recipient_doing_business_as_name] for insertion into Vendor.VendorName
+SELECT fk.[recipient_doing_business_as_name],
+'Vendor.VendorName' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[recipient_doing_business_as_name]
+WHERE pk.vendorname is NULL
+GROUP BY fk.[recipient_doing_business_as_name]
+ORDER BY fk.[recipient_doing_business_as_name]
+
+
+--List new [recipient_parent_name] for insertion into Vendor.VendorName
+SELECT fk.[recipient_parent_name],
+'Vendor.VendorName' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[recipient_parent_name]
+WHERE pk.vendorname is NULL
+GROUP BY fk.[recipient_parent_name]
+ORDER BY fk.[recipient_parent_name]
+
+
+--List new [recipient_parent_duns] for insertion into Contractor.Dunsnumber
+SELECT fk.[recipient_parent_duns],
+'Contractor.Dunsnumber' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Contractor.Dunsnumber as pk
+On pk.DUNSnumber=fk.[recipient_parent_duns]
+WHERE pk.DUNSnumber is NULL
+GROUP BY fk.[recipient_parent_duns]
+ORDER BY fk.[recipient_parent_duns]
+
+
+--List new [recipient_state_code] and updated recipient_state_name for insertion into Location.recipient_state_code
+SELECT fk.[recipient_state_code],
+max(iif(fk.recipient_state_name=pk.recipient_state_name or
+	fk.recipient_state_name='' or
+	charindex('('+fk.recipient_state_name+')',pk.recipient_state_name )>0,
+	NULL,fk.recipient_state_name)) as MaxOfNewFKrecipient_state_name,
+count(distinct iif(fk.recipient_state_name=pk.recipient_state_name or
+	fk.recipient_state_name='' or
+	charindex('('+fk.recipient_state_name+')',pk.recipient_state_name )>0,
+	NULL,fk.recipient_state_name)) as unmatched_name_count,
+pk.recipient_state_name as PKrecipient_state_name,
+max(iif(fk.recipient_state_name=pk.recipient_state_name or
+	fk.recipient_state_name='' or
+	charindex('('+fk.recipient_state_name+')',pk.recipient_state_name )>0,
+	1,0)) as any_name_match,
+'Location.recipient_state_code' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Location.recipient_state_code as pk
+On pk.recipient_state_code=fk.[recipient_state_code]
+GROUP BY fk.[recipient_state_code], pk.recipient_state_name
+HAVING max(iif(fk.recipient_state_name=pk.recipient_state_name or
+	fk.recipient_state_name='' or
+	charindex('('+fk.recipient_state_name+')',pk.recipient_state_name )>0,
+	0,1))=1
+ORDER BY fk.[recipient_state_code]
+
+
+--List new [primary_place_of_performance_country_code] and updated primary_place_of_performance_country_name for insertion into FPDSTypeTable.Country3LetterCode
+SELECT fk.[primary_place_of_performance_country_code],
+max(iif(fk.primary_place_of_performance_country_name=pk.Country3LetterCodeText or
+	fk.primary_place_of_performance_country_name='' or
+	charindex('('+fk.primary_place_of_performance_country_name+')',pk.Country3LetterCodeText )>0,
+	NULL,fk.primary_place_of_performance_country_name)) as MaxOfNewFKprimary_place_of_performance_country_name,
+count(distinct iif(fk.primary_place_of_performance_country_name=pk.Country3LetterCodeText or
+	fk.primary_place_of_performance_country_name='' or
+	charindex('('+fk.primary_place_of_performance_country_name+')',pk.Country3LetterCodeText )>0,
+	NULL,fk.primary_place_of_performance_country_name)) as unmatched_name_count,
+pk.Country3LetterCodeText as PKCountry3LetterCodeText,
+max(iif(fk.primary_place_of_performance_country_name=pk.Country3LetterCodeText or
+	fk.primary_place_of_performance_country_name='' or
+	charindex('('+fk.primary_place_of_performance_country_name+')',pk.Country3LetterCodeText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.Country3LetterCode' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
+On pk.Country3LetterCode=fk.[primary_place_of_performance_country_code]
+GROUP BY fk.[primary_place_of_performance_country_code], pk.Country3LetterCodeText
+HAVING max(iif(fk.primary_place_of_performance_country_name=pk.Country3LetterCodeText or
+	fk.primary_place_of_performance_country_name='' or
+	charindex('('+fk.primary_place_of_performance_country_name+')',pk.Country3LetterCodeText )>0,
+	0,1))=1
+ORDER BY fk.[primary_place_of_performance_country_code]
+
+
+--List new [primary_place_of_performance_state_code] and updated primary_place_of_performance_state_name for insertion into FPDSTypeTable.statecode
+SELECT fk.[primary_place_of_performance_state_code],
+max(iif(fk.primary_place_of_performance_state_name=pk.statecodeText or
+	fk.primary_place_of_performance_state_name='' or
+	charindex('('+fk.primary_place_of_performance_state_name+')',pk.statecodeText )>0,
+	NULL,fk.primary_place_of_performance_state_name)) as MaxOfNewFKprimary_place_of_performance_state_name,
+count(distinct iif(fk.primary_place_of_performance_state_name=pk.statecodeText or
+	fk.primary_place_of_performance_state_name='' or
+	charindex('('+fk.primary_place_of_performance_state_name+')',pk.statecodeText )>0,
+	NULL,fk.primary_place_of_performance_state_name)) as unmatched_name_count,
+pk.statecodeText as PKstatecodeText,
+max(iif(fk.primary_place_of_performance_state_name=pk.statecodeText or
+	fk.primary_place_of_performance_state_name='' or
+	charindex('('+fk.primary_place_of_performance_state_name+')',pk.statecodeText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.statecode' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.statecode as pk
+On pk.statecode=fk.[primary_place_of_performance_state_code]
+GROUP BY fk.[primary_place_of_performance_state_code], pk.statecodeText
+HAVING max(iif(fk.primary_place_of_performance_state_name=pk.statecodeText or
+	fk.primary_place_of_performance_state_name='' or
+	charindex('('+fk.primary_place_of_performance_state_name+')',pk.statecodeText )>0,
+	0,1))=1
+ORDER BY fk.[primary_place_of_performance_state_code]
+
+
+--List new [award_type_code] and updated award_type for insertion into FPDSTypeTable.award_type_code
+SELECT fk.[award_type_code],
+max(iif(fk.award_type=pk.award_type_name or
+	fk.award_type='' or
+	charindex('('+fk.award_type+')',pk.award_type_name )>0,
+	NULL,fk.award_type)) as MaxOfNewFKaward_type,
+count(distinct iif(fk.award_type=pk.award_type_name or
+	fk.award_type='' or
+	charindex('('+fk.award_type+')',pk.award_type_name )>0,
+	NULL,fk.award_type)) as unmatched_name_count,
+pk.award_type_name as PKaward_type_name,
+max(iif(fk.award_type=pk.award_type_name or
+	fk.award_type='' or
+	charindex('('+fk.award_type+')',pk.award_type_name )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.award_type_code' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.award_type_code as pk
+On pk.award_type_code=fk.[award_type_code]
+GROUP BY fk.[award_type_code], pk.award_type_name
+HAVING max(iif(fk.award_type=pk.award_type_name or
+	fk.award_type='' or
+	charindex('('+fk.award_type+')',pk.award_type_name )>0,
+	0,1))=1
+ORDER BY fk.[award_type_code]
+
+
+--List new [idv_type_code] and updated idv_type for insertion into FPDSTypeTable.idv_type_code
+SELECT fk.[idv_type_code],
+max(iif(fk.idv_type=pk.idv_type_name or
+	fk.idv_type='' or
+	charindex('('+fk.idv_type+')',pk.idv_type_name )>0,
+	NULL,fk.idv_type)) as MaxOfNewFKidv_type,
+count(distinct iif(fk.idv_type=pk.idv_type_name or
+	fk.idv_type='' or
+	charindex('('+fk.idv_type+')',pk.idv_type_name )>0,
+	NULL,fk.idv_type)) as unmatched_name_count,
+pk.idv_type_name as PKidv_type_name,
+max(iif(fk.idv_type=pk.idv_type_name or
+	fk.idv_type='' or
+	charindex('('+fk.idv_type+')',pk.idv_type_name )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.idv_type_code' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
+On pk.idv_type_code=fk.[idv_type_code]
+GROUP BY fk.[idv_type_code], pk.idv_type_name
+HAVING max(iif(fk.idv_type=pk.idv_type_name or
+	fk.idv_type='' or
+	charindex('('+fk.idv_type+')',pk.idv_type_name )>0,
+	0,1))=1
+ORDER BY fk.[idv_type_code]
+
+
+--List new [multiple_or_single_award_idv_code] and updated multiple_or_single_award_idv for insertion into FPDSTypeTable.multipleorsingleawardidc
+SELECT fk.[multiple_or_single_award_idv_code],
+max(iif(fk.multiple_or_single_award_idv=pk.multipleorsingleawardidcText or
+	fk.multiple_or_single_award_idv='' or
+	charindex('('+fk.multiple_or_single_award_idv+')',pk.multipleorsingleawardidcText )>0,
+	NULL,fk.multiple_or_single_award_idv)) as MaxOfNewFKmultiple_or_single_award_idv,
+count(distinct iif(fk.multiple_or_single_award_idv=pk.multipleorsingleawardidcText or
+	fk.multiple_or_single_award_idv='' or
+	charindex('('+fk.multiple_or_single_award_idv+')',pk.multipleorsingleawardidcText )>0,
+	NULL,fk.multiple_or_single_award_idv)) as unmatched_name_count,
+pk.multipleorsingleawardidcText as PKmultipleorsingleawardidcText,
+max(iif(fk.multiple_or_single_award_idv=pk.multipleorsingleawardidcText or
+	fk.multiple_or_single_award_idv='' or
+	charindex('('+fk.multiple_or_single_award_idv+')',pk.multipleorsingleawardidcText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.multipleorsingleawardidc' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.multipleorsingleawardidc as pk
+On pk.multipleorsingleawardidc=fk.[multiple_or_single_award_idv_code]
+GROUP BY fk.[multiple_or_single_award_idv_code], pk.multipleorsingleawardidcText
+HAVING max(iif(fk.multiple_or_single_award_idv=pk.multipleorsingleawardidcText or
+	fk.multiple_or_single_award_idv='' or
+	charindex('('+fk.multiple_or_single_award_idv+')',pk.multipleorsingleawardidcText )>0,
+	0,1))=1
+ORDER BY fk.[multiple_or_single_award_idv_code]
+
+
+--List new [type_of_idc_code] and updated type_of_idc for insertion into FPDSTypeTable.TypeOfIDC
+SELECT fk.[type_of_idc_code],
+max(iif(fk.type_of_idc=pk.typeOfIDCdescription or
+	fk.type_of_idc='' or
+	charindex('('+fk.type_of_idc+')',pk.typeOfIDCdescription )>0,
+	NULL,fk.type_of_idc)) as MaxOfNewFKtype_of_idc,
+count(distinct iif(fk.type_of_idc=pk.typeOfIDCdescription or
+	fk.type_of_idc='' or
+	charindex('('+fk.type_of_idc+')',pk.typeOfIDCdescription )>0,
+	NULL,fk.type_of_idc)) as unmatched_name_count,
+pk.typeOfIDCdescription as PKtypeOfIDCdescription,
+max(iif(fk.type_of_idc=pk.typeOfIDCdescription or
+	fk.type_of_idc='' or
+	charindex('('+fk.type_of_idc+')',pk.typeOfIDCdescription )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.TypeOfIDC' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.TypeOfIDC as pk
+On pk.typeofIDC=fk.[type_of_idc_code]
+GROUP BY fk.[type_of_idc_code], pk.typeOfIDCdescription
+HAVING max(iif(fk.type_of_idc=pk.typeOfIDCdescription or
+	fk.type_of_idc='' or
+	charindex('('+fk.type_of_idc+')',pk.typeOfIDCdescription )>0,
+	0,1))=1
+ORDER BY fk.[type_of_idc_code]
+
+
+--List new [type_of_contract_pricing_code] and updated type_of_contract_pricing for insertion into FPDSTypeTable.typeofcontractpricing
+SELECT fk.[type_of_contract_pricing_code],
+max(iif(fk.type_of_contract_pricing=pk.TypeOfContractPricingText or
+	fk.type_of_contract_pricing='' or
+	charindex('('+fk.type_of_contract_pricing+')',pk.TypeOfContractPricingText )>0,
+	NULL,fk.type_of_contract_pricing)) as MaxOfNewFKtype_of_contract_pricing,
+count(distinct iif(fk.type_of_contract_pricing=pk.TypeOfContractPricingText or
+	fk.type_of_contract_pricing='' or
+	charindex('('+fk.type_of_contract_pricing+')',pk.TypeOfContractPricingText )>0,
+	NULL,fk.type_of_contract_pricing)) as unmatched_name_count,
+pk.TypeOfContractPricingText as PKTypeOfContractPricingText,
+max(iif(fk.type_of_contract_pricing=pk.TypeOfContractPricingText or
+	fk.type_of_contract_pricing='' or
+	charindex('('+fk.type_of_contract_pricing+')',pk.TypeOfContractPricingText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.typeofcontractpricing' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.typeofcontractpricing as pk
+On pk.TypeOfContractPricing=fk.[type_of_contract_pricing_code]
+GROUP BY fk.[type_of_contract_pricing_code], pk.TypeOfContractPricingText
+HAVING max(iif(fk.type_of_contract_pricing=pk.TypeOfContractPricingText or
+	fk.type_of_contract_pricing='' or
+	charindex('('+fk.type_of_contract_pricing+')',pk.TypeOfContractPricingText )>0,
+	0,1))=1
+ORDER BY fk.[type_of_contract_pricing_code]
+
+
+--List new [action_type_code] and updated action_type for insertion into FPDSTypeTable.reasonformodification
+SELECT fk.[action_type_code],
+max(iif(fk.action_type=pk.reasonformodificationText or
+	fk.action_type='' or
+	charindex('('+fk.action_type+')',pk.reasonformodificationText )>0,
+	NULL,fk.action_type)) as MaxOfNewFKaction_type,
+count(distinct iif(fk.action_type=pk.reasonformodificationText or
+	fk.action_type='' or
+	charindex('('+fk.action_type+')',pk.reasonformodificationText )>0,
+	NULL,fk.action_type)) as unmatched_name_count,
+pk.reasonformodificationText as PKreasonformodificationText,
+max(iif(fk.action_type=pk.reasonformodificationText or
+	fk.action_type='' or
+	charindex('('+fk.action_type+')',pk.reasonformodificationText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.reasonformodification' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.reasonformodification as pk
+On pk.reasonformodification=fk.[action_type_code]
+GROUP BY fk.[action_type_code], pk.reasonformodificationText
+HAVING max(iif(fk.action_type=pk.reasonformodificationText or
+	fk.action_type='' or
+	charindex('('+fk.action_type+')',pk.reasonformodificationText )>0,
+	0,1))=1
+ORDER BY fk.[action_type_code]
+
+
+--List new [product_or_service_code] and updated product_or_service_code_description for insertion into FPDSTypeTable.ProductOrServiceCode
+SELECT fk.[product_or_service_code],
+max(iif(fk.product_or_service_code_description=pk.ProductOrServiceCodeText or
+	fk.product_or_service_code_description='' or
+	charindex('('+fk.product_or_service_code_description+')',pk.ProductOrServiceCodeText )>0,
+	NULL,fk.product_or_service_code_description)) as MaxOfNewFKproduct_or_service_code_description,
+count(distinct iif(fk.product_or_service_code_description=pk.ProductOrServiceCodeText or
+	fk.product_or_service_code_description='' or
+	charindex('('+fk.product_or_service_code_description+')',pk.ProductOrServiceCodeText )>0,
+	NULL,fk.product_or_service_code_description)) as unmatched_name_count,
+pk.ProductOrServiceCodeText as PKProductOrServiceCodeText,
+max(iif(fk.product_or_service_code_description=pk.ProductOrServiceCodeText or
+	fk.product_or_service_code_description='' or
+	charindex('('+fk.product_or_service_code_description+')',pk.ProductOrServiceCodeText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.ProductOrServiceCode' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.ProductOrServiceCode as pk
+On pk.ProductOrServiceCode=fk.[product_or_service_code]
+GROUP BY fk.[product_or_service_code], pk.ProductOrServiceCodeText
+HAVING max(iif(fk.product_or_service_code_description=pk.ProductOrServiceCodeText or
+	fk.product_or_service_code_description='' or
+	charindex('('+fk.product_or_service_code_description+')',pk.ProductOrServiceCodeText )>0,
+	0,1))=1
+ORDER BY fk.[product_or_service_code]
+
+
+--List new [contract_bundling_code] and updated contract_bundling for insertion into FPDSTypeTable.contractbundling
+SELECT fk.[contract_bundling_code],
+max(iif(fk.contract_bundling=pk.contractbundlingText or
+	fk.contract_bundling='' or
+	charindex('('+fk.contract_bundling+')',pk.contractbundlingText )>0,
+	NULL,fk.contract_bundling)) as MaxOfNewFKcontract_bundling,
+count(distinct iif(fk.contract_bundling=pk.contractbundlingText or
+	fk.contract_bundling='' or
+	charindex('('+fk.contract_bundling+')',pk.contractbundlingText )>0,
+	NULL,fk.contract_bundling)) as unmatched_name_count,
+pk.contractbundlingText as PKcontractbundlingText,
+max(iif(fk.contract_bundling=pk.contractbundlingText or
+	fk.contract_bundling='' or
+	charindex('('+fk.contract_bundling+')',pk.contractbundlingText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.contractbundling' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.contractbundling as pk
+On pk.contractbundling=fk.[contract_bundling_code]
+GROUP BY fk.[contract_bundling_code], pk.contractbundlingText
+HAVING max(iif(fk.contract_bundling=pk.contractbundlingText or
+	fk.contract_bundling='' or
+	charindex('('+fk.contract_bundling+')',pk.contractbundlingText )>0,
+	0,1))=1
+ORDER BY fk.[contract_bundling_code]
+
+
+--List new [dod_claimant_program_code] and updated dod_claimant_program_description for insertion into FPDSTypeTable.ClaimantProgramCode
+SELECT fk.[dod_claimant_program_code],
+max(iif(fk.dod_claimant_program_description=pk.ClaimantProgramCodeText or
+	fk.dod_claimant_program_description='' or
+	charindex('('+fk.dod_claimant_program_description+')',pk.ClaimantProgramCodeText )>0,
+	NULL,fk.dod_claimant_program_description)) as MaxOfNewFKdod_claimant_program_description,
+count(distinct iif(fk.dod_claimant_program_description=pk.ClaimantProgramCodeText or
+	fk.dod_claimant_program_description='' or
+	charindex('('+fk.dod_claimant_program_description+')',pk.ClaimantProgramCodeText )>0,
+	NULL,fk.dod_claimant_program_description)) as unmatched_name_count,
+pk.ClaimantProgramCodeText as PKClaimantProgramCodeText,
+max(iif(fk.dod_claimant_program_description=pk.ClaimantProgramCodeText or
+	fk.dod_claimant_program_description='' or
+	charindex('('+fk.dod_claimant_program_description+')',pk.ClaimantProgramCodeText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.ClaimantProgramCode' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.ClaimantProgramCode as pk
+On pk.ClaimantProgramCode=fk.[dod_claimant_program_code]
+GROUP BY fk.[dod_claimant_program_code], pk.ClaimantProgramCodeText
+HAVING max(iif(fk.dod_claimant_program_description=pk.ClaimantProgramCodeText or
+	fk.dod_claimant_program_description='' or
+	charindex('('+fk.dod_claimant_program_description+')',pk.ClaimantProgramCodeText )>0,
+	0,1))=1
+ORDER BY fk.[dod_claimant_program_code]
+
+
+--List new [naics_code] and updated naics_description for insertion into FPDSTypeTable.PrincipalNaicsCode
+SELECT fk.[naics_code],
+max(iif(fk.naics_description=pk.principalnaicscodeText or
+	fk.naics_description='' or
+	charindex('('+fk.naics_description+')',pk.principalnaicscodeText )>0,
+	NULL,fk.naics_description)) as MaxOfNewFKnaics_description,
+count(distinct iif(fk.naics_description=pk.principalnaicscodeText or
+	fk.naics_description='' or
+	charindex('('+fk.naics_description+')',pk.principalnaicscodeText )>0,
+	NULL,fk.naics_description)) as unmatched_name_count,
+pk.principalnaicscodeText as PKprincipalnaicscodeText,
+max(iif(fk.naics_description=pk.principalnaicscodeText or
+	fk.naics_description='' or
+	charindex('('+fk.naics_description+')',pk.principalnaicscodeText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.PrincipalNaicsCode' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.PrincipalNaicsCode as pk
+On pk.principalnaicscode=fk.[naics_code]
+GROUP BY fk.[naics_code], pk.principalnaicscodeText
+HAVING max(iif(fk.naics_description=pk.principalnaicscodeText or
+	fk.naics_description='' or
+	charindex('('+fk.naics_description+')',pk.principalnaicscodeText )>0,
+	0,1))=1
+ORDER BY fk.[naics_code]
+
+
+--List new [recovered_materials_sustainability_code] and updated recovered_materials_sustainability for insertion into FPDSTypeTable.recoveredmaterialclauses
+SELECT fk.[recovered_materials_sustainability_code],
+max(iif(fk.recovered_materials_sustainability=pk.recoveredmaterialclausesText or
+	fk.recovered_materials_sustainability='' or
+	charindex('('+fk.recovered_materials_sustainability+')',pk.recoveredmaterialclausesText )>0,
+	NULL,fk.recovered_materials_sustainability)) as MaxOfNewFKrecovered_materials_sustainability,
+count(distinct iif(fk.recovered_materials_sustainability=pk.recoveredmaterialclausesText or
+	fk.recovered_materials_sustainability='' or
+	charindex('('+fk.recovered_materials_sustainability+')',pk.recoveredmaterialclausesText )>0,
+	NULL,fk.recovered_materials_sustainability)) as unmatched_name_count,
+pk.recoveredmaterialclausesText as PKrecoveredmaterialclausesText,
+max(iif(fk.recovered_materials_sustainability=pk.recoveredmaterialclausesText or
+	fk.recovered_materials_sustainability='' or
+	charindex('('+fk.recovered_materials_sustainability+')',pk.recoveredmaterialclausesText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.recoveredmaterialclauses' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.recoveredmaterialclauses as pk
+On pk.recoveredmaterialclauses=fk.[recovered_materials_sustainability_code]
+GROUP BY fk.[recovered_materials_sustainability_code], pk.recoveredmaterialclausesText
+HAVING max(iif(fk.recovered_materials_sustainability=pk.recoveredmaterialclausesText or
+	fk.recovered_materials_sustainability='' or
+	charindex('('+fk.recovered_materials_sustainability+')',pk.recoveredmaterialclausesText )>0,
+	0,1))=1
+ORDER BY fk.[recovered_materials_sustainability_code]
+
+
+--List new [domestic_or_foreign_entity_code] and updated domestic_or_foreign_entity for insertion into Location.manufacturingorganizationtype
+SELECT fk.[domestic_or_foreign_entity_code],
+max(iif(fk.domestic_or_foreign_entity=pk.manufacturingorganizationtypeText or
+	fk.domestic_or_foreign_entity='' or
+	charindex('('+fk.domestic_or_foreign_entity+')',pk.manufacturingorganizationtypeText )>0,
+	NULL,fk.domestic_or_foreign_entity)) as MaxOfNewFKdomestic_or_foreign_entity,
+count(distinct iif(fk.domestic_or_foreign_entity=pk.manufacturingorganizationtypeText or
+	fk.domestic_or_foreign_entity='' or
+	charindex('('+fk.domestic_or_foreign_entity+')',pk.manufacturingorganizationtypeText )>0,
+	NULL,fk.domestic_or_foreign_entity)) as unmatched_name_count,
+pk.manufacturingorganizationtypeText as PKmanufacturingorganizationtypeText,
+max(iif(fk.domestic_or_foreign_entity=pk.manufacturingorganizationtypeText or
+	fk.domestic_or_foreign_entity='' or
+	charindex('('+fk.domestic_or_foreign_entity+')',pk.manufacturingorganizationtypeText )>0,
+	1,0)) as any_name_match,
+'Location.manufacturingorganizationtype' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Location.manufacturingorganizationtype as pk
+On pk.manufacturingorganizationtype=fk.[domestic_or_foreign_entity_code]
+GROUP BY fk.[domestic_or_foreign_entity_code], pk.manufacturingorganizationtypeText
+HAVING max(iif(fk.domestic_or_foreign_entity=pk.manufacturingorganizationtypeText or
+	fk.domestic_or_foreign_entity='' or
+	charindex('('+fk.domestic_or_foreign_entity+')',pk.manufacturingorganizationtypeText )>0,
+	0,1))=1
+ORDER BY fk.[domestic_or_foreign_entity_code]
+
+
+--List new [dod_acquisition_program_code] and updated dod_acquisition_program_description for insertion into Project.SystemEquipmentCode
+SELECT fk.[dod_acquisition_program_code],
+max(iif(fk.dod_acquisition_program_description=pk.systemequipmentcodeText or
+	fk.dod_acquisition_program_description='' or
+	charindex('('+fk.dod_acquisition_program_description+')',pk.systemequipmentcodeText )>0,
+	NULL,fk.dod_acquisition_program_description)) as MaxOfNewFKdod_acquisition_program_description,
+count(distinct iif(fk.dod_acquisition_program_description=pk.systemequipmentcodeText or
+	fk.dod_acquisition_program_description='' or
+	charindex('('+fk.dod_acquisition_program_description+')',pk.systemequipmentcodeText )>0,
+	NULL,fk.dod_acquisition_program_description)) as unmatched_name_count,
+pk.systemequipmentcodeText as PKsystemequipmentcodeText,
+max(iif(fk.dod_acquisition_program_description=pk.systemequipmentcodeText or
+	fk.dod_acquisition_program_description='' or
+	charindex('('+fk.dod_acquisition_program_description+')',pk.systemequipmentcodeText )>0,
+	1,0)) as any_name_match,
+'Project.SystemEquipmentCode' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Project.SystemEquipmentCode as pk
+On pk.systemequipmentcode=fk.[dod_acquisition_program_code]
+GROUP BY fk.[dod_acquisition_program_code], pk.systemequipmentcodeText
+HAVING max(iif(fk.dod_acquisition_program_description=pk.systemequipmentcodeText or
+	fk.dod_acquisition_program_description='' or
+	charindex('('+fk.dod_acquisition_program_description+')',pk.systemequipmentcodeText )>0,
+	0,1))=1
+ORDER BY fk.[dod_acquisition_program_code]
+
+
+--List new [information_technology_commercial_item_category_code] and updated information_technology_commercial_item_category for insertion into FPDSTypeTable.informationtechnologycommercialitemcategory
+SELECT fk.[information_technology_commercial_item_category_code],
+max(iif(fk.information_technology_commercial_item_category=pk.informationtechnologycommercialitemcategoryText or
+	fk.information_technology_commercial_item_category='' or
+	charindex('('+fk.information_technology_commercial_item_category+')',pk.informationtechnologycommercialitemcategoryText )>0,
+	NULL,fk.information_technology_commercial_item_category)) as MaxOfNewFKinformation_technology_commercial_item_category,
+count(distinct iif(fk.information_technology_commercial_item_category=pk.informationtechnologycommercialitemcategoryText or
+	fk.information_technology_commercial_item_category='' or
+	charindex('('+fk.information_technology_commercial_item_category+')',pk.informationtechnologycommercialitemcategoryText )>0,
+	NULL,fk.information_technology_commercial_item_category)) as unmatched_name_count,
+pk.informationtechnologycommercialitemcategoryText as PKinformationtechnologycommercialitemcategoryText,
+max(iif(fk.information_technology_commercial_item_category=pk.informationtechnologycommercialitemcategoryText or
+	fk.information_technology_commercial_item_category='' or
+	charindex('('+fk.information_technology_commercial_item_category+')',pk.informationtechnologycommercialitemcategoryText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.informationtechnologycommercialitemcategory' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.informationtechnologycommercialitemcategory as pk
+On pk.informationtechnologycommercialitemcategory=fk.[information_technology_commercial_item_category_code]
+GROUP BY fk.[information_technology_commercial_item_category_code], pk.informationtechnologycommercialitemcategoryText
+HAVING max(iif(fk.information_technology_commercial_item_category=pk.informationtechnologycommercialitemcategoryText or
+	fk.information_technology_commercial_item_category='' or
+	charindex('('+fk.information_technology_commercial_item_category+')',pk.informationtechnologycommercialitemcategoryText )>0,
+	0,1))=1
+ORDER BY fk.[information_technology_commercial_item_category_code]
+
+
+--List new [epa_designated_product_code] and updated epa_designated_product for insertion into FPDSTypeTable.useofepadesignatedproducts
+SELECT fk.[epa_designated_product_code],
+max(iif(fk.epa_designated_product=pk.useofepadesignatedproductsText or
+	fk.epa_designated_product='' or
+	charindex('('+fk.epa_designated_product+')',pk.useofepadesignatedproductsText )>0,
+	NULL,fk.epa_designated_product)) as MaxOfNewFKepa_designated_product,
+count(distinct iif(fk.epa_designated_product=pk.useofepadesignatedproductsText or
+	fk.epa_designated_product='' or
+	charindex('('+fk.epa_designated_product+')',pk.useofepadesignatedproductsText )>0,
+	NULL,fk.epa_designated_product)) as unmatched_name_count,
+pk.useofepadesignatedproductsText as PKuseofepadesignatedproductsText,
+max(iif(fk.epa_designated_product=pk.useofepadesignatedproductsText or
+	fk.epa_designated_product='' or
+	charindex('('+fk.epa_designated_product+')',pk.useofepadesignatedproductsText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.useofepadesignatedproducts' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.useofepadesignatedproducts as pk
+On pk.useofepadesignatedproducts=fk.[epa_designated_product_code]
+GROUP BY fk.[epa_designated_product_code], pk.useofepadesignatedproductsText
+HAVING max(iif(fk.epa_designated_product=pk.useofepadesignatedproductsText or
+	fk.epa_designated_product='' or
+	charindex('('+fk.epa_designated_product+')',pk.useofepadesignatedproductsText )>0,
+	0,1))=1
+ORDER BY fk.[epa_designated_product_code]
+
+
+--List new [country_of_product_or_service_origin_code] and updated country_of_product_or_service_origin for insertion into FPDSTypeTable.Country3LetterCode
+SELECT fk.[country_of_product_or_service_origin_code],
+max(iif(fk.country_of_product_or_service_origin=pk.Country3LetterCodeText or
+	fk.country_of_product_or_service_origin='' or
+	charindex('('+fk.country_of_product_or_service_origin+')',pk.Country3LetterCodeText )>0,
+	NULL,fk.country_of_product_or_service_origin)) as MaxOfNewFKcountry_of_product_or_service_origin,
+count(distinct iif(fk.country_of_product_or_service_origin=pk.Country3LetterCodeText or
+	fk.country_of_product_or_service_origin='' or
+	charindex('('+fk.country_of_product_or_service_origin+')',pk.Country3LetterCodeText )>0,
+	NULL,fk.country_of_product_or_service_origin)) as unmatched_name_count,
+pk.Country3LetterCodeText as PKCountry3LetterCodeText,
+max(iif(fk.country_of_product_or_service_origin=pk.Country3LetterCodeText or
+	fk.country_of_product_or_service_origin='' or
+	charindex('('+fk.country_of_product_or_service_origin+')',pk.Country3LetterCodeText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.Country3LetterCode' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.Country3LetterCode as pk
+On pk.Country3LetterCode=fk.[country_of_product_or_service_origin_code]
+GROUP BY fk.[country_of_product_or_service_origin_code], pk.Country3LetterCodeText
+HAVING max(iif(fk.country_of_product_or_service_origin=pk.Country3LetterCodeText or
+	fk.country_of_product_or_service_origin='' or
+	charindex('('+fk.country_of_product_or_service_origin+')',pk.Country3LetterCodeText )>0,
+	0,1))=1
+ORDER BY fk.[country_of_product_or_service_origin_code]
+
+
+--List new [place_of_manufacture_code] and updated place_of_manufacture for insertion into FPDSTypeTable.PlaceOfManufacture
+SELECT fk.[place_of_manufacture_code],
+max(iif(fk.place_of_manufacture=pk.PlaceOfManufactureText or
+	fk.place_of_manufacture='' or
+	charindex('('+fk.place_of_manufacture+')',pk.PlaceOfManufactureText )>0,
+	NULL,fk.place_of_manufacture)) as MaxOfNewFKplace_of_manufacture,
+count(distinct iif(fk.place_of_manufacture=pk.PlaceOfManufactureText or
+	fk.place_of_manufacture='' or
+	charindex('('+fk.place_of_manufacture+')',pk.PlaceOfManufactureText )>0,
+	NULL,fk.place_of_manufacture)) as unmatched_name_count,
+pk.PlaceOfManufactureText as PKPlaceOfManufactureText,
+max(iif(fk.place_of_manufacture=pk.PlaceOfManufactureText or
+	fk.place_of_manufacture='' or
+	charindex('('+fk.place_of_manufacture+')',pk.PlaceOfManufactureText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.PlaceOfManufacture' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.PlaceOfManufacture as pk
+On pk.PlaceOfManufacture=fk.[place_of_manufacture_code]
+GROUP BY fk.[place_of_manufacture_code], pk.PlaceOfManufactureText
+HAVING max(iif(fk.place_of_manufacture=pk.PlaceOfManufactureText or
+	fk.place_of_manufacture='' or
+	charindex('('+fk.place_of_manufacture+')',pk.PlaceOfManufactureText )>0,
+	0,1))=1
+ORDER BY fk.[place_of_manufacture_code]
+
+
+--List new [subcontracting_plan_code] and updated subcontracting_plan for insertion into FPDSTypeTable.subcontractplan
+SELECT fk.[subcontracting_plan_code],
+max(iif(fk.subcontracting_plan=pk.subcontractplanText or
+	fk.subcontracting_plan='' or
+	charindex('('+fk.subcontracting_plan+')',pk.subcontractplanText )>0,
+	NULL,fk.subcontracting_plan)) as MaxOfNewFKsubcontracting_plan,
+count(distinct iif(fk.subcontracting_plan=pk.subcontractplanText or
+	fk.subcontracting_plan='' or
+	charindex('('+fk.subcontracting_plan+')',pk.subcontractplanText )>0,
+	NULL,fk.subcontracting_plan)) as unmatched_name_count,
+pk.subcontractplanText as PKsubcontractplanText,
+max(iif(fk.subcontracting_plan=pk.subcontractplanText or
+	fk.subcontracting_plan='' or
+	charindex('('+fk.subcontracting_plan+')',pk.subcontractplanText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.subcontractplan' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.subcontractplan as pk
+On pk.subcontractplan=fk.[subcontracting_plan_code]
+GROUP BY fk.[subcontracting_plan_code], pk.subcontractplanText
+HAVING max(iif(fk.subcontracting_plan=pk.subcontractplanText or
+	fk.subcontracting_plan='' or
+	charindex('('+fk.subcontracting_plan+')',pk.subcontractplanText )>0,
+	0,1))=1
+ORDER BY fk.[subcontracting_plan_code]
+
+
+--List new [extent_competed_code] and updated extent_competed for insertion into FPDSTypeTable.extentcompeted
+SELECT fk.[extent_competed_code],
+max(iif(fk.extent_competed=pk.extentcompetedText or
+	fk.extent_competed='' or
+	charindex('('+fk.extent_competed+')',pk.extentcompetedText )>0,
+	NULL,fk.extent_competed)) as MaxOfNewFKextent_competed,
+count(distinct iif(fk.extent_competed=pk.extentcompetedText or
+	fk.extent_competed='' or
+	charindex('('+fk.extent_competed+')',pk.extentcompetedText )>0,
+	NULL,fk.extent_competed)) as unmatched_name_count,
+pk.extentcompetedText as PKextentcompetedText,
+max(iif(fk.extent_competed=pk.extentcompetedText or
+	fk.extent_competed='' or
+	charindex('('+fk.extent_competed+')',pk.extentcompetedText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.extentcompeted' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.extentcompeted as pk
+On pk.extentcompeted=fk.[extent_competed_code]
+GROUP BY fk.[extent_competed_code], pk.extentcompetedText
+HAVING max(iif(fk.extent_competed=pk.extentcompetedText or
+	fk.extent_competed='' or
+	charindex('('+fk.extent_competed+')',pk.extentcompetedText )>0,
+	0,1))=1
+ORDER BY fk.[extent_competed_code]
+
+
+--List new [solicitation_procedures_code] and updated solicitation_procedures for insertion into FPDSTypeTable.solicitationprocedures
+SELECT fk.[solicitation_procedures_code],
+max(iif(fk.solicitation_procedures=pk.solicitationproceduresText or
+	fk.solicitation_procedures='' or
+	charindex('('+fk.solicitation_procedures+')',pk.solicitationproceduresText )>0,
+	NULL,fk.solicitation_procedures)) as MaxOfNewFKsolicitation_procedures,
+count(distinct iif(fk.solicitation_procedures=pk.solicitationproceduresText or
+	fk.solicitation_procedures='' or
+	charindex('('+fk.solicitation_procedures+')',pk.solicitationproceduresText )>0,
+	NULL,fk.solicitation_procedures)) as unmatched_name_count,
+pk.solicitationproceduresText as PKsolicitationproceduresText,
+max(iif(fk.solicitation_procedures=pk.solicitationproceduresText or
+	fk.solicitation_procedures='' or
+	charindex('('+fk.solicitation_procedures+')',pk.solicitationproceduresText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.solicitationprocedures' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.solicitationprocedures as pk
+On pk.solicitationprocedures=fk.[solicitation_procedures_code]
+GROUP BY fk.[solicitation_procedures_code], pk.solicitationproceduresText
+HAVING max(iif(fk.solicitation_procedures=pk.solicitationproceduresText or
+	fk.solicitation_procedures='' or
+	charindex('('+fk.solicitation_procedures+')',pk.solicitationproceduresText )>0,
+	0,1))=1
+ORDER BY fk.[solicitation_procedures_code]
+
+
+--List new [type_of_set_aside_code] and updated type_of_set_aside for insertion into FPDSTypeTable.typeofsetaside
+SELECT fk.[type_of_set_aside_code],
+max(iif(fk.type_of_set_aside=pk.typeofsetasideText or
+	fk.type_of_set_aside='' or
+	charindex('('+fk.type_of_set_aside+')',pk.typeofsetasideText )>0,
+	NULL,fk.type_of_set_aside)) as MaxOfNewFKtype_of_set_aside,
+count(distinct iif(fk.type_of_set_aside=pk.typeofsetasideText or
+	fk.type_of_set_aside='' or
+	charindex('('+fk.type_of_set_aside+')',pk.typeofsetasideText )>0,
+	NULL,fk.type_of_set_aside)) as unmatched_name_count,
+pk.typeofsetasideText as PKtypeofsetasideText,
+max(iif(fk.type_of_set_aside=pk.typeofsetasideText or
+	fk.type_of_set_aside='' or
+	charindex('('+fk.type_of_set_aside+')',pk.typeofsetasideText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.typeofsetaside' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.typeofsetaside as pk
+On pk.typeofsetaside=fk.[type_of_set_aside_code]
+GROUP BY fk.[type_of_set_aside_code], pk.typeofsetasideText
+HAVING max(iif(fk.type_of_set_aside=pk.typeofsetasideText or
+	fk.type_of_set_aside='' or
+	charindex('('+fk.type_of_set_aside+')',pk.typeofsetasideText )>0,
+	0,1))=1
+ORDER BY fk.[type_of_set_aside_code]
+
+
+--List new [evaluated_preference_code] and updated evaluated_preference for insertion into FPDSTypeTable.evaluatedpreference
+SELECT fk.[evaluated_preference_code],
+max(iif(fk.evaluated_preference=pk.evaluatedpreferenceText or
+	fk.evaluated_preference='' or
+	charindex('('+fk.evaluated_preference+')',pk.evaluatedpreferenceText )>0,
+	NULL,fk.evaluated_preference)) as MaxOfNewFKevaluated_preference,
+count(distinct iif(fk.evaluated_preference=pk.evaluatedpreferenceText or
+	fk.evaluated_preference='' or
+	charindex('('+fk.evaluated_preference+')',pk.evaluatedpreferenceText )>0,
+	NULL,fk.evaluated_preference)) as unmatched_name_count,
+pk.evaluatedpreferenceText as PKevaluatedpreferenceText,
+max(iif(fk.evaluated_preference=pk.evaluatedpreferenceText or
+	fk.evaluated_preference='' or
+	charindex('('+fk.evaluated_preference+')',pk.evaluatedpreferenceText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.evaluatedpreference' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.evaluatedpreference as pk
+On pk.evaluatedpreference=fk.[evaluated_preference_code]
+GROUP BY fk.[evaluated_preference_code], pk.evaluatedpreferenceText
+HAVING max(iif(fk.evaluated_preference=pk.evaluatedpreferenceText or
+	fk.evaluated_preference='' or
+	charindex('('+fk.evaluated_preference+')',pk.evaluatedpreferenceText )>0,
+	0,1))=1
+ORDER BY fk.[evaluated_preference_code]
+
+
+--List new [research_code] and updated research for insertion into ProductOrServiceCode.Research_Code
+SELECT fk.[research_code],
+max(iif(fk.research=pk.Research_Name or
+	fk.research='' or
+	charindex('('+fk.research+')',pk.Research_Name )>0,
+	NULL,fk.research)) as MaxOfNewFKresearch,
+count(distinct iif(fk.research=pk.Research_Name or
+	fk.research='' or
+	charindex('('+fk.research+')',pk.Research_Name )>0,
+	NULL,fk.research)) as unmatched_name_count,
+pk.Research_Name as PKResearch_Name,
+max(iif(fk.research=pk.Research_Name or
+	fk.research='' or
+	charindex('('+fk.research+')',pk.Research_Name )>0,
+	1,0)) as any_name_match,
+'ProductOrServiceCode.Research_Code' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN ProductOrServiceCode.Research_Code as pk
+On pk.Research_Code=fk.[research_code]
+GROUP BY fk.[research_code], pk.Research_Name
+HAVING max(iif(fk.research=pk.Research_Name or
+	fk.research='' or
+	charindex('('+fk.research+')',pk.Research_Name )>0,
+	0,1))=1
+ORDER BY fk.[research_code]
+
+
+--List new [fair_opportunity_limited_sources_code] and updated fair_opportunity_limited_sources for insertion into FPDSTypeTable.statutoryexceptiontofairopportunity
+SELECT fk.[fair_opportunity_limited_sources_code],
+max(iif(fk.fair_opportunity_limited_sources=pk.statutoryexceptiontofairopportunityText or
+	fk.fair_opportunity_limited_sources='' or
+	charindex('('+fk.fair_opportunity_limited_sources+')',pk.statutoryexceptiontofairopportunityText )>0,
+	NULL,fk.fair_opportunity_limited_sources)) as MaxOfNewFKfair_opportunity_limited_sources,
+count(distinct iif(fk.fair_opportunity_limited_sources=pk.statutoryexceptiontofairopportunityText or
+	fk.fair_opportunity_limited_sources='' or
+	charindex('('+fk.fair_opportunity_limited_sources+')',pk.statutoryexceptiontofairopportunityText )>0,
+	NULL,fk.fair_opportunity_limited_sources)) as unmatched_name_count,
+pk.statutoryexceptiontofairopportunityText as PKstatutoryexceptiontofairopportunityText,
+max(iif(fk.fair_opportunity_limited_sources=pk.statutoryexceptiontofairopportunityText or
+	fk.fair_opportunity_limited_sources='' or
+	charindex('('+fk.fair_opportunity_limited_sources+')',pk.statutoryexceptiontofairopportunityText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.statutoryexceptiontofairopportunity' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.statutoryexceptiontofairopportunity as pk
+On pk.statutoryexceptiontofairopportunity=fk.[fair_opportunity_limited_sources_code]
+GROUP BY fk.[fair_opportunity_limited_sources_code], pk.statutoryexceptiontofairopportunityText
+HAVING max(iif(fk.fair_opportunity_limited_sources=pk.statutoryexceptiontofairopportunityText or
+	fk.fair_opportunity_limited_sources='' or
+	charindex('('+fk.fair_opportunity_limited_sources+')',pk.statutoryexceptiontofairopportunityText )>0,
+	0,1))=1
+ORDER BY fk.[fair_opportunity_limited_sources_code]
+
+
+--List new [other_than_full_and_open_competition_code] and updated other_than_full_and_open_competition for insertion into FPDSTypeTable.reasonnotcompeted
+SELECT fk.[other_than_full_and_open_competition_code],
+max(iif(fk.other_than_full_and_open_competition=pk.reasonnotcompetedText or
+	fk.other_than_full_and_open_competition='' or
+	charindex('('+fk.other_than_full_and_open_competition+')',pk.reasonnotcompetedText )>0,
+	NULL,fk.other_than_full_and_open_competition)) as MaxOfNewFKother_than_full_and_open_competition,
+count(distinct iif(fk.other_than_full_and_open_competition=pk.reasonnotcompetedText or
+	fk.other_than_full_and_open_competition='' or
+	charindex('('+fk.other_than_full_and_open_competition+')',pk.reasonnotcompetedText )>0,
+	NULL,fk.other_than_full_and_open_competition)) as unmatched_name_count,
+pk.reasonnotcompetedText as PKreasonnotcompetedText,
+max(iif(fk.other_than_full_and_open_competition=pk.reasonnotcompetedText or
+	fk.other_than_full_and_open_competition='' or
+	charindex('('+fk.other_than_full_and_open_competition+')',pk.reasonnotcompetedText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.reasonnotcompeted' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.reasonnotcompeted as pk
+On pk.reasonnotcompeted=fk.[other_than_full_and_open_competition_code]
+GROUP BY fk.[other_than_full_and_open_competition_code], pk.reasonnotcompetedText
+HAVING max(iif(fk.other_than_full_and_open_competition=pk.reasonnotcompetedText or
+	fk.other_than_full_and_open_competition='' or
+	charindex('('+fk.other_than_full_and_open_competition+')',pk.reasonnotcompetedText )>0,
+	0,1))=1
+ORDER BY fk.[other_than_full_and_open_competition_code]
+
+
+--List new [simplified_procedures_for_certain_commercial_items_code] and updated simplified_procedures_for_certain_commercial_items for insertion into FPDSTypeTable.simplified_procedures_for_certain_commercial_items_code
+SELECT fk.[simplified_procedures_for_certain_commercial_items_code],
+max(iif(fk.simplified_procedures_for_certain_commercial_items=pk.simplified_procedures_for_certain_commercial_items or
+	fk.simplified_procedures_for_certain_commercial_items='' or
+	charindex('('+fk.simplified_procedures_for_certain_commercial_items+')',pk.simplified_procedures_for_certain_commercial_items )>0,
+	NULL,fk.simplified_procedures_for_certain_commercial_items)) as MaxOfNewFKsimplified_procedures_for_certain_commercial_items,
+count(distinct iif(fk.simplified_procedures_for_certain_commercial_items=pk.simplified_procedures_for_certain_commercial_items or
+	fk.simplified_procedures_for_certain_commercial_items='' or
+	charindex('('+fk.simplified_procedures_for_certain_commercial_items+')',pk.simplified_procedures_for_certain_commercial_items )>0,
+	NULL,fk.simplified_procedures_for_certain_commercial_items)) as unmatched_name_count,
+pk.simplified_procedures_for_certain_commercial_items as PKsimplified_procedures_for_certain_commercial_items,
+max(iif(fk.simplified_procedures_for_certain_commercial_items=pk.simplified_procedures_for_certain_commercial_items or
+	fk.simplified_procedures_for_certain_commercial_items='' or
+	charindex('('+fk.simplified_procedures_for_certain_commercial_items+')',pk.simplified_procedures_for_certain_commercial_items )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.simplified_procedures_for_certain_commercial_items_code' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.simplified_procedures_for_certain_commercial_items_code as pk
+On pk.simplified_procedures_for_certain_commercial_items_code=fk.[simplified_procedures_for_certain_commercial_items_code]
+GROUP BY fk.[simplified_procedures_for_certain_commercial_items_code], pk.simplified_procedures_for_certain_commercial_items
+HAVING max(iif(fk.simplified_procedures_for_certain_commercial_items=pk.simplified_procedures_for_certain_commercial_items or
+	fk.simplified_procedures_for_certain_commercial_items='' or
+	charindex('('+fk.simplified_procedures_for_certain_commercial_items+')',pk.simplified_procedures_for_certain_commercial_items )>0,
+	0,1))=1
+ORDER BY fk.[simplified_procedures_for_certain_commercial_items_code]
+
+
+--List new [commercial_item_acquisition_procedures_code] and updated commercial_item_acquisition_procedures for insertion into FPDSTypeTable.CommercialItemAcquisitionProcedures
+SELECT fk.[commercial_item_acquisition_procedures_code],
+max(iif(fk.commercial_item_acquisition_procedures=pk.CommercialItemAcquisitionProceduresText or
+	fk.commercial_item_acquisition_procedures='' or
+	charindex('('+fk.commercial_item_acquisition_procedures+')',pk.CommercialItemAcquisitionProceduresText )>0,
+	NULL,fk.commercial_item_acquisition_procedures)) as MaxOfNewFKcommercial_item_acquisition_procedures,
+count(distinct iif(fk.commercial_item_acquisition_procedures=pk.CommercialItemAcquisitionProceduresText or
+	fk.commercial_item_acquisition_procedures='' or
+	charindex('('+fk.commercial_item_acquisition_procedures+')',pk.CommercialItemAcquisitionProceduresText )>0,
+	NULL,fk.commercial_item_acquisition_procedures)) as unmatched_name_count,
+pk.CommercialItemAcquisitionProceduresText as PKCommercialItemAcquisitionProceduresText,
+max(iif(fk.commercial_item_acquisition_procedures=pk.CommercialItemAcquisitionProceduresText or
+	fk.commercial_item_acquisition_procedures='' or
+	charindex('('+fk.commercial_item_acquisition_procedures+')',pk.CommercialItemAcquisitionProceduresText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.CommercialItemAcquisitionProcedures' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.CommercialItemAcquisitionProcedures as pk
+On pk.CommercialItemAcquisitionProcedures=fk.[commercial_item_acquisition_procedures_code]
+GROUP BY fk.[commercial_item_acquisition_procedures_code], pk.CommercialItemAcquisitionProceduresText
+HAVING max(iif(fk.commercial_item_acquisition_procedures=pk.CommercialItemAcquisitionProceduresText or
+	fk.commercial_item_acquisition_procedures='' or
+	charindex('('+fk.commercial_item_acquisition_procedures+')',pk.CommercialItemAcquisitionProceduresText )>0,
+	0,1))=1
+ORDER BY fk.[commercial_item_acquisition_procedures_code]
+
+
+--List new [fed_biz_opps_code] and updated fed_biz_opps for insertion into FPDSTypeTable.fedbizopps
+SELECT fk.[fed_biz_opps_code],
+max(iif(fk.fed_biz_opps=pk.fed_biz_opps_name or
+	fk.fed_biz_opps='' or
+	charindex('('+fk.fed_biz_opps+')',pk.fed_biz_opps_name )>0,
+	NULL,fk.fed_biz_opps)) as MaxOfNewFKfed_biz_opps,
+count(distinct iif(fk.fed_biz_opps=pk.fed_biz_opps_name or
+	fk.fed_biz_opps='' or
+	charindex('('+fk.fed_biz_opps+')',pk.fed_biz_opps_name )>0,
+	NULL,fk.fed_biz_opps)) as unmatched_name_count,
+pk.fed_biz_opps_name as PKfed_biz_opps_name,
+max(iif(fk.fed_biz_opps=pk.fed_biz_opps_name or
+	fk.fed_biz_opps='' or
+	charindex('('+fk.fed_biz_opps+')',pk.fed_biz_opps_name )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.fedbizopps' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.fedbizopps as pk
+On pk.fedbizopps=fk.[fed_biz_opps_code]
+GROUP BY fk.[fed_biz_opps_code], pk.fed_biz_opps_name
+HAVING max(iif(fk.fed_biz_opps=pk.fed_biz_opps_name or
+	fk.fed_biz_opps='' or
+	charindex('('+fk.fed_biz_opps+')',pk.fed_biz_opps_name )>0,
+	0,1))=1
+ORDER BY fk.[fed_biz_opps_code]
+
+
+--List new [local_area_set_aside_code] and updated local_area_set_aside for insertion into Location.localareasetaside
+SELECT fk.[local_area_set_aside_code],
+max(iif(fk.local_area_set_aside=pk.local_area_set_aside_name or
+	fk.local_area_set_aside='' or
+	charindex('('+fk.local_area_set_aside+')',pk.local_area_set_aside_name )>0,
+	NULL,fk.local_area_set_aside)) as MaxOfNewFKlocal_area_set_aside,
+count(distinct iif(fk.local_area_set_aside=pk.local_area_set_aside_name or
+	fk.local_area_set_aside='' or
+	charindex('('+fk.local_area_set_aside+')',pk.local_area_set_aside_name )>0,
+	NULL,fk.local_area_set_aside)) as unmatched_name_count,
+pk.local_area_set_aside_name as PKlocal_area_set_aside_name,
+max(iif(fk.local_area_set_aside=pk.local_area_set_aside_name or
+	fk.local_area_set_aside='' or
+	charindex('('+fk.local_area_set_aside+')',pk.local_area_set_aside_name )>0,
+	1,0)) as any_name_match,
+'Location.localareasetaside' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Location.localareasetaside as pk
+On pk.localareasetaside=fk.[local_area_set_aside_code]
+GROUP BY fk.[local_area_set_aside_code], pk.local_area_set_aside_name
+HAVING max(iif(fk.local_area_set_aside=pk.local_area_set_aside_name or
+	fk.local_area_set_aside='' or
+	charindex('('+fk.local_area_set_aside+')',pk.local_area_set_aside_name )>0,
+	0,1))=1
+ORDER BY fk.[local_area_set_aside_code]
+
+
+--List new [materials_supplies_articles_equipment_code] and updated materials_supplies_articles_equipment for insertion into FPDSTypeTable.walshhealyact
+SELECT fk.[materials_supplies_articles_equipment_code],
+max(iif(fk.materials_supplies_articles_equipment=pk.walshhealyactText or
+	fk.materials_supplies_articles_equipment='' or
+	charindex('('+fk.materials_supplies_articles_equipment+')',pk.walshhealyactText )>0,
+	NULL,fk.materials_supplies_articles_equipment)) as MaxOfNewFKmaterials_supplies_articles_equipment,
+count(distinct iif(fk.materials_supplies_articles_equipment=pk.walshhealyactText or
+	fk.materials_supplies_articles_equipment='' or
+	charindex('('+fk.materials_supplies_articles_equipment+')',pk.walshhealyactText )>0,
+	NULL,fk.materials_supplies_articles_equipment)) as unmatched_name_count,
+pk.walshhealyactText as PKwalshhealyactText,
+max(iif(fk.materials_supplies_articles_equipment=pk.walshhealyactText or
+	fk.materials_supplies_articles_equipment='' or
+	charindex('('+fk.materials_supplies_articles_equipment+')',pk.walshhealyactText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.walshhealyact' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.walshhealyact as pk
+On pk.walshhealyact=fk.[materials_supplies_articles_equipment_code]
+GROUP BY fk.[materials_supplies_articles_equipment_code], pk.walshhealyactText
+HAVING max(iif(fk.materials_supplies_articles_equipment=pk.walshhealyactText or
+	fk.materials_supplies_articles_equipment='' or
+	charindex('('+fk.materials_supplies_articles_equipment+')',pk.walshhealyactText )>0,
+	0,1))=1
+ORDER BY fk.[materials_supplies_articles_equipment_code]
+
+
+--List new [labor_standards_code] and updated labor_standards for insertion into FPDSTypeTable.servicecontractact
+SELECT fk.[labor_standards_code],
+max(iif(fk.labor_standards=pk.servicecontractactText or
+	fk.labor_standards='' or
+	charindex('('+fk.labor_standards+')',pk.servicecontractactText )>0,
+	NULL,fk.labor_standards)) as MaxOfNewFKlabor_standards,
+count(distinct iif(fk.labor_standards=pk.servicecontractactText or
+	fk.labor_standards='' or
+	charindex('('+fk.labor_standards+')',pk.servicecontractactText )>0,
+	NULL,fk.labor_standards)) as unmatched_name_count,
+pk.servicecontractactText as PKservicecontractactText,
+max(iif(fk.labor_standards=pk.servicecontractactText or
+	fk.labor_standards='' or
+	charindex('('+fk.labor_standards+')',pk.servicecontractactText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.servicecontractact' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.servicecontractact as pk
+On pk.servicecontractact=fk.[labor_standards_code]
+GROUP BY fk.[labor_standards_code], pk.servicecontractactText
+HAVING max(iif(fk.labor_standards=pk.servicecontractactText or
+	fk.labor_standards='' or
+	charindex('('+fk.labor_standards+')',pk.servicecontractactText )>0,
+	0,1))=1
+ORDER BY fk.[labor_standards_code]
+
+
+--List new [construction_wage_rate_requirements_code] and updated construction_wage_rate_requirements for insertion into FPDSTypeTable.davisbaconact
+SELECT fk.[construction_wage_rate_requirements_code],
+max(iif(fk.construction_wage_rate_requirements=pk.davisbaconactText or
+	fk.construction_wage_rate_requirements='' or
+	charindex('('+fk.construction_wage_rate_requirements+')',pk.davisbaconactText )>0,
+	NULL,fk.construction_wage_rate_requirements)) as MaxOfNewFKconstruction_wage_rate_requirements,
+count(distinct iif(fk.construction_wage_rate_requirements=pk.davisbaconactText or
+	fk.construction_wage_rate_requirements='' or
+	charindex('('+fk.construction_wage_rate_requirements+')',pk.davisbaconactText )>0,
+	NULL,fk.construction_wage_rate_requirements)) as unmatched_name_count,
+pk.davisbaconactText as PKdavisbaconactText,
+max(iif(fk.construction_wage_rate_requirements=pk.davisbaconactText or
+	fk.construction_wage_rate_requirements='' or
+	charindex('('+fk.construction_wage_rate_requirements+')',pk.davisbaconactText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.davisbaconact' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.davisbaconact as pk
+On pk.davisbaconact=fk.[construction_wage_rate_requirements_code]
+GROUP BY fk.[construction_wage_rate_requirements_code], pk.davisbaconactText
+HAVING max(iif(fk.construction_wage_rate_requirements=pk.davisbaconactText or
+	fk.construction_wage_rate_requirements='' or
+	charindex('('+fk.construction_wage_rate_requirements+')',pk.davisbaconactText )>0,
+	0,1))=1
+ORDER BY fk.[construction_wage_rate_requirements_code]
+
+
+--List new [interagency_contracting_authority_code] and updated interagency_contracting_authority for insertion into FPDSTypeTable.interagencycontractingauthority
+SELECT fk.[interagency_contracting_authority_code],
+max(iif(fk.interagency_contracting_authority=pk.interagencycontractingauthorityText or
+	fk.interagency_contracting_authority='' or
+	charindex('('+fk.interagency_contracting_authority+')',pk.interagencycontractingauthorityText )>0,
+	NULL,fk.interagency_contracting_authority)) as MaxOfNewFKinteragency_contracting_authority,
+count(distinct iif(fk.interagency_contracting_authority=pk.interagencycontractingauthorityText or
+	fk.interagency_contracting_authority='' or
+	charindex('('+fk.interagency_contracting_authority+')',pk.interagencycontractingauthorityText )>0,
+	NULL,fk.interagency_contracting_authority)) as unmatched_name_count,
+pk.interagencycontractingauthorityText as PKinteragencycontractingauthorityText,
+max(iif(fk.interagency_contracting_authority=pk.interagencycontractingauthorityText or
+	fk.interagency_contracting_authority='' or
+	charindex('('+fk.interagency_contracting_authority+')',pk.interagencycontractingauthorityText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.interagencycontractingauthority' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.interagencycontractingauthority as pk
+On pk.interagencycontractingauthority=fk.[interagency_contracting_authority_code]
+GROUP BY fk.[interagency_contracting_authority_code], pk.interagencycontractingauthorityText
+HAVING max(iif(fk.interagency_contracting_authority=pk.interagencycontractingauthorityText or
+	fk.interagency_contracting_authority='' or
+	charindex('('+fk.interagency_contracting_authority+')',pk.interagencycontractingauthorityText )>0,
+	0,1))=1
+ORDER BY fk.[interagency_contracting_authority_code]
+
+
+--List new [parent_award_type_code] and updated parent_award_type for insertion into FPDSTypeTable.idv_type_code
+SELECT fk.[parent_award_type_code],
+max(iif(fk.parent_award_type=pk.idv_type_name or
+	fk.parent_award_type='' or
+	charindex('('+fk.parent_award_type+')',pk.idv_type_name )>0,
+	NULL,fk.parent_award_type)) as MaxOfNewFKparent_award_type,
+count(distinct iif(fk.parent_award_type=pk.idv_type_name or
+	fk.parent_award_type='' or
+	charindex('('+fk.parent_award_type+')',pk.idv_type_name )>0,
+	NULL,fk.parent_award_type)) as unmatched_name_count,
+pk.idv_type_name as PKidv_type_name,
+max(iif(fk.parent_award_type=pk.idv_type_name or
+	fk.parent_award_type='' or
+	charindex('('+fk.parent_award_type+')',pk.idv_type_name )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.idv_type_code' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.idv_type_code as pk
+On pk.idv_type_code=fk.[parent_award_type_code]
+GROUP BY fk.[parent_award_type_code], pk.idv_type_name
+HAVING max(iif(fk.parent_award_type=pk.idv_type_name or
+	fk.parent_award_type='' or
+	charindex('('+fk.parent_award_type+')',pk.idv_type_name )>0,
+	0,1))=1
+ORDER BY fk.[parent_award_type_code]
+
+
+--List new [parent_award_single_or_multiple_code] and updated parent_award_single_or_multiple for insertion into FPDSTypeTable.multipleorsingleawardidc
+SELECT fk.[parent_award_single_or_multiple_code],
+max(iif(fk.parent_award_single_or_multiple=pk.multipleorsingleawardidcText or
+	fk.parent_award_single_or_multiple='' or
+	charindex('('+fk.parent_award_single_or_multiple+')',pk.multipleorsingleawardidcText )>0,
+	NULL,fk.parent_award_single_or_multiple)) as MaxOfNewFKparent_award_single_or_multiple,
+count(distinct iif(fk.parent_award_single_or_multiple=pk.multipleorsingleawardidcText or
+	fk.parent_award_single_or_multiple='' or
+	charindex('('+fk.parent_award_single_or_multiple+')',pk.multipleorsingleawardidcText )>0,
+	NULL,fk.parent_award_single_or_multiple)) as unmatched_name_count,
+pk.multipleorsingleawardidcText as PKmultipleorsingleawardidcText,
+max(iif(fk.parent_award_single_or_multiple=pk.multipleorsingleawardidcText or
+	fk.parent_award_single_or_multiple='' or
+	charindex('('+fk.parent_award_single_or_multiple+')',pk.multipleorsingleawardidcText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.multipleorsingleawardidc' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.multipleorsingleawardidc as pk
+On pk.multipleorsingleawardidc=fk.[parent_award_single_or_multiple_code]
+GROUP BY fk.[parent_award_single_or_multiple_code], pk.multipleorsingleawardidcText
+HAVING max(iif(fk.parent_award_single_or_multiple=pk.multipleorsingleawardidcText or
+	fk.parent_award_single_or_multiple='' or
+	charindex('('+fk.parent_award_single_or_multiple+')',pk.multipleorsingleawardidcText )>0,
+	0,1))=1
+ORDER BY fk.[parent_award_single_or_multiple_code]
+
+
+--List new [major_program] for insertion into Contract.MajorProgramCode
+SELECT fk.[major_program],
+'Contract.MajorProgramCode' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Contract.MajorProgramCode as pk
+On pk.majorprogramcode=fk.[major_program]
+WHERE pk.majorprogramcode is NULL
+GROUP BY fk.[major_program]
+ORDER BY fk.[major_program]
+
+
+--List new [national_interest_action_code] and updated national_interest_action for insertion into Assistance.NationalInterestActionCode
+SELECT fk.[national_interest_action_code],
+max(iif(fk.national_interest_action=pk.National_Interest_Action_Name or
+	fk.national_interest_action='' or
+	charindex('('+fk.national_interest_action+')',pk.National_Interest_Action_Name )>0,
+	NULL,fk.national_interest_action)) as MaxOfNewFKnational_interest_action,
+count(distinct iif(fk.national_interest_action=pk.National_Interest_Action_Name or
+	fk.national_interest_action='' or
+	charindex('('+fk.national_interest_action+')',pk.National_Interest_Action_Name )>0,
+	NULL,fk.national_interest_action)) as unmatched_name_count,
+pk.National_Interest_Action_Name as PKNational_Interest_Action_Name,
+max(iif(fk.national_interest_action=pk.National_Interest_Action_Name or
+	fk.national_interest_action='' or
+	charindex('('+fk.national_interest_action+')',pk.National_Interest_Action_Name )>0,
+	1,0)) as any_name_match,
+'Assistance.NationalInterestActionCode' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Assistance.NationalInterestActionCode as pk
+On pk.NationalInterestActionCode=fk.[national_interest_action_code]
+GROUP BY fk.[national_interest_action_code], pk.National_Interest_Action_Name
+HAVING max(iif(fk.national_interest_action=pk.National_Interest_Action_Name or
+	fk.national_interest_action='' or
+	charindex('('+fk.national_interest_action+')',pk.National_Interest_Action_Name )>0,
+	0,1))=1
+ORDER BY fk.[national_interest_action_code]
+
+
+--List new [cost_or_pricing_data_code] and updated cost_or_pricing_data for insertion into FPDSTypeTable.costorpricingdata
+SELECT fk.[cost_or_pricing_data_code],
+max(iif(fk.cost_or_pricing_data=pk.costorpricingdataText or
+	fk.cost_or_pricing_data='' or
+	charindex('('+fk.cost_or_pricing_data+')',pk.costorpricingdataText )>0,
+	NULL,fk.cost_or_pricing_data)) as MaxOfNewFKcost_or_pricing_data,
+count(distinct iif(fk.cost_or_pricing_data=pk.costorpricingdataText or
+	fk.cost_or_pricing_data='' or
+	charindex('('+fk.cost_or_pricing_data+')',pk.costorpricingdataText )>0,
+	NULL,fk.cost_or_pricing_data)) as unmatched_name_count,
+pk.costorpricingdataText as PKcostorpricingdataText,
+max(iif(fk.cost_or_pricing_data=pk.costorpricingdataText or
+	fk.cost_or_pricing_data='' or
+	charindex('('+fk.cost_or_pricing_data+')',pk.costorpricingdataText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.costorpricingdata' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.costorpricingdata as pk
+On pk.costorpricingdata=fk.[cost_or_pricing_data_code]
+GROUP BY fk.[cost_or_pricing_data_code], pk.costorpricingdataText
+HAVING max(iif(fk.cost_or_pricing_data=pk.costorpricingdataText or
+	fk.cost_or_pricing_data='' or
+	charindex('('+fk.cost_or_pricing_data+')',pk.costorpricingdataText )>0,
+	0,1))=1
+ORDER BY fk.[cost_or_pricing_data_code]
+
+
+--List new [cost_accounting_standards_clause_code] and updated cost_accounting_standards_clause for insertion into FPDSTypeTable.CostAccountingStandardsClause
+SELECT fk.[cost_accounting_standards_clause_code],
+max(iif(fk.cost_accounting_standards_clause=pk.cost_accounting_standards_clause_name or
+	fk.cost_accounting_standards_clause='' or
+	charindex('('+fk.cost_accounting_standards_clause+')',pk.cost_accounting_standards_clause_name )>0,
+	NULL,fk.cost_accounting_standards_clause)) as MaxOfNewFKcost_accounting_standards_clause,
+count(distinct iif(fk.cost_accounting_standards_clause=pk.cost_accounting_standards_clause_name or
+	fk.cost_accounting_standards_clause='' or
+	charindex('('+fk.cost_accounting_standards_clause+')',pk.cost_accounting_standards_clause_name )>0,
+	NULL,fk.cost_accounting_standards_clause)) as unmatched_name_count,
+pk.cost_accounting_standards_clause_name as PKcost_accounting_standards_clause_name,
+max(iif(fk.cost_accounting_standards_clause=pk.cost_accounting_standards_clause_name or
+	fk.cost_accounting_standards_clause='' or
+	charindex('('+fk.cost_accounting_standards_clause+')',pk.cost_accounting_standards_clause_name )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.CostAccountingStandardsClause' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.CostAccountingStandardsClause as pk
+On pk.CostAccountingStandardsClause=fk.[cost_accounting_standards_clause_code]
+GROUP BY fk.[cost_accounting_standards_clause_code], pk.cost_accounting_standards_clause_name
+HAVING max(iif(fk.cost_accounting_standards_clause=pk.cost_accounting_standards_clause_name or
+	fk.cost_accounting_standards_clause='' or
+	charindex('('+fk.cost_accounting_standards_clause+')',pk.cost_accounting_standards_clause_name )>0,
+	0,1))=1
+ORDER BY fk.[cost_accounting_standards_clause_code]
+
+
+--List new [government_furnished_property_code] and updated government_furnished_property for insertion into FPDSTypeTable.gfe_gfp
+SELECT fk.[government_furnished_property_code],
+max(iif(fk.government_furnished_property=pk.gfe_gfpText or
+	fk.government_furnished_property='' or
+	charindex('('+fk.government_furnished_property+')',pk.gfe_gfpText )>0,
+	NULL,fk.government_furnished_property)) as MaxOfNewFKgovernment_furnished_property,
+count(distinct iif(fk.government_furnished_property=pk.gfe_gfpText or
+	fk.government_furnished_property='' or
+	charindex('('+fk.government_furnished_property+')',pk.gfe_gfpText )>0,
+	NULL,fk.government_furnished_property)) as unmatched_name_count,
+pk.gfe_gfpText as PKgfe_gfpText,
+max(iif(fk.government_furnished_property=pk.gfe_gfpText or
+	fk.government_furnished_property='' or
+	charindex('('+fk.government_furnished_property+')',pk.gfe_gfpText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.gfe_gfp' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.gfe_gfp as pk
+On pk.gfe_gfp=fk.[government_furnished_property_code]
+GROUP BY fk.[government_furnished_property_code], pk.gfe_gfpText
+HAVING max(iif(fk.government_furnished_property=pk.gfe_gfpText or
+	fk.government_furnished_property='' or
+	charindex('('+fk.government_furnished_property+')',pk.gfe_gfpText )>0,
+	0,1))=1
+ORDER BY fk.[government_furnished_property_code]
+
+
+--List new [sea_transportation_code] and updated sea_transportation for insertion into FPDSTypeTable.seatransportation
+SELECT fk.[sea_transportation_code],
+max(iif(fk.sea_transportation=pk.seatransportationText or
+	fk.sea_transportation='' or
+	charindex('('+fk.sea_transportation+')',pk.seatransportationText )>0,
+	NULL,fk.sea_transportation)) as MaxOfNewFKsea_transportation,
+count(distinct iif(fk.sea_transportation=pk.seatransportationText or
+	fk.sea_transportation='' or
+	charindex('('+fk.sea_transportation+')',pk.seatransportationText )>0,
+	NULL,fk.sea_transportation)) as unmatched_name_count,
+pk.seatransportationText as PKseatransportationText,
+max(iif(fk.sea_transportation=pk.seatransportationText or
+	fk.sea_transportation='' or
+	charindex('('+fk.sea_transportation+')',pk.seatransportationText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.seatransportation' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.seatransportation as pk
+On pk.seatransportation=fk.[sea_transportation_code]
+GROUP BY fk.[sea_transportation_code], pk.seatransportationText
+HAVING max(iif(fk.sea_transportation=pk.seatransportationText or
+	fk.sea_transportation='' or
+	charindex('('+fk.sea_transportation+')',pk.seatransportationText )>0,
+	0,1))=1
+ORDER BY fk.[sea_transportation_code]
+
+
+--List new [undefinitized_action_code] and updated undefinitized_action for insertion into FPDSTypeTable.lettercontract
+SELECT fk.[undefinitized_action_code],
+max(iif(fk.undefinitized_action=pk.UndefinitizedActionText or
+	fk.undefinitized_action='' or
+	charindex('('+fk.undefinitized_action+')',pk.UndefinitizedActionText )>0,
+	NULL,fk.undefinitized_action)) as MaxOfNewFKundefinitized_action,
+count(distinct iif(fk.undefinitized_action=pk.UndefinitizedActionText or
+	fk.undefinitized_action='' or
+	charindex('('+fk.undefinitized_action+')',pk.UndefinitizedActionText )>0,
+	NULL,fk.undefinitized_action)) as unmatched_name_count,
+pk.UndefinitizedActionText as PKUndefinitizedActionText,
+max(iif(fk.undefinitized_action=pk.UndefinitizedActionText or
+	fk.undefinitized_action='' or
+	charindex('('+fk.undefinitized_action+')',pk.UndefinitizedActionText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.lettercontract' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.lettercontract as pk
+On pk.LetterContract=fk.[undefinitized_action_code]
+GROUP BY fk.[undefinitized_action_code], pk.UndefinitizedActionText
+HAVING max(iif(fk.undefinitized_action=pk.UndefinitizedActionText or
+	fk.undefinitized_action='' or
+	charindex('('+fk.undefinitized_action+')',pk.UndefinitizedActionText )>0,
+	0,1))=1
+ORDER BY fk.[undefinitized_action_code]
+
+
+--List new [consolidated_contract_code] and updated consolidated_contract for insertion into Contract.consolidatedcontract
+SELECT fk.[consolidated_contract_code],
+max(iif(fk.consolidated_contract=pk.consolidated_contract_name or
+	fk.consolidated_contract='' or
+	charindex('('+fk.consolidated_contract+')',pk.consolidated_contract_name )>0,
+	NULL,fk.consolidated_contract)) as MaxOfNewFKconsolidated_contract,
+count(distinct iif(fk.consolidated_contract=pk.consolidated_contract_name or
+	fk.consolidated_contract='' or
+	charindex('('+fk.consolidated_contract+')',pk.consolidated_contract_name )>0,
+	NULL,fk.consolidated_contract)) as unmatched_name_count,
+pk.consolidated_contract_name as PKconsolidated_contract_name,
+max(iif(fk.consolidated_contract=pk.consolidated_contract_name or
+	fk.consolidated_contract='' or
+	charindex('('+fk.consolidated_contract+')',pk.consolidated_contract_name )>0,
+	1,0)) as any_name_match,
+'Contract.consolidatedcontract' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Contract.consolidatedcontract as pk
+On pk.consolidatedcontract=fk.[consolidated_contract_code]
+GROUP BY fk.[consolidated_contract_code], pk.consolidated_contract_name
+HAVING max(iif(fk.consolidated_contract=pk.consolidated_contract_name or
+	fk.consolidated_contract='' or
+	charindex('('+fk.consolidated_contract+')',pk.consolidated_contract_name )>0,
+	0,1))=1
+ORDER BY fk.[consolidated_contract_code]
+
+
+--List new [performance_based_service_acquisition_code] and updated performance_based_service_acquisition for insertion into FPDSTypeTable.PerformanceBasedServiceContract
+SELECT fk.[performance_based_service_acquisition_code],
+max(iif(fk.performance_based_service_acquisition=pk.performancebasedservicecontractText or
+	fk.performance_based_service_acquisition='' or
+	charindex('('+fk.performance_based_service_acquisition+')',pk.performancebasedservicecontractText )>0,
+	NULL,fk.performance_based_service_acquisition)) as MaxOfNewFKperformance_based_service_acquisition,
+count(distinct iif(fk.performance_based_service_acquisition=pk.performancebasedservicecontractText or
+	fk.performance_based_service_acquisition='' or
+	charindex('('+fk.performance_based_service_acquisition+')',pk.performancebasedservicecontractText )>0,
+	NULL,fk.performance_based_service_acquisition)) as unmatched_name_count,
+pk.performancebasedservicecontractText as PKperformancebasedservicecontractText,
+max(iif(fk.performance_based_service_acquisition=pk.performancebasedservicecontractText or
+	fk.performance_based_service_acquisition='' or
+	charindex('('+fk.performance_based_service_acquisition+')',pk.performancebasedservicecontractText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.PerformanceBasedServiceContract' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.PerformanceBasedServiceContract as pk
+On pk.performancebasedservicecontract=fk.[performance_based_service_acquisition_code]
+GROUP BY fk.[performance_based_service_acquisition_code], pk.performancebasedservicecontractText
+HAVING max(iif(fk.performance_based_service_acquisition=pk.performancebasedservicecontractText or
+	fk.performance_based_service_acquisition='' or
+	charindex('('+fk.performance_based_service_acquisition+')',pk.performancebasedservicecontractText )>0,
+	0,1))=1
+ORDER BY fk.[performance_based_service_acquisition_code]
+
+
+--List new [contract_financing_code] and updated contract_financing for insertion into FPDSTypeTable.contractfinancing
+SELECT fk.[contract_financing_code],
+max(iif(fk.contract_financing=pk.contractfinancingText or
+	fk.contract_financing='' or
+	charindex('('+fk.contract_financing+')',pk.contractfinancingText )>0,
+	NULL,fk.contract_financing)) as MaxOfNewFKcontract_financing,
+count(distinct iif(fk.contract_financing=pk.contractfinancingText or
+	fk.contract_financing='' or
+	charindex('('+fk.contract_financing+')',pk.contractfinancingText )>0,
+	NULL,fk.contract_financing)) as unmatched_name_count,
+pk.contractfinancingText as PKcontractfinancingText,
+max(iif(fk.contract_financing=pk.contractfinancingText or
+	fk.contract_financing='' or
+	charindex('('+fk.contract_financing+')',pk.contractfinancingText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.contractfinancing' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.contractfinancing as pk
+On pk.contractfinancing=fk.[contract_financing_code]
+GROUP BY fk.[contract_financing_code], pk.contractfinancingText
+HAVING max(iif(fk.contract_financing=pk.contractfinancingText or
+	fk.contract_financing='' or
+	charindex('('+fk.contract_financing+')',pk.contractfinancingText )>0,
+	0,1))=1
+ORDER BY fk.[contract_financing_code]
+
+
+--List new [contingency_humanitarian_or_peacekeeping_operation_code] and updated contingency_humanitarian_or_peacekeeping_operation for insertion into Assistance.ContingencyHumanitarianPeacekeepingOperation
+SELECT fk.[contingency_humanitarian_or_peacekeeping_operation_code],
+max(iif(fk.contingency_humanitarian_or_peacekeeping_operation=pk.contingencyhumanitarianpeacekeepingoperationText or
+	fk.contingency_humanitarian_or_peacekeeping_operation='' or
+	charindex('('+fk.contingency_humanitarian_or_peacekeeping_operation+')',pk.contingencyhumanitarianpeacekeepingoperationText )>0,
+	NULL,fk.contingency_humanitarian_or_peacekeeping_operation)) as MaxOfNewFKcontingency_humanitarian_or_peacekeeping_operation,
+count(distinct iif(fk.contingency_humanitarian_or_peacekeeping_operation=pk.contingencyhumanitarianpeacekeepingoperationText or
+	fk.contingency_humanitarian_or_peacekeeping_operation='' or
+	charindex('('+fk.contingency_humanitarian_or_peacekeeping_operation+')',pk.contingencyhumanitarianpeacekeepingoperationText )>0,
+	NULL,fk.contingency_humanitarian_or_peacekeeping_operation)) as unmatched_name_count,
+pk.contingencyhumanitarianpeacekeepingoperationText as PKcontingencyhumanitarianpeacekeepingoperationText,
+max(iif(fk.contingency_humanitarian_or_peacekeeping_operation=pk.contingencyhumanitarianpeacekeepingoperationText or
+	fk.contingency_humanitarian_or_peacekeeping_operation='' or
+	charindex('('+fk.contingency_humanitarian_or_peacekeeping_operation+')',pk.contingencyhumanitarianpeacekeepingoperationText )>0,
+	1,0)) as any_name_match,
+'Assistance.ContingencyHumanitarianPeacekeepingOperation' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Assistance.ContingencyHumanitarianPeacekeepingOperation as pk
+On pk.ContingencyHumanitarianPeacekeepingOperation=fk.[contingency_humanitarian_or_peacekeeping_operation_code]
+GROUP BY fk.[contingency_humanitarian_or_peacekeeping_operation_code], pk.contingencyhumanitarianpeacekeepingoperationText
+HAVING max(iif(fk.contingency_humanitarian_or_peacekeeping_operation=pk.contingencyhumanitarianpeacekeepingoperationText or
+	fk.contingency_humanitarian_or_peacekeeping_operation='' or
+	charindex('('+fk.contingency_humanitarian_or_peacekeeping_operation+')',pk.contingencyhumanitarianpeacekeepingoperationText )>0,
+	0,1))=1
+ORDER BY fk.[contingency_humanitarian_or_peacekeeping_operation_code]
+
+
+--List new [contracting_officers_determination_of_business_size_code] and updated contracting_officers_determination_of_business_size for insertion into FPDSTypeTable.contractingofficerbusinesssizedetermination
+SELECT fk.[contracting_officers_determination_of_business_size_code],
+max(iif(fk.contracting_officers_determination_of_business_size=pk.ContractingOfficerBusinessSizeDeterminationText or
+	fk.contracting_officers_determination_of_business_size='' or
+	charindex('('+fk.contracting_officers_determination_of_business_size+')',pk.ContractingOfficerBusinessSizeDeterminationText )>0,
+	NULL,fk.contracting_officers_determination_of_business_size)) as MaxOfNewFKcontracting_officers_determination_of_business_size,
+count(distinct iif(fk.contracting_officers_determination_of_business_size=pk.ContractingOfficerBusinessSizeDeterminationText or
+	fk.contracting_officers_determination_of_business_size='' or
+	charindex('('+fk.contracting_officers_determination_of_business_size+')',pk.ContractingOfficerBusinessSizeDeterminationText )>0,
+	NULL,fk.contracting_officers_determination_of_business_size)) as unmatched_name_count,
+pk.ContractingOfficerBusinessSizeDeterminationText as PKContractingOfficerBusinessSizeDeterminationText,
+max(iif(fk.contracting_officers_determination_of_business_size=pk.ContractingOfficerBusinessSizeDeterminationText or
+	fk.contracting_officers_determination_of_business_size='' or
+	charindex('('+fk.contracting_officers_determination_of_business_size+')',pk.ContractingOfficerBusinessSizeDeterminationText )>0,
+	1,0)) as any_name_match,
+'FPDSTypeTable.contractingofficerbusinesssizedetermination' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.contractingofficerbusinesssizedetermination as pk
+On pk.contractingofficerbusinesssizedetermination=fk.[contracting_officers_determination_of_business_size_code]
+GROUP BY fk.[contracting_officers_determination_of_business_size_code], pk.ContractingOfficerBusinessSizeDeterminationText
+HAVING max(iif(fk.contracting_officers_determination_of_business_size=pk.ContractingOfficerBusinessSizeDeterminationText or
+	fk.contracting_officers_determination_of_business_size='' or
+	charindex('('+fk.contracting_officers_determination_of_business_size+')',pk.ContractingOfficerBusinessSizeDeterminationText )>0,
+	0,1))=1
+ORDER BY fk.[contracting_officers_determination_of_business_size_code]
+
+
+--List new [award_or_idv_flag] for insertion into Contract.award_or_idv_flag
+SELECT fk.[award_or_idv_flag],
+'Contract.award_or_idv_flag' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Contract.award_or_idv_flag as pk
+On pk.award_or_idv_flag=fk.[award_or_idv_flag]
+WHERE pk.award_or_idv_flag is NULL
+GROUP BY fk.[award_or_idv_flag]
+ORDER BY fk.[award_or_idv_flag]
+
+
+--List new [inherently_governmental_functions] and updated inherently_governmental_functions_description for insertion into ProductOrServiceCode.inherently_governmental_functions
+SELECT fk.[inherently_governmental_functions],
+max(iif(fk.inherently_governmental_functions_description=pk.inherently_governmental_functions_description or
+	fk.inherently_governmental_functions_description='' or
+	charindex('('+fk.inherently_governmental_functions_description+')',pk.inherently_governmental_functions_description )>0,
+	NULL,fk.inherently_governmental_functions_description)) as MaxOfNewFKinherently_governmental_functions_description,
+count(distinct iif(fk.inherently_governmental_functions_description=pk.inherently_governmental_functions_description or
+	fk.inherently_governmental_functions_description='' or
+	charindex('('+fk.inherently_governmental_functions_description+')',pk.inherently_governmental_functions_description )>0,
+	NULL,fk.inherently_governmental_functions_description)) as unmatched_name_count,
+pk.inherently_governmental_functions_description as PKinherently_governmental_functions_description,
+max(iif(fk.inherently_governmental_functions_description=pk.inherently_governmental_functions_description or
+	fk.inherently_governmental_functions_description='' or
+	charindex('('+fk.inherently_governmental_functions_description+')',pk.inherently_governmental_functions_description )>0,
+	1,0)) as any_name_match,
+'ProductOrServiceCode.inherently_governmental_functions' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN ProductOrServiceCode.inherently_governmental_functions as pk
+On pk.inherently_governmental_functions=fk.[inherently_governmental_functions]
+GROUP BY fk.[inherently_governmental_functions], pk.inherently_governmental_functions_description
+HAVING max(iif(fk.inherently_governmental_functions_description=pk.inherently_governmental_functions_description or
+	fk.inherently_governmental_functions_description='' or
+	charindex('('+fk.inherently_governmental_functions_description+')',pk.inherently_governmental_functions_description )>0,
+	0,1))=1
+ORDER BY fk.[inherently_governmental_functions]
+
+
+--List new [organizational_type] for insertion into Vendor.OrganizationalType
+SELECT fk.[organizational_type],
+'Vendor.OrganizationalType' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Vendor.OrganizationalType as pk
+On pk.OrganizationalType=fk.[organizational_type]
+WHERE pk.OrganizationalType is NULL
+GROUP BY fk.[organizational_type]
+ORDER BY fk.[organizational_type]
+
+
+--List new [contract_transaction_unique_key] for insertion into Contract.contract_transaction_unique_key
+SELECT fk.[contract_transaction_unique_key],
+'Contract.contract_transaction_unique_key' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Contract.contract_transaction_unique_key as pk
+On pk.contract_transaction_unique_key=fk.[contract_transaction_unique_key]
+WHERE pk.contract_transaction_unique_key is NULL
+GROUP BY fk.[contract_transaction_unique_key]
+ORDER BY fk.[contract_transaction_unique_key]
+
+
+--List new [contract_award_unique_key] for insertion into Contract.contract_award_unique_key
+SELECT fk.[contract_award_unique_key],
+'Contract.contract_award_unique_key' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Contract.contract_award_unique_key as pk
+On pk.contract_award_unique_key=fk.[contract_award_unique_key]
+WHERE pk.contract_award_unique_key is NULL
+GROUP BY fk.[contract_award_unique_key]
+ORDER BY fk.[contract_award_unique_key]
+
+
+--List new [recipient_uei] for insertion into Vendor.UEI
+SELECT fk.[recipient_uei],
+'Vendor.UEI' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Vendor.UEI as pk
+On pk.UEI=fk.[recipient_uei]
+WHERE pk.UEI is NULL
+GROUP BY fk.[recipient_uei]
+ORDER BY fk.[recipient_uei]
+
+
+--List new [recipient_parent_uei] for insertion into Vendor.UEI
+SELECT fk.[recipient_parent_uei],
+'Vendor.UEI' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Vendor.UEI as pk
+On pk.UEI=fk.[recipient_parent_uei]
+WHERE pk.UEI is NULL
+GROUP BY fk.[recipient_parent_uei]
+ORDER BY fk.[recipient_parent_uei]
+
+
+--List new [recipient_name_raw] for insertion into Vendor.VendorName
+SELECT fk.[recipient_name_raw],
+'Vendor.VendorName' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[recipient_name_raw]
+WHERE pk.vendorname is NULL
+GROUP BY fk.[recipient_name_raw]
+ORDER BY fk.[recipient_name_raw]
+
+
+--List new [recipient_parent_name_raw] for insertion into Vendor.VendorName
+SELECT fk.[recipient_parent_name_raw],
+'Vendor.VendorName' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Vendor.VendorName as pk
+On pk.vendorname=fk.[recipient_parent_name_raw]
+WHERE pk.vendorname is NULL
+GROUP BY fk.[recipient_parent_name_raw]
+ORDER BY fk.[recipient_parent_name_raw]
+
+
+--List new [prime_award_transaction_recipient_county_fips_code] for insertion into Location.County_FIPS_Code
+SELECT fk.[prime_award_transaction_recipient_county_fips_code],
+'Location.County_FIPS_Code' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Location.County_FIPS_Code as pk
+On pk.county_fips_code=fk.[prime_award_transaction_recipient_county_fips_code]
+WHERE pk.county_fips_code is NULL
+GROUP BY fk.[prime_award_transaction_recipient_county_fips_code]
+ORDER BY fk.[prime_award_transaction_recipient_county_fips_code]
+
+
+--List new [prime_award_transaction_recipient_state_fips_code] for insertion into Location.State_FIPS_Code
+SELECT fk.[prime_award_transaction_recipient_state_fips_code],
+'Location.State_FIPS_Code' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Location.State_FIPS_Code as pk
+On pk.state_fips_code=fk.[prime_award_transaction_recipient_state_fips_code]
+WHERE pk.state_fips_code is NULL
+GROUP BY fk.[prime_award_transaction_recipient_state_fips_code]
+ORDER BY fk.[prime_award_transaction_recipient_state_fips_code]
+
+
+--List new [prime_award_transaction_place_of_performance_county_fips_code] for insertion into Location.County_FIPS_Code
+SELECT fk.[prime_award_transaction_place_of_performance_county_fips_code],
+'Location.County_FIPS_Code' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Location.County_FIPS_Code as pk
+On pk.county_fips_code=fk.[prime_award_transaction_place_of_performance_county_fips_code]
+WHERE pk.county_fips_code is NULL
+GROUP BY fk.[prime_award_transaction_place_of_performance_county_fips_code]
+ORDER BY fk.[prime_award_transaction_place_of_performance_county_fips_code]
+
+
+--List new [prime_award_transaction_place_of_performance_state_fips_code] for insertion into Location.State_FIPS_Code
+SELECT fk.[prime_award_transaction_place_of_performance_state_fips_code],
+'Location.State_FIPS_Code' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Location.State_FIPS_Code as pk
+On pk.state_fips_code=fk.[prime_award_transaction_place_of_performance_state_fips_code]
+WHERE pk.state_fips_code is NULL
+GROUP BY fk.[prime_award_transaction_place_of_performance_state_fips_code]
+ORDER BY fk.[prime_award_transaction_place_of_performance_state_fips_code]
+
+
+--List new [prime_award_transaction_recipient_cd_original] for insertion into Location.Congressional_District
+SELECT fk.[prime_award_transaction_recipient_cd_original],
+'Location.Congressional_District' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Location.Congressional_District as pk
+On pk.congressional_district=fk.[prime_award_transaction_recipient_cd_original]
+WHERE pk.congressional_district is NULL
+GROUP BY fk.[prime_award_transaction_recipient_cd_original]
+ORDER BY fk.[prime_award_transaction_recipient_cd_original]
+
+
+--List new [prime_award_transaction_place_of_performance_cd_original] for insertion into Location.Congressional_District
+SELECT fk.[prime_award_transaction_place_of_performance_cd_original],
+'Location.Congressional_District' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN Location.Congressional_District as pk
+On pk.congressional_district=fk.[prime_award_transaction_place_of_performance_cd_original]
+WHERE pk.congressional_district is NULL
+GROUP BY fk.[prime_award_transaction_place_of_performance_cd_original]
+ORDER BY fk.[prime_award_transaction_place_of_performance_cd_original]
+
+
+--List new [agency_id] for insertion into FPDSTypeTable.AgencyID
+SELECT fk.[agency_id],
+'FPDSTypeTable.AgencyID' as PrimaryKeyTable
+FROM ETL.FPDSdelta as fk
+LEFT OUTER JOIN FPDSTypeTable.AgencyID as pk
+On pk.AgencyID=fk.[agency_id]
+WHERE pk.AgencyID is NULL
+GROUP BY fk.[agency_id]
+ORDER BY fk.[agency_id]
+
+

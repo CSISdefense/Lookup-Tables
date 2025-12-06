@@ -23,7 +23,7 @@ read_create_table<-function(FileName,dir="ImportAids\\"){
   TargetTable.df<-TargetTable.df[-c(EndRow:nrow(TargetTable.df)),]
   TargetTable.df$V1<-as.character(TargetTable.df$V1)
   
-  #Once we have the table in, the next step is to clean up anything seperated on spaces
+  #Once we have the table in, the next step is to clean up anything separated on spaces
   #that should not have been for our purposes.
   # 
   TargetTable.df$V2<-as.character(TargetTable.df$V2)
@@ -65,7 +65,7 @@ read_create_table<-function(FileName,dir="ImportAids\\"){
       TargetTable.df<-TargetTable.df[-(dec_row+1),]
   }
   #Handle NOT NULL which can split across two lines
-  null_row<-which(TargetTable.df$V1=="NULL,")
+  null_row<-which(TargetTable.df$V1 %in% c("NULL,","NULL"))
   if(length(null_row)>0){
     if(all(TargetTable.df$V3[null_row-1]=="NOT")){
       TargetTable.df$V3<-as.character(TargetTable.df$V3)
@@ -808,10 +808,10 @@ convert_field_to_foreign_key<-function(FKschema,
   }
   rm(fkTable.df)
   
-  if(file.exists(file.path("data","semi_clean","ErrorLogging_PrimaryKeyList.csv")))
-    pk_file<-file.path("data","semi_clean","ErrorLogging_PrimaryKeyList.csv")
-  else if(file.exists(file.path("ImportAids","ErrorLogging_PrimaryKeyList.csv")))
-    pk_file<-file.path("ImportAids","ErrorLogging_PrimaryKeyList.csv")
+  if(file.exists(file.path("data","semi_clean","ETL_PrimaryKeyList.csv")))
+    pk_file<-file.path("data","semi_clean","ETL_PrimaryKeyList.csv")
+  else if(file.exists(file.path("ImportAids","ETL_PrimaryKeyList.csv")))
+    pk_file<-file.path("ImportAids","ETL_PrimaryKeyList.csv")
   else stop("File Not Found")
   
   pkTable.df<-read.csv(pk_file,header=TRUE,sep=",",na.strings = c("NULL","NA")) %>% remove_bom()
@@ -974,10 +974,10 @@ convert_field_to_foreign_key<-function(FKschema,
 }
 
 get_ForeignKeyList<-function(){
-  if(file.exists(file.path("data","semi_clean","ErrorLogging_ForeignKeyList.csv")))
-    fk_file<-file.path("data","semi_clean","ErrorLogging_ForeignKeyList.csv")
-  else if(file.exists(file.path("ImportAids","ErrorLogging_ForeignKeyList.csv")))
-    fk_file<-file.path("ImportAids","ErrorLogging_ForeignKeyList.csv")
+  if(file.exists(file.path("data","semi_clean","ETL_ForeignKeyList.csv")))
+    fk_file<-file.path("data","semi_clean","ETL_ForeignKeyList.csv")
+  else if(file.exists(file.path("ImportAids","ETL_ForeignKeyList.csv")))
+    fk_file<-file.path("ImportAids","ETL_ForeignKeyList.csv")
   else stop("File Not Found")
   
   
