@@ -6,33 +6,34 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-source("scripts//SQLimportTools.r")
+source("..//scripts//SQLimportTools.r")
 library(tidyverse)
+path=".."
 ```
 
 # Matching FPDSdelta to Contract.FPDS #########
 #Match up ETL.FPDSdelta to Contract.FPDS 
 ```{r match, include=FALSE}
 Import.df<-read_create_table("ETL.FPDSdelta.Table.sql",
-                                      dir="SQL")
+                                      dir=file.path(path,"SQL"))
 
-Import.df<-translate_name(Import.df)#,#file="PostgresNameConversion.csv")#,file="USAspendingNameMirror.csv",
+Import.df<-translate_name(Import.df,path=path)#,#file="PostgresNameConversion.csv")#,file="USAspendingNameMirror.csv",
                           # DestVariableNamefile="USAspendingVariableName.csv")
 
 # Import.df<-translate_name(Import.df,file="USAspendingNameMirror.csv",
 #                           DestVariableNamefile="USAspendingVariableName.csv")
 # write.csv(Import.df,file="Import.csv")
 DestinationTable.df<-read_create_table("Contract.FPDS",
-                                       dir="SQL")
+                                       dir=file.path(path,"SQL"))
 
 
 
-translate_name(DestinationTable.df,test_only=TRUE)
-# debug(merge_source_and_csis_name_tables)
+translate_name(DestinationTable.df,test_only=TRUE,path=path)
+
 MergeDestination.df<-merge_source_and_csis_name_tables(Import.df,DestinationTable.df)
 ``` 
 
-#####1) Error Checking ####
+#####1) Error Checking 
 ```{r transfer, include=FALSE}
 #Transfer from ETL.FPDSdelta to Contract.FPDS
 if(nrow(MergeDestination.df[is.na(MergeDestination.df$CSISvariableType)&is.na(MergeDestination.df$IsDroppedNameField),])>1){
@@ -41,7 +42,7 @@ if(nrow(MergeDestination.df[is.na(MergeDestination.df$CSISvariableType)&is.na(Me
   stop("Update ImportAids/NameList.csv using Output/Unmatched_NameConversion.csv")
 }
 DroppedField<-MergeDestination.df %>% filter(IsDroppedNameField)
-fklist<-read.csv("ImportAids//ETL_ForeignKeyList.csv") %>% 
+fklist<-read.csv(file.path(path,"ImportAids","ETL_ForeignKeyList.csv")) %>% 
   filter(FKSchema=="Contract" & FKTableName=="FPDS")
 DroppedField$Pair<-gsub("[\\],\\[]","",DroppedField$Pair,perl=T) #https://stackoverflow.com/questions/32041265/how-to-escape-closed-bracket-in-regex-in-r
 DroppedFieldFK<-left_join(DroppedField,fklist,by=c("Pair"="FKColumnName")) %>%filter(is.na(ConstraintName))
@@ -89,7 +90,7 @@ rm(pair_kept)
 #That said, the differences in date format mean some will be generated.
 ```
 
-##2) The Try_Converts select files  ####
+##2) The Try_Converts select files  
 
 
 ```{r TryConvert}
@@ -99,7 +100,7 @@ TryConvertList<-create_try_converts(MergeDestination.df,"ETL","FPDSdelta"
                                     ,IncludeSingle = FALSE
                                     ,IncludeMultiple = TRUE)
 if(!is.null(TryConvertList))
-  write(TryConvertList,"Output\\FPDSdeltaTryConvertList.txt")
+  write(TryConvertList,file.path(path,"Output","FPDSdeltaTryConvertList.txt"))
 #Then the alters.
 TryConvertList<-create_try_converts(MergeDestination.df,"ETL","FPDSdelta"
                                     ,IncludeAlters=TRUE
@@ -108,14 +109,14 @@ TryConvertList<-create_try_converts(MergeDestination.df,"ETL","FPDSdelta"
                                     ,Apply_Drop = TRUE
                                     )
 if(!is.null(TryConvertList))
-  write(TryConvertList,"Output\\FPDSdeltaAlterColumnList.txt")
+  write(TryConvertList,file.path(path,"Output","FPDSdeltaAlterColumnList.txt"))
 # write_delim(MergeDestination.df %>% select(SourceVariableName,SourceVariableType,CSISvariableType)%>%
 #         mutate(SourceVariableType=ifelse(!is.na(CSISvariableType),CSISvariableType,SourceVariableType),
 #                comma=",") %>%
-#         select(-CSISvariableType),"Output\\FPDSdeltaCreateTable.txt",delim = " ")
+#         select(-CSISvariableType),file.path(path,"Output","FPDSdeltaCreateTable.txt"),delim = " ")
 #Create Foreign Key Assignments
 # undebug(get_CSISvariableNameToPrimaryKey)
-# debug(create_foreign_key_assigments)
+
 # Skip list for select
 
 
@@ -127,7 +128,7 @@ if(!is.null(TryConvertList))
 #                           DateType=23,
 #                           FPDS=TRUE,
 #                           Apply_Drop=FALSE)
-# write(InsertList,"Output/ETL_FPDSdelta_insert_destination.txt")
+# write(InsertList,file.path(path,"Output","ETL_FPDSdelta_insert_destination.txt"))
 ```
 
 ##3) Create missing foreign key assignments#####
@@ -149,17 +150,19 @@ skip_list<-c("[unique_award_key]",
              
              ) #Handled via chain insert manually written
 
+# undebug(create_foreign_key_assigments)
 select_missing_code <- create_foreign_key_assigments("ETL",
                                         "FPDSdelta",
                                         "Contract",
                                         "FPDS",
-                                        dir="sql",
+                                        dir="SQL",
                               suppress_alter = TRUE,
                               suppress_insert = TRUE,
                               skip_list = skip_list,
-                              file="NameConversion.csv") 
+                              file="NameConversion.csv",
+                                        path=path) 
 write(select_missing_code,
-      file=file.path("Output","ETL_FPDSdelta_select_foreign_key.txt"), 
+      file=file.path(path,"Output","ETL_FPDSdelta_select_foreign_key.txt"), 
       append=FALSE)  
 
 skip_list<-c("[unique_award_key]",
@@ -175,26 +178,27 @@ input_missing_code <- create_foreign_key_assigments("ETL",
                                                      "FPDSdelta",
                                                     "Contract",
                                                     "FPDS",
-                                                     dir="sql",
+                                                     dir="SQL",
                                                      suppress_select = TRUE,
                                                     suppress_alter = TRUE,
                                                     suppress_update= TRUE,
                                                     skip_list = skip_list,
-                                                    file="NameConversion.csv"
+                                                    file="NameConversion.csv",
+                                                    path=path
                                                     )
 
 write(input_missing_code,
-      file=file.path("Output","ETL_FPDSdelta_input_foreign_key.txt"),  
+      file=file.path(path,"Output","ETL_FPDSdelta_input_foreign_key.txt"),  
       append=FALSE) 
 
 ```
 
-#####4) Count Empties####
+#####4) Count Empties
 ```{r Empties}
 
 #Create the code to count empty rows by variable.
 count_list<-count_empties(Import.df,"ETL","FPDSdelta")
-write(count_list,"Output//ETL_FPDSdelta_count_empties.txt")
+write(count_list,file.path(path,"Output","ETL_FPDSdelta_count_empties.txt"))
 ```
 
 ##5) Inserts into destination####
@@ -208,7 +212,7 @@ InsertList<-create_insert(MergeDestination.df,
                          "FPDS",
                          DateType=120,
                          FPDS=TRUE)
-write(InsertList,"Output/ETL_FPDSdelta_insert_destination.txt")
+write(InsertList,file.path(path,"Output","ETL_FPDSdelta_insert_destination.txt"))
 
 
 #Create Compare Values (double checking that column matches are good)
@@ -227,7 +231,7 @@ compare_list<-create_compare_cols(MergeDestination.df,
                                 source_primary_key="detached_award_proc_unique",
                                 target_primary_key="contract_transaction_unique_key",
                                 drop_unmatched=TRUE)
-write(compare_list,"Output/ETL_FPDSdelta_compare_destination.txt")
+write(compare_list,file.path(path,"Output","ETL_FPDSdelta_compare_destination.txt"))
 
 
 #Create Updates
@@ -238,7 +242,7 @@ update_list<-create_update_FPDS(MergeDestination.df,
   "FPDS",
   DateType=101,
   drop_name=TRUE)
-write(update_list,"Output/ETL_FPDSdelta_update_destination.txt")
+write(update_list,file.path(path,"Output","ETL_FPDSdelta_update_destination.txt"))
 MergeDestination.df %>% filter(substr(CSISvariableType,2,3) %in% c("NV","nv")) %>% select(SourceVariableName)
 substr(MergeDestination.df$CSISvariableType,2,3)
 ```
