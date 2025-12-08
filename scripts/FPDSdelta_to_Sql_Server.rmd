@@ -8,7 +8,63 @@ output: html_document
 ```{r setup, include=FALSE}
 source("..//scripts//SQLimportTools.r")
 library(tidyverse)
+library(askpass)
+library(odbc)
+library(DBI)
 path=".."
+```
+
+This next sections updates:
+* Lookup-Table repository ImportAids/ETL_PrimaryKeyList.csv
+* Lookup-Table repository ImportAids/ETL_ForeignKeyList.csv
+```{r key_file_update}
+login<-askpass("Please enter the login account")
+pwd<-askpass("Please enter the account password")
+
+
+con <- dbConnect(odbc(),
+                 Driver = "SQL Server",
+                 Server = "vmsqldiig.database.windows.net",
+                 Database = "CSIS360",
+                 UID = login,
+                 PWD =pwd)
+
+common_fields<-c(
+      ",ColumnDataType",
+      ",ColumnLength",
+      ",PKSchemaName",
+      ",PKTableName",
+      ",PKColumnCode",
+      ",PKcolumnCount",
+      ",PKcolumnText"
+      )
+
+pkey_sql<-paste("SELECT  ConstraintName",
+            ",ConstraintType",
+                paste(common_fields,collapse=" "),
+            "FROM ETL.PrimaryKeyList",
+            "order by ConstraintName,PKColumnCode"
+)
+
+pkey<-dbGetQuery(con,  pkey_sql)
+write_csv(pkey,file.path("..","ImportAids","ETL_PrimaryKeyList.csv"),
+                na=c("NULL"))
+
+fkey_sql<-paste("SELECT  ConstraintName",
+            ",ConstraintType",
+             ",FKSchema",
+            ",FKTableName",
+            ",FKColumnName",
+                paste(common_fields,collapse=" "),
+            "FROM ETL.ForeignKeyList",
+            "order by ConstraintName,FKColumnName,ColumnDataType"
+)
+fkey<-dbGetQuery(con,  fkey_sql)
+write_csv(fkey,file.path("..","ImportAids","ETL_ForeignKeyList.csv"),
+                na=c("NULL"))
+
+
+
 ```
 
 # Matching FPDSdelta to Contract.FPDS #########

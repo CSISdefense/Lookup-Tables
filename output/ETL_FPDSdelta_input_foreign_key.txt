@@ -291,9 +291,9 @@ GROUP BY fk.[recovered_materials_sustainability_code]
 
 -- Insert new [domestic_or_foreign_entity_code] into Location.manufacturingorganizationtype
 INSERT INTO Location.manufacturingorganizationtype
-(manufacturingorganizationtype,manufacturingorganizationtypeText)
+(manufacturingorganizationtype,manufacturingorganizationText)
 SELECT fk.[domestic_or_foreign_entity_code]
-,max(fk.domestic_or_foreign_entity) as manufacturingorganizationtypeText
+,max(fk.domestic_or_foreign_entity) as manufacturingorganizationText
 FROM ETL.FPDSdelta as fk
 LEFT OUTER JOIN Location.manufacturingorganizationtype as pk
 On pk.manufacturingorganizationtype=fk.[domestic_or_foreign_entity_code]
