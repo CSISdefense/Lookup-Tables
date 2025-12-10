@@ -4,7 +4,7 @@ author: "Greg Sanders"
 date: "2025-12-06"
 output: html_document
 ---
-
+#Setup
 ```{r setup, include=FALSE}
 source("..//scripts//SQLimportTools.r")
 library(tidyverse)
@@ -17,9 +17,14 @@ path=".."
 This next sections updates:
 * Lookup-Table repository ImportAids/ETL_PrimaryKeyList.csv
 * Lookup-Table repository ImportAids/ETL_ForeignKeyList.csv
+
+### Update key files
+
 ```{r key_file_update}
-login<-askpass("Please enter the login account")
-pwd<-askpass("Please enter the account password")
+if(!exists("login"))
+  login<-askpass("Please enter the login account")
+if(!exists("pwd"))
+  pwd<-askpass("Please enter the account password")
 
 
 con <- dbConnect(odbc(),
@@ -173,18 +178,7 @@ if(!is.null(TryConvertList))
 #Create Foreign Key Assignments
 # undebug(get_CSISvariableNameToPrimaryKey)
 
-# Skip list for select
 
-
-# InsertList<-create_insert(MergeDestination.df,
-#                           "ETL",
-#                           "FPDSdelta2",
-#                           "ETL",
-#                           "FPDSdelta",
-#                           DateType=23,
-#                           FPDS=TRUE,
-#                           Apply_Drop=FALSE)
-# write(InsertList,file.path(path,"Output","ETL_FPDSdelta_insert_destination.txt"))
 ```
 
 ##3) Create missing foreign key assignments#####
@@ -192,18 +186,18 @@ if(!is.null(TryConvertList))
 
 ```{r ForeignKey}
 # debug(create_foreign_key_assigments)
-
+# Skip list for select
 skip_list<-c("[unique_award_key]",
+             "[contract_award_unique_key]",
+             "[contract_transaction_unique_key]",
              "[CSIStransactionID]",
              "[legal_entity_country_code]",#Handled via chain insert manually written
              "[awardee_or_recipient_uei]",
              "[ultimate_parent_uei]",
-             
              "[recipient_country_code]",
              "[recipient_country_name]",
              "[awardee_or_recipient_legal]",
-             "[vendor_doing_as_business_n]"
-             
+             "[vendor_doing_as_business_n]",
              ) #Handled via chain insert manually written
 
 # undebug(create_foreign_key_assigments)

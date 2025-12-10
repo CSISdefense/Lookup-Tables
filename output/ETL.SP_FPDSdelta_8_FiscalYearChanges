@@ -1,0 +1,56 @@
+﻿8) ETL.SP_FPDSdelta_8_FiscalYearChanges start
+2025-12-09 12:03:24.117
+
+8A) insert into Errorlogging.fpdsfiscalyearchange start
+2025-12-09 12:03:24.223
+
+
+
+8A) insert into Errorlogging.fpdsfiscalyearchange end
+2025-12-09 12:06:19.540
+
+8B) Update into Errorlogging.fpdsfiscalyearchange start
+2025-12-09 12:06:19.540
+
+
+
+8B) Update into Errorlogging.fpdsfiscalyearchange end
+2025-12-09 12:06:23.963
+
+8C) Delete into Errorlogging.fpdsfiscalyearchange start
+2025-12-09 12:06:23.963
+
+
+
+8C) Delete into Errorlogging.fpdsfiscalyearchange end
+2025-12-09 12:06:26.090
+
+8D) Delete into Errorlogging.fpdsfiscalyearchange start
+2025-12-09 12:06:26.090
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8D) Delete into Errorlogging.fpdsfiscalyearchange end
+2025-12-09 12:20:21.730
+
+8) ETL.SP_FPDSdelta_8_FiscalYearChange end
+2025-12-09 12:20:21.730
+
