@@ -254,11 +254,6 @@ REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO
 ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded] CHECK CONSTRAINT [fk_contract_fpds_Mod_Agency]
 GO
-ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded]  WITH CHECK ADD  CONSTRAINT [fk_ErrorLogging_FPDSgovManuallyAdded] FOREIGN KEY([CSIStransactionID])
-REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
-GO
-ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded] CHECK CONSTRAINT [fk_ErrorLogging_FPDSgovManuallyAdded]
-GO
 ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdded]  WITH NOCHECK ADD  CONSTRAINT [fk_FPDSgovManuallyAdded__headquartercode] FOREIGN KEY([headquartercode])
 REFERENCES [Contractor].[Dunsnumber] ([DUNSnumber])
 GO

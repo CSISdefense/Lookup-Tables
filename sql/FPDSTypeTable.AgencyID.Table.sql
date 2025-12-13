@@ -6,7 +6,7 @@ CREATE TABLE [FPDSTypeTable].[AgencyID](
 	[Unseperated] [varchar](255) NULL,
 	[AgencyID] [varchar](4) NOT NULL,
 	[AgencyIDtext] [nvarchar](255) NULL,
-	[DepartmentID] [nvarchar](255) NULL,
+	[maj_agency_cat] [varchar](4) NULL,
 	[CSISName] [nvarchar](255) NULL,
 	[Customer] [nvarchar](50) NULL,
 	[SubCustomer] [nvarchar](50) NULL,
@@ -41,6 +41,11 @@ ALTER TABLE [FPDSTypeTable].[AgencyID]  WITH NOCHECK ADD  CONSTRAINT [fk_agencyI
 REFERENCES [agency].[SubCustomer] ([Customer], [SubCustomer])
 GO
 ALTER TABLE [FPDSTypeTable].[AgencyID] CHECK CONSTRAINT [fk_agencyID_subcustomercustomer]
+GO
+ALTER TABLE [FPDSTypeTable].[AgencyID]  WITH CHECK ADD  CONSTRAINT [fk_fpdstypetable_agencyid_maj_agency_cat] FOREIGN KEY([maj_agency_cat])
+REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
+GO
+ALTER TABLE [FPDSTypeTable].[AgencyID] CHECK CONSTRAINT [fk_fpdstypetable_agencyid_maj_agency_cat]
 GO
 ALTER TABLE [FPDSTypeTable].[AgencyID]  WITH NOCHECK ADD  CONSTRAINT [fk_FPDStypetable_AgencyID_PlatformPortfolio] FOREIGN KEY([PlatformPortfolio])
 REFERENCES [ProductOrServiceCode].[PlatformPortfolio] ([PlatformPortfolio])

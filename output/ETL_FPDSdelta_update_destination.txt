@@ -236,6 +236,6 @@ UPDATE T SET
 [initial_report_date]=coalesce(S.[initial_report_date],T.[initial_report_date]),
 [agencyid]=coalesce(nullif(S.[agency_id],''),T.[agencyid])
 FROM Contract.FPDS as T
-INNER Join ErrorLogging.FPDSdelta as S
+INNER Join ETL.FPDSdelta as S
 ON s.CSIStransactionID=t.CSIStransactionID
 WHERE s.last_modified_date>=t.last_modified_date

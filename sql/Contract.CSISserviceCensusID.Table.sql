@@ -28,9 +28,6 @@ CREATE UNIQUE NONCLUSTERED INDEX [IX_contract_CSISserviceCensusID] ON [Contract]
 	[CSIStieBreaker] ASC
 )WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
-ALTER TABLE [Contract].[CSISserviceCensusID]  WITH CHECK ADD FOREIGN KEY([CSIScontractID])
-REFERENCES [Contract].[CSIScontractID] ([CSIScontractID])
-GO
 ALTER TABLE [Contract].[CSISserviceCensusID]  WITH CHECK ADD  CONSTRAINT [fk_contract_CSISserviceCensusID_contractingofficeagencyid] FOREIGN KEY([contractingofficeagencyid])
 REFERENCES [FPDSTypeTable].[AgencyID] ([AgencyID])
 GO

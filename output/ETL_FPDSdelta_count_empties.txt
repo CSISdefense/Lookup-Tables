@@ -302,6 +302,7 @@ sum(iif([initial_report_date] is null,1,0)) as [initial_report_date],
 sum(iif(nullif([agency_id],'') is null,1,0)) as [agency_id],
 sum(iif(nullif([correction_delete_ind],'') is null,1,0)) as [correction_delete_ind],
 sum(iif([IsTransferred] is null,1,0)) as [IsTransferred],
-sum(iif(nullif([temp_uei],'') is null,1,0)) as [temp_uei]
-FROM ErrorLogging.FPDSdelta
+sum(iif(nullif([temp_uei],'') is null,1,0)) as [temp_uei],
+sum(iif([IsOutdatedDuplicate] is null,1,0)) as [IsOutdatedDuplicate]
+FROM ETL.FPDSdelta
 

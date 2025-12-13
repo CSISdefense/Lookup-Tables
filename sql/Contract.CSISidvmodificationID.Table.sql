@@ -24,15 +24,6 @@ CREATE TABLE [Contract].[CSISidvmodificationID](
 GO
 SET ANSI_PADDING ON
 GO
-CREATE UNIQUE NONCLUSTERED INDEX [idx_CSISidvPIIDIDidvagencyIDidvmodificationnumber] ON [Contract].[CSISidvmodificationID]
-(
-	[CSISidvpiidID] ASC,
-	[idvagencyid] ASC,
-	[idvmodificationnumber] ASC
-)WITH (STATISTICS_NORECOMPUTE = ON, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
-GO
-SET ANSI_PADDING ON
-GO
 CREATE UNIQUE NONCLUSTERED INDEX [idx_IDVpiidIDVidvAgencyIDmodificationnumber] ON [Contract].[CSISidvmodificationID]
 (
 	[idvpiid] ASC,

@@ -23,7 +23,7 @@ read_create_table<-function(FileName,dir="ImportAids\\"){
   TargetTable.df<-TargetTable.df[-c(EndRow:nrow(TargetTable.df)),]
   TargetTable.df$V1<-as.character(TargetTable.df$V1)
   
-  #Once we have the table in, the next step is to clean up anything seperated on spaces
+  #Once we have the table in, the next step is to clean up anything separated on spaces
   #that should not have been for our purposes.
   # 
   TargetTable.df$V2<-as.character(TargetTable.df$V2)
@@ -65,7 +65,7 @@ read_create_table<-function(FileName,dir="ImportAids\\"){
       TargetTable.df<-TargetTable.df[-(dec_row+1),]
   }
   #Handle NOT NULL which can split across two lines
-  null_row<-which(TargetTable.df$V1=="NULL,")
+  null_row<-which(TargetTable.df$V1 %in% c("NULL,","NULL"))
   if(length(null_row)>0){
     if(all(TargetTable.df$V3[null_row-1]=="NOT")){
       TargetTable.df$V3<-as.character(TargetTable.df$V3)
@@ -89,7 +89,8 @@ convert_all_of_type<-function(TargetTable.df,
                               OldType,
                               NewType,
                               Schema,
-                              TableName){
+                              TableName,
+                              path=""){
   #Limit it to just relevant variables
   TargetTable.df<-TargetTable.df[TargetTable.df$VariableType==OldType,]
   if(nrow(TargetTable.df)==0)
@@ -109,9 +110,10 @@ list_problem_type<-function(TargetTable.df){
 translate_name<-function(TargetTable.df,
                          test_only=FALSE,
                          file="NameConversion.csv",
-                         DestVariableNamefile="CSISvariableName.csv"
+                         DestVariableNamefile="CSISvariableName.csv",
+                         path=""
                          ){
-  lookup.NameConversion<-read.csv(file.path("ImportAids",file),
+  lookup.NameConversion<-read.csv(file.path(path,"ImportAids",file),
                                   stringsAsFactors = FALSE,
                                   na.strings = c("NULL","NA"))
   if(!"SourceVariableName" %in% colnames(TargetTable.df)){
@@ -146,9 +148,9 @@ translate_name<-function(TargetTable.df,
     stop("Duplicate entries in CSISvariableName after matching")
   }
   #Add the CSISvariableName fields: IsDroppedNameField	Pair
-  if(file.exists(file.path("ImportAids",DestVariableNamefile)))
+  if(file.exists(file.path(path,"ImportAids",DestVariableNamefile)))
     TargetTable.df<-read_and_join_experiment(TargetTable.df,
-                                             path="",dir="ImportAids\\",lookup_file = DestVariableNamefile,
+                                             path=path,dir="ImportAids\\",lookup_file = DestVariableNamefile,
                                              skip_check_var = "IsDroppedNameField")
   
   TargetTable.df$SourceVariableName<-TargetTable.df$OriginalSourceVariableName
@@ -211,7 +213,8 @@ merge_source_and_csis_name_tables<-function(SourceTable.df,
     SourceTable.df$CSISnullable[is.na(SourceTable.df$CSISnullable)]<-
       SourceTable.df$SourceNullable[is.na(SourceTable.df$CSISnullable)]
   }
-  
+  if(!"IsDroppedNameField" %in% colnames(SourceTable.df))
+    stop("IsDroppedNameField is missing")
   if(require_CSISvariableName &
      any(is.na(SourceTable.df$CSISvariableName)&!SourceTable.df$IsDroppedNameField&
          !is.na(SourceTable.df$IsDroppedNameField))){
@@ -793,10 +796,11 @@ convert_field_to_foreign_key<-function(FKschema,
                                        suppress_alter=FALSE,
                                        suppress_insert=FALSE,
                                        suppress_update=TRUE,
-                                       allow_name_mismatch=TRUE){
+                                       allow_name_mismatch=TRUE,
+                                       path=""){
   
   
-  fkTable.df<-get_ForeignKeyList()
+  fkTable.df<-get_ForeignKeyList(path)
   if(any(toupper(fkTable.df$FKSchema)==toupper(FKschema) &
          toupper(fkTable.df$FKTableName)==toupper(FKtable) &
          toupper(paste("[",fkTable.df$FKColumnName,"]",sep=""))==toupper(FKcolumn) &
@@ -808,10 +812,10 @@ convert_field_to_foreign_key<-function(FKschema,
   }
   rm(fkTable.df)
   
-  if(file.exists(file.path("data","semi_clean","ErrorLogging_PrimaryKeyList.csv")))
-    pk_file<-file.path("data","semi_clean","ErrorLogging_PrimaryKeyList.csv")
-  else if(file.exists(file.path("ImportAids","ErrorLogging_PrimaryKeyList.csv")))
-    pk_file<-file.path("ImportAids","ErrorLogging_PrimaryKeyList.csv")
+  if(file.exists(file.path(path,"data","semi_clean","ETL_PrimaryKeyList.csv")))
+    pk_file<-file.path(path,"data","semi_clean","ETL_PrimaryKeyList.csv")
+  else if(file.exists(file.path(path,"ImportAids","ETL_PrimaryKeyList.csv")))
+    pk_file<-file.path(path,"ImportAids","ETL_PrimaryKeyList.csv")
   else stop("File Not Found")
   
   pkTable.df<-read.csv(pk_file,header=TRUE,sep=",",na.strings = c("NULL","NA")) %>% remove_bom()
@@ -973,11 +977,11 @@ convert_field_to_foreign_key<-function(FKschema,
   Output
 }
 
-get_ForeignKeyList<-function(){
-  if(file.exists(file.path("data","semi_clean","ErrorLogging_ForeignKeyList.csv")))
-    fk_file<-file.path("data","semi_clean","ErrorLogging_ForeignKeyList.csv")
-  else if(file.exists(file.path("ImportAids","ErrorLogging_ForeignKeyList.csv")))
-    fk_file<-file.path("ImportAids","ErrorLogging_ForeignKeyList.csv")
+get_ForeignKeyList<-function(path=""){
+  if(file.exists(file.path(path,"data","semi_clean","ETL_ForeignKeyList.csv")))
+    fk_file<-file.path(path,"data","semi_clean","ETL_ForeignKeyList.csv")
+  else if(file.exists(file.path(path,"ImportAids","ETL_ForeignKeyList.csv")))
+    fk_file<-file.path(path,"ImportAids","ETL_ForeignKeyList.csv")
   else stop("File Not Found")
   
   
@@ -990,10 +994,11 @@ get_ForeignKeyList<-function(){
 
 
 get_CSISvariableNameToPrimaryKey<-function(DestinationSchema,
-                                           DestinationTable){
+                                           DestinationTable,
+                                           path=""){
   
   
-  lookup.CSISvariableNameToPrimaryKey<-get_ForeignKeyList()
+  lookup.CSISvariableNameToPrimaryKey<-get_ForeignKeyList(path)
   lookup.CSISvariableNameToPrimaryKey<-lookup.CSISvariableNameToPrimaryKey %>%
     filter(FKSchema==DestinationSchema,
            FKTableName==DestinationTable)
@@ -1037,7 +1042,7 @@ get_CSISvariableNameToPrimaryKey<-function(DestinationSchema,
     lookup.CSISvariableNameToPrimaryKey<-  lookup.CSISvariableNameToPrimaryKey %>% dplyr::filter(RepeatCount==1 | toupper(PKTableName)==toupper(PKColumnCode))
   }
   lookup.CSISvariableNameToPrimaryKey$SourceVariableName<-paste("[",lookup.CSISvariableNameToPrimaryKey$SourceVariableName,"]",sep="")
-  lookup.CSISvariableNameToPrimaryKey<-translate_name(lookup.CSISvariableNameToPrimaryKey)%>%group_by()%>%
+  lookup.CSISvariableNameToPrimaryKey<-translate_name(lookup.CSISvariableNameToPrimaryKey,path=path)%>%group_by()%>%
     select(-SourceVariableName)
   if("Pair" %in% colnames(lookup.CSISvariableNameToPrimaryKey))
     lookup.CSISvariableNameToPrimaryKey<-lookup.CSISvariableNameToPrimaryKey[
@@ -1060,20 +1065,22 @@ create_foreign_key_assigments<-function(Schema,
                                         suppress_insert=FALSE,
                                         suppress_update=TRUE,
                                         skip_list=NULL,
-                                        file="NameConversion.csv"){
-  table_file<-file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))
-  if (file.exists(file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))))
-    table_file<-file.path(dir,paste(Schema,".",TableName,".table.sql",sep=""))
-  else if (file.path(dir,paste(Schema,"_",TableName,".txt",sep="")))
-    table_file<-file.path(dir,paste(Schema,"_",TableName,".txt",sep=""))
+                                        file="NameConversion.csv",
+                                        path=""){
+  table_file<-file.path(path,dir,paste(Schema,".",TableName,".table.sql",sep=""))
+  if (file.exists(file.path(path,dir,paste(Schema,".",TableName,".table.sql",sep=""))))
+    table_file<-file.path(path,dir,paste(Schema,".",TableName,".table.sql",sep=""))
+  else if (file.exists(file.path(path,dir,paste(Schema,"_",TableName,".txt",sep=""))))
+    table_file<-file.path(path,dir,paste(Schema,"_",TableName,".txt",sep=""))
   else stop("Table file not found")
   
   MergeTable.df<-read_create_table(table_file,dir=NULL)
-  MergeTable.df<-translate_name(MergeTable.df,file=file)
+  MergeTable.df<-translate_name(MergeTable.df,file=file,path=path)
   
   #Limit it to just cases where the variable type is changing
   lookup.CSISvariableNameToPrimaryKey<-get_CSISvariableNameToPrimaryKey(DestinationSchema,
-                                                                        DestinationTable)%>%
+                                                                        DestinationTable,
+                                                                        path)%>%
     select(-IsDroppedNameField)#-SourcePairName,
   
   
@@ -1097,7 +1104,8 @@ create_foreign_key_assigments<-function(Schema,
                                          suppress_select=suppress_select,
                                          suppress_alter=suppress_alter,
                                          suppress_insert=suppress_insert,
-                                         suppress_update=suppress_update)
+                                         suppress_update=suppress_update,
+                                         path=path)
     if(!is.null(ncol(output))){
       singlecol<-output[,1]
       if(ncol(output)>1)
@@ -1115,10 +1123,10 @@ create_foreign_key_assigments<-function(Schema,
 }
 
 
-match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate=TRUE,insert=FALSE,dir="ImportAids\\"){
+match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate=TRUE,insert=FALSE,dir="ImportAids\\",path=""){
   #******Importing into Voter_VoterList_2016_07_14.txt
   NewTableType.df<-read_create_table(paste(NewSchema,".",NewTable,sep=""),dir=dir)
-  NewTableType.df<-translate_name(NewTableType.df)
+  NewTableType.df<-translate_name(NewTableType.df,path=path)
   
   #Sync up with the VID Table
   TargetTableType.df<-read_create_table(paste(TargetSchema,".",TargetTable,sep=""),dir=dir)

@@ -1,0 +1,298 @@
+---
+title: "FPDS_delta_to_SQL_server"
+author: "Greg Sanders"
+date: "2025-12-06"
+output: html_document
+---
+#Setup
+```{r setup, include=FALSE}
+source("..//scripts//SQLimportTools.r")
+library(tidyverse)
+library(askpass)
+library(odbc)
+library(DBI)
+path=".."
+```
+
+This next sections updates:
+* Lookup-Table repository ImportAids/ETL_PrimaryKeyList.csv
+* Lookup-Table repository ImportAids/ETL_ForeignKeyList.csv
+
+### Update key files
+
+```{r key_file_update}
+if(!exists("login"))
+  login<-askpass("Please enter the login account")
+if(!exists("pwd"))
+  pwd<-askpass("Please enter the account password")
+
+
+con <- dbConnect(odbc(),
+                 Driver = "SQL Server",
+                 Server = "vmsqldiig.database.windows.net",
+                 Database = "CSIS360",
+                 UID = login,
+                 PWD =pwd)
+
+common_fields<-c(
+      ",ColumnDataType",
+      ",ColumnLength",
+      ",PKSchemaName",
+      ",PKTableName",
+      ",PKColumnCode",
+      ",PKcolumnCount",
+      ",PKcolumnText"
+      )
+
+pkey_sql<-paste("SELECT  ConstraintName",
+            ",ConstraintType",
+                paste(common_fields,collapse=" "),
+            "FROM ETL.PrimaryKeyList",
+            "order by ConstraintName,PKColumnCode"
+)
+
+pkey<-dbGetQuery(con,  pkey_sql)
+write_csv(pkey,file.path("..","ImportAids","ETL_PrimaryKeyList.csv"),
+                na=c("NULL"))
+
+fkey_sql<-paste("SELECT  ConstraintName",
+            ",ConstraintType",
+             ",FKSchema",
+            ",FKTableName",
+            ",FKColumnName",
+                paste(common_fields,collapse=" "),
+            "FROM ETL.ForeignKeyList",
+            "order by ConstraintName,FKColumnName,ColumnDataType"
+)
+fkey<-dbGetQuery(con,  fkey_sql)
+write_csv(fkey,file.path("..","ImportAids","ETL_ForeignKeyList.csv"),
+                na=c("NULL"))
+
+
+
+```
+
+# Matching FPDSdelta to Contract.FPDS #########
+#Match up ETL.FPDSdelta to Contract.FPDS 
+```{r match, include=FALSE}
+Import.df<-read_create_table("ETL.FPDSdelta.Table.sql",
+                                      dir=file.path(path,"SQL"))
+
+Import.df<-translate_name(Import.df,path=path)#,#file="PostgresNameConversion.csv")#,file="USAspendingNameMirror.csv",
+                          # DestVariableNamefile="USAspendingVariableName.csv")
+
+# Import.df<-translate_name(Import.df,file="USAspendingNameMirror.csv",
+#                           DestVariableNamefile="USAspendingVariableName.csv")
+# write.csv(Import.df,file="Import.csv")
+DestinationTable.df<-read_create_table("Contract.FPDS",
+                                       dir=file.path(path,"SQL"))
+
+
+
+translate_name(DestinationTable.df,test_only=TRUE,path=path)
+
+MergeDestination.df<-merge_source_and_csis_name_tables(Import.df,DestinationTable.df)
+``` 
+
+#####1) Error Checking 
+```{r transfer, include=FALSE}
+#Transfer from ETL.FPDSdelta to Contract.FPDS
+if(nrow(MergeDestination.df[is.na(MergeDestination.df$CSISvariableType)&is.na(MergeDestination.df$IsDroppedNameField),])>1){
+  write.csv(MergeDestination.df[is.na(MergeDestination.df$CSISvariableType)&is.na(MergeDestination.df$IsDroppedNameField),],
+            file="Output/Unmatched_NameConversion.csv",row.names = FALSE)
+  stop("Update ImportAids/NameList.csv using Output/Unmatched_NameConversion.csv")
+}
+DroppedField<-MergeDestination.df %>% filter(IsDroppedNameField)
+fklist<-read.csv(file.path(path,"ImportAids","ETL_ForeignKeyList.csv")) %>% 
+  filter(FKSchema=="Contract" & FKTableName=="FPDS")
+DroppedField$Pair<-gsub("[\\],\\[]","",DroppedField$Pair,perl=T) #https://stackoverflow.com/questions/32041265/how-to-escape-closed-bracket-in-regex-in-r
+DroppedFieldFK<-left_join(DroppedField,fklist,by=c("Pair"="FKColumnName")) %>%filter(is.na(ConstraintName))
+DroppedFieldFK<-DroppedFieldFK  %>% filter(!SourceVariableName %in% c("[USAspending_file_name]"))
+#Drop bit fields now being checked for in Select
+DroppedFieldFK<-DroppedFieldFK  %>% filter(!Pair %in% c("a76action", "clingercohenact", "multiyearcontract", "purchasecardaspaymentmethod"))
+#correction_delete_ind is used for processing the delta file, we do not add it to contract.fpds
+DroppedFieldFK<-DroppedFieldFK  %>% filter(!SourceVariableName %in% c("[correction_delete_ind]","[IsTransferred]","[temp_uei]","[IsOutdatedDuplicate]"))
+if(nrow(DroppedFieldFK>1)){
+  write.csv(DroppedFieldFK,
+            file="Output/NameConversion_Missing_ForeignKey.csv")
+  stop("Missing a foreign key assignment for a code / dropped name field combination")
+}
+rm(DroppedField,DroppedFieldFK,fklist)
+
+#Most are misaligned names 
+#a76action, clingercohenact, multiyearcontract, purchasecardaspaymentmethod are bits
+
+
+MergeDestination.df$IsDroppedNameField[is.na(MergeDestination.df$IsDroppedNameField)]<-FALSE
+
+#Check that all dropped fields correspond with a preserved field
+
+pair_kept<-left_join(MergeDestination.df %>% filter(IsDroppedNameField==TRUE)%>% select(SourceVariableName,SourcePairName),
+                     MergeDestination.df %>% filter(IsDroppedNameField==FALSE) %>% select(SourceVariableName,IsDroppedNameField),
+                     by=c("SourcePairName"="SourceVariableName"))
+#Drop correction_delete_ind as it is unmatched but not kept
+pair_kept<-pair_kept %>% filter(!SourceVariableName %in% c("[correction_delete_ind]","[USAspending_file_name]",
+"[IsTransferred]","[temp_uei]","[IsOutdatedDuplicate]"))
+
+if(any(is.na(pair_kept$IsDroppedNameField))){
+  write.csv(pair_kept %>% filter(is.na(IsDroppedNameField)),file="output//FPDS_delta_dropped_name_without_kept_pair.csv",row.names = FALSE)
+  stop(paste("We drop name field(s) that does not have a corresponding kept code field:\n",
+             paste(pair_kept$SourceVariableName[is.na(pair_kept$IsDroppedNameField)],collapse=", ")))
+  
+}
+rm(pair_kept)
+
+
+#Check for size mismatch
+# View(MergeStage2.df %>% filter(SourceVariableType!=CSISvariableType))
+# MergeStage2.df %>% filter(substr(MergeStage2.df$SourceVariableType,2,6)=="nv")
+
+#Try converts shouldn't be necessary unless there's been a change in contract.fpds
+#That said, the differences in date format mean some will be generated.
+```
+
+##2) The Try_Converts select files  
+
+
+```{r TryConvert}
+TryConvertList<-create_try_converts(MergeDestination.df,"ETL","FPDSdelta"
+                                    ,IncludeAlters=FALSE
+                                    ,Apply_Drop = FALSE
+                                    ,IncludeSingle = FALSE
+                                    ,IncludeMultiple = TRUE)
+if(!is.null(TryConvertList))
+  write(TryConvertList,file.path(path,"Output","FPDSdeltaTryConvertList.txt"))
+#Then the alters.
+TryConvertList<-create_try_converts(MergeDestination.df,"ETL","FPDSdelta"
+                                    ,IncludeAlters=TRUE
+                                    ,IncludeSingle = FALSE
+                                    ,IncludeMultiple = FALSE
+                                    ,Apply_Drop = TRUE
+                                    )
+if(!is.null(TryConvertList))
+  write(TryConvertList,file.path(path,"Output","FPDSdeltaAlterColumnList.txt"))
+# write_delim(MergeDestination.df %>% select(SourceVariableName,SourceVariableType,CSISvariableType)%>%
+#         mutate(SourceVariableType=ifelse(!is.na(CSISvariableType),CSISvariableType,SourceVariableType),
+#                comma=",") %>%
+#         select(-CSISvariableType),file.path(path,"Output","FPDSdeltaCreateTable.txt"),delim = " ")
+#Create Foreign Key Assignments
+# undebug(get_CSISvariableNameToPrimaryKey)
+
+
+```
+
+##3) Create missing foreign key assignments#####
+
+
+```{r ForeignKey}
+# debug(create_foreign_key_assigments)
+# Skip list for select
+skip_list<-c("[unique_award_key]",
+             "[contract_award_unique_key]",
+             "[contract_transaction_unique_key]",
+             "[CSIStransactionID]",
+             "[legal_entity_country_code]",#Handled via chain insert manually written
+             "[awardee_or_recipient_uei]",
+             "[ultimate_parent_uei]",
+             "[recipient_country_code]",
+             "[recipient_country_name]",
+             "[awardee_or_recipient_legal]",
+             "[vendor_doing_as_business_n]",
+             ) #Handled via chain insert manually written
+
+# undebug(create_foreign_key_assigments)
+select_missing_code <- create_foreign_key_assigments("ETL",
+                                        "FPDSdelta",
+                                        "Contract",
+                                        "FPDS",
+                                        dir="SQL",
+                              suppress_alter = TRUE,
+                              suppress_insert = TRUE,
+                              skip_list = skip_list,
+                              file="NameConversion.csv",
+                                        path=path) 
+write(select_missing_code,
+      file=file.path(path,"Output","ETL_FPDSdelta_select_foreign_key.txt"), 
+      append=FALSE)  
+
+skip_list<-c("[unique_award_key]",
+             "[CSIStransactionID]",
+             "[legal_entity_country_code]",#Handled via chain insert manually written
+             "[awardee_or_recipient_uei]",
+             "[ultimate_parent_uei]",
+             "[recipient_country_name]",
+             "") 
+# debug(convert_field_to_foreign_key)
+
+input_missing_code <- create_foreign_key_assigments("ETL",
+                                                     "FPDSdelta",
+                                                    "Contract",
+                                                    "FPDS",
+                                                     dir="SQL",
+                                                     suppress_select = TRUE,
+                                                    suppress_alter = TRUE,
+                                                    suppress_update= TRUE,
+                                                    skip_list = skip_list,
+                                                    file="NameConversion.csv",
+                                                    path=path
+                                                    )
+
+write(input_missing_code,
+      file=file.path(path,"Output","ETL_FPDSdelta_input_foreign_key.txt"),  
+      append=FALSE) 
+
+```
+
+#####4) Count Empties
+```{r Empties}
+
+#Create the code to count empty rows by variable.
+count_list<-count_empties(Import.df,"ETL","FPDSdelta")
+write(count_list,file.path(path,"Output","ETL_FPDSdelta_count_empties.txt"))
+```
+
+##5) Inserts into destination####
+
+```{r Inserts}
+
+InsertList<-create_insert(MergeDestination.df,
+                         "ETL",
+                         "FPDSdelta",
+                         "Contract",
+                         "FPDS",
+                         DateType=120,
+                         FPDS=TRUE)
+write(InsertList,file.path(path,"Output","ETL_FPDSdelta_insert_destination.txt"))
+
+
+#Create Compare Values (double checking that column matches are good)
+colnames(MergeDestination.df)
+MergeDestination.df %>% filter(SourceVariableType!=CSISvariableType)
+
+```
+
+##6) Compare and update destination#####
+```{r CompareUpdate}
+compare_list<-create_compare_cols(MergeDestination.df,
+                                "ETL",
+                                "FPDSdelta",
+                                "Contract",
+                                "FPDS",
+                                source_primary_key="detached_award_proc_unique",
+                                target_primary_key="contract_transaction_unique_key",
+                                drop_unmatched=TRUE)
+write(compare_list,file.path(path,"Output","ETL_FPDSdelta_compare_destination.txt"))
+
+
+#Create Updates
+update_list<-create_update_FPDS(MergeDestination.df,
+  "ETL",
+  "FPDSdelta",
+  "Contract",
+  "FPDS",
+  DateType=101,
+  drop_name=TRUE)
+write(update_list,file.path(path,"Output","ETL_FPDSdelta_update_destination.txt"))
+MergeDestination.df %>% filter(substr(CSISvariableType,2,3) %in% c("NV","nv")) %>% select(SourceVariableName)
+substr(MergeDestination.df$CSISvariableType,2,3)
+```

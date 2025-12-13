@@ -236,5 +236,5 @@ SUM(CASE WHEN t.[total_outlayed_amount_for_overall_award]=s.[total_outlayed_amou
 SUM(CASE WHEN t.[initial_report_date]=s.[initial_report_date] THEN 1 WHEN t.[initial_report_date] IS NULL AND s.[initial_report_date] IS NULL THEN 1 ELSE 0 END) AS [initial_report_date],
 SUM(CASE WHEN t.[agencyid]=s.[agency_id] THEN 1 WHEN t.[agencyid] IS NULL AND s.[agency_id] IS NULL THEN 1 ELSE 0 END) AS [agency_id]
 FROM Contract.FPDS as T
-INNER Join ErrorLogging.FPDSdelta as S
+INNER Join ETL.FPDSdelta as S
 ON s.detached_award_proc_unique=t.contract_transaction_unique_key

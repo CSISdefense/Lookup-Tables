@@ -35,8 +35,3 @@ REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
 GO
 ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdjusted] CHECK CONSTRAINT [FK__FPDSgovMa__CSISt__2E279491]
 GO
-ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdjusted]  WITH CHECK ADD  CONSTRAINT [fk_ErrorLogging_FPDSgovManuallyAdjusted] FOREIGN KEY([CSIStransactionID])
-REFERENCES [Contract].[CSIStransactionID] ([CSIStransactionID])
-GO
-ALTER TABLE [ErrorLogging].[FPDSgovManuallyAdjusted] CHECK CONSTRAINT [fk_ErrorLogging_FPDSgovManuallyAdjusted]
-GO

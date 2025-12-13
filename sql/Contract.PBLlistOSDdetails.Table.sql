@@ -16,11 +16,6 @@ CREATE TABLE [Contract].[PBLlistOSDdetails](
 GO
 ALTER TABLE [Contract].[PBLlistOSDdetails] ADD  CONSTRAINT [DF__PBLlistOS__IsTot__54624C12]  DEFAULT ((0)) FOR [IsTotal]
 GO
-ALTER TABLE [Contract].[PBLlistOSDdetails]  WITH NOCHECK ADD  CONSTRAINT [FK__PBLlistOS__CSISc__5556704B] FOREIGN KEY([CSIScontractID])
-REFERENCES [Contract].[CSIScontractID] ([CSIScontractID])
-GO
-ALTER TABLE [Contract].[PBLlistOSDdetails] CHECK CONSTRAINT [FK__PBLlistOS__CSISc__5556704B]
-GO
 ALTER TABLE [Contract].[PBLlistOSDdetails]  WITH NOCHECK ADD  CONSTRAINT [FK__PBLlistOS__CSISi__564A9484] FOREIGN KEY([CSISidvpiidID])
 REFERENCES [Contract].[CSISidvpiidID] ([CSISidvpiidID])
 GO
