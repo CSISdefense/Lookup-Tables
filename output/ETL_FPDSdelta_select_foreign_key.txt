@@ -1625,28 +1625,6 @@ GROUP BY fk.[organizational_type]
 ORDER BY fk.[organizational_type]
 
 
---List new [contract_transaction_unique_key] for insertion into Contract.contract_transaction_unique_key
-SELECT fk.[contract_transaction_unique_key],
-'Contract.contract_transaction_unique_key' as PrimaryKeyTable
-FROM ETL.FPDSdelta as fk
-LEFT OUTER JOIN Contract.contract_transaction_unique_key as pk
-On pk.contract_transaction_unique_key=fk.[contract_transaction_unique_key]
-WHERE pk.contract_transaction_unique_key is NULL
-GROUP BY fk.[contract_transaction_unique_key]
-ORDER BY fk.[contract_transaction_unique_key]
-
-
---List new [contract_award_unique_key] for insertion into Contract.contract_award_unique_key
-SELECT fk.[contract_award_unique_key],
-'Contract.contract_award_unique_key' as PrimaryKeyTable
-FROM ETL.FPDSdelta as fk
-LEFT OUTER JOIN Contract.contract_award_unique_key as pk
-On pk.contract_award_unique_key=fk.[contract_award_unique_key]
-WHERE pk.contract_award_unique_key is NULL
-GROUP BY fk.[contract_award_unique_key]
-ORDER BY fk.[contract_award_unique_key]
-
-
 --List new [recipient_uei] for insertion into Vendor.UEI
 SELECT fk.[recipient_uei],
 'Vendor.UEI' as PrimaryKeyTable

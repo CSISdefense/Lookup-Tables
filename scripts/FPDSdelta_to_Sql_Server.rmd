@@ -161,7 +161,7 @@ TryConvertList<-create_try_converts(MergeDestination.df,"ETL","FPDSdelta"
                                     ,IncludeSingle = FALSE
                                     ,IncludeMultiple = TRUE)
 if(!is.null(TryConvertList))
-  write(TryConvertList,file.path(path,"Output","FPDSdeltaTryConvertList.txt"))
+  write(TryConvertList,file.path(path,"Output","ETL_FPDSdelta_TryConvertList.txt"))
 #Then the alters.
 TryConvertList<-create_try_converts(MergeDestination.df,"ETL","FPDSdelta"
                                     ,IncludeAlters=TRUE
@@ -170,7 +170,7 @@ TryConvertList<-create_try_converts(MergeDestination.df,"ETL","FPDSdelta"
                                     ,Apply_Drop = TRUE
                                     )
 if(!is.null(TryConvertList))
-  write(TryConvertList,file.path(path,"Output","FPDSdeltaAlterColumnList.txt"))
+  write(TryConvertList,file.path(path,"Output","ETL_FPDSdelta_AlterColumnList.txt"))
 # write_delim(MergeDestination.df %>% select(SourceVariableName,SourceVariableType,CSISvariableType)%>%
 #         mutate(SourceVariableType=ifelse(!is.na(CSISvariableType),CSISvariableType,SourceVariableType),
 #                comma=",") %>%
@@ -197,7 +197,7 @@ skip_list<-c("[unique_award_key]",
              "[recipient_country_code]",
              "[recipient_country_name]",
              "[awardee_or_recipient_legal]",
-             "[vendor_doing_as_business_n]",
+             "[vendor_doing_as_business_n]"
              ) #Handled via chain insert manually written
 
 # undebug(create_foreign_key_assigments)
