@@ -6,7 +6,7 @@ editor_options:
     wrap: 72
 ---
 
-# Whole database imports from monthly delta files to Errorlogging.FPDSdelta
+# Whole database imports from monthly delta files to ETL.FPDSdelta
 
 ## 1) Setup
 
@@ -30,7 +30,7 @@ needs to be imported. (Note you'll need to have already unzipped the
 delta file to create this folder). The code chunk below looks like this:
 `r deltadir\<-"FY(All)\_All_Contracts_Delta_20250906"`
 
-### 1.3B) Have access to the SQL login and password.
+### 1.C) Have access to the SQL login and password.
 
 I recommend keeping it in a password manager.
 
@@ -59,13 +59,13 @@ if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
 } else{
   stop("USAspending-local dir location unknown")
 }
-deltadir<-"FY(All)_All_Contracts_Delta_20250906"
+deltadir<-"FY(All)_All_Contracts_Delta_20251006"
 
 
-EXEC ErrorLogging.SP_LastModifiedDateHistory
+# EXEC ETL.SP_LastModifiedDateHistory
 ```
 
-#### 2) Import from flatfiles to R
+## 2) Import from flatfiles to R
 
 Running the next several line will read the unzipped delta files into r
 and then saves then as RDA files. Each file except the last has 1
@@ -86,19 +86,19 @@ for (f in 1:length(file.list)){
 }
 ```
 
-#### 3) Check for Data Mismatches
+## 3) Check for Data Mismatches
 
 This section uploads the monthly delta files to SQL server. Each file
 except the last takes roughly fifteen minutes to check.
 
 There are multiple categories of errors:
 
-read_and_join_experiment(filecheck,"ErrorLogging_FPDS_delta_sizetype.csv",dir
+read_and_join_experiment(filecheck,"ETL_FPDSdelta_sizetype.csv",dir
 
 -   New unrecognized column
 
 Update [ImportAids /
-missing_fpds_delta_matches.csv](https://github.com/CSISdefense/Lookup-Tables/blob/master/ImportAids/ErrorLogging_FPDS_delta_sizetype.csv)
+missing_FPDSdelta_matches.csv](https://github.com/CSISdefense/Lookup-Tables/blob/master/ImportAids/ETL_FPDSdelta_sizetype.csv)
 
 -   Size of character columns. Multiple columns may fail this as once
     and this is the most common form of errors.
@@ -112,12 +112,12 @@ View(t %\>% filter (destinationtype %in% c("varchar","nvarchar") & maxlen>varcha
 
 This must be fixed in at least two places:
 
--   Import Aids "ErrorLogging_FPDS_delta_sizetype.csv"
+-   Import Aids "ETL_FPDSdelta_sizetype.csv"
 
--   In SQL Server in the "ErrorLogging"."FPDSdelta" table
+-   In SQL Server in the "ETL"."FPDSdelta" table
 
 ``` sql
-alter table errorlogging.fpdsdelta
+alter table ETL.fpdsdelta
 alter column [column name] varchar([new size]) 
 ```
 
@@ -163,8 +163,8 @@ for (f in 1:length(file.list)){
     filecheck$maxlen[c]<-max(sapply(fd[,filecheck$colname[c]],nchar),na.rm=TRUE)
   }
   filecheck$importtype<-sapply(fd,class)
-  t<-read_and_join_experiment(filecheck,"ErrorLogging_FPDS_delta_sizetype.csv",directory="ImportAids//",skip_check_var = "varcharsize",
-                              path="offline",missing_file = "output//missing_fpds_delta_matches.csv")
+  t<-read_and_join_experiment(filecheck,"ETL_FPDSdelta_sizetype.csv",directory="ImportAids//",skip_check_var = "varcharsize",
+                              path="offline",missing_file = "output//missing_FPDSdelta_matches.csv")
   # t$varcharsize<-text_to_number(t$varcharsize)
   if(nrow(t %>% filter (destinationtype %in% c("varchar","nvarchar") & maxlen>varcharsize))>0){
     View(t %>% filter (destinationtype %in% c("varchar","nvarchar") & maxlen>varcharsize))
@@ -229,7 +229,7 @@ for (f in 1:length(file.list)){
 
 ```
 
-### 4) Upload from R to SQL server
+## 4) Upload from R to SQL server
 
 This section uploads the monthly delta files to SQL server. Each file
 takes between a half hour and an hour to upload per file. Separating
@@ -287,7 +287,7 @@ for (f in 1:length(file.list)){
       
       print(c("Upload Current Start:",start,"Next Start:",end+1, nrow(fd_filtered),format(Sys.time(), "%c")))
       dbAppendTable(conn = vmcon, 
-                    name = SQL('"ErrorLogging"."FPDSdelta"'), 
+                    name = SQL('"ETL"."FPDSdelta"'), 
                     value = fd_filtered)  ## x is any data frame
       #https://stackoverflow.com/questions/66864660/r-dbi-sql-server-dbwritetable-truncates-rows-field-types-parameter-does-not-w
     }
