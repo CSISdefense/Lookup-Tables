@@ -65,28 +65,12 @@ deltadir<-"FY(All)_All_Contracts_Delta_20251006"
 # EXEC ETL.SP_LastModifiedDateHistory
 ```
 
-## 2) Import from flatfiles to R
+## 2) Import flat files and check for Data Mismatches
 
 Running the next several line will read the unzipped delta files into r
 and then saves then as RDA files. Each file except the last has 1
 million rows and will take roughly 5 minutes per file in zip.
 
-```{r import_to_r}
-file.list<-list.files(file.path(path,deltadir))
-file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".csv"]
-
-#This should be quite fast, roughly 5 minutes per file.
-#Import
-for (f in 1:length(file.list)){
-  print(c(deltadir,f,"Read Start", format(Sys.time(), "%c")))
-  fd<-read_csv(file.path(path,deltadir,file.list[f]), guess_max = 10000000)
-  print(c(deltadir,f,"Read Finish", format(Sys.time(), "%c")))
-  save_file=paste0(substr(file.list[f],1,nchar(file.list)-4),".rda")
-  save(fd,file=file.path(path,deltadir,save_file))
-}
-```
-
-## 3) Check for Data Mismatches
 
 This section uploads the monthly delta files to SQL server. Each file
 except the last takes roughly fifteen minutes to check.
@@ -144,14 +128,23 @@ alter column [column name] varchar([new size])
     -   `r Unknown destination type [destination type]`
 
 
-```{r Mismatch Check}
+```{r import_to_r}
 file.list<-list.files(file.path(path,deltadir))
-file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rda"]
+file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".csv"]
 
-
+#This should be quite fast, roughly 5 minutes per file.
+#Import
 for (f in 1:length(file.list)){
-  load(file.path(path,deltadir,file.list[f]))
-  fd<-as.data.frame(fd)
+    save_file=paste0(substr(file.list[f],1,nchar(file.list)-4),".rda")
+  if(file.exists(file.path(path,deltadir,save_file))){
+    print(c("Skipping ",deltadir,f, "because rda already exiests","%c"))
+    skip
+  }
+  print(c(deltadir,f,"Read Start", format(Sys.time(), "%c")))
+  fd<-read_csv(file.path(path,deltadir,file.list[f]), guess_max = 10000000)
+  print(c(deltadir,f,"Read Finish", format(Sys.time(), "%c")))
+  
+    fd<-as.data.frame(fd)
 
   print(c("File",file.list[f],"Error Checking Start", format(Sys.time(), "%c")))
   print(summary(factor(fd$correction_delete_ind)))
@@ -224,13 +217,17 @@ for (f in 1:length(file.list)){
   if(any(!t$destinationtype %in% handled_destination)){
     stop(paste("Unknown destination type ",t$destinationtype[!t$destinationtype %in% handled_destination]))
   }
-  save(fd,file=file.path(path,deltadir,file.list[f]))
+  
+  save(fd,file=file.path(path,deltadir,save_file))
   print(c("File",file.list[f],"Error Checking Stop", format(Sys.time(), "%c")))
 }
+  
+
 
 ```
 
-## 4) Upload from R to SQL server
+
+## 3) Upload from R to SQL server
 
 This section uploads the monthly delta files to SQL server. Each file
 takes between a half hour and an hour to upload per file. Separating
