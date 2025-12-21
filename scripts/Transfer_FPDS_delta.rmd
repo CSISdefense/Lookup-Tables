@@ -224,6 +224,7 @@ for (f in 1:length(file.list)){
   if(any(!t$destinationtype %in% handled_destination)){
     stop(paste("Unknown destination type ",t$destinationtype[!t$destinationtype %in% handled_destination]))
   }
+  save(fd,file=file.path(path,deltadir,file.list[f]))
   print(c("File",file.list[f],"Error Checking Stop", format(Sys.time(), "%c")))
 }
 
