@@ -65,7 +65,7 @@ deltadir<-"FY(All)_All_Contracts_Delta_20251006"
 # EXEC ETL.SP_LastModifiedDateHistory
 ```
 
-## 2) Import flat files and check for Data Mismatches
+## 2) Import flat files and check for data mismatches
 
 Running the next several line will read the unzipped delta files into r
 and then saves then as RDA files. Each file except the last has 1
@@ -230,24 +230,13 @@ for (f in 1:length(file.list)){
 ## 3) Upload from R to SQL server
 
 This section uploads the monthly delta files to SQL server. Each file
-takes between a half hour and an hour to upload per file. Separating
-this from step 3 is less efficient, but means uploads will not be
+takes between a half hour and two hours to upload. Separating
+this from step 2 is less efficient, but means uploads will not be
 interrupted mid process by the need to fix column mismatches.
 
-
-First upload attempt, before the NaN errors, was 100k rows in a about 12
-minutes, or about 2 hours per file.\
-I started hitting OBDC upload errors with no details, so I was planning
-to shrink down the interval. After discover the NaN import bug, where
-character columns exclusively NAN or NULL were treated as "not a number"
-numerics, I accidentally restarted runs with a 25 row interval. I did
-switch to 25k when rerunning last night, but first it failed for a new
-reason. "Sat Jun 21 21:56:12 2025"
+The 25k interval is due to hitting  OBDC upload errors with no details
 `Error: nanodbc/nanodbc.cpp:4616: 08S01: [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionWrite (send()).  [Microsoft][ODBC SQL Server Driver][DBNETLIB]General network error. Check your network documentation.`
 `Error occurs again on file 13 Error: nanodbc/nanodbc.cpp:4616: 08S01: [Microsoft][ODBC SQL Server Driver][DBNETLIB]ConnectionWrite (send()).  [Microsoft][ODBC SQL Server Driver][DBNETLIB]General network error. Check your network documentation.`
-To my surprise, when restarting with a 25k interval, the first file
-completed from 800 to 829, or about 30 minutes per.
-
 
 #### Past upload time log:
 
@@ -259,7 +248,7 @@ completed from 800 to 829, or about 30 minutes per.
 for (f in 1:length(file.list)){
   load(file.path(path,deltadir,file.list[f]))
   fd<-as.data.frame(fd)
-  print(c("File",file.list[f],"Error Checking Start", format(Sys.time(), "%c")))
+  print(c("File",file.list[f],"Upload Start", format(Sys.time(), "%c")))
   vmcon <- dbConnect(odbc(),
                      Driver = "SQL Server",
                      Server = "vmsqldiig.database.windows.net",
