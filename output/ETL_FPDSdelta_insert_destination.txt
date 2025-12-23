@@ -278,7 +278,7 @@ INSERT INTO Contract.FPDS
 [recipient_fax_number],
 [primary_place_of_performance_country_code],
 [primary_place_of_performance_city_name],
-Convert([varchar](26), [primary_place_of_performance_county_name]),
+[primary_place_of_performance_county_name],
 [primary_place_of_performance_state_code],
 [primary_place_of_performance_zip_4],
 [prime_award_transaction_place_of_performance_cd_current],

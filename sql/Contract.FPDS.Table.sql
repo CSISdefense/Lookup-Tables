@@ -233,7 +233,7 @@ CREATE TABLE [Contract].[FPDS](
 	[idv_type_code] [varchar](1) NULL,
 	[parent_award_type_code] [varchar](1) NULL,
 	[parent_award_single_or_multiple_code] [varchar](1) NULL,
-	[primary_place_of_performance_county_name] [varchar](26) NULL,
+	[primary_place_of_performance_county_name] [varchar](30) NULL,
 	[indian_tribe_federally_recognized] [bit] NULL,
 	[other_minority_owned_business] [bit] NULL,
 	[community_developed_corporation_owned_firm] [bit] NULL,
@@ -375,7 +375,7 @@ CREATE NONCLUSTERED INDEX [ix_Contract_FPDS_csiscontractid_labeling] ON [Contrac
 )
 INCLUDE([agencyid],[piid],[idvagencyid],[idvpiid],[CSIStransactionID]) WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
-CREATE UNIQUE NONCLUSTERED INDEX [ix_contract_FPDS_csistranscationID] ON [Contract].[FPDS]
+CREATE UNIQUE NONCLUSTERED INDEX [ix_Contract_FPDS_csistransactionID] ON [Contract].[FPDS]
 (
 	[CSIStransactionID] ASC
 )

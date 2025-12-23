@@ -1,7 +1,4 @@
 ALTER TABLE ETL.FPDSdelta
-ALTER COLUMN [primary_place_of_performance_county_name] [varchar](26)
-
-ALTER TABLE ETL.FPDSdelta
 ALTER COLUMN [CSISmodifiedDate] [datetime]
 
 ALTER TABLE ETL.FPDSdelta

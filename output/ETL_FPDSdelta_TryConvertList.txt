@@ -6,10 +6,3 @@ SELECT
 		nullif([CSIScreatedDate],'') is not null,1,0)) as [CSIScreatedDate]
 	FROM ETL.FPDSdelta
 
---Varchar to varchar group check. Note you have to remove an extraneous comma from the first item. 
-SELECT
- ,iif([primary_place_of_performance_county_name]>26,[primary_place_of_performance_county_name],NULL) as [primary_place_of_performance_county_name] 
-FROM (SELECT
- 	,max(len([primary_place_of_performance_county_name])) as [primary_place_of_performance_county_name] 
-	FROM  ETL . FPDSdelta ) as ml
-
