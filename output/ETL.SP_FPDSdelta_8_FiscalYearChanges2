@@ -1,0 +1,38 @@
+﻿====================================================
+Starting ETL.SP_FPDSdelta_8_FiscalYearChanges
+Start Time: 2025-12-23 12:15:07
+Total record to process: 2842885
+====================================================
+8A) insert into Errorlogging.fpdsfiscalyearchange start
+2025-12-23 12:15:07.317
+
+8A) insert into Errorlogging.fpdsfiscalyearchange end
+2025-12-23 12:20:14.280
+
+8B) Update into Errorlogging.fpdsfiscalyearchange start
+2025-12-23 12:20:14.280
+
+8B) Update into Errorlogging.fpdsfiscalyearchange end
+2025-12-23 12:20:17.543
+
+8C) Delete into Errorlogging.fpdsfiscalyearchange start
+2025-12-23 12:20:17.543
+
+8C) Delete into Errorlogging.fpdsfiscalyearchange end
+2025-12-23 12:20:19.290
+
+8D) Delete into Errorlogging.fpdsfiscalyearchange start
+2025-12-23 12:20:19.290
+
+8D) Delete into Errorlogging.fpdsfiscalyearchange end
+2025-12-23 12:21:41.573
+
+ 
+====================================================
+ETL.SP_FPDSdelta_8_FiscalYearChanges COMPLETE
+====================================================
+Total Rows Processed: 2842885
+Total Duration: 6 minutes
+Average Speed: 473814 rows/minute
+End Time: 2025-12-23 12:21:41
+====================================================

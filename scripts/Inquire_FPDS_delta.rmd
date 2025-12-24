@@ -1,0 +1,90 @@
+---
+title: "Import FPDS delta files"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Whole database imports from monthly delta files to ETL.FPDSdelta
+
+## 1) Setup
+
+This should run very quickly, but you will need to take steps 1.A-1.C
+\### 1.A) Add your USAspending-local folder if needed.
+
+If this is your first time importing a file on this computer, copy and
+paste two of the directory specifying lines and change both lines to
+match your USAspending-local folder. The code chunk below looks like
+this:
+
+``` r
+} else if(dir.exists("C:\\Users\\grego\\Repos\\USAspending-local\\")) {  
+path\<-"C:\\Users\\grego\\Repos\\USAspending-local\\"  
+```
+
+### 1.B) Unzip the delta file and provide the directory name
+
+**Every time**, update the deltadir variable to the month that next
+needs to be imported. (Note you'll need to have already unzipped the
+delta file to create this folder). The code chunk below looks like this:
+`r deltadir\<-"FY(All)\_All_Contracts_Delta_20250906"`
+
+### 1.C) Have access to the SQL login and password.
+
+I recommend keeping it in a password manager.
+
+```{r setup}
+library(dplyr)
+library(tidyr)
+library(tidyverse)
+library(csis360)
+library(readr)
+library(sqldf)
+library(odbc)
+library(askpass)
+library(DBI)
+
+if (!exists("ctu"))
+  ctu<-askpass("Please enter the contract_transaction_unique_key")
+
+if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
+  path<-"C:\\Users\\grego\\Repositories\\USAspending-local\\"
+} else if(dir.exists("D:\\Users\\Greg\\Repositories\\USAspending-local\\")) {
+  path<-"D:\\Users\\Greg\\Repositories\\USAspending-local\\"
+} else if(dir.exists("F:\\Users\\Greg\\Repositories\\USAspending-local\\")) {
+  path<-"F:\\Users\\Greg\\Repositories\\USAspending-local\\"
+} else if(dir.exists("C:\\Users\\grego\\Repos\\USAspending-local\\")) {
+  path<-"C:\\Users\\grego\\Repos\\USAspending-local\\"
+} else{
+  stop("USAspending-local dir location unknown")
+}
+deltadir<-"FY(All)_All_Contracts_Delta_20251006"
+
+
+# EXEC ETL.SP_LastModifiedDateHistory
+```
+
+## Pull all entries that have the CTU
+
+
+
+```{r import_to_r}
+file.list<-list.files(file.path(path,deltadir))
+file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rda"]
+
+#This should be quite fast, roughly 5 minutes per file.
+#Import
+
+match<-fd %>% filter(FALSE)
+
+for (f in 1:length(file.list)){
+  load(file.path(path,deltadir,file.list[f]))
+    match<-rbind(match,
+          fd %>% filter(contract_transaction_unique_key==ctu))
+}
+  
+
+
+```
+
