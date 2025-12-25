@@ -80,11 +80,11 @@ match<-fd %>% filter(FALSE)
 
 for (f in 1:length(file.list)){
   load(file.path(path,deltadir,file.list[f]))
-    match<-rbind(match,
-          fd %>% filter(contract_transaction_unique_key==ctu))
+  match<-rbind(match,
+               fd %>% filter(contract_transaction_unique_key==ctu))
 }
   
 
-
+match
 ```
 

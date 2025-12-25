@@ -59,7 +59,7 @@ if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
 } else{
   stop("USAspending-local dir location unknown")
 }
-deltadir<-"FY(All)_All_Contracts_Delta_20251006"
+deltadir<-"FY(All)_All_Contracts_Delta_20251106"
 
 
 # EXEC ETL.SP_LastModifiedDateHistory
@@ -245,6 +245,9 @@ The 25k interval is due to hitting  OBDC upload errors with no details
     to 12:43
 
 ```{r uploadtoSQL}
+file.list<-list.files(file.path(path,deltadir))
+file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rda"]
+
 for (f in 1:length(file.list)){
   load(file.path(path,deltadir,file.list[f]))
   fd<-as.data.frame(fd)
