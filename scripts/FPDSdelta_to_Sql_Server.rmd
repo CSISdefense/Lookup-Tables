@@ -181,23 +181,33 @@ if(!is.null(TryConvertList))
 
 ```
 
-##3) Create missing foreign key assignments#####
+##3) Updates for ETL.Sp_FPDSdelta_6_SelectUnmatchedForeignKeys
 
 
 ```{r ForeignKey}
 # debug(create_foreign_key_assigments)
 # Skip list for select
-skip_list<-c("[unique_award_key]",
+skip_list<-c(#Contract and transaction unique identifiers handled elsewhere
              "[contract_award_unique_key]",
              "[contract_transaction_unique_key]",
              "[CSIStransactionID]",
-             "[legal_entity_country_code]",#Handled via chain insert manually written
+             #Country codes handled via chain insert manually written
+             "[legal_entity_country_code]",
+             "[recipient_country_code]",
+             #Vendor.UEI fields
              "[awardee_or_recipient_uei]",
              "[ultimate_parent_uei]",
-             "[recipient_country_code]",
-             "[recipient_country_name]",
+             "[recipient_parent_uei]",
+             "recipient_uei",
+             # Vendor.VendorName fields
+             "[recipient_name]",
+             "[recipient_doing_business_as_name]",
              "[awardee_or_recipient_legal]",
-             "[vendor_doing_as_business_n]"
+             "[vendor_doing_as_business_n]",
+             "[recipient_name_raw]",
+             "[recipient_parent_name_raw]",
+             #Project.MajorProgramCode
+             "[MajorProgramCode]"
              ) #Handled via chain insert manually written
 
 # undebug(create_foreign_key_assigments)
@@ -215,9 +225,18 @@ write(select_missing_code,
       file=file.path(path,"Output","ETL_FPDSdelta_select_foreign_key.txt"), 
       append=FALSE)  
 
-skip_list<-c("[unique_award_key]",
-             "[CSIStransactionID]",
-             "[legal_entity_country_code]",#Handled via chain insert manually written
+```
+
+##4) Updates for ETL.SP_FPDSdelta_7_InsertAndUpdateForeignKeys
+
+```{r InsertUnmatched}
+
+skip_list<-c( "[CSIStransactionID]",
+             "[contract_award_unique_key]",
+             "[contract_transaction_unique_key]",
+             #Handled via chain insert manually written
+             "[legal_entity_country_code]",
+             #Handled by dyad insert
              "[awardee_or_recipient_uei]",
              "[ultimate_parent_uei]",
              "[recipient_country_name]",
@@ -243,7 +262,7 @@ write(input_missing_code,
 
 ```
 
-#####4) Count Empties
+#####4) Updates for SP_FPDSdelta_9_CountEmpties
 ```{r Empties}
 
 #Create the code to count empty rows by variable.
@@ -251,27 +270,7 @@ count_list<-count_empties(Import.df,"ETL","FPDSdelta")
 write(count_list,file.path(path,"Output","ETL_FPDSdelta_count_empties.txt"))
 ```
 
-##5) Inserts into destination####
-
-```{r Inserts}
-
-InsertList<-create_insert(MergeDestination.df,
-                         "ETL",
-                         "FPDSdelta",
-                         "Contract",
-                         "FPDS",
-                         DateType=120,
-                         FPDS=TRUE)
-write(InsertList,file.path(path,"Output","ETL_FPDSdelta_insert_destination.txt"))
-
-
-#Create Compare Values (double checking that column matches are good)
-colnames(MergeDestination.df)
-MergeDestination.df %>% filter(SourceVariableType!=CSISvariableType)
-
-```
-
-##6) Compare and update destination#####
+##6) Updates for SP_FPDSdelta10_UpdateRows
 ```{r CompareUpdate}
 compare_list<-create_compare_cols(MergeDestination.df,
                                 "ETL",
@@ -296,3 +295,24 @@ write(update_list,file.path(path,"Output","ETL_FPDSdelta_update_destination.txt"
 MergeDestination.df %>% filter(substr(CSISvariableType,2,3) %in% c("NV","nv")) %>% select(SourceVariableName)
 substr(MergeDestination.df$CSISvariableType,2,3)
 ```
+
+##6) Updates for SP_FPDSdelta11_InsertRows
+
+```{r Inserts}
+
+InsertList<-create_insert(MergeDestination.df,
+                         "ETL",
+                         "FPDSdelta",
+                         "Contract",
+                         "FPDS",
+                         DateType=120,
+                         FPDS=TRUE)
+write(InsertList,file.path(path,"Output","ETL_FPDSdelta_insert_destination.txt"))
+
+
+#Create Compare Values (double checking that column matches are good)
+colnames(MergeDestination.df)
+MergeDestination.df %>% filter(SourceVariableType!=CSISvariableType)
+
+```
+

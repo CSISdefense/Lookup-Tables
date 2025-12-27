@@ -715,26 +715,6 @@ On pk.OrganizationalType=fk.[organizational_type]
 WHERE pk.OrganizationalType is NULL and fk.[organizational_type] is not null
 GROUP BY fk.[organizational_type]
 
--- Insert new [contract_transaction_unique_key] into Contract.contract_transaction_unique_key
-INSERT INTO Contract.contract_transaction_unique_key
-(contract_transaction_unique_key)
-SELECT fk.[contract_transaction_unique_key]
-FROM ETL.FPDSdelta as fk
-LEFT OUTER JOIN Contract.contract_transaction_unique_key as pk
-On pk.contract_transaction_unique_key=fk.[contract_transaction_unique_key]
-WHERE pk.contract_transaction_unique_key is NULL and fk.[contract_transaction_unique_key] is not null
-GROUP BY fk.[contract_transaction_unique_key]
-
--- Insert new [contract_award_unique_key] into Contract.contract_award_unique_key
-INSERT INTO Contract.contract_award_unique_key
-(contract_award_unique_key)
-SELECT fk.[contract_award_unique_key]
-FROM ETL.FPDSdelta as fk
-LEFT OUTER JOIN Contract.contract_award_unique_key as pk
-On pk.contract_award_unique_key=fk.[contract_award_unique_key]
-WHERE pk.contract_award_unique_key is NULL and fk.[contract_award_unique_key] is not null
-GROUP BY fk.[contract_award_unique_key]
-
 -- Insert new [recipient_uei] into Vendor.UEI
 INSERT INTO Vendor.UEI
 (UEI)

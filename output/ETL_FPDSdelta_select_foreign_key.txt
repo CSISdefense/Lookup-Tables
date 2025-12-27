@@ -198,28 +198,6 @@ GROUP BY fk.[recipient_duns]
 ORDER BY fk.[recipient_duns]
 
 
---List new [recipient_name] for insertion into Vendor.VendorName
-SELECT fk.[recipient_name],
-'Vendor.VendorName' as PrimaryKeyTable
-FROM ETL.FPDSdelta as fk
-LEFT OUTER JOIN Vendor.VendorName as pk
-On pk.vendorname=fk.[recipient_name]
-WHERE pk.vendorname is NULL
-GROUP BY fk.[recipient_name]
-ORDER BY fk.[recipient_name]
-
-
---List new [recipient_doing_business_as_name] for insertion into Vendor.VendorName
-SELECT fk.[recipient_doing_business_as_name],
-'Vendor.VendorName' as PrimaryKeyTable
-FROM ETL.FPDSdelta as fk
-LEFT OUTER JOIN Vendor.VendorName as pk
-On pk.vendorname=fk.[recipient_doing_business_as_name]
-WHERE pk.vendorname is NULL
-GROUP BY fk.[recipient_doing_business_as_name]
-ORDER BY fk.[recipient_doing_business_as_name]
-
-
 --List new [recipient_parent_name] for insertion into Vendor.VendorName
 SELECT fk.[recipient_parent_name],
 'Vendor.VendorName' as PrimaryKeyTable
@@ -1634,39 +1612,6 @@ On pk.UEI=fk.[recipient_uei]
 WHERE pk.UEI is NULL
 GROUP BY fk.[recipient_uei]
 ORDER BY fk.[recipient_uei]
-
-
---List new [recipient_parent_uei] for insertion into Vendor.UEI
-SELECT fk.[recipient_parent_uei],
-'Vendor.UEI' as PrimaryKeyTable
-FROM ETL.FPDSdelta as fk
-LEFT OUTER JOIN Vendor.UEI as pk
-On pk.UEI=fk.[recipient_parent_uei]
-WHERE pk.UEI is NULL
-GROUP BY fk.[recipient_parent_uei]
-ORDER BY fk.[recipient_parent_uei]
-
-
---List new [recipient_name_raw] for insertion into Vendor.VendorName
-SELECT fk.[recipient_name_raw],
-'Vendor.VendorName' as PrimaryKeyTable
-FROM ETL.FPDSdelta as fk
-LEFT OUTER JOIN Vendor.VendorName as pk
-On pk.vendorname=fk.[recipient_name_raw]
-WHERE pk.vendorname is NULL
-GROUP BY fk.[recipient_name_raw]
-ORDER BY fk.[recipient_name_raw]
-
-
---List new [recipient_parent_name_raw] for insertion into Vendor.VendorName
-SELECT fk.[recipient_parent_name_raw],
-'Vendor.VendorName' as PrimaryKeyTable
-FROM ETL.FPDSdelta as fk
-LEFT OUTER JOIN Vendor.VendorName as pk
-On pk.vendorname=fk.[recipient_parent_name_raw]
-WHERE pk.vendorname is NULL
-GROUP BY fk.[recipient_parent_name_raw]
-ORDER BY fk.[recipient_parent_name_raw]
 
 
 --List new [prime_award_transaction_recipient_county_fips_code] for insertion into Location.County_FIPS_Code
