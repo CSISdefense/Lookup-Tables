@@ -34,6 +34,10 @@ delta file to create this folder). The code chunk below looks like this:
 
 I recommend keeping it in a password manager.
 
+install.packages("numbers")
+
+
+
 ```{r setup}
 library(dplyr)
 library(tidyr)
@@ -44,6 +48,9 @@ library(sqldf)
 library(odbc)
 library(askpass)
 library(DBI)
+library(numbers)
+
+
 
 login<-askpass("Please enter the SQL login account")
 pwd<-askpass("Please enter the SQL account password")
@@ -56,10 +63,11 @@ if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
   path<-"F:\\Users\\Greg\\Repositories\\USAspending-local\\"
 } else if(dir.exists("C:\\Users\\grego\\Repos\\USAspending-local\\")) {
   path<-"C:\\Users\\grego\\Repos\\USAspending-local\\"
-} else{
+} else if(dir.exists("C:/Users/CBarrie/OneDrive/Documents/USAspending-local/")) {
+  path <- "C:/Users/CBarrie/OneDrive/Documents/USAspending-local/"   
   stop("USAspending-local dir location unknown")
 }
-deltadir<-"FY(All)_All_Contracts_Delta_20251106"
+deltadir<-"FY(All)_All_Contracts_Delta_20260108"
 
 
 # EXEC ETL.SP_LastModifiedDateHistory
