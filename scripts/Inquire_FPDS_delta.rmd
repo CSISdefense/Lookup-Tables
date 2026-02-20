@@ -45,8 +45,6 @@ library(odbc)
 library(askpass)
 library(DBI)
 
-if (!exists("ctu"))
-  ctu<-askpass("Please enter the contract_transaction_unique_key")
 
 if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
   path<-"C:\\Users\\grego\\Repositories\\USAspending-local\\"
@@ -67,19 +65,23 @@ deltadir<-"FY(All)_All_Contracts_Delta_20251006"
 
 ## Pull all entries that have the CTU
 
-
-
 ```{r import_to_r}
+
+  ctu<-askpass("Please enter the contract_transaction_unique_key")
+
+
 file.list<-list.files(file.path(path,deltadir))
 file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rda"]
 
 #This should be quite fast, roughly 5 minutes per file.
 #Import
 
-match<-fd %>% filter(FALSE)
+
 
 for (f in 1:length(file.list)){
   load(file.path(path,deltadir,file.list[f]))
+  if (!exists("match"))
+    match<-fd %>% filter(contract_transaction_unique_key==ctu)
   match<-rbind(match,
                fd %>% filter(contract_transaction_unique_key==ctu))
 }
@@ -87,4 +89,26 @@ for (f in 1:length(file.list)){
 
 match
 ```
+## Pull all deleted entries
+```{r import_to_r}
 
+
+file.list<-list.files(file.path(path,deltadir))
+file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rda"]
+
+#This should be quite fast, roughly 5 minutes per file.
+#Import
+
+
+
+for (f in 1:length(file.list)){
+  load(file.path(path,deltadir,file.list[f]))
+  if (!exists("match"))
+    deleted<-fd %>% filter(correction_delete_ind=='D')
+  deleted<-rbind(match,
+               fd %>% filter(correction_delete_ind=='D'))
+}
+  
+
+deleted
+```

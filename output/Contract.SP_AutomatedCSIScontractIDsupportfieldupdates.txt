@@ -1,6 +1,5 @@
-﻿Start SP_AutomatedCSISIDupdates]
-2026-01-02 13:20:17.090
+﻿Start SP_AutomatedCSISIDsupportfieldupdates
+2026-01-14 19:51:47.420
 
-PrimeAwardFiscalYear	MissingCSIScontractID	MinOfCSIScreatedDate	MaxOfCSIScreatedDate
-
-
+Msg 8649, Level 16, State 1, Procedure Contract.SP_AutomatedCSISIDsupportfieldupdates, Line 135 [Batch Start Line 139]
+The query has been canceled because the estimated cost of this query (47196) exceeds the configured threshold of 3. Contact the system administrator.
