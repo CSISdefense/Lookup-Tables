@@ -46,6 +46,11 @@ library(askpass)
 library(DBI)
 
 
+if(!exists("login"))
+  login<-askpass("Please enter the SQL login account")
+if(!exists("pwd"))
+  pwd<-askpass("Please enter the SQL account password")
+
 if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
   path<-"C:\\Users\\grego\\Repositories\\USAspending-local\\"
 } else if(dir.exists("D:\\Users\\Greg\\Repositories\\USAspending-local\\")) {
@@ -57,9 +62,12 @@ if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
 } else{
   stop("USAspending-local dir location unknown")
 }
-deltadir<-"FY(All)_All_Contracts_Delta_20251006"
+deltadir<-"FY(All)_All_Contracts_Delta_20251206"
 
 
+
+file.list<-list.files(file.path(path,deltadir))
+file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rda"]
 # EXEC ETL.SP_LastModifiedDateHistory
 ```
 
@@ -70,19 +78,17 @@ deltadir<-"FY(All)_All_Contracts_Delta_20251006"
   ctu<-askpass("Please enter the contract_transaction_unique_key")
 
 
-file.list<-list.files(file.path(path,deltadir))
-file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rda"]
-
 #This should be quite fast, roughly 5 minutes per file.
 #Import
 
 
-
+match<-NULL
 for (f in 1:length(file.list)){
   load(file.path(path,deltadir,file.list[f]))
-  if (!exists("match"))
+  if (is.null(match))
     match<-fd %>% filter(contract_transaction_unique_key==ctu)
-  match<-rbind(match,
+  else 
+    match<-rbind(match,
                fd %>% filter(contract_transaction_unique_key==ctu))
 }
   
@@ -92,21 +98,45 @@ match
 ## Pull all deleted entries
 ```{r import_to_r}
 
+  vmcon <- dbConnect(odbc(),
+                     Driver = "SQL Server",
+                     Server = "vmsqldiig.database.windows.net",
+                     Database = "CSIS360",
+                     UID = login,
+                     PWD =pwd)
+  
+untransferred_sql<-paste(		"select top 100 fd.action_date_fiscal_year,",
+	"isnull(fd.IsTransferred,0) as IsTransferred,",
+	"fd.correction_delete_ind,",
+	"fd.contract_transaction_unique_key,",
+	"ctu.CSIStransactionID,",
+	"fd.last_modified_date as source_last_modified_date,",
+	"f.last_modified_date as target_last_modified_date",
+"from ETL.FPDSdelta fd ",
+	"left outer join contract.contract_transaction_unique_key ctu ",
+	"on fd.contract_transaction_unique_key=ctu.contract_transaction_unique_key",
+"left outer join contract.FPDS f",
+	"on ctu.CSIStransactionID =f.CSIStransactionID",
+"left outer join etl.FPDSdelta_support fds",
+	"on ctu.contract_transaction_unique_key=fds.contract_transaction_unique_key")
 
-file.list<-list.files(file.path(path,deltadir))
-file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".rda"]
 
+#This will take a whie
+untransferred<-dbGetQuery(vmcon,  untransferred_sql)
+
+untransferred<-read.csv("../output/2026_12_06_faileddeletes.csv")
 #This should be quite fast, roughly 5 minutes per file.
 #Import
 
 
-
+match<-NULL
 for (f in 1:length(file.list)){
   load(file.path(path,deltadir,file.list[f]))
-  if (!exists("match"))
-    deleted<-fd %>% filter(correction_delete_ind=='D')
-  deleted<-rbind(match,
-               fd %>% filter(correction_delete_ind=='D'))
+  if (!is.null(match))
+    match<-fd %>% filter(contract_transaction_unique_key %in% untransferred$contract_transaction_unique_key)
+  else
+    match<-rbind(match,
+               fd %>% filter(contract_transaction_unique_key %in% untransferred$contract_transaction_unique_key))
 }
   
 
