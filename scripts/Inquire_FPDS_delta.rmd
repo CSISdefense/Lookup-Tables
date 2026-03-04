@@ -122,7 +122,7 @@ untransferred_sql<-paste(		"select top 100 fd.action_date_fiscal_year,",
 
 
 #This will take a whie
-untransferred<-dbGetQuery(vmcon,  untransferred_sql)
+# untransferred<-dbGetQuery(vmcon,  untransferred_sql)
 
 untransferred<-read.csv("../output/2026_12_06_faileddeletes.csv")
 #This should be quite fast, roughly 5 minutes per file.
@@ -132,7 +132,7 @@ untransferred<-read.csv("../output/2026_12_06_faileddeletes.csv")
 match<-NULL
 for (f in 1:length(file.list)){
   load(file.path(path,deltadir,file.list[f]))
-  if (!is.null(match))
+  if (is.null(match))
     match<-fd %>% filter(contract_transaction_unique_key %in% untransferred$contract_transaction_unique_key)
   else
     match<-rbind(match,
@@ -140,5 +140,5 @@ for (f in 1:length(file.list)){
 }
   
 
-deleted
+match
 ```
