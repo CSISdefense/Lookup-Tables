@@ -1,12 +1,10 @@
 Note that you'll need a local install of Postgres for this to work.
 https://www.postgresql.org/
 
-
 This should hopefully not be routinely necessary because monthly delta files are much faster.
 
-
-Save a complete download of current CTU files. This cn be done in
-Lookup_Tables/SQL/postgres_exploration,sql 
+Save a complete download of current CTU values. This can be done in
+Lookup_Tables/SQL/postgres_exploration.sql 
 
 Or use the code below. 
 SET QUERY_GOVERNOR_COST_LIMIT 0

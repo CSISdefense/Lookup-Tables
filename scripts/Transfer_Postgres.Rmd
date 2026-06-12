@@ -1,5 +1,63 @@
-# Monthly delta database imports from flatfile to Errorlogging.source_procurement_transaction
+---
+title: "Postgrs to SQL Server"
+author: "Greg Sanders"
+date: "2026-06-11"
+output: html_document
+---
 
+Note that you'll need a local install of Postgres for this to work.
+https://www.postgresql.org/
+
+This should hopefully not be routinely necessary because monthly delta files are much faster.
+
+```{r setup, include=FALSE}
+source("..//scripts//SQLimportTools.r")
+library(tidyverse)
+library(askpass)
+library(odbc)
+library(DBI)
+path=".."
+```
+
+
+### Save currrent contract_transaction_unique_key (CTU) values
+Save a complete download of current CTU values. This can be done in
+Lookup_Tables/SQL/postgres_exploration.sql 
+
+
+```{r saveCTU}
+if(!exists("login"))
+  login<-askpass("Please enter the login account")
+if(!exists("pwd"))
+  pwd<-askpass("Please enter the account password")
+
+
+con <- dbConnect(odbc(),
+                 Driver = "SQL Server",
+                 Server = "vmsqldiig.database.windows.net",
+                 Database = "CSIS360",
+                 UID = login,
+                 PWD =pwd)
+
+
+ctu_sql<-paste("select fiscal_year,",
+                "contract_transaction_unique_key,",
+                "csistransactionid,",
+                "last_modified_date",
+                "FROM contract.FPDS",
+                "ORDER BY fiscal_year, contract_transaction_unique_key",
+                collapse=" ")
+
+
+ctu<-dbGetQuery(con,  ctu_sql)
+write_csv(ctu,file.path("..","USAspending-local",paste("contract_fpds_ctu_list_",gsub("-","_",as.character(Sys.Date())),".txt"),
+                na=c("NULL")))
+
+```
+
+
+
+```{r}
 #### Setup #####
 
 
@@ -457,3 +515,4 @@ for (fy in 2004:2005){
   
 # The same format as Contract Award is used, but only agencyID, award_id_piid, and modification_number are filled in, even if additional fields in the key are present in the IDV record; the rest of the fields are recorded as "- NONE-" for unique key purposes, even when present. This follows the unique key model for contract IDVs in FPDS.
 
+```

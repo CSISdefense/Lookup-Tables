@@ -1,18 +1,19 @@
 ---
-title: "Postgres_to_SQL_server"
+title: "Postgrs to SQL Server"
 author: "Greg Sanders"
-date: "2025-12-06"
+date: "2026-06-11"
 output: html_document
 ---
-#Setup
 
 #Setup
+```{r Setup}
 source("scripts//SQLimportTools.r")
 library(tidyverse)
-
+```
 
 ###### Matching Source_procurement_Transaction  to Contract.FPDS #########
 #Match up ETL.source_procurement_transaction to Contract.FPDS 
+```{r Match}
 Import.df<-read_create_table("ETL.source_procurement_transaction.Table.sql",
                                       dir="SQL")
 Import.df<-translate_name(Import.df,file="PostgresNameConversion.csv")
@@ -191,3 +192,4 @@ update_list<-create_update_FPDS(MergeDestination.df,
 write(update_list,"Output/ETL_source_procurement_transaction_update_destination.txt")
 MergeDestination.df %>% filter(substr(CSISvariableType,2,3) %in% c("NV","nv")) %>% select(SourceVariableName)
 substr(MergeDestination.df$CSISvariableType,2,3)
+```
