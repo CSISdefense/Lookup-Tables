@@ -1,4 +1,4 @@
-# Monthly delta datebase imports from flatfile to Errorlogging.source_procurement_transaction
+# Monthly delta database imports from flatfile to Errorlogging.source_procurement_transaction
 
 #### Setup #####
 

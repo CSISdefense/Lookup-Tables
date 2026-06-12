@@ -90,7 +90,7 @@ convert_all_of_type<-function(TargetTable.df,
                               NewType,
                               Schema,
                               TableName,
-                              path=""){
+                              path="."){
   #Limit it to just relevant variables
   TargetTable.df<-TargetTable.df[TargetTable.df$VariableType==OldType,]
   if(nrow(TargetTable.df)==0)
@@ -111,7 +111,7 @@ translate_name<-function(TargetTable.df,
                          test_only=FALSE,
                          file="NameConversion.csv",
                          DestVariableNamefile="CSISvariableName.csv",
-                         path=""
+                         path="."
                          ){
   lookup.NameConversion<-read.csv(file.path(path,"ImportAids",file),
                                   stringsAsFactors = FALSE,
@@ -213,12 +213,13 @@ merge_source_and_csis_name_tables<-function(SourceTable.df,
     SourceTable.df$CSISnullable[is.na(SourceTable.df$CSISnullable)]<-
       SourceTable.df$SourceNullable[is.na(SourceTable.df$CSISnullable)]
   }
-  if(!"IsDroppedNameField" %in% colnames(SourceTable.df))
-    stop("IsDroppedNameField is missing")
-  if(require_CSISvariableName &
-     any(is.na(SourceTable.df$CSISvariableName)&!SourceTable.df$IsDroppedNameField&
-         !is.na(SourceTable.df$IsDroppedNameField))){
-    stop("Unmatched CSISvariableName")
+  if(require_CSISvariableName){
+    if(!"IsDroppedNameField" %in% colnames(SourceTable.df))
+      stop("IsDroppedNameField is missing")
+    if(any(is.na(SourceTable.df$CSISvariableName)&!SourceTable.df$IsDroppedNameField&
+           !is.na(SourceTable.df$IsDroppedNameField))){
+      stop("Unmatched CSISvariableName")
+    }
   }
   
   SourceTable.df
@@ -797,7 +798,7 @@ convert_field_to_foreign_key<-function(FKschema,
                                        suppress_insert=FALSE,
                                        suppress_update=TRUE,
                                        allow_name_mismatch=TRUE,
-                                       path=""){
+                                       path="."){
   
   
   fkTable.df<-get_ForeignKeyList(path)
@@ -977,12 +978,14 @@ convert_field_to_foreign_key<-function(FKschema,
   Output
 }
 
-get_ForeignKeyList<-function(path=""){
+get_ForeignKeyList<-function(path="."){
   if(file.exists(file.path(path,"data","semi_clean","ETL_ForeignKeyList.csv")))
     fk_file<-file.path(path,"data","semi_clean","ETL_ForeignKeyList.csv")
   else if(file.exists(file.path(path,"ImportAids","ETL_ForeignKeyList.csv")))
     fk_file<-file.path(path,"ImportAids","ETL_ForeignKeyList.csv")
-  else stop("File Not Found")
+  else{ warning("Foreign Key List File (ETL_ForeignKeyList.csv) Not Found")
+    return(0)
+  }
   
   
   fk_list<-read.csv(fk_file,
@@ -995,7 +998,7 @@ get_ForeignKeyList<-function(path=""){
 
 get_CSISvariableNameToPrimaryKey<-function(DestinationSchema,
                                            DestinationTable,
-                                           path=""){
+                                           path="."){
   
   
   lookup.CSISvariableNameToPrimaryKey<-get_ForeignKeyList(path)
@@ -1010,7 +1013,7 @@ get_CSISvariableNameToPrimaryKey<-function(DestinationSchema,
   
   #Starting by dropping cases in which case a primary key is a foreign key for a different table.
   #E.g. MailingElectionDate->ElectionDate. In this case, we want MailingElectionDate to match up to the higher level in the
-  #heirarchy, Election.MailingElectionDate. We don't need them to match with the base, Eletion.ElectionDate because everything
+  #heirarchy, Election.MailingElectionDate. We don't need them to match with the base, Election.ElectionDate because everything
   #in Election.MailingElectionDate already is a component of the subsequent table, thanks to the existing foreign key.
   lookup.CSISvariableNameToPrimaryKey<- lookup.CSISvariableNameToPrimaryKey %>%
     dplyr::filter(toupper(FKTableName)!=toupper(FKColumnName))
@@ -1066,7 +1069,7 @@ create_foreign_key_assigments<-function(Schema,
                                         suppress_update=TRUE,
                                         skip_list=NULL,
                                         file="NameConversion.csv",
-                                        path=""){
+                                        path="."){
   table_file<-file.path(path,dir,paste(Schema,".",TableName,".table.sql",sep=""))
   if (file.exists(file.path(path,dir,paste(Schema,".",TableName,".table.sql",sep=""))))
     table_file<-file.path(path,dir,paste(Schema,".",TableName,".table.sql",sep=""))
@@ -1080,9 +1083,10 @@ create_foreign_key_assigments<-function(Schema,
   #Limit it to just cases where the variable type is changing
   lookup.CSISvariableNameToPrimaryKey<-get_CSISvariableNameToPrimaryKey(DestinationSchema,
                                                                         DestinationTable,
-                                                                        path)%>%
-    select(-IsDroppedNameField)#-SourcePairName,
-  
+                                                                        path)
+  if("IsDroppedNameField" %in% colnames(lookup.CSISvariableNameToPrimaryKey))
+    lookup.CSISvariableNameToPrimaryKey<-lookup.CSISvariableNameToPrimaryKey %>%
+      select(-IsDroppedNameField)#-SourcePairName,
   
   MergeTable.df<-left_join(MergeTable.df,lookup.CSISvariableNameToPrimaryKey,
                            by="CSISvariableName")#Note this is case sensitive which isn't ideal.
@@ -1123,18 +1127,23 @@ create_foreign_key_assigments<-function(Schema,
 }
 
 
-match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate=TRUE,insert=FALSE,dir="ImportAids\\",path=""){
+match_two_tables<-function(NewSchema,NewTable,TargetSchema,TargetTable,translate=TRUE,insert=FALSE,dir="ImportAids\\",path=".",require_CSISvariableName=TRUE){
   #******Importing into Voter_VoterList_2016_07_14.txt
   NewTableType.df<-read_create_table(paste(NewSchema,".",NewTable,sep=""),dir=dir)
   NewTableType.df<-translate_name(NewTableType.df,path=path)
   
   #Sync up with the VID Table
   TargetTableType.df<-read_create_table(paste(TargetSchema,".",TargetTable,sep=""),dir=dir)
-  MergeTable.df<-merge_source_and_csis_name_tables(NewTableType.df,TargetTableType.df)
+  MergeTable.df<-merge_source_and_csis_name_tables(NewTableType.df,TargetTableType.df,require_CSISvariableName=require_CSISvariableName)
   TryConvertList<-create_try_converts(MergeTable.df,NewSchema,NewTable)
-  if(length(TryConvertList)!=0){
+  try_convert_file<-paste("Output//",NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","try_convert.txt",sep="")
+  if(TryConvertList[1]=="0"){
+    if(file.exists(try_convert_file))
+      file.remove(try_convert_file)
+    }
+  else {
     write(TryConvertList,
-          paste("Output//",NewSchema,"_",NewTable,"_to_",TargetSchema,"_",TargetTable,"_","try_convert.txt",sep=""), 
+          try_convert_file, 
           append=FALSE)
   }
   if(insert==TRUE){

@@ -62,7 +62,7 @@ if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
 } else{
   stop("USAspending-local dir location unknown")
 }
-deltadir<-"FY(All)_All_Contracts_Delta_20251206"
+deltadir<-"FY(All)_All_Contracts_Delta_20251106"
 
 
 
