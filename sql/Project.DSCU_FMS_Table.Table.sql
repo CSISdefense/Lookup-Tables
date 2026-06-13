@@ -1,0 +1,48 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [Project].[DSCU_FMS_Table](
+	[fiscal_year] [smallint] NULL,
+	[contract_transaction_unique_key] [varchar](154) NULL,
+	[contract_award_unique_key] [varchar](120) NULL,
+	[signeddate] [date] NULL,
+	[effectivedate] [date] NULL,
+	[currentcompletiondate] [datetime2](7) NULL,
+	[ultimatecompletiondate] [datetime2](7) NULL,
+	[UnmodifiedUltimateDurationCategory] [varchar](12) NOT NULL,
+	[CurrentDurationCategory] [varchar](12) NOT NULL,
+	[obligatedAmount] [decimal](19, 4) NULL,
+	[numberOfActions] [bigint] NULL,
+	[obligatedAmount_25USD] [float] NULL,
+	[TypeOfContractPricingText] [nvarchar](255) NULL,
+	[TypeOfContractPricing5Category] [nvarchar](50) NULL,
+	[PricingUCA] [varchar](20) NULL,
+	[recipient_uei] [varchar](12) NULL,
+	[recipient_parent_uei] [varchar](12) NULL,
+	[vendorname] [nvarchar](150) NULL,
+	[VendorSize] [varchar](34) NOT NULL,
+	[VendorSize_5] [varchar](9) NOT NULL,
+	[piid] [varchar](50) NULL,
+	[usaspending_permalink] [varchar](150) NULL,
+	[ContractingCustomer] [nvarchar](50) NULL,
+	[ContractingIsDefense] [bit] NULL,
+	[ContractingSubCustomer] [nvarchar](50) NULL,
+	[ContractingAgencyText] [nvarchar](255) NULL,
+	[ContractingOfficeName] [nvarchar](255) NULL,
+	[Simple] [varchar](8) NULL,
+	[ProductOrServiceArea] [varchar](28) NULL,
+	[ProductOrServiceCodeText] [varchar](255) NULL,
+	[PlatformPortfolio] [varchar](30) NULL,
+	[majorprogramcode] [varchar](104) NOT NULL,
+	[idv_type_Name] [varchar](255) NULL,
+	[IsUndefinitizedAction] [bit] NULL,
+	[IsFMS] [int] NOT NULL,
+	[ContractSize] [varchar](11) NOT NULL,
+	[transaction_description] [varchar](4035) NULL,
+	[OMB25_Deflator] [float] NULL,
+	[Duration_Days] [int] NULL,
+	[AvgObligationPerAction] [decimal](38, 23) NULL,
+	[CompetitionClassification] [varchar](78) NULL
+) ON [PRIMARY]
+GO

@@ -59,9 +59,9 @@ CREATE NONCLUSTERED INDEX [ix_Contract_contract_award_unique_key_CSIScontractID]
 	[CSIScontractID] ASC
 )WITH (STATISTICS_NORECOMPUTE = OFF, DROP_EXISTING = OFF, ONLINE = OFF, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 GO
-ALTER TABLE [Contract].[contract_award_unique_key] ADD  DEFAULT ((0)) FOR [IsDerived]
+ALTER TABLE [Contract].[contract_award_unique_key] ADD  CONSTRAINT [DF__contract___IsDerived_Default_0]  DEFAULT ((0)) FOR [IsDerived]
 GO
-ALTER TABLE [Contract].[contract_award_unique_key] ADD  DEFAULT ((0)) FOR [IsFPDSerror]
+ALTER TABLE [Contract].[contract_award_unique_key] ADD  CONSTRAINT [DF__contract___IsFPDSerror_Default_0]  DEFAULT ((0)) FOR [IsFPDSerror]
 GO
 ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD  CONSTRAINT [contract_contract_award_unique_key_parent_contract_award_unique_key] FOREIGN KEY([parent_contract_award_unique_key])
 REFERENCES [Contract].[contract_award_unique_key] ([contract_award_unique_key])
@@ -100,7 +100,7 @@ REFERENCES [Contract].[CSIScontractID] ([CSIScontractID])
 GO
 ALTER TABLE [Contract].[contract_award_unique_key] CHECK CONSTRAINT [fk_contract_award_unique_key_CSIScontractID]
 GO
-ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD  CONSTRAINT [chk_contract_contract_award_unique_key_concatenation] CHECK  (((((((('CONT_'+case when [award_or_idv_flag]='AWARD' then 'AWD' else 'IDV' end)+'_')+coalesce(nullif([award_id_piid],''),'-NONE-'))+'_')+[agencyID])+case when [award_or_idv_flag]='AWARD' then (('_'+coalesce(nullif([parent_award_id_piid],''),'-NONE-'))+'_')+coalesce(nullif([parent_award_agency_id],''),'-NONE-') else '' end)=[contract_award_unique_key]))
+ALTER TABLE [Contract].[contract_award_unique_key]  WITH CHECK ADD  CONSTRAINT [chk_contract_contract_award_unique_key_concatenation] CHECK  (((((((('CONT_'+case when [award_or_idv_flag]='AWARD' then 'AWD' else 'IDV' end)+'_')+coalesce(nullif([award_id_piid],''),'-NONE-'))+'_')+[agencyID])+case when [award_or_idv_flag]='AWARD' then (('_'+coalesce(nullif([parent_award_id_piid],''),'-NONE-'))+'_')+coalesce(nullif([parent_award_agency_id],''),'-NONE-') else '' end)=[contract_award_unique_key] OR (((((('CONT_'+case when [award_or_idv_flag]='AWARD' then 'AWD' else 'IDV' end)+'_')+coalesce(nullif([award_id_piid],''),'-NONE-'))+'_')+[agencyID])+case when [award_or_idv_flag]='AWARD' then (('_'+coalesce(nullif([parent_award_id_piid],''),'NA'))+'_')+coalesce(nullif([parent_award_agency_id],''),'NA') else '' end)=[contract_award_unique_key]))
 GO
 ALTER TABLE [Contract].[contract_award_unique_key] CHECK CONSTRAINT [chk_contract_contract_award_unique_key_concatenation]
 GO
