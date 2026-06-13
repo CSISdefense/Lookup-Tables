@@ -5,17 +5,27 @@ date: "2026-06-11"
 output: html_document
 ---
 
+#### Setup #####
 Note that you'll need a local install of Postgres for this to work.
 https://www.postgresql.org/
 
 This should hopefully not be routinely necessary because monthly delta files are much faster.
 
 ```{r setup, include=FALSE}
-source("..//scripts//SQLimportTools.r")
+
+
+
+
+library(dplyr)
+library(tidyr)
 library(tidyverse)
-library(askpass)
+library(csis360)
+library(readr)
+library(sqldf)
 library(odbc)
+library(askpass)
 library(DBI)
+source("..//scripts//SQLimportTools.r")
 path=".."
 ```
 
@@ -24,6 +34,8 @@ path=".."
 Save a complete download of current CTU values. This can be done in
 Lookup_Tables/SQL/postgres_exploration.sql 
 
+11:20 pm import start
+file downloaded by 12:04
 
 ```{r saveCTU}
 if(!exists("login"))
@@ -44,32 +56,29 @@ ctu_sql<-paste("select fiscal_year,",
                 "contract_transaction_unique_key,",
                 "csistransactionid,",
                 "last_modified_date",
+               "total_outlayed_amount_for_overall_award",
                 "FROM contract.FPDS",
                 "ORDER BY fiscal_year, contract_transaction_unique_key",
                 collapse=" ")
 
 
-ctu<-dbGetQuery(con,  ctu_sql)
-write_csv(ctu,file.path("..","USAspending-local",paste("contract_fpds_ctu_list_",gsub("-","_",as.character(Sys.Date())),".txt"),
-                na=c("NULL")))
+sql_fpds<-dbGetQuery(con,  ctu_sql)
+
+sql_fpds$last_modified_date<-as.Date(sql_fpds$last_modified_date,format="%Y-%m%-%d 00:00:00.0000000")
+
+sql_fpds<-sql_fpds %>% filter(contract_transaction_unique_key!="NULL" &
+                                !is.na(contract_transaction_unique_key))
+
+save(sql_fpds,file=file.path("..","..","USAspending-local",paste("contract_fpds_ctu_list_",
+                                                            gsub("-","_",as.character(Sys.Date())),".rda",
+                                                       sep="")))
 
 ```
 
 
 
 ```{r}
-#### Setup #####
 
-
-library(dplyr)
-library(tidyr)
-library(tidyverse)
-library(csis360)
-library(readr)
-library(sqldf)
-library(odbc)
-library(askpass)
-library(DBI)
 
 #Download was way faster than I expected. Took roughly 2m for 4.9m rows. 
 # 3 minutes per 10k rows, so about 3h18m for 6.6m rows.
@@ -109,9 +118,7 @@ postgresdir<-"Postgres_2025_04_08"
 #Ideally this should pull down automatically. 
 sql_fpds<-read_delim(file.path(path,"contract_fpds_ctu_list_2025_04_13.txt"),delim="\t",col_types="iciT") #T or c for last_modified?
   #necessary?
-sql_fpds$last_modified_date<-as.Date(sql_fpds$last_modified_date,format="%Y-%m%-%d 00:00:00.0000000")
 
-sql_fpds<-sql_fpds %>% filter(contract_transaction_unique_key!="NULL")
 
 ##Took roughly 24 hours
 for (fy in 1962:2025){

@@ -11,7 +11,7 @@ editor_options:
 ## 1) Setup
 
 This should run very quickly, but you will need to take steps 1.A-1.C
-\### 1.A) Add your USAspending-local folder if needed.
+### 1.A) Add your USAspending-local folder if needed.
 
 If this is your first time importing a file on this computer, copy and
 paste two of the directory specifying lines and change both lines to
@@ -34,9 +34,6 @@ delta file to create this folder). The code chunk below looks like this:
 
 I recommend keeping it in a password manager.
 
-install.packages("numbers")
-
-
 
 ```{r setup}
 library(dplyr)
@@ -51,9 +48,10 @@ library(DBI)
 library(numbers)
 
 
-
-login<-askpass("Please enter the SQL login account")
-pwd<-askpass("Please enter the SQL account password")
+if(!exists("login"))
+  login<-askpass("Please enter the SQL login account")
+if(!exists("pwd"))
+  pwd<-askpass("Please enter the SQL account password")
 
 if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
   path<-"C:\\Users\\grego\\Repositories\\USAspending-local\\"
@@ -67,10 +65,8 @@ if(dir.exists("C:\\Users\\grego\\Repositories\\USAspending-local\\")){
   path <- "C:/Users/CBarrie/OneDrive/Documents/USAspending-local/"   
   stop("USAspending-local dir location unknown")
 }
-deltadir<-"FY(All)_All_Contracts_Delta_20260108"
+deltadir<-"FY(All)_All_Contracts_Delta_20260206"
 
-
-# EXEC ETL.SP_LastModifiedDateHistory
 ```
 
 ## 2) Import flat files and check for data mismatches
@@ -143,11 +139,11 @@ file.list<-file.list[substr(file.list,nchar(file.list)-3,nchar(file.list))==".cs
 #This should be quite fast, roughly 5 minutes per file.
 #Import
 for (f in 1:length(file.list)){
-    save_file=paste0(substr(file.list[f],1,nchar(file.list)-4),".rda")
+  save_file=paste0(substr(file.list[f],1,nchar(file.list)-4),".rda")
   if(file.exists(file.path(path,deltadir,save_file))){
-    print(c("Skipping ",deltadir,f, "because rda already exiests","%c"))
-    skip
+    print(c("Skipping ",deltadir,f, "because rda already exists","%c"))
   }
+  else{
   print(c(deltadir,f,"Read Start", format(Sys.time(), "%c")))
   fd<-read_csv(file.path(path,deltadir,file.list[f]), guess_max = 10000000)
   print(c(deltadir,f,"Read Finish", format(Sys.time(), "%c")))
@@ -228,6 +224,7 @@ for (f in 1:length(file.list)){
   
   save(fd,file=file.path(path,deltadir,save_file))
   print(c("File",file.list[f],"Error Checking Stop", format(Sys.time(), "%c")))
+  }
 }
   
 
