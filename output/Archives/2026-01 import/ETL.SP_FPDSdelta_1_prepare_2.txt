@@ -1,0 +1,2 @@
+﻿Msg 102, Level 15, State 1, Line 156
+Incorrect syntax near '*'.

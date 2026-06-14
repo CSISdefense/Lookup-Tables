@@ -1,0 +1,76 @@
+﻿
+
+====================================================
+Starting ETL.SP_FPDSdelta_8_FiscalYearChanges
+Start Time: 2026-06-13 19:16:44
+Total fiscal year changes to process: 3
+====================================================
+8A) Update into Errorlogging.fpdsfiscalyearchange start
+2026-06-13 19:16:44.943
+
+
+
+8A) Update into Errorlogging.fpdsfiscalyearchange end
+2026-06-13 19:16:46.167
+
+8B) insert into Errorlogging.fpdsfiscalyearchange start
+2026-06-13 19:16:46.167
+
+
+
+8B) insert into Errorlogging.fpdsfiscalyearchange end
+2026-06-13 19:21:14.497
+
+8C) Update into contract.CSIStransactionID start
+2026-06-13 19:21:14.497
+
+
+
+8C) Update into contract.CSIStransactionID end
+2026-06-13 19:21:17.350
+
+8D) Execute ETL.Sp_LogFPDSfiscalYearChange start
+2026-06-13 19:21:17.350
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8D) Execute ETL.Sp_LogFPDSfiscalYearChange end
+2026-06-13 19:22:40.750
+
+8E) Delete into Errorlogging.fpdsfiscalyearchange start
+2026-06-13 19:22:40.750
+
+
+
+8E) Delete into Errorlogging.fpdsfiscalyearchange end
+2026-06-13 19:22:41.820
+
+
+
+ 
+====================================================
+ETL.SP_FPDSdelta_8_FiscalYearChanges COMPLETE
+====================================================
+Total Fiscal Year Changes Present: 3
+Total Duration: 11 minutes
+Average Speed: 0 changes/minute
+End Time: 2026-06-13 19:27:57
+====================================================

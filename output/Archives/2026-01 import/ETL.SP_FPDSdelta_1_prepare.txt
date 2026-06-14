@@ -1,0 +1,83 @@
+﻿
+
+====================================================
+Starting ETL.SP_FPDSdelta_1_Prepare
+Start Time: 2026-06-13 02:33:40
+Total record to process: 1425013
+====================================================
+correction_delete_ind	istransferred	n_rows
+NULL	0	26876
+C	0	1398137
+
+
+
+
+
+
+
+
+
+correction_delete_ind	istransferred	isoutdatedduplicate	n_rows
+NULL	0	0	26876
+C	0	0	1398137
+
+
+
+ctu_n	correction_delete_ind	IsTransferred	IsOutdatedDuplicate	
+26876	NULL	0	0	No Contract.FPDS date
+167571	C	0	0	ETL.FPDSdelta newer
+1230557	C	0	0	Match
+9	C	0	0	No Contract.FPDS date
+
+
+
+contract_transaction_unique_key	correction_delete_ind	fd_last_modified_date	fd_isoutdatedduplicate	fddup_last_modified_date	fddup_isoutdatedduplicate
+7008_4732_70Z0G325FMSPL0001_P00003_GS35F0495Y_0	NULL	2025-12-10 00:00:00.0000000	0	2025-12-10 00:00:00.0000000	0
+7008_4732_70Z0G325FMSPL0001_P00005_GS35F0495Y_0	NULL	2025-12-10 00:00:00.0000000	0	2025-12-10 00:00:00.0000000	0
+7008_4732_70Z0G325FMSPL0001_P00005_GS35F0495Y_0	C	2025-12-10 00:00:00.0000000	0	2025-12-10 00:00:00.0000000	0
+7008_4732_70Z0G325FMSPL0001_P00003_GS35F0495Y_0	C	2025-12-10 00:00:00.0000000	0	2025-12-10 00:00:00.0000000	0
+7008_4732_70Z0G325FMSPL0001_P00001_GS35F0495Y_0	NULL	2025-12-10 00:00:00.0000000	0	2025-12-10 00:00:00.0000000	0
+7008_4732_70Z0G325FMSPL0001_P00001_GS35F0495Y_0	C	2025-12-10 00:00:00.0000000	0	2025-12-10 00:00:00.0000000	0
+
+
+
+
+
+
+
+
+
+
+
+ctu_n	correction_delete_ind	IsTransferred	IsOutdatedDuplicate	
+26876	NULL	0	0	No Contract.FPDS date
+167571	C	0	0	ETL.FPDSdelta newer
+1230557	C	0	0	Match
+9	C	0	0	No Contract.FPDS date
+
+
+
+
+
+
+
+
+
+ 
+Msg 50000, Level 11, State 1, Procedure ETL.SP_FPDSdelta_1_Prepare, Line 1736 [Batch Start Line 156]
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Missing duplicate CTU in Errorlogging.FPDSdelete
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+
+ 
+====================================================
+Prepare Complete COMPLETE
+====================================================
+Total Rows Prepared: 1425013
+Total Duration: 22 minutes
+Average Speed: 64773 rows/minute
+End Time: 2026-06-13 02:55:00
+====================================================
