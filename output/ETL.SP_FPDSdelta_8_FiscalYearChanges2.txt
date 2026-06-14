@@ -1,38 +1,76 @@
-﻿====================================================
-Starting ETL.SP_FPDSdelta_8_FiscalYearChanges
-Start Time: 2025-12-28 01:45:02
-Total record to process: 1669233
+﻿
+
 ====================================================
-8A) insert into Errorlogging.fpdsfiscalyearchange start
-2025-12-28 01:45:02.983
+Starting ETL.SP_FPDSdelta_8_FiscalYearChanges
+Start Time: 2026-06-13 19:16:44
+Total fiscal year changes to process: 3
+====================================================
+8A) Update into Errorlogging.fpdsfiscalyearchange start
+2026-06-13 19:16:44.943
 
-8A) insert into Errorlogging.fpdsfiscalyearchange end
-2025-12-28 01:45:39.020
 
-8B) Update into Errorlogging.fpdsfiscalyearchange start
-2025-12-28 01:45:39.020
 
-8B) Update into Errorlogging.fpdsfiscalyearchange end
-2025-12-28 01:45:41.940
+8A) Update into Errorlogging.fpdsfiscalyearchange end
+2026-06-13 19:16:46.167
 
-8C) Delete into Errorlogging.fpdsfiscalyearchange start
-2025-12-28 01:45:41.940
+8B) insert into Errorlogging.fpdsfiscalyearchange start
+2026-06-13 19:16:46.167
 
-8C) Delete into Errorlogging.fpdsfiscalyearchange end
-2025-12-28 01:45:42.057
 
-8D) Delete into Errorlogging.fpdsfiscalyearchange start
-2025-12-28 01:45:42.057
 
-8D) Delete into Errorlogging.fpdsfiscalyearchange end
-2025-12-28 01:47:05.083
+8B) insert into Errorlogging.fpdsfiscalyearchange end
+2026-06-13 19:21:14.497
+
+8C) Update into contract.CSIStransactionID start
+2026-06-13 19:21:14.497
+
+
+
+8C) Update into contract.CSIStransactionID end
+2026-06-13 19:21:17.350
+
+8D) Execute ETL.Sp_LogFPDSfiscalYearChange start
+2026-06-13 19:21:17.350
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8D) Execute ETL.Sp_LogFPDSfiscalYearChange end
+2026-06-13 19:22:40.750
+
+8E) Delete into Errorlogging.fpdsfiscalyearchange start
+2026-06-13 19:22:40.750
+
+
+
+8E) Delete into Errorlogging.fpdsfiscalyearchange end
+2026-06-13 19:22:41.820
+
+
 
  
 ====================================================
 ETL.SP_FPDSdelta_8_FiscalYearChanges COMPLETE
 ====================================================
-Total Rows Processed: 1669233
-Total Duration: 2 minutes
-Average Speed: 834616 rows/minute
-End Time: 2025-12-28 01:47:05
+Total Fiscal Year Changes Present: 3
+Total Duration: 11 minutes
+Average Speed: 0 changes/minute
+End Time: 2026-06-13 19:27:57
 ====================================================
