@@ -1,0 +1,55 @@
+﻿====================================================
+Starting ETL.SP_Impute_Number_of_Offers_and_IDV_columns, 
+====================================================
+====================================================
+Starting Step A: Update number of offers and IDC fields...
+====================================================
+ 
+
+
+Warning: Null value is eliminated by an aggregate or other SET operation.
+====================================================
+Step A Complete: 430999 rows updated in Contract.Contract_Award_Unique_Key (Duration: 24369 seconds)
+====================================================
+ 
+====================================================
+Starting Step B: IDC and number of offers stats...
+====================================================
+ 
+award_or_idv_flag IsDerived   HasParent   cauofferblank pcauofferblank ppcauofferblank cauidvblank pcauidvblank ppcauidvblank cauoidcblank pcauidcblank ppcauidcblank cauomultiblank pcaumultiblank ppcaumultiblank caucount    pcaucount   nonderivedpcaucount
+----------------- ----------- ----------- ------------- -------------- --------------- ----------- ------------ ------------- ------------ ------------ ------------- -------------- -------------- --------------- ----------- ----------- -------------------
+AWARD             0           0           12937         12937          12937           16849553    16849553     16849553      16849734     16849734     16849734      16849697       16849697       16849697        16849751    0           0
+AWARD             0           1           29478369      30903          30619           63016591    420669       420604        63016591     19185593     19185093      21504143       2994836        2891360         63016591    63016205    62596078
+IDV               0           0           137427        137427         137427          82          82           82            490452       490452       490452        89174          89174          89174           939666      0           0
+IDV               0           1           2119          169            169             32          0            0             33252        33242        33242         4821           104            104             33256       33251       33206
+IDV               1           0           29594         29594          29594           29594       29594        29594         29594        29594        29594         29594          29594          29594           29594       0           0
+
+
+
+Warning: Null value is eliminated by an aggregate or other SET operation.
+====================================================
+Step B Complete: IDC and number of offers stats (Duration: 898 seconds)
+====================================================
+ 
+====================================================
+Starting Step C: IDVs missing idv_type_code...
+====================================================
+ 
+contract_award_unique_key                                                                                                AgencyID awarding_agency_code award_id_piid                                      parent_award_id_piid                               parent_award_agency_id award_or_idv_flag CSIScontractID CSISidvpiidID parent_contract_award_unique_key                                                                                         IsDerived IsFPDSerror numberofoffersreceived idv_type_code typeofidc                                 parent_award_single_or_multiple_code IsAwardIDVdup IsAbove2018constantSimplifedAcquisition250kThreshold IsAbove2018constantCommercialItem7500k IsAbove2018constantMTAthreshold IsAbove2016constantMTAthreshold IsAbove1990constantMTAthreshold IsAbove2018constantCostAccounting2000kThreshold IsAbove2016constantArbitrary1000k IsDefense CostAccountingStandardsClause costorpricingdata solicitationprocedures commercialitemacquisitionprocedures contractingofficerbusinesssizedetermination isforeigngovernment extentcompeted statutoryexceptiontofairopportunity typeofcontractpricing CompetedIsSomeCompetition FairOppIsSomeCompetition AnyCASclause idv_type_code award_or_idv_flag award_type_code multipleorsingleawardidc parent_award_single_or_multiple_code parent_award_type_code contractactiontype
+------------------------------------------------------------------------------------------------------------------------ -------- -------------------- -------------------------------------------------- -------------------------------------------------- ---------------------- ----------------- -------------- ------------- ------------------------------------------------------------------------------------------------------------------------ --------- ----------- ---------------------- ------------- ----------------------------------------- ------------------------------------ ------------- ---------------------------------------------------- -------------------------------------- ------------------------------- ------------------------------- ------------------------------- ----------------------------------------------- --------------------------------- --------- ----------------------------- ----------------- ---------------------- ----------------------------------- ------------------------------------------- ------------------- -------------- ----------------------------------- --------------------- ------------------------- ------------------------ ------------ ------------- ----------------- --------------- ------------------------ ------------------------------------ ---------------------- -----------------------------------------
+
+
+
+====================================================
+Step C Complete: 0 IDCs missing idv_type_code (Duration: 169 seconds)
+====================================================
+ 
+ 
+====================================================
+ETL.SP_Impute_Number_of_Offers_and_IDV_columns
+====================================================
+Total Duration: 424 minutes
+End Time: 2026-06-17 21:02:20
+====================================================
+
+Completion time: 2026-06-17T17:02:21.2799255-04:00
