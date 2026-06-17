@@ -1,0 +1,23 @@
+﻿Start SP_AutomatedCSISIDsupportfieldupdates
+-------------------------------------------
+2026-06-15 16:33:09.843
+
+
+
+Warning: Null value is eliminated by an aggregate or other SET operation.
+SourceTable     NumberofIDs contractactiontype idv_type_code typeofidc   multipleorsingleawardidc numberofoffersreceived MinOfFiscal_Year MaxOfFiscal_Year
+--------------- ----------- ------------------ ------------- ----------- ------------------------ ---------------------- ---------------- ----------------
+IDVmodification 4300368     74022              2081912       1636913     2134476                  NULL                   1962             2025
+IDVpiid         38278246    412616             998883        464212      895496                   638070                 1962             2026
+
+
+
+Warning: Null value is eliminated by an aggregate or other SET operation.
+CSISidvpiidID csiscontractid CSIStransactionID
+------------- -------------- -----------------
+Msg 0, Level 11, State 0, Line 0
+A severe error occurred on the current command.  The results, if any, should be discarded.
+Msg 0, Level 20, State 0, Line 0
+A severe error occurred on the current command.  The results, if any, should be discarded.
+
+Completion time: 2026-06-15T21:03:18.7948964-04:00
