@@ -9,7 +9,7 @@ Starting Step A: Update number of offers and IDC fields...
 
 Warning: Null value is eliminated by an aggregate or other SET operation.
 ====================================================
-Step A Complete: 430999 rows updated in Contract.Contract_Award_Unique_Key (Duration: 24369 seconds)
+Step A Complete: 0 rows updated in Contract.Contract_Award_Unique_Key (Duration: 14142 seconds)
 ====================================================
  
 ====================================================
@@ -28,7 +28,7 @@ IDV               1           0           29594         29594          29594    
 
 Warning: Null value is eliminated by an aggregate or other SET operation.
 ====================================================
-Step B Complete: IDC and number of offers stats (Duration: 898 seconds)
+Step B Complete: IDC and number of offers stats (Duration: 869 seconds)
 ====================================================
  
 ====================================================
@@ -41,15 +41,15 @@ contract_award_unique_key                                                       
 
 
 ====================================================
-Step C Complete: 0 IDCs missing idv_type_code (Duration: 169 seconds)
+Step C Complete: 0 IDCs missing idv_type_code (Duration: 163 seconds)
 ====================================================
  
  
 ====================================================
 ETL.SP_Impute_Number_of_Offers_and_IDV_columns
 ====================================================
-Total Duration: 424 minutes
-End Time: 2026-06-17 21:02:20
+Total Duration: 253 minutes
+End Time: 2026-06-18 01:23:38
 ====================================================
 
-Completion time: 2026-06-17T17:02:21.2799255-04:00
+Completion time: 2026-06-17T21:23:39.5006437-04:00
