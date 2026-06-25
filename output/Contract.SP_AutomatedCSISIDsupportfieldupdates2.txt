@@ -1,0 +1,13 @@
+﻿
+
+
+
+ContractCount	Era	ContractingAgencyIDNull	topContractingOfficeAgencyIDNull	ContractingOfficeID	topContractingOfficeID	PrincipalNAICScodeNull	topPrincipalNAICScodeNull	ProductOrServiceCodeNull	topProductOrServiceCodeNull
+161448	DD350 only	2770	2570	3139	2608	131429	131422	2126	1557
+81443732	Includes FPDS	263622	92414	1179404	146980	1052526	903846	301462	34549
+
+
+
+End SP_AutomatedCSISIDsupportfieldupdates
+2026-06-25 07:54:39.680
+
