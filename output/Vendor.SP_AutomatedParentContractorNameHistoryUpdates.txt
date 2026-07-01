@@ -1,0 +1,15 @@
+﻿START: Insert new FiscalYear–ParentID pairs into ParentContractorNameHistory 2026-06-28 19:18:07.624
+END:   Insert new FiscalYear–ParentID pairs into ParentContractorNameHistory 2026-06-28 19:18:08.007 DURATION_MS=383
+START: Update TopStandardizedVendorName and aggregate obligations 2026-06-28 19:18:08.007
+Warning: Null value is eliminated by an aggregate or other SET operation.
+END:   Update TopStandardizedVendorName and aggregate obligations 2026-06-28 19:18:48.501 DURATION_MS=40494
+START: Backfill CSIS name from previous fiscal year match 2026-06-28 19:18:48.503
+END:   Backfill CSIS name from previous fiscal year match 2026-06-28 19:18:48.572 DURATION_MS=69
+START: Backfill CSIS name from next fiscal year match 2026-06-28 19:18:48.572
+END:   Backfill CSIS name from next fiscal year match 2026-06-28 19:18:48.641 DURATION_MS=69
+START: Set isUniversityorResearchInstitute flag cleanup 2026-06-28 19:18:48.641
+END:   Set isUniversityorResearchInstitute flag cleanup 2026-06-28 19:18:48.646 DURATION_MS=5
+START: Set isenterprise flag cleanup 2026-06-28 19:18:48.646
+END:   Set isenterprise flag cleanup 2026-06-28 19:18:48.649 DURATION_MS=3
+START: Set isgovernment flag cleanup 2026-06-28 19:18:48.649
+END:   Set isgovernment flag cleanup 2026-06-28 19:18:48.655 DURATION_MS=6

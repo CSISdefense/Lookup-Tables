@@ -30,3 +30,5 @@ dictionary/~$PSC April 2025.xlsx
 output/ETL.SP_FPDSdelta_8_FiscalYearChanges_too_big.txt
 
 output/Archives/2026-01 import/ETL.SP_FPDSdelta_8_FiscalYearChanges_too_big.txt
+
+output/Vendor.SP_AutomatedUEIupdates3.txt
