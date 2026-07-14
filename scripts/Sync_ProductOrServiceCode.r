@@ -108,10 +108,12 @@ sqlPSCA<-dbReadTable(con,  name = SQL('"ProductOrServiceCode"."PSCAtransition"')
 
 
 repoAgency<-read_csv("Agency_AgencyID.csv",na = "NULL")
-sqlAgency<-dbReadTable(con,  name = SQL('"FPDSTypeTable"."AgencyID"'))
+sqlAgency<-dbReadTable(con,  name = SQL('"FPDSTypeTable"."AgencyID"')) 
+sqlAgency<-sqlAgency[,!colnames(sqlAgency)%in% "Unseperated"]
+
 
 #New Columns
-newcols<-colnames(sqlAgency)[!colnames(sqlAgency) %in% colnames(repoAgency)]
+newcols<-colnames(sqlAgency)[!colnames(sqlAgency) %in% colnames(repoAgency) ]
 if(length(newcols)>0){
   newcolsAgency<-sqlAgency[,c(newcols,"AgencyID")]
   repoAgency<-left_join(repoAgency, newcolsAgency)
@@ -122,10 +124,16 @@ if(length(newcols)>0){
   newcolsAgency<-repoAgency[,c(newcols,"AgencyID")]
   sqlAgency<-left_join(sqlAgency, newcolsAgency)
 }
-
+write_csv(repoAgency,file = "Agency_AgencyID.csv", na="NULL")
 repoAgency<-rbind(repoAgency,sqlAgency[!sqlAgency$AgencyID %in% repoAgency$AgencyID,])
 repoAgency<-repoAgency[order(repoAgency$AgencyID),]
 write_csv(repoAgency,file = "Agency_AgencyID.csv", na="NULL")
 
 repoAgency<-update_col(repoAgency,sqlAgency,"Customer",primary_key="AgencyID")
+write_csv(repoAgency,file = "Agency_AgencyID.csv", na="NULL")
+
+repoAgency<-update_col(repoAgency,sqlAgency,"SubCustomer",primary_key="AgencyID")
+write_csv(repoAgency,file = "Agency_AgencyID.csv", na="NULL")
+
+repoAgency<-update_col(repoAgency,sqlAgency,"maj_agency_cat",primary_key="AgencyID")
 write_csv(repoAgency,file = "Agency_AgencyID.csv", na="NULL")
