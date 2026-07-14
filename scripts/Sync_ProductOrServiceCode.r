@@ -47,9 +47,9 @@ colnames(repoPSC)[!colnames(repoPSC) %in% colnames(sqlPSC)]
 repoPSC<-rbind(repoPSC,sqlPSC[!sqlPSC$ProductOrServiceCode %in% repoPSC$ProductOrServiceCode,])
 repoPSC<-repoPSC[order(repoPSC$ProductOrServiceCode),]
 
-update_col<-function(repo,sql,colname,fill_SQL_na=TRUE){
+update_col<-function(repo,sql,colname,fill_SQL_na=TRUE,primary_key="ProductOrServiceCode"){
   order<-colnames(repo)
-  sql<-sql[,c(colname,"ProductOrServiceCode")]
+  sql<-sql[,c(colname,primary_key)]
   repo$TemporaryHolder<-repo[,colnames(repo)==colname]
   repo<-repo[,colnames(repo)!=colname]
   repo<-left_join(repo,sql)
@@ -105,3 +105,27 @@ write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
 
 sqlPSCA<-dbReadTable(con,  name = SQL('"ProductOrServiceCode"."PSCAtransition"'))
  
+
+
+repoAgency<-read_csv("Agency_AgencyID.csv",na = "NULL")
+sqlAgency<-dbReadTable(con,  name = SQL('"FPDSTypeTable"."AgencyID"'))
+
+#New Columns
+newcols<-colnames(sqlAgency)[!colnames(sqlAgency) %in% colnames(repoAgency)]
+if(length(newcols)>0){
+  newcolsAgency<-sqlAgency[,c(newcols,"AgencyID")]
+  repoAgency<-left_join(repoAgency, newcolsAgency)
+}
+
+newcols<-colnames(repoAgency)[!colnames(repoAgency) %in% colnames(sqlAgency)]
+if(length(newcols)>0){
+  newcolsAgency<-repoAgency[,c(newcols,"AgencyID")]
+  sqlAgency<-left_join(sqlAgency, newcolsAgency)
+}
+
+repoAgency<-rbind(repoAgency,sqlAgency[!sqlAgency$AgencyID %in% repoAgency$AgencyID,])
+repoAgency<-repoAgency[order(repoAgency$AgencyID),]
+write_csv(repoAgency,file = "Agency_AgencyID.csv", na="NULL")
+
+repoAgency<-update_col(repoAgency,sqlAgency,"Customer",primary_key="AgencyID")
+write_csv(repoAgency,file = "Agency_AgencyID.csv", na="NULL")
