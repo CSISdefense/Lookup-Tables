@@ -113,6 +113,8 @@ repoAgency<-read_csv("Agency_AgencyID.csv",na = "NULL")
 sqlAgency<-dbReadTable(con,  name = SQL('"FPDSTypeTable"."AgencyID"')) 
 sqlAgency<-sqlAgency[,!colnames(sqlAgency)%in% "Unseperated"]
 
+if(any(duplicated(str_trim(sqlAgency$AgencyID))))
+  stop("Duplicate AgencyID")
 
 #New Columns
 newcols<-colnames(sqlAgency)[!colnames(sqlAgency) %in% colnames(repoAgency) ]
