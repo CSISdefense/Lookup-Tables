@@ -47,6 +47,8 @@ colnames(repoPSC)[!colnames(repoPSC) %in% colnames(sqlPSC)]
 repoPSC<-rbind(repoPSC,sqlPSC[!sqlPSC$ProductOrServiceCode %in% repoPSC$ProductOrServiceCode,])
 repoPSC<-repoPSC[order(repoPSC$ProductOrServiceCode),]
 
+write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
+
 update_col<-function(repo,sql,colname,fill_SQL_na=TRUE,primary_key="ProductOrServiceCode"){
   order<-colnames(repo)
   sql<-sql[,c(colname,primary_key)]
@@ -69,7 +71,7 @@ update_col<-function(repo,sql,colname,fill_SQL_na=TRUE,primary_key="ProductOrSer
 # 
 # repoPSC$PlatformPortfolio[repoPSC$IsPossibleSoftwareEngineering=="Other Communication"]<-'Other Comms and Sensors'
 colnames(repoPSC)
-undebug(update_col)
+
 repoPSC<-update_col(repoPSC,sqlPSC,"PlatformPortfolio")
 write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
 
