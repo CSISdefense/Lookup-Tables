@@ -49,15 +49,19 @@ repoPSC<-repoPSC[order(repoPSC$ProductOrServiceCode),]
 
 write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
 
-update_col<-function(repo,sql,colname,fill_SQL_na=TRUE,primary_key="ProductOrServiceCode"){
+update_cols<-function(repo,sql,pk,colnames=NA,fill_SQL_na=TRUE){
   order<-colnames(repo)
-  sql<-sql[,c(colname,primary_key)]
-  repo$TemporaryHolder<-repo[,colnames(repo)==colname]
-  repo<-repo[,colnames(repo)!=colname]
+if(is.na(colnames))
+  colnames <- colnames(df)[colnames(df) != pk]
+
+for(i in colnames){
+  sql<-sql[,c(i,pk)]
+  repo$TemporaryHolder<-repo[,colnames(repo)==i]
+  repo<-repo[,colnames(repo)!=i]
   repo<-left_join(repo,sql)
-  if(fill_SQL_na & any(is.na(repo[,colnames(repo)==colname]))){
-    repo[is.na(repo[,colnames(repo)==colname]),colnames(repo)==colname]<-
-      repo$TemporaryHolder[is.na(repo[,colnames(repo)==colname])]
+  if(fill_SQL_na & any(is.na(repo[,colnames(repo)==i]))){
+    repo[is.na(repo[,colnames(repo)==i]),colnames(repo)==i]<-
+      repo$TemporaryHolder[is.na(repo[,colnames(repo)==i])]
   }
   repo<-repo %>% select(-TemporaryHolder)
   repo[,order]
@@ -72,42 +76,97 @@ update_col<-function(repo,sql,colname,fill_SQL_na=TRUE,primary_key="ProductOrSer
 # repoPSC$PlatformPortfolio[repoPSC$IsPossibleSoftwareEngineering=="Other Communication"]<-'Other Comms and Sensors'
 colnames(repoPSC)
 
-repoPSC<-update_col(repoPSC,sqlPSC,"PlatformPortfolio")
+repoPSC<-updates_col(repoPSC,sqlPSC,"PlatformPortfolio")
 write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
 
-repoPSC<-update_col(repoPSC,sqlPSC,"Simple")
-write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
-
-repoPSC<-update_col(repoPSC,sqlPSC,"PlatformPortfolio")
-write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
-
-repoPSC<-update_col(repoPSC,sqlPSC,"ProductOrServiceArea")
-write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
-
-repoPSC<-update_col(repoPSC,sqlPSC,"ServicesCategory")
-write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
-
-repoPSC<-update_col(repoPSC,sqlPSC,"ProductServiceOrRnDarea")
-write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
-
-
-repoPSC<-update_col(repoPSC,sqlPSC,"RnD_BudgetActivity")
-write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
-
-
-repoPSC<-update_col(repoPSC,sqlPSC,"CrisisProductOrServiceArea")
-write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
-
-repoPSC<-update_col(repoPSC,sqlPSC,"IsPossibleSoftwareEngineering")
-write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
-
-summary(factor(sqlPSC$ProductOrServiceCode[sqlPSC$IsPossibleSoftwareEngineering==1]))
-summary(factor(repoPSC$ProductOrServiceCode[repoPSC$IsPossibleSoftwareEngineering==1]))
+# summary(factor(sqlPSC$ProductOrServiceCode[sqlPSC$IsPossibleSoftwareEngineering==1]))
+# summary(factor(repoPSC$ProductOrServiceCode[repoPSC$IsPossibleSoftwareEngineering==1]))
 write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
 
 sqlPSCA<-dbReadTable(con,  name = SQL('"ProductOrServiceCode"."PSCAtransition"'))
- 
 
+upload_table<-function(schemaname,tablename,con,df,pk){
+# Code initially provided by POSIT Assistant
+
+# Upload repoPSC to a staging table, overwriting any prior run
+upload_name<-paste(tablename,"R","Upload",sep="_")
+DBI::dbWriteTable(
+  conn      = con,
+  name      = DBI::Id(schema = schemaname, table = uploadname),
+  value     = df,
+  overwrite = TRUE,
+  row.names = FALSE
+)
+
+# Check for columns in the upload table not present in the target table,
+# and ALTER the target to add any that are missing.
+target_cols <- dbGetQuery(con, paste("
+  SELECT COLUMN_NAME, DATA_TYPE
+  FROM INFORMATION_SCHEMA.COLUMNS
+  WHERE TABLE_SCHEMA = '%s'
+    AND TABLE_NAME   = '%s'",
+  schemaname, tablename)
+)
+
+upload_cols <- dbGetQuery(con, paste("
+  SELECT COLUMN_NAME, DATA_TYPE
+  FROM INFORMATION_SCHEMA.COLUMNS
+  WHERE TABLE_SCHEMA = '%s'
+    AND TABLE_NAME   = '%s'",
+  schemaname, tablename)
+)
+
+missing_in_target <- upload_cols[
+  !upload_cols$COLUMN_NAME %in% target_cols$COLUMN_NAME, ]
+
+if (nrow(missing_in_target) > 0) {
+  for (i in seq_len(nrow(missing_in_target))) {
+    col   <- missing_in_target$COLUMN_NAME[i]
+    dtype <- missing_in_target$DATA_TYPE[i]
+
+    # Map SQL Server base types to safe ALTER TABLE types
+    sql_type <- switch(dtype,
+      int      = "INT",
+      bigint   = "BIGINT",
+      float    = "FLOAT",
+      real     = "REAL",
+      bit      = "BIT",
+      date     = "DATE",
+      datetime = "DATETIME",
+      "NVARCHAR(255)"   # default for character types
+    )
+
+    alter_sql <- sprintf(
+      "ALTER TABLE [%s].[%s] ADD [%s] %s NULL",
+      schemaname,tablename, col, sql_type
+    )
+    message("Adding missing column to target: ", col, " (", sql_type, ")")
+    dbExecute(con, alter_sql)
+  }
+} else {
+  message("No missing columns — target table is up to date.")
+}
+
+# Build the UPDATE ... FROM statement dynamically from column names
+update_cols <- colnames(df)[colnames(df) != pk]
+
+set_clause <- paste(
+  sprintf("t.[%s] = u.[%s]", update_cols, update_cols),
+  collapse = ",\n  "
+)
+
+sql_update <- sprintf(
+  "UPDATE t
+SET
+  %s
+FROM ",schemaname,".",tablename," t
+INNER JOIN [%s].[%s] u
+  ON t.[%s] = u.[%s]",
+  set_clause, schemaname,update_name, pk, pk
+)
+
+dbExecute(con, sql_update)
+}
 
 repoAgency<-read_csv("Agency_AgencyID.csv",na = "NULL")
 sqlAgency<-dbReadTable(con,  name = SQL('"FPDSTypeTable"."AgencyID"')) 
@@ -133,11 +192,12 @@ repoAgency<-rbind(repoAgency,sqlAgency[!sqlAgency$AgencyID %in% repoAgency$Agenc
 repoAgency<-repoAgency[order(repoAgency$AgencyID),]
 write_csv(repoAgency,file = "Agency_AgencyID.csv", na="NULL")
 
-repoAgency<-update_col(repoAgency,sqlAgency,"Customer",primary_key="AgencyID")
+repoAgency<-update_col(repoAgency,sqlAgency,"Customer",pk="AgencyID")
 write_csv(repoAgency,file = "Agency_AgencyID.csv", na="NULL")
 
-repoAgency<-update_col(repoAgency,sqlAgency,"SubCustomer",primary_key="AgencyID")
+repoAgency<-update_col(repoAgency,sqlAgency,"SubCustomer",pk="AgencyID")
 write_csv(repoAgency,file = "Agency_AgencyID.csv", na="NULL")
 
-repoAgency<-update_col(repoAgency,sqlAgency,"maj_agency_cat",primary_key="AgencyID")
+repoAgency<-update_col(repoAgency,sqlAgency,"maj_agency_cat",pk="AgencyID")
 write_csv(repoAgency,file = "Agency_AgencyID.csv", na="NULL")
+  
