@@ -49,7 +49,7 @@ repoPSC<-repoPSC[order(repoPSC$ProductOrServiceCode),]
 
 write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
 
-update_cols<-function(repo,sql,pk,colnames=NA,fill_SQL_na=TRUE){
+update_repo_cols<-function(repo,sql,pk,colnames=NA,fill_SQL_na=TRUE){
   order<-colnames(repo)
 if(is.na(colnames))
   colnames <- colnames(df)[colnames(df) != pk]
@@ -76,7 +76,7 @@ for(i in colnames){
 # repoPSC$PlatformPortfolio[repoPSC$IsPossibleSoftwareEngineering=="Other Communication"]<-'Other Comms and Sensors'
 colnames(repoPSC)
 
-repoPSC<-updates_col(repoPSC,sqlPSC,"PlatformPortfolio")
+repoPSC<-update_repo_cols(repoPSC,sqlPSC,"PlatformPortfolio")
 write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
 
 # summary(factor(sqlPSC$ProductOrServiceCode[sqlPSC$IsPossibleSoftwareEngineering==1]))
@@ -85,7 +85,7 @@ write_csv(repoPSC,file = "ProductOrServiceCodes.csv", na="NULL")
 
 sqlPSCA<-dbReadTable(con,  name = SQL('"ProductOrServiceCode"."PSCAtransition"'))
 
-upload_table<-function(schemaname,tablename,con,df,pk){
+update_sql_table<-function(schemaname,tablename,con,df,pk){
 # Code initially provided by POSIT Assistant
 
 # Upload repoPSC to a staging table, overwriting any prior run
